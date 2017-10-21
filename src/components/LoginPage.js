@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import FormInput from './helpers/FormInput';
+import FormInputList from './helpers/FormInputList';
+
+import ListHelper from '../helpers/ListHelper';
 
 import '../sass/LoginPage.css';
 
@@ -139,11 +142,12 @@ export class LoginPage extends Component {
                         onChange={setCity}
                     />
                     <div className="login-signup-form-spacer"></div>                    
-                    <FormInput
+                    <FormInputList
                         label="State"
                         className="login-signup-form-input"
                         value={addressState}
                         onChange={setAddressState}
+                        options={ListHelper.getStates()}
                     />
                     <div className="login-signup-form-spacer"></div>                    
                     <FormInput
@@ -162,7 +166,7 @@ export class LoginPage extends Component {
                     />
                 </div>
                 <div className="login-signup-button-container">
-                    <div className="login-button">Sign Up!</div>
+                    <div className="login-button">SIGN UP!</div>
                 </div>
             </div>
         )
@@ -171,6 +175,7 @@ export class LoginPage extends Component {
     render() {
         return (
             <div className="login-page-container">
+                <div className="login-skew"></div>
                 <div className="login-tab-container">
                     <div 
                         className={`login-tab login-tab--left ${this.tabIsSelected("login")}`}

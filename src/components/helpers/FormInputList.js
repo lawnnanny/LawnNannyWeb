@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import '../../sass/helpers/FormInput.css';
+import FormInput from './FormInput';
 
-export default class FormInput extends Component {
-    constructor() {
-        super();
+import '../../sass/helpers/FormInputList.css';
 
-        this.state = {
-            isSelected: false
-        };
-    }
+export default class FormInputList extends FormInput {
+    getOptions() {
+        const {options} = this.props,
+            optionTags = [];
 
-    changeState(property, value) {
-        this.setState(previousState => {
-            return Object.assign({}, previousState, {
-                [property]: value
-            });
+        options.forEach(option => {
+            optionTags.push(
+                <option
+                    value={option}
+                    className="form-input-list-option"
+                />
+            );
         });
+
+        return optionTags;
     }
 
     render() {
-        const {label, className, type, value, onChange} = this.props,
+        const {label, className, type, value, onChange, options} = this.props,
             {isSelected} = this.state;
 
         return (
@@ -32,6 +34,7 @@ export default class FormInput extends Component {
                 </div>
                 <input
                     className={`form-input${isSelected ? " form-input--selected" : ""}`}
+                    list="options"
                     type={type}
                     contentEditable
                     value={value}
@@ -39,7 +42,12 @@ export default class FormInput extends Component {
                     onSelect={this.changeState.bind(this, "isSelected", true)}
                     onBlur={this.changeState.bind(this, "isSelected", false)}
                 ></input>
+                <datalist
+                    id="options"
+                >
+                    {this.getOptions()}
+                </datalist>
             </div>
-        )
+        );
     }
 }
