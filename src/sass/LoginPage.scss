@@ -1,0 +1,58 @@
+$medium-olive: darken(rgb(142, 184, 69), 12%);
+$dark-olive: darken(rgb(142, 184, 69), 18%);
+
+.login-page-container {
+    background-color: rgb(142, 184, 69);
+    width: 100%;
+    height: 100%;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.login-container {
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    left: 35%;
+    width: 30%;  
+}
+
+.login-tab-container {
+    display: flex;
+    font-size: 32px;
+    top: 25%;
+    height: 9%;
+    left: 35%;
+    width: 30%;
+    position: absolute;
+}
+
+.login-tab {
+    flex-basis: 50%;
+    padding: 15px 0 20px;
+    text-align: center;
+    color: white;
+    background-color: $medium-olive;
+    border-bottom: 2px solid $dark-olive;
+    
+    &--selected {
+        background-color: white;
+        color: $dark-olive;
+        border-top: 2px solid $dark-olive;
+        border-left: 2px solid $dark-olive;
+        border-right: 2px solid $dark-olive;
+        border-bottom: none;
+    }
+}
+
+.login-body {
+    position: absolute;
+    top: 34%;
+    height: 41%;
+    left: 35%;
+    width: calc(30% - 4px);
+    background-color: white;
+    border-left: 2px solid $dark-olive;
+    border-right: 2px solid $dark-olive;
+    border-bottom: 2px solid $dark-olive;
+}
