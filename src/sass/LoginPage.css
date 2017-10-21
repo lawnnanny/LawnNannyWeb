@@ -71,3 +71,15 @@
   background-color: #8eb845;
   text-align: center;
   color: white; }
+
+.login-signup-form-container {
+  display: flex;
+  padding-left: 5%;
+  padding-top: 3%;
+  width: 90%; }
+
+.login-signup-form-input {
+  width: 100%; }
+
+.login-signup-form-spacer {
+  width: 10%; }

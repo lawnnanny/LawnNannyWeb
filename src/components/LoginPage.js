@@ -45,6 +45,69 @@ export default class LoginPage extends Component {
                     </div>
                 </div>
             );
+        
+        return (
+            <div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="First Name"
+                        className="login-signup-form-input"
+                    />
+                    <div className="login-signup-form-spacer"></div>
+                    <FormInput
+                        label="Last Name"
+                        className="login-signup-form-input"
+                    />
+                </div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="Email Address"
+                        className="login-signup-form-input"
+                    />
+                </div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="Password"
+                        type="password"
+                        className="login-signup-form-input"
+                    />
+                    <div className="login-signup-form-spacer"></div>                    
+                    <FormInput
+                        label="Repeat Password"
+                        type="password"
+                        className="login-signup-form-input"
+                    />
+                </div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="Address"
+                        className="login-signup-form-input"
+                    />
+                </div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="City"
+                        className="login-signup-form-input"
+                    />
+                    <div className="login-signup-form-spacer"></div>                    
+                    <FormInput
+                        label="State"
+                        className="login-signup-form-input"
+                    />
+                    <div className="login-signup-form-spacer"></div>                    
+                    <FormInput
+                        label="Zipcode"
+                        className="login-signup-form-input"
+                    />
+                </div>
+                <div className="login-signup-form-container">
+                    <FormInput
+                        label="Driver's Liscence Number"
+                        className="login-signup-form-input"
+                    />
+                </div>
+            </div>
+        )
     }
 
     render() {

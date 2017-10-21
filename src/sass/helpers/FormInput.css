@@ -2,7 +2,16 @@
   font-family: "Ubuntu", sans-serif;
   color: #9c9c9c;
   font-size: 14px; }
+  .form-input-label--selected {
+    color: #8eb845; }
 
 .form-input {
   width: inherit;
-  font-family: "Ubuntu", sans-serif; }
+  font-family: "Ubuntu", sans-serif;
+  border: 1px solid #9c9c9c;
+  height: 20px;
+  outline: none;
+  color: #9c9c9c; }
+  .form-input--selected {
+    border-color: #8eb845;
+    color: #8eb845; }

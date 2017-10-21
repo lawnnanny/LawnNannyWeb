@@ -4,9 +4,22 @@
     font-family: "Ubuntu", sans-serif;
     color: $light-gray;
     font-size: 14px;
+
+    &--selected {
+        color: $light-olive;
+    }
 }
 
 .form-input {
     width: inherit;
     font-family: "Ubuntu", sans-serif;
+    border: 1px solid $light-gray;
+    height: 20px;
+    outline: none;
+    color: $light-gray;
+
+    &--selected {
+        border-color: $light-olive;
+        color: $light-olive;
+    }
 }
