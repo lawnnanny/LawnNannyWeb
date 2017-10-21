@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import FormInput from './helpers/FormInput';
+
 import '../sass/LoginPage.css';
 
 export default class LoginPage extends Component {
@@ -25,6 +27,26 @@ export default class LoginPage extends Component {
         return;
     }
 
+    renderForm() {
+        if (this.state.tabSelected === 'login') 
+            return (
+                <div>
+                    <FormInput
+                        label="Email"
+                        className="login-body-email"
+                    />
+                    <FormInput
+                        label="Password"
+                        className="login-body-password"
+                        password
+                    />
+                    <div className="login-button-container">
+                        <div className="login-button">LOGIN</div>
+                    </div>
+                </div>
+            );
+    }
+
     render() {
         return (
             <div className="login-page-container">
@@ -42,7 +64,9 @@ export default class LoginPage extends Component {
                         Sign Up
                     </div>
                 </div>
-                <div className="login-body"></div>
+                <div className="login-body">
+                    {this.renderForm()}
+                </div>
             </div>
         );
     }

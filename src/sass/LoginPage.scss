@@ -1,5 +1,4 @@
-$medium-olive: darken(rgb(142, 184, 69), 12%);
-$dark-olive: darken(rgb(142, 184, 69), 18%);
+@import './helpers/Colors.scss';
 
 .login-page-container {
     background-color: rgb(142, 184, 69);
@@ -55,4 +54,33 @@ $dark-olive: darken(rgb(142, 184, 69), 18%);
     border-left: 2px solid $dark-olive;
     border-right: 2px solid $dark-olive;
     border-bottom: 2px solid $dark-olive;
+}
+
+.login-body-email {
+    padding-left: 5%;
+    width: 95%;
+    padding-top: 18%;
+}
+
+.login-body-password {
+    padding-left: 5%;
+    width: 95%;
+    padding-top: 3%;
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+.login-button {
+    border-radius: 2%;
+    width: 25%;
+    height: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $light-olive;
+    text-align: center;
+    color: white;
 }

@@ -1,0 +1,12 @@
+@import 'Colors.scss';
+
+.form-input-label {
+    font-family: "Ubuntu", sans-serif;
+    color: $light-gray;
+    font-size: 14px;
+}
+
+.form-input {
+    width: inherit;
+    font-family: "Ubuntu", sans-serif;
+}

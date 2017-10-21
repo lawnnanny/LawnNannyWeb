@@ -46,3 +46,28 @@
   border-left: 2px solid #5a752c;
   border-right: 2px solid #5a752c;
   border-bottom: 2px solid #5a752c; }
+
+.login-body-email {
+  padding-left: 5%;
+  width: 95%;
+  padding-top: 18%; }
+
+.login-body-password {
+  padding-left: 5%;
+  width: 95%;
+  padding-top: 3%; }
+
+.login-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15%; }
+
+.login-button {
+  border-radius: 2%;
+  width: 25%;
+  height: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #8eb845;
+  text-align: center;
+  color: white; }
