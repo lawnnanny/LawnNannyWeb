@@ -106,6 +106,9 @@ export default class LoginPage extends Component {
                         className="login-signup-form-input"
                     />
                 </div>
+                <div className="login-signup-button-container">
+                    <div className="login-button">Sign Up!</div>
+                </div>
             </div>
         )
     }
@@ -115,13 +118,13 @@ export default class LoginPage extends Component {
             <div className="login-page-container">
                 <div className="login-tab-container">
                     <div 
-                        className={`login-tab ${this.tabIsSelected("login")}`}
+                        className={`login-tab login-tab--left ${this.tabIsSelected("login")}`}
                         onClick={this.chooseTab.bind(this, "login")}
                     >
                         Login
                     </div>
                     <div
-                        className={`login-tab ${this.tabIsSelected("signup")}`}
+                        className={`login-tab login-tab--right ${this.tabIsSelected("signup")}`}
                         onClick={this.chooseTab.bind(this, "signup")}
                     >
                         Sign Up

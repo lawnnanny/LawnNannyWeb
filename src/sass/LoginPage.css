@@ -15,7 +15,7 @@
 .login-tab-container {
   display: flex;
   font-size: 32px;
-  top: 25%;
+  top: 20%;
   height: 9%;
   left: 35%;
   width: 30%;
@@ -28,8 +28,18 @@
   color: white;
   background-color: #6c8b34;
   border-bottom: 2px solid #5a752c; }
+  .login-tab--left {
+    border-top: 2px solid #6c8b34;
+    border-left: 2px solid #6c8b34; }
+    .login-tab--left:hover {
+      background-color: #8eb845; }
+  .login-tab--right {
+    border-top: 2px solid #6c8b34;
+    border-right: 2px solid #6c8b34; }
+    .login-tab--right:hover {
+      background-color: #8eb845; }
   .login-tab--selected {
-    background-color: white;
+    background-color: white !important;
     color: #5a752c;
     border-top: 2px solid #5a752c;
     border-left: 2px solid #5a752c;
@@ -38,8 +48,8 @@
 
 .login-body {
   position: absolute;
-  top: 34%;
-  height: 41%;
+  top: 29%;
+  height: 51%;
   left: 35%;
   width: calc(30% - 4px);
   background-color: white;
@@ -50,7 +60,7 @@
 .login-body-email {
   padding-left: 5%;
   width: 95%;
-  padding-top: 18%; }
+  padding-top: 23%; }
 
 .login-body-password {
   padding-left: 5%;
@@ -68,9 +78,11 @@
   height: 15%;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #8eb845;
+  background-color: #6c8b34;
   text-align: center;
   color: white; }
+  .login-button:hover {
+    background-color: #8eb845; }
 
 .login-signup-form-container {
   display: flex;
@@ -83,3 +95,8 @@
 
 .login-signup-form-spacer {
   width: 10%; }
+
+.login-signup-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 7%; }
