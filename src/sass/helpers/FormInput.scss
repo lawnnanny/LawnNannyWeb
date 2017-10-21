@@ -3,7 +3,7 @@
 .form-input-label {
     font-family: "Ubuntu", sans-serif;
     color: $light-gray;
-    font-size: 14px;
+    font-size: 12px;
 
     &--selected {
         color: $light-olive;
@@ -17,6 +17,7 @@
     height: 20px;
     outline: none;
     color: $light-gray;
+    padding-left: 5px;
 
     &--selected {
         border-color: $light-olive;

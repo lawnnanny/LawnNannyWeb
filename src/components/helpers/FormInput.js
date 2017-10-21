@@ -7,8 +7,7 @@ export default class FormInput extends Component {
         super();
 
         this.state = {
-            isSelected: false,
-            value: ""
+            isSelected: false
         };
     }
 
@@ -20,15 +19,9 @@ export default class FormInput extends Component {
         });
     }
 
-    changeValue(event) {
-        const newValue = event.target.value;
-        
-        this.changeState("value", newValue);
-    }
-
     render() {
-        const {label, className, type} = this.props,
-            {isSelected, value, inputId} = this.state;
+        const {label, className, type, value, onChange} = this.props,
+            {isSelected} = this.state;
 
         return (
             <div className={`${className ? className : ""}`}>
@@ -43,7 +36,7 @@ export default class FormInput extends Component {
                     type={type}
                     contentEditable
                     value={value}
-                    onChange={this.changeValue.bind(this)}
+                    onChange={onChange}
                     onSelect={this.changeState.bind(this, "isSelected", true)}
                     onBlur={this.changeState.bind(this, "isSelected", false)}
                 ></input>
