@@ -1,4 +1,5 @@
-$medium-olive: darken(rgb(142, 184, 69), 12%);
-$dark-olive: darken(rgb(142, 184, 69), 18%);
 $light-olive: rgb(142, 184, 69);
+$medium-olive: darken($light-olive, 12%);
+$dark-olive: darken($light-olive, 18%);
+$deep-olive: darken($light-olive, 24%);
 $light-gray: rgb(156, 156, 156);

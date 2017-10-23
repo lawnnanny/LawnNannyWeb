@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Navbar from './Navbar';
 import FormInput from './helpers/FormInput';
 import FormInputList from './helpers/FormInputList';
 
@@ -70,6 +71,7 @@ export class LoginPage extends Component {
                         className="login-body-email"
                         value={email}
                         onChange={setEmail}
+                        type="email"
                     />
                     <FormInput
                         label="Password"
@@ -107,6 +109,7 @@ export class LoginPage extends Component {
                         className="login-signup-form-input"
                         value={email}
                         onChange={setEmail}
+                        type="email"
                     />
                 </div>
                 <div className="login-signup-form-container">
@@ -175,6 +178,7 @@ export class LoginPage extends Component {
     render() {
         return (
             <div className="login-page-container">
+                <Navbar/>
                 <div className="login-skew"></div>
                 <div className="login-tab-container">
                     <div 

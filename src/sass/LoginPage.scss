@@ -8,15 +8,6 @@
     overflow: hidden;
 }
 
-.login-container {
-    background-color: white;
-    position: absolute;
-    top: 25%;
-    height: 50%;
-    left: 35%;
-    width: 30%;  
-}
-
 .login-tab-container {
     display: flex;
     font-size: 32px;
@@ -134,4 +125,7 @@
     width: 100%;
     background-color: $light-olive;
     transform: skewX(45deg);
+    border-left: 5em solid $dark-olive;
+    border-right: 5em solid $dark-olive;
+    margin-left: -5em;
 }
