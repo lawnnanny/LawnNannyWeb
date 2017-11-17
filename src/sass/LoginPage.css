@@ -1,0 +1,109 @@
+.login-page-container {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  overflow: hidden; }
+
+.login-container {
+  background-color: white;
+  position: absolute;
+  top: 25%;
+  height: 50%;
+  left: 35%;
+  width: 30%; }
+
+.login-tab-container {
+  display: flex;
+  font-size: 32px;
+  top: 20%;
+  height: 9%;
+  left: 35%;
+  width: 30%;
+  position: absolute; }
+
+.login-tab {
+  flex-basis: 50%;
+  padding: 15px 0 20px;
+  text-align: center;
+  color: white;
+  background-color: #6c8b34;
+  border-bottom: 2px solid #5a752c; }
+  .login-tab--left {
+    border-top: 2px solid #6c8b34;
+    border-left: 2px solid #6c8b34; }
+    .login-tab--left:hover {
+      background-color: #8eb845; }
+  .login-tab--right {
+    border-top: 2px solid #6c8b34;
+    border-right: 2px solid #6c8b34; }
+    .login-tab--right:hover {
+      background-color: #8eb845; }
+  .login-tab--selected {
+    background-color: white !important;
+    color: #8eb845;
+    border-top: 2px solid #5a752c;
+    border-left: 2px solid #5a752c;
+    border-right: 2px solid #5a752c;
+    border-bottom: none; }
+
+.login-body {
+  position: absolute;
+  top: 29%;
+  height: 51%;
+  left: 35%;
+  width: calc(30% - 4px);
+  background-color: white;
+  border-left: 2px solid #5a752c;
+  border-right: 2px solid #5a752c;
+  border-bottom: 2px solid #5a752c; }
+
+.login-body-email {
+  padding-left: 5%;
+  width: 95%;
+  padding-top: 25%; }
+
+.login-body-password {
+  padding-left: 5%;
+  width: 95%;
+  padding-top: 3%; }
+
+.login-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15%; }
+
+.login-button {
+  border-radius: 2%;
+  width: 25%;
+  height: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #6c8b34;
+  text-align: center;
+  color: white; }
+  .login-button:hover {
+    background-color: #8eb845; }
+
+.login-signup-form-container {
+  display: flex;
+  padding-left: 5%;
+  padding-top: 3%;
+  width: 90%; }
+
+.login-signup-form-input {
+  width: 100%; }
+
+.login-signup-form-spacer {
+  width: 10%; }
+
+.login-signup-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 7%; }
+
+.login-skew {
+  height: 100%;
+  width: 100%;
+  background-color: #8eb845;
+  transform: skewX(45deg); }

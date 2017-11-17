@@ -1,0 +1,137 @@
+@import './helpers/Colors.scss';
+
+.login-page-container {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    font-family: "Ubuntu", sans-serif;
+    overflow: hidden;
+}
+
+.login-container {
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    left: 35%;
+    width: 30%;  
+}
+
+.login-tab-container {
+    display: flex;
+    font-size: 32px;
+    top: 20%;
+    height: 9%;
+    left: 35%;
+    width: 30%;
+    position: absolute;
+}
+
+.login-tab {
+    flex-basis: 50%;
+    padding: 15px 0 20px;
+    text-align: center;
+    color: white;
+    background-color: $medium-olive;
+    border-bottom: 2px solid $dark-olive;
+
+    &--left {
+        border-top: 2px solid $medium-olive;
+        border-left: 2px solid $medium-olive;
+
+        &:hover {
+            background-color: $light-olive;
+        }
+    }
+
+    &--right {
+        border-top: 2px solid $medium-olive;
+        border-right: 2px solid $medium-olive;
+
+        &:hover {
+            background-color: $light-olive;
+        }
+    }
+    
+    &--selected {
+        background-color: white !important;
+        color: $light-olive;
+        border-top: 2px solid $dark-olive;
+        border-left: 2px solid $dark-olive;
+        border-right: 2px solid $dark-olive;
+        border-bottom: none;
+    }
+}
+
+.login-body {
+    position: absolute;
+    top: 29%;
+    height: 51%;
+    left: 35%;
+    width: calc(30% - 4px);
+    background-color: white;
+    border-left: 2px solid $dark-olive;
+    border-right: 2px solid $dark-olive;
+    border-bottom: 2px solid $dark-olive;
+}
+
+.login-body-email {
+    padding-left: 5%;
+    width: 95%;
+    padding-top: 25%;
+}
+
+.login-body-password {
+    padding-left: 5%;
+    width: 95%;
+    padding-top: 3%;
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+.login-button {
+    border-radius: 2%;
+    width: 25%;
+    height: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $medium-olive;
+    text-align: center;
+    color: white;
+
+    &:hover {
+        background-color: $light-olive;
+    }
+}
+
+.login-signup-form-container {
+    display: flex;
+    padding-left: 5%;
+    padding-top: 3%;
+    width: 90%;
+}
+
+.login-signup-form-input {
+    width: 100%;
+}
+
+.login-signup-form-spacer {
+    width: 10%;
+}
+
+.login-signup-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 7%;
+}
+
+.login-skew {
+    height: 100%;
+    width: 100%;
+    background-color: $light-olive;
+    transform: skewX(45deg);
+}
