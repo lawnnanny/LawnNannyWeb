@@ -1,0 +1,48 @@
+@import './helpers/Colors.scss';
+
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.styleguide-container {
+    min-height: 100%;
+    background-color: $light-olive
+}
+
+.styleguide-content-spacer {
+    height: 8em;
+}
+
+.styleguide-content-container {
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    padding-top: 1em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    color: $light-olive;
+    margin: 0;
+}
+
+hr {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-style: solid;
+    border-color: $light-olive;
+}
+
+h2 {
+    color: $medium-olive;
+    margin-left: 5rem;
+}
+
+p {
+    margin-left: 6rem;
+    margin-right: 6rem;
+    color: $deep-olive;
+}
+

@@ -5,7 +5,9 @@ import { Provider } from 'react-redux';
 
 import App from '../components/App';
 import LoginPage from '../components/LoginPage';
+import Styleguide from '../components/Styleguide';
 import Error404 from '../components/errors/Error404';
+
 import reducers from '../reducers/reducers';
 
 import '../sass/Routes.css';
@@ -32,6 +34,7 @@ export default class Routes extends Component {
                     <Switch>
                         <Route exact path="/test" component={App}/>
                         <Route exact path="/login" component={LoginPage}/>
+                        <Route exact path="/styleguide" component={Styleguide}/>
                         <Route path="/*" component={Error404}/>
                     </Switch>
                 </BrowserRouter>
