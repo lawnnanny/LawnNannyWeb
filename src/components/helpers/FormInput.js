@@ -24,8 +24,6 @@ export default class FormInput extends Component {
         const {label, className, type, value, onChange} = this.props,
             {isSelected} = this.state;
 
-        console.log(value);
-
         return (
             <div className={`${className ? className : ""}`}>
                 <div
@@ -33,12 +31,6 @@ export default class FormInput extends Component {
                 >
                     {label}
                 </div>
-                {/* <input
-                    className={`form-input${isSelected ? " form-input--selected" : ""}`}
-                    type={type}
-                    value={value}
-                    onChange={onChange}
-                ></input> */}
                 <Input
                     type={type}
                     onChange={onChange}
