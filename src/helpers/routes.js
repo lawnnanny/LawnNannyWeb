@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import HomePage from '../components/HomePage'
 import App from '../components/App';
 import LoginPage from '../components/LoginPage';
 import Error404 from '../components/errors/Error404';
@@ -30,6 +31,7 @@ export default class Routes extends Component {
             <Provider store={this.state.store}>
                 <BrowserRouter className="router">
                     <Switch>
+                        <Route exact path="/" component={HomePage}/>
                         <Route exact path="/test" component={App}/>
                         <Route exact path="/login" component={LoginPage}/>
                         <Route path="/*" component={Error404}/>
