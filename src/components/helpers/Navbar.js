@@ -6,7 +6,7 @@ export default class Navbar extends Component {
         activeItem: 'test'
     }
 
-    handleClick = (e, { name }) => {
+    handleItemClick = (e, { name }) => {
         this.setState({activeItem: name});
     }
 
@@ -14,18 +14,15 @@ export default class Navbar extends Component {
         const { activeItem } = this.state;
 
         return (
-            <Menu>
+            <Menu secondary>
                 <Menu.Item
-                    name='editorials'
-                    active={activeItem === 'editorials'}
-                    onClick={this.handleItemClick}
+                    header
                 >
-                    Editorials
+                    MyRide
                 </Menu.Item>
 
                 <Menu.Item
                     name='reviews'
-                    active={activeItem === 'reviews'}
                     onClick={this.handleItemClick}
                 >
                     Reviews
@@ -33,7 +30,6 @@ export default class Navbar extends Component {
 
                 <Menu.Item
                     name='upcomingEvents'
-                    active={activeItem === 'upcomingEvents'}
                     onClick={this.handleItemClick}
                 >
                     Upcoming Events
