@@ -22,7 +22,7 @@ export default class FormInputList extends FormInput {
     }
 
     render() {
-        const {label, className, type, value, onChange, options} = this.props,
+        const { label, className, type, value, onChange } = this.props,
             {isSelected} = this.state;
 
         return (

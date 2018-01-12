@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Input } from 'semantic-ui-react';
 
 import '../../sass/helpers/FormInput.css';
 
@@ -30,15 +31,10 @@ export default class FormInput extends Component {
                 >
                     {label}
                 </div>
-                <input
-                    className={`form-input${isSelected ? " form-input--selected" : ""}`}
+                <Input
                     type={type}
-                    contentEditable
-                    value={value}
                     onChange={onChange}
-                    onSelect={this.changeState.bind(this, "isSelected", true)}
-                    onBlur={this.changeState.bind(this, "isSelected", false)}
-                ></input>
+                />
             </div>
         )
     }
