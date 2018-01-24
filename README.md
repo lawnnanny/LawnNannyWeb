@@ -14,3 +14,9 @@ The above commands will print out the version numbers of Node and NPM, the Node 
 Once you have cloned it, move into the directory, then run `npm install`. This will install all of the dependencies required to run the website.
 
 Next, in a separate terminal/command prompt window, run  `npm run watch-css`. This will compile the stylings for the website. Then, in the first terminal/command prompt window, run `npm start`. This will spin up a development server that will host the website. After the server is up, you can go to [localhost:3030/test](localhost:3030/test) to verify that the local website is up and running!
+
+## Testing
+
+The browser testing library used is Chai.
+
+http://chaijs.com
