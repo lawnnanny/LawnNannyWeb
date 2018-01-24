@@ -1,17 +1,23 @@
-var webdriver = require('selenium-webdriver');
-var test = require('selenium-webdriver/testing');
+let webdriver = require('selenium-webdriver');
+let test = require('selenium-webdriver/testing');
+let assert = require('assert');
+
+let driver = null;
 
 test.describe('webdriverjs test', function() {
-    test.before(function(done) {
-        this.driver = new webdriver.Builder().forBrowser('chrome').build();
+    this.timeout(5000);
+    test.before((done) => {
+        driver = new webdriver.Builder().forBrowser('chrome').build();
         done();
     });
 
-    test.it('should go to Google', function(done) {
-        this.driver.get('https://www.google.com');
-        this.driver.getTitle().then(function(title) {
-            require('assert').equal(title, 'Google');
+    test.it('Login Should exist', (done) => {
+
+        driver.get('localhost:3002/login');
+        driver.getTitle().then((title) => {
+            assert.equal(title, 'React App');
             done();
         });
     });
+
 });

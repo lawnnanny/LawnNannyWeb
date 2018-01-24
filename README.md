@@ -17,6 +17,8 @@ Next, in a separate terminal/command prompt window, run  `npm run watch-css`. Th
 
 ## Testing
 
-The browser testing library used is Chai.
+The testing framework used with Mocha with a Selenium webdriver. To run the tests run the script
 
-http://chaijs.com
+```
+npm test
+```
