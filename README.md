@@ -1,4 +1,4 @@
-# MyRide -- Website
+# Terra -- Website
 
 ## Setup information
 
