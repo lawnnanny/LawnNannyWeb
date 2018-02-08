@@ -21,7 +21,7 @@ export default class FormInput extends Component {
     }
 
     render() {
-        const {label, className, type, value, onChange} = this.props,
+        const {label, className, type, onChange} = this.props,
             {isSelected} = this.state;
 
         return (
