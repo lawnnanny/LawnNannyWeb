@@ -12,5 +12,12 @@ export default {
     },
     menuItem: {
         color: 'white'
+    },
+    loginGrid: {
+        margin: '1rem'
+    },
+    modalButton: {
+        backgroundColor: green,
+        color: 'white'
     }
 };
