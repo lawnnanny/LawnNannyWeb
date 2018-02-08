@@ -2,19 +2,12 @@ let webdriver = require('selenium-webdriver');
 let test = require('selenium-webdriver/testing');
 let assert = require('assert');
 
-let driver = null;
+let driver = new webdriver.Builder().forBrowser('chrome').build();
 
-test.describe('webdriverjs test', () => {
-    test.before((done) => {
-        driver = new webdriver.Builder().forBrowser('chrome').build();
+test.it('Login Should Exist', (done) => {
+    driver.get('localhost:3002/login');
+    driver.getTitle().then((title) => {
+        assert.equal(title, 'Terra');
         done();
     });
-
-    test.it('Login Should Exist', (done) => {
-        driver.get('localhost:3002/login');
-        driver.getTitle().then((title) => {
-            assert.equal(title, 'Terra');
-            done();
-        });
-    });
-}).timeout(5000);
+}).timeout(30000);
