@@ -16,8 +16,17 @@ export default {
     loginGrid: {
         margin: '1rem'
     },
+    modalHeader: {
+        display: 'flex',
+        justifyContent: 'center',
+        color:green,
+        fontSize:'2rem'
+    },
     modalButton: {
         backgroundColor: green,
         color: 'white'
-    }
+    },
+    signUpForm: {
+        padding: '1rem'
+    },
 };
