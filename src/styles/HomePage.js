@@ -1,4 +1,7 @@
-const green = '#6CB109';
+const green = '#63BA18';
+const  blue = '#60D4FF';
+const gray  = '#292A2D';
+const white = '#FFFFFF'
 
 export default {
     navbarContainer: {
@@ -13,14 +16,20 @@ export default {
     menuItem: {
         color: 'white'
     },
+    modal: {
+        backgroundColor: 'white',
+        padding: '1rem'
+    },
     loginGrid: {
         margin: '1rem'
     },
     modalHeader: {
         display: 'flex',
         justifyContent: 'center',
-        color:green,
-        fontSize:'2rem'
+        color: green,
+        fontSize:'2rem',
+        backgroundColor: white,
+        borderBottom: 'none'
     },
     modalButton: {
         backgroundColor: green,
