@@ -10,7 +10,6 @@ export default {
         backgroundColor: green
     },
     loginSignupMenu: {
-        float: 'right',
         paddingRight: '1rem'
     },
     menuItem: {
@@ -38,4 +37,7 @@ export default {
     signUpForm: {
         padding: '1rem'
     },
+    signUpCheckbox: {
+        paddingBottom: '.5rem'
+    }
 };
