@@ -1,4 +1,4 @@
-const Actions = require('./Actions')();
+import Actions from './Actions';
 
 const getInitialState = () => {
     return {
