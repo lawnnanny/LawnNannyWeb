@@ -8,12 +8,18 @@ import { statekeys } from '../helpers/Common'
 
 export class HomePage extends Component {
 
-	state = { modalOpen: false }
+  state = { modalOpenLogin: false }
 
-  	handleOpen = () => this.setState({ modalOpen: true })
+  handleOpenLogin = () => this.setState({ modalOpenLogin: true })
 
-  	handleClose = () => this.setState({ modalOpen: false })
+  handleCloseLogin = () => this.setState({ modalOpenLogin: false })
 
+  state = { modalOpenSignUp: false }
+
+  handleOpenSignUp = () => this.setState({ modalOpenSignUp: true })
+
+  handleCloseSignUp = () => this.setState({ modalOpenSignUp: false })
+	
 
 	renderForm() {
         const {
@@ -46,12 +52,12 @@ export class HomePage extends Component {
                     style={Styles.modal} 
                     size='mini' 
                     trigger={
-                        <Menu.Item onClick={this.handleOpen} style={Styles.menuItem}>
+                        <Menu.Item style={Styles.menuItem} onClick={this.handleOpenLogin}>
                             Login
                         </Menu.Item>
                     } 
-                    open={this.state.modalOpen}
-        			onClose={this.handleClose} 
+                    open={this.state.modalOpenLogin}
+        			onClose={this.handleCloseLogin}
         			closeIcon
         			>
                         <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
@@ -59,7 +65,7 @@ export class HomePage extends Component {
                             <Grid style={Styles.loginGrid}>
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Input fluid icon='user' iconPosition='left' placeholder='Username'/>
+                                        <Input fluid icon='user' iconPosition='left' placeholder='someone@example.com'/>
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row>
@@ -69,7 +75,7 @@ export class HomePage extends Component {
                                 </Grid.Row>
                                 <Grid.Row centered>
                                     <Grid.Column width={6}>
-                                        <Button style={Styles.modalButton} size='large' onClick={this.handleClose}>Login</Button>
+                                        <Button style={Styles.modalButton} size='large' onClick={this.handleCloseLogin}>Login</Button>
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
@@ -79,12 +85,12 @@ export class HomePage extends Component {
                       style={Styles.modal}  
                       size='tiny' 
                       trigger={
-                          <Menu.Item style={Styles.menuItem} onClick={this.handleOpen}>
+                          <Menu.Item style={Styles.menuItem} onClick={this.handleOpenSignUp}>
                            Sign Up
                           </Menu.Item>
                            	}
-                      open={this.state.modalOpen}
-        			  onClose={this.handleClose} 
+                      open={this.state.modalOpenSignUp}
+        			  onClose={this.handleCloseSignUp}
                    	  closeIcon>
                         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
                         <Modal.Description>                 
@@ -102,7 +108,7 @@ export class HomePage extends Component {
                        		 	<Form.Input fluid label='Zipcode' placeholder='Zipcode' onChange='setZipcode'/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
-                       		 	<Form.Input fluid label='Email' placeholder='Email' onChange='setEmail'/>
+                       		 	<Form.Input fluid label='Email' placeholder='someone@example.com' onChange='setEmail'/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
                        		 	<Form.Input fluid label='Password' placeholder='Password' onChange='setPassword'/>
@@ -112,7 +118,7 @@ export class HomePage extends Component {
                        		 <Form.Checkbox label='I agree to the Terms and Conditions'/>
                        		 </Form.Group>
                        		 <Form.Group>
-                       		 	<Form.Button style={Styles.modalButton} size='large' onClick={this.handleClose}>Submit</Form.Button>
+                       		 	<Form.Button style={Styles.modalButton} size='large' onClick={this.handleCloseSignUp}>Submit</Form.Button>
                        		 </Form.Group>
                      	  </Form> 
                         </Modal.Description>
