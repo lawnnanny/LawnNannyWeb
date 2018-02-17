@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Menu, Modal, Input, Grid, Button, Form, Checkbox } from 'semantic-ui-react';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
@@ -19,19 +19,9 @@ export class HomePage extends Component {
   handleOpenSignUp = () => this.setState({ modalOpenSignUp: true })
 
   handleCloseSignUp = () => this.setState({ modalOpenSignUp: false })
-	
-
-	renderForm() {
-        const {
-            firstName,
-            lastName,
-            email,
-            password,
-            passwordRepeat,
-            address,
-            city,
-            addressState,
-            zipcode,
+        
+  render() {
+      const {
             setEmail,
             setPassword,
             setFirstName,
@@ -42,35 +32,34 @@ export class HomePage extends Component {
             setAddressState,
             setZipcode
         } = this.props;
-       } 
-    render() {
+
         return (
             <div style={Styles.navbarContainer}>
-                <Menu stackable large secondary style={Styles.loginSignupMenu}>
+                <Menu secondary style={Styles.loginSignupMenu}>
                 <Menu.Menu position='right'>
                     <Modal 
-                    style={Styles.modal} 
-                    size='mini' 
-                    trigger={
-                        <Menu.Item style={Styles.menuItem} onClick={this.handleOpenLogin}>
-                            Login
-                        </Menu.Item>
-                    } 
-                    open={this.state.modalOpenLogin}
-        			onClose={this.handleCloseLogin}
-        			closeIcon
-        			>
+                        style={Styles.modal} 
+                        size='mini' 
+                        trigger={
+                            <Menu.Item style={Styles.menuItem} onClick={this.handleOpenLogin}>
+                                Login
+                            </Menu.Item>
+                        } 
+                        open={this.state.modalOpenLogin}
+                  			onClose={this.handleCloseLogin}
+                  			closeIcon
+              			>
                         <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
                         <Modal.Description>
                             <Grid style={Styles.loginGrid}>
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Input fluid icon='user' iconPosition='left' placeholder='someone@example.com'/>
+                                        <Input fluid icon='user' iconPosition='left' placeholder='someone@example.com' onChange={setEmail}/>
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Input fluid icon='lock' iconPosition='left' placeholder='Password'/>
+                                        <Input fluid icon='lock' type='password' iconPosition='left' placeholder='Password' onChange={setPassword}/>
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row centered>
@@ -82,41 +71,42 @@ export class HomePage extends Component {
                         </Modal.Description>
                     </Modal>
                     <Modal 
-                      style={Styles.modal}  
-                      size='tiny' 
-                      trigger={
-                          <Menu.Item style={Styles.menuItem} onClick={this.handleOpenSignUp}>
-                           Sign Up
-                          </Menu.Item>
-                           	}
-                      open={this.state.modalOpenSignUp}
-        			  onClose={this.handleCloseSignUp}
-                   	  closeIcon>
+                        style={Styles.modal}  
+                        size='tiny' 
+                        trigger={
+                            <Menu.Item style={Styles.menuItem} onClick={this.handleOpenSignUp}>
+                             Sign Up
+                            </Menu.Item>
+                             	}
+                        open={this.state.modalOpenSignUp}
+          			        onClose={this.handleCloseSignUp}
+                   	    closeIcon
+                    >
                         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
                         <Modal.Description>                 
                           <Form style={Styles.signUpForm}>
                        		 <Form.Group widths='equal'>
-                       		 	<Form.Input fluid label='First Name' color='white' placeholder='First Name' onChange='setFirstName'/>
-                       		 	<Form.Input fluid label='Last Name' placeholder='Last Name' onChange='setLastName'/>
+                       		 	<Form.Input fluid label='First Name' color='white' placeholder='First Name' onChange={setFirstName}/>
+                       		 	<Form.Input fluid label='Last Name' placeholder='Last Name' onChange={setLastName}/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
-                       		 	<Form.Input fluid label='Address' placeholder='Address' onChange='setAddress'/>
-                       		 	<Form.Input fluid label='City' placeholder='City' onChange='setCity'/>
+                       		 	<Form.Input fluid label='Email' placeholder='someone@example.com' onChange={setEmail}/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
-                       		 	<Form.Dropdown fluid label='State' placeholder='State' search selection options={statekeys} onChange='setAddressState'/>
-                       		 	<Form.Input fluid label='Zipcode' placeholder='Zipcode' onChange='setZipcode'/>
+                       		 	<Form.Input fluid label='Password' type='password' placeholder='Password' onChange={setPassword}/>
+                       		 	<Form.Input fluid label='Repeat Password' type='password' placeholder='Repeat Password' onChange={setPasswordRepeat}/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
-                       		 	<Form.Input fluid label='Email' placeholder='someone@example.com' onChange='setEmail'/>
+                       		 	<Form.Input fluid label='Address' placeholder='Address' onChange={setAddress}/>
+                       		 	<Form.Input fluid label='City' placeholder='City' onChange={setCity}/>
                        		 </Form.Group>
                        		  <Form.Group widths='equal'>
-                       		 	<Form.Input fluid label='Password' placeholder='Password' onChange='setPassword'/>
-                       		 	<Form.Input fluid label='Repeat Password' placeholder='Repeat Password' onChange='setPasswordRepeat'/>
+                       		 	<Form.Dropdown fluid label='State' placeholder='State' search selection options={statekeys} onChange={setAddressState}/>
+                       		 	<Form.Input fluid label='Zipcode' placeholder='Zipcode' onChange={setZipcode}/>
                        		 </Form.Group>
                        		 <Form.Group style={Styles.signUpCheckbox}>
                        		 <Form.Checkbox label='I agree to the Terms and Conditions'/>
-                       		 </Form.Group>
+                       		 </Form.Group>                       	
                        		 <Form.Group>
                        		 	<Form.Button style={Styles.modalButton} size='large' onClick={this.handleCloseSignUp}>Submit</Form.Button>
                        		 </Form.Group>
@@ -197,13 +187,13 @@ const mapDispatchToProps = dispatch => {
 
             dispatch(action);
         },
-        setAddressState: event => {
-            const value = event.target.value,
+        setAddressState: (event,data) => {
+            const value = data.value,
                 action = {
                     type: Actions.login.setAddressState,
                     value
                 };
-
+                console.log(data);
             dispatch(action);
         },
         setZipcode: event => {
@@ -219,4 +209,4 @@ const mapDispatchToProps = dispatch => {
 
 }
 
-export default connect(() => {}, mapDispatchToProps)(HomePage);
+export default connect(() => { return {} }, mapDispatchToProps)(HomePage);

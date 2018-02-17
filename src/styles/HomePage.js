@@ -1,6 +1,6 @@
 const green = '#63BA18';
-const  blue = '#60D4FF';
-const gray  = '#292A2D';
+// const  blue = '#60D4FF';
+// const gray  = '#292A2D';
 const white = '#FFFFFF'
 
 export default {
