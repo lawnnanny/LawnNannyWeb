@@ -8,12 +8,6 @@ import { statekeys } from '../helpers/Common'
 
 export class HomePage extends Component {
 
-  state = { modalOpenLogin: false }
-
-  handleOpenLogin = () => this.setState({ modalOpenLogin: true })
-
-  handleCloseLogin = () => this.setState({ modalOpenLogin: false })
-
   state = { modalOpenSignUp: false }
 
   handleOpenSignUp = () => this.setState({ modalOpenSignUp: true })
@@ -30,7 +24,14 @@ export class HomePage extends Component {
             setAddress,
             setCity,
             setAddressState,
-            setZipcode
+            setZipcode,
+            openLoginModal,
+            closeLoginModal,
+            isLoginModalOpen,
+            openSignupModal,
+            closeSignupModal,
+            isSignupModalOpen
+
         } = this.props;
 
         return (
@@ -41,12 +42,12 @@ export class HomePage extends Component {
                         style={Styles.modal} 
                         size='mini' 
                         trigger={
-                            <Menu.Item style={Styles.menuItem} onClick={this.handleOpenLogin}>
+                            <Menu.Item style={Styles.menuItem} onClick={openLoginModal}>
                                 Login
                             </Menu.Item>
                         } 
-                        open={this.state.modalOpenLogin}
-                  			onClose={this.handleCloseLogin}
+                        open={isLoginModalOpen}
+                  			onClose={closeLoginModal}
                   			closeIcon
               			>
                         <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
@@ -64,7 +65,7 @@ export class HomePage extends Component {
                                 </Grid.Row>
                                 <Grid.Row centered>
                                     <Grid.Column width={6}>
-                                        <Button style={Styles.modalButton} size='large' onClick={this.handleCloseLogin}>Login</Button>
+                                        <Button style={Styles.modalButton} size='large' onClick={closeLoginModal}>Login</Button>
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
@@ -74,12 +75,12 @@ export class HomePage extends Component {
                         style={Styles.modal}  
                         size='tiny' 
                         trigger={
-                            <Menu.Item style={Styles.menuItem} onClick={this.handleOpenSignUp}>
+                            <Menu.Item style={Styles.menuItem} onClick={openSignupModal}>
                              Sign Up
                             </Menu.Item>
                              	}
-                        open={this.state.modalOpenSignUp}
-          			        onClose={this.handleCloseSignUp}
+                        open={isSignupModalOpen}
+          			        onClose={closeSignupModal}
                    	    closeIcon
                     >
                         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
@@ -108,7 +109,7 @@ export class HomePage extends Component {
                        		 <Form.Checkbox label='I agree to the Terms and Conditions'/>
                        		 </Form.Group>                       	
                        		 <Form.Group>
-                       		 	<Form.Button style={Styles.modalButton} size='large' onClick={this.handleCloseSignUp}>Submit</Form.Button>
+                       		 	<Form.Button style={Styles.modalButton} size='large' onClick={closeSignupModal}>Submit</Form.Button>
                        		 </Form.Group>
                      	  </Form> 
                         </Modal.Description>
@@ -205,6 +206,34 @@ const mapDispatchToProps = dispatch => {
 
             dispatch(action);
         },
+        openLoginModal: () => {
+            const action = {
+                type: Actions.login.toggleLoginModal
+            };
+
+            dispatch(action);
+        },
+        closeLoginModal: () => {
+            const action = {
+                type: Actions.login.clear
+            };
+
+            dispatch(action);
+        },
+         openSignupModal: () => {
+            const action = {
+                type: Actions.login.toggleSignupModal
+            };
+
+            dispatch(action);
+        },
+        closeSignupModal: () => {
+            const action = {
+                type: Actions.login.clear
+            };
+
+            dispatch(action);
+        }
     };
 
 }

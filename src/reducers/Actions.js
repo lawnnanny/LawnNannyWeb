@@ -11,6 +11,9 @@ export default {
         setCity: i++,
         setAddressState: i++,
         setZipcode: i++,
-        clearPassword: i++
+        clearPassword: i++,
+        toggleLoginModal: i++,
+        clear: i++,
+        toggleSignupModal: i++
     }
 };

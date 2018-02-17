@@ -11,7 +11,7 @@ const getInitialState = () => {
         city: '',
         addressState: '',
         zipcode: '',
-        driversLiscenseNumber: ''
+        isLoginModalOpen: false
     };
 };
 
@@ -47,10 +47,14 @@ export default (state = getInitialState(), action) => {
             return setState(state, 'addressState', action.value);
         case Actions.login.setZipcode:
             return setState(state, 'zipcode', action.value);
-        case Actions.login.setDriversLiscenseNumber:
-            return setState(state, 'driversLiscenseNumber', action.value);
         case Actions.login.clearPassword:
             return clearPassword(state);
+        case Actions.login.toggleLoginModal:
+            return setState(state, 'isLoginModalOpen', !state.isLoginModalOpen);
+        case Actions.login.clear:
+            return getInitialState();
+        case Actions.login.toggleSignupModal:
+            return setState(state, 'isSignupModalOpen', !state.isSignupModalOpen);
         default:
             return state;
     }
