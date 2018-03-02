@@ -9,10 +9,6 @@ import { statekeys } from '../helpers/Common'
 export class HomePage extends Component {
 
   state = { modalOpenSignUp: false }
-
-  handleOpenSignUp = () => this.setState({ modalOpenSignUp: true })
-
-  handleCloseSignUp = () => this.setState({ modalOpenSignUp: false })
         
   render() {
       const {
@@ -192,7 +188,7 @@ const mapDispatchToProps = dispatch => {
                     type: Actions.login.setAddressState,
                     value
                 };
-                
+
             dispatch(action);
         },
         setZipcode: event => {
