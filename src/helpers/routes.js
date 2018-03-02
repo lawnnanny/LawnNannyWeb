@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from '../components/App';import Error404 from '../components/errors/Error404';
+import App from '../components/App';
+import Error404 from '../components/errors/Error404';
 import HomePage from '../components/HomePage';
 import reducers from '../reducers/reducers';
 
