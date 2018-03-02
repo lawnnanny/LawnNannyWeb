@@ -130,8 +130,6 @@ const mapDispatchToProps = dispatch => {
                     value
                 };
 
-            console.log(Actions);
-
             dispatch(action);
         },
         setPassword: event => {
@@ -194,7 +192,7 @@ const mapDispatchToProps = dispatch => {
                     type: Actions.login.setAddressState,
                     value
                 };
-                console.log(data);
+                
             dispatch(action);
         },
         setZipcode: event => {
