@@ -64,5 +64,16 @@ export default {
         display: 'flex',
         justifyContent: 'center',
         paddingBottom: '2vh'
+    },
+    footerContainer: {
+        height: '5vh',
+        backgroundColor: '#CECECE'
+    },
+    footerContentContainer: {
+        paddingTop: '1vh',
+        display: 'flex',
+        justifyContent: 'space-around',
+        width: '70vw',
+        margin: '0 auto'
     }
 };

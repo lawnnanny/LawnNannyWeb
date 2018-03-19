@@ -219,7 +219,7 @@ export class HomePage extends Component {
                                                     style={Styles.modalButton}
                                                     size='large'
                                                 >
-                                                    Login
+                                                    Continue
                                                 </Button>
                                             </div>
                                         </Grid.Column>
@@ -227,6 +227,14 @@ export class HomePage extends Component {
                                 </Grid>
                             </Card.Content>
                         </Card>
+                    </div>
+                </div>
+                <div style={Styles.footerContainer}>
+                    <div style={Styles.footerContentContainer}>
+                        <span>About</span>
+                        <span>Contact</span>
+                        <span>FAQ</span>
+                        <span>Services</span>
                     </div>
                 </div>
             </div>
