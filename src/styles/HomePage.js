@@ -4,7 +4,7 @@ const white = '#FFFFFF'
 export default {
     navbarContainer: {
         width: '100%',
-        minHeight: 42,
+        minHeight: '3.5vh',
         backgroundColor: green
     },
     loginSignupMenu: {
@@ -37,5 +37,16 @@ export default {
     },
     signUpCheckbox: {
         paddingBottom: '.5rem'
+    },
+    contentContainer: {
+        height: '96.5vh',
+        backgroundImage: 'url("http://www.tokkoro.com/picsup/3004995-blur_blurred_eco_environment_garden_grass_green_lawn_mowing_whitespace_yard.jpg")',
+        backgroundSize: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    cardContainer: {
+        width: '35%'
     }
 };
