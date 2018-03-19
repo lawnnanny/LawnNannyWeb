@@ -5,7 +5,9 @@ export default {
     navbarContainer: {
         width: '100%',
         minHeight: '3.5vh',
-        backgroundColor: green
+        backgroundColor: green,
+        position: 'fixed',
+        top: '0px'
     },
     loginSignupMenu: {
         paddingRight: '1rem'
@@ -39,6 +41,7 @@ export default {
         paddingBottom: '.5rem'
     },
     contentContainer: {
+        paddingTop: '3.5vh',
         height: '96.5vh',
         backgroundImage: 'url("http://www.tokkoro.com/picsup/3004995-blur_blurred_eco_environment_garden_grass_green_lawn_mowing_whitespace_yard.jpg")',
         backgroundSize: '100%',
@@ -47,7 +50,8 @@ export default {
         alignItems: 'center'
     },
     cardContainer: {
-        width: '20%'
+        width: '20%',
+        minWidth: '300px'
     },
     cardInputContainer: {
         display: 'flex',
@@ -66,14 +70,18 @@ export default {
         paddingBottom: '2vh'
     },
     footerContainer: {
-        height: '5vh',
         backgroundColor: '#CECECE'
     },
     footerContentContainer: {
-        paddingTop: '1vh',
+        paddingTop: '2vh',
         display: 'flex',
         justifyContent: 'space-around',
-        width: '70vw',
+        width: '50vw',
         margin: '0 auto'
+    },
+    footerCopyright: {
+        textAlign: 'center',
+        color: '#AAAAAA',
+        padding: '2vh 0'
     }
 };

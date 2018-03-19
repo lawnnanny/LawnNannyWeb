@@ -236,6 +236,7 @@ export class HomePage extends Component {
                         <span>FAQ</span>
                         <span>Services</span>
                     </div>
+                    <div style={Styles.footerCopyright}>©2018 Terra Development, Inc.</div>
                 </div>
             </div>
         );
