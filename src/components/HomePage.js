@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Menu, Modal, Input, Grid, Button, Form, Card, Label } from 'semantic-ui-react';
+import { Menu, Modal, Input, Grid, Button, Form, Card } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
@@ -195,23 +195,33 @@ export class HomePage extends Component {
                                 </Card.Header>
                             </Card.Content>
                             <Card.Content>
-                                <Grid>
+                                <Grid centered style={Styles.cardContent}>
                                     <Grid.Row>
                                         <Grid.Column>
-                                            <Input labelPosition="right">
-                                                <Label>Yard Size</Label>
-                                                <input/>
-                                                <Label basic>ft²</Label>
-                                            </Input>
+                                            <div style={Styles.cardInputContainer}>
+                                                <span style={Styles.cardInputLabel}>Yard Size:</span>
+                                                <Input label={{basic: true, content: 'ft²'}} labelPosition="right"/>
+                                            </div>
                                         </Grid.Column>
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Grid.Column>
-                                            <Input labelPosition="right">
-                                                <Label>Grass Height</Label>
-                                                <input/>
-                                                <Label basic>in.</Label>
-                                            </Input>
+                                            <div style={Styles.cardInputContainer}>
+                                                <span style={Styles.cardInputLabel}>Grass Height:</span>
+                                                <Input label={{basic: true, content: 'in.'}} labelPosition="right"/>
+                                            </div>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                    <Grid.Row>
+                                        <Grid.Column>
+                                            <div style={Styles.cardButtonContainer}>
+                                                <Button
+                                                    style={Styles.modalButton}
+                                                    size='large'
+                                                >
+                                                    Login
+                                                </Button>
+                                            </div>
                                         </Grid.Column>
                                     </Grid.Row>
                                 </Grid>

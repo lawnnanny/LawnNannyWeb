@@ -47,6 +47,22 @@ export default {
         alignItems: 'center'
     },
     cardContainer: {
-        width: '35%'
+        width: '20%'
+    },
+    cardInputContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
+    cardInputLabel: {
+        paddingTop: '9.5px',
+        fontWeight: 'bold'
+    },
+    cardContent: {
+        paddingTop: '2vh'
+    },
+    cardButtonContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        paddingBottom: '2vh'
     }
 };
