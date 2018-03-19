@@ -1,13 +1,13 @@
 const green = '#63BA18';
 const white = '#FFFFFF';
 const orange = '#FFB300';
-const blue= '#1565C0';
+// const blue= '#1565C0';
 
 export default {
     navbarLogo: {
         paddingTop: '1vh',
         paddingLeft: '5vw',
-        fontSize: '3vh',
+        fontSize: '22pt',
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: orange
@@ -17,7 +17,8 @@ export default {
         minHeight: '3.5vh',
         backgroundColor: white,
         position: 'fixed',
-        top: '0px'
+        top: '0px',
+        boxShadow: '0 2px 2px 1px rgba(0, 0, 0, 0.1)'
     },
     loginSignupMenu: {
         paddingRight: '1rem'
@@ -61,7 +62,7 @@ export default {
     },
     cardContainer: {
         width: '20%',
-        minWidth: '300px',
+        minWidth: '350px',
         border: `${green} 3px solid`,
         borderRadius: '6px'
     },
@@ -95,5 +96,10 @@ export default {
         textAlign: 'center',
         color: '#AAAAAA',
         padding: '2vh 0'
+    },
+    cardHeaderContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     }
 };

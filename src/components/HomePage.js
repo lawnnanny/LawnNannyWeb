@@ -1,12 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Menu, Modal, Input, Grid, Button, Form, Card } from 'semantic-ui-react';
+import { Menu, Modal, Input, Grid, Button, Form, Card, Dropdown } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
 import { statekeys } from '../helpers/Common' 
 
+const serviceOptions = [
+    {
+        message: 'Tell us how you want your yard cut...',
+        value: 'yardService',
+        text: 'Yard Service'
+    },
+    {
+        message: 'Tell us how you want your snow cleared...',
+        value: 'snowRemoval',
+        text: 'Snow Removal'
+    }
+]
+
 export class HomePage extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            service: serviceOptions[0].message
+        };
+    }
+
+    changeService(service) {
+        for (let i = 0; i < serviceOptions.length; i++) {
+            if (serviceOptions[i].value === service) {
+                this.setState({
+                    service: serviceOptions[i].message
+                });
+
+                break;
+            }
+        }
+    }
+
     render() {
         const {
             setEmail,
@@ -192,7 +225,10 @@ export class HomePage extends Component {
                         <Card fluid>
                             <Card.Content>
                                 <Card.Header>
-                                    Tell us how you want your yard cut...
+                                    <div style={Styles.cardHeaderContainer}>
+                                        {this.state.service}
+                                        <Dropdown simple text=' ' options={serviceOptions} onChange={(event, data) => this.changeService(data.value)}/>
+                                    </div>
                                 </Card.Header>
                             </Card.Content>
                             <Card.Content>
