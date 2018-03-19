@@ -1,11 +1,21 @@
 const green = '#63BA18';
-const white = '#FFFFFF'
+const white = '#FFFFFF';
+const orange = '#FFB300';
+const blue= '#1565C0';
 
 export default {
+    navbarLogo: {
+        paddingTop: '1vh',
+        paddingLeft: '5vw',
+        fontSize: '3vh',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        color: orange
+    },
     navbarContainer: {
         width: '100%',
         minHeight: '3.5vh',
-        backgroundColor: green,
+        backgroundColor: white,
         position: 'fixed',
         top: '0px'
     },
@@ -13,7 +23,7 @@ export default {
         paddingRight: '1rem'
     },
     menuItem: {
-        color: 'white'
+        color: orange
     },
     modal: {
         backgroundColor: 'white',
@@ -41,7 +51,7 @@ export default {
         paddingBottom: '.5rem'
     },
     contentContainer: {
-        paddingTop: '3.5vh',
+        marginTop: '3.5vh',
         height: '96.5vh',
         backgroundImage: 'url("http://www.tokkoro.com/picsup/3004995-blur_blurred_eco_environment_garden_grass_green_lawn_mowing_whitespace_yard.jpg")',
         backgroundSize: '100%',
@@ -51,7 +61,9 @@ export default {
     },
     cardContainer: {
         width: '20%',
-        minWidth: '300px'
+        minWidth: '300px',
+        border: `${green} 3px solid`,
+        borderRadius: '6px'
     },
     cardInputContainer: {
         display: 'flex',

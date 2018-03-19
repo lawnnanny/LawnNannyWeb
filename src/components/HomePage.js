@@ -30,6 +30,7 @@ export class HomePage extends Component {
             <div>
                 <div style={Styles.navbarContainer}>
                     <Menu secondary style={Styles.loginSignupMenu}>
+                        <span style={Styles.navbarLogo}>Terra</span>
                         <Menu.Menu position='right'>
                             <Modal
                                 style={Styles.modal}
