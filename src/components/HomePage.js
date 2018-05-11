@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Menu, Modal, Input, Grid, Button, Form, Dimmer } from 'semantic-ui-react';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
