@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page looks correct visually 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#63BA18",
+      "minHeight": 42,
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="ui secondary menu"
+    style={
+      Object {
+        "paddingRight": "1rem",
+      }
+    }
+  >
+    <div
+      className="right menu"
+    >
+      <a
+        className="item"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Login
+      </a>
+      <a
+        className="item"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Sign Up
+      </a>
+    </div>
+  </div>
+</div>
+`;
