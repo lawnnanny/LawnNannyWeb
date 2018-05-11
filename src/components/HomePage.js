@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Menu, Modal, Input, Grid, Button, Form, Dimmer } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
@@ -28,7 +28,7 @@ export class HomePage extends Component {
 
         return (
             <div style={Styles.navbarContainer}>
-                <Menu secondary style={Styles.loginSignupMenu}>
+                <Menu secondary style={Styles.loginSignupMenuContainer}>
                     <Menu.Menu position='right'>
                         <Modal
                             style={Styles.modal}

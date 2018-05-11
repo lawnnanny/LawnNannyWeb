@@ -7,7 +7,7 @@ export default {
         minHeight: 42,
         backgroundColor: green
     },
-    loginSignupMenu: {
+    loginSignupMenuContainer: {
         paddingRight: '1rem'
     },
     menuItem: {
