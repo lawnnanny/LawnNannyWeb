@@ -7,6 +7,9 @@ export default {
         minHeight: 42,
         backgroundColor: green
     },
+    header: {
+        backgroundImage: "url('lawn.jpg')"
+    },
     loginSignupMenu: {
         paddingRight: '1rem'
     },

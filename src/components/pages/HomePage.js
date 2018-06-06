@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 
-import Styles from '../styles/HomePage';
-import Actions from '../reducers/Actions'
-import { statekeys } from '../helpers/Common' 
+import requestPipeline from '../../components/pages/requestPipeline';
+
+import Styles from '../../styles/HomePage';
+import Actions from '../../reducers/Actions'
+import { statekeys } from '../../helpers/Common' 
 
 export class HomePage extends Component {
     render() {
@@ -27,6 +30,7 @@ export class HomePage extends Component {
         } = this.props;
 
         return (
+            <div>
             <div style={Styles.navbarContainer}>
                 <Menu secondary style={Styles.loginSignupMenu}>
                     <Menu.Menu position='right'>
@@ -184,6 +188,21 @@ export class HomePage extends Component {
                         </Modal>
                     </Menu.Menu>
                 </Menu>
+            </div>
+            <Grid style={Styles.header} centered padded relaxed>
+            <Grid.Row>
+            </Grid.Row>
+
+             <Grid.Row>
+             <Link to='/requestPipeline'>
+             <Button size='large'>Make a Request</Button>
+             </Link>
+            </Grid.Row>
+
+             <Grid.Row>
+            </Grid.Row>
+
+            </Grid>
             </div>
         );
     }
