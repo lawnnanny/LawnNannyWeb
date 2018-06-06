@@ -14,7 +14,7 @@ import '../sass/Routes.css';
 export default class Routes extends Component {
     constructor() {
         super();
-        
+
         const store = createStore(reducers);
 
         this.state = {
@@ -32,8 +32,8 @@ export default class Routes extends Component {
                 <BrowserRouter className="router">
                     <Switch>
                         <Route exact path="/test" component={App}/>
-                        <Route exact path="/" component={HomePage}/>
-                        <Route exact path="/" component={requestPipeline}/>
+                        <Route exact path="/HomePage" component={HomePage}/>
+                        <Route exact path="/requestPipeline" component={requestPipeline}/>
                         <Route path="/*" component={Error404}/>
                     </Switch>
                 </BrowserRouter>
