@@ -25,7 +25,8 @@
     "test": "mocha browserTest/test.js ",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "lint": "eslint src"
   },
   "devDependencies": {
     "jasmine": "^2.9.0",
