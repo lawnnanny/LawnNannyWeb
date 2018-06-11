@@ -11,7 +11,23 @@ import { statekeys } from '../../helpers/Common'
 
 export class HomePage extends Component {
   render() {
-    const {setEmail, setPassword, setFirstName, setLastName, setPasswordRepeat, setAddress, setCity, setAddressState, setZipcode, openLoginModal, closeLoginModal, isLoginModalOpen, openSignupModal, closeSignupModal, isSignupModalOpen} = this.props;
+    const {
+      setEmail,
+      setPassword,
+      setFirstName,
+      setLastName,
+      setPasswordRepeat,
+      setAddress,
+      setCity,
+      setAddressState,
+      setZipcode,
+      openLoginModal,
+      closeLoginModal, 
+      isLoginModalOpen,
+      openSignupModal,
+      closeSignupModal,
+      isSignupModalOpen
+    } = this.props;
 
     return (
             <div>
