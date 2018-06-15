@@ -4,7 +4,7 @@ import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
 import Actions from '../reducers/Actions'
-import { statekeys } from '../helpers/Common' 
+import { statekeys } from '../helpers/Common'
 
 export class HomePage extends Component {
     render() {
