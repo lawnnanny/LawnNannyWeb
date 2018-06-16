@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 
 import Styles from '../styles/HomePage';
-import Actions from '../reducers/Actions'
 import { statekeys } from '../helpers/Common' 
 
-export class HomePage extends Component {
+export default class HomePage extends Component {
     render() {
         const {
             setEmail,
@@ -28,7 +26,7 @@ export class HomePage extends Component {
 
         return (
             <div style={Styles.navbarContainer}>
-                <Menu secondary style={Styles.loginSignupMenu}>
+                <Menu secondary style={Styles.loginSignupMenuContainer}>
                     <Menu.Menu position='right'>
                         <Modal
                             style={Styles.modal}
@@ -188,119 +186,3 @@ export class HomePage extends Component {
         );
     }
 };
-
-const mapDispatchToProps = dispatch => {
-    return {
-        setEmail: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setEmail,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setPassword: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setPassword,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setFirstName: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setFirstName,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setLastName: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setLastName,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setPasswordRepeat: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setPasswordRepeat,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setAddress: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setAddress,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setCity: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setCity,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setAddressState: (event,data) => {
-            const value = data.value,
-                action = {
-                    type: Actions.login.setAddressState,
-                    value
-                };
-
-            dispatch(action);
-        },
-        setZipcode: event => {
-            const value = event.target.value,
-                action = {
-                    type: Actions.login.setZipcode,
-                    value
-                };
-
-            dispatch(action);
-        },
-        openLoginModal: () => {
-            const action = {
-                type: Actions.login.toggleLoginModal
-            };
-
-            dispatch(action);
-        },
-        closeLoginModal: () => {
-            const action = {
-                type: Actions.login.clear
-            };
-
-            dispatch(action);
-        },
-         openSignupModal: () => {
-            const action = {
-                type: Actions.login.toggleSignupModal
-            };
-
-            dispatch(action);
-        },
-        closeSignupModal: () => {
-            const action = {
-                type: Actions.login.clear
-            };
-
-            dispatch(action);
-        }
-    };
-}
-
-export default connect(() => { return {} }, mapDispatchToProps)(HomePage);

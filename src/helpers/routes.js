@@ -3,9 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from '../components/App';
 import Error404 from '../components/errors/Error404';
-import HomePage from '../components/HomePage';
+import ConnectedHomePage from '../connectedComponents/ConnectedHomePage';
 import reducers from '../reducers/reducers';
 
 import '../sass/Routes.css';
@@ -30,8 +29,7 @@ export default class Routes extends Component {
             <Provider store={this.state.store}>
                 <BrowserRouter className="router">
                     <Switch>
-                        <Route exact path="/test" component={App}/>
-                        <Route exact path="/" component={HomePage}/>
+                        <Route exact path="/" component={ConnectedHomePage}/>
                         <Route path="/*" component={Error404}/>
                     </Switch>
                 </BrowserRouter>
