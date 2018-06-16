@@ -2,7 +2,7 @@ import React from 'react';
 import HomePage from '../src/components/HomePage';
 import { shallow } from 'enzyme';
 import chance from 'chance';
-import { Menu, Modal, Grid } from 'semantic-ui-react';
+import { Menu, Modal, Grid, Input } from 'semantic-ui-react';
 
 describe('Home Page', () => {
 	let wrapper,
@@ -176,6 +176,8 @@ describe('Home Page', () => {
 						});
 
 						it('contains three rows', () => {
+							expect.assertions(3);
+
 							const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
 
 							loginModalDescriptionGridRows.forEach(row => {
@@ -183,10 +185,139 @@ describe('Home Page', () => {
 							});
 						});
 
+						it('contains a column inside of each row', () => {
+							expect.assertions(3);
+
+							const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
+
+							loginModalDescriptionGridRows.forEach(row => {
+								const column = row.childAt(0);
+
+								expect(column.type()).toEqual(Grid.Column);
+							});
+						});
+
 						it('contains a row for the login button that is centered', () => {
 							const loginButtonRow = loginModalDescriptionGrid.childAt(2);
 
 							expect(loginButtonRow.props().centered).toBeTruthy();
+						});
+
+						it('contains a row for the login button that has a column with a width of 6', () => {
+							const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+							const loginButtonColumn = loginButtonRow.childAt(0);
+
+							expect(loginButtonColumn.props().width).toEqual(6);
+						});
+
+						describe('Email Input', () => {
+							let emailInput;
+
+							beforeEach(() => {
+								const emailInputRow = loginModalDescriptionGrid.childAt(0);
+								const emailInputColumn = emailInputRow.childAt(0);
+
+								emailInput = emailInputColumn.childAt(0);
+							});
+
+							it('is an input', () => {
+								expect(emailInput.type()).toEqual(Input);
+							});
+
+							it('has a fluid width', () => {
+								expect(emailInput.props().fluid).toBeTruthy();
+							});
+
+							it('has a user icon', () => {
+								expect(emailInput.props().icon).toEqual('user');
+							});
+
+							it('positions the icon on the left side', () => {
+								expect(emailInput.props().iconPosition).toEqual('left');
+							});
+
+							it('displays the correct placeholder text', () => {
+								expect(emailInput.props().placeholder).toEqual('someone@example.com');
+							});
+
+							it('sets the email when the value changes', () => {
+								const mockSetEmail = jest.fn();
+
+								wrapper = renderComponent({ setEmail: mockSetEmail });
+								navbar = wrapper.childAt(0);
+								loginSignupButtonContainer = navbar.childAt(0);
+								loginModal = loginSignupButtonContainer.childAt(0);
+								loginModalDescription = loginModal.childAt(1);
+								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+
+								const emailInputRow = loginModalDescriptionGrid.childAt(0);
+								const emailInputColumn = emailInputRow.childAt(0);
+
+								emailInput = emailInputColumn.childAt(0);
+
+								const emailInputOnChangeHandler = emailInput.props().onChange;
+
+								emailInputOnChangeHandler();
+
+								expect(mockSetEmail).toHaveBeenCalledTimes(1);
+							});
+						});
+
+						describe('Password Input', () => {
+							let passwordInput;
+
+							beforeEach(() => {
+								const passwordInputRow = loginModalDescriptionGrid.childAt(1);
+								const passwordInputColumn = passwordInputRow.childAt(0);
+
+								passwordInput = passwordInputColumn.childAt(0);
+							});
+
+							it('is an input', () => {
+								expect(passwordInput.type()).toEqual(Input);
+							});
+
+							it('has a fluid width', () => {
+								expect(passwordInput.props().fluid).toBeTruthy();
+							});
+
+							it('has a user icon', () => {
+								expect(passwordInput.props().icon).toEqual('lock');
+							});
+
+							it('is a type input', () => {
+								expect(passwordInput.props().type).toEqual('password');
+							});
+
+							it('positions the icon on the left side', () => {
+								expect(passwordInput.props().iconPosition).toEqual('left');
+							});
+
+							it('displays the correct placeholder text', () => {
+								expect(passwordInput.props().placeholder).toEqual('Password');
+							});
+
+							it('sets the email when the value changes', () => {
+								const mockSetPassword = jest.fn();
+
+								wrapper = renderComponent({ setPassword: mockSetPassword });
+								navbar = wrapper.childAt(0);
+								loginSignupButtonContainer = navbar.childAt(0);
+								loginModal = loginSignupButtonContainer.childAt(0);
+								loginModalDescription = loginModal.childAt(1);
+								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+
+								const passwordInputRow = loginModalDescriptionGrid.childAt(1);
+								const passwordInputColumn = passwordInputRow.childAt(0);
+
+								passwordInput = passwordInputColumn.childAt(0);
+
+								const passwordInputOnChangeHandler = passwordInput.props().onChange;
+
+								passwordInputOnChangeHandler();
+
+								expect(mockSetPassword).toHaveBeenCalledTimes(1);
+							});
 						});
 					});
 				});
