@@ -20,10 +20,10 @@ describe('Home Page', () => {
 		setZipcode={props.setZipcode || jest.fn()}
 		openLoginModal={props.openLoginModal || jest.fn()}
 		closeLoginModal={props.closeLoginModal || jest.fn()}
-		isLoginModalOpen={props.isLoginModalOpen || chance.bool()}
+		isLoginModalOpen={props.isLoginModalOpen === undefined ? chance.bool() : props.isLoginModalOpen}
 		openSignupModal={props.openSignupModal || jest.fn()}
 		closeSignupModal={props.closeSignupModal || jest.fn()}
-		isSignupModalOpen={props.isSignupModalOpen || chance.bool()}
+		isSignupModalOpen={props.isSignupModalOpen === undefined ? chance.bool() : props.isSignupModalOpen}
 	/>);
 
 	beforeEach(() => {
@@ -414,6 +414,10 @@ describe('Home Page', () => {
 					signupModalOnCloseHandler();
 
 					expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
+				});
+
+				it('displays a close icon', () => {
+					expect(signupModal.props().closeIcon).toBeTruthy();
 				});
 			});
 		});
