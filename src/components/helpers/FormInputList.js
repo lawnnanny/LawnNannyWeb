@@ -26,7 +26,7 @@ export default class FormInputList extends FormInput {
             {isSelected} = this.state;
 
         return (
-            <div className={`${className ? className : ""}`}>
+            <div className={`${className || ""}`}>
                 <div
                     className={`form-input-label${isSelected ? " form-input-label--selected" : ""}`}
                 >
@@ -41,7 +41,7 @@ export default class FormInputList extends FormInput {
                     onChange={onChange}
                     onSelect={this.changeState.bind(this, "isSelected", true)}
                     onBlur={this.changeState.bind(this, "isSelected", false)}
-                ></input>
+                 />
                 <datalist
                     id="options"
                 >

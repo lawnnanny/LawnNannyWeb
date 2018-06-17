@@ -1,10 +1,9 @@
+import 'semantic-ui-css/semantic.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './helpers/routes';
-
-import 'semantic-ui-css/semantic.min.css';
+import App from './components/App';
 
 ReactDOM.render(
-    <Routes/>,
+    <App/>,
     document.getElementById('root')
 );

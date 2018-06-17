@@ -1,22 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
-import logo from './logo.svg';
-import '../sass/App.css';
+import Error404 from "../components/errors/Error404";
+import HomePage from "./HomePage";
+import reducers from "../reducers/reducers";
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-            </div>
-        );
-    }
+export default class App extends Component {
+  constructor() {
+    super();
+
+    const store = createStore(reducers);
+
+    this.state = {
+      store
+    };
+
+    store.subscribe(() => {
+      console.log("store.getState()", store.getState());
+    });
+  }
+  render() {
+    return (
+      <Provider store={this.state.store}>
+        <BrowserRouter className="router">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/*" component={Error404} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
-
-export default App;
