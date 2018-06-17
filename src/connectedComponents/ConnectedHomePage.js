@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import Actions from '../reducers/Actions';
 import HomePage from '../components/HomePage';
 
-const mapDispatchToProps = dispatch => {
-    return {
+const mapDispatchToProps = dispatch => ({
         setEmail: event => {
             const value = event.target.value,
                 action = {
@@ -113,7 +112,6 @@ const mapDispatchToProps = dispatch => {
 
             dispatch(action);
         }
-    };
-};
+    });
 
-export default connect(() => { return {} }, mapDispatchToProps)(HomePage);
+export default connect(() => ({}), mapDispatchToProps)(HomePage);

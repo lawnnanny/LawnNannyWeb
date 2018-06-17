@@ -1,6 +1,5 @@
 export default class ListHelper {
-    static getStates = () => {
-        return [
+    static getStates = () => [
             'AL',
             'AK',
             'AR',
@@ -52,5 +51,4 @@ export default class ListHelper {
             'WV',
             'WY'
         ];
-    };
 }

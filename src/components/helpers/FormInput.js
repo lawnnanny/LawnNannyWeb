@@ -13,11 +13,9 @@ export default class FormInput extends Component {
     }
 
     changeState(property, value) {
-        this.setState(previousState => {
-            return Object.assign({}, previousState, {
+        this.setState(previousState => Object.assign({}, previousState, {
                 [property]: value
-            });
-        });
+            }));
     }
 
     render() {
@@ -25,7 +23,7 @@ export default class FormInput extends Component {
             {isSelected} = this.state;
 
         return (
-            <div className={`${className ? className : ""}`}>
+            <div className={`${className || ""}`}>
                 <div
                     className={`form-input-label${isSelected ? " form-input-label--selected" : ""}`}
                 >
