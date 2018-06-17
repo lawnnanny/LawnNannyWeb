@@ -297,7 +297,7 @@ describe('Home Page', () => {
 								expect(passwordInput.props().placeholder).toEqual('Password');
 							});
 
-							it('sets the email when the value changes', () => {
+							it('sets the password when the value changes', () => {
 								const mockSetPassword = jest.fn();
 
 								wrapper = renderComponent({ setPassword: mockSetPassword });
