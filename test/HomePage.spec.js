@@ -2,7 +2,7 @@ import React from 'react';
 import HomePage from '../src/components/HomePage';
 import { shallow } from 'enzyme';
 import chance from 'chance';
-import { Menu, Modal, Grid, Input } from 'semantic-ui-react';
+import { Menu, Modal, Grid, Input, Button } from 'semantic-ui-react';
 
 describe('Home Page', () => {
 	let wrapper,
@@ -317,6 +317,47 @@ describe('Home Page', () => {
 								passwordInputOnChangeHandler();
 
 								expect(mockSetPassword).toHaveBeenCalledTimes(1);
+							});
+						});
+
+						describe('Login Button', () => {
+							let loginButton;
+
+							beforeEach(() => {
+								const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+								const loginButtonColumn = loginButtonRow.childAt(0);
+
+								loginButton = loginButtonColumn.childAt(0);
+							});
+
+							it('is a button', () => {
+								expect(loginButton.type()).toEqual(Button);
+							});
+
+							it('is a large size', () => {
+								expect(loginButton.props().size).toEqual('large');
+							});
+
+							it('closes the login modal when clicked', () => {
+								const mockCloseLoginModal = jest.fn();
+
+								wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+								navbar = wrapper.childAt(0);
+								loginSignupButtonContainer = navbar.childAt(0);
+								loginModal = loginSignupButtonContainer.childAt(0);
+								loginModalDescription = loginModal.childAt(1);
+								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+
+								const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+								const loginButtonColumn = loginButtonRow.childAt(0);
+
+								loginButton = loginButtonColumn.childAt(0);
+
+								const loginButtonOnClickHandler = loginButton.props().onClick;
+
+								loginButtonOnClickHandler();
+
+								expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
 							});
 						});
 					});
