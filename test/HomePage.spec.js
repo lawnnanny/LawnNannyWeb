@@ -2,7 +2,7 @@ import React from 'react';
 import HomePage from '../src/components/HomePage';
 import { shallow } from 'enzyme';
 import chance from 'chance';
-import { Menu, Modal, Grid, Input, Button } from 'semantic-ui-react';
+import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
 
 describe('Home Page', () => {
 	let wrapper,
@@ -453,6 +453,111 @@ describe('Home Page', () => {
 						const signupModalTriggerText = signupModalTrigger.childAt(0);
 
 						expect(signupModalTriggerText.text()).toEqual('Sign Up');
+					});
+				});
+
+				describe('Signup Modal Header', () => {
+					let signupModalHeader;
+
+					beforeEach(() => {
+						signupModalHeader = signupModal.childAt(0);
+					});
+
+					it('is a modal header', () => {
+						expect(signupModalHeader.type()).toEqual(Modal.Header);
+					});
+
+					it('displays the correct message', () => {
+						const signupModalHeaderText = signupModalHeader.childAt(0);
+
+						expect(signupModalHeaderText.text()).toEqual('Sign Up!');
+					});
+				});
+
+				describe('Signup Modal Description', () => {
+					let signupModalDescription;
+
+					beforeEach(() => {
+						signupModalDescription = signupModal.childAt(1);
+					});
+
+					it('is a modal description', () => {
+						expect(signupModalDescription.type()).toEqual(Modal.Description);
+					});
+
+					describe('Signup Modal Form', () => {
+						let signupModalForm;
+
+						beforeEach(() => {
+							signupModalForm = signupModalDescription.childAt(0);
+						});
+
+						it('is a form', () => {
+							expect(signupModalForm.type()).toEqual(Form);
+						});
+
+						describe('Form Group - Name', () => {
+							let nameFormGroup;
+
+							beforeEach(() => {
+								nameFormGroup = signupModalForm.childAt(0);
+							});
+
+							it('is a form group', () => {
+								expect(nameFormGroup.type()).toEqual(Form.Group);
+							});
+
+							it('has fields of equal widths', () => {
+								expect(nameFormGroup.props().widths).toEqual('equal');
+							});
+
+							describe('First Name Input', () => {
+								let firstNameInput;
+
+								beforeEach(() => {
+									firstNameInput = nameFormGroup.childAt(0);
+								});
+
+								it('is a form input', () => {
+									expect(firstNameInput.type()).toEqual(Form.Input);
+								});
+
+								it('has a fluid width', () => {
+									expect(firstNameInput.props().fluid).toBeTruthy();
+								});
+
+								it('is labelled correctly', () => {
+									expect(firstNameInput.props().label).toEqual('First Name');
+								});
+
+								it('is the correct color', () => {
+									expect(firstNameInput.props().color).toEqual('white');
+								});
+
+								it('has the correct placeholder text', () => {
+									expect(firstNameInput.props().placeholder).toEqual('First Name');
+								});
+
+								it('updates the first name when the input is changed', () => {
+									const mockSetFirstName = jest.fn();
+
+									wrapper = renderComponent({ setFirstName: mockSetFirstName });
+									navbar = wrapper.childAt(0);
+									loginSignupButtonContainer = navbar.childAt(0);
+									signupModal = loginSignupButtonContainer.childAt(1);
+									signupModalDescription = signupModal.childAt(1);
+									signupModalForm = signupModalDescription.childAt(0);
+									nameFormGroup = signupModalForm.childAt(0);
+									firstNameInput = nameFormGroup.childAt(0);
+
+									const firstNameInputOnChangeHandler = firstNameInput.props().onChange;
+
+									firstNameInputOnChangeHandler();
+
+									expect(mockSetFirstName).toHaveBeenCalledTimes(1);
+								});
+							});
+						});
 					});
 				});
 			});
