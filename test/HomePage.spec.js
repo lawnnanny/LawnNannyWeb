@@ -99,6 +99,17 @@ describe('Home Page', () => {
 					expect(loginModal.props().closeIcon).toBeTruthy();
 				});
 
+				it('is open depending on what the open prop is', () => {
+					const fakeIsLoginModalOpen = chance.bool();
+
+					wrapper = renderComponent({ isLoginModalOpen: fakeIsLoginModalOpen });
+					navbar = wrapper.childAt(0);
+					loginSignupButtonContainer = navbar.childAt(0);
+					loginModal = loginSignupButtonContainer.childAt(0);
+
+					expect(loginModal.props().open).toEqual(fakeIsLoginModalOpen);
+				});
+
 				describe('Login Modal trigger', () => {
 					let loginModalTrigger;
 
@@ -361,6 +372,48 @@ describe('Home Page', () => {
 							});
 						});
 					});
+				});
+			});
+
+			describe('Signup Modal', () => {
+				let signupModal;
+
+				beforeEach(() => {
+					signupModal = loginSignupButtonContainer.childAt(1);
+				});
+
+				it('is a modal', () => {
+					expect(signupModal.type()).toEqual(Modal);
+				});
+
+				it('is a tiny modal', () => {
+					expect(signupModal.props().size).toEqual('tiny');
+				});
+
+				it('is open depending on the value of the open prop', () => {
+					const fakeIsSignupModalOpen = chance.bool();
+
+					wrapper = renderComponent({ isSignupModalOpen: fakeIsSignupModalOpen });
+					navbar = wrapper.childAt(0);
+					loginSignupButtonContainer = navbar.childAt(0);
+					signupModal = loginSignupButtonContainer.childAt(1);
+
+					expect(signupModal.props().open).toEqual(fakeIsSignupModalOpen);
+				});
+
+				it('closes the modal when closed', () => {
+					const mockCloseSignupModal = jest.fn();
+
+					wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
+					navbar = wrapper.childAt(0);
+					loginSignupButtonContainer = navbar.childAt(0);
+					signupModal = loginSignupButtonContainer.childAt(1);
+
+					const signupModalOnCloseHandler = signupModal.props().onClose;
+
+					signupModalOnCloseHandler();
+
+					expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
 				});
 			});
 		});
