@@ -419,6 +419,42 @@ describe('Home Page', () => {
 				it('displays a close icon', () => {
 					expect(signupModal.props().closeIcon).toBeTruthy();
 				});
+
+				describe('Signup Modal trigger', () => {
+					let signupModalTrigger;
+
+					beforeEach(() => {
+						signupModalTrigger = shallow(signupModal.props().trigger);
+					});
+
+					it('is a menu item', () => {
+						const expectedType = shallow(<Menu.Item onClick={jest.fn()}/>).type();
+
+						expect(signupModalTrigger.type()).toEqual(expectedType);
+					});
+
+					it('opens the modal when clicked', () => {
+						const mockOpenSignupModal = jest.fn();
+
+						wrapper = renderComponent({ openSignupModal: mockOpenSignupModal });
+						navbar = wrapper.childAt(0);
+						loginSignupButtonContainer = navbar.childAt(0);
+						signupModal = loginSignupButtonContainer.childAt(1);
+						signupModalTrigger = shallow(signupModal.props().trigger);
+
+						const signupModalTriggerOnClickHandler = signupModalTrigger.props().onClick;
+
+						signupModalTriggerOnClickHandler();
+
+						expect(mockOpenSignupModal).toHaveBeenCalledTimes(1);
+					});
+
+					it('displays the correct word', () => {
+						const signupModalTriggerText = signupModalTrigger.childAt(0);
+
+						expect(signupModalTriggerText.text()).toEqual('Sign Up');
+					});
+				});
 			});
 		});
 	});
