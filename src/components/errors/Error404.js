@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React, { connect } from "react";
 
-export default class Error404 extends Component {
-    render() {
-        return (
-            <p>404 Not Found :(</p>
-        );
-    }
-}
+const Error404 = () => <p>404 Not Found : </p>;
+
+export default connect(() => ({}))(Error404);

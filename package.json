@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint":"eslint"
   },
   "devDependencies": {
     "babel-jest": "^22.4.3",
@@ -32,9 +33,17 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.9.1",
     "jasmine": "^2.9.0",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
+    "prettier": "^1.13.5",
     "react-test-renderer": "^16.3.2",
     "selenium-standalone": "^6.12.0",
     "wdio-jasmine-framework": "^0.3.2",

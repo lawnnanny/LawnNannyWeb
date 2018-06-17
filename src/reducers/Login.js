@@ -1,7 +1,6 @@
 import Actions from './Actions';
 
-const getInitialState = () => {
-    return {
+const getInitialState = () => ({
         firstName: '',
         lastName: '',
         email: '',
@@ -12,14 +11,11 @@ const getInitialState = () => {
         addressState: '',
         zipcode: '',
         isLoginModalOpen: false
-    };
-};
+    });
 
-const setState = (previousState, property, newValue) => {
-    return Object.assign({}, previousState, {
+const setState = (previousState, property, newValue) => Object.assign({}, previousState, {
         [property]: newValue
     });
-};
 
 const clearPassword = previousState => {
     const stateAfterPasswordCleared = setState(previousState, 'password', '');
