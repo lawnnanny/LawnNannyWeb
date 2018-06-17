@@ -29,7 +29,15 @@
     "lint": "eslint src"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.9.1",
     "jasmine": "^2.9.0",
+    "prettier": "^1.13.5",
     "selenium-standalone": "^6.12.0",
     "wdio-jasmine-framework": "^0.3.2",
     "wdio-spec-reporter": "^0.1.3",
