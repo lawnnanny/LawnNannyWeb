@@ -1,4 +1,4 @@
-import React, {} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 
@@ -279,16 +279,3 @@ const mapDispatchToProps = dispatch => ({
     })
 
 export default connect(() => ({}), mapDispatchToProps)(HomePage);
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
-Press h to open a hovercard with more details.
