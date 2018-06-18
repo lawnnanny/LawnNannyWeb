@@ -2,15 +2,14 @@ import { shallow } from "enzyme";
 import { Menu, Modal, Grid } from "semantic-ui-react";
 import chance from "chance";
 import React from "react";
-import HomePageComponents from "../src/components/pages/HomePage";
+import HomePage from "../src/components/pages/HomePage";
 
 describe("Home Page", () => {
-  let wrapper;
-  let chance;
+  let wrapper, chance;
 
   const renderComponent = (props = {}) =>
     shallow(
-      <HomePageComponents
+      <HomePage
         setEmail={props.setEmail || jest.fn()}
         setPassword={props.setPassword || jest.fn()}
         setFirstName={props.setFirstName || jest.fn()}

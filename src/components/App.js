@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import reducers from "../reducers/reducers";
 
 import Error404 from "../components/errors/Error404";
-import HomePageComponents from "./pages/HomePage";
-import reducers from "../reducers/reducers";
+import HomePage from "./pages/HomePage";
+import requestPipelineComponent from "./pages/requestPipeline";
 
 export default class App extends Component {
   constructor() {
@@ -26,7 +27,13 @@ export default class App extends Component {
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
           <Switch>
-            <Route exact path="/" component={HomePageComponents} />
+            <Route exact path="/test" component={App} />
+            <Route exact path="/HomePage" component={HomePage} />
+            <Route
+              exact
+              path="/requestPipeline"
+              component={requestPipelineComponent}
+            />
             <Route path="/*" component={Error404} />
           </Switch>
         </BrowserRouter>
