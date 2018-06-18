@@ -1,29 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import Styles from "../../styles/HomePage";
-import Actions from "../../reducers/Actions";
 import { statekeys } from "../../helpers/Common";
 
-export const HomePage = (
-  setEmail,
-  setPassword,
-  setFirstName,
-  setLastName,
-  setPasswordRepeat,
-  setAddress,
-  setCity,
-  setAddressState,
-  setZipcode,
-  openLoginModal,
-  closeLoginModal,
-  isLoginModalOpen,
-  openSignupModal,
-  closeSignupModal,
-  isSignupModalOpen
-) => (
+export const HomePage = props => (
   <div>
     <div style={Styles.navbarContainer}>
       <Menu secondary style={Styles.loginSignupMenu}>
@@ -32,12 +14,12 @@ export const HomePage = (
             style={Styles.modal}
             size="mini"
             trigger={
-              <Menu.Item style={Styles.menuItem} onClick={openLoginModal}>
+              <Menu.Item style={Styles.menuItem} onClick={props.openLoginModal}>
                 Login
               </Menu.Item>
             }
-            open={isLoginModalOpen}
-            onClose={closeLoginModal}
+            open={props.isLoginModalOpen}
+            onClose={props.closeLoginModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>
@@ -52,7 +34,7 @@ export const HomePage = (
                       icon="user"
                       iconPosition="left"
                       placeholder="someone@example.com"
-                      onChange={setEmail}
+                      onChange={props.setEmail}
                     />
                   </Grid.Column>
                 </Grid.Row>
@@ -64,7 +46,7 @@ export const HomePage = (
                       type="password"
                       iconPosition="left"
                       placeholder="Password"
-                      onChange={setPassword}
+                      onChange={props.setPassword}
                     />
                   </Grid.Column>
                 </Grid.Row>
@@ -73,7 +55,7 @@ export const HomePage = (
                     <Button
                       style={Styles.modalButton}
                       size="large"
-                      onClick={closeLoginModal}
+                      onClick={props.closeLoginModal}
                     >
                       Login
                     </Button>
@@ -86,12 +68,15 @@ export const HomePage = (
             style={Styles.modal}
             size="tiny"
             trigger={
-              <Menu.Item style={Styles.menuItem} onClick={openSignupModal}>
+              <Menu.Item
+                style={Styles.menuItem}
+                onClick={props.openSignupModal}
+              >
                 Sign Up
               </Menu.Item>
             }
-            open={isSignupModalOpen}
-            onClose={closeSignupModal}
+            open={props.isSignupModalOpen}
+            onClose={props.closeSignupModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
@@ -103,13 +88,13 @@ export const HomePage = (
                     label="First Name"
                     color="white"
                     placeholder="First Name"
-                    onChange={setFirstName}
+                    onChange={props.setFirstName}
                   />
                   <Form.Input
                     fluid
                     label="Last Name"
                     placeholder="Last Name"
-                    onChange={setLastName}
+                    onChange={props.setLastName}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -117,7 +102,7 @@ export const HomePage = (
                     fluid
                     label="Email"
                     placeholder="someone@example.com"
-                    onChange={setEmail}
+                    onChange={props.setEmail}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -126,14 +111,14 @@ export const HomePage = (
                     label="Password"
                     type="password"
                     placeholder="Password"
-                    onChange={setPassword}
+                    onChange={props.setPassword}
                   />
                   <Form.Input
                     fluid
                     label="Repeat Password"
                     type="password"
                     placeholder="Repeat Password"
-                    onChange={setPasswordRepeat}
+                    onChange={props.setPasswordRepeat}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -141,13 +126,13 @@ export const HomePage = (
                     fluid
                     label="Address"
                     placeholder="Address"
-                    onChange={setAddress}
+                    onChange={props.setAddress}
                   />
                   <Form.Input
                     fluid
                     label="City"
                     placeholder="City"
-                    onChange={setCity}
+                    onChange={props.setCity}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -158,13 +143,13 @@ export const HomePage = (
                     search
                     selection
                     options={statekeys}
-                    onChange={setAddressState}
+                    onChange={props.setAddressState}
                   />
                   <Form.Input
                     fluid
                     label="Zipcode"
                     placeholder="Zipcode"
-                    onChange={setZipcode}
+                    onChange={props.setZipcode}
                   />
                 </Form.Group>
                 <Form.Group style={Styles.signUpCheckbox}>
@@ -174,7 +159,7 @@ export const HomePage = (
                   <Form.Button
                     style={Styles.modalButton}
                     size="large"
-                    onClick={closeSignupModal}
+                    onClick={props.closeSignupModal}
                   >
                     Submit
                   </Form.Button>
@@ -194,125 +179,8 @@ export const HomePage = (
           </Button>
         </Link>
       </Grid.Row>
-
       <Grid.Row />
     </Grid>
   </div>
 );
-
-const mapDispatchToProps = dispatch => ({
-  setEmail: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setEmail,
-      value
-    };
-
-    dispatch(action);
-  },
-  setPassword: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setPassword,
-      value
-    };
-
-    dispatch(action);
-  },
-  setFirstName: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setFirstName,
-      value
-    };
-
-    dispatch(action);
-  },
-  setLastName: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setLastName,
-      value
-    };
-
-    dispatch(action);
-  },
-  setPasswordRepeat: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setPasswordRepeat,
-      value
-    };
-
-    dispatch(action);
-  },
-  setAddress: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setAddress,
-      value
-    };
-
-    dispatch(action);
-  },
-  setCity: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setCity,
-      value
-    };
-
-    dispatch(action);
-  },
-  setAddressState: (event, data) => {
-    const value = data.value;
-    const action = {
-      type: Actions.login.setAddressState,
-      value
-    };
-
-    dispatch(action);
-  },
-  setZipcode: event => {
-    const value = event.target.value;
-    const action = {
-      type: Actions.login.setZipcode,
-      value
-    };
-
-    dispatch(action);
-  },
-  openLoginModal: () => {
-    const action = {
-      type: Actions.login.toggleLoginModal
-    };
-
-    dispatch(action);
-  },
-  closeLoginModal: () => {
-    const action = {
-      type: Actions.login.clear
-    };
-
-    dispatch(action);
-  },
-  openSignupModal: () => {
-    const action = {
-      type: Actions.login.toggleSignupModal
-    };
-
-    dispatch(action);
-  },
-  closeSignupModal: () => {
-    const action = {
-      type: Actions.login.clear
-    };
-
-    dispatch(action);
-  }
-});
-
-export default connect(
-  () => ({}),
-  mapDispatchToProps
-)(HomePage);
+export default HomePage;

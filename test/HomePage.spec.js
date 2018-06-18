@@ -30,7 +30,7 @@ describe("Home Page", () => {
 
   beforeEach(() => {
     chance = Chance();
-    wrapper = renderComponent();
+    wrapper = renderComponent().childAt(0);
   });
 
   it("is wrapped in a div", () => {
@@ -85,7 +85,9 @@ describe("Home Page", () => {
         it("closes the model when closed", () => {
           const mockCloseLoginModal = jest.fn();
 
-          wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+          wrapper = renderComponent({
+            closeLoginModal: mockCloseLoginModal
+          }).childAt(0);
           navbar = wrapper.childAt(0);
           loginSignupButtonContainer = navbar.childAt(0);
           loginModal = loginSignupButtonContainer.childAt(0);
@@ -119,7 +121,9 @@ describe("Home Page", () => {
           it("opens the modal when clicked", () => {
             const mockOpenLoginModal = jest.fn();
 
-            wrapper = renderComponent({ openLoginModal: mockOpenLoginModal });
+            wrapper = renderComponent({
+              openLoginModal: mockOpenLoginModal
+            }).childAt(0);
             navbar = wrapper.childAt(0);
             loginSignupButtonContainer = navbar.childAt(0);
             loginModal = loginSignupButtonContainer.childAt(0);
