@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import reducers from "../reducers/reducers";
 
 import Error404 from "../components/errors/Error404";
-import HomePage from "./pages/HomePage";
+import HomePageComponent from "./pages/HomePage";
 import requestPipelineComponent from "./pages/requestPipeline";
 
 export default class App extends Component {
@@ -28,7 +28,7 @@ export default class App extends Component {
         <BrowserRouter className="router">
           <Switch>
             <Route exact path="/test" component={App} />
-            <Route exact path="/HomePage" component={HomePage} />
+            <Route exact path="/HomePage" component={HomePageComponent} />
             <Route
               exact
               path="/requestPipeline"
