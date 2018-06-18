@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-import requestPipeline from "../../components/pages/requestPipeline";
-
 import Styles from "../../styles/HomePage";
 import Actions from "../../reducers/Actions";
 import { statekeys } from "../../helpers/Common";

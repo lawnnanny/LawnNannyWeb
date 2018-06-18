@@ -4,7 +4,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import Error404 from "../components/errors/Error404";
-import HomePage from "./HomePage";
+import HomePageComponents from "./pages/HomePage";
 import reducers from "../reducers/reducers";
 
 export default class App extends Component {
@@ -26,7 +26,7 @@ export default class App extends Component {
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={HomePageComponents} />
             <Route path="/*" component={Error404} />
           </Switch>
         </BrowserRouter>

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Actions from "../reducers/Actions";
-import HomePage from "../components/pages/HomePage";
+import HomePageComponent from "../components/pages/HomePage";
 
 const mapDispatchToProps = dispatch => ({
   setEmail: event => {
@@ -117,4 +117,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   () => ({}),
   mapDispatchToProps
-)(HomePage);
+)(HomePageComponent);
