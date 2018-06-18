@@ -40,5 +40,9 @@ export default {
   },
   signUpCheckbox: {
     paddingBottom: ".5rem"
+  },
+  pipelineButton: {
+    color: white,
+    backgroundColor: green
   }
 };

@@ -189,7 +189,9 @@ export const HomePage = (
       <Grid.Row />
       <Grid.Row>
         <Link to="/requestPipeline">
-          <Button size="large">Make a Request</Button>
+          <Button style={Styles.pipelineButton} size="large">
+            Make a Request
+          </Button>
         </Link>
       </Grid.Row>
 
