@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "lint":"eslint"
+    "lint": "eslint src"
   },
   "devDependencies": {
     "babel-jest": "^22.4.3",

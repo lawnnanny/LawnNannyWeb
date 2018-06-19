@@ -1,5 +1,5 @@
-import React, { connect } from "react";
+import React from "react";
 
 const Error404 = () => <p>404 Not Found : </p>;
 
-export default connect(() => ({}))(Error404);
+export default Error404;
