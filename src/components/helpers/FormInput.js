@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
-import { Input } from 'semantic-ui-react';
-
-import '../../sass/helpers/FormInput.css';
+import React, { Component } from "react";
+import { Input } from "semantic-ui-react";
 
 export default class FormInput extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            isSelected: false
-        };
-    }
+    this.state = {
+      isSelected: false
+    };
+  }
 
-    changeState(property, value) {
-        this.setState(previousState => {
-            return Object.assign({}, previousState, {
-                [property]: value
-            });
-        });
-    }
+  changeState(property, value) {
+    this.setState(previousState =>
+      Object.assign({}, previousState, {
+        [property]: value
+      })
+    );
+  }
 
-    render() {
-        const {label, className, type, onChange} = this.props,
-            {isSelected} = this.state;
+  render() {
+    const label = this.props;
+    const className = this.props;
+    const type = this.props;
+    const onChange = this.props;
+    const isSelected = this.state;
 
-        return (
-            <div className={`${className ? className : ""}`}>
-                <div
-                    className={`form-input-label${isSelected ? " form-input-label--selected" : ""}`}
-                >
-                    {label}
-                </div>
-                <Input
-                    type={type}
-                    onChange={onChange}
-                />
-            </div>
-        )
-    }
+    return (
+      <div className={`${className || ""}`}>
+        <div
+          className={`form-input-label${
+            isSelected ? " form-input-label--selected" : ""
+          }`}
+        >
+          {label}
+        </div>
+        <Input type={type} onChange={onChange} />
+      </div>
+    );
+  }
 }
