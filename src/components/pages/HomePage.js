@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 
 import Styles from "../../styles/HomePage";
 import { statekeys } from "../../helpers/Common";
@@ -183,4 +185,17 @@ export const HomePage = props => (
     </Grid>
   </div>
 );
+
+HomePage.propTypes = {
+  openLoginModal: PropTypes.element.isRequired,
+  isLoginModalOpen: PropTypes.element.isRequired,
+  closeLoginModal: PropTypes.element.isRequired,
+  setEmail: PropTypes.element.isRequired,
+  setPassword: PropTypes.element.isRequired,
+  openSignupModal: PropTypes.element.isRequired,
+  isSignupModalOpen: PropTypes.element.isRequired,
+  closeSignupModal: PropTypes.element.isRequired,
+  setFirstName: PropTypes.element.isRequired,
+  setLastName: PropTypes.element.isRequired,
+}
 export default HomePage;
