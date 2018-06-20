@@ -9,6 +9,7 @@
     "lodash": "^4.17.4",
     "mocha": "^2.0.1",
     "node-sass-chokidar": "0.0.3",
+    "prop-types": "^15.6.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -50,12 +51,7 @@
     "webdriverio": "^4.10.1"
   },
   "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/browserTest"
-    ],
-    "setupFiles": [
-      "./test/setup.js"
-    ]
+    "testPathIgnorePatterns": ["/node_modules/", "/browserTest"],
+    "setupFiles": ["./test/setup.js"]
   }
 }
