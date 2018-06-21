@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,23 @@ import { Link } from "react-router-dom";
 import Styles from "../../styles/HomePage";
 import { statekeys } from "../../helpers/Common";
 
-export const HomePage = props => (
+const HomePage = ({
+  setEmail,
+  setPassword,
+  setFirstName,
+  setLastName,
+  setPasswordRepeat,
+  setAddress,
+  setCity,
+  setAddressState,
+  setZipcode,
+  openLoginModal,
+  closeLoginModal,
+  isLoginModalOpen,
+  openSignupModal,
+  closeSignupModal,
+  isSignupModalOpen
+}) => (
   <div>
     <div style={Styles.navbarContainer}>
       <Menu secondary style={Styles.loginSignupMenu}>
@@ -16,12 +32,12 @@ export const HomePage = props => (
             style={Styles.modal}
             size="mini"
             trigger={
-              <Menu.Item style={Styles.menuItem} onClick={props.openLoginModal}>
+              <Menu.Item style={Styles.menuItem} onClick={openLoginModal}>
                 Login
               </Menu.Item>
             }
-            open={props.isLoginModalOpen}
-            onClose={props.closeLoginModal}
+            open={isLoginModalOpen}
+            onClose={closeLoginModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>
@@ -36,7 +52,7 @@ export const HomePage = props => (
                       icon="user"
                       iconPosition="left"
                       placeholder="someone@example.com"
-                      onChange={props.setEmail}
+                      onChange={setEmail}
                     />
                   </Grid.Column>
                 </Grid.Row>
@@ -48,7 +64,7 @@ export const HomePage = props => (
                       type="password"
                       iconPosition="left"
                       placeholder="Password"
-                      onChange={props.setPassword}
+                      onChange={setPassword}
                     />
                   </Grid.Column>
                 </Grid.Row>
@@ -57,7 +73,7 @@ export const HomePage = props => (
                     <Button
                       style={Styles.modalButton}
                       size="large"
-                      onClick={props.closeLoginModal}
+                      onClick={closeLoginModal}
                     >
                       Login
                     </Button>
@@ -70,15 +86,12 @@ export const HomePage = props => (
             style={Styles.modal}
             size="tiny"
             trigger={
-              <Menu.Item
-                style={Styles.menuItem}
-                onClick={props.openSignupModal}
-              >
+              <Menu.Item style={Styles.menuItem} onClick={openSignupModal}>
                 Sign Up
               </Menu.Item>
             }
-            open={props.isSignupModalOpen}
-            onClose={props.closeSignupModal}
+            open={isSignupModalOpen}
+            onClose={closeSignupModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
@@ -90,13 +103,13 @@ export const HomePage = props => (
                     label="First Name"
                     color="white"
                     placeholder="First Name"
-                    onChange={props.setFirstName}
+                    onChange={setFirstName}
                   />
                   <Form.Input
                     fluid
                     label="Last Name"
                     placeholder="Last Name"
-                    onChange={props.setLastName}
+                    onChange={setLastName}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -104,7 +117,7 @@ export const HomePage = props => (
                     fluid
                     label="Email"
                     placeholder="someone@example.com"
-                    onChange={props.setEmail}
+                    onChange={setEmail}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -113,14 +126,14 @@ export const HomePage = props => (
                     label="Password"
                     type="password"
                     placeholder="Password"
-                    onChange={props.setPassword}
+                    onChange={setPassword}
                   />
                   <Form.Input
                     fluid
                     label="Repeat Password"
                     type="password"
                     placeholder="Repeat Password"
-                    onChange={props.setPasswordRepeat}
+                    onChange={setPasswordRepeat}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -128,13 +141,13 @@ export const HomePage = props => (
                     fluid
                     label="Address"
                     placeholder="Address"
-                    onChange={props.setAddress}
+                    onChange={setAddress}
                   />
                   <Form.Input
                     fluid
                     label="City"
                     placeholder="City"
-                    onChange={props.setCity}
+                    onChange={setCity}
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
@@ -145,13 +158,13 @@ export const HomePage = props => (
                     search
                     selection
                     options={statekeys}
-                    onChange={props.setAddressState}
+                    onChange={setAddressState}
                   />
                   <Form.Input
                     fluid
                     label="Zipcode"
                     placeholder="Zipcode"
-                    onChange={props.setZipcode}
+                    onChange={setZipcode}
                   />
                 </Form.Group>
                 <Form.Group style={Styles.signUpCheckbox}>
@@ -161,7 +174,7 @@ export const HomePage = props => (
                   <Form.Button
                     style={Styles.modalButton}
                     size="large"
-                    onClick={props.closeSignupModal}
+                    onClick={closeSignupModal}
                   >
                     Submit
                   </Form.Button>
@@ -187,20 +200,21 @@ export const HomePage = props => (
 );
 
 HomePage.propTypes = {
-  openLoginModal: PropTypes.element.isRequired,
-  isLoginModalOpen: PropTypes.element.isRequired,
-  closeLoginModal: PropTypes.element.isRequired,
-  setEmail: PropTypes.element.isRequired,
-  setPassword: PropTypes.element.isRequired,
-  openSignupModal: PropTypes.element.isRequired,
-  isSignupModalOpen: PropTypes.element.isRequired,
-  closeSignupModal: PropTypes.element.isRequired,
-  setFirstName: PropTypes.element.isRequired,
-  setLastName: PropTypes.element.isRequired,
-  setPasswordRepeat: PropTypes.element.isRequired,
-  setAddress: PropTypes.element.isRequired,
-  setCity: PropTypes.element.isRequired,
-  setAddressState: PropTypes.element.isRequired,
-  setZipcode: PropTypes.element.isRequired,
-}
+  setEmail: PropTypes.func.isRequired,
+  setPassword: PropTypes.func.isRequired,
+  setFirstName: PropTypes.func.isRequired,
+  setLastName: PropTypes.func.isRequired,
+  setPasswordRepeat: PropTypes.func.isRequired,
+  setAddress: PropTypes.func.isRequired,
+  setCity: PropTypes.func.isRequired,
+  setAddressState: PropTypes.func.isRequired,
+  setZipcode: PropTypes.func.isRequired,
+  openLoginModal: PropTypes.func.isRequired,
+  closeLoginModal: PropTypes.func.isRequired,
+  isLoginModalOpen: PropTypes.bool.isRequired,
+  openSignupModal: PropTypes.func.isRequired,
+  closeSignupModal: PropTypes.func.isRequired,
+  isSignupModalOpen: PropTypes.bool.isRequired
+};
+
 export default HomePage;
