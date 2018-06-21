@@ -197,5 +197,10 @@ HomePage.propTypes = {
   closeSignupModal: PropTypes.element.isRequired,
   setFirstName: PropTypes.element.isRequired,
   setLastName: PropTypes.element.isRequired,
+  setPasswordRepeat: PropTypes.element.isRequired,
+  setAddress: PropTypes.element.isRequired,
+  setCity: PropTypes.element.isRequired,
+  setAddressState: PropTypes.element.isRequired,
+  setZipcode: PropTypes.element.isRequired,
 }
 export default HomePage;
