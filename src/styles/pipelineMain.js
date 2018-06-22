@@ -2,11 +2,10 @@ const green = "#63BA18";
 const white = "#FFFFFF";
 
 export default {
-  image: {
-    border: " solid",
-    borderColor: green
+  RequestImageComponent: {
+    borderColor: white
   },
-  segment: {
+  container: {
     borderColor: white
   }
 };

@@ -1,21 +1,28 @@
 import React from "react";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Button, Checkbox, Form, Container, Header } from "semantic-ui-react";
 
-export const personalInfo = props => (
-  <Form>
-    <Form.Field>
-      <label htmlFor={props.label}>First Name</label>
-      <input placeholder="First Name" />
-    </Form.Field>
-    <Form.Field>
-      <label htmlFor={props.label2}>Last Name</label>
-      <input placeholder="Last Name" />
-    </Form.Field>
-    <Form.Field>
-      <Checkbox label="I agree to the Terms and Conditions" />
-    </Form.Field>
-    <Button type="submit">Submit</Button>
-  </Form>
+export const personalInfo = () => (
+  <Container>
+    <Header> How can we find you? </Header>
+    <Form>
+      <Form.Field>
+        <label>First Name</label>
+        <input placeholder="First Name" />
+      </Form.Field>
+      <Form.Field>
+        <label>Last Name</label>
+        <input placeholder="Last Name" />
+      </Form.Field>
+      <Form.Field>
+        <label>Address</label>
+        <input placeholder="Street Address" />
+      </Form.Field>
+      <Link to="/pipeline/comments">
+        <Button type="submit">Submit</Button>
+      </Link>
+    </Form>
+  </Container>
 );
 
 export default personalInfo;

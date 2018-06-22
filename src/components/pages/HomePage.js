@@ -187,7 +187,7 @@ const HomePage = ({
     <Grid style={Styles.header} centered padded relaxed>
       <Grid.Row />
       <Grid.Row>
-        <Link to="/requestPipeline">
+        <Link to="/pipeline">
           <Button style={Styles.pipelineButton} size="large">
             Make a Request
           </Button>
