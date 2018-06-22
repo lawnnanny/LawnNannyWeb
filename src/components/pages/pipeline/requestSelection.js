@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Header } from "semantic-ui-react";
-import RequestImageComponent from "./requestImage";
+import RequestImageComponent from "../../helpers/requestImage";
 import Styles from "../../../styles/pipelineMain";
 import mower from "../../../images/pipeline/mower.png";
 import rake from "../../../images/pipeline/rake.png";
 import snowBlower from "../../../images/pipeline/snowBlower.png";
 import custom from "../../../images/pipeline/custom.png";
 
-export const requestPipeline = () => (
+export const requestSelection = () => (
   <Container bordered style={Styles.container}>
     <Header as="h2">
       Choose Your Service
@@ -41,4 +41,4 @@ export const requestPipeline = () => (
     />
   </Container>
 );
-export default requestPipeline;
+export default requestSelection;

@@ -6,13 +6,11 @@ import reducers from "../reducers/reducers";
 
 import Error404 from "../components/errors/Error404";
 import HomePageComponent from "./pages/HomePage";
-import pipelineMainComponent from "./pages/pipeline/pipelineMain";
-import mowerFormComponent from "./pages/pipeline/formComponents.js/mowerForm";
-import rakingFormComponent from "./pages/pipeline/formComponents.js/rakingForm";
-import snowBlowingFormComponent from "./pages/pipeline/formComponents.js/snowBlowingForm";
-import customFormComponent from "./pages/pipeline/formComponents.js/customForm";
-import personalInfoComponent from "./pages/pipeline/personalInfo";
-import commentsComponent from "./pages/pipeline/comments";
+import requestSelectioComponent from "./pages/pipeline/requestSelection";
+import mowerFormComponent from "./pages/pipeline/formComponents/mowerForm";
+import rakingFormComponent from "./pages/pipeline/formComponents/rakingForm";
+import snowBlowingFormComponent from "./pages/pipeline/formComponents/snowBlowingForm";
+import customFormComponent from "./pages/pipeline/formComponents/customForm";
 
 export default class App extends Component {
   constructor() {
@@ -35,7 +33,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/test" component={App} />
             <Route exact path="/HomePage" component={HomePageComponent} />
-            <Route exact path="/pipeline" component={pipelineMainComponent} />
+            <Route exact path="/pipeline" component={requestSelectioComponent} />
             <Route
               exact
               path="/pipeline/mowing"
@@ -55,16 +53,6 @@ export default class App extends Component {
               exact
               path="/pipeline/custom"
               component={customFormComponent}
-            />
-            <Route
-              exact
-              path="/pipeline/personalInfo"
-              component={personalInfoComponent}
-            />
-            <Route
-              exact
-              path="/pipeline/comments"
-              component={commentsComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>
