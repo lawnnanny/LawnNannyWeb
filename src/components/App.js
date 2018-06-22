@@ -6,7 +6,7 @@ import reducers from "../reducers/reducers";
 
 import Error404 from "../components/errors/Error404";
 import HomePageComponent from "./pages/HomePage";
-import requestPipelineComponent from "./pages/requestPipeline";
+import requestPipelineComponent from "./pages/pipeline/requestPipeline";
 
 export default class App extends Component {
   constructor() {

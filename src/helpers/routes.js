@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 
 import Error404 from "../components/errors/Error404";
 import HomePageComponent from "../components/pages/HomePage";
-import requestPipelineComponent from "../components/pages/requestPipeline";
+import requestPipelineComponent from "../components/pages/pipeline/requestPipeline";
 import App from "../components/App";
 import ConnectedHomePage from "../connectedComponents/ConnectedHomePage";
 
