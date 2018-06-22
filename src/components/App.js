@@ -13,7 +13,6 @@ import snowBlowingFormComponent from "./pages/pipeline/formComponents.js/snowBlo
 import customFormComponent from "./pages/pipeline/formComponents.js/customForm";
 import personalInfoComponent from "./pages/pipeline/personalInfo";
 import commentsComponent from "./pages/pipeline/comments";
-import requestCompleteComponent from "./pages/pipeline/requestComplete";
 
 export default class App extends Component {
   constructor() {
@@ -66,11 +65,6 @@ export default class App extends Component {
               exact
               path="/pipeline/comments"
               component={commentsComponent}
-            />
-            <Route
-              exact
-              path="/pipeline/complete"
-              component={requestCompleteComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>

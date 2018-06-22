@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Form, Header, Segment, Icon, Grid } from "semantic-ui-react";
 import { statekeys } from "../../../helpers/Common";
+import dab from "../../../images/pipeline/dab.jfif";
 
 export const personalInfo = () => (
   <Segment padded>
