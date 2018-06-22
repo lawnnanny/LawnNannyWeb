@@ -1,26 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Checkbox, Form, Container, Header } from "semantic-ui-react";
-import FormButton from "./formButton";
+import { Button, Form, Container, Header, Icon } from "semantic-ui-react";
 
-export const mowerForm = props => (
-  <Container>
-    <Header> How can we find you? </Header>
+const options = [
+  { key: "C", text: "Conventional", value: "Conventional" },
+  { key: "A", text: "Acreage", value: "Acreage" },
+  { key: "M", text: "Cemetery", value: "Cemetery" },
+  { key: "O", text: "Other", value: "Other" }
+];
+export const mowerForm = () => (
+  <Container text>
+    <Header> Choose your preferences </Header>
     <Form>
       <Form.Field>
-        <label>First Name</label>
-        <input placeholder="First Name" />
+        <Form.Select
+          fluid
+          label="Yard Type"
+          options={options}
+          placeholder="Type"
+        />
       </Form.Field>
-      <Form.Field>
-        <label>Last Name</label>
-        <input placeholder="Last Name" />
-      </Form.Field>
-      <Form.Field>
-        <label>Last Name</label>
-        <input placeholder="Last Name" />
-      </Form.Field>
+      <Form.Checkbox label="I would like to have my grass bagged" />
       <Link to="/pipeline/personalInfo">
-        <Button type="submit">Submit</Button>
+        <Button icon labelPosition="right" positive floated="right">
+          Next
+          <Icon name="right arrow" />
+        </Button>
       </Link>
     </Form>
   </Container>

@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Header, Button, Modal, Image } from "semantic-ui-react";
+import { Header, Button, Modal, Image, Segment } from "semantic-ui-react";
 import dab from "../../../images/pipeline/dab.jfif";
 
 export const comments = () => (
-  <Container>
+  <Segment padded>
     <Header> Request Complete! </Header>
     <Modal trigger={<Button>Show Modal</Button>}>
       <Modal.Header>Follow Your Request</Modal.Header>
@@ -19,7 +19,7 @@ export const comments = () => (
         </Modal.Description>
       </Modal.Content>
     </Modal>
-  </Container>
+  </Segment>
 );
 
 export default comments;
