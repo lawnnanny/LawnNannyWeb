@@ -2,8 +2,8 @@ import React from 'react';
 import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import Chance from 'chance';
-import { HomePage } from '../src/components/pages/HomePage';
-import * as Common from '../src/helpers/Common';
+import { HomePage } from '../../../src/components/pages/HomePage';
+import * as Common from '../../../src/helpers/Common';
 
 describe('Home Page', () => {
   let wrapper;
