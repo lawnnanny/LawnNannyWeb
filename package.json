@@ -51,7 +51,12 @@
     "webdriverio": "^4.10.1"
   },
   "jest": {
-    "testPathIgnorePatterns": ["/node_modules/", "/browserTest"],
-    "setupFiles": ["./test/setup.js"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/browserTest"
+    ],
+    "setupFiles": [
+      "./test/setup.js"
+    ]
   }
 }

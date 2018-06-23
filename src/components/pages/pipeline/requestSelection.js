@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Header } from "semantic-ui-react";
 import RequestOptionComponent from "../../helpers/RequestOption";
-import Styles from "../../../styles/pipelineMain";
 import mower from "../../../images/pipeline/mower.png";
 import rake from "../../../images/pipeline/rake.png";
 import snowBlower from "../../../images/pipeline/snowBlower.png";
 import custom from "../../../images/pipeline/custom.png";
 
-export const requestSelection = () => (
-  <Container bordered style={Styles.container}>
+
+export const requestSelection = ({setTypeOfRequest}) => (
+  <Container bordered>
     <Header as="h2">
       Choose Your Service
       <Header.Subheader>
@@ -16,28 +16,21 @@ export const requestSelection = () => (
       </Header.Subheader>
     </Header>
     <RequestOptionComponent
-      style={Styles.RequestImageComponent}
       imageURL={mower}
       title="Lawn Mowing"
-      link="/pipeline/mowing"
+      onClick = {() => setTypeOfRequest('Lawn Mowing')}
     />
     <RequestOptionComponent
-      style={Styles.RequestImageComponent}
       imageURL={rake}
       title="Leaf Raking"
-      link="/pipeline/raking"
     />
     <RequestOptionComponent
-      style={Styles.RequestImageComponent}
       imageURL={snowBlower}
       title="Snow Clearing"
-      link="/pipeline/blowing"
     />
     <RequestOptionComponent
-      style={Styles.RequestImageComponent}
       imageURL={custom}
       title="Custom Request"
-      link="/pipeline/custom"
     />
   </Container>
 );

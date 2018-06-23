@@ -1,7 +1,7 @@
-const Requests =
+export const Requests =
 {
 "Requests" : {
-    "mowLawn": {
+    "Lawn Mowing": {
         "fields": [
             {"name":"Address", "type":"Text", "id":"lawnField" }
         ]

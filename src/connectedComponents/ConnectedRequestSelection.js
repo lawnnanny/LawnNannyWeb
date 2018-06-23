@@ -1,13 +1,9 @@
 import { connect } from "react-redux";
 import Actions from "../reducers/Actions";
-import HomePageComponent from "../components/pages/HomePage";
-
-const mapStateToProps = (state) => ({
-    typeOfRequest: () => state.typeOfRequest
-})
+import requestSelectionComponent from "../components/pages/pipeline/requestSelection";
 
 const mapDispatchToProps = dispatch => ({
-  setTypeOfRequest: data => {
+  setTypeOfRequest: (data) => {
     const action = {
       type: Actions.login.setTypeOfRequest,
       data
@@ -20,6 +16,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   () => ({}),
-  mapDispatchToProps,
-  mapStateToProps
-)(HomePageComponent);
+  mapDispatchToProps
+)(requestSelectionComponent);

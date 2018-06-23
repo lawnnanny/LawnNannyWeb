@@ -4,9 +4,10 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import Error404 from "../components/errors/Error404";
-import HomePageComponent from "../components/pages/HomePage";
-import pipelineMainComponent from "../components/pages/pipeline/pipelineMain";
-
+import ConnectedHomePageComponent from "../connectedComponents/ConnectedHomePage";
+import ConnectedRequestSelection from "../connectedComponents/ConnectedRequestSelection";
+import requestInformationComponent from "../components/pages/pipeline/requestInformation"
+import App from "../components/App"
 import reducers from "../reducers/reducers";
 
 export default class Routes extends Component {
@@ -29,12 +30,16 @@ export default class Routes extends Component {
         <BrowserRouter className="router">
           <Switch>
             <Route exact path="/test" component={App} />
-            <Route exact path="/HomePage" component={HomePageComponent} />
-            <Route exact path="/pipeline" component={pipelineMainComponent} />
+            <Route exact path="/pipeline" component={ConnectedRequestSelection} />
             <Route
               exact
-              path="/ConnectedHomePage"
-              component={ConnectedHomePage}
+              path="/HomePage"
+              component={ConnectedHomePageComponent}
+            />
+            <Route
+              exact
+              path="/pipeline/requestInformation"
+              component={requestInformationComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>
