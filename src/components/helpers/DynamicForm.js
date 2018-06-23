@@ -42,6 +42,4 @@ class DynamicForm extends React.component {
 
 }
 
-
-
 export default DynamicForm;

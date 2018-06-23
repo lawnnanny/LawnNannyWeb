@@ -14,6 +14,9 @@ export default {
     clearPassword: (i += 1),
     toggleLoginModal: (i += 1),
     clear: (i += 1),
-    toggleSignupModal: (i += 1)
-  }
+    toggleSignupModal: (i += 1),
+ },
+ requests: {
+     setTypeOfRequest: (i += 1),
+ }
 };
