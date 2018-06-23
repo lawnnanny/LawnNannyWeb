@@ -3,7 +3,7 @@ import { Form, Header, Input, Button } from 'semantic-ui-react'
 import { Requests } from '../pages/pipeline/jsonRequests'
 
 
-class renderFormFromJson extends React.component {
+class DynamicForm extends React.component {
 
     state = {
         data: {},
@@ -17,7 +17,7 @@ class renderFormFromJson extends React.component {
         this.props.submit(this.state.data);
     }
 
-    render(requestName) {
+    renderFormFromJson = (requestName) => {
         const requests = Requests.Requests[requestName];
         const formUI = requests.fields.map((field) => (
                 <Form.Field onChange={this.onChange}>
@@ -28,16 +28,20 @@ class renderFormFromJson extends React.component {
         return formUI;
     }
 
+     render (title, requestName) {
+        return (
+            <div>
+               <Header size='large'>{title}</Header>
+               <Form onSubmit={this.onSubmit}>
+                   {this.renderFormFromJson(requestName)}
+                   <Button>Submit</Button>
+               </Form>
+           </div>
+        );
+   };
+
 }
 
- export const DynamicForm = (title, requestName) => (
-     <div>
-        <Header size='large'>{title}</Header>
-        <Form onSubmit={this.onSubmit}>
-            {renderFormFromJson(requestName)}
-            <Button>Submit</Button>
-        </Form>
-    </div>
-);
+
 
 export default DynamicForm;
