@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from '../src/components/HomePage';
+import HomePage from '../src/components/pages/HomePage';
 import { shallow } from 'enzyme';
 import Chance from 'chance';
 import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
