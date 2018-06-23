@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Image, Segment, Header, Button } from "semantic-ui-react";
 import Styles from "../../styles/requestImage";
 
-export const requestImage = props => (
+export const RequestOption = props => (
   <div>
     <Segment style={Styles.segment}>
       <Link to={props.link}>
@@ -23,4 +23,4 @@ export const requestImage = props => (
   </div>
 );
 
-export default requestImage;
+export default RequestOption;
