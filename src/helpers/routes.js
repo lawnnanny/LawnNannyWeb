@@ -11,7 +11,7 @@ import ConnectedHomePage from "../connectedComponents/ConnectedHomePage";
 
 import reducers from "../reducers/reducers";
 
-export default class Routes extends Component {
+export class Routes extends Component {
   constructor() {
     super();
 
@@ -49,3 +49,5 @@ export default class Routes extends Component {
     );
   }
 }
+
+export default Routes;
