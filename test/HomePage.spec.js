@@ -1,1084 +1,1120 @@
 import React from 'react';
-import HomePage from '../src/components/pages/HomePage';
+import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import Chance from 'chance';
-import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
+import { HomePage } from '../src/components/pages/HomePage';
 import * as Common from '../src/helpers/Common';
 
 describe('Home Page', () => {
-	let wrapper,
-		chance;
-
-	const renderComponent = (props = {}) => shallow(<HomePage
-		setEmail={props.setEmail || jest.fn()}
-		setPassword={props.setPassword || jest.fn()}
-		setFirstName={props.setFirstName || jest.fn()}
-		setLastName={props.setLastName || jest.fn()}
-		setPasswordRepeat={props.setPasswordRepeat || jest.fn()}
-		setAddress={props.setAddress || jest.fn()}
-		setCity={props.setCity || jest.fn()}
-		setAddressState={props.setAddressState || jest.fn()}
-		setZipcode={props.setZipcode || jest.fn()}
-		openLoginModal={props.openLoginModal || jest.fn()}
-		closeLoginModal={props.closeLoginModal || jest.fn()}
-		isLoginModalOpen={props.isLoginModalOpen === undefined ? chance.bool() : props.isLoginModalOpen}
-		openSignupModal={props.openSignupModal || jest.fn()}
-		closeSignupModal={props.closeSignupModal || jest.fn()}
-		isSignupModalOpen={props.isSignupModalOpen === undefined ? chance.bool() : props.isSignupModalOpen}
-	/>);
-
-	beforeEach(() => {
-		chance = Chance();
-		wrapper = renderComponent();
-	});
-
-	it('is wrapped in a div', () => {
-		expect(wrapper.type()).toEqual('div');
-	});
-
-	describe('Navbar', () => {
-		let navbar;
+  let wrapper;
+  let chance;
+
+  const renderComponent = (props = {}) => shallow(<HomePage
+    setEmail={props.setEmail || jest.fn()}
+    setPassword={props.setPassword || jest.fn()}
+    setFirstName={props.setFirstName || jest.fn()}
+    setLastName={props.setLastName || jest.fn()}
+    setPasswordRepeat={props.setPasswordRepeat || jest.fn()}
+    setAddress={props.setAddress || jest.fn()}
+    setCity={props.setCity || jest.fn()}
+    setAddressState={props.setAddressState || jest.fn()}
+    setZipcode={props.setZipcode || jest.fn()}
+    openLoginModal={props.openLoginModal || jest.fn()}
+    closeLoginModal={props.closeLoginModal || jest.fn()}
+    isLoginModalOpen={
+      props.isLoginModalOpen === undefined ? chance.bool() : props.isLoginModalOpen
+    }
+    openSignupModal={props.openSignupModal || jest.fn()}
+    closeSignupModal={props.closeSignupModal || jest.fn()}
+    isSignupModalOpen={
+      props.isSignupModalOpen === undefined ? chance.bool() : props.isSignupModalOpen
+    }
+  />);
+
+  beforeEach(() => {
+    chance = Chance();
+    wrapper = renderComponent();
+  });
+
+  it('is wrapped in a div', () => {
+    expect(wrapper.type()).toEqual('div');
+  });
+
+  describe('Navbar wrapper', () => {
+    let navbarWrapper;
+
+    beforeEach(() => {
+      navbarWrapper = wrapper.childAt(0);
+    });
+
+    it('is a div', () => {
+      expect(navbarWrapper.type()).toEqual('div');
+    });
+
+    describe('Navbar', () => {
+      let navbar;
+
+      beforeEach(() => {
+        navbar = navbarWrapper.childAt(0);
+      });
+
+      it('is a menu', () => {
+        expect(navbar.type()).toEqual(Menu);
+      });
+
+      it('is styled as a secondary menu', () => {
+        expect(navbar.props().secondary).toBeTruthy();
+      });
+
+      describe('Login/Signup button container', () => {
+        let loginSignupButtonContainer;
+
+        beforeEach(() => {
+          loginSignupButtonContainer = navbar.childAt(0);
+        });
+
+        it('is a menu subcomponent', () => {
+          expect(loginSignupButtonContainer.type()).toEqual(Menu.Menu);
+        });
+
+        it('is positioned correctly', () => {
+          expect(loginSignupButtonContainer.props().position).toEqual('right');
+        });
+
+        describe('Login Modal', () => {
+          let loginModal;
+
+          beforeEach(() => {
+            loginModal = loginSignupButtonContainer.childAt(0);
+          });
+
+          it('is a modal', () => {
+            expect(loginModal.type()).toEqual(Modal);
+          });
+
+          it('is a mini modal', () => {
+            expect(loginModal.props().size).toEqual('mini');
+          });
+
+          it('closes the model when closed', () => {
+            const mockCloseLoginModal = jest.fn();
 
-		beforeEach(() => {
-			navbar = wrapper.childAt(0);
-		});
+            wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+            navbarWrapper = wrapper.childAt(0);
+            navbar = navbarWrapper.childAt(0);
+            loginSignupButtonContainer = navbar.childAt(0);
+            loginModal = loginSignupButtonContainer.childAt(0);
+
+            const loginModalOnCloseHandler = loginModal.props().onClose;
 
-		it('is a menu', () => {
-			expect(navbar.type()).toEqual(Menu);
-		});
+            loginModalOnCloseHandler();
 
-		it('is styled as a secondary menu', () => {
-			expect(navbar.props().secondary).toBeTruthy();
-		});
+            expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
+          });
 
-		describe('Login/Signup button container', () => {
-			let loginSignupButtonContainer;
+          it('displays a close modal button', () => {
+            expect(loginModal.props().closeIcon).toBeTruthy();
+          });
 
-			beforeEach(() => {
-				loginSignupButtonContainer = navbar.childAt(0);
-			});
+          it('is open depending on what the open prop is', () => {
+            const fakeIsLoginModalOpen = chance.bool();
 
-			it('is a menu subcomponent', () => {
-				expect(loginSignupButtonContainer.type()).toEqual(Menu.Menu);
-			});
+            wrapper = renderComponent({ isLoginModalOpen: fakeIsLoginModalOpen });
+            navbarWrapper = wrapper.childAt(0);
+            navbar = navbarWrapper.childAt(0);
+            loginSignupButtonContainer = navbar.childAt(0);
+            loginModal = loginSignupButtonContainer.childAt(0);
 
-			it('is positioned correctly', () => {
-				expect(loginSignupButtonContainer.props().position).toEqual('right');
-			});
+            expect(loginModal.props().open).toEqual(fakeIsLoginModalOpen);
+          });
 
-			describe('Login Modal', () => {
-				let loginModal;
+          describe('Login Modal trigger', () => {
+            let loginModalTrigger;
 
-				beforeEach(() => {
-					loginModal = loginSignupButtonContainer.childAt(0);
-				});
+            beforeEach(() => {
+              loginModalTrigger = shallow(loginModal.props().trigger);
+            });
 
-				it('is a modal', () => {
-					expect(loginModal.type()).toEqual(Modal);
-				});
+            it('is a menu item', () => {
+              const expectedType = shallow(<Menu.Item onClick={jest.fn()} />).type();
 
-				it('is a mini modal', () => {
-					expect(loginModal.props().size).toEqual('mini');
-				});
+              expect(loginModalTrigger.type()).toEqual(expectedType);
+            });
 
-				it('closes the model when closed', () => {
-					const mockCloseLoginModal = jest.fn();
+            it('opens the modal when clicked', () => {
+              const mockOpenLoginModal = jest.fn();
 
-					wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
-					navbar = wrapper.childAt(0);
-					loginSignupButtonContainer = navbar.childAt(0);
-					loginModal = loginSignupButtonContainer.childAt(0);
+              wrapper = renderComponent({ openLoginModal: mockOpenLoginModal });
+              navbarWrapper = wrapper.childAt(0);
+              navbar = navbarWrapper.childAt(0);
+              loginSignupButtonContainer = navbar.childAt(0);
+              loginModal = loginSignupButtonContainer.childAt(0);
+              loginModalTrigger = shallow(loginModal.props().trigger);
 
-					const loginModalOnCloseHandler = loginModal.props().onClose;
+              const loginModalTriggerOnClickHandler = loginModalTrigger.props().onClick;
 
-					loginModalOnCloseHandler();
+              loginModalTriggerOnClickHandler();
 
-					expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
-				});
+              expect(mockOpenLoginModal).toHaveBeenCalledTimes(1);
+            });
 
-				it('displays a close modal button', () => {
-					expect(loginModal.props().closeIcon).toBeTruthy();
-				});
+            it('displays the correct word', () => {
+              const loginModalTriggerText = loginModalTrigger.childAt(0);
 
-				it('is open depending on what the open prop is', () => {
-					const fakeIsLoginModalOpen = chance.bool();
+              expect(loginModalTriggerText.text()).toEqual('Login');
+            });
+          });
 
-					wrapper = renderComponent({ isLoginModalOpen: fakeIsLoginModalOpen });
-					navbar = wrapper.childAt(0);
-					loginSignupButtonContainer = navbar.childAt(0);
-					loginModal = loginSignupButtonContainer.childAt(0);
+          describe('Login Modal Header', () => {
+            let loginModalHeader;
 
-					expect(loginModal.props().open).toEqual(fakeIsLoginModalOpen);
-				});
+            beforeEach(() => {
+              loginModalHeader = loginModal.childAt(0);
+            });
 
-				describe('Login Modal trigger', () => {
-					let loginModalTrigger;
+            it('is a modal header', () => {
+              expect(loginModalHeader.type()).toEqual(Modal.Header);
+            });
 
-					beforeEach(() => {
-						loginModalTrigger = shallow(loginModal.props().trigger);
-					});
+            it('displays the correct text', () => {
+              const loginModalHeaderText = loginModalHeader.childAt(0);
 
-					it('is a menu item', () => {
-						const expectedType = shallow(<Menu.Item onClick={jest.fn()}/>).type();
+              expect(loginModalHeaderText.text()).toEqual('Welcome Back!');
+            });
+          });
 
-						expect(loginModalTrigger.type()).toEqual(expectedType);
-					});
+          describe('Login Modal Description', () => {
+            let loginModalDescription;
 
-					it('opens the modal when clicked', () => {
-						const mockOpenLoginModal = jest.fn();
+            beforeEach(() => {
+              loginModalDescription = loginModal.childAt(1);
+            });
 
-						wrapper = renderComponent({ openLoginModal: mockOpenLoginModal });
-						navbar = wrapper.childAt(0);
-						loginSignupButtonContainer = navbar.childAt(0);
-						loginModal = loginSignupButtonContainer.childAt(0);
-						loginModalTrigger = shallow(loginModal.props().trigger);
+            it('is a modal description', () => {
+              expect(loginModalDescription.type()).toEqual(Modal.Description);
+            });
 
-						const loginModalTriggerOnClickHandler = loginModalTrigger.props().onClick;
+            describe('Login Modal Description Grid', () => {
+              let loginModalDescriptionGrid;
 
-						loginModalTriggerOnClickHandler();
+              beforeEach(() => {
+                loginModalDescriptionGrid = loginModalDescription.childAt(0);
+              });
 
-						expect(mockOpenLoginModal).toHaveBeenCalledTimes(1);
-					});
+              it('is a grid', () => {
+                expect(loginModalDescriptionGrid.type()).toEqual(Grid);
+              });
 
-					it('displays the correct word', () => {
-						const loginModalTriggerText = loginModalTrigger.childAt(0);
+              it('contains three rows', () => {
+                expect.assertions(3);
 
-						expect(loginModalTriggerText.text()).toEqual('Login');
-					});
-				});
+                const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
 
-				describe('Login Modal Header', () => {
-					let loginModalHeader;
+                loginModalDescriptionGridRows.forEach((row) => {
+                  expect(row.type()).toEqual(Grid.Row);
+                });
+              });
 
-					beforeEach(() => {
-						loginModalHeader = loginModal.childAt(0);
-					});
+              it('contains a column inside of each row', () => {
+                expect.assertions(3);
 
-					it('is a modal header', () => {
-						expect(loginModalHeader.type()).toEqual(Modal.Header);
-					});
+                const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
 
-					it('displays the correct text', () => {
-						const loginModalHeaderText = loginModalHeader.childAt(0);
+                loginModalDescriptionGridRows.forEach((row) => {
+                  const column = row.childAt(0);
 
-						expect(loginModalHeaderText.text()).toEqual('Welcome Back!');
-					});
-				});
+                  expect(column.type()).toEqual(Grid.Column);
+                });
+              });
 
-				describe('Login Modal Description', () => {
-					let loginModalDescription;
+              it('contains a row for the login button that is centered', () => {
+                const loginButtonRow = loginModalDescriptionGrid.childAt(2);
 
-					beforeEach(() => {
-						loginModalDescription = loginModal.childAt(1);
-					});
+                expect(loginButtonRow.props().centered).toBeTruthy();
+              });
 
-					it('is a modal description', () => {
-						expect(loginModalDescription.type()).toEqual(Modal.Description);
-					});
+              it('contains a row for the login button that has a column with a width of 6', () => {
+                const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+                const loginButtonColumn = loginButtonRow.childAt(0);
 
-					describe('Login Modal Description Grid', () => {
-						let loginModalDescriptionGrid;
+                expect(loginButtonColumn.props().width).toEqual(6);
+              });
 
-						beforeEach(() => {
-							loginModalDescriptionGrid = loginModalDescription.childAt(0);
-						});
+              describe('Email Input', () => {
+                let emailInput;
 
-						it('is a grid', () => {
-							expect(loginModalDescriptionGrid.type()).toEqual(Grid);
-						});
+                beforeEach(() => {
+                  const emailInputRow = loginModalDescriptionGrid.childAt(0);
+                  const emailInputColumn = emailInputRow.childAt(0);
 
-						it('contains three rows', () => {
-							expect.assertions(3);
+                  emailInput = emailInputColumn.childAt(0);
+                });
 
-							const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
+                it('is an input', () => {
+                  expect(emailInput.type()).toEqual(Input);
+                });
 
-							loginModalDescriptionGridRows.forEach(row => {
-								expect(row.type()).toEqual(Grid.Row);
-							});
-						});
+                it('has a fluid width', () => {
+                  expect(emailInput.props().fluid).toBeTruthy();
+                });
 
-						it('contains a column inside of each row', () => {
-							expect.assertions(3);
+                it('has a user icon', () => {
+                  expect(emailInput.props().icon).toEqual('user');
+                });
 
-							const loginModalDescriptionGridRows = loginModalDescriptionGrid.children();
+                it('positions the icon on the left side', () => {
+                  expect(emailInput.props().iconPosition).toEqual('left');
+                });
 
-							loginModalDescriptionGridRows.forEach(row => {
-								const column = row.childAt(0);
+                it('displays the correct placeholder text', () => {
+                  expect(emailInput.props().placeholder).toEqual('someone@example.com');
+                });
 
-								expect(column.type()).toEqual(Grid.Column);
-							});
-						});
+                it('sets the email when the value changes', () => {
+                  const mockSetEmail = jest.fn();
 
-						it('contains a row for the login button that is centered', () => {
-							const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+                  wrapper = renderComponent({ setEmail: mockSetEmail });
+                  navbarWrapper = wrapper.childAt(0);
+                  navbar = navbarWrapper.childAt(0);
+                  loginSignupButtonContainer = navbar.childAt(0);
+                  loginModal = loginSignupButtonContainer.childAt(0);
+                  loginModalDescription = loginModal.childAt(1);
+                  loginModalDescriptionGrid = loginModalDescription.childAt(0);
 
-							expect(loginButtonRow.props().centered).toBeTruthy();
-						});
+                  const emailInputRow = loginModalDescriptionGrid.childAt(0);
+                  const emailInputColumn = emailInputRow.childAt(0);
 
-						it('contains a row for the login button that has a column with a width of 6', () => {
-							const loginButtonRow = loginModalDescriptionGrid.childAt(2);
-							const loginButtonColumn = loginButtonRow.childAt(0);
+                  emailInput = emailInputColumn.childAt(0);
 
-							expect(loginButtonColumn.props().width).toEqual(6);
-						});
+                  const emailInputOnChangeHandler = emailInput.props().onChange;
 
-						describe('Email Input', () => {
-							let emailInput;
+                  emailInputOnChangeHandler();
 
-							beforeEach(() => {
-								const emailInputRow = loginModalDescriptionGrid.childAt(0);
-								const emailInputColumn = emailInputRow.childAt(0);
+                  expect(mockSetEmail).toHaveBeenCalledTimes(1);
+                });
+              });
 
-								emailInput = emailInputColumn.childAt(0);
-							});
+              describe('Password Input', () => {
+                let passwordInput;
 
-							it('is an input', () => {
-								expect(emailInput.type()).toEqual(Input);
-							});
+                beforeEach(() => {
+                  const passwordInputRow = loginModalDescriptionGrid.childAt(1);
+                  const passwordInputColumn = passwordInputRow.childAt(0);
 
-							it('has a fluid width', () => {
-								expect(emailInput.props().fluid).toBeTruthy();
-							});
+                  passwordInput = passwordInputColumn.childAt(0);
+                });
 
-							it('has a user icon', () => {
-								expect(emailInput.props().icon).toEqual('user');
-							});
+                it('is an input', () => {
+                  expect(passwordInput.type()).toEqual(Input);
+                });
 
-							it('positions the icon on the left side', () => {
-								expect(emailInput.props().iconPosition).toEqual('left');
-							});
+                it('has a fluid width', () => {
+                  expect(passwordInput.props().fluid).toBeTruthy();
+                });
 
-							it('displays the correct placeholder text', () => {
-								expect(emailInput.props().placeholder).toEqual('someone@example.com');
-							});
+                it('has a user icon', () => {
+                  expect(passwordInput.props().icon).toEqual('lock');
+                });
 
-							it('sets the email when the value changes', () => {
-								const mockSetEmail = jest.fn();
+                it('is a type input', () => {
+                  expect(passwordInput.props().type).toEqual('password');
+                });
 
-								wrapper = renderComponent({ setEmail: mockSetEmail });
-								navbar = wrapper.childAt(0);
-								loginSignupButtonContainer = navbar.childAt(0);
-								loginModal = loginSignupButtonContainer.childAt(0);
-								loginModalDescription = loginModal.childAt(1);
-								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+                it('positions the icon on the left side', () => {
+                  expect(passwordInput.props().iconPosition).toEqual('left');
+                });
 
-								const emailInputRow = loginModalDescriptionGrid.childAt(0);
-								const emailInputColumn = emailInputRow.childAt(0);
+                it('displays the correct placeholder text', () => {
+                  expect(passwordInput.props().placeholder).toEqual('Password');
+                });
 
-								emailInput = emailInputColumn.childAt(0);
+                it('sets the password when the value changes', () => {
+                  const mockSetPassword = jest.fn();
 
-								const emailInputOnChangeHandler = emailInput.props().onChange;
+                  wrapper = renderComponent({ setPassword: mockSetPassword });
+                  navbarWrapper = wrapper.childAt(0);
+                  navbar = navbarWrapper.childAt(0);
+                  loginSignupButtonContainer = navbar.childAt(0);
+                  loginModal = loginSignupButtonContainer.childAt(0);
+                  loginModalDescription = loginModal.childAt(1);
+                  loginModalDescriptionGrid = loginModalDescription.childAt(0);
 
-								emailInputOnChangeHandler();
+                  const passwordInputRow = loginModalDescriptionGrid.childAt(1);
+                  const passwordInputColumn = passwordInputRow.childAt(0);
 
-								expect(mockSetEmail).toHaveBeenCalledTimes(1);
-							});
-						});
+                  passwordInput = passwordInputColumn.childAt(0);
 
-						describe('Password Input', () => {
-							let passwordInput;
+                  const passwordInputOnChangeHandler = passwordInput.props().onChange;
 
-							beforeEach(() => {
-								const passwordInputRow = loginModalDescriptionGrid.childAt(1);
-								const passwordInputColumn = passwordInputRow.childAt(0);
+                  passwordInputOnChangeHandler();
 
-								passwordInput = passwordInputColumn.childAt(0);
-							});
+                  expect(mockSetPassword).toHaveBeenCalledTimes(1);
+                });
+              });
 
-							it('is an input', () => {
-								expect(passwordInput.type()).toEqual(Input);
-							});
+              describe('Login Button', () => {
+                let loginButton;
 
-							it('has a fluid width', () => {
-								expect(passwordInput.props().fluid).toBeTruthy();
-							});
+                beforeEach(() => {
+                  const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+                  const loginButtonColumn = loginButtonRow.childAt(0);
 
-							it('has a user icon', () => {
-								expect(passwordInput.props().icon).toEqual('lock');
-							});
+                  loginButton = loginButtonColumn.childAt(0);
+                });
 
-							it('is a type input', () => {
-								expect(passwordInput.props().type).toEqual('password');
-							});
+                it('is a button', () => {
+                  expect(loginButton.type()).toEqual(Button);
+                });
 
-							it('positions the icon on the left side', () => {
-								expect(passwordInput.props().iconPosition).toEqual('left');
-							});
+                it('is a large size', () => {
+                  expect(loginButton.props().size).toEqual('large');
+                });
 
-							it('displays the correct placeholder text', () => {
-								expect(passwordInput.props().placeholder).toEqual('Password');
-							});
+                it('closes the login modal when clicked', () => {
+                  const mockCloseLoginModal = jest.fn();
 
-							it('sets the password when the value changes', () => {
-								const mockSetPassword = jest.fn();
+                  wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+                  navbarWrapper = wrapper.childAt(0);
+                  navbar = navbarWrapper.childAt(0);
+                  loginSignupButtonContainer = navbar.childAt(0);
+                  loginModal = loginSignupButtonContainer.childAt(0);
+                  loginModalDescription = loginModal.childAt(1);
+                  loginModalDescriptionGrid = loginModalDescription.childAt(0);
 
-								wrapper = renderComponent({ setPassword: mockSetPassword });
-								navbar = wrapper.childAt(0);
-								loginSignupButtonContainer = navbar.childAt(0);
-								loginModal = loginSignupButtonContainer.childAt(0);
-								loginModalDescription = loginModal.childAt(1);
-								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+                  const loginButtonRow = loginModalDescriptionGrid.childAt(2);
+                  const loginButtonColumn = loginButtonRow.childAt(0);
 
-								const passwordInputRow = loginModalDescriptionGrid.childAt(1);
-								const passwordInputColumn = passwordInputRow.childAt(0);
+                  loginButton = loginButtonColumn.childAt(0);
 
-								passwordInput = passwordInputColumn.childAt(0);
+                  const loginButtonOnClickHandler = loginButton.props().onClick;
 
-								const passwordInputOnChangeHandler = passwordInput.props().onChange;
+                  loginButtonOnClickHandler();
 
-								passwordInputOnChangeHandler();
+                  expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
+                });
+              });
+            });
+          });
+        });
 
-								expect(mockSetPassword).toHaveBeenCalledTimes(1);
-							});
-						});
+        describe('Signup Modal', () => {
+          let signupModal;
 
-						describe('Login Button', () => {
-							let loginButton;
+          beforeEach(() => {
+            signupModal = loginSignupButtonContainer.childAt(1);
+          });
 
-							beforeEach(() => {
-								const loginButtonRow = loginModalDescriptionGrid.childAt(2);
-								const loginButtonColumn = loginButtonRow.childAt(0);
+          it('is a modal', () => {
+            expect(signupModal.type()).toEqual(Modal);
+          });
 
-								loginButton = loginButtonColumn.childAt(0);
-							});
+          it('is a tiny modal', () => {
+            expect(signupModal.props().size).toEqual('tiny');
+          });
 
-							it('is a button', () => {
-								expect(loginButton.type()).toEqual(Button);
-							});
+          it('is open depending on the value of the open prop', () => {
+            const fakeIsSignupModalOpen = chance.bool();
 
-							it('is a large size', () => {
-								expect(loginButton.props().size).toEqual('large');
-							});
+            wrapper = renderComponent({ isSignupModalOpen: fakeIsSignupModalOpen });
+            navbarWrapper = wrapper.childAt(0);
+            navbar = navbarWrapper.childAt(0);
+            loginSignupButtonContainer = navbar.childAt(0);
+            signupModal = loginSignupButtonContainer.childAt(1);
 
-							it('closes the login modal when clicked', () => {
-								const mockCloseLoginModal = jest.fn();
+            expect(signupModal.props().open).toEqual(fakeIsSignupModalOpen);
+          });
 
-								wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
-								navbar = wrapper.childAt(0);
-								loginSignupButtonContainer = navbar.childAt(0);
-								loginModal = loginSignupButtonContainer.childAt(0);
-								loginModalDescription = loginModal.childAt(1);
-								loginModalDescriptionGrid = loginModalDescription.childAt(0);
+          it('closes the modal when closed', () => {
+            const mockCloseSignupModal = jest.fn();
 
-								const loginButtonRow = loginModalDescriptionGrid.childAt(2);
-								const loginButtonColumn = loginButtonRow.childAt(0);
+            wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
+            navbarWrapper = wrapper.childAt(0);
+            navbar = navbarWrapper.childAt(0);
+            loginSignupButtonContainer = navbar.childAt(0);
+            signupModal = loginSignupButtonContainer.childAt(1);
 
-								loginButton = loginButtonColumn.childAt(0);
+            const signupModalOnCloseHandler = signupModal.props().onClose;
 
-								const loginButtonOnClickHandler = loginButton.props().onClick;
+            signupModalOnCloseHandler();
 
-								loginButtonOnClickHandler();
+            expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
+          });
 
-								expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
-							});
-						});
-					});
-				});
-			});
+          it('displays a close icon', () => {
+            expect(signupModal.props().closeIcon).toBeTruthy();
+          });
 
-			describe('Signup Modal', () => {
-				let signupModal;
+          describe('Signup Modal trigger', () => {
+            let signupModalTrigger;
 
-				beforeEach(() => {
-					signupModal = loginSignupButtonContainer.childAt(1);
-				});
+            beforeEach(() => {
+              signupModalTrigger = shallow(signupModal.props().trigger);
+            });
 
-				it('is a modal', () => {
-					expect(signupModal.type()).toEqual(Modal);
-				});
+            it('is a menu item', () => {
+              const expectedType = shallow(<Menu.Item onClick={jest.fn()} />).type();
 
-				it('is a tiny modal', () => {
-					expect(signupModal.props().size).toEqual('tiny');
-				});
+              expect(signupModalTrigger.type()).toEqual(expectedType);
+            });
 
-				it('is open depending on the value of the open prop', () => {
-					const fakeIsSignupModalOpen = chance.bool();
+            it('opens the modal when clicked', () => {
+              const mockOpenSignupModal = jest.fn();
 
-					wrapper = renderComponent({ isSignupModalOpen: fakeIsSignupModalOpen });
-					navbar = wrapper.childAt(0);
-					loginSignupButtonContainer = navbar.childAt(0);
-					signupModal = loginSignupButtonContainer.childAt(1);
+              wrapper = renderComponent({ openSignupModal: mockOpenSignupModal });
+              navbarWrapper = wrapper.childAt(0);
+              navbar = navbarWrapper.childAt(0);
+              loginSignupButtonContainer = navbar.childAt(0);
+              signupModal = loginSignupButtonContainer.childAt(1);
+              signupModalTrigger = shallow(signupModal.props().trigger);
 
-					expect(signupModal.props().open).toEqual(fakeIsSignupModalOpen);
-				});
+              const signupModalTriggerOnClickHandler = signupModalTrigger.props().onClick;
 
-				it('closes the modal when closed', () => {
-					const mockCloseSignupModal = jest.fn();
+              signupModalTriggerOnClickHandler();
 
-					wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
-					navbar = wrapper.childAt(0);
-					loginSignupButtonContainer = navbar.childAt(0);
-					signupModal = loginSignupButtonContainer.childAt(1);
+              expect(mockOpenSignupModal).toHaveBeenCalledTimes(1);
+            });
 
-					const signupModalOnCloseHandler = signupModal.props().onClose;
+            it('displays the correct word', () => {
+              const signupModalTriggerText = signupModalTrigger.childAt(0);
 
-					signupModalOnCloseHandler();
+              expect(signupModalTriggerText.text()).toEqual('Sign Up');
+            });
+          });
 
-					expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
-				});
+          describe('Signup Modal Header', () => {
+            let signupModalHeader;
 
-				it('displays a close icon', () => {
-					expect(signupModal.props().closeIcon).toBeTruthy();
-				});
+            beforeEach(() => {
+              signupModalHeader = signupModal.childAt(0);
+            });
 
-				describe('Signup Modal trigger', () => {
-					let signupModalTrigger;
+            it('is a modal header', () => {
+              expect(signupModalHeader.type()).toEqual(Modal.Header);
+            });
 
-					beforeEach(() => {
-						signupModalTrigger = shallow(signupModal.props().trigger);
-					});
+            it('displays the correct message', () => {
+              const signupModalHeaderText = signupModalHeader.childAt(0);
 
-					it('is a menu item', () => {
-						const expectedType = shallow(<Menu.Item onClick={jest.fn()}/>).type();
+              expect(signupModalHeaderText.text()).toEqual('Sign Up!');
+            });
+          });
 
-						expect(signupModalTrigger.type()).toEqual(expectedType);
-					});
+          describe('Signup Modal Description', () => {
+            let signupModalDescription;
 
-					it('opens the modal when clicked', () => {
-						const mockOpenSignupModal = jest.fn();
+            beforeEach(() => {
+              signupModalDescription = signupModal.childAt(1);
+            });
 
-						wrapper = renderComponent({ openSignupModal: mockOpenSignupModal });
-						navbar = wrapper.childAt(0);
-						loginSignupButtonContainer = navbar.childAt(0);
-						signupModal = loginSignupButtonContainer.childAt(1);
-						signupModalTrigger = shallow(signupModal.props().trigger);
+            it('is a modal description', () => {
+              expect(signupModalDescription.type()).toEqual(Modal.Description);
+            });
 
-						const signupModalTriggerOnClickHandler = signupModalTrigger.props().onClick;
+            describe('Signup Modal Form', () => {
+              let signupModalForm;
 
-						signupModalTriggerOnClickHandler();
+              beforeEach(() => {
+                signupModalForm = signupModalDescription.childAt(0);
+              });
 
-						expect(mockOpenSignupModal).toHaveBeenCalledTimes(1);
-					});
+              it('is a form', () => {
+                expect(signupModalForm.type()).toEqual(Form);
+              });
 
-					it('displays the correct word', () => {
-						const signupModalTriggerText = signupModalTrigger.childAt(0);
+              describe('Form Group - Name', () => {
+                let nameFormGroup;
 
-						expect(signupModalTriggerText.text()).toEqual('Sign Up');
-					});
-				});
+                beforeEach(() => {
+                  nameFormGroup = signupModalForm.childAt(0);
+                });
 
-				describe('Signup Modal Header', () => {
-					let signupModalHeader;
+                it('is a form group', () => {
+                  expect(nameFormGroup.type()).toEqual(Form.Group);
+                });
 
-					beforeEach(() => {
-						signupModalHeader = signupModal.childAt(0);
-					});
+                it('has fields of equal widths', () => {
+                  expect(nameFormGroup.props().widths).toEqual('equal');
+                });
 
-					it('is a modal header', () => {
-						expect(signupModalHeader.type()).toEqual(Modal.Header);
-					});
+                describe('First Name Input', () => {
+                  let firstNameInput;
 
-					it('displays the correct message', () => {
-						const signupModalHeaderText = signupModalHeader.childAt(0);
+                  beforeEach(() => {
+                    firstNameInput = nameFormGroup.childAt(0);
+                  });
 
-						expect(signupModalHeaderText.text()).toEqual('Sign Up!');
-					});
-				});
+                  it('is a form input', () => {
+                    expect(firstNameInput.type()).toEqual(Form.Input);
+                  });
 
-				describe('Signup Modal Description', () => {
-					let signupModalDescription;
+                  it('has a fluid width', () => {
+                    expect(firstNameInput.props().fluid).toBeTruthy();
+                  });
 
-					beforeEach(() => {
-						signupModalDescription = signupModal.childAt(1);
-					});
+                  it('is labeled correctly', () => {
+                    expect(firstNameInput.props().label).toEqual('First Name');
+                  });
 
-					it('is a modal description', () => {
-						expect(signupModalDescription.type()).toEqual(Modal.Description);
-					});
+                  it('has the correct placeholder text', () => {
+                    expect(firstNameInput.props().placeholder).toEqual('First Name');
+                  });
 
-					describe('Signup Modal Form', () => {
-						let signupModalForm;
+                  it('updates the first name when the input is changed', () => {
+                    const mockSetFirstName = jest.fn();
 
-						beforeEach(() => {
-							signupModalForm = signupModalDescription.childAt(0);
-						});
+                    wrapper = renderComponent({ setFirstName: mockSetFirstName });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    nameFormGroup = signupModalForm.childAt(0);
+                    firstNameInput = nameFormGroup.childAt(0);
 
-						it('is a form', () => {
-							expect(signupModalForm.type()).toEqual(Form);
-						});
+                    const firstNameInputOnChangeHandler = firstNameInput.props().onChange;
 
-						describe('Form Group - Name', () => {
-							let nameFormGroup;
+                    firstNameInputOnChangeHandler();
 
-							beforeEach(() => {
-								nameFormGroup = signupModalForm.childAt(0);
-							});
+                    expect(mockSetFirstName).toHaveBeenCalledTimes(1);
+                  });
+                });
 
-							it('is a form group', () => {
-								expect(nameFormGroup.type()).toEqual(Form.Group);
-							});
+                describe('Last Name Input', () => {
+                  let lastNameInput;
 
-							it('has fields of equal widths', () => {
-								expect(nameFormGroup.props().widths).toEqual('equal');
-							});
+                  beforeEach(() => {
+                    lastNameInput = nameFormGroup.childAt(1);
+                  });
 
-							describe('First Name Input', () => {
-								let firstNameInput;
+                  it('is a form input', () => {
+                    expect(lastNameInput.type()).toEqual(Form.Input);
+                  });
 
-								beforeEach(() => {
-									firstNameInput = nameFormGroup.childAt(0);
-								});
+                  it('has a fluid width', () => {
+                    expect(lastNameInput.props().fluid).toBeTruthy();
+                  });
 
-								it('is a form input', () => {
-									expect(firstNameInput.type()).toEqual(Form.Input);
-								});
+                  it('is labeled correctly', () => {
+                    expect(lastNameInput.props().label).toEqual('Last Name');
+                  });
 
-								it('has a fluid width', () => {
-									expect(firstNameInput.props().fluid).toBeTruthy();
-								});
+                  it('has the correct placeholder text', () => {
+                    expect(lastNameInput.props().placeholder).toEqual('Last Name');
+                  });
 
-								it('is labeled correctly', () => {
-									expect(firstNameInput.props().label).toEqual('First Name');
-								});
+                  it('updates the last name when the input is changed', () => {
+                    const mockSetLastName = jest.fn();
 
-								it('has the correct placeholder text', () => {
-									expect(firstNameInput.props().placeholder).toEqual('First Name');
-								});
+                    wrapper = renderComponent({ setLastName: mockSetLastName });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    nameFormGroup = signupModalForm.childAt(0);
+                    lastNameInput = nameFormGroup.childAt(1);
 
-								it('updates the first name when the input is changed', () => {
-									const mockSetFirstName = jest.fn();
+                    const lastNameInputOnChangeHandler = lastNameInput.props().onChange;
 
-									wrapper = renderComponent({ setFirstName: mockSetFirstName });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									nameFormGroup = signupModalForm.childAt(0);
-									firstNameInput = nameFormGroup.childAt(0);
+                    lastNameInputOnChangeHandler();
 
-									const firstNameInputOnChangeHandler = firstNameInput.props().onChange;
+                    expect(mockSetLastName).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
 
-									firstNameInputOnChangeHandler();
+              describe('Form Group - Email', () => {
+                let emailFormGroup;
 
-									expect(mockSetFirstName).toHaveBeenCalledTimes(1);
-								});
-							});
+                beforeEach(() => {
+                  emailFormGroup = signupModalForm.childAt(1);
+                });
 
-							describe('Last Name Input', () => {
-								let lastNameInput;
+                it('is a form group', () => {
+                  expect(emailFormGroup.type()).toEqual(Form.Group);
+                });
 
-								beforeEach(() => {
-									lastNameInput = nameFormGroup.childAt(1);
-								});
+                it('has fields of equal widths', () => {
+                  expect(emailFormGroup.props().widths).toEqual('equal');
+                });
 
-								it('is a form input', () => {
-									expect(lastNameInput.type()).toEqual(Form.Input);
-								});
+                describe('Email Input', () => {
+                  let emailInput;
 
-								it('has a fluid width', () => {
-									expect(lastNameInput.props().fluid).toBeTruthy();
-								});
+                  beforeEach(() => {
+                    emailInput = emailFormGroup.childAt(0);
+                  });
 
-								it('is labeled correctly', () => {
-									expect(lastNameInput.props().label).toEqual('Last Name');
-								});
+                  it('is a form input', () => {
+                    expect(emailInput.type()).toEqual(Form.Input);
+                  });
 
-								it('has the correct placeholder text', () => {
-									expect(lastNameInput.props().placeholder).toEqual('Last Name');
-								});
+                  it('has a fluid width', () => {
+                    expect(emailInput.props().fluid).toBeTruthy();
+                  });
 
-								it('updates the last name when the input is changed', () => {
-									const mockSetLastName = jest.fn();
+                  it('is labeled correctly', () => {
+                    expect(emailInput.props().label).toEqual('Email');
+                  });
 
-									wrapper = renderComponent({ setLastName: mockSetLastName });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									nameFormGroup = signupModalForm.childAt(0);
-									lastNameInput = nameFormGroup.childAt(1);
+                  it('has the correct placeholder text', () => {
+                    expect(emailInput.props().placeholder).toEqual('someone@example.com');
+                  });
 
-									const lastNameInputOnChangeHandler = lastNameInput.props().onChange;
+                  it('updates the email when the input is changed', () => {
+                    const mockSetEmail = jest.fn();
 
-									lastNameInputOnChangeHandler();
+                    wrapper = renderComponent({ setEmail: mockSetEmail });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    emailFormGroup = signupModalForm.childAt(1);
+                    emailInput = emailFormGroup.childAt(0);
 
-									expect(mockSetLastName).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
+                    const emailInputOnChangeHandler = emailInput.props().onChange;
 
-						describe('Form Group - Email', () => {
-							let emailFormGroup;
+                    emailInputOnChangeHandler();
 
-							beforeEach(() => {
-								emailFormGroup = signupModalForm.childAt(1);
-							});
+                    expect(mockSetEmail).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
 
-							it('is a form group', () => {
-								expect(emailFormGroup.type()).toEqual(Form.Group);
-							});
+              describe('Form Group - Password', () => {
+                let passwordFormGroup;
 
-							it('has fields of equal widths', () => {
-								expect(emailFormGroup.props().widths).toEqual('equal');
-							});
+                beforeEach(() => {
+                  passwordFormGroup = signupModalForm.childAt(2);
+                });
 
-							describe('Email Input', () => {
-								let emailInput;
+                it('is a form group', () => {
+                  expect(passwordFormGroup.type()).toEqual(Form.Group);
+                });
 
-								beforeEach(() => {
-									emailInput = emailFormGroup.childAt(0);
-								});
+                it('has fields of equal widths', () => {
+                  expect(passwordFormGroup.props().widths).toEqual('equal');
+                });
 
-								it('is a form input', () => {
-									expect(emailInput.type()).toEqual(Form.Input);
-								});
+                describe('Password Input', () => {
+                  let passwordInput;
 
-								it('has a fluid width', () => {
-									expect(emailInput.props().fluid).toBeTruthy();
-								});
+                  beforeEach(() => {
+                    passwordInput = passwordFormGroup.childAt(0);
+                  });
 
-								it('is labeled correctly', () => {
-									expect(emailInput.props().label).toEqual('Email');
-								});
+                  it('is a form input', () => {
+                    expect(passwordInput.type()).toEqual(Form.Input);
+                  });
 
-								it('has the correct placeholder text', () => {
-									expect(emailInput.props().placeholder).toEqual('someone@example.com');
-								});
+                  it('has a fluid width', () => {
+                    expect(passwordInput.props().fluid).toBeTruthy();
+                  });
 
-								it('updates the email when the input is changed', () => {
-									const mockSetEmail = jest.fn();
+                  it('is labeled correctly', () => {
+                    expect(passwordInput.props().label).toEqual('Password');
+                  });
 
-									wrapper = renderComponent({ setEmail: mockSetEmail });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									emailFormGroup = signupModalForm.childAt(1);
-									emailInput = emailFormGroup.childAt(0);
+                  it('has type set to password', () => {
+                    expect(passwordInput.props().type).toEqual('password');
+                  });
 
-									const emailInputOnChangeHandler = emailInput.props().onChange;
+                  it('has the correct placeholder text', () => {
+                    expect(passwordInput.props().placeholder).toEqual('Password');
+                  });
 
-									emailInputOnChangeHandler();
+                  it('updates the password when the input is changed', () => {
+                    const mockSetPassword = jest.fn();
 
-									expect(mockSetEmail).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
+                    wrapper = renderComponent({ setPassword: mockSetPassword });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    passwordFormGroup = signupModalForm.childAt(2);
+                    passwordInput = passwordFormGroup.childAt(0);
 
-						describe('Form Group - Password', () => {
-							let passwordFormGroup;
+                    const passwordInputOnChangeHandler = passwordInput.props().onChange;
 
-							beforeEach(() => {
-								passwordFormGroup = signupModalForm.childAt(2);
-							});
+                    passwordInputOnChangeHandler();
 
-							it('is a form group', () => {
-								expect(passwordFormGroup.type()).toEqual(Form.Group);
-							});
+                    expect(mockSetPassword).toHaveBeenCalledTimes(1);
+                  });
+                });
 
-							it('has fields of equal widths', () => {
-								expect(passwordFormGroup.props().widths).toEqual('equal');
-							});
+                describe('Password Repeat Input', () => {
+                  let passwordRepeatInput;
 
-							describe('Password Input', () => {
-								let passwordInput;
+                  beforeEach(() => {
+                    passwordRepeatInput = passwordFormGroup.childAt(1);
+                  });
 
-								beforeEach(() => {
-									passwordInput = passwordFormGroup.childAt(0);
-								});
+                  it('is a form input', () => {
+                    expect(passwordRepeatInput.type()).toEqual(Form.Input);
+                  });
 
-								it('is a form input', () => {
-									expect(passwordInput.type()).toEqual(Form.Input);
-								});
+                  it('has a fluid width', () => {
+                    expect(passwordRepeatInput.props().fluid).toBeTruthy();
+                  });
 
-								it('has a fluid width', () => {
-									expect(passwordInput.props().fluid).toBeTruthy();
-								});
+                  it('is labeled correctly', () => {
+                    expect(passwordRepeatInput.props().label).toEqual('Repeat Password');
+                  });
 
-								it('is labeled correctly', () => {
-									expect(passwordInput.props().label).toEqual('Password');
-								});
+                  it('has type set to password', () => {
+                    expect(passwordRepeatInput.props().type).toEqual('password');
+                  });
 
-								it('has type set to password', () => {
-									expect(passwordInput.props().type).toEqual('password');
-								})
+                  it('has the correct placeholder text', () => {
+                    expect(passwordRepeatInput.props().placeholder).toEqual('Repeat Password');
+                  });
 
-								it('has the correct placeholder text', () => {
-									expect(passwordInput.props().placeholder).toEqual('Password');
-								});
+                  it('updates the repeated password when the input is changed', () => {
+                    const mockSetPasswordRepeat = jest.fn();
 
-								it('updates the password when the input is changed', () => {
-									const mockSetPassword = jest.fn();
+                    wrapper = renderComponent({ setPasswordRepeat: mockSetPasswordRepeat });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    passwordFormGroup = signupModalForm.childAt(2);
+                    passwordRepeatInput = passwordFormGroup.childAt(1);
 
-									wrapper = renderComponent({ setPassword: mockSetPassword });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									passwordFormGroup = signupModalForm.childAt(2);
-									passwordInput = passwordFormGroup.childAt(0);
+                    const passwordRepeatInputOnChangeHandler = passwordRepeatInput.props().onChange;
 
-									const passwordInputOnChangeHandler = passwordInput.props().onChange;
+                    passwordRepeatInputOnChangeHandler();
 
-									passwordInputOnChangeHandler();
+                    expect(mockSetPasswordRepeat).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
 
-									expect(mockSetPassword).toHaveBeenCalledTimes(1);
-								});
-							})
+              describe('Form Group - Address & City', () => {
+                let firstAddressFormGroup;
 
-							describe('Password Repeat Input', () => {
-								let passwordRepeatInput;
+                beforeEach(() => {
+                  firstAddressFormGroup = signupModalForm.childAt(3);
+                });
 
-								beforeEach(() => {
-									passwordRepeatInput = passwordFormGroup.childAt(1);
-								});
+                it('is a form group', () => {
+                  expect(firstAddressFormGroup.type()).toEqual(Form.Group);
+                });
 
-								it('is a form input', () => {
-									expect(passwordRepeatInput.type()).toEqual(Form.Input);
-								});
+                it('has fields of equal widths', () => {
+                  expect(firstAddressFormGroup.props().widths).toEqual('equal');
+                });
 
-								it('has a fluid width', () => {
-									expect(passwordRepeatInput.props().fluid).toBeTruthy();
-								});
+                describe('Address Input', () => {
+                  let addressInput;
 
-								it('is labeled correctly', () => {
-									expect(passwordRepeatInput.props().label).toEqual('Repeat Password');
-								});
+                  beforeEach(() => {
+                    addressInput = firstAddressFormGroup.childAt(0);
+                  });
 
-								it('has type set to password', () => {
-									expect(passwordRepeatInput.props().type).toEqual('password');
-								})
+                  it('is a form input', () => {
+                    expect(addressInput.type()).toEqual(Form.Input);
+                  });
 
-								it('has the correct placeholder text', () => {
-									expect(passwordRepeatInput.props().placeholder).toEqual('Repeat Password');
-								});
+                  it('has a fluid width', () => {
+                    expect(addressInput.props().fluid).toBeTruthy();
+                  });
 
-								it('updates the repeated password when the input is changed', () => {
-									const mockSetPasswordRepeat = jest.fn();
+                  it('is labeled correctly', () => {
+                    expect(addressInput.props().label).toEqual('Address');
+                  });
 
-									wrapper = renderComponent({ setPasswordRepeat: mockSetPasswordRepeat });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									passwordFormGroup = signupModalForm.childAt(2);
-									passwordRepeatInput = passwordFormGroup.childAt(1);
+                  it('has the correct placeholder text', () => {
+                    expect(addressInput.props().placeholder).toEqual('Address');
+                  });
 
-									const passwordRepeatInputOnChangeHandler = passwordRepeatInput.props().onChange;
+                  it('updates the address when the input is changed', () => {
+                    const mockSetAddress = jest.fn();
 
-									passwordRepeatInputOnChangeHandler();
+                    wrapper = renderComponent({ setAddress: mockSetAddress });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    firstAddressFormGroup = signupModalForm.childAt(3);
+                    addressInput = firstAddressFormGroup.childAt(0);
 
-									expect(mockSetPasswordRepeat).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
+                    const addressInputOnChangeHandler = addressInput.props().onChange;
 
-						describe('Form Group - Address & City', () => {
-							let firstAddressFormGroup;
+                    addressInputOnChangeHandler();
 
-							beforeEach(() => {
-								firstAddressFormGroup = signupModalForm.childAt(3);
-							});
+                    expect(mockSetAddress).toHaveBeenCalledTimes(1);
+                  });
+                });
 
-							it('is a form group', () => {
-								expect(firstAddressFormGroup.type()).toEqual(Form.Group);
-							});
+                describe('City Input', () => {
+                  let cityInput;
 
-							it('has fields of equal widths', () => {
-								expect(firstAddressFormGroup.props().widths).toEqual('equal');
-							});
+                  beforeEach(() => {
+                    cityInput = firstAddressFormGroup.childAt(1);
+                  });
 
-							describe('Address Input', () => {
-								let addressInput;
+                  it('is a form input', () => {
+                    expect(cityInput.type()).toEqual(Form.Input);
+                  });
 
-								beforeEach(() => {
-									addressInput = firstAddressFormGroup.childAt(0);
-								});
+                  it('has a fluid width', () => {
+                    expect(cityInput.props().fluid).toBeTruthy();
+                  });
 
-								it('is a form input', () => {
-									expect(addressInput.type()).toEqual(Form.Input);
-								});
+                  it('is labeled correctly', () => {
+                    expect(cityInput.props().label).toEqual('City');
+                  });
 
-								it('has a fluid width', () => {
-									expect(addressInput.props().fluid).toBeTruthy();
-								});
+                  it('has the correct placeholder text', () => {
+                    expect(cityInput.props().placeholder).toEqual('City');
+                  });
 
-								it('is labeled correctly', () => {
-									expect(addressInput.props().label).toEqual('Address');
-								});
+                  it('updates the city when the input is changed', () => {
+                    const mockSetCity = jest.fn();
 
-								it('has the correct placeholder text', () => {
-									expect(addressInput.props().placeholder).toEqual('Address');
-								});
+                    wrapper = renderComponent({ setCity: mockSetCity });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    firstAddressFormGroup = signupModalForm.childAt(3);
+                    cityInput = firstAddressFormGroup.childAt(1);
 
-								it('updates the address when the input is changed', () => {
-									const mockSetAddress = jest.fn();
+                    const cityInputOnChangeHandler = cityInput.props().onChange;
 
-									wrapper = renderComponent({ setAddress: mockSetAddress });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									firstAddressFormGroup = signupModalForm.childAt(3);
-									addressInput = firstAddressFormGroup.childAt(0);
+                    cityInputOnChangeHandler();
 
-									const addressInputOnChangeHandler = addressInput.props().onChange;
+                    expect(mockSetCity).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
 
-									addressInputOnChangeHandler();
+              describe('Form Group - State & Zipcode', () => {
+                let secondAddressFormGroup;
 
-									expect(mockSetAddress).toHaveBeenCalledTimes(1);
-								});
-							});
+                beforeEach(() => {
+                  secondAddressFormGroup = signupModalForm.childAt(4);
+                });
 
-							describe('City Input', () => {
-								let cityInput;
+                it('is a form group', () => {
+                  expect(secondAddressFormGroup.type()).toEqual(Form.Group);
+                });
 
-								beforeEach(() => {
-									cityInput = firstAddressFormGroup.childAt(1);
-								});
+                it('has fields of equal widths', () => {
+                  expect(secondAddressFormGroup.props().widths).toEqual('equal');
+                });
 
-								it('is a form input', () => {
-									expect(cityInput.type()).toEqual(Form.Input);
-								});
+                describe('State Dropdown', () => {
+                  let stateDropdown;
 
-								it('has a fluid width', () => {
-									expect(cityInput.props().fluid).toBeTruthy();
-								});
+                  beforeEach(() => {
+                    stateDropdown = secondAddressFormGroup.childAt(0);
+                  });
 
-								it('is labeled correctly', () => {
-									expect(cityInput.props().label).toEqual('City');
-								});
+                  it('is a form dropdown', () => {
+                    expect(stateDropdown.type()).toEqual(Form.Dropdown);
+                  });
 
-								it('has the correct placeholder text', () => {
-									expect(cityInput.props().placeholder).toEqual('City');
-								});
+                  it('has a fluid width', () => {
+                    expect(stateDropdown.props().fluid).toBeTruthy();
+                  });
 
-								it('updates the city when the input is changed', () => {
-									const mockSetCity = jest.fn();
+                  it('is labeled correctly', () => {
+                    expect(stateDropdown.props().label).toEqual('State');
+                  });
 
-									wrapper = renderComponent({ setCity: mockSetCity });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									firstAddressFormGroup = signupModalForm.childAt(3);
-									cityInput = firstAddressFormGroup.childAt(1);
+                  it('has the correct placeholder text', () => {
+                    expect(stateDropdown.props().placeholder).toEqual('State');
+                  });
 
-									const cityInputOnChangeHandler = cityInput.props().onChange;
+                  it('is searchable', () => {
+                    expect(stateDropdown.props().search).toBeTruthy();
+                  });
 
-									cityInputOnChangeHandler();
+                  it('is formatted to look like a form input', () => {
+                    expect(stateDropdown.props().selection).toBeTruthy();
+                  });
 
-									expect(mockSetCity).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
+                  it('has the correct options', () => {
+                    const fakeOptions = chance.n(() => ({
+                      text: chance.string(),
+                      key: chance.string(),
+                      value: chance.string(),
+                    }), chance.natural({ min: 2, max: 10 }));
 
-						describe('Form Group - State & Zipcode', () => {
-							let secondAddressFormGroup;
+                    Common.statekeys = fakeOptions;
 
-							beforeEach(() => {
-								secondAddressFormGroup = signupModalForm.childAt(4);
-							});
+                    wrapper = renderComponent();
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    secondAddressFormGroup = signupModalForm.childAt(4);
+                    stateDropdown = secondAddressFormGroup.childAt(0);
 
-							it('is a form group', () => {
-								expect(secondAddressFormGroup.type()).toEqual(Form.Group);
-							});
+                    expect(stateDropdown.props().options).toEqual(fakeOptions);
+                  });
 
-							it('has fields of equal widths', () => {
-								expect(secondAddressFormGroup.props().widths).toEqual('equal');
-							});
+                  it('updates the state when the value changes', () => {
+                    const mockSetAddressState = jest.fn();
 
-							describe('State Dropdown', () => {
-								let stateDropdown;
+                    wrapper = renderComponent({ setAddressState: mockSetAddressState });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    secondAddressFormGroup = signupModalForm.childAt(4);
+                    stateDropdown = secondAddressFormGroup.childAt(0);
 
-								beforeEach(() => {
-									stateDropdown = secondAddressFormGroup.childAt(0);
-								});
+                    const stateDropdownOnChangeHandler = stateDropdown.props().onChange;
 
-								it('is a form dropdown', () => {
-									expect(stateDropdown.type()).toEqual(Form.Dropdown);
-								});
+                    stateDropdownOnChangeHandler();
 
-								it('has a fluid width', () => {
-									expect(stateDropdown.props().fluid).toBeTruthy();
-								});
+                    expect(mockSetAddressState).toHaveBeenCalledTimes(1);
+                  });
+                });
 
-								it('is labeled correctly', () => {
-									expect(stateDropdown.props().label).toEqual('State');
-								});
+                describe('Zipcode Input', () => {
+                  let zipcodeInput;
 
-								it('has the correct placeholder text', () => {
-									expect(stateDropdown.props().placeholder).toEqual('State');
-								});
+                  beforeEach(() => {
+                    zipcodeInput = secondAddressFormGroup.childAt(1);
+                  });
 
-								it('is searchable', () => {
-									expect(stateDropdown.props().search).toBeTruthy();
-								});
+                  it('is a form input', () => {
+                    expect(zipcodeInput.type()).toEqual(Form.Input);
+                  });
 
-								it('is formatted to look like a form input', () => {
-									expect(stateDropdown.props().selection).toBeTruthy();
-								});
+                  it('has a fluid width', () => {
+                    expect(zipcodeInput.props().fluid).toBeTruthy();
+                  });
 
-								it('has the correct options', () => {
-									const fakeOptions = chance.n(() => ({
-										text: chance.string(),
-										key: chance.string(),
-										value: chance.string()
-									}), chance.natural({ min: 2, max: 10 }));
+                  it('is labeled correctly', () => {
+                    expect(zipcodeInput.props().label).toEqual('Zipcode');
+                  });
 
-									Common.statekeys = fakeOptions;
+                  it('has the correct placeholder text', () => {
+                    expect(zipcodeInput.props().placeholder).toEqual('Zipcode');
+                  });
 
-									wrapper = renderComponent();
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									secondAddressFormGroup = signupModalForm.childAt(4);
-									stateDropdown = secondAddressFormGroup.childAt(0);
+                  it('updates the zipcode when the input is changed', () => {
+                    const mockSetZipcode = jest.fn();
 
-									expect(stateDropdown.props().options).toEqual(fakeOptions);
-								});
+                    wrapper = renderComponent({ setZipcode: mockSetZipcode });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    secondAddressFormGroup = signupModalForm.childAt(4);
+                    zipcodeInput = secondAddressFormGroup.childAt(1);
 
-								it('updates the state when the value changes', () => {
-									const mockSetAddressState = jest.fn();
+                    const zipcodeInputOnChangeHandler = zipcodeInput.props().onChange;
 
-									wrapper = renderComponent({ setAddressState: mockSetAddressState });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									secondAddressFormGroup = signupModalForm.childAt(4);
-									stateDropdown = secondAddressFormGroup.childAt(0);
+                    zipcodeInputOnChangeHandler();
 
-									const stateDropdownOnChangeHandler = stateDropdown.props().onChange;
+                    expect(mockSetZipcode).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
 
-									stateDropdownOnChangeHandler();
+              describe('Form Group - Terms and Conditions', () => {
+                let termsAndConditionsFormGroup;
 
-									expect(mockSetAddressState).toHaveBeenCalledTimes(1);
-								});
-							});
+                beforeEach(() => {
+                  termsAndConditionsFormGroup = signupModalForm.childAt(5);
+                });
 
-							describe('Zipcode Input', () => {
-								let zipcodeInput;
+                it('is a form group', () => {
+                  expect(termsAndConditionsFormGroup.type()).toEqual(Form.Group);
+                });
 
-								beforeEach(() => {
-									zipcodeInput = secondAddressFormGroup.childAt(1);
-								});
+                describe('Terms and Conditions Checkbox', () => {
+                  let termsAndConditionsCheckbox;
 
-								it('is a form input', () => {
-									expect(zipcodeInput.type()).toEqual(Form.Input);
-								});
+                  beforeEach(() => {
+                    termsAndConditionsCheckbox = termsAndConditionsFormGroup.childAt(0);
+                  });
 
-								it('has a fluid width', () => {
-									expect(zipcodeInput.props().fluid).toBeTruthy();
-								});
+                  it('is a form checkbox', () => {
+                    expect(termsAndConditionsCheckbox.type()).toEqual(Form.Checkbox);
+                  });
 
-								it('is labeled correctly', () => {
-									expect(zipcodeInput.props().label).toEqual('Zipcode');
-								});
+                  it('has the correct label', () => {
+                    expect(termsAndConditionsCheckbox.props().label)
+                      .toEqual('I agree to the Terms and Conditions');
+                  });
+                });
+              });
 
-								it('has the correct placeholder text', () => {
-									expect(zipcodeInput.props().placeholder).toEqual('Zipcode');
-								});
+              describe('Form Group - Submit', () => {
+                let submitFormGroup;
 
-								it('updates the zipcode when the input is changed', () => {
-									const mockSetZipcode = jest.fn();
+                beforeEach(() => {
+                  submitFormGroup = signupModalForm.childAt(6);
+                });
 
-									wrapper = renderComponent({ setZipcode: mockSetZipcode });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									secondAddressFormGroup = signupModalForm.childAt(4);
-									zipcodeInput = secondAddressFormGroup.childAt(1);
+                it('is a form group', () => {
+                  expect(submitFormGroup.type()).toEqual(Form.Group);
+                });
 
-									const zipcodeInputOnChangeHandler = zipcodeInput.props().onChange;
+                describe('Submit Button', () => {
+                  let submitButton;
 
-									zipcodeInputOnChangeHandler();
+                  beforeEach(() => {
+                    submitButton = submitFormGroup.childAt(0);
+                  });
 
-									expect(mockSetZipcode).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
+                  it('is a form button', () => {
+                    expect(submitButton.type()).toEqual(Form.Button);
+                  });
 
-						describe('Form Group - Terms and Conditions', () => {
-							let termsAndConditionsFormGroup;
+                  it('is a large button', () => {
+                    expect(submitButton.props().size).toEqual('large');
+                  });
 
-							beforeEach(() => {
-								termsAndConditionsFormGroup = signupModalForm.childAt(5);
-							});
+                  it('closes the modal when clicked', () => {
+                    const mockCloseSignupModal = jest.fn();
 
-							it('is a form group', () => {
-								expect(termsAndConditionsFormGroup.type()).toEqual(Form.Group);
-							});
+                    wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
+                    navbarWrapper = wrapper.childAt(0);
+                    navbar = navbarWrapper.childAt(0);
+                    loginSignupButtonContainer = navbar.childAt(0);
+                    signupModal = loginSignupButtonContainer.childAt(1);
+                    signupModalDescription = signupModal.childAt(1);
+                    signupModalForm = signupModalDescription.childAt(0);
+                    submitFormGroup = signupModalForm.childAt(6);
+                    submitButton = submitFormGroup.childAt(0);
 
-							describe('Terms and Conditions Checkbox', () => {
-								let termsAndConditionsCheckbox;
+                    const submitButtonOnClickHandler = submitButton.props().onClick;
 
-								beforeEach(() => {
-									termsAndConditionsCheckbox = termsAndConditionsFormGroup.childAt(0);
-								});
+                    submitButtonOnClickHandler();
 
-								it('is a form checkbox', () => {
-									expect(termsAndConditionsCheckbox.type()).toEqual(Form.Checkbox);
-								});
-
-								it('has the correct label', () => {
-									expect(termsAndConditionsCheckbox.props().label)
-										.toEqual('I agree to the Terms and Conditions');
-								});
-							});
-						});
-
-						describe('Form Group - Submit', () => {
-							let submitFormGroup;
-
-							beforeEach(() => {
-								submitFormGroup = signupModalForm.childAt(6);
-							});
-
-							it('is a form group', () => {
-								expect(submitFormGroup.type()).toEqual(Form.Group);
-							});
-
-							describe('Submit Button', () => {
-								let submitButton;
-
-								beforeEach(() => {
-									submitButton = submitFormGroup.childAt(0);
-								});
-
-								it('is a form button', () => {
-									expect(submitButton.type()).toEqual(Form.Button);
-								});
-
-								it('is a large button', () => {
-									expect(submitButton.props().size).toEqual('large');
-								});
-
-								it('closes the modal when clicked', () => {
-									const mockCloseSignupModal = jest.fn();
-
-									wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
-									navbar = wrapper.childAt(0);
-									loginSignupButtonContainer = navbar.childAt(0);
-									signupModal = loginSignupButtonContainer.childAt(1);
-									signupModalDescription = signupModal.childAt(1);
-									signupModalForm = signupModalDescription.childAt(0);
-									submitFormGroup = signupModalForm.childAt(6);
-									submitButton = submitFormGroup.childAt(0);
-
-									const submitButtonOnClickHandler = submitButton.props().onClick;
-
-									submitButtonOnClickHandler();
-
-									expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
-								});
-							});
-						});
-					});
-				});
-			});
-		});
-	});
+                    expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 });

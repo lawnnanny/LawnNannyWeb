@@ -1,9 +1,9 @@
-import React from "react";
-import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-import Styles from "../../styles/HomePage";
-import { statekeys } from "../../helpers/Common";
+import Styles from '../../styles/HomePage';
+import { statekeys } from '../../helpers/Common';
 
 export const HomePage = props => (
   <div>
@@ -183,4 +183,5 @@ export const HomePage = props => (
     </Grid>
   </div>
 );
+
 export default HomePage;
