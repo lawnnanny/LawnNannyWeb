@@ -99,7 +99,6 @@ export default class HomePage extends Component {
                                         <Form.Input
                                             fluid
                                             label='First Name'
-                                            color='white'
                                             placeholder='First Name'
                                             onChange={setFirstName}
                                         />
