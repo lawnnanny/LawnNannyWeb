@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from 'redux-thunk';
 
 import Error404 from "../components/errors/Error404";
 import HomePageComponent from "../components/pages/HomePage";
@@ -15,7 +16,7 @@ export class Routes extends Component {
   constructor() {
     super();
 
-    const store = createStore(reducers);
+    const store = createStore(reducers, applyMiddleware(thunk));
 
     this.state = {
       store
