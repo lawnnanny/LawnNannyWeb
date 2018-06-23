@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
 
-export const requestPipeline = () => (
+export const RequestPipeline = () => (
   <div>
     <h1>requestPipeline</h1>
   </div>
 );
-export default connect(() => ({}))(requestPipeline);
+
+export default RequestPipeline;
