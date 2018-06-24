@@ -1,122 +1,114 @@
 import Actions from '../reducers/Actions';
 
-export const setEmail = event => dispatch => {
+export const setEmail = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setEmail,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setPassword = event => dispatch => {
+export const setPassword = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setPassword,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setFirstName = event => dispatch => {
+export const setFirstName = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setFirstName,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setLastName = event => dispatch => {
+export const setLastName = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setLastName,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setPasswordRepeat = event => dispatch => {
+export const setPasswordRepeat = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setPasswordRepeat,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setAddress = event => dispatch => {
+export const setAddress = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setAddress,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setCity = event => dispatch => {
+export const setCity = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setCity,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setAddressState = event => dispatch => {
+export const setAddressState = event => (dispatch) => {
   const value = event.value;
   const action = {
     type: Actions.login.setAddressState,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const setZipcode = event => dispatch => {
+export const setZipcode = event => (dispatch) => {
   const value = event.target.value;
   const action = {
     type: Actions.login.setZipcode,
-    value
+    value,
   };
 
   dispatch(action);
 };
 
-export const openLoginModal = () => dispatch => {
+export const openLoginModal = () => (dispatch) => {
   const action = {
-    type: Actions.login.toggleLoginModal
+    type: Actions.login.toggleLoginModal,
   };
 
   dispatch(action);
 };
 
-export const closeLoginModal = () => dispatch => {
+export const closeModal = () => (dispatch) => {
   const action = {
-    type: Actions.login.clear
+    type: Actions.login.clear,
   };
 
   dispatch(action);
 };
 
-export const openSignupModal = () => dispatch => {
+export const openSignupModal = () => (dispatch) => {
   const action = {
-    type: Actions.login.toggleSignupModal
-  };
-
-  dispatch(action);
-};
-
-export const closeSignupModal = () => dispatch => {
-  const action = {
-    type: Actions.login.clear
+    type: Actions.login.toggleSignupModal,
   };
 
   dispatch(action);
