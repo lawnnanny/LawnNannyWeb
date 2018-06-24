@@ -19,7 +19,7 @@ export const HomePage = props => (
               </Menu.Item>
             }
             open={props.isLoginModalOpen}
-            onClose={props.closeLoginModal}
+            onClose={props.closeModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>
@@ -55,7 +55,7 @@ export const HomePage = props => (
                     <Button
                       style={Styles.modalButton}
                       size="large"
-                      onClick={props.closeLoginModal}
+                      onClick={props.closeModal}
                     >
                       Login
                     </Button>
@@ -76,7 +76,7 @@ export const HomePage = props => (
               </Menu.Item>
             }
             open={props.isSignupModalOpen}
-            onClose={props.closeSignupModal}
+            onClose={props.closeModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
@@ -159,7 +159,7 @@ export const HomePage = props => (
                   <Form.Button
                     style={Styles.modalButton}
                     size="large"
-                    onClick={props.closeSignupModal}
+                    onClick={props.closeModal}
                   >
                     Submit
                   </Form.Button>

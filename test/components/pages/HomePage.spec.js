@@ -20,12 +20,11 @@ describe('Home Page', () => {
     setAddressState={props.setAddressState || jest.fn()}
     setZipcode={props.setZipcode || jest.fn()}
     openLoginModal={props.openLoginModal || jest.fn()}
-    closeLoginModal={props.closeLoginModal || jest.fn()}
+    closeModal={props.closeModal || jest.fn()}
     isLoginModalOpen={
       props.isLoginModalOpen === undefined ? chance.bool() : props.isLoginModalOpen
     }
     openSignupModal={props.openSignupModal || jest.fn()}
-    closeSignupModal={props.closeSignupModal || jest.fn()}
     isSignupModalOpen={
       props.isSignupModalOpen === undefined ? chance.bool() : props.isSignupModalOpen
     }
@@ -97,9 +96,9 @@ describe('Home Page', () => {
           });
 
           it('closes the model when closed', () => {
-            const mockCloseLoginModal = jest.fn();
+            const mockCloseModal = jest.fn();
 
-            wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+            wrapper = renderComponent({ closeModal: mockCloseModal });
             navbarWrapper = wrapper.childAt(0);
             navbar = navbarWrapper.childAt(0);
             loginSignupButtonContainer = navbar.childAt(0);
@@ -109,7 +108,7 @@ describe('Home Page', () => {
 
             loginModalOnCloseHandler();
 
-            expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
+            expect(mockCloseModal).toHaveBeenCalledTimes(1);
           });
 
           it('displays a close modal button', () => {
@@ -371,9 +370,9 @@ describe('Home Page', () => {
                 });
 
                 it('closes the login modal when clicked', () => {
-                  const mockCloseLoginModal = jest.fn();
+                  const mockCloseModal = jest.fn();
 
-                  wrapper = renderComponent({ closeLoginModal: mockCloseLoginModal });
+                  wrapper = renderComponent({ closeModal: mockCloseModal });
                   navbarWrapper = wrapper.childAt(0);
                   navbar = navbarWrapper.childAt(0);
                   loginSignupButtonContainer = navbar.childAt(0);
@@ -390,7 +389,7 @@ describe('Home Page', () => {
 
                   loginButtonOnClickHandler();
 
-                  expect(mockCloseLoginModal).toHaveBeenCalledTimes(1);
+                  expect(mockCloseModal).toHaveBeenCalledTimes(1);
                 });
               });
             });
@@ -425,9 +424,9 @@ describe('Home Page', () => {
           });
 
           it('closes the modal when closed', () => {
-            const mockCloseSignupModal = jest.fn();
+            const mockCloseModal = jest.fn();
 
-            wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
+            wrapper = renderComponent({ closeModal: mockCloseModal });
             navbarWrapper = wrapper.childAt(0);
             navbar = navbarWrapper.childAt(0);
             loginSignupButtonContainer = navbar.childAt(0);
@@ -437,7 +436,7 @@ describe('Home Page', () => {
 
             signupModalOnCloseHandler();
 
-            expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
+            expect(mockCloseModal).toHaveBeenCalledTimes(1);
           });
 
           it('displays a close icon', () => {
@@ -1091,9 +1090,9 @@ describe('Home Page', () => {
                   });
 
                   it('closes the modal when clicked', () => {
-                    const mockCloseSignupModal = jest.fn();
+                    const mockCloseModal = jest.fn();
 
-                    wrapper = renderComponent({ closeSignupModal: mockCloseSignupModal });
+                    wrapper = renderComponent({ closeModal: mockCloseModal });
                     navbarWrapper = wrapper.childAt(0);
                     navbar = navbarWrapper.childAt(0);
                     loginSignupButtonContainer = navbar.childAt(0);
@@ -1107,7 +1106,7 @@ describe('Home Page', () => {
 
                     submitButtonOnClickHandler();
 
-                    expect(mockCloseSignupModal).toHaveBeenCalledTimes(1);
+                    expect(mockCloseModal).toHaveBeenCalledTimes(1);
                   });
                 });
               });
