@@ -11,7 +11,7 @@ const setState = (previousState, property, newValue) => Object.assign({}, previo
 export default (state = getInitialState(), action) => {
     switch(action.type) {
         case Actions.requests.setTypeOfRequest:
-            return setState(state, 'requestType', action.value);
+            return setState(state, 'selection', action.data);
         default:
             return state;
     }

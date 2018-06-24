@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import Error404 from "../components/errors/Error404";
 import ConnectedHomePageComponent from "../connectedComponents/ConnectedHomePage";
 import ConnectedRequestSelection from "../connectedComponents/ConnectedRequestSelection";
-import requestInformationComponent from "../components/pages/pipeline/requestInformation"
+import ConnectedRequestInformationComponent from "../connectedComponents/ConnectedRequestInformation"
 import App from "../components/App"
 import reducers from "../reducers/reducers";
 
@@ -39,7 +39,7 @@ export default class Routes extends Component {
             <Route
               exact
               path="/pipeline/requestInformation"
-              component={requestInformationComponent}
+              component={ConnectedRequestInformationComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>

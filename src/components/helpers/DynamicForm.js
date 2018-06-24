@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Form, Header, Input, Button } from 'semantic-ui-react'
 import { Requests } from '../pages/pipeline/jsonRequests'
 
@@ -28,12 +28,12 @@ class DynamicForm extends React.Component {
         return formUI;
     }
 
-     render (requestType) {
+     render () {
         return (
             <div>
-               <Header size='large'>{requestType}</Header>
+               <Header size='large'>{this.props.requestType}</Header>
                <Form onSubmit={this.onSubmit}>
-                   {this.renderFormFromJson(requestType)}
+                   {this.renderFormFromJson(this.props.requestType)}
                    <Button>Submit</Button>
                </Form>
            </div>

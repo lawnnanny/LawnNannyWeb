@@ -5,10 +5,9 @@ import requestSelectionComponent from "../components/pages/pipeline/requestSelec
 const mapDispatchToProps = dispatch => ({
   setTypeOfRequest: (data) => {
     const action = {
-      type: Actions.login.setTypeOfRequest,
+      type: Actions.requests.setTypeOfRequest,
       data
     };
-
     dispatch(action);
   }
 
