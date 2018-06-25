@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Header } from "semantic-ui-react";
-import DynamicFormComponent from "../../helpers/DynamicForm"
+import {} from "semantic-ui-react";
+import DynamicFormComponent from "../../helpers/DynamicForm";
+import BreadcrumbComponent from "./breadcrumb";
 
-export const requestInformation = (state) => (
+export const requestInformation = state => (
   <div>
-  <DynamicFormComponent requestType={state.typeOfRequest}/>
+    <BreadcrumbComponent />
+    <DynamicFormComponent requestType={state.typeOfRequest} />
   </div>
-)
-export default requestInformation
+);
+export default requestInformation;
