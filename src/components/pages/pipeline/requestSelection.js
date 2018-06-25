@@ -19,7 +19,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
     <RequestOptionComponent
       imageURL={mower}
       title="Lawn Mowing"
-      onClick={() => setTypeOfRequest("Lawn Mowing")}
+      onClick={() => {
+        setTypeOfRequest("Lawn Mowing");
+      }}
     />
     <RequestOptionComponent
       imageURL={rake}

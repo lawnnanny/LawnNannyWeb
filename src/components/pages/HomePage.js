@@ -210,10 +210,12 @@ HomePage.propTypes = {
   setZipcode: PropTypes.func.isRequired,
   openLoginModal: PropTypes.func.isRequired,
   closeLoginModal: PropTypes.func.isRequired,
+  isSignupModalOpen: PropTypes.bool.isRequired,
   isLoginModalOpen: PropTypes.bool.isRequired,
   openSignupModal: PropTypes.func.isRequired,
-  closeSignupModal: PropTypes.func.isRequired,
-  isSignupModalOpen: PropTypes.bool.isRequired
+  closeSignupModal: PropTypes.func.isRequired
 };
+
+HomePage.defaultProps = {};
 
 export default HomePage;
