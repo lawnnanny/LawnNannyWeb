@@ -23,14 +23,17 @@ export const requestSelection = ({setTypeOfRequest}) => (
     <RequestOptionComponent
       imageURL={rake}
       title="Leaf Raking"
+      onClick = {() => setTypeOfRequest("Leaf Raking")}
     />
     <RequestOptionComponent
       imageURL={snowBlower}
       title="Snow Clearing"
+      onClick = {() => setTypeOfRequest("Snow Clearing")}
     />
     <RequestOptionComponent
       imageURL={custom}
       title="Custom Request"
+      onClick = {() => setTypeOfRequest("Custom Request")}
     />
   </Container>
 );
