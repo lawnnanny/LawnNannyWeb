@@ -7,6 +7,7 @@ export default {
     borderColor: green
   },
   segment: {
-    borderColor: white
+    border: "none",
+    boxShadow: "none"
   }
 };

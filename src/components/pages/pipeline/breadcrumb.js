@@ -4,7 +4,7 @@ import Styles from "../../../styles/breadcrumb";
 
 export const breadcrumb = () => (
   <Segment padded style={Styles.segment}>
-    <Step.Group unstackable>
+    <Step.Group unstackable style={Styles.stepGroup}>
       <Step>
         <Icon name="wrench" />
         <Step.Content>
