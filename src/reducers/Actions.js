@@ -14,9 +14,21 @@ export default {
     clearPassword: (i += 1),
     toggleLoginModal: (i += 1),
     clear: (i += 1),
-    toggleSignupModal: (i += 1),
- },
- requests: {
-     setTypeOfRequest: (i += 1),
- }
+    toggleSignupModal: (i += 1)
+  },
+  requests: {
+    setTypeOfRequest: (i += 1)
+  },
+  breadcrumb: {
+    toggleRequestActive: (i += 1),
+    toggleDetailsActive: (i += 1),
+    toggleLocationActive: (i += 1),
+    togglePriceActive: (i += 1),
+    toggleReviewActive: (i += 1),
+    toggleRequestCompleted: (i += 1),
+    toggleDetailsCompleted: (i += 1),
+    toggleLocationCompleted: (i += 1),
+    togglePriceCompleted: (i += 1),
+    toggleReviewCompleted: (i += 1)
+  }
 };
