@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Header, Input, Button } from "semantic-ui-react";
+import { Form, Header, Input, Button, Dropdown } from "semantic-ui-react";
 import { Requests } from "../pages/pipeline/jsonRequests";
 
 class DynamicForm extends React.Component {
@@ -19,12 +19,21 @@ class DynamicForm extends React.Component {
 
   renderFormFromJson = requestType => {
     const requests = Requests.Requests[requestType];
-    const formUI = requests.fields.map(field => (
-      <Form.Field onChange={this.onChange}>
-        <label htmlFor={field.id}>{field.name}</label>
-        <Input id={field.id} type={field.type} />
-      </Form.Field>
-    ));
+    const formUI = requests.fields.map(field => {
+        switch(field.type) {
+            case "Text":
+                return (
+                    <Form.Field onChange={this.onChange}>
+                    <label htmlFor={field.id}>{field.name}</label>
+                    <Input id={field.id} type={field.type} />
+                    </Form.Field>
+                );
+            case "dropDown":
+                return (<Dropdown placeholder={field.placeholder} search selection options={field.options} />)
+            default:
+            break;
+         }
+    });
     return formUI;
   };
 
