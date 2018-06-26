@@ -1,7 +1,7 @@
 import React from "react";
 import {} from "semantic-ui-react";
 import DynamicFormComponent from "../../helpers/DynamicForm";
-import BreadcrumbComponent from "./breadcrumb";
+import BreadcrumbComponent from "../../helpers/breadcrumb";
 import Styles from "../../../styles/requestInformation";
 
 export const requestInformation = state => (

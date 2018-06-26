@@ -1,6 +1,6 @@
 import React from "react";
 import { Segment, Step, Icon } from "semantic-ui-react";
-import Styles from "../../../styles/breadcrumb";
+import Styles from "../../styles/breadcrumb";
 
 export const breadcrumb = () => (
   <Segment padded style={Styles.segment}>

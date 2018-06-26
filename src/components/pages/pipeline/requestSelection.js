@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Header } from "semantic-ui-react";
 import RequestOptionComponent from "../../helpers/RequestOption";
-import BreadcrumbComponent from "./breadcrumb";
+import BreadcrumbComponent from "../../helpers/breadcrumb";
 import mower from "../../../images/pipeline/mower.png";
 import rake from "../../../images/pipeline/rake.png";
 import snowBlower from "../../../images/pipeline/snowBlower.png";
