@@ -25,7 +25,15 @@ export const Requests = {
       ]
     },
     "Leaf Raking": {
-      fields: [{ name: "Address", type: "text", id: "leafRaking" }]
+      fields: [
+        {
+          name: "How would you like your leaves?",
+          size: "3",
+          options: ["Bagged", "Into Piles", "Other"],
+          type: "radio",
+          id: "leavesCollection"
+        },
+      ]
     },
     "Snow Clearing": {
       fields: [{ name: "Address", type: "text", id: "snowClearing" }]

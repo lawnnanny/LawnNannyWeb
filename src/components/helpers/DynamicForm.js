@@ -57,84 +57,22 @@ class DynamicForm extends React.Component {
             <Form.Checkbox onChange={this.onChange} label={field.placeholder} />
           );
 
-        case "radio": {
-          switch (field.size) {
-            case "2":
-              return (
-                <Form.Group inline onChange={this.onChange}>
-                  <label htmlFor={field.id}>{field.name}</label>
-                  <Form.Radio
-                    label={field.label1}
-                    value="1"
-                    checked={value === "1"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label2}
-                    value="2"
-                    checked={value === "2"}
-                    onChange={this.handleChange}
-                  />
-                </Form.Group>
-              );
-            case "3":
-              return (
-                <Form.Group inline onChange={this.onChange}>
-                  <label htmlFor={field.id}>{field.name}</label>
-                  <Form.Radio
-                    label={field.label1}
-                    value="1"
-                    checked={value === "1"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label2}
-                    value="2"
-                    checked={value === "2"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label3}
-                    value="3"
-                    checked={value === "3"}
-                    onChange={this.handleChange}
-                  />
-                </Form.Group>
-              );
-            case "4":
-              return (
-                <Form.Group inline onChange={this.onChange}>
-                  <label htmlFor={field.id}>{field.name}</label>
-                  <Form.Radio
-                    label={field.label1}
-                    value="1"
-                    checked={value === "1"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label2}
-                    value="2"
-                    checked={value === "2"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label3}
-                    value="3"
-                    checked={value === "3"}
-                    onChange={this.handleChange}
-                  />
-                  <Form.Radio
-                    label={field.label4}
-                    value="4"
-                    checked={value === "4"}
-                    onChange={this.handleChange}
-                  />
-                </Form.Group>
-              );
-            default:
-              return null;
-          }
-        }
+        case "radio":
+
+          return (
+            <Form.Group inline onChange={this.onChange}>
+              field.options.map(option => {
+                return (
+                <Form.Radio
+                  label={option}
+                  value={option}
+                  checked={value === option}
+                  onChange={this.handleChange}
+                />
+              )
+              });
+            </Form.Group>
+          );
         default:
           return (
             <Form.Field onChange={this.onChange}>
