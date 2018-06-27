@@ -8,7 +8,7 @@ export default {
   breadcrumb: {
     overflow: "hidden"
   },
-  buttonSegment: {
+  segment: {
     width: "100%"
   }
 };
