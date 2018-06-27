@@ -36,6 +36,7 @@ class DynamicForm extends React.Component {
         case "dropDown":
           return (
             <Form.Dropdown
+              onChange={this.onChange}
               label={field.name}
               placeholder={field.placeholder}
               options={statekeys}
@@ -44,17 +45,23 @@ class DynamicForm extends React.Component {
 
         case "textArea":
           return (
-            <Form.TextArea label={field.name} placeholder={field.placeholder} />
+            <Form.TextArea
+              onChange={this.onChange}
+              label={field.name}
+              placeholder={field.placeholder}
+            />
           );
 
         case "checkbox":
-          return <Form.Checkbox label={field.placeholder} />;
+          return (
+            <Form.Checkbox onChange={this.onChange} label={field.placeholder} />
+          );
 
         case "radio": {
           switch (field.size) {
             case "2":
               return (
-                <Form.Group inline>
+                <Form.Group inline onChange={this.onChange}>
                   <label htmlFor={field.id}>{field.name}</label>
                   <Form.Radio
                     label={field.label1}
@@ -72,7 +79,7 @@ class DynamicForm extends React.Component {
               );
             case "3":
               return (
-                <Form.Group inline>
+                <Form.Group inline onChange={this.onChange}>
                   <label htmlFor={field.id}>{field.name}</label>
                   <Form.Radio
                     label={field.label1}
@@ -96,7 +103,7 @@ class DynamicForm extends React.Component {
               );
             case "4":
               return (
-                <Form.Group inline>
+                <Form.Group inline onChange={this.onChange}>
                   <label htmlFor={field.id}>{field.name}</label>
                   <Form.Radio
                     label={field.label1}
@@ -146,7 +153,6 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           {this.renderFormFromJson(this.props.requestType)}
-          <Button>Continue</Button>
         </Form>
       </Segment>
     );

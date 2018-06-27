@@ -6,10 +6,11 @@ import { Provider } from "react-redux";
 import Error404 from "../components/errors/Error404";
 import ConnectedHomePageComponent from "../connectedComponents/ConnectedHomePage";
 import ConnectedRequestSelection from "../connectedComponents/ConnectedRequestSelection";
-import ConnectedRequestInformationComponent from "../connectedComponents/ConnectedRequestInformation"
-import App from "../components/App"
+import ConnectedRequestInformationComponent from "../connectedComponents/ConnectedRequestInformation";
+import App from "../components/App";
 import reducers from "../reducers/reducers";
 
+console.log(React.version);
 export default class Routes extends Component {
   constructor() {
     super();
@@ -30,7 +31,11 @@ export default class Routes extends Component {
         <BrowserRouter className="router">
           <Switch>
             <Route exact path="/test" component={App} />
-            <Route exact path="/pipeline" component={ConnectedRequestSelection} />
+            <Route
+              exact
+              path="/pipeline"
+              component={ConnectedRequestSelection}
+            />
             <Route
               exact
               path="/HomePage"
