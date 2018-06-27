@@ -5,7 +5,7 @@ export default {
   navbarContainer: {
     width: "100%",
     minHeight: 42,
-    backgroundColor: green
+    backgroundColor: 'black'
   },
   header: {
     backgroundImage: "url('lawn.jpg')"

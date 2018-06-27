@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-
+import LoginQuestion from '../helpers/loginQuestion'
 
 import Styles from "../../styles/HomePage";
 import { statekeys } from "../../helpers/Common";
@@ -193,6 +193,7 @@ const HomePage = ({
             Make a Request
           </Button>
         </Link>
+        <LoginQuestion/>
       </Grid.Row>
       <Grid.Row />
     </Grid>
