@@ -12,11 +12,11 @@ const loginQuestion = () => (
     </Modal.Header>
 <Modal.Content>
     <Segment padded>
-        <Button color='green' fluid>
+        <Button size='large' color='green' fluid>
           Login
         </Button>
         <Divider horizontal>Or</Divider>
-        <Button secondary fluid>
+        <Button secondary fluid size='large'>
           Sign Up Now
         </Button>
       </Segment>
