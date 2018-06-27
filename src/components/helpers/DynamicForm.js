@@ -20,6 +20,19 @@ class DynamicForm extends React.Component {
 
   handleChange = (e, { value }) => this.setState({ value });
 
+  renderRadioButtons = (value, field) => {
+    const radioButtons = field.map(option => {
+      return (
+      <Form.Radio
+        label={option}
+        value={option}
+        onChange={this.handleChange}
+      />
+    )
+    });
+    return radioButtons
+  }
+
   renderFormFromJson = requestType => {
     const { value } = this.state;
     const requests = Requests.Requests[requestType];
@@ -61,16 +74,7 @@ class DynamicForm extends React.Component {
 
           return (
             <Form.Group inline onChange={this.onChange}>
-              field.options.map(option => {
-                return (
-                <Form.Radio
-                  label={option}
-                  value={option}
-                  checked={value === option}
-                  onChange={this.handleChange}
-                />
-              )
-              });
+              {this.renderRadioButtons(value, field.options)}
             </Form.Group>
           );
         default:
