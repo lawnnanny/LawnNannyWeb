@@ -14,15 +14,11 @@ class DynamicForm extends React.Component {
       const data = {};
       let counter = 0;
       Requests.Requests[this.props.requestType].fields.forEach((element) => {
-          data[element.name] = event.target[counter].value;
+          data[element.id] = event.target[counter].value;
           counter += 1;
       })
       this.props.setRequestInformation(data);
   }
-
-  // onSubmit = () => {
-    // this.props.setRequestInformation(this.state.data);
-  // };
 
   handleChange = (e, { value }) => this.setState({ value });
 
@@ -81,9 +77,11 @@ class DynamicForm extends React.Component {
 
         case "radio":
           return (
-            <Form.Group inline>
-              {this.renderRadioButtons(value, field.options)}
-            </Form.Group>
+            <label htmlFor={field.id}> {field.name}
+              <Form.Group id={field.id} inline>
+                {this.renderRadioButtons(value, field.options)}
+                </Form.Group>
+             </label>
           );
 
         default:
@@ -99,7 +97,6 @@ class DynamicForm extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Segment padded>
         <Header size="large">{this.props.requestType}</Header>

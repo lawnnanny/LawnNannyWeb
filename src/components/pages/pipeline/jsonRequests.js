@@ -3,7 +3,7 @@ export const Requests = {
     "Lawn Mowing": {
       fields: [
         {
-          name: "GrassBagged",
+          name: "Would you like your grass bagged?",
           type: "checkbox",
           placeholder: "Would you like to have the grass bagged?",
           id: "lawnGrassBagged"
