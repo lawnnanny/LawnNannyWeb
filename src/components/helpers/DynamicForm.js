@@ -10,28 +10,31 @@ class DynamicForm extends React.Component {
     this.state = {};
   }
 
-  onChange = e =>
-    this.setState({
-      data: { ...this.state.data, [e.target.name]: e.target.value }
-    });
+  onSubmit = (event) => {
+      const data = {};
+      let counter = 0;
+      Requests.Requests[this.props.requestType].fields.forEach((element) => {
+          data[element.name] = event.target[counter].value;
+          counter += 1;
+      })
+      this.props.setRequestInformation(data);
+  }
 
-  onSubmit = () => {
-    this.props.setRequestInformation(this.state.data);
-  };
+  // onSubmit = () => {
+    // this.props.setRequestInformation(this.state.data);
+  // };
 
   handleChange = (e, { value }) => this.setState({ value });
 
   renderRadioButtons = (value, field) => {
-    const radioButtons = field.map(option => {
-      return (
+    const radioButtons = field.map(option => (
       <Form.Radio
         label={option}
         value={option}
-        checked={this.state.value === option}
         onChange={this.handleChange}
+        checked={this.state.value === option}
       />
-    )
-    });
+    ));
     return radioButtons
   }
 
@@ -42,7 +45,7 @@ class DynamicForm extends React.Component {
       switch (field.type) {
         case "text":
           return (
-            <Form.Field onChange={this.onChange}>
+            <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
             </Form.Field>
@@ -51,7 +54,6 @@ class DynamicForm extends React.Component {
         case "dropDown":
           return (
             <Form.Dropdown
-              onChange={this.onChange}
               label={field.name}
               placeholder={field.placeholder}
               options={statekeys}
@@ -61,7 +63,6 @@ class DynamicForm extends React.Component {
         case "textArea":
           return (
             <Form.TextArea
-              onChange={this.onChange}
               label={field.name}
               placeholder={field.placeholder}
             />
@@ -69,19 +70,25 @@ class DynamicForm extends React.Component {
 
         case "checkbox":
           return (
-            <Form.Checkbox onChange={this.onChange} label={field.placeholder} />
+            <Form.Field>
+                <Checkbox
+                    name={field.name}
+                    value="true"
+                    label={field.placeholder}
+                />
+            </Form.Field>
           );
 
         case "radio":
           return (
-            <Form.Group inline onChange={this.onChange}>
+            <Form.Group inline>
               {this.renderRadioButtons(value, field.options)}
             </Form.Group>
           );
 
         default:
           return (
-            <Form.Field onChange={this.onChange}>
+            <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
             </Form.Field>
