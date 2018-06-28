@@ -16,7 +16,7 @@ class DynamicForm extends React.Component {
     });
 
   onSubmit = () => {
-    this.props.submit(this.state.data);
+    this.props.setRequestInformation(this.state.data);
   };
 
   handleChange = (e, { value }) => this.setState({ value });
@@ -71,7 +71,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Checkbox onChange={this.onChange} label={field.placeholder} />
           );
-          
+
         case "radio":
           return (
             <Form.Group inline onChange={this.onChange}>
@@ -92,11 +92,19 @@ class DynamicForm extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <Segment padded>
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
-          {this.renderFormFromJson(this.props.requestType)}
+          <Segment style={Styles.segment}>
+              {this.renderFormFromJson(this.props.requestType)}
+          </Segment>
+          <Segment style={Styles.segment}>
+              <Button type='submit' fluid positive size="large">
+                  Continue
+              </Button>
+          </Segment>
         </Form>
       </Segment>
     );

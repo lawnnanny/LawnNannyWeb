@@ -1,6 +1,17 @@
 import { connect } from "react-redux";
+import Actions from "../reducers/Actions";
 import requestInformationComponent from "../components/pages/pipeline/requestInformation";
 
-const mapStateToProps = (state) => ({typeOfRequest: state.typeOfRequest.selection})
+const mapStateToProps = (state) => ({typeOfRequest: state.requests.selection});
 
-export default connect(mapStateToProps)(requestInformationComponent);
+const mapDispatchToProps = dispatch => ({
+  setRequestInformation: data => {
+    const action = {
+      type: Actions.requests.setRequestInformation,
+      data
+    };
+    dispatch(action);
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(requestInformationComponent);

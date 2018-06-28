@@ -12,6 +12,8 @@ export default (state = getInitialState(), action) => {
     switch(action.type) {
         case Actions.requests.setTypeOfRequest:
             return setState(state, 'selection', action.data);
+        case Actions.requests.setRequestInformation:
+            return setState(state, 'requestInformation', action.data)
         default:
             return state;
     }

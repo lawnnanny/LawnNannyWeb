@@ -17,6 +17,7 @@ export default {
     toggleSignupModal: (i += 1)
   },
   requests: {
-    setTypeOfRequest: (i += 1)
+    setTypeOfRequest: (i += 1),
+    setRequestInformation: (i += 1),
   }
 };
