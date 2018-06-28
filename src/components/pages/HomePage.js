@@ -195,7 +195,6 @@ const HomePage = ({
         </Link>
         <LoginQuestion/>
       </Grid.Row>
-      <Grid.Row />
     </Grid>
   </div>
 );
