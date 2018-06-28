@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Form, Header, Input, Button, Segment } from "semantic-ui-react";
+import { Form, Header, Input, Button, Segment, Checkbox, Label } from "semantic-ui-react";
 import { Requests } from "../pages/pipeline/jsonRequests";
 import { statekeys } from "../../helpers/Common";
+import Styles from '../../styles/DynamicForm'
 
 class DynamicForm extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class DynamicForm extends React.Component {
       <Form.Radio
         label={option}
         value={option}
+        checked={this.state.value === option}
         onChange={this.handleChange}
       />
     )
@@ -69,14 +71,14 @@ class DynamicForm extends React.Component {
           return (
             <Form.Checkbox onChange={this.onChange} label={field.placeholder} />
           );
-
+          
         case "radio":
-
           return (
             <Form.Group inline onChange={this.onChange}>
               {this.renderRadioButtons(value, field.options)}
             </Form.Group>
           );
+
         default:
           return (
             <Form.Field onChange={this.onChange}>
