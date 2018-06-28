@@ -11,7 +11,7 @@ export const requestInformation = (state) => (
         <BreadcrumbComponent style={Styles.breadcrumb} activeStep={1} />
       </Segment>
     </Grid.Row>
-    <Grid.Row>
+    <Grid.Row padding style={Styles.Grid}>
       <Segment style={Styles.segment}>
         <DynamicFormComponent setRequestInformation={state.setRequestInformation} requestType={state.typeOfRequest} />
       </Segment>
