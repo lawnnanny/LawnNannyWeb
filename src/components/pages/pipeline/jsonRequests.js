@@ -26,7 +26,7 @@ export const Requests = {
       fields: [
         {
           name: "How would you like your leaves?",
-          options: ["Bagged", "Into Piles", "Other"],
+          options: ["Bagged", "Into Piles", "Taken Away, Other"],
           type: "radio",
           id: "leavesCollection"
         },
