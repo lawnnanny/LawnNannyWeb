@@ -14,8 +14,16 @@ class DynamicForm extends React.Component {
       const data = {};
       let counter = 0;
       Requests.Requests[this.props.requestType].fields.forEach((element) => {
-          data[element.id] = event.target[counter].value;
-          counter += 1;
+          if(element.type == "radio") {
+            data[element.id] = {};
+            element.options.forEach((option) => {
+              data[element.id][option] = event.target[counter].checked;
+              counter += 1;
+            })
+          } else {
+            data[element.id] = event.target[counter].value;
+            counter += 1;
+          }
       })
       this.props.setRequestInformation(data);
   }

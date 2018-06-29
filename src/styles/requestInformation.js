@@ -9,6 +9,6 @@ export default {
     overflow: "hidden"
   },
   segment: {
-    width: "100%"
+    width: "100%",
   }
 };
