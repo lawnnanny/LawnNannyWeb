@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "../reducers/reducers";
+import { CSSTransition, TransitionGroup } from "";
 
 import Error404 from "../components/errors/Error404";
 import HomePageComponent from "./pages/HomePage";
