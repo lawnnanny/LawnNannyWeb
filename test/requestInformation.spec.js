@@ -11,12 +11,14 @@ import {
 } from "semantic-ui-react";
 import { shallow } from "enzyme";
 import Chance from "chance";
-import { requestSelection } from "../src/components/pages/pipeline/requestSelection";
+import RequestInformationComponent from "../src/components/pages/pipeline/requestInformation";
+import BreadcrumbComponent from "../src/components/helpers/breadcrumb";
+import DynamicFormComponent from "../src/components/helpers/DynamicForm";
 
 describe("RequestInformation", () => {
   let wrapper;
 
-  const renderComponent = () => shallow();
+  const renderComponent = () => shallow(<RequestInformationComponent />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -70,7 +72,7 @@ describe("RequestInformation", () => {
         });
 
         it("is a breadcrumb", () => {
-          expect(BreadcrumbComponent.type()).toEqual("BreadcrumbComponent");
+          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
       });
     });
@@ -106,7 +108,7 @@ describe("RequestInformation", () => {
         });
 
         it("is a Form", () => {
-          expect(Form.type()).toEqual("DynamicFormComponent");
+          expect(Form.type()).toEqual(DynamicFormComponent);
         });
       });
     });

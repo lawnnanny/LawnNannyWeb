@@ -10,13 +10,14 @@ import {
   Header
 } from "semantic-ui-react";
 import { shallow } from "enzyme";
-import Chance from "chance";
-import { requestSelection } from "../src/components/pages/pipeline/requestSelection";
+import RequestSelectionComponent from "../src/components/pages/pipeline/requestSelection";
+import BreadcrumbComponent from "../src/components/helpers/breadcrumb";
+import RequestOptionComponent from "../src/components/helpers/RequestOption";
 
 describe("RequestSelection", () => {
   let wrapper;
 
-  const renderComponent = () => shallow();
+  const renderComponent = () => shallow(<RequestSelectionComponent />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -31,7 +32,7 @@ describe("RequestSelection", () => {
   });
 
   it("contains five rows", () => {
-    expect.assertions(5);
+    expect.assertions(6);
 
     const GridRows = wrapper.children();
 
@@ -70,7 +71,7 @@ describe("RequestSelection", () => {
         });
 
         it("is a breadcrumb", () => {
-          expect(BreadcrumbComponent.type()).toEqual("BreadcrumbComponent");
+          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
       });
     });
@@ -99,21 +100,21 @@ describe("RequestSelection", () => {
       });
 
       describe("Header", () => {
-        let Header;
+        let header;
 
         beforeEach(() => {
-          Header = HeaderSegment.childAt(0);
+          header = HeaderSegment.childAt(0);
         });
 
         it("is a Header", () => {
-          expect(Header.type()).toEqual(Header);
+          expect(header.type()).toEqual(Header);
         });
 
         describe("SubHeader", () => {
           let subHeader;
 
           beforeEach(() => {
-            subHeader = Header.childAt(0);
+            subHeader = header.childAt(0);
           });
 
           it("is a SubHeader", () => {
@@ -153,7 +154,7 @@ describe("RequestSelection", () => {
         });
 
         it("is a LawnMowing", () => {
-          expect(LawnMowingComponent.type()).toEqual("RequestOptionComponent");
+          expect(LawnMowingComponent.type()).toEqual(RequestOptionComponent);
         });
       });
     });
@@ -189,7 +190,7 @@ describe("RequestSelection", () => {
         });
 
         it("is a Raking", () => {
-          expect(RakingComponent.type()).toEqual("RequestOptionComponent");
+          expect(RakingComponent.type()).toEqual(RequestOptionComponent);
         });
       });
     });
@@ -225,9 +226,7 @@ describe("RequestSelection", () => {
         });
 
         it("is a snowClearing", () => {
-          expect(snowClearingComponent.type()).toEqual(
-            "RequestOptionComponent"
-          );
+          expect(snowClearingComponent.type()).toEqual(RequestOptionComponent);
         });
       });
     });
@@ -263,7 +262,7 @@ describe("RequestSelection", () => {
         });
 
         it("is a Custom", () => {
-          expect(CustomComponent.type()).toEqual("RequestOptionComponent");
+          expect(CustomComponent.type()).toEqual(RequestOptionComponent);
         });
       });
     });

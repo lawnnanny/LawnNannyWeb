@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Image, Segment, Header, Button } from "semantic-ui-react";
+import { Image, Header, Button } from "semantic-ui-react";
 import Styles from "../../styles/RequestOption";
 
 export const RequestOption = props => (
