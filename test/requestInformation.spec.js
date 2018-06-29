@@ -74,6 +74,9 @@ describe("RequestInformation", () => {
         it("is a breadcrumb", () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
+        it("has an active step", () => {
+          expect(Breadcrumb.props().activeStep).toEqual(1);
+        });
       });
     });
   });

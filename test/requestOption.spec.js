@@ -27,6 +27,10 @@ describe("requestOption", () => {
     expect(wrapper.type()).toEqual(Link);
   });
 
+  it("is the correct link", () => {
+    expect(wrapper.props().to).toEqual("/pipeline/requestInformation");
+  });
+
   describe("button", () => {
     let button;
 
@@ -65,6 +69,9 @@ describe("requestOption", () => {
         });
         it("is styled as a circular image", () => {
           expect(image.props().circular).toBeTruthy();
+        });
+        it("has a size", () => {
+          expect(image.props().size).toEqual("massive");
         });
       });
     });

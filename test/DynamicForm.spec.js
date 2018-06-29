@@ -41,6 +41,9 @@ describe("DynamicForm", () => {
     it("is a header", () => {
       expect(header.type()).toEqual(Header);
     });
+    it("is has a size", () => {
+      expect(header.props().size).toEqual("large");
+    });
   });
 
   describe("form", () => {
