@@ -5,12 +5,13 @@ import { statekeys } from "../../helpers/Common";
 import Styles from '../../styles/DynamicForm'
 
 class DynamicForm extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  onSubmit = (event) => {
+   onSubmit = (event) => {
       const data = {};
       let counter = 0;
       Requests.Requests[this.props.requestType].fields.forEach((element) => {
