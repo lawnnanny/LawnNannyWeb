@@ -1,26 +1,19 @@
 import React from "react";
-import { Grid, Button, Segment, Header } from "semantic-ui-react";
+import { Grid, Segment,} from "semantic-ui-react";
 import DynamicFormComponent from "../../helpers/DynamicForm";
 import BreadcrumbComponent from "../../helpers/breadcrumb";
 import Styles from "../../../styles/requestInformation";
 
-export const requestInformation = state => (
+export const requestInformation = (state) => (
   <Grid container style={Styles.Grid}>
     <Grid.Row>
       <Segment style={Styles.segment}>
         <BreadcrumbComponent style={Styles.breadcrumb} activeStep={1} />
       </Segment>
     </Grid.Row>
-    <Grid.Row>
+    <Grid.Row padding style={Styles.Grid}>
       <Segment style={Styles.segment}>
-        <DynamicFormComponent requestType={state.typeOfRequest} />
-      </Segment>
-    </Grid.Row>
-    <Grid.Row>
-      <Segment style={Styles.segment}>
-        <Button fluid positive size="large">
-          Continue
-        </Button>
+        <DynamicFormComponent setRequestInformation={state.setRequestInformation} requestType={state.typeOfRequest} />
       </Segment>
     </Grid.Row>
   </Grid>

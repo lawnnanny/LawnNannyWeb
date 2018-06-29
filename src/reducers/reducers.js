@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import login from "./Login";
-import typeOfRequest from "./typeOfRequest";
+import requests from "./requests";
 
 export default combineReducers({
   login,
-  typeOfRequest
+  requests
 });

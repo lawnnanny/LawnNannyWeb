@@ -3,35 +3,76 @@ export const Requests = {
     "Lawn Mowing": {
       fields: [
         {
-          name: "GrassBagged",
+          name: "Would you like your grass bagged?",
           type: "checkbox",
           placeholder: "Would you like to have the grass bagged?",
           id: "lawnGrassBagged"
         },
         {
           name: "Does the lawn have a sprinkler system installed?",
-          size: "2",
-          label1: "yes",
-          label2: "no",
+          options: ["yes", "no"],
           type: "radio",
           id: "lawnSprinkler"
         },
         {
-          name: "Please provide additional comments on the lawn",
+          name: "Please provide additional comments?",
           type: "textArea",
           placeholder: "Enter comments here",
-          id: "lawnComments"
-        }
+          id: "comments"
+        },
       ]
     },
     "Leaf Raking": {
-      fields: [{ name: "Address", type: "text", id: "leafRaking" }]
+      fields: [
+        {
+          name: "How would you like your leaves?",
+          options: ["Bagged", "Into Piles", "Taken Away, Other"],
+          type: "radio",
+          id: "leavesCollection"
+        },
+        {
+          name: "Please provide additional comments?",
+          type: "textArea",
+          placeholder: "Enter comments here",
+          id: "comments"
+        },
+      ]
     },
     "Snow Clearing": {
-      fields: [{ name: "Address", type: "text", id: "snowClearing" }]
+      fields: [
+        {
+          name: "SideWalk",
+          type: "checkbox",
+          placeholder: "Snowblow Your SideWalk?",
+          id: "snowBlowSideWalk"
+        },
+        {
+          name: "Driveway",
+          type: "checkbox",
+          placeholder: "Snwoblow Your Driveway?",
+          id: "snowBlowDriveWay"
+        },
+        {
+          name: "Porch/Deck",
+          type: "checkbox",
+          placeholder: "Snowblow Your Porch/Deck?",
+          id: "snowBlowPorchDeck"
+        },
+        {
+          name: "Please provide additional comments?",
+          type: "textArea",
+          placeholder: "Enter comments here",
+          id: "comments"
+        },
+      ]
     },
     "Custom Request": {
-      fields: [{ name: "Address", type: "text", id: "customRequest" }]
+      fields: [{
+        name: "Please provide additional comments?",
+        type: "textArea",
+        placeholder: "Enter comments here",
+        id: "comments"
+      },]
     }
   }
 };

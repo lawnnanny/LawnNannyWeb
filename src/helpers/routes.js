@@ -10,7 +10,6 @@ import ConnectedRequestInformationComponent from "../connectedComponents/Connect
 import App from "../components/App";
 import reducers from "../reducers/reducers";
 
-console.log(React.version);
 export default class Routes extends Component {
   constructor() {
     super();
