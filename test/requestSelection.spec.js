@@ -73,6 +73,10 @@ describe("RequestSelection", () => {
         it("is a breadcrumb", () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
+
+        it("has an active step", () => {
+          expect(Breadcrumb.props().activeStep).toEqual(0);
+        });
       });
     });
   });
@@ -108,6 +112,10 @@ describe("RequestSelection", () => {
 
         it("is a Header", () => {
           expect(header.type()).toEqual(Header);
+        });
+
+        it("is a Header", () => {
+          expect(header.props().as).toEqual("h2");
         });
 
         describe("SubHeader", () => {
@@ -156,6 +164,12 @@ describe("RequestSelection", () => {
         it("is a LawnMowing", () => {
           expect(LawnMowingComponent.type()).toEqual(RequestOptionComponent);
         });
+        it("has the correct title", () => {
+          expect(LawnMowingComponent.props().title).toEqual("Lawn Mowing");
+        });
+        it("has an imageURL", () => {
+          expect(LawnMowingComponent.props().imageURL).toBeTruthy();
+        });
       });
     });
   });
@@ -189,8 +203,14 @@ describe("RequestSelection", () => {
           RakingComponent = RakingSegment.childAt(0);
         });
 
-        it("is a Raking", () => {
+        it("is a Raking Component", () => {
           expect(RakingComponent.type()).toEqual(RequestOptionComponent);
+        });
+        it("has the correct title", () => {
+          expect(RakingComponent.props().title).toEqual("Leaf Raking");
+        });
+        it("has an imageURL", () => {
+          expect(RakingComponent.props().imageURL).toBeTruthy();
         });
       });
     });
@@ -228,6 +248,12 @@ describe("RequestSelection", () => {
         it("is a snowClearing", () => {
           expect(snowClearingComponent.type()).toEqual(RequestOptionComponent);
         });
+        it("has the correct title", () => {
+          expect(snowClearingComponent.props().title).toEqual("Snow Clearing");
+        });
+        it("has an imageURL", () => {
+          expect(snowClearingComponent.props().imageURL).toBeTruthy();
+        });
       });
     });
   });
@@ -263,6 +289,12 @@ describe("RequestSelection", () => {
 
         it("is a Custom", () => {
           expect(CustomComponent.type()).toEqual(RequestOptionComponent);
+        });
+        it("has the correct title", () => {
+          expect(CustomComponent.props().title).toEqual("Custom Request");
+        });
+        it("has an imageURL", () => {
+          expect(CustomComponent.props().imageURL).toBeTruthy();
         });
       });
     });

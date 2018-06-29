@@ -52,6 +52,23 @@ describe("RequestInformation", () => {
       it("is a stepper", () => {
         expect(stepper.type()).toEqual(Stepper);
       });
+
+      it("is has 4 steps", () => {
+        expect(stepper.props().steps).toEqual([
+          { title: "Request" },
+          { title: "Details" },
+          { title: "Location" },
+          { title: "Review" }
+        ]);
+      });
+
+      it("has a complete color", () => {
+        expect(stepper.props().completeColor).toEqual("#63BA18");
+      });
+
+      it("has an active color", () => {
+        expect(stepper.props().activeColor).toEqual("#ffdd43");
+      });
     });
   });
 });
