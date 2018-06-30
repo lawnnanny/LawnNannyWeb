@@ -56,4 +56,21 @@ describe("DynamicForm", () => {
       expect(form.type()).toEqual(Form);
     });
   });
+
+  describe("Submit Button", () => {
+      let submitSegment;
+
+      beforeEach(() => {
+          submitSegment = wrapper.childAt(1).childAt(1);
+      });
+
+      it("It is a segment", () => {
+          expect(submitSegment.type()).toEqual(Segment);
+      });
+
+      it("There is a button in the segment", () => {
+         const button = submitSegment.childAt(0);
+         expect(button.type()).toEqual(Button); 
+      });
+  })
 });
