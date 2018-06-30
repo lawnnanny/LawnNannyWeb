@@ -18,7 +18,7 @@ import DynamicFormComponent from "../src/components/helpers/DynamicForm";
 describe("RequestInformation", () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<RequestInformationComponent />);
+  const renderComponent = () => shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing"/>);
 
   beforeEach(() => {
     wrapper = renderComponent();
