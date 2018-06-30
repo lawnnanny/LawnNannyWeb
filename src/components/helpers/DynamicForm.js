@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Form, Header, Input, Button, Segment, Checkbox, Label } from "semantic-ui-react";
-import { Requests } from "../pages/pipeline/jsonRequests";
+import{ Requests } from "../pages/pipeline/jsonRequests";
 import { statekeys } from "../../helpers/Common";
 import Styles from '../../styles/DynamicForm'
 
 class DynamicForm extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {};

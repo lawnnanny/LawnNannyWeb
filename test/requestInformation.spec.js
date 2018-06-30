@@ -32,8 +32,8 @@ describe("RequestInformation", () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it("contains three rows", () => {
-    expect.assertions(3);
+  it("contains two rows", () => {
+    expect.assertions(2);
 
     const GridRows = wrapper.children();
 
@@ -112,41 +112,6 @@ describe("RequestInformation", () => {
 
         it("is a Form", () => {
           expect(Form.type()).toEqual(DynamicFormComponent);
-        });
-      });
-    });
-  });
-  describe("LawnMowinRow", () => {
-    let ButtonRow;
-
-    beforeEach(() => {
-      ButtonRow = wrapper.childAt(2);
-    });
-
-    it("is a Button Row", () => {
-      expect(ButtonRow.type()).toEqual(Grid.Row);
-    });
-
-    describe("ButtonSegment", () => {
-      let ButtonSegment;
-
-      beforeEach(() => {
-        ButtonSegment = ButtonRow.childAt(0);
-      });
-
-      it("is a Button Segment", () => {
-        expect(ButtonSegment.type()).toEqual(Segment);
-      });
-
-      describe("button", () => {
-        let button;
-
-        beforeEach(() => {
-          button = ButtonSegment.childAt(0);
-        });
-
-        it("is a Button", () => {
-          expect(button.type()).toEqual(Button);
         });
       });
     });

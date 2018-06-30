@@ -16,15 +16,14 @@ import DynamicFormComponent from "../src/components/helpers/DynamicForm";
 
 describe("DynamicForm", () => {
   let wrapper;
-
-  const renderComponent = () => shallow(<DynamicFormComponent />);
+  const renderComponent = () => shallow(<DynamicFormComponent requestType="Lawn Mowing" />);
 
   beforeEach(() => {
     wrapper = renderComponent();
   });
 
   it("is wrapped in a Segment", () => {
-    expect(wrapper.type()).toEqual(Link);
+    expect(wrapper.type()).toEqual(Segment);
   });
 
   it("is styled as a padded Segment", () => {
