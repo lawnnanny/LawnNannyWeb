@@ -1,4 +1,8 @@
 import React from "react";
+import { shallowWithStore } from 'enzyme-redux';
+import { createMockStore } from 'redux-test-utils';
+import configureStore from 'redux-mock-store'
+import Actions from '../src/reducers/Actions'
 import {
   Menu,
   Modal,
@@ -15,9 +19,10 @@ import BreadcrumbComponent from "../src/components/helpers/breadcrumb";
 import RequestOptionComponent from "../src/components/helpers/RequestOption";
 
 describe("RequestSelection", () => {
-  let wrapper;
 
-  const renderComponent = () => shallow(<RequestSelectionComponent />);
+  let wrapper;
+  const setTypeOfRequest = jest.fn();
+  const renderComponent = () => shallow(<RequestSelectionComponent setTypeOfRequest={setTypeOfRequest} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -170,6 +175,10 @@ describe("RequestSelection", () => {
         it("has an imageURL", () => {
           expect(LawnMowingComponent.props().imageURL).toBeTruthy();
         });
+        it("has a onClick that uses function from redux", () => {
+            LawnMowingComponent.props().onClick();
+            expect(setTypeOfRequest.mock.calls.length).toBe(1);
+        })
       });
     });
   });
