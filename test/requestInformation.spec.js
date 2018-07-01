@@ -1,13 +1,13 @@
 import React from "react";
 import {
-  Menu,
-  Modal,
-  Grid,
-  Input,
-  Button,
-  Form,
-  Segment,
-  Header
+    Menu
+    , Modal
+    , Grid
+    , Input
+    , Button
+    , Form
+    , Segment
+    , Header
 } from "semantic-ui-react";
 import { shallow } from "enzyme";
 import Chance from "chance";
@@ -16,104 +16,104 @@ import BreadcrumbComponent from "../src/components/helpers/breadcrumb";
 import DynamicFormComponent from "../src/components/helpers/DynamicForm";
 
 describe("RequestInformation", () => {
-  let wrapper;
+    let wrapper;
 
-  const renderComponent = () => shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing"/>);
-
-  beforeEach(() => {
-    wrapper = renderComponent();
-  });
-
-  it("is wrapped in a Grid Container", () => {
-    expect(wrapper.type()).toEqual(Grid);
-  });
-
-  it("is styled as a container Grid", () => {
-    expect(wrapper.props().container).toBeTruthy();
-  });
-
-  it("contains two rows", () => {
-    expect.assertions(2);
-
-    const GridRows = wrapper.children();
-
-    GridRows.forEach(row => {
-      expect(row.type()).toEqual(Grid.Row);
-    });
-  });
-
-  describe("BreadcrumbRow", () => {
-    let BreadcrumbRow;
+    const renderComponent = () => shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing"/>);
 
     beforeEach(() => {
-      BreadcrumbRow = wrapper.childAt(0);
+        wrapper = renderComponent();
     });
 
-    it("is a Breadcrumb Row", () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
+    it("is wrapped in a Grid Container", () => {
+        expect(wrapper.type()).toEqual(Grid);
     });
 
-    describe("BreadcrumbSegment", () => {
-      let BreadcrumbSegment;
+    it("is styled as a container Grid", () => {
+        expect(wrapper.props().container).toBeTruthy();
+    });
 
-      beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
-      });
+    it("contains two rows", () => {
+        expect.assertions(2);
 
-      it("is a Breadcrumb Segment", () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
-      });
+        const GridRows = wrapper.children();
 
-      describe("BreadcrumbComponent", () => {
-        let Breadcrumb;
+        GridRows.forEach(row => {
+            expect(row.type()).toEqual(Grid.Row);
+        });
+    });
+
+    describe("BreadcrumbRow", () => {
+        let BreadcrumbRow;
 
         beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
+            BreadcrumbRow = wrapper.childAt(0);
         });
 
-        it("is a breadcrumb", () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
+        it("is a Breadcrumb Row", () => {
+            expect(BreadcrumbRow.type()).toEqual(Grid.Row);
         });
-        it("has an active step", () => {
-          expect(Breadcrumb.props().activeStep).toEqual(1);
+
+        describe("BreadcrumbSegment", () => {
+            let BreadcrumbSegment;
+
+            beforeEach(() => {
+                BreadcrumbSegment = BreadcrumbRow.childAt(0);
+            });
+
+            it("is a Breadcrumb Segment", () => {
+                expect(BreadcrumbSegment.type()).toEqual(Segment);
+            });
+
+            describe("BreadcrumbComponent", () => {
+                let Breadcrumb;
+
+                beforeEach(() => {
+                    Breadcrumb = BreadcrumbSegment.childAt(0);
+                });
+
+                it("is a breadcrumb", () => {
+                    expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
+                });
+                it("has an active step", () => {
+                    expect(Breadcrumb.props().activeStep).toEqual(1);
+                });
+            });
         });
-      });
-    });
-  });
-
-  describe("FormRow", () => {
-    let FormRow;
-
-    beforeEach(() => {
-      FormRow = wrapper.childAt(1);
     });
 
-    it("is a Form Row", () => {
-      expect(FormRow.type()).toEqual(Grid.Row);
-    });
-
-    describe("FormSegment", () => {
-      let FormSegment;
-
-      beforeEach(() => {
-        FormSegment = FormRow.childAt(0);
-      });
-
-      it("is a Form Segment", () => {
-        expect(FormSegment.type()).toEqual(Segment);
-      });
-
-      describe("Form", () => {
-        let Form;
+    describe("FormRow", () => {
+        let FormRow;
 
         beforeEach(() => {
-          Form = FormSegment.childAt(0);
+            FormRow = wrapper.childAt(1);
         });
 
-        it("is a Form", () => {
-          expect(Form.type()).toEqual(DynamicFormComponent);
+        it("is a Form Row", () => {
+            expect(FormRow.type()).toEqual(Grid.Row);
         });
-      });
+
+        describe("FormSegment", () => {
+            let FormSegment;
+
+            beforeEach(() => {
+                FormSegment = FormRow.childAt(0);
+            });
+
+            it("is a Form Segment", () => {
+                expect(FormSegment.type()).toEqual(Segment);
+            });
+
+            describe("Form", () => {
+                let Form;
+
+                beforeEach(() => {
+                    Form = FormSegment.childAt(0);
+                });
+
+                it("is a Form", () => {
+                    expect(Form.type()).toEqual(DynamicFormComponent);
+                });
+            });
+        });
     });
-  });
 });
