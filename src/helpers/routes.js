@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from 'redux-thunk';
 
 import Error404 from "../components/errors/Error404";
 import ConnectedHomePageComponent from "../connectedComponents/ConnectedHomePage";
@@ -10,11 +11,11 @@ import ConnectedRequestInformationComponent from "../connectedComponents/Connect
 import App from "../components/App";
 import reducers from "../reducers/reducers";
 
-export default class Routes extends Component {
+export class Routes extends Component {
   constructor() {
     super();
 
-    const store = createStore(reducers);
+    const store = createStore(reducers, applyMiddleware(thunk));
 
     this.state = {
       store
@@ -52,3 +53,5 @@ export default class Routes extends Component {
     );
   }
 }
+
+export default Routes;

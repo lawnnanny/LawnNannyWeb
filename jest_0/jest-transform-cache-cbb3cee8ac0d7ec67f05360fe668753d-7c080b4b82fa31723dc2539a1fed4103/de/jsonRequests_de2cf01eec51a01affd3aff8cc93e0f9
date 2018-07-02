@@ -1,0 +1,113 @@
+9068d808d3d60032e1995c949ca157a9
+/* istanbul ignore next */"use strict";
+
+var cov_1fdn2729m2 = function () {
+  var path = "/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonRequests.js",
+      hash = "e6eba0adf565be1e04a63fedb13a461025928ef7",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonRequests.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 24
+        },
+        end: {
+          line: 78,
+          column: 1
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Requests = /* istanbul ignore next */exports.Requests = (cov_1fdn2729m2.s[0]++, {
+  Requests: {
+    "Lawn Mowing": {
+      fields: [{
+        name: "Would you like your grass bagged?",
+        type: "checkbox",
+        placeholder: "Would you like to have the grass bagged?",
+        id: "lawnGrassBagged"
+      }, {
+        name: "Does the lawn have a sprinkler system installed?",
+        options: ["yes", "no"],
+        type: "radio",
+        id: "lawnSprinkler"
+      }, {
+        name: "Please provide additional comments?",
+        type: "textArea",
+        placeholder: "Enter comments here",
+        id: "comments"
+      }]
+    },
+    "Leaf Raking": {
+      fields: [{
+        name: "How would you like your leaves?",
+        options: ["Bagged", "Into Piles", "Taken Away, Other"],
+        type: "radio",
+        id: "leavesCollection"
+      }, {
+        name: "Please provide additional comments?",
+        type: "textArea",
+        placeholder: "Enter comments here",
+        id: "comments"
+      }]
+    },
+    "Snow Clearing": {
+      fields: [{
+        name: "SideWalk",
+        type: "checkbox",
+        placeholder: "Snowblow Your SideWalk?",
+        id: "snowBlowSideWalk"
+      }, {
+        name: "Driveway",
+        type: "checkbox",
+        placeholder: "Snwoblow Your Driveway?",
+        id: "snowBlowDriveWay"
+      }, {
+        name: "Porch/Deck",
+        type: "checkbox",
+        placeholder: "Snowblow Your Porch/Deck?",
+        id: "snowBlowPorchDeck"
+      }, {
+        name: "Please provide additional comments?",
+        type: "textArea",
+        placeholder: "Enter comments here",
+        id: "comments"
+      }]
+    },
+    "Custom Request": {
+      fields: [{
+        name: "Please provide additional comments?",
+        type: "textArea",
+        placeholder: "Enter comments here",
+        id: "comments"
+      }]
+    }
+  }
+});
+/* istanbul ignore next */exports.default = Requests;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpzb25SZXF1ZXN0cy5qcyJdLCJuYW1lcyI6WyJSZXF1ZXN0cyIsImZpZWxkcyIsIm5hbWUiLCJ0eXBlIiwicGxhY2Vob2xkZXIiLCJpZCIsIm9wdGlvbnMiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU8sSUFBTUEsZ0ZBQVc7QUFDdEJBLFlBQVU7QUFDUixtQkFBZTtBQUNiQyxjQUFRLENBQ047QUFDRUMsY0FBTSxtQ0FEUjtBQUVFQyxjQUFNLFVBRlI7QUFHRUMscUJBQWEsMENBSGY7QUFJRUMsWUFBSTtBQUpOLE9BRE0sRUFPTjtBQUNFSCxjQUFNLGtEQURSO0FBRUVJLGlCQUFTLENBQUMsS0FBRCxFQUFRLElBQVIsQ0FGWDtBQUdFSCxjQUFNLE9BSFI7QUFJRUUsWUFBSTtBQUpOLE9BUE0sRUFhTjtBQUNFSCxjQUFNLHFDQURSO0FBRUVDLGNBQU0sVUFGUjtBQUdFQyxxQkFBYSxxQkFIZjtBQUlFQyxZQUFJO0FBSk4sT0FiTTtBQURLLEtBRFA7QUF1QlIsbUJBQWU7QUFDYkosY0FBUSxDQUNOO0FBQ0VDLGNBQU0saUNBRFI7QUFFRUksaUJBQVMsQ0FBQyxRQUFELEVBQVcsWUFBWCxFQUF5QixtQkFBekIsQ0FGWDtBQUdFSCxjQUFNLE9BSFI7QUFJRUUsWUFBSTtBQUpOLE9BRE0sRUFPTjtBQUNFSCxjQUFNLHFDQURSO0FBRUVDLGNBQU0sVUFGUjtBQUdFQyxxQkFBYSxxQkFIZjtBQUlFQyxZQUFJO0FBSk4sT0FQTTtBQURLLEtBdkJQO0FBdUNSLHFCQUFpQjtBQUNmSixjQUFRLENBQ047QUFDRUMsY0FBTSxVQURSO0FBRUVDLGNBQU0sVUFGUjtBQUdFQyxxQkFBYSx5QkFIZjtBQUlFQyxZQUFJO0FBSk4sT0FETSxFQU9OO0FBQ0VILGNBQU0sVUFEUjtBQUVFQyxjQUFNLFVBRlI7QUFHRUMscUJBQWEseUJBSGY7QUFJRUMsWUFBSTtBQUpOLE9BUE0sRUFhTjtBQUNFSCxjQUFNLFlBRFI7QUFFRUMsY0FBTSxVQUZSO0FBR0VDLHFCQUFhLDJCQUhmO0FBSUVDLFlBQUk7QUFKTixPQWJNLEVBbUJOO0FBQ0VILGNBQU0scUNBRFI7QUFFRUMsY0FBTSxVQUZSO0FBR0VDLHFCQUFhLHFCQUhmO0FBSUVDLFlBQUk7QUFKTixPQW5CTTtBQURPLEtBdkNUO0FBbUVSLHNCQUFrQjtBQUNoQkosY0FBUSxDQUFDO0FBQ1BDLGNBQU0scUNBREM7QUFFUEMsY0FBTSxVQUZDO0FBR1BDLHFCQUFhLHFCQUhOO0FBSVBDLFlBQUk7QUFKRyxPQUFEO0FBRFE7QUFuRVY7QUFEWSxDQUFYLENBQU47NENBOEVRTCxRIiwiZmlsZSI6Impzb25SZXF1ZXN0cy5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBSZXF1ZXN0cyA9IHtcbiAgUmVxdWVzdHM6IHtcbiAgICBcIkxhd24gTW93aW5nXCI6IHtcbiAgICAgIGZpZWxkczogW1xuICAgICAgICB7XG4gICAgICAgICAgbmFtZTogXCJXb3VsZCB5b3UgbGlrZSB5b3VyIGdyYXNzIGJhZ2dlZD9cIixcbiAgICAgICAgICB0eXBlOiBcImNoZWNrYm94XCIsXG4gICAgICAgICAgcGxhY2Vob2xkZXI6IFwiV291bGQgeW91IGxpa2UgdG8gaGF2ZSB0aGUgZ3Jhc3MgYmFnZ2VkP1wiLFxuICAgICAgICAgIGlkOiBcImxhd25HcmFzc0JhZ2dlZFwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBuYW1lOiBcIkRvZXMgdGhlIGxhd24gaGF2ZSBhIHNwcmlua2xlciBzeXN0ZW0gaW5zdGFsbGVkP1wiLFxuICAgICAgICAgIG9wdGlvbnM6IFtcInllc1wiLCBcIm5vXCJdLFxuICAgICAgICAgIHR5cGU6IFwicmFkaW9cIixcbiAgICAgICAgICBpZDogXCJsYXduU3ByaW5rbGVyXCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIG5hbWU6IFwiUGxlYXNlIHByb3ZpZGUgYWRkaXRpb25hbCBjb21tZW50cz9cIixcbiAgICAgICAgICB0eXBlOiBcInRleHRBcmVhXCIsXG4gICAgICAgICAgcGxhY2Vob2xkZXI6IFwiRW50ZXIgY29tbWVudHMgaGVyZVwiLFxuICAgICAgICAgIGlkOiBcImNvbW1lbnRzXCJcbiAgICAgICAgfSxcbiAgICAgIF1cbiAgICB9LFxuICAgIFwiTGVhZiBSYWtpbmdcIjoge1xuICAgICAgZmllbGRzOiBbXG4gICAgICAgIHtcbiAgICAgICAgICBuYW1lOiBcIkhvdyB3b3VsZCB5b3UgbGlrZSB5b3VyIGxlYXZlcz9cIixcbiAgICAgICAgICBvcHRpb25zOiBbXCJCYWdnZWRcIiwgXCJJbnRvIFBpbGVzXCIsIFwiVGFrZW4gQXdheSwgT3RoZXJcIl0sXG4gICAgICAgICAgdHlwZTogXCJyYWRpb1wiLFxuICAgICAgICAgIGlkOiBcImxlYXZlc0NvbGxlY3Rpb25cIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgbmFtZTogXCJQbGVhc2UgcHJvdmlkZSBhZGRpdGlvbmFsIGNvbW1lbnRzP1wiLFxuICAgICAgICAgIHR5cGU6IFwidGV4dEFyZWFcIixcbiAgICAgICAgICBwbGFjZWhvbGRlcjogXCJFbnRlciBjb21tZW50cyBoZXJlXCIsXG4gICAgICAgICAgaWQ6IFwiY29tbWVudHNcIlxuICAgICAgICB9LFxuICAgICAgXVxuICAgIH0sXG4gICAgXCJTbm93IENsZWFyaW5nXCI6IHtcbiAgICAgIGZpZWxkczogW1xuICAgICAgICB7XG4gICAgICAgICAgbmFtZTogXCJTaWRlV2Fsa1wiLFxuICAgICAgICAgIHR5cGU6IFwiY2hlY2tib3hcIixcbiAgICAgICAgICBwbGFjZWhvbGRlcjogXCJTbm93YmxvdyBZb3VyIFNpZGVXYWxrP1wiLFxuICAgICAgICAgIGlkOiBcInNub3dCbG93U2lkZVdhbGtcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgbmFtZTogXCJEcml2ZXdheVwiLFxuICAgICAgICAgIHR5cGU6IFwiY2hlY2tib3hcIixcbiAgICAgICAgICBwbGFjZWhvbGRlcjogXCJTbndvYmxvdyBZb3VyIERyaXZld2F5P1wiLFxuICAgICAgICAgIGlkOiBcInNub3dCbG93RHJpdmVXYXlcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgbmFtZTogXCJQb3JjaC9EZWNrXCIsXG4gICAgICAgICAgdHlwZTogXCJjaGVja2JveFwiLFxuICAgICAgICAgIHBsYWNlaG9sZGVyOiBcIlNub3dibG93IFlvdXIgUG9yY2gvRGVjaz9cIixcbiAgICAgICAgICBpZDogXCJzbm93Qmxvd1BvcmNoRGVja1wiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBuYW1lOiBcIlBsZWFzZSBwcm92aWRlIGFkZGl0aW9uYWwgY29tbWVudHM/XCIsXG4gICAgICAgICAgdHlwZTogXCJ0ZXh0QXJlYVwiLFxuICAgICAgICAgIHBsYWNlaG9sZGVyOiBcIkVudGVyIGNvbW1lbnRzIGhlcmVcIixcbiAgICAgICAgICBpZDogXCJjb21tZW50c1wiXG4gICAgICAgIH0sXG4gICAgICBdXG4gICAgfSxcbiAgICBcIkN1c3RvbSBSZXF1ZXN0XCI6IHtcbiAgICAgIGZpZWxkczogW3tcbiAgICAgICAgbmFtZTogXCJQbGVhc2UgcHJvdmlkZSBhZGRpdGlvbmFsIGNvbW1lbnRzP1wiLFxuICAgICAgICB0eXBlOiBcInRleHRBcmVhXCIsXG4gICAgICAgIHBsYWNlaG9sZGVyOiBcIkVudGVyIGNvbW1lbnRzIGhlcmVcIixcbiAgICAgICAgaWQ6IFwiY29tbWVudHNcIlxuICAgICAgfSxdXG4gICAgfVxuICB9XG59O1xuZXhwb3J0IGRlZmF1bHQgUmVxdWVzdHM7XG4iXX0=

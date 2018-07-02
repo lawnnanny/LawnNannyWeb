@@ -1,0 +1,124 @@
+a81ade27397d112e4f5fe3ce8f570b7c
+/* istanbul ignore next */"use strict";
+
+var cov_1z2s43zmc4 = function () {
+  var path = "/home/sdrafahl/code/TerraWeb/src/components/helpers/breadcrumb.js",
+      hash = "6034f4f1b03e3aa127ea37905441e7aadc8d9785",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/sdrafahl/code/TerraWeb/src/components/helpers/breadcrumb.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 6,
+          column: 26
+        },
+        end: {
+          line: 22,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 2
+        },
+        end: {
+          line: 21,
+          column: 9
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 6,
+            column: 26
+          },
+          end: {
+            line: 6,
+            column: 27
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 2
+          },
+          end: {
+            line: 21,
+            column: 9
+          }
+        },
+        line: 7
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.breadcrumb = undefined;
+
+var /* istanbul ignore next */_react = require("react");
+
+/* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+
+var /* istanbul ignore next */_reactStepperHorizontal = require("react-stepper-horizontal");
+
+/* istanbul ignore next */var _reactStepperHorizontal2 = _interopRequireDefault(_reactStepperHorizontal);
+
+var /* istanbul ignore next */_semanticUiReact = require("semantic-ui-react");
+
+var /* istanbul ignore next */_breadcrumb = require("../../styles/breadcrumb");
+
+/* istanbul ignore next */var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+cov_1z2s43zmc4.s[0]++;
+var breadcrumb = /* istanbul ignore next */exports.breadcrumb = function breadcrumb(props) {
+  /* istanbul ignore next */cov_1z2s43zmc4.f[0]++;
+  cov_1z2s43zmc4.s[1]++;
+  return (/* istanbul ignore next */_react2.default.createElement(
+      /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Grid,
+      /* istanbul ignore next */{ container: /* istanbul ignore next */true },
+      /* istanbul ignore next */_react2.default.createElement(
+        /* istanbul ignore next */ /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Grid.Row,
+        /* istanbul ignore next */null,
+        /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactStepperHorizontal2. /* istanbul ignore next */default, /* istanbul ignore next */{
+          completeColor: "#63BA18",
+          activeColor: "#ffdd43",
+          steps: [{ title: "Request" }, { title: "Details" }, { title: "Location" }, { title: "Review" }],
+          activeStep: props.activeStep
+        })
+      )
+    )
+  );
+};
+
+/* istanbul ignore next */exports.default = breadcrumb;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJyZWFkY3J1bWIuanMiXSwibmFtZXMiOlsiYnJlYWRjcnVtYiIsInRpdGxlIiwicHJvcHMiLCJhY3RpdmVTdGVwIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7O0FBQ0E7Ozs7Ozs7QUFFTyxJQUFNQSw0REFBYSxTQUFiQSxVQUFhLFFBQ3hCO0FBQUE7QUFBQTtBQUFBO0FBQUMsZ0ZBQUQ7QUFBQSxrQ0FBTSx5Q0FBTjtBQUNFO0FBQUEsa0NBQUMsMkVBQUQsQ0FBTSxHQUFOO0FBQUE7QUFDRSxnRUFBQyxzRkFBRDtBQUNFLHlCQUFjLFNBRGhCO0FBRUUsdUJBQVksU0FGZDtBQUdFLGlCQUFPLENBQ0wsRUFBRUMsT0FBTyxTQUFULEVBREssRUFFTCxFQUFFQSxPQUFPLFNBQVQsRUFGSyxFQUdMLEVBQUVBLE9BQU8sVUFBVCxFQUhLLEVBSUwsRUFBRUEsT0FBTyxRQUFULEVBSkssQ0FIVDtBQVNFLHNCQUFZQyxNQUFNQztBQVRwQjtBQURGO0FBREY7QUFBQTtBQWNPLENBZkY7OzRDQWtCUUgsVSIsImZpbGUiOiJicmVhZGNydW1iLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgU3RlcHBlciBmcm9tIFwicmVhY3Qtc3RlcHBlci1ob3Jpem9udGFsXCI7XHJcbmltcG9ydCB7IEljb24sIEdyaWQgfSBmcm9tIFwic2VtYW50aWMtdWktcmVhY3RcIjtcclxuaW1wb3J0IFN0eWxlcyBmcm9tIFwiLi4vLi4vc3R5bGVzL2JyZWFkY3J1bWJcIjtcclxuXHJcbmV4cG9ydCBjb25zdCBicmVhZGNydW1iID0gcHJvcHMgPT4gKFxyXG4gIDxHcmlkIGNvbnRhaW5lcj5cclxuICAgIDxHcmlkLlJvdz5cclxuICAgICAgPFN0ZXBwZXJcclxuICAgICAgICBjb21wbGV0ZUNvbG9yPVwiIzYzQkExOFwiXHJcbiAgICAgICAgYWN0aXZlQ29sb3I9XCIjZmZkZDQzXCJcclxuICAgICAgICBzdGVwcz17W1xyXG4gICAgICAgICAgeyB0aXRsZTogXCJSZXF1ZXN0XCIgfSxcclxuICAgICAgICAgIHsgdGl0bGU6IFwiRGV0YWlsc1wiIH0sXHJcbiAgICAgICAgICB7IHRpdGxlOiBcIkxvY2F0aW9uXCIgfSxcclxuICAgICAgICAgIHsgdGl0bGU6IFwiUmV2aWV3XCIgfVxyXG4gICAgICAgIF19XHJcbiAgICAgICAgYWN0aXZlU3RlcD17cHJvcHMuYWN0aXZlU3RlcH1cclxuICAgICAgLz5cclxuICAgIDwvR3JpZC5Sb3c+XHJcbiAgPC9HcmlkPlxyXG4pO1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgYnJlYWRjcnVtYjtcclxuIl19

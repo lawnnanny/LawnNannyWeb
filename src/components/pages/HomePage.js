@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-import Styles from "../../styles/HomePage";
-import { statekeys } from "../../helpers/Common";
+import Styles from '../../styles/HomePage';
+import { statekeys } from '../../helpers/Common';
 
 const HomePage = ({
   setEmail,
@@ -21,7 +21,7 @@ const HomePage = ({
   isLoginModalOpen,
   openSignupModal,
   closeSignupModal,
-  isSignupModalOpen
+  isSignupModalOpen,
 }) => (
   <div>
     <div style={Styles.navbarContainer}>
