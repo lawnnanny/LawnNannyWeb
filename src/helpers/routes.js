@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import Error404 from "../components/errors/Error404";
-import ConnectedHomePageComponent from "../connectedComponents/ConnectedHomePage";
-import ConnectedRequestSelection from "../connectedComponents/ConnectedRequestSelection";
-import ConnectedRequestInformationComponent from "../connectedComponents/ConnectedRequestInformation";
-import App from "../components/App";
-import reducers from "../reducers/reducers";
+import { Error404 } from '../components/errors/Error404';
+import ConnectedHomePageComponent from '../connectedComponents/ConnectedHomePage';
+import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
+import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
+import { App } from '../components/App';
+import reducers from '../reducers/reducers';
 
 export class Routes extends Component {
   constructor() {
@@ -18,11 +18,11 @@ export class Routes extends Component {
     const store = createStore(reducers, applyMiddleware(thunk));
 
     this.state = {
-      store
+      store,
     };
 
     store.subscribe(() => {
-      console.log("store.getState()", store.getState());
+      console.log('store.getState()', store.getState());
     });
   }
   render() {

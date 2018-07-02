@@ -1,12 +1,13 @@
-import React from "react";
-import { Grid, Header, Segment } from "semantic-ui-react";
-import RequestOptionComponent from "../../helpers/RequestOption";
-import BreadcrumbComponent from "../../helpers/breadcrumb";
-import Styles from "../../../styles/requestSelection";
-import mower from "../../../images/pipeline/mower.png";
-import rake from "../../../images/pipeline/rake.png";
-import snowBlower from "../../../images/pipeline/snowBlower.png";
-import custom from "../../../images/pipeline/custom.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Grid, Header, Segment } from 'semantic-ui-react';
+import RequestOptionComponent from '../../helpers/RequestOption';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
+import Styles from '../../../styles/requestSelection';
+import mower from '../../../images/pipeline/mower.png';
+import rake from '../../../images/pipeline/rake.png';
+import snowBlower from '../../../images/pipeline/snowBlower.png';
+import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = ({ setTypeOfRequest }) => (
   <Grid container>
@@ -31,7 +32,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
-            setTypeOfRequest("Lawn Mowing");
+            setTypeOfRequest('Lawn Mowing');
           }}
         />
       </Segment>
@@ -41,7 +42,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
         <RequestOptionComponent
           imageURL={rake}
           title="Leaf Raking"
-          onClick={() => setTypeOfRequest("Leaf Raking")}
+          onClick={() => setTypeOfRequest('Leaf Raking')}
         />
       </Segment>
     </Grid.Row>
@@ -50,7 +51,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
         <RequestOptionComponent
           imageURL={snowBlower}
           title="Snow Clearing"
-          onClick={() => setTypeOfRequest("Snow Clearing")}
+          onClick={() => setTypeOfRequest('Snow Clearing')}
         />
       </Segment>
     </Grid.Row>
@@ -59,10 +60,16 @@ export const requestSelection = ({ setTypeOfRequest }) => (
         <RequestOptionComponent
           imageURL={custom}
           title="Custom Request"
-          onClick={() => setTypeOfRequest("Custom Request")}
+          onClick={() => setTypeOfRequest('Custom Request')}
         />
       </Segment>
     </Grid.Row>
   </Grid>
 );
+
+requestSelection.propTypes = {
+  setTypeOfRequest: PropTypes.func.isRequired,
+};
+
+
 export default requestSelection;

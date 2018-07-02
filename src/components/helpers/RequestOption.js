@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Image, Header, Button } from "semantic-ui-react";
-import Styles from "../../styles/RequestOption";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Image, Header, Button } from 'semantic-ui-react';
+import Styles from '../../styles/RequestOption';
 
 export const RequestOption = props => (
   <Link to="/pipeline/requestInformation">
@@ -18,5 +19,11 @@ export const RequestOption = props => (
     </Button>
   </Link>
 );
+
+RequestOption.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  imageURL: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default RequestOption;

@@ -1,7 +1,7 @@
-import React from "react";
-import Stepper from "react-stepper-horizontal";
-import { Icon, Grid } from "semantic-ui-react";
-import Styles from "../../styles/breadcrumb";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Stepper from 'react-stepper-horizontal';
+import { Grid } from 'semantic-ui-react';
 
 export const breadcrumb = props => (
   <Grid container>
@@ -10,15 +10,19 @@ export const breadcrumb = props => (
         completeColor="#63BA18"
         activeColor="#ffdd43"
         steps={[
-          { title: "Request" },
-          { title: "Details" },
-          { title: "Location" },
-          { title: "Review" }
+          { title: 'Request' },
+          { title: 'Details' },
+          { title: 'Location' },
+          { title: 'Review' },
         ]}
         activeStep={props.activeStep}
       />
     </Grid.Row>
   </Grid>
 );
+
+breadcrumb.propTypes = {
+  activeStep: PropTypes.string.isRequired,
+};
 
 export default breadcrumb;

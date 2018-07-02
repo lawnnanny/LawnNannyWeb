@@ -1,14 +1,11 @@
-const green = "#63BA18";
-const white = "#FFFFFF";
-
 export default {
   Grid: {
-    height: "100%"
+    height: '100%',
   },
   breadcrumb: {
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   segment: {
-    width: "100%",
-  }
+    width: '100%',
+  },
 };

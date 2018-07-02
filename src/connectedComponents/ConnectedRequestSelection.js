@@ -1,18 +1,18 @@
-import { connect } from "react-redux";
-import Actions from "../reducers/Actions";
-import requestSelectionComponent from "../components/pages/pipeline/requestSelection";
+import { connect } from 'react-redux';
+import Actions from '../reducers/Actions';
+import requestSelectionComponent from '../components/pages/pipeline/requestSelection';
 
 const mapDispatchToProps = dispatch => ({
-  setTypeOfRequest: data => {
+  setTypeOfRequest: (data) => {
     const action = {
       type: Actions.requests.setTypeOfRequest,
-      data
+      data,
     };
     dispatch(action);
-  }
+  },
 });
 
 export default connect(
   () => ({}),
-  mapDispatchToProps
+  mapDispatchToProps,
 )(requestSelectionComponent);

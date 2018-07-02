@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import Styles from '../../styles/HomePage';
 import { statekeys } from '../../helpers/Common';
@@ -213,7 +213,7 @@ HomePage.propTypes = {
   isSignupModalOpen: PropTypes.bool.isRequired,
   isLoginModalOpen: PropTypes.bool.isRequired,
   openSignupModal: PropTypes.func.isRequired,
-  closeSignupModal: PropTypes.func.isRequired
+  closeSignupModal: PropTypes.func.isRequired,
 };
 
 HomePage.defaultProps = {};

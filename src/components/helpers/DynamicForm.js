@@ -1,40 +1,40 @@
-import React, { Component } from "react";
-import { Form, Header, Input, Button, Segment, Checkbox, Label } from "semantic-ui-react";
-import{ Requests } from "../pages/pipeline/jsonRequests";
-import { statekeys } from "../../helpers/Common";
-import Styles from '../../styles/DynamicForm'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Form, Header, Input, Button, Segment, Checkbox } from 'semantic-ui-react';
+import { Requests } from '../pages/pipeline/jsonRequests';
+import { statekeys } from '../../helpers/Common';
+import Styles from '../../styles/DynamicForm';
 
 class DynamicForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {};
   }
 
    onSubmit = (event) => {
-      const data = {};
-      let counter = 0;
-      Requests.Requests[this.props.requestType].fields.forEach((element) => {
-        switch(element.type) {
-          case "radio":
-            data[element.id] = {};
-            element.options.forEach((option) => {
-              data[element.id][option] = event.target[counter].checked;
-              counter += 1;
-            })
-          break;
-          case "checkbox":
-            data[element.id] = event.target[counter].checked;
-            counter += 1;
-          break;
-          default:
-            data[element.id] = event.target[counter].value;
-            counter += 1;
-          break;
-        }
-      })
-      this.props.setRequestInformation(data);
-  }
+     const data = {};
+     let counter = 0;
+     Requests.Requests[this.props.requestType].fields.forEach((element) => {
+       switch (element.type) {
+         case 'radio':
+           data[element.id] = {};
+           element.options.forEach((option) => {
+             data[element.id][option] = event.target[counter].checked;
+             counter += 1;
+           });
+           break;
+         case 'checkbox':
+           data[element.id] = event.target[counter].checked;
+           counter += 1;
+           break;
+         default:
+           data[element.id] = event.target[counter].value;
+           counter += 1;
+           break;
+       }
+     });
+     this.props.setRequestInformation(data);
+   }
 
   handleChange = (e, { value }) => this.setState({ value });
 
@@ -47,15 +47,15 @@ class DynamicForm extends React.Component {
         checked={this.state.value === option}
       />
     ));
-    return radioButtons
+    return radioButtons;
   }
 
-  renderFormFromJson = requestType => {
+  renderFormFromJson = (requestType) => {
     const { value } = this.state;
     const requests = Requests.Requests[requestType];
-    const formUI = requests.fields.map(field => {
+    const formUI = requests.fields.map((field) => {
       switch (field.type) {
-        case "text":
+        case 'text':
           return (
             <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
@@ -63,7 +63,7 @@ class DynamicForm extends React.Component {
             </Form.Field>
           );
 
-        case "dropDown":
+        case 'dropDown':
           return (
             <Form.Dropdown
               label={field.name}
@@ -72,7 +72,7 @@ class DynamicForm extends React.Component {
             />
           );
 
-        case "textArea":
+        case 'textArea':
           return (
             <Form.TextArea
               label={field.name}
@@ -80,24 +80,24 @@ class DynamicForm extends React.Component {
             />
           );
 
-        case "checkbox":
+        case 'checkbox':
           return (
             <Form.Field>
-                <Checkbox
-                    name={field.name}
-                    value="true"
-                    label={field.placeholder}
-                />
+              <Checkbox
+                name={field.name}
+                value="true"
+                label={field.placeholder}
+              />
             </Form.Field>
           );
 
-        case "radio":
+        case 'radio':
           return (
             <label htmlFor={field.id}> {field.name}
               <Form.Group id={field.id} inline>
                 {this.renderRadioButtons(value, field.options)}
-                </Form.Group>
-             </label>
+              </Form.Group>
+            </label>
           );
 
         default:
@@ -118,17 +118,22 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-              {this.renderFormFromJson(this.props.requestType)}
+            {this.renderFormFromJson(this.props.requestType)}
           </Segment>
           <Segment style={Styles.segment}>
-              <Button type='submit' fluid positive size="large">
+            <Button type="submit" fluid positive size="large">
                   Continue
-              </Button>
+            </Button>
           </Segment>
         </Form>
       </Segment>
     );
   }
 }
+
+DynamicForm.propTypes = {
+  requestType: PropTypes.string.isRequired,
+  setRequestInformation: PropTypes.func.isRequired,
+};
 
 export default DynamicForm;
