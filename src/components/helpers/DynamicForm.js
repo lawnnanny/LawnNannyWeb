@@ -4,36 +4,47 @@ import { Form, Header, Input, Button, Segment, Checkbox } from 'semantic-ui-reac
 import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
+import InlineError from './InlineError';
 
 class DynamicForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      errors: {}
+    };
   }
 
-   onSubmit = (event) => {
-     const data = {};
-     let counter = 0;
-     Requests.Requests[this.props.requestType].fields.forEach((element) => {
-       switch (element.type) {
-         case 'radio':
-           data[element.id] = {};
-           element.options.forEach((option) => {
-             data[element.id][option] = event.target[counter].checked;
-             counter += 1;
-           });
-           break;
-         case 'checkbox':
-           data[element.id] = event.target[counter].checked;
-           counter += 1;
-           break;
-         default:
-           data[element.id] = event.target[counter].value;
-           counter += 1;
-           break;
-       }
-     });
-     this.props.setRequestInformation(data);
+  onSubmit = (event) => {
+    const data = {};
+    let counter = 0;
+    Requests.Requests[this.props.requestType].fields.forEach((element) => {
+      switch (element.type) {
+        case 'radio':
+          data[element.id] = {};
+          element.options.forEach((option) => {
+            data[element.id][option] = event.target[counter].checked;
+            counter += 1;
+          });
+          break;
+        case 'checkbox':
+          data[element.id] = event.target[counter].checked;
+          counter += 1;
+          break;
+        default:
+          data[element.id] = event.target[counter].value;
+          counter += 1;
+          break;
+      }
+    });
+    if (!this.validateAndSetStateErrorsForDisplay(data)) {
+      this.props.setRequestInformation(data);
+    }
+  }
+
+   validateAndSetStateErrorsForDisplay = (data) => {
+     const error = {};
+
+
    }
 
   handleChange = (e, { value }) => this.setState({ value });
@@ -50,7 +61,7 @@ class DynamicForm extends React.Component {
     return radioButtons;
   }
 
-  renderFormFromJson = (requestType) => {
+  renderFormFromJson = (requestType, errors) => {
     const { value } = this.state;
     const requests = Requests.Requests[requestType];
     const formUI = requests.fields.map((field) => {
@@ -60,6 +71,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
+              {errors[field.name] && <InlineError text={errors[field.name]} />}
             </Form.Field>
           );
 
@@ -105,6 +117,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
+              {errors[field.name] && <InlineError text={errors[field.name]} />}
             </Form.Field>
           );
       }
@@ -112,13 +125,13 @@ class DynamicForm extends React.Component {
     return formUI;
   };
 
-  render() {
+  render(state) {
     return (
       <Segment padded>
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.requestType)}
+            {this.renderFormFromJson(this.props.requestType, state.errors)}
           </Segment>
           <Segment style={Styles.segment}>
             <Button type="submit" fluid positive size="large">
