@@ -22,41 +22,67 @@ class DynamicForm extends React.Component {
         case 'radio':
           data[element.id] = {};
           element.options.forEach((option) => {
-            data[element.id][option] = event.target[counter].checked;
-            counter += 1;
+            data[element.id][option] = {
+              entry: event.target[counter].checked,
+              validation: element.validation,
+              id: element.id
+            };
           });
           break;
         case 'checkbox':
-          data[element.id] = event.target[counter].checked;
-          counter += 1;
+          data[element.id] = {
+            entry: event.target[counter].checked,
+            validation: element.validation,
+            id: element.id
+          };
           break;
         default:
-          data[element.id] = event.target[counter].value;
-          counter += 1;
+          data[element.id] = {
+            entry: event.target[counter].value,
+            validation: element.validation,
+            id: element.id
+          };
           break;
       }
+      counter += 1;
     });
     if (!this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequestInformation(data);
     }
-  }
+}
 
    validateAndSetStateErrorsForDisplay = (data) => {
-     const error = {};
-
-
+     const errors = {};
+     data.forEach((validationEntryObject) => {
+       switch (validationEntryObject.validation) {
+         case 'requiredText':
+           if (!validationEntryObject.entry.trim().length) {
+             errors[validationEntryObject.id] = 'Empty Text Box';
+           }
+           break;
+         case 'requiredRadio':
+           if (Object.values(validationEntryObject.entry).some((value => value))) {
+             errors[validationEntryObject.id] = 'Radio Button Not Selected';
+           }
+           break;
+         default:
+       }
+     });
+     this.setState({ errors })
+     return !Object.keys(errors).length;
    }
 
   handleChange = (e, { value }) => this.setState({ value });
 
-  renderRadioButtons = (value, field) => {
+  renderRadioButtons = (value, field, errors) => {
     const radioButtons = field.map(option => (
-      <Form.Radio
+      <Form.Radio>
         label={option}
         value={option}
         onChange={this.handleChange}
         checked={this.state.value === option}
-      />
+        {errors[field.id] && <InlineError text={errors[field.id]} />}
+      </Form.Radio>
     ));
     return radioButtons;
   }
@@ -71,25 +97,27 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
-              {errors[field.name] && <InlineError text={errors[field.name]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
 
         case 'dropDown':
           return (
-            <Form.Dropdown
+            <Form.Dropdown>
               label={field.name}
               placeholder={field.placeholder}
               options={statekeys}
-            />
+              {errors[field.id] && <InlineError text={errors[field.id]} />}
+            </Form.Dropdown>
           );
 
         case 'textArea':
           return (
-            <Form.TextArea
+            <Form.TextArea>
               label={field.name}
               placeholder={field.placeholder}
-            />
+              {errors[field.id] && <InlineError text={errors[field.id]} />}
+            </Form.TextArea>
           );
 
         case 'checkbox':
@@ -100,6 +128,7 @@ class DynamicForm extends React.Component {
                 value="true"
                 label={field.placeholder}
               />
+              {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
 
@@ -107,7 +136,8 @@ class DynamicForm extends React.Component {
           return (
             <label htmlFor={field.id}> {field.name}
               <Form.Group id={field.id} inline>
-                {this.renderRadioButtons(value, field.options)}
+                {this.renderRadioButtons(value, field.options, errors)}
+                {errors[field.id] && <InlineError text={errors[field.id]} />}
               </Form.Group>
             </label>
           );
@@ -117,7 +147,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{field.name}</label>
               <Input id={field.id} />
-              {errors[field.name] && <InlineError text={errors[field.name]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
       }

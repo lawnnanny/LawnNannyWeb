@@ -7,21 +7,20 @@ export const Requests = {
           type: 'checkbox',
           placeholder: 'Would you like to have the grass bagged?',
           id: 'lawnGrassBagged',
-          validation: ['required']
         },
         {
           name: 'Does the lawn have a sprinkler system installed?',
           options: ['yes', 'no'],
           type: 'radio',
           id: 'lawnSprinkler',
-          validation: ['required']
+          validation: ['requiredRadio']
         },
         {
           name: 'Please provide additional comments?',
           type: 'textArea',
           placeholder: 'Enter comments here',
           id: 'comments',
-          validation: ['required']
+          validation: ['requiredText']
         },
       ],
     },
