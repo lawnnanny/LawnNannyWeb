@@ -95,7 +95,9 @@ class DynamicForm extends React.Component {
         case 'text':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>{field.name}</label>
+              <label htmlFor={field.id}>
+                {field.name || (field.id.validation.length && <p>*</p>)}
+              </label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -104,7 +106,7 @@ class DynamicForm extends React.Component {
         case 'dropDown':
           return (
             <Form.Dropdown>
-              label={field.name}
+              label={field.name || (field.id.validation.length && <p>*</p>)}
               placeholder={field.placeholder}
               options={statekeys}
               {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -114,7 +116,7 @@ class DynamicForm extends React.Component {
         case 'textArea':
           return (
             <Form.TextArea>
-              label={field.name}
+              label={field.name || (field.id.validation.length && <p>*</p>)}
               placeholder={field.placeholder}
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.TextArea>
@@ -124,9 +126,9 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <Checkbox
+                label={field.placeholder || (field.id.validation.length && <p>*</p>)}
                 name={field.name}
                 value="true"
-                label={field.placeholder}
               />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -134,7 +136,7 @@ class DynamicForm extends React.Component {
 
         case 'radio':
           return (
-            <label htmlFor={field.id}> {field.name}
+            <label htmlFor={field.id}> {field.name || (field.id.validation.length && <p>*</p>)}
               <Form.Group id={field.id} inline>
                 {this.renderRadioButtons(value, field.options, errors)}
                 {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -145,7 +147,9 @@ class DynamicForm extends React.Component {
         default:
           return (
             <Form.Field>
-              <label htmlFor={field.id}>{field.name}</label>
+              <label htmlFor={field.id}>
+                {field.name || (field.id.validation.length && <p>*</p>)}
+              </label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
