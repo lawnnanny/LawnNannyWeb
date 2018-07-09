@@ -15,7 +15,6 @@ class DynamicForm extends React.Component {
   }
 
   onSubmit = (event) => {
-    console.log(this.state);
     const data = {};
     let counter = 0;
     Requests.Requests[this.props.requestType].fields.forEach((element) => {
@@ -26,7 +25,7 @@ class DynamicForm extends React.Component {
             data[element.id][option] = {
               entry: event.target[counter].checked,
               validation: element.validation,
-              id: element.id
+              id: element.id,
             };
           });
           break;
@@ -34,14 +33,14 @@ class DynamicForm extends React.Component {
           data[element.id] = {
             entry: event.target[counter].checked,
             validation: element.validation,
-            id: element.id
+            id: element.id,
           };
           break;
         default:
           data[element.id] = {
             entry: event.target[counter].value,
             validation: element.validation,
-            id: element.id
+            id: element.id,
           };
           break;
       }
@@ -50,7 +49,7 @@ class DynamicForm extends React.Component {
     if (!this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequestInformation(data);
     }
-}
+  }
 
    validateAndSetStateErrorsForDisplay = (data) => {
      const errors = {};
@@ -69,15 +68,15 @@ class DynamicForm extends React.Component {
          default:
        }
      });
-     this.setState({ errors })
+     this.setState({ errors });
      return !Object.keys(errors).length;
    }
 
-  handleChange = (e, { value }) => {
-    const state = this.state;
-    state.value = value;
-    this.setState(state);
-  }
+   handleChange = (e, { value }) => {
+     const state = this.state;
+     state.radio = value;
+     this.setState(state);
+   }
 
   addAstricks = (lengthOfValidation) => {
     if (lengthOfValidation) {
@@ -88,17 +87,12 @@ class DynamicForm extends React.Component {
 
   renderRadioButtons = (field) => {
     const radioButtons = field.map(option => (
-      <Form.Field>
-        <label htmlFor={field.id}>
-          {option}
-        </label>
-        <Form.Radio>
-            id={field.id}
-            value={option}
-            onChange={this.handleChange}
-            checked={this.state.value === option}
-        </Form.Radio>
-      </Form.Field>
+      <Form.Radio
+        label={option}
+        value={option}
+        onChange={this.handleChange}
+        checked={this.state.radio === option}
+      />
     ));
     return radioButtons;
   }
