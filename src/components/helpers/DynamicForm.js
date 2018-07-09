@@ -10,11 +10,12 @@ class DynamicForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      errors: {}
+      errors: {},
     };
   }
 
   onSubmit = (event) => {
+    console.log(this.state);
     const data = {};
     let counter = 0;
     Requests.Requests[this.props.requestType].fields.forEach((element) => {
@@ -72,23 +73,37 @@ class DynamicForm extends React.Component {
      return !Object.keys(errors).length;
    }
 
-  handleChange = (e, { value }) => this.setState({ value });
+  handleChange = (e, { value }) => {
+    const state = this.state;
+    state.value = value;
+    this.setState(state);
+  }
 
-  renderRadioButtons = (value, field, errors) => {
+  addAstricks = (lengthOfValidation) => {
+    if (lengthOfValidation) {
+      return ' * ';
+    }
+    return '';
+  }
+
+  renderRadioButtons = (field) => {
     const radioButtons = field.map(option => (
-      <Form.Radio>
-        label={option}
-        value={option}
-        onChange={this.handleChange}
-        checked={this.state.value === option}
-        {errors[field.id] && <InlineError text={errors[field.id]} />}
-      </Form.Radio>
+      <Form.Field>
+        <label htmlFor={field.id}>
+          {option}
+        </label>
+        <Form.Radio>
+            id={field.id}
+            value={option}
+            onChange={this.handleChange}
+            checked={this.state.value === option}
+        </Form.Radio>
+      </Form.Field>
     ));
     return radioButtons;
   }
 
   renderFormFromJson = (requestType, errors) => {
-    const { value } = this.state;
     const requests = Requests.Requests[requestType];
     const formUI = requests.fields.map((field) => {
       switch (field.type) {
@@ -96,7 +111,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>
-                {field.name || (field.id.validation.length && <p>*</p>)}
+                {this.addAstricks(field.validation.length) + field.name }
               </label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -106,7 +121,7 @@ class DynamicForm extends React.Component {
         case 'dropDown':
           return (
             <Form.Dropdown>
-              label={field.name || (field.id.validation.length && <p>*</p>)}
+              label={this.addAstricks(field.validation.length) + field.name }
               placeholder={field.placeholder}
               options={statekeys}
               {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -116,7 +131,7 @@ class DynamicForm extends React.Component {
         case 'textArea':
           return (
             <Form.TextArea>
-              label={field.name || (field.id.validation.length && <p>*</p>)}
+              label={this.addAstricks(field.validation.length) + field.name }
               placeholder={field.placeholder}
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.TextArea>
@@ -126,7 +141,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <Checkbox
-                label={field.placeholder || (field.id.validation.length && <p>*</p>)}
+                label={this.addAstricks(field.validation.length) + field.placeholder}
                 name={field.name}
                 value="true"
               />
@@ -136,9 +151,9 @@ class DynamicForm extends React.Component {
 
         case 'radio':
           return (
-            <label htmlFor={field.id}> {field.name || (field.id.validation.length && <p>*</p>)}
+            <label htmlFor={field.id}> {this.addAstricks(field.validation.length) + field.name }
               <Form.Group id={field.id} inline>
-                {this.renderRadioButtons(value, field.options, errors)}
+                {this.renderRadioButtons(field.options)}
                 {errors[field.id] && <InlineError text={errors[field.id]} />}
               </Form.Group>
             </label>
@@ -148,7 +163,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>
-                {field.name || (field.id.validation.length && <p>*</p>)}
+                {this.addAstricks(field.validation.length) + field.name }
               </label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -159,13 +174,13 @@ class DynamicForm extends React.Component {
     return formUI;
   };
 
-  render(state) {
+  render() {
     return (
       <Segment padded>
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.requestType, state.errors)}
+            {this.renderFormFromJson(this.props.requestType, this.state.errors)}
           </Segment>
           <Segment style={Styles.segment}>
             <Button type="submit" fluid positive size="large">
