@@ -1,0 +1,38 @@
+d0a769c2ef29232a4f542fd3327e0bd1
+/* istanbul ignore next */'use strict';
+
+var cov_20pxifwlap = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/styles/requestSelection.js',
+      hash = '263950b4f0fa65704823d7a1909cfef50a1e576c',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/styles/requestSelection.js',
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  segment: {
+    width: '100%'
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVlc3RTZWxlY3Rpb24uanMiXSwibmFtZXMiOlsic2VnbWVudCIsIndpZHRoIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O2tCQUFlO0FBQ2JBLFdBQVM7QUFDUEMsV0FBTztBQURBO0FBREksQyIsImZpbGUiOiJyZXF1ZXN0U2VsZWN0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQge1xuICBzZWdtZW50OiB7XG4gICAgd2lkdGg6ICcxMDAlJyxcbiAgfSxcbn07XG4iXX0=

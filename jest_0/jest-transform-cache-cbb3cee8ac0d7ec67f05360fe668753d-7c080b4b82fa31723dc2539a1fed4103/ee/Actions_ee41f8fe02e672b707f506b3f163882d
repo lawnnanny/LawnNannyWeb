@@ -1,0 +1,69 @@
+d83396c2ff8991be3c2e201817cac226
+/* istanbul ignore next */"use strict";
+
+var cov_90e0i0kku = function () {
+  var path = "/home/sdrafahl/code/TerraWeb/src/reducers/Actions.js",
+      hash = "ba128e82a3e21379d3cae6e877328bcf097ebd2e",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/sdrafahl/code/TerraWeb/src/reducers/Actions.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 8
+        },
+        end: {
+          line: 1,
+          column: 9
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var i = /* istanbul ignore next */(cov_90e0i0kku.s[0]++, 0);
+
+/* istanbul ignore next */exports.default = {
+  login: {
+    setEmail: i += 1,
+    setPassword: i += 1,
+    setFirstName: i += 1,
+    setLastName: i += 1,
+    setPasswordRepeat: i += 1,
+    setAddress: i += 1,
+    setCity: i += 1,
+    setAddressState: i += 1,
+    setZipcode: i += 1,
+    clearPassword: i += 1,
+    toggleLoginModal: i += 1,
+    clear: i += 1,
+    toggleSignupModal: i += 1
+  },
+  requests: {
+    setTypeOfRequest: i += 1,
+    setRequestInformation: i += 1
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFjdGlvbnMuanMiXSwibmFtZXMiOlsiaSIsImxvZ2luIiwic2V0RW1haWwiLCJzZXRQYXNzd29yZCIsInNldEZpcnN0TmFtZSIsInNldExhc3ROYW1lIiwic2V0UGFzc3dvcmRSZXBlYXQiLCJzZXRBZGRyZXNzIiwic2V0Q2l0eSIsInNldEFkZHJlc3NTdGF0ZSIsInNldFppcGNvZGUiLCJjbGVhclBhc3N3b3JkIiwidG9nZ2xlTG9naW5Nb2RhbCIsImNsZWFyIiwidG9nZ2xlU2lnbnVwTW9kYWwiLCJyZXF1ZXN0cyIsInNldFR5cGVPZlJlcXVlc3QiLCJzZXRSZXF1ZXN0SW5mb3JtYXRpb24iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsSUFBSUEscURBQUksQ0FBSixDQUFKOzs0Q0FFZTtBQUNiQyxTQUFPO0FBQ0xDLGNBQVdGLEtBQUssQ0FEWDtBQUVMRyxpQkFBY0gsS0FBSyxDQUZkO0FBR0xJLGtCQUFlSixLQUFLLENBSGY7QUFJTEssaUJBQWNMLEtBQUssQ0FKZDtBQUtMTSx1QkFBb0JOLEtBQUssQ0FMcEI7QUFNTE8sZ0JBQWFQLEtBQUssQ0FOYjtBQU9MUSxhQUFVUixLQUFLLENBUFY7QUFRTFMscUJBQWtCVCxLQUFLLENBUmxCO0FBU0xVLGdCQUFhVixLQUFLLENBVGI7QUFVTFcsbUJBQWdCWCxLQUFLLENBVmhCO0FBV0xZLHNCQUFtQlosS0FBSyxDQVhuQjtBQVlMYSxXQUFRYixLQUFLLENBWlI7QUFhTGMsdUJBQW9CZCxLQUFLO0FBYnBCLEdBRE07QUFnQmJlLFlBQVU7QUFDUkMsc0JBQW1CaEIsS0FBSyxDQURoQjtBQUVSaUIsMkJBQXdCakIsS0FBSztBQUZyQjtBQWhCRyxDIiwiZmlsZSI6IkFjdGlvbnMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgaSA9IDA7XG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgbG9naW46IHtcbiAgICBzZXRFbWFpbDogKGkgKz0gMSksXG4gICAgc2V0UGFzc3dvcmQ6IChpICs9IDEpLFxuICAgIHNldEZpcnN0TmFtZTogKGkgKz0gMSksXG4gICAgc2V0TGFzdE5hbWU6IChpICs9IDEpLFxuICAgIHNldFBhc3N3b3JkUmVwZWF0OiAoaSArPSAxKSxcbiAgICBzZXRBZGRyZXNzOiAoaSArPSAxKSxcbiAgICBzZXRDaXR5OiAoaSArPSAxKSxcbiAgICBzZXRBZGRyZXNzU3RhdGU6IChpICs9IDEpLFxuICAgIHNldFppcGNvZGU6IChpICs9IDEpLFxuICAgIGNsZWFyUGFzc3dvcmQ6IChpICs9IDEpLFxuICAgIHRvZ2dsZUxvZ2luTW9kYWw6IChpICs9IDEpLFxuICAgIGNsZWFyOiAoaSArPSAxKSxcbiAgICB0b2dnbGVTaWdudXBNb2RhbDogKGkgKz0gMSksXG4gIH0sXG4gIHJlcXVlc3RzOiB7XG4gICAgc2V0VHlwZU9mUmVxdWVzdDogKGkgKz0gMSksXG4gICAgc2V0UmVxdWVzdEluZm9ybWF0aW9uOiAoaSArPSAxKSxcbiAgfSxcbn07XG4iXX0=
