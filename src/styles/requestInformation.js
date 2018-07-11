@@ -1,11 +1,13 @@
 export default {
   Grid: {
-    height: '100%',
+    height: "100%"
   },
   breadcrumb: {
-    overflow: 'hidden',
+    overflow: "hidden"
   },
   segment: {
-    width: '100%',
-  },
+    width: "100%",
+    border: "none",
+    boxShadow: "none"
+  }
 };
