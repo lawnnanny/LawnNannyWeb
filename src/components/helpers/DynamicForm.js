@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Header, Input, Button, Segment, Checkbox, TextArea } from 'semantic-ui-react';
+import { Form, Header, Input, Button, Segment, Checkbox, TextArea, Dropdown } from 'semantic-ui-react';
 import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
@@ -58,7 +58,6 @@ class DynamicForm extends React.Component {
      Object.values(data).forEach((validationEntryObject) => {
        switch (validationEntryObject.validation) {
          case 'requiredText':
-           console.log(validationEntryObject);
            if (!validationEntryObject.entry.trim().length) {
              errors[validationEntryObject.id] = 'Empty Text Box';
            }
@@ -117,20 +116,28 @@ class DynamicForm extends React.Component {
 
         case 'dropDown':
           return (
-            <Form.Dropdown>
-              label={this.addAstricks(field.validation) + field.name }
-              placeholder={field.placeholder}
-              options={statekeys}
+            <Form.Field>
+              <label htmlFor={field.id}>
+                {this.addAstricks(field.validation) + field.name }
+              </label>
+              <Dropdown
+                id={field.id}
+                placeholder={field.placeholder}
+                options={statekeys}
+              />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Dropdown>
+            </Form.Field>
           );
 
         case 'textArea':
           return (
             <Form.Field>
+              <label htmlFor={field.id}>
+                {this.addAstricks(field.validation) + field.name }
+              </label>
               <TextArea
+                id={field.id}
                 placeholder={field.placeholder}
-                label={this.addAstricks(field.validation) + field.name}
               />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -139,8 +146,10 @@ class DynamicForm extends React.Component {
         case 'checkbox':
           return (
             <Form.Field>
+              <label htmlFor={field.id}>
+                {this.addAstricks(field.validation) + field.name }
+              </label>
               <Checkbox
-                label={this.addAstricks(field.validation) + field.placeholder}
                 name={field.name}
                 value="true"
               />
@@ -150,12 +159,15 @@ class DynamicForm extends React.Component {
 
         case 'radio':
           return (
-            <label htmlFor={field.id}> {this.addAstricks(field.validation) + field.name }
+            <Form.Field>
+              <label htmlFor={field.id}>
+                {this.addAstricks(field.validation) + field.name }
+              </label>
               <Form.Group id={field.id} inline>
                 {this.renderRadioButtons(field.options)}
                 {errors[field.id] && <InlineError text={errors[field.id]} />}
               </Form.Group>
-            </label>
+            </Form.Field>
           );
 
         default:

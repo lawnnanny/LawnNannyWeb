@@ -16,7 +16,7 @@ export const Requests = {
           validation: 'requiredRadio',
         },
         {
-          name: 'Please provide additional comments?',
+          name: 'Please provide additional comments.',
           type: 'textArea',
           placeholder: 'Enter comments here',
           id: 'comments',
