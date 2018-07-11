@@ -31,19 +31,21 @@ export const Requests = {
           options: ['Bagged', 'Into Piles', 'Taken Away', 'Other'],
           type: 'radio',
           id: 'leavesCollection',
+          validation: 'requiredRadio',
         },
         {
           name: 'Please provide additional comments?',
           type: 'textArea',
           placeholder: 'Enter comments here',
           id: 'comments',
+          validation: 'requiredText',
         },
       ],
     },
     'Snow Clearing': {
       fields: [
         {
-          name: 'SideWalk',
+          name: 'Side Walk',
           type: 'checkbox',
           placeholder: 'Snowblow Your SideWalk?',
           id: 'snowBlowSideWalk',
@@ -65,6 +67,7 @@ export const Requests = {
           type: 'textArea',
           placeholder: 'Enter comments here',
           id: 'comments',
+          validation: 'requiredText',
         },
       ],
     },
