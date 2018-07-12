@@ -210,11 +210,12 @@ class DynamicForm extends React.Component {
   }
 }
 
-DynamicForm.propTypes = {
-  requestType: PropTypes.string.isRequired,
-  requestForm: PropTypes.string.isRequired,
-  setRequestInformation: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+DynamicForm.propTypes = {};
+DynamicForm.defaultProps = {
+  requestType: PropTypes.string,
+  requestForm: PropTypes.string,
+  setRequestInformation: PropTypes.func,
+  history: PropTypes.func,
 };
 
 export default DynamicForm;

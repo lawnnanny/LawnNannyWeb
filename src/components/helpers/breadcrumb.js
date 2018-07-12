@@ -22,7 +22,7 @@ export const breadcrumb = props => (
 );
 
 breadcrumb.propTypes = {
-  activeStep: PropTypes.string.isRequired,
+  activeStep: PropTypes.number.isRequired,
 };
 
 export default breadcrumb;

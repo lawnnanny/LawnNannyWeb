@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-  Menu
-  , Modal
-  , Grid
-  , Input
-  , Button
-  , Form
-  , Segment
-  , Header,
-} from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import Chance from 'chance';
 import RequestInformationComponent from '../../../src/components/pages/pipeline/requestInformation';
 import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
 import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
@@ -18,7 +8,8 @@ import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
 describe('RequestInformation', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing" />);
+  const renderComponent = () =>
+    shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing" />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -75,7 +66,7 @@ describe('RequestInformation', () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
         it('has an active step', () => {
-          expect(Breadcrumb.props().activeStep).toEqual(1);
+          expect(Breadcrumb.props().activeStep).toEqual(2);
         });
       });
     });
@@ -104,14 +95,14 @@ describe('RequestInformation', () => {
       });
 
       describe('Form', () => {
-        let Form;
+        let form;
 
         beforeEach(() => {
-          Form = FormSegment.childAt(0);
+          form = FormSegment.childAt(0);
         });
 
         it('is a Form', () => {
-          expect(Form.type()).toEqual(DynamicFormComponent);
+          expect(form.type()).toEqual(DynamicFormComponent);
         });
       });
     });

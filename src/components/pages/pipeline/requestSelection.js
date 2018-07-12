@@ -20,9 +20,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       <Segment style={Styles.segment}>
         <Header as="h2">
           Choose Your Service
-          <Header.Subheader>
-            Choose a Service for someone to perform
-          </Header.Subheader>
+          <Header.Subheader>Choose a Service for someone to perform</Header.Subheader>
         </Header>
       </Segment>
     </Grid.Row>
@@ -69,6 +67,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
 
 requestSelection.propTypes = {
   setTypeOfRequest: PropTypes.func.isRequired,
+};
+requestSelection.defaultProps = {
+  imageURL: PropTypes.object,
 };
 
 export default requestSelection;

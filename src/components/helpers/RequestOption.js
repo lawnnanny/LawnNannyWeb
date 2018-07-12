@@ -8,22 +8,17 @@ export const RequestOption = props => (
   <Link to="/pipeline/requestInformation">
     <Button fluid style={Styles.button} onClick={() => props.onClick()}>
       <Header as="h2" floated="left">
-        <Image
-          style={Styles.image}
-          src={props.imageURL}
-          size="massive"
-          circular
-        />
+        <Image style={Styles.image} src={props.imageURL} size="massive" circular />
         {props.title}
       </Header>
     </Button>
   </Link>
 );
 
-RequestOption.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+RequestOption.defaultProps = {
+  onClick: PropTypes.func,
+  imageURL: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default RequestOption;
