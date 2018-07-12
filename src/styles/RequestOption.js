@@ -2,7 +2,7 @@ const green = '#63BA18';
 
 export default {
   image: {
-    border: ' solid',
+    border: 'solid',
     borderColor: green,
   },
   segment: {
