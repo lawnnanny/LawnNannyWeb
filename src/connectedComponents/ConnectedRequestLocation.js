@@ -5,7 +5,7 @@ import Actions from '../reducers/Actions';
 const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
 
 const mapDispatchToProps = dispatch => ({
-  setRequestInformation: (data) => {
+  setRequestLocation: (data) => {
     const action = {
       type: Actions.requests.setRequestLocation,
       data,
