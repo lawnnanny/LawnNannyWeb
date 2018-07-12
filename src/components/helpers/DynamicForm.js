@@ -79,6 +79,16 @@ class DynamicForm extends React.Component {
               errors[validationEntryObject.id] = 'Empty Text Box';
             }
             break;
+          case 'input':
+            if (!validationEntryObject.entry.trim().length) {
+              errors[validationEntryObject.id] = 'Empty Input';
+            }
+            break;
+          case 'dropDown':
+            if (!Object.values(validationEntryObject).some(option => option.entry)) {
+              errors[validationEntryObject.id] = 'No State Selected';
+            }
+            break;
           case 'radio':
             if (!Object.values(validationEntryObject).some(option => option.entry)) {
               errors[validationEntryObject.id] = 'Radio Button Not Selected';

@@ -107,7 +107,7 @@ export const Requests = {
           validation: 'required',
         },
         {
-          name: 'States',
+          name: 'State',
           type: 'dropDown',
           placeholder: 'State',
           id: 'state',
