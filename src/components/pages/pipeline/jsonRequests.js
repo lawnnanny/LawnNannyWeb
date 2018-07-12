@@ -72,12 +72,14 @@ export const Requests = {
       ],
     },
     'Custom Request': {
-      fields: [{
-        name: 'Please provide additional comments?',
-        type: 'textArea',
-        placeholder: 'Enter comments here',
-        id: 'comments',
-      }],
+      fields: [
+        {
+          name: 'Please provide additional comments?',
+          type: 'textArea',
+          placeholder: 'Enter comments here',
+          id: 'comments',
+        },
+      ],
     },
   },
 };
