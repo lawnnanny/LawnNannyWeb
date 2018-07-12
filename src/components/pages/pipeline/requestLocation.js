@@ -19,7 +19,7 @@ export const requestInformation = (state) => {
       <Grid.Row padding style={Styles.Grid}>
         <Segment style={Styles.segment}>
           <DynamicFormComponent
-            setRequestLocation={state.setRequestLocation}
+            setRequest={state.setRequestLocation}
             requestType={'Location'}
             requestForm={'address'}
           />

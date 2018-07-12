@@ -7,11 +7,7 @@ describe('Connected RequestLocation Page', () => {
   let store;
 
   beforeEach(() => {
-    const state = {
-      requests: {
-        selection: '',
-      },
-    };
+    const state = {};
 
     const mockStore = configureStore();
     store = mockStore(state);

@@ -64,7 +64,7 @@ class DynamicForm extends React.Component {
       }
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
-      this.props.setRequestInformation(data);
+      this.props.setRequest(data);
       this.props.history('/pipeline/requestLocation');
     }
   };
@@ -214,7 +214,7 @@ DynamicForm.propTypes = {};
 DynamicForm.defaultProps = {
   requestType: PropTypes.string,
   requestForm: PropTypes.string,
-  setRequestInformation: PropTypes.func,
+  setRequest: PropTypes.func,
   history: PropTypes.func,
 };
 
