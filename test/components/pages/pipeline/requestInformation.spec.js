@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import RequestInformationComponent from '../../../src/components/pages/pipeline/requestInformation';
-import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
-import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
+import RequestInformationComponent from '../../../../src/components/pages/pipeline/requestInformation';
+import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
+import DynamicFormComponent from '../../../../src/components/helpers/DynamicForm';
 
 describe('RequestInformation', () => {
   let wrapper;

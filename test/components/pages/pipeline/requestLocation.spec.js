@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import RequestLocationComponent from '../../../src/components/pages/pipeline/requestLocation';
-import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
-import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
+import RequestLocationComponent from '../../../../src/components/pages/pipeline/requestLocation';
+import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
+import DynamicFormComponent from '../../../../src/components/helpers/DynamicForm';
 
 describe('RequestInformation', () => {
   let wrapper;
@@ -65,7 +65,7 @@ describe('RequestInformation', () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
         it('has an active step', () => {
-          expect(Breadcrumb.props().activeStep).toEqual(1);
+          expect(Breadcrumb.props().activeStep).toEqual(2);
         });
       });
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { RequestPipeline } from '../../../src/components/pages/requestPipeline';
+import { RequestPipeline } from '../../../../src/components/pages/requestPipeline';
 
 describe('Request Pipeline', () => {
   let wrapper;

@@ -2,26 +2,18 @@ import React from 'react';
 import { shallowWithStore } from 'enzyme-redux';
 import { createMockStore } from 'redux-test-utils';
 import configureStore from 'redux-mock-store';
-import Actions from '../../../src/reducers/Actions';
-import {
-  Menu,
-  Modal,
-  Grid,
-  Input,
-  Button,
-  Form,
-  Segment,
-  Header,
-} from 'semantic-ui-react';
+import Actions from '../../../../src/reducers/Actions';
+import { Menu, Modal, Grid, Input, Button, Form, Segment, Header } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import RequestSelectionComponent from '../../../src/components/pages/pipeline/requestSelection';
-import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
-import RequestOptionComponent from '../../../src/components/helpers/RequestOption';
+import RequestSelectionComponent from '../../../../src/components/pages/pipeline/requestSelection';
+import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
+import RequestOptionComponent from '../../../../src/components/helpers/RequestOption';
 
 describe('RequestSelection', () => {
   let wrapper;
   const setTypeOfRequest = jest.fn();
-  const renderComponent = () => shallow(<RequestSelectionComponent setTypeOfRequest={setTypeOfRequest} />);
+  const renderComponent = () =>
+    shallow(<RequestSelectionComponent setTypeOfRequest={setTypeOfRequest} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -135,7 +127,8 @@ describe('RequestSelection', () => {
         });
       });
     });
-  }); describe('LawnMowingRow', () => {
+  });
+  describe('LawnMowingRow', () => {
     let LawnMowingRow;
 
     beforeEach(() => {
