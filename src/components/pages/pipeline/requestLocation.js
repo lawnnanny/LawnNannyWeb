@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/requestInformation';
 
 export const requestInformation = (state) => {
   if (!state.typeOfRequest) {
@@ -13,16 +13,15 @@ export const requestInformation = (state) => {
     <Grid container style={Styles.Grid}>
       <Grid.Row>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent activeStep={1} />
+          <BreadcrumbComponent activeStep={2} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>
         <Segment style={Styles.segment}>
           <DynamicFormComponent
-            setRequestInformation={state.setRequestInformation}
-            requestType={state.typeOfRequest}
-            requestForm={'Requests Details'}
-            history={state.history.push}
+            setRequestLocation={state.setRequestLocation}
+            requestType={'Location'}
+            requestForm={'address'}
           />
         </Segment>
       </Grid.Row>

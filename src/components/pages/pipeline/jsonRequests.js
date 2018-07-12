@@ -1,5 +1,5 @@
 export const Requests = {
-  Requests: {
+  'Requests Details': {
     'Lawn Mowing': {
       fields: [
         {
@@ -79,6 +79,13 @@ export const Requests = {
           placeholder: 'Enter comments here',
           id: 'comments',
         },
+      ],
+    },
+  },
+  address: {
+    Location: {
+      fields: [
+
       ],
     },
   },

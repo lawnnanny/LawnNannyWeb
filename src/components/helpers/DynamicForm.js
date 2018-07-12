@@ -10,6 +10,7 @@ import {
   TextArea,
   Dropdown,
 } from 'semantic-ui-react';
+import { Redirect } from 'react-router';
 import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
@@ -24,9 +25,10 @@ class DynamicForm extends React.Component {
   }
 
   onSubmit = (event) => {
+    console.log(this.props.history);
     const data = {};
     let counter = 0;
-    Requests.Requests[this.props.requestType].fields.forEach((element) => {
+    Requests[this.props.requestForm][this.props.requestType].fields.forEach((element) => {
       switch (element.type) {
         case 'radio':
           data[element.id] = {
@@ -61,8 +63,9 @@ class DynamicForm extends React.Component {
           break;
       }
     });
-    if (!this.validateAndSetStateErrorsForDisplay(data)) {
+    if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequestInformation(data);
+      this.props.history('/pipeline/requestLocation');
     }
   };
 
@@ -116,8 +119,8 @@ class DynamicForm extends React.Component {
     return radioButtons;
   };
 
-  renderFormFromJson = (requestType, errors) => {
-    const requests = Requests.Requests[requestType];
+  renderFormFromJson = (requestType, requestForm, errors) => {
+    const requests = Requests[requestForm][requestType];
     const formUI = requests.fields.map((field) => {
       switch (field.type) {
         case 'text':
@@ -202,7 +205,10 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.requestType, this.state.errors)}
+            {this.renderFormFromJson(this.props.requestType,
+              this.props.requestForm,
+              this.state.errors,
+            )}
           </Segment>
           <Segment style={Styles.segment}>
             <Button type="submit" fluid positive size="large">
@@ -217,7 +223,9 @@ class DynamicForm extends React.Component {
 
 DynamicForm.propTypes = {
   requestType: PropTypes.string.isRequired,
+  requestForm: PropTypes.string.isRequired,
   setRequestInformation: PropTypes.func.isRequired,
+  history: PropTypes.func.isRequired,
 };
 
 export default DynamicForm;
