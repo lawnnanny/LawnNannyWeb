@@ -1,0 +1,127 @@
+6bd41b2fbd51b8087db3f4f2952d3984
+/* istanbul ignore next */'use strict';
+
+var cov_pe70lc1zl = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/components/helpers/InlineError.js',
+      hash = '7b091306efe6d3be4ca74309903b59245be14aa9',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/components/helpers/InlineError.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 4,
+          column: 20
+        },
+        end: {
+          line: 4,
+          column: 82
+        }
+      },
+      '1': {
+        start: {
+          line: 4,
+          column: 34
+        },
+        end: {
+          line: 4,
+          column: 82
+        }
+      },
+      '2': {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 8,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 4,
+            column: 20
+          },
+          end: {
+            line: 4,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 4,
+            column: 34
+          },
+          end: {
+            line: 4,
+            column: 82
+          }
+        },
+        line: 4
+      }
+    },
+    branchMap: {},
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    f: {
+      '0': 0
+    },
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var /* istanbul ignore next */_react = require('react');
+
+/* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+
+var /* istanbul ignore next */_propTypes = require('prop-types');
+
+/* istanbul ignore next */var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+cov_pe70lc1zl.s[0]++;
+
+
+var InlineError = function InlineError( /* istanbul ignore next */_ref) {
+  /* istanbul ignore next */var text = _ref.text;
+  /* istanbul ignore next */cov_pe70lc1zl.f[0]++;
+  cov_pe70lc1zl.s[1]++;
+  return (/* istanbul ignore next */_react2.default.createElement(
+      /* istanbul ignore next */'span',
+      /* istanbul ignore next */{ style: { color: '#ae5856' } },
+      text
+    )
+  );
+};
+
+/* istanbul ignore next */cov_pe70lc1zl.s[2]++;
+InlineError.propTypes = {
+  text: /* istanbul ignore next */_propTypes2. /* istanbul ignore next */default.string.isRequired
+};
+
+/* istanbul ignore next */exports.default = InlineError;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZUVycm9yLmpzIl0sIm5hbWVzIjpbIklubGluZUVycm9yIiwidGV4dCIsImNvbG9yIiwicHJvcFR5cGVzIiwiUHJvcFR5cGVzIiwic3RyaW5nIiwiaXNSZXF1aXJlZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7Ozs7OztBQUVBLElBQU1BLGNBQWMsU0FBZEEsV0FBYyxrQ0FBYztBQUFBLGdDQUFYQyxJQUFXLFFBQVhBLElBQVc7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGtDQUFNLE9BQU8sRUFBRUMsT0FBTyxTQUFULEVBQWI7QUFBb0NEO0FBQXBDO0FBQUE7QUFBZ0QsQ0FBbEY7OztBQUVBRCxZQUFZRyxTQUFaLEdBQXdCO0FBQ3RCRixRQUFNRyx5RUFBVUMsTUFBVixDQUFpQkM7QUFERCxDQUF4Qjs7NENBSWVOLFciLCJmaWxlIjoiSW5saW5lRXJyb3IuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcblxuY29uc3QgSW5saW5lRXJyb3IgPSAoeyB0ZXh0IH0pID0+IDxzcGFuIHN0eWxlPXt7IGNvbG9yOiAnI2FlNTg1NicgfX0+e3RleHR9PC9zcGFuPjtcblxuSW5saW5lRXJyb3IucHJvcFR5cGVzID0ge1xuICB0ZXh0OiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG59O1xuXG5leHBvcnQgZGVmYXVsdCBJbmxpbmVFcnJvcjtcbiJdfQ==

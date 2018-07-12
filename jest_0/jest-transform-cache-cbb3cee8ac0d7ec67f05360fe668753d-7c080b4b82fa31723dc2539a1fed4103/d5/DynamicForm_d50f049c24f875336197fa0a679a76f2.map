@@ -1,0 +1,1 @@
+{"version":3,"sources":["DynamicForm.js"],"names":["green","white"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,IAAMA,0DAAQ,SAAR,CAAN;AACA,IAAMC,0DAAQ,SAAR,CAAN;;4CAEe,E","file":"DynamicForm.js","sourcesContent":["const green = \"#63BA18\";\r\nconst white = \"#FFFFFF\";\r\n\r\nexport default {};\r\n"]}

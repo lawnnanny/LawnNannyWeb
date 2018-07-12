@@ -1,0 +1,295 @@
+7d1cdbb8d6561f06c717ea7231df0030
+/* istanbul ignore next */'use strict';
+
+var cov_orarak4ga = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/helpers/routes.js',
+      hash = '15c075ef66ea1ccfc620fb9dd25ad132c3787511',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/helpers/routes.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 16,
+          column: 4
+        },
+        end: {
+          line: 16,
+          column: 12
+        }
+      },
+      '1': {
+        start: {
+          line: 18,
+          column: 18
+        },
+        end: {
+          line: 18,
+          column: 63
+        }
+      },
+      '2': {
+        start: {
+          line: 20,
+          column: 4
+        },
+        end: {
+          line: 22,
+          column: 6
+        }
+      },
+      '3': {
+        start: {
+          line: 24,
+          column: 4
+        },
+        end: {
+          line: 26,
+          column: 7
+        }
+      },
+      '4': {
+        start: {
+          line: 25,
+          column: 6
+        },
+        end: {
+          line: 25,
+          column: 56
+        }
+      },
+      '5': {
+        start: {
+          line: 29,
+          column: 4
+        },
+        end: {
+          line: 53,
+          column: 6
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 15,
+            column: 2
+          },
+          end: {
+            line: 15,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 16
+          },
+          end: {
+            line: 27,
+            column: 3
+          }
+        },
+        line: 15
+      },
+      '1': {
+        name: '(anonymous_1)',
+        decl: {
+          start: {
+            line: 24,
+            column: 20
+          },
+          end: {
+            line: 24,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 24,
+            column: 26
+          },
+          end: {
+            line: 26,
+            column: 5
+          }
+        },
+        line: 24
+      },
+      '2': {
+        name: '(anonymous_2)',
+        decl: {
+          start: {
+            line: 28,
+            column: 2
+          },
+          end: {
+            line: 28,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 28,
+            column: 11
+          },
+          end: {
+            line: 54,
+            column: 3
+          }
+        },
+        line: 28
+      }
+    },
+    branchMap: {},
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0,
+      '3': 0,
+      '4': 0,
+      '5': 0
+    },
+    f: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Routes = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var /* istanbul ignore next */_react = require('react');
+
+/* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+
+var /* istanbul ignore next */_reactRouterDom = require('react-router-dom');
+
+var /* istanbul ignore next */_redux = require('redux');
+
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+
+var /* istanbul ignore next */_reduxThunk = require('redux-thunk');
+
+/* istanbul ignore next */var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var /* istanbul ignore next */_Error = require('../components/errors/Error404');
+
+var /* istanbul ignore next */_ConnectedHomePage = require('../connectedComponents/ConnectedHomePage');
+
+/* istanbul ignore next */var _ConnectedHomePage2 = _interopRequireDefault(_ConnectedHomePage);
+
+var /* istanbul ignore next */_ConnectedRequestSelection = require('../connectedComponents/ConnectedRequestSelection');
+
+/* istanbul ignore next */var _ConnectedRequestSelection2 = _interopRequireDefault(_ConnectedRequestSelection);
+
+var /* istanbul ignore next */_ConnectedRequestInformation = require('../connectedComponents/ConnectedRequestInformation');
+
+/* istanbul ignore next */var _ConnectedRequestInformation2 = _interopRequireDefault(_ConnectedRequestInformation);
+
+var /* istanbul ignore next */_App = require('../components/App');
+
+var /* istanbul ignore next */_reducers = require('../reducers/reducers');
+
+/* istanbul ignore next */var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Routes = exports.Routes = function (_ref) {
+  _inherits(Routes, _ref);
+
+  function /* istanbul ignore next */Routes() {
+    /* istanbul ignore next */_classCallCheck(this, Routes);
+
+    cov_orarak4ga.f[0]++;
+    cov_orarak4ga.s[0]++;
+
+    var _this = _possibleConstructorReturn(this, (Routes.__proto__ || Object.getPrototypeOf(Routes)).call(this));
+
+    var store = /* istanbul ignore next */(cov_orarak4ga.s[1]++, /* istanbul ignore next */(0, /* istanbul ignore next */_redux. /* istanbul ignore next */createStore)( /* istanbul ignore next */_reducers2. /* istanbul ignore next */default, /* istanbul ignore next */(0, /* istanbul ignore next */_redux. /* istanbul ignore next */applyMiddleware)( /* istanbul ignore next */_reduxThunk2. /* istanbul ignore next */default)));
+
+    /* istanbul ignore next */cov_orarak4ga.s[2]++;
+    /* istanbul ignore next */_this.state = {
+      store: store
+    };
+
+    /* istanbul ignore next */cov_orarak4ga.s[3]++;
+    store.subscribe(function () {
+      /* istanbul ignore next */cov_orarak4ga.f[1]++;
+      cov_orarak4ga.s[4]++;
+
+      console.log('store.getState()', store.getState());
+    });
+    /* istanbul ignore next */return _this;
+  }
+
+  _createClass(Routes, [{
+    key: 'render',
+    value: function render() {
+      /* istanbul ignore next */cov_orarak4ga.f[2]++;
+      cov_orarak4ga.s[5]++;
+
+      return (/* istanbul ignore next */_react2.default.createElement(
+          /* istanbul ignore next */_reactRedux. /* istanbul ignore next */Provider,
+          /* istanbul ignore next */{ store: this.state.store },
+          /* istanbul ignore next */_react2.default.createElement(
+            /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */BrowserRouter,
+            /* istanbul ignore next */{ className: 'router' },
+            /* istanbul ignore next */_react2.default.createElement(
+              /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Switch,
+              /* istanbul ignore next */null,
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Route, /* istanbul ignore next */{ exact: /* istanbul ignore next */true, path: '/test', component: /* istanbul ignore next */_App. /* istanbul ignore next */App }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Route, /* istanbul ignore next */{
+                exact: /* istanbul ignore next */true,
+                path: '/pipeline',
+                component: /* istanbul ignore next */_ConnectedRequestSelection2. /* istanbul ignore next */default
+              }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Route, /* istanbul ignore next */{
+                exact: /* istanbul ignore next */true,
+                path: '/HomePage',
+                component: /* istanbul ignore next */_ConnectedHomePage2. /* istanbul ignore next */default
+              }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Route, /* istanbul ignore next */{
+                exact: /* istanbul ignore next */true,
+                path: '/pipeline/requestInformation',
+                component: /* istanbul ignore next */_ConnectedRequestInformation2. /* istanbul ignore next */default
+              }),
+              /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouterDom. /* istanbul ignore next */Route, /* istanbul ignore next */{ path: '/*', component: /* istanbul ignore next */_Error. /* istanbul ignore next */Error404 })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Routes;
+}(( /* istanbul ignore next */_react. /* istanbul ignore next */Component));
+
+exports.default = Routes;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy5qcyJdLCJuYW1lcyI6WyJSb3V0ZXMiLCJzdG9yZSIsInJlZHVjZXJzIiwidGh1bmsiLCJzdGF0ZSIsInN1YnNjcmliZSIsImNvbnNvbGUiLCJsb2ciLCJnZXRTdGF0ZSIsIkFwcCIsIkNvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb24iLCJDb25uZWN0ZWRIb21lUGFnZUNvbXBvbmVudCIsIkNvbm5lY3RlZFJlcXVlc3RJbmZvcm1hdGlvbkNvbXBvbmVudCIsIkVycm9yNDA0IiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7OztBQUNBOztBQUNBOztBQUNBOztBQUNBOzs7O0FBRUE7O0FBQ0E7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUVhQSxNLFdBQUFBLE07OztBQUNYLDhDQUFjO0FBQUE7O0FBQUE7QUFBQTs7QUFBQTs7QUFHWixRQUFNQyx5REFBUSx1R0FBWUMsd0VBQVosRUFBc0IsMkdBQWdCQywwRUFBaEIsQ0FBdEIsQ0FBUixDQUFOOztBQUhZO0FBS1osb0NBQUtDLEtBQUwsR0FBYTtBQUNYSDtBQURXLEtBQWI7O0FBTFk7QUFTWkEsVUFBTUksU0FBTixDQUFnQixZQUFNO0FBQUE7QUFBQTs7QUFDcEJDLGNBQVFDLEdBQVIsQ0FBWSxrQkFBWixFQUFnQ04sTUFBTU8sUUFBTixFQUFoQztBQUNELEtBRkQ7QUFUWTtBQVliOzs7OzZCQUNRO0FBQUE7QUFBQTs7QUFDUCxhQUNFO0FBQUMsbUZBQUQ7QUFBQSxzQ0FBVSxPQUFPLEtBQUtKLEtBQUwsQ0FBV0gsS0FBNUI7QUFDRTtBQUFDLDhGQUFEO0FBQUEsd0NBQWUsV0FBVSxRQUF6QjtBQUNFO0FBQUMseUZBQUQ7QUFBQTtBQUNFLHNFQUFDLDJFQUFELDhCQUFPLHFDQUFQLEVBQWEsTUFBSyxPQUFsQixFQUEwQixXQUFXUSw2REFBckMsR0FERjtBQUVFLHNFQUFDLDJFQUFEO0FBQ0UscURBREY7QUFFRSxzQkFBSyxXQUZQO0FBR0UsMkJBQVdDO0FBSGIsZ0JBRkY7QUFPRSxzRUFBQywyRUFBRDtBQUNFLHFEQURGO0FBRUUsc0JBQUssV0FGUDtBQUdFLDJCQUFXQztBQUhiLGdCQVBGO0FBWUUsc0VBQUMsMkVBQUQ7QUFDRSxxREFERjtBQUVFLHNCQUFLLDhCQUZQO0FBR0UsMkJBQVdDO0FBSGIsZ0JBWkY7QUFpQkUsc0VBQUMsMkVBQUQsOEJBQU8sTUFBSyxJQUFaLEVBQWlCLFdBQVdDLG9FQUE1QjtBQWpCRjtBQURGO0FBREY7QUFERjtBQXlCRDs7OztHQXhDeUJDLHNFOztrQkEyQ2JkLE0iLCJmaWxlIjoicm91dGVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IEJyb3dzZXJSb3V0ZXIsIFN3aXRjaCwgUm91dGUgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJztcbmltcG9ydCB7IGNyZWF0ZVN0b3JlLCBhcHBseU1pZGRsZXdhcmUgfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQgeyBQcm92aWRlciB9IGZyb20gJ3JlYWN0LXJlZHV4JztcbmltcG9ydCB0aHVuayBmcm9tICdyZWR1eC10aHVuayc7XG5cbmltcG9ydCB7IEVycm9yNDA0IH0gZnJvbSAnLi4vY29tcG9uZW50cy9lcnJvcnMvRXJyb3I0MDQnO1xuaW1wb3J0IENvbm5lY3RlZEhvbWVQYWdlQ29tcG9uZW50IGZyb20gJy4uL2Nvbm5lY3RlZENvbXBvbmVudHMvQ29ubmVjdGVkSG9tZVBhZ2UnO1xuaW1wb3J0IENvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb24gZnJvbSAnLi4vY29ubmVjdGVkQ29tcG9uZW50cy9Db25uZWN0ZWRSZXF1ZXN0U2VsZWN0aW9uJztcbmltcG9ydCBDb25uZWN0ZWRSZXF1ZXN0SW5mb3JtYXRpb25Db21wb25lbnQgZnJvbSAnLi4vY29ubmVjdGVkQ29tcG9uZW50cy9Db25uZWN0ZWRSZXF1ZXN0SW5mb3JtYXRpb24nO1xuaW1wb3J0IHsgQXBwIH0gZnJvbSAnLi4vY29tcG9uZW50cy9BcHAnO1xuaW1wb3J0IHJlZHVjZXJzIGZyb20gJy4uL3JlZHVjZXJzL3JlZHVjZXJzJztcblxuZXhwb3J0IGNsYXNzIFJvdXRlcyBleHRlbmRzIENvbXBvbmVudCB7XG4gIGNvbnN0cnVjdG9yKCkge1xuICAgIHN1cGVyKCk7XG5cbiAgICBjb25zdCBzdG9yZSA9IGNyZWF0ZVN0b3JlKHJlZHVjZXJzLCBhcHBseU1pZGRsZXdhcmUodGh1bmspKTtcblxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICBzdG9yZSxcbiAgICB9O1xuXG4gICAgc3RvcmUuc3Vic2NyaWJlKCgpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKCdzdG9yZS5nZXRTdGF0ZSgpJywgc3RvcmUuZ2V0U3RhdGUoKSk7XG4gICAgfSk7XG4gIH1cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8UHJvdmlkZXIgc3RvcmU9e3RoaXMuc3RhdGUuc3RvcmV9PlxuICAgICAgICA8QnJvd3NlclJvdXRlciBjbGFzc05hbWU9XCJyb3V0ZXJcIj5cbiAgICAgICAgICA8U3dpdGNoPlxuICAgICAgICAgICAgPFJvdXRlIGV4YWN0IHBhdGg9XCIvdGVzdFwiIGNvbXBvbmVudD17QXBwfSAvPlxuICAgICAgICAgICAgPFJvdXRlXG4gICAgICAgICAgICAgIGV4YWN0XG4gICAgICAgICAgICAgIHBhdGg9XCIvcGlwZWxpbmVcIlxuICAgICAgICAgICAgICBjb21wb25lbnQ9e0Nvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb259XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICAgPFJvdXRlXG4gICAgICAgICAgICAgIGV4YWN0XG4gICAgICAgICAgICAgIHBhdGg9XCIvSG9tZVBhZ2VcIlxuICAgICAgICAgICAgICBjb21wb25lbnQ9e0Nvbm5lY3RlZEhvbWVQYWdlQ29tcG9uZW50fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxSb3V0ZVxuICAgICAgICAgICAgICBleGFjdFxuICAgICAgICAgICAgICBwYXRoPVwiL3BpcGVsaW5lL3JlcXVlc3RJbmZvcm1hdGlvblwiXG4gICAgICAgICAgICAgIGNvbXBvbmVudD17Q29ubmVjdGVkUmVxdWVzdEluZm9ybWF0aW9uQ29tcG9uZW50fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwiLypcIiBjb21wb25lbnQ9e0Vycm9yNDA0fSAvPlxuICAgICAgICAgIDwvU3dpdGNoPlxuICAgICAgICA8L0Jyb3dzZXJSb3V0ZXI+XG4gICAgICA8L1Byb3ZpZGVyPlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgUm91dGVzO1xuIl19

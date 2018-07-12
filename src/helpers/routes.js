@@ -1,28 +1,28 @@
-import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
-import Error404 from "../components/errors/Error404";
-import HomePageComponent from "../components/pages/HomePage";
-import requestPipelineComponent from "../components/pages/requestPipeline";
-import App from "../components/App";
-import ConnectedHomePage from "../connectedComponents/ConnectedHomePage";
+import { Error404 } from '../components/errors/Error404';
+import ConnectedHomePageComponent from '../connectedComponents/ConnectedHomePage';
+import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
+import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
+import { App } from '../components/App';
+import reducers from '../reducers/reducers';
 
-import reducers from "../reducers/reducers";
-
-export default class Routes extends Component {
+export class Routes extends Component {
   constructor() {
     super();
 
-    const store = createStore(reducers);
+    const store = createStore(reducers, applyMiddleware(thunk));
 
     this.state = {
-      store
+      store,
     };
 
     store.subscribe(() => {
-      console.log("store.getState()", store.getState());
+      console.log('store.getState()', store.getState());
     });
   }
   render() {
@@ -31,16 +31,20 @@ export default class Routes extends Component {
         <BrowserRouter className="router">
           <Switch>
             <Route exact path="/test" component={App} />
-            <Route exact path="/HomePage" component={HomePageComponent} />
             <Route
               exact
-              path="/requestPipeline"
-              component={requestPipelineComponent}
+              path="/pipeline"
+              component={ConnectedRequestSelection}
             />
             <Route
               exact
-              path="/ConnectedHomePage"
-              component={ConnectedHomePage}
+              path="/HomePage"
+              component={ConnectedHomePageComponent}
+            />
+            <Route
+              exact
+              path="/pipeline/requestInformation"
+              component={ConnectedRequestInformationComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>
@@ -49,3 +53,5 @@ export default class Routes extends Component {
     );
   }
 }
+
+export default Routes;

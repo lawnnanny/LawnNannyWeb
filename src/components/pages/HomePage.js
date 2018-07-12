@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Menu, Modal, Input, Grid, Button, Form } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-
-import Styles from "../../styles/HomePage";
-import { statekeys } from "../../helpers/Common";
+import Styles from '../../styles/HomePage';
+import { statekeys } from '../../helpers/Common';
 
 const HomePage = ({
   setEmail,
@@ -22,7 +21,7 @@ const HomePage = ({
   isLoginModalOpen,
   openSignupModal,
   closeSignupModal,
-  isSignupModalOpen
+  isSignupModalOpen,
 }) => (
   <div>
     <div style={Styles.navbarContainer}>
@@ -188,7 +187,7 @@ const HomePage = ({
     <Grid style={Styles.header} centered padded relaxed>
       <Grid.Row />
       <Grid.Row>
-        <Link to="/requestPipeline">
+        <Link to="/pipeline">
           <Button style={Styles.pipelineButton} size="large">
             Make a Request
           </Button>
@@ -211,10 +210,12 @@ HomePage.propTypes = {
   setZipcode: PropTypes.func.isRequired,
   openLoginModal: PropTypes.func.isRequired,
   closeLoginModal: PropTypes.func.isRequired,
+  isSignupModalOpen: PropTypes.bool.isRequired,
   isLoginModalOpen: PropTypes.bool.isRequired,
   openSignupModal: PropTypes.func.isRequired,
   closeSignupModal: PropTypes.func.isRequired,
-  isSignupModalOpen: PropTypes.bool.isRequired
 };
+
+HomePage.defaultProps = {};
 
 export default HomePage;
