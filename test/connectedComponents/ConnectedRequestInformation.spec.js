@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import RequestInformation from '../../src/connectedComponents/ConnectedRequestInformation';
 
-describe('Connected Home Page', () => {
+describe('Connected RequestInformation Page', () => {
   let store;
 
   beforeEach(() => {
