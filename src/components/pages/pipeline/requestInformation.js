@@ -1,11 +1,11 @@
-import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
-import { Redirect } from 'react-router';
-import DynamicFormComponent from '../../helpers/DynamicForm';
-import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/requestInformation';
+import React from "react";
+import { Grid, Segment } from "semantic-ui-react";
+import { Redirect } from "react-router";
+import DynamicFormComponent from "../../helpers/DynamicForm";
+import BreadcrumbComponent from "../../helpers/breadcrumb";
+import Styles from "../../../styles/requestInformation";
 
-export const requestInformation = (state) => {
+export const requestInformation = state => {
   if (!state.typeOfRequest) {
     return <Redirect to="/pipeline" />;
   }
@@ -21,7 +21,7 @@ export const requestInformation = (state) => {
           <DynamicFormComponent
             setRequestInformation={state.setRequestInformation}
             requestType={state.typeOfRequest}
-            requestForm={'Requests Details'}
+            requestForm={"Requests Details"}
             history={state.history.push}
           />
         </Segment>

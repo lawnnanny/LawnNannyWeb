@@ -80,9 +80,7 @@ class DynamicForm extends React.Component {
             }
             break;
           case 'radio':
-            if (
-              !Object.values(validationEntryObject).some(option => option.entry)
-            ) {
+            if (!Object.values(validationEntryObject).some(option => option.entry)) {
               errors[validationEntryObject.id] = 'Radio Button Not Selected';
             }
             break;
@@ -126,9 +124,7 @@ class DynamicForm extends React.Component {
         case 'text':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -137,13 +133,13 @@ class DynamicForm extends React.Component {
         case 'dropDown':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Dropdown
                 id={field.id}
                 placeholder={field.placeholder}
                 options={statekeys}
+                fluid
+                selection
               />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -152,9 +148,7 @@ class DynamicForm extends React.Component {
         case 'textArea':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <TextArea id={field.id} placeholder={field.placeholder} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -163,9 +157,7 @@ class DynamicForm extends React.Component {
         case 'checkbox':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Checkbox name={field.name} value="true" />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -174,9 +166,7 @@ class DynamicForm extends React.Component {
         case 'radio':
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Form.Group id={field.id} inline>
                 {this.renderRadioButtons(field.options)}
                 {errors[field.id] && <InlineError text={errors[field.id]} />}
@@ -187,9 +177,7 @@ class DynamicForm extends React.Component {
         default:
           return (
             <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
+              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Input id={field.id} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
@@ -205,7 +193,8 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.requestType}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.requestType,
+            {this.renderFormFromJson(
+              this.props.requestType,
               this.props.requestForm,
               this.state.errors,
             )}
