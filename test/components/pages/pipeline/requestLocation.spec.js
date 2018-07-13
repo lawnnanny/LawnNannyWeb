@@ -102,6 +102,12 @@ describe('RequestInformation', () => {
         it('is a Form', () => {
           expect(form.type()).toEqual(DynamicFormComponent);
         });
+        it('has the correct requestType', () => {
+          expect(form.props().requestType).toEqual('Location');
+        });
+        it('has the correct requestForm', () => {
+          expect(form.props().requestForm).toEqual('address');
+        });
       });
     });
   });

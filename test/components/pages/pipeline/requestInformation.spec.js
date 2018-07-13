@@ -104,6 +104,9 @@ describe('RequestInformation', () => {
         it('is a Form', () => {
           expect(form.type()).toEqual(DynamicFormComponent);
         });
+        it('has the correct requestForm', () => {
+          expect(form.props().requestForm).toEqual('Request Details');
+        });
       });
     });
   });
