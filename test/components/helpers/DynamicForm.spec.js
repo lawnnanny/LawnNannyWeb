@@ -6,14 +6,13 @@ import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
 describe('DynamicForm', () => {
   let wrapper;
   const setRequest = jest.fn();
-  const requestType = jest.fn();
   const route = jest.fn();
   const renderComponent = () =>
     shallow(
       <DynamicFormComponent
         setRequest={setRequest}
-        requestType={requestType}
-        requestForm={'Requests Details'}
+        requestType={'Location'}
+        requestForm={'address'}
         route={route}
       />,
     );
