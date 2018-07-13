@@ -44,7 +44,7 @@ class DynamicForm extends React.Component {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
-        if (!validationEntryObject.entry) {
+        if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
           switch (validationEntryObject.type) {
             case 'textArea':
               errors[validationEntryObject.id] = 'Empty Text Box';
