@@ -14,7 +14,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(
-  mapDispatchToProps,
-  mapStateToProps,
-)(requestLocationComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(requestLocationComponent);
