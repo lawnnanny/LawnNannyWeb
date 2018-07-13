@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import requestLocationComponent from '../components/pages/pipeline/requestLocation';
 import Actions from '../reducers/Actions';
 
+const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
+
 const mapDispatchToProps = dispatch => ({
   setRequestLocation: (data) => {
     const action = {
@@ -12,4 +14,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapDispatchToProps)(requestLocationComponent);
+export default connect(
+  mapDispatchToProps,
+  mapStateToProps,
+)(requestLocationComponent);

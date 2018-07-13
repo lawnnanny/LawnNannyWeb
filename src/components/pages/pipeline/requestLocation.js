@@ -5,7 +5,7 @@ import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
-export const requestInformation = (state) => {
+export const requestLocation = (state) => {
   if (!state.typeOfRequest) {
     return <Redirect to="/pipeline" />;
   }
@@ -28,4 +28,4 @@ export const requestInformation = (state) => {
     </Grid>
   );
 };
-export default requestInformation;
+export default requestLocation;
