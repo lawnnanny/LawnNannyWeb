@@ -10,7 +10,6 @@ import {
   TextArea,
   Dropdown,
 } from 'semantic-ui-react';
-import { Redirect } from 'react-router';
 import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
@@ -75,7 +74,7 @@ class DynamicForm extends React.Component {
       this.setState(state);
     };
     return handle;
-  }
+  };
 
   addAstricks = (validation) => {
     if (validation) {
@@ -195,12 +194,11 @@ class DynamicForm extends React.Component {
   }
 }
 
-DynamicForm.propTypes = {};
-DynamicForm.defaultProps = {
-  requestType: PropTypes.string,
-  requestForm: PropTypes.string,
-  setRequest: PropTypes.func,
-  history: PropTypes.func,
+DynamicForm.propTypes = {
+  requestType: PropTypes.string.isRequired,
+  requestForm: PropTypes.string.isRequired,
+  setRequest: PropTypes.func.isRequired,
+  route: PropTypes.func.isRequired,
 };
 
 export default DynamicForm;

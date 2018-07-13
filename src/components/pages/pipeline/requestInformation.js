@@ -22,7 +22,6 @@ export const requestInformation = (state) => {
             setRequest={state.setRequestInformation}
             requestType={state.typeOfRequest}
             requestForm={'Requests Details'}
-            history={state.history.push}
             route={() => {
               state.history.push('/pipeline/requestLocation');
             }}

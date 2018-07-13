@@ -5,10 +5,21 @@ import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
 
 describe('DynamicForm', () => {
   let wrapper;
-  const renderComponent = () => shallow(<DynamicFormComponent requestType="Lawn Mowing" />);
+  const setRequest = jest.fn();
+  const requestType = jest.fn();
+  const route = jest.fn();
+  const renderComponent = () =>
+    shallow(
+      <DynamicFormComponent
+        setRequest={setRequest}
+        requestType={requestType}
+        requestForm={'Requests Details'}
+        route={route}
+      />,
+    );
 
   beforeEach(() => {
-    wrapper = renderComponent().childAt(0);
+    wrapper = renderComponent();
   });
 
   it('is wrapped in a Segment', () => {

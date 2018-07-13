@@ -66,7 +66,7 @@ describe('RequestInformation', () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
         it('has an active step', () => {
-          expect(Breadcrumb.props().activeStep).toEqual(2);
+          expect(Breadcrumb.props().activeStep).toEqual(1);
         });
       });
     });
