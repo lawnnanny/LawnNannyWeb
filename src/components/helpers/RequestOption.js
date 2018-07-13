@@ -15,10 +15,10 @@ export const RequestOption = props => (
   </Link>
 );
 
-RequestOption.defaultProps = {
-  onClick: PropTypes.func,
-  imageURL: PropTypes.string,
-  title: PropTypes.string,
+RequestOption.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  imageURL: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default RequestOption;
