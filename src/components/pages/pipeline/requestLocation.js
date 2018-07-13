@@ -22,6 +22,9 @@ export const requestLocation = (state) => {
             setRequest={state.setRequestLocation}
             requestType={'Location'}
             requestForm={'address'}
+            route={() => {
+              state.history.push('/pipeline/review');
+            }}
           />
         </Segment>
       </Grid.Row>

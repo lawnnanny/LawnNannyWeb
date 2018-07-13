@@ -9,6 +9,7 @@ import ConnectedHomePageComponent from '../connectedComponents/ConnectedHomePage
 import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
 import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
 import ConnectedRequestLocationComponent from '../connectedComponents/ConnectedRequestLocation';
+import ConnectedRequestReviewComponent from '../connectedComponents/ConnectedRequestReview';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
 
@@ -51,6 +52,11 @@ export class Routes extends Component {
               exact
               path="/pipeline/requestLocation"
               component={ConnectedRequestLocationComponent}
+            />
+            <Route
+              exact
+              path="/pipeline/review"
+              component={ConnectedRequestReviewComponent}
             />
             <Route path="/*" component={Error404} />
           </Switch>

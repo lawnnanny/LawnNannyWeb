@@ -21,51 +21,23 @@ class DynamicForm extends React.Component {
     super(props);
     this.state = {
       errors: {},
+      dataForSubmitting: {},
     };
   }
 
-  onSubmit = (event) => {
-    console.log(this.props.history);
+  onSubmit = () => {
     const data = {};
-    let counter = 0;
     Requests[this.props.requestForm][this.props.requestType].fields.forEach((element) => {
-      switch (element.type) {
-        case 'radio':
-          data[element.id] = {
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
-          };
-          element.options.forEach((option) => {
-            data[element.id][option] = {
-              entry: event.target[counter].checked,
-            };
-            counter += 1;
-          });
-          break;
-        case 'checkbox':
-          data[element.id] = {
-            entry: event.target[counter].checked,
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
-          };
-          counter += 1;
-          break;
-        default:
-          data[element.id] = {
-            entry: event.target[counter].value,
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
-          };
-          counter += 1;
-          break;
-      }
+      data[element.id] = {
+        entry: this.state.dataForSubmitting[element.id],
+        validation: element.validation,
+        id: element.id,
+        type: element.type,
+      };
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
-      this.props.history('/pipeline/requestLocation');
+      this.props.route();
     }
   };
 
@@ -73,28 +45,22 @@ class DynamicForm extends React.Component {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
-        switch (validationEntryObject.type) {
-          case 'textArea':
-            if (!validationEntryObject.entry.trim().length) {
+        if (!validationEntryObject.entry) {
+          switch (validationEntryObject.type) {
+            case 'textArea':
               errors[validationEntryObject.id] = 'Empty Text Box';
-            }
-            break;
-          case 'input':
-            if (!validationEntryObject.entry.trim().length) {
+              break;
+            case 'input':
               errors[validationEntryObject.id] = 'Empty Input';
-            }
-            break;
-          case 'dropDown':
-            if (!Object.values(validationEntryObject).some(option => option.entry)) {
+              break;
+            case 'dropDown':
               errors[validationEntryObject.id] = 'No State Selected';
-            }
-            break;
-          case 'radio':
-            if (!Object.values(validationEntryObject).some(option => option.entry)) {
+              break;
+            case 'radio':
               errors[validationEntryObject.id] = 'Radio Button Not Selected';
-            }
-            break;
-          default:
+              break;
+            default:
+          }
         }
       }
     });
@@ -102,11 +68,14 @@ class DynamicForm extends React.Component {
     return !Object.keys(errors).length;
   };
 
-  handleChange = (e, { value }) => {
-    const state = this.state;
-    state.radio = value;
-    this.setState(state);
-  };
+  processChange = (key) => {
+    const handle = (e, { value }) => {
+      const state = this.state;
+      state.dataForSubmitting[key] = value;
+      this.setState(state);
+    };
+    return handle;
+  }
 
   addAstricks = (validation) => {
     if (validation) {
@@ -115,13 +84,13 @@ class DynamicForm extends React.Component {
     return '';
   };
 
-  renderRadioButtons = (field) => {
+  renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (
       <Form.Radio
         label={option}
         value={option}
-        onChange={this.handleChange}
-        checked={this.state.radio === option}
+        onChange={this.processChange(id)}
+        checked={this.state.dataForSubmitting[id] === option}
       />
     ));
     return radioButtons;
@@ -135,7 +104,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input id={field.id} />
+              <Input id={field.id} onChange={this.processChange(field.id)} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
@@ -145,6 +114,8 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Dropdown
+                value={this.state[field.id]}
+                onChange={this.processChange(field.id)}
                 id={field.id}
                 placeholder={field.placeholder}
                 options={statekeys}
@@ -159,7 +130,11 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <TextArea id={field.id} placeholder={field.placeholder} />
+              <TextArea
+                id={field.id}
+                placeholder={field.placeholder}
+                onChange={this.processChange(field.id)}
+              />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
@@ -168,7 +143,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Checkbox name={field.name} value="true" />
+              <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );
@@ -178,7 +153,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Form.Group id={field.id} inline>
-                {this.renderRadioButtons(field.options)}
+                {this.renderRadioButtons(field.id, field.options)}
                 {errors[field.id] && <InlineError text={errors[field.id]} />}
               </Form.Group>
             </Form.Field>
@@ -188,7 +163,7 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input id={field.id} />
+              <Input id={field.id} onChange={this.processChange(field.id)} />
               {errors[field.id] && <InlineError text={errors[field.id]} />}
             </Form.Field>
           );

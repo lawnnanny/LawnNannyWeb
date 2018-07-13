@@ -23,6 +23,9 @@ export const requestInformation = (state) => {
             requestType={state.typeOfRequest}
             requestForm={'Requests Details'}
             history={state.history.push}
+            route={() => {
+              state.history.push('/pipeline/requestLocation');
+            }}
           />
         </Segment>
       </Grid.Row>
