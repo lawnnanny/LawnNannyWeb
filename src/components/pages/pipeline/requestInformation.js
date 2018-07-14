@@ -6,7 +6,6 @@ import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/requestInformation';
 
-
 export const requestInformation = (state) => {
   if (!state.typeOfRequest) {
     return <Redirect to="/pipeline" />;
@@ -15,7 +14,7 @@ export const requestInformation = (state) => {
     <Grid container style={Styles.Grid}>
       <Grid.Row>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={1} />
+          <BreadcrumbComponent selection={1} iconColor={1} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>

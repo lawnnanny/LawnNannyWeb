@@ -13,7 +13,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
   <Grid container>
     <Grid.Row>
       <Segment style={Styles.segment}>
-        <BreadcrumbComponent selection ={0} />
+        <BreadcrumbComponent selection={0} iconColor={0} />
       </Segment>
     </Grid.Row>
     <Grid.Row>
