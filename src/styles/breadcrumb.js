@@ -1,4 +1,13 @@
 export default {
+  example: {},
+  exampleAppear: {
+    opacity: 0.01,
+  },
+
+  exampleAppearActive: {
+    opacity: 1,
+    transition: 'opacity .5s ease-in',
+  },
   segment: {
     textAlign: 'center',
     padding: '0',

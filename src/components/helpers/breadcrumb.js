@@ -1,4 +1,5 @@
 import React from 'react';
+import Transition from 'react-inline-transition-group';
 import PropTypes from 'prop-types';
 import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
 import Styles from '../../styles/breadcrumb';
@@ -47,18 +48,21 @@ const returnLeftBar = (bar, id) => {
   }
   return Styles.leftBarUnfinished;
 };
+const example = 'example';
 export const breadcrumb = props => (
   <Grid columns="equal" style={Styles.grid}>
     <Grid.Row style={Styles.row}>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
-          <Icon
-            style={returnIcon(props.icon, 0)}
-            circular
-            size="large"
-            color={returnColor(props.iconColor, 0)}
-            name={returnStatus(props.selection, 0)}
-          />
+          <Transition>
+            <Icon
+              style={returnIcon(props.icon, 0)}
+              circular
+              size="large"
+              color={returnColor(props.iconColor, 0)}
+              name={returnStatus(props.selection, 0)}
+            />
+          </Transition>
           <div style={returnRightBar(props.bar, 0)} />
         </Segment>
         <Segment style={Styles.segment}>
