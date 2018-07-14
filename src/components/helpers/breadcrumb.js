@@ -19,11 +19,23 @@ const returnColor = (iconColor, id) => {
 };
 const returnIcon = (icon, id) => {
   if (icon > id) {
-    return Styles.unfinishedIcon;
+    return Styles.finishedIcon;
   } else if (icon === id) {
     return Styles.currentIcon;
   }
-  return Styles.finishedIcon;
+  return Styles.unfinishedIcon;
+};
+const returnRightBar = (bar, id) => {
+  if (bar > id) {
+    return Styles.rightBarFinished;
+  }
+  return Styles.rightBarUnfinished;
+};
+const returnLeftBar = (bar, id) => {
+  if (bar > id) {
+    return Styles.leftBarFinished;
+  }
+  return Styles.leftBarUnfinished;
 };
 export const breadcrumb = props => (
   <Grid columns="equal" style={Styles.grid}>
@@ -37,6 +49,7 @@ export const breadcrumb = props => (
             color={returnColor(props.iconColor, 0)}
             name={returnStatus(props.selection, 0)}
           />
+          <div style={returnRightBar(props.bar, 0)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={Styles.label}>Request</Label>
@@ -51,6 +64,8 @@ export const breadcrumb = props => (
             color={returnColor(props.iconColor, 1)}
             name={returnStatus(props.selection, 1)}
           />
+          <div style={returnLeftBar(props.bar, 0)} />
+          <div style={returnRightBar(props.bar, 1)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={Styles.label}>Details</Label>
@@ -65,6 +80,8 @@ export const breadcrumb = props => (
             color={returnColor(props.iconColor, 2)}
             name={returnStatus(props.selection, 2)}
           />
+          <div style={returnLeftBar(props.bar, 1)} />
+          <div style={returnRightBar(props.bar, 2)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={Styles.label}>Location</Label>
@@ -79,6 +96,8 @@ export const breadcrumb = props => (
             color={returnColor(props.iconColor, 3)}
             name={returnStatus(props.selection, 3)}
           />
+          <div style={returnLeftBar(props.bar, 2)} />
+          <div style={returnRightBar(props.bar, 3)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={Styles.label}>Price</Label>
@@ -93,6 +112,7 @@ export const breadcrumb = props => (
             color={returnColor(props.iconColor, 4)}
             name={returnStatus(props.selection, 4)}
           />
+          <div style={returnLeftBar(props.bar, 3)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={Styles.label}>Review</Label>
