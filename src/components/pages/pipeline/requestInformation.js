@@ -15,7 +15,7 @@ export const requestInformation = (state) => {
     <Grid container style={Styles.Grid}>
       <Grid.Row>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent activeStep={1} />
+          <BreadcrumbComponent selection={1} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>
