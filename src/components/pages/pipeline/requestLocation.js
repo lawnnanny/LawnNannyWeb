@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import { jsonForm } from './jsonForms/locationForm';
 import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
@@ -19,9 +20,9 @@ export const requestLocation = (state) => {
       <Grid.Row padding style={Styles.Grid}>
         <Segment style={Styles.segment}>
           <DynamicFormComponent
+            jsonForm={() => jsonForm}
             setRequest={state.setRequestLocation}
-            requestType={'Location'}
-            requestForm={'address'}
+            form={'Location'}
             route={() => {
               state.history.push('/pipeline/review');
             }}

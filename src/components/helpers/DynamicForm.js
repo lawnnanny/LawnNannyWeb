@@ -10,30 +10,32 @@ import {
   TextArea,
   Dropdown,
 } from 'semantic-ui-react';
-import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
+
 class DynamicForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       errors: {},
       dataForSubmitting: {},
+      Requests: props.jsonForm(),
     };
   }
 
   onSubmit = () => {
     const data = {};
-    Requests[this.props.requestForm][this.props.requestType].fields.forEach((element) => {
-      data[element.id] = {
-        entry: this.state.dataForSubmitting[element.id],
-        validation: element.validation,
-        id: element.id,
-        type: element.type,
-      };
-    });
+    this.state.Requests[this.props.form]
+      .fields.forEach((element) => {
+        data[element.id] = {
+          entry: this.state.dataForSubmitting[element.id],
+          validation: element.validation,
+          id: element.id,
+          type: element.type,
+        };
+      });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
       this.props.route();
@@ -95,8 +97,8 @@ class DynamicForm extends React.Component {
     return radioButtons;
   };
 
-  renderFormFromJson = (requestType, requestForm, errors) => {
-    const requests = Requests[requestForm][requestType];
+  renderFormFromJson = (form, requestForm, errors) => {
+    const requests = this.state.Requests[form];
     const formUI = requests.fields.map((field) => {
       switch (field.type) {
         case 'text':
@@ -174,11 +176,11 @@ class DynamicForm extends React.Component {
   render() {
     return (
       <Segment padded style={Styles.segment}>
-        <Header size="large">{this.props.requestType}</Header>
+        <Header size="large">{this.props.form}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
             {this.renderFormFromJson(
-              this.props.requestType,
+              this.props.form,
               this.props.requestForm,
               this.state.errors,
             )}
@@ -195,7 +197,8 @@ class DynamicForm extends React.Component {
 }
 
 DynamicForm.propTypes = {
-  requestType: PropTypes.string.isRequired,
+  jsonForm: PropTypes.func.isRequired,
+  form: PropTypes.string.isRequired,
   requestForm: PropTypes.string.isRequired,
   setRequest: PropTypes.func.isRequired,
   route: PropTypes.func.isRequired,
