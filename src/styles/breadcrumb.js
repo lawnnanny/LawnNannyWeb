@@ -15,4 +15,12 @@ export default {
   label: {
     backgroundColor: 'white',
   },
+  grid: {},
+  unfinishedIcon: {
+    boxShadow: '0 0 0 0.1em #21ba45 inset',
+  },
+  currentIcon: {
+    boxShadow: '0 0 0 0.1em #2185d0 inset',
+  },
+  finishedIcon: {},
 };

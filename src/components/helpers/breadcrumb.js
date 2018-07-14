@@ -12,19 +12,28 @@ const returnStatus = (selection, id) => {
 const returnColor = (iconColor, id) => {
   if (iconColor > id) {
     return 'green';
+  } else if (iconColor === id) {
+    return 'blue';
   }
   return 'grey';
 };
+const returnIcon = (icon, id) => {
+  if (icon > id) {
+    return Styles.unfinishedIcon;
+  } else if (icon === id) {
+    return Styles.currentIcon;
+  }
+  return Styles.finishedIcon;
+};
 export const breadcrumb = props => (
-  <Grid container columns="equal">
+  <Grid columns="equal" style={Styles.grid}>
     <Grid.Row style={Styles.row}>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
           <Icon
-            style={Styles.icon}
+            style={returnIcon(props.icon, 0)}
             circular
             size="large"
-            style={Styles.checkmark}
             color={returnColor(props.iconColor, 0)}
             name={returnStatus(props.selection, 0)}
           />
@@ -38,7 +47,7 @@ export const breadcrumb = props => (
           <Icon
             circular
             size="large"
-            style={Styles.checkmark}
+            style={returnIcon(props.icon, 1)}
             color={returnColor(props.iconColor, 1)}
             name={returnStatus(props.selection, 1)}
           />
@@ -52,7 +61,7 @@ export const breadcrumb = props => (
           <Icon
             circular
             size="large"
-            style={Styles.checkmark}
+            style={returnIcon(props.icon, 2)}
             color={returnColor(props.iconColor, 2)}
             name={returnStatus(props.selection, 2)}
           />
@@ -66,7 +75,7 @@ export const breadcrumb = props => (
           <Icon
             circular
             size="large"
-            style={Styles.checkmark}
+            style={returnIcon(props.icon, 3)}
             color={returnColor(props.iconColor, 3)}
             name={returnStatus(props.selection, 3)}
           />
@@ -80,7 +89,7 @@ export const breadcrumb = props => (
           <Icon
             circular
             size="large"
-            style={Styles.checkmark}
+            style={returnIcon(props.icon, 4)}
             color={returnColor(props.iconColor, 4)}
             name={returnStatus(props.selection, 4)}
           />
