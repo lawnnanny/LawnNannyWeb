@@ -48,7 +48,6 @@ const returnLeftBar = (bar, id) => {
   }
   return Styles.leftBarUnfinished;
 };
-const example = 'example';
 export const breadcrumb = props => (
   <Grid columns="equal" style={Styles.grid}>
     <Grid.Row style={Styles.row}>
