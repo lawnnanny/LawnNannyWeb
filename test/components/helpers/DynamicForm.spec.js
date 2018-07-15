@@ -3,6 +3,7 @@ import { Button, Form, Segment, Header, Radio, Checkbox, TextArea, Dropdown, Inp
 import { shallow } from 'enzyme';
 import { Chance } from 'chance';
 import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
+import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
@@ -134,54 +135,65 @@ describe('DynamicForm', () => {
               .props().name === field.name);
             if (field.type === 'checkbox') {
               expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
-                .props()
                 .type()).toEqual(Checkbox);
             }
             if (field.type === 'radio') {
               expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
-                .props()
                 .type()).toEqual(Radio);
 
               if (fail) {
                 const state = { errors: {} };
                 state.errors[field.id] = 'Radio Button Not Selected';
                 wrapper.setState(state);
+                wrapper.update();
+                expect(wrapper.childAt(1).childAt(0).childAt(count).find(InlineErrorComponent)
+                  .props()
+                  .text).toEqual('Radio Button Not Selected');
               }
             }
             if (field.type === 'textArea') {
               expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
-                .props()
                 .type()).toEqual(TextArea);
 
               if (fail) {
                 const state = { errors: {} };
                 state.errors[field.id] = 'Empty Text Box';
                 wrapper.setState(state);
+                wrapper.update();
+                expect(wrapper.childAt(1).childAt(0).childAt(count).find(InlineErrorComponent)
+                  .props()
+                  .text).toEqual('Empty Text Box');
               }
             }
             if (field.type === 'dropDown') {
               expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
-                .props()
                 .type()).toEqual(Dropdown);
 
               if (fail) {
                 const state = { errors: {} };
                 state.errors[field.id] = 'Nothing is Selected';
                 wrapper.setState(state);
+                wrapper.update();
+                expect(wrapper.childAt(1).childAt(0).childAt(count).find(InlineErrorComponent)
+                  .props()
+                  .text).toEqual('Nothing is Selected');
+              }
               }
             }
             if (field.type === 'input') {
               expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
-                .props()
                 .type()).toEqual(Input);
 
               if (fail) {
                 const state = { errors: {} };
                 state.errors[field.id] = 'Empty Input';
                 wrapper.setState(state);
+                wrapper.update();
+                expect(wrapper.childAt(1).childAt(0).childAt(count).find(InlineErrorComponent)
+                  .props()
+                  .text).toEqual('Empty Input');
               }
             }
-            wrapper.update();
             count += 1;
           });
         }
