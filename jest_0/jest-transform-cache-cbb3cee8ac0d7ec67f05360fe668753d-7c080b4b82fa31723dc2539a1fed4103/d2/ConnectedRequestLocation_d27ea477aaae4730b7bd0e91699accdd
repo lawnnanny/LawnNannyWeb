@@ -1,0 +1,219 @@
+4386ff9a0d29d04008998ce6409358df
+/* istanbul ignore next */'use strict';
+
+var cov_lhyl17pdj = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/connectedComponents/ConnectedRequestLocation.js',
+      hash = 'a9e7ca6c0cefeaae10900e3b70ccce603b1e83a6',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/connectedComponents/ConnectedRequestLocation.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 5,
+          column: 24
+        },
+        end: {
+          line: 5,
+          column: 78
+        }
+      },
+      '1': {
+        start: {
+          line: 5,
+          column: 34
+        },
+        end: {
+          line: 5,
+          column: 77
+        }
+      },
+      '2': {
+        start: {
+          line: 7,
+          column: 27
+        },
+        end: {
+          line: 15,
+          column: 2
+        }
+      },
+      '3': {
+        start: {
+          line: 7,
+          column: 40
+        },
+        end: {
+          line: 15,
+          column: 1
+        }
+      },
+      '4': {
+        start: {
+          line: 9,
+          column: 19
+        },
+        end: {
+          line: 12,
+          column: 5
+        }
+      },
+      '5': {
+        start: {
+          line: 13,
+          column: 4
+        },
+        end: {
+          line: 13,
+          column: 21
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 5,
+            column: 24
+          },
+          end: {
+            line: 5,
+            column: 25
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 34
+          },
+          end: {
+            line: 5,
+            column: 77
+          }
+        },
+        line: 5
+      },
+      '1': {
+        name: '(anonymous_1)',
+        decl: {
+          start: {
+            line: 7,
+            column: 27
+          },
+          end: {
+            line: 7,
+            column: 28
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 40
+          },
+          end: {
+            line: 15,
+            column: 1
+          }
+        },
+        line: 7
+      },
+      '2': {
+        name: '(anonymous_2)',
+        decl: {
+          start: {
+            line: 8,
+            column: 22
+          },
+          end: {
+            line: 8,
+            column: 23
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 32
+          },
+          end: {
+            line: 14,
+            column: 3
+          }
+        },
+        line: 8
+      }
+    },
+    branchMap: {},
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0,
+      '3': 0,
+      '4': 0,
+      '5': 0
+    },
+    f: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var /* istanbul ignore next */_reactRedux = require('react-redux');
+
+var /* istanbul ignore next */_requestLocation = require('../components/pages/pipeline/requestLocation');
+
+/* istanbul ignore next */var _requestLocation2 = _interopRequireDefault(_requestLocation);
+
+var /* istanbul ignore next */_Actions = require('../reducers/Actions');
+
+/* istanbul ignore next */var _Actions2 = _interopRequireDefault(_Actions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+cov_lhyl17pdj.s[0]++;
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  /* istanbul ignore next */cov_lhyl17pdj.f[0]++;
+  cov_lhyl17pdj.s[1]++;
+  return { typeOfRequest: state.requests.selection };
+};
+
+/* istanbul ignore next */cov_lhyl17pdj.s[2]++;
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  /* istanbul ignore next */cov_lhyl17pdj.f[1]++;
+  cov_lhyl17pdj.s[3]++;
+  return {
+    setRequestLocation: function /* istanbul ignore next */setRequestLocation(data) {
+      /* istanbul ignore next */cov_lhyl17pdj.f[2]++;
+
+      var action = /* istanbul ignore next */(cov_lhyl17pdj.s[4]++, {
+        type: /* istanbul ignore next */_Actions2. /* istanbul ignore next */default.requests.setRequestLocation,
+        data: data
+      });
+      /* istanbul ignore next */cov_lhyl17pdj.s[5]++;
+      dispatch(action);
+    }
+  };
+};
+
+/* istanbul ignore next */exports.default = /* istanbul ignore next */(0, /* istanbul ignore next */_reactRedux. /* istanbul ignore next */connect)(mapStateToProps, mapDispatchToProps)( /* istanbul ignore next */_requestLocation2. /* istanbul ignore next */default);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNvbm5lY3RlZFJlcXVlc3RMb2NhdGlvbi5qcyJdLCJuYW1lcyI6WyJtYXBTdGF0ZVRvUHJvcHMiLCJ0eXBlT2ZSZXF1ZXN0Iiwic3RhdGUiLCJyZXF1ZXN0cyIsInNlbGVjdGlvbiIsIm1hcERpc3BhdGNoVG9Qcm9wcyIsInNldFJlcXVlc3RMb2NhdGlvbiIsImRhdGEiLCJhY3Rpb24iLCJ0eXBlIiwiQWN0aW9ucyIsImRpc3BhdGNoIiwicmVxdWVzdExvY2F0aW9uQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7OztBQUNBOzs7Ozs7Ozs7QUFFQSxJQUFNQSxrQkFBa0IsU0FBbEJBLGVBQWtCLFFBQVU7QUFBQTtBQUFBO0FBQUEsV0FBRUMsZUFBZUMsTUFBTUMsUUFBTixDQUFlQyxTQUFoQztBQUEyQyxDQUE3RTs7O0FBRUEsSUFBTUMscUJBQXFCLFNBQXJCQSxrQkFBcUIsV0FBYTtBQUFBO0FBQUE7QUFBQTtBQUN0Q0Msd0JBQW9CLHNEQUFDQyxJQUFELEVBQVU7QUFBQTs7QUFDNUIsVUFBTUMsMERBQVM7QUFDYkMsY0FBTUMsdUVBQVFQLFFBQVIsQ0FBaUJHLGtCQURWO0FBRWJDO0FBRmEsT0FBVCxDQUFOO0FBRDRCO0FBSzVCSSxlQUFTSCxNQUFUO0FBQ0Q7QUFQcUM7QUFRdkMsQ0FSRDs7NENBVWUsd0dBQVFSLGVBQVIsRUFBeUJLLGtCQUF6QixFQUE2Q08sK0VBQTdDLEMiLCJmaWxlIjoiQ29ubmVjdGVkUmVxdWVzdExvY2F0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29ubmVjdCB9IGZyb20gJ3JlYWN0LXJlZHV4JztcbmltcG9ydCByZXF1ZXN0TG9jYXRpb25Db21wb25lbnQgZnJvbSAnLi4vY29tcG9uZW50cy9wYWdlcy9waXBlbGluZS9yZXF1ZXN0TG9jYXRpb24nO1xuaW1wb3J0IEFjdGlvbnMgZnJvbSAnLi4vcmVkdWNlcnMvQWN0aW9ucyc7XG5cbmNvbnN0IG1hcFN0YXRlVG9Qcm9wcyA9IHN0YXRlID0+ICh7IHR5cGVPZlJlcXVlc3Q6IHN0YXRlLnJlcXVlc3RzLnNlbGVjdGlvbiB9KTtcblxuY29uc3QgbWFwRGlzcGF0Y2hUb1Byb3BzID0gZGlzcGF0Y2ggPT4gKHtcbiAgc2V0UmVxdWVzdExvY2F0aW9uOiAoZGF0YSkgPT4ge1xuICAgIGNvbnN0IGFjdGlvbiA9IHtcbiAgICAgIHR5cGU6IEFjdGlvbnMucmVxdWVzdHMuc2V0UmVxdWVzdExvY2F0aW9uLFxuICAgICAgZGF0YSxcbiAgICB9O1xuICAgIGRpc3BhdGNoKGFjdGlvbik7XG4gIH0sXG59KTtcblxuZXhwb3J0IGRlZmF1bHQgY29ubmVjdChtYXBTdGF0ZVRvUHJvcHMsIG1hcERpc3BhdGNoVG9Qcm9wcykocmVxdWVzdExvY2F0aW9uQ29tcG9uZW50KTtcbiJdfQ==

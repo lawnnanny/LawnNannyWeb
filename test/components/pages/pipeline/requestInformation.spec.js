@@ -105,7 +105,7 @@ describe('RequestInformation', () => {
           expect(form.type()).toEqual(DynamicFormComponent);
         });
         it('has the correct requestForm', () => {
-          expect(form.props().requestForm).toEqual('Request Details');
+          expect(form.props().form).toEqual('Lawn Mowing');
         });
       });
     });
