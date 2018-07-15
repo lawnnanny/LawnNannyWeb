@@ -117,35 +117,74 @@ describe('DynamicForm', () => {
 
     describe('form data', () => {
       wrapper = renderComponent();
-      const counter = 0;
-      const form = wrapper.childAt(1);
-      const segmentOfFields = form.childAt(0);
       testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
-        const jsxField = segmentOfFields.childAt(counter);
-        it(`field ${counter} is correct`, () => {
-          const label = jsxField.childAt(0);
-          if (field.validation) {
-            expect(label.text()).toEqual(`* ${field.name}`);
-          } else {
-            expect(label.text()).toEqual(field.name);
-          }
-          expect(jsxField.childAt(1).props().name === field.name);
-          if (field.type === 'checkbox') {
-            expect(jsxField.childAt(1).type()).toEqual(Checkbox);
-          }
-          if (field.type === 'radio') {
-            expect(jsxField.childAt(1).type()).toEqual(Radio);
-          }
-          if (field.type === 'textArea') {
-            expect(jsxField.childAt(1).type()).toEqual(TextArea);
-          }
-          if (field.type === 'dropDown') {
-            expect(jsxField.childAt(1).type()).toEqual(Dropdown);
-          }
-          if (field.type === 'input') {
-            expect(jsxField.childAt(1).type()).toEqual(Input);
-          }
-        });
+        if (field.validation) {
+          const fail = chance.integer() % 2;
+          let count = 0;
+          const form = wrapper.childAt(1);
+          const segmentOfFields = form.childAt(0);
+          it(`field ${count} is correct`, () => {
+            const label = segmentOfFields.childAt(count).childAt(0);
+            if (field.validation) {
+              expect(label.text()).toEqual(` * ${field.name}`);
+            } else {
+              expect(label.text()).toEqual(field.name);
+            }
+            expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+              .props().name === field.name);
+            if (field.type === 'checkbox') {
+              expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+                .props()
+                .type()).toEqual(Checkbox);
+            }
+            if (field.type === 'radio') {
+              expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+                .props()
+                .type()).toEqual(Radio);
+
+              if (fail) {
+                const state = { errors: {} };
+                state.errors[field.id] = 'Radio Button Not Selected';
+                wrapper.setState(state);
+              }
+            }
+            if (field.type === 'textArea') {
+              expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+                .props()
+                .type()).toEqual(TextArea);
+
+              if (fail) {
+                const state = { errors: {} };
+                state.errors[field.id] = 'Empty Text Box';
+                wrapper.setState(state);
+              }
+            }
+            if (field.type === 'dropDown') {
+              expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+                .props()
+                .type()).toEqual(Dropdown);
+
+              if (fail) {
+                const state = { errors: {} };
+                state.errors[field.id] = 'Nothing is Selected';
+                wrapper.setState(state);
+              }
+            }
+            if (field.type === 'input') {
+              expect(wrapper.childAt(1).childAt(0).childAt(count).childAt(1)
+                .props()
+                .type()).toEqual(Input);
+
+              if (fail) {
+                const state = { errors: {} };
+                state.errors[field.id] = 'Empty Input';
+                wrapper.setState(state);
+              }
+            }
+            wrapper.update();
+            count += 1;
+          });
+        }
       });
     });
   });

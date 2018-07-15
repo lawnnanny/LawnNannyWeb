@@ -1,0 +1,44 @@
+44db28ae6baf4b2df6dcea6b202dc96e
+/* istanbul ignore next */'use strict';
+
+var cov_2o8wlhusys = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/styles/requestInformation.js',
+      hash = '32f0ce2e921ba8df5c53c3aeb8e502b342e7f954',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/styles/requestInformation.js',
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  Grid: {
+    height: '100%'
+  },
+  segment: {
+    width: '100%',
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0'
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVlc3RJbmZvcm1hdGlvbi5qcyJdLCJuYW1lcyI6WyJHcmlkIiwiaGVpZ2h0Iiwic2VnbWVudCIsIndpZHRoIiwiYm9yZGVyIiwiYm94U2hhZG93IiwicGFkZGluZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztrQkFBZTtBQUNiQSxRQUFNO0FBQ0pDLFlBQVE7QUFESixHQURPO0FBSWJDLFdBQVM7QUFDUEMsV0FBTyxNQURBO0FBRVBDLFlBQVEsTUFGRDtBQUdQQyxlQUFXLE1BSEo7QUFJUEMsYUFBUztBQUpGO0FBSkksQyIsImZpbGUiOiJyZXF1ZXN0SW5mb3JtYXRpb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gIEdyaWQ6IHtcbiAgICBoZWlnaHQ6ICcxMDAlJyxcbiAgfSxcbiAgc2VnbWVudDoge1xuICAgIHdpZHRoOiAnMTAwJScsXG4gICAgYm9yZGVyOiAnbm9uZScsXG4gICAgYm94U2hhZG93OiAnbm9uZScsXG4gICAgcGFkZGluZzogJzAnLFxuICB9LFxufTtcbiJdfQ==

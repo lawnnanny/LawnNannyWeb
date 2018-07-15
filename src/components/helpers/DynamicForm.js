@@ -55,7 +55,7 @@ class DynamicForm extends React.Component {
               errors[validationEntryObject.id] = 'Empty Input';
               break;
             case 'dropDown':
-              errors[validationEntryObject.id] = 'No State Selected';
+              errors[validationEntryObject.id] = 'Nothing is Selected';
               break;
             case 'radio':
               errors[validationEntryObject.id] = 'Radio Button Not Selected';

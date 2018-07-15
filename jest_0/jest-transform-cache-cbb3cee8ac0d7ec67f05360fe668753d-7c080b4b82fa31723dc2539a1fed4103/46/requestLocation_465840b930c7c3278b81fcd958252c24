@@ -1,0 +1,295 @@
+c31d9674d6c6fac386cc94e67d588c64
+/* istanbul ignore next */'use strict';
+
+var cov_13tuucaly7 = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/requestLocation.js',
+      hash = 'ae039307ceb410690c8ded8eb0c97e6088877396',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/requestLocation.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 9,
+          column: 31
+        },
+        end: {
+          line: 34,
+          column: 1
+        }
+      },
+      '1': {
+        start: {
+          line: 10,
+          column: 2
+        },
+        end: {
+          line: 12,
+          column: 3
+        }
+      },
+      '2': {
+        start: {
+          line: 11,
+          column: 4
+        },
+        end: {
+          line: 11,
+          column: 39
+        }
+      },
+      '3': {
+        start: {
+          line: 13,
+          column: 2
+        },
+        end: {
+          line: 33,
+          column: 4
+        }
+      },
+      '4': {
+        start: {
+          line: 23,
+          column: 28
+        },
+        end: {
+          line: 23,
+          column: 36
+        }
+      },
+      '5': {
+        start: {
+          line: 27,
+          column: 14
+        },
+        end: {
+          line: 27,
+          column: 53
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 9,
+            column: 31
+          },
+          end: {
+            line: 9,
+            column: 32
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 42
+          },
+          end: {
+            line: 34,
+            column: 1
+          }
+        },
+        line: 9
+      },
+      '1': {
+        name: '(anonymous_1)',
+        decl: {
+          start: {
+            line: 23,
+            column: 22
+          },
+          end: {
+            line: 23,
+            column: 23
+          }
+        },
+        loc: {
+          start: {
+            line: 23,
+            column: 28
+          },
+          end: {
+            line: 23,
+            column: 36
+          }
+        },
+        line: 23
+      },
+      '2': {
+        name: '(anonymous_2)',
+        decl: {
+          start: {
+            line: 26,
+            column: 19
+          },
+          end: {
+            line: 26,
+            column: 20
+          }
+        },
+        loc: {
+          start: {
+            line: 26,
+            column: 25
+          },
+          end: {
+            line: 28,
+            column: 13
+          }
+        },
+        line: 26
+      }
+    },
+    branchMap: {
+      '0': {
+        loc: {
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        },
+        type: 'if',
+        locations: [{
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 2
+          },
+          end: {
+            line: 12,
+            column: 3
+          }
+        }],
+        line: 10
+      }
+    },
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0,
+      '3': 0,
+      '4': 0,
+      '5': 0
+    },
+    f: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    b: {
+      '0': [0, 0]
+    },
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.requestLocation = undefined;
+
+var /* istanbul ignore next */_react = require('react');
+
+/* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+
+var /* istanbul ignore next */_semanticUiReact = require('semantic-ui-react');
+
+var /* istanbul ignore next */_reactRouter = require('react-router');
+
+var /* istanbul ignore next */_locationForm = require('./jsonForms/locationForm');
+
+var /* istanbul ignore next */_requestInformation = require('../../../styles/requestInformation');
+
+/* istanbul ignore next */var _requestInformation2 = _interopRequireDefault(_requestInformation);
+
+var /* istanbul ignore next */_DynamicForm = require('../../helpers/DynamicForm');
+
+/* istanbul ignore next */var _DynamicForm2 = _interopRequireDefault(_DynamicForm);
+
+var /* istanbul ignore next */_breadcrumb = require('../../helpers/breadcrumb');
+
+/* istanbul ignore next */var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+cov_13tuucaly7.s[0]++;
+var requestLocation = /* istanbul ignore next */exports.requestLocation = function requestLocation(state) {
+  /* istanbul ignore next */cov_13tuucaly7.f[0]++;
+  cov_13tuucaly7.s[1]++;
+
+  if (!state.typeOfRequest) {
+    /* istanbul ignore next */cov_13tuucaly7.b[0][0]++;
+    cov_13tuucaly7.s[2]++;
+
+    return (/* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_reactRouter. /* istanbul ignore next */Redirect, /* istanbul ignore next */{ to: '/pipeline' })
+    );
+  } else /* istanbul ignore next */{
+    cov_13tuucaly7.b[0][1]++;
+  }
+  cov_13tuucaly7.s[3]++;
+  return (/* istanbul ignore next */_react2.default.createElement(
+      /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Grid,
+      /* istanbul ignore next */{ container: /* istanbul ignore next */true, style: /* istanbul ignore next */_requestInformation2. /* istanbul ignore next */default.Grid },
+      /* istanbul ignore next */_react2.default.createElement(
+        /* istanbul ignore next */ /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Grid.Row,
+        /* istanbul ignore next */null,
+        /* istanbul ignore next */_react2.default.createElement(
+          /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Segment,
+          /* istanbul ignore next */{ style: /* istanbul ignore next */_requestInformation2. /* istanbul ignore next */default.segment },
+          /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_breadcrumb2. /* istanbul ignore next */default, /* istanbul ignore next */{ selection: 2, iconColor: 2, icon: 2, bar: 2 })
+        )
+      ),
+      /* istanbul ignore next */_react2.default.createElement(
+        /* istanbul ignore next */ /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Grid.Row,
+        /* istanbul ignore next */{ padding: /* istanbul ignore next */true, style: /* istanbul ignore next */_requestInformation2. /* istanbul ignore next */default.Grid },
+        /* istanbul ignore next */_react2.default.createElement(
+          /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Segment,
+          /* istanbul ignore next */{ style: /* istanbul ignore next */_requestInformation2. /* istanbul ignore next */default.segment },
+          /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_DynamicForm2. /* istanbul ignore next */default, /* istanbul ignore next */{
+            jsonForm: function /* istanbul ignore next */jsonForm() {
+              /* istanbul ignore next */cov_13tuucaly7.f[1]++;
+              cov_13tuucaly7.s[4]++;
+              return (/* istanbul ignore next */_locationForm. /* istanbul ignore next */jsonForm
+              );
+            },
+            setRequest: state.setRequestLocation,
+            form: 'Location',
+            route: function /* istanbul ignore next */route() {
+              /* istanbul ignore next */cov_13tuucaly7.f[2]++;
+              cov_13tuucaly7.s[5]++;
+
+              state.history.push('/pipeline/review');
+            }
+          })
+        )
+      )
+    )
+  );
+};
+/* istanbul ignore next */exports.default = requestLocation;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVlc3RMb2NhdGlvbi5qcyJdLCJuYW1lcyI6WyJyZXF1ZXN0TG9jYXRpb24iLCJzdGF0ZSIsInR5cGVPZlJlcXVlc3QiLCJTdHlsZXMiLCJHcmlkIiwic2VnbWVudCIsImpzb25Gb3JtIiwic2V0UmVxdWVzdExvY2F0aW9uIiwiaGlzdG9yeSIsInB1c2giXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7OztBQUNBOztBQUNBOztBQUNBOztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7OztBQUVPLElBQU1BLHNFQUFrQixTQUFsQkEsZUFBa0IsQ0FBQ0MsS0FBRCxFQUFXO0FBQUE7QUFBQTs7QUFDeEMsTUFBSSxDQUFDQSxNQUFNQyxhQUFYLEVBQTBCO0FBQUE7QUFBQTs7QUFDeEIsV0FBTyx5REFBQywyRUFBRCw4QkFBVSxJQUFHLFdBQWI7QUFBUDtBQUNELEdBRkQ7QUFBQTtBQUFBO0FBRHdDO0FBSXhDLFNBQ0U7QUFBQyxnRkFBRDtBQUFBLGtDQUFNLHlDQUFOLEVBQWdCLE9BQU9DLGtGQUFPQyxJQUE5QjtBQUNFO0FBQUEsa0NBQUMsMkVBQUQsQ0FBTSxHQUFOO0FBQUE7QUFDRTtBQUFDLHVGQUFEO0FBQUEsc0NBQVMsT0FBT0Qsa0ZBQU9FLE9BQXZCO0FBQ0Usa0VBQUMsMEVBQUQsOEJBQXFCLFdBQVcsQ0FBaEMsRUFBbUMsV0FBVyxDQUE5QyxFQUFpRCxNQUFNLENBQXZELEVBQTBELEtBQUssQ0FBL0Q7QUFERjtBQURGLE9BREY7QUFNRTtBQUFBLGtDQUFDLDJFQUFELENBQU0sR0FBTjtBQUFBLG9DQUFVLHVDQUFWLEVBQWtCLE9BQU9GLGtGQUFPQyxJQUFoQztBQUNFO0FBQUMsdUZBQUQ7QUFBQSxzQ0FBUyxPQUFPRCxrRkFBT0UsT0FBdkI7QUFDRSxrRUFBQywyRUFBRDtBQUNFLHNCQUFVLDhDQUFNQztBQUFBQTtBQUFBQTtBQUFBQTtBQUFBQTtBQUFRQSxhQUQxQjtBQUVFLHdCQUFZTCxNQUFNTSxrQkFGcEI7QUFHRSxrQkFBTSxVQUhSO0FBSUUsbUJBQU8sMkNBQU07QUFBQTtBQUFBOztBQUNYTixvQkFBTU8sT0FBTixDQUFjQyxJQUFkLENBQW1CLGtCQUFuQjtBQUNEO0FBTkg7QUFERjtBQURGO0FBTkY7QUFERjtBQXFCRCxDQXpCTTs0Q0EwQlFULGUiLCJmaWxlIjoicmVxdWVzdExvY2F0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IEdyaWQsIFNlZ21lbnQgfSBmcm9tICdzZW1hbnRpYy11aS1yZWFjdCc7XG5pbXBvcnQgeyBSZWRpcmVjdCB9IGZyb20gJ3JlYWN0LXJvdXRlcic7XG5pbXBvcnQgeyBqc29uRm9ybSB9IGZyb20gJy4vanNvbkZvcm1zL2xvY2F0aW9uRm9ybSc7XG5pbXBvcnQgU3R5bGVzIGZyb20gJy4uLy4uLy4uL3N0eWxlcy9yZXF1ZXN0SW5mb3JtYXRpb24nO1xuaW1wb3J0IER5bmFtaWNGb3JtQ29tcG9uZW50IGZyb20gJy4uLy4uL2hlbHBlcnMvRHluYW1pY0Zvcm0nO1xuaW1wb3J0IEJyZWFkY3J1bWJDb21wb25lbnQgZnJvbSAnLi4vLi4vaGVscGVycy9icmVhZGNydW1iJztcblxuZXhwb3J0IGNvbnN0IHJlcXVlc3RMb2NhdGlvbiA9IChzdGF0ZSkgPT4ge1xuICBpZiAoIXN0YXRlLnR5cGVPZlJlcXVlc3QpIHtcbiAgICByZXR1cm4gPFJlZGlyZWN0IHRvPVwiL3BpcGVsaW5lXCIgLz47XG4gIH1cbiAgcmV0dXJuIChcbiAgICA8R3JpZCBjb250YWluZXIgc3R5bGU9e1N0eWxlcy5HcmlkfT5cbiAgICAgIDxHcmlkLlJvdz5cbiAgICAgICAgPFNlZ21lbnQgc3R5bGU9e1N0eWxlcy5zZWdtZW50fT5cbiAgICAgICAgICA8QnJlYWRjcnVtYkNvbXBvbmVudCBzZWxlY3Rpb249ezJ9IGljb25Db2xvcj17Mn0gaWNvbj17Mn0gYmFyPXsyfSAvPlxuICAgICAgICA8L1NlZ21lbnQ+XG4gICAgICA8L0dyaWQuUm93PlxuICAgICAgPEdyaWQuUm93IHBhZGRpbmcgc3R5bGU9e1N0eWxlcy5HcmlkfT5cbiAgICAgICAgPFNlZ21lbnQgc3R5bGU9e1N0eWxlcy5zZWdtZW50fT5cbiAgICAgICAgICA8RHluYW1pY0Zvcm1Db21wb25lbnRcbiAgICAgICAgICAgIGpzb25Gb3JtPXsoKSA9PiBqc29uRm9ybX1cbiAgICAgICAgICAgIHNldFJlcXVlc3Q9e3N0YXRlLnNldFJlcXVlc3RMb2NhdGlvbn1cbiAgICAgICAgICAgIGZvcm09eydMb2NhdGlvbid9XG4gICAgICAgICAgICByb3V0ZT17KCkgPT4ge1xuICAgICAgICAgICAgICBzdGF0ZS5oaXN0b3J5LnB1c2goJy9waXBlbGluZS9yZXZpZXcnKTtcbiAgICAgICAgICAgIH19XG4gICAgICAgICAgLz5cbiAgICAgICAgPC9TZWdtZW50PlxuICAgICAgPC9HcmlkLlJvdz5cbiAgICA8L0dyaWQ+XG4gICk7XG59O1xuZXhwb3J0IGRlZmF1bHQgcmVxdWVzdExvY2F0aW9uO1xuIl19

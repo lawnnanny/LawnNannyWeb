@@ -1,0 +1,1 @@
+{"version":3,"sources":["reducers.js"],"names":["login","requests"],"mappings":";;;;;;AAAA;;AACA;;;;AACA;;;;;;kBAEe,4BAAgB;AAC7BA,wBAD6B;AAE7BC;AAF6B,CAAhB,C","file":"reducers.js","sourcesContent":["import { combineReducers } from 'redux';\nimport login from './Login';\nimport requests from './requests';\n\nexport default combineReducers({\n  login,\n  requests,\n});\n"]}
