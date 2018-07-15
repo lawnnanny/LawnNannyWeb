@@ -3,9 +3,11 @@ export const jsonForm = {
     fields: [
       {
         name: 'Would you like your grass bagged?',
-        type: 'checkbox',
+        type: 'radio',
+        options: ['yes', 'no'],
         placeholder: 'Would you like to have the grass bagged?',
         id: 'lawnGrassBagged',
+        validation: 'required',
       },
       {
         name: 'Does the lawn have a sprinkler system installed?',
@@ -15,7 +17,7 @@ export const jsonForm = {
         validation: 'required',
       },
       {
-        name: 'Please provide additional comments.',
+        name: 'Please provide a short description of the lawn.',
         type: 'textArea',
         placeholder: 'Enter comments here',
         id: 'comments',
@@ -33,7 +35,7 @@ export const jsonForm = {
         validation: 'required',
       },
       {
-        name: 'Please provide additional comments?',
+        name: 'Please provide a short description of the job',
         type: 'textArea',
         placeholder: 'Enter comments here',
         id: 'comments',
@@ -62,7 +64,7 @@ export const jsonForm = {
         id: 'snowBlowPorchDeck',
       },
       {
-        name: 'Please provide additional comments?',
+        name: 'Please provide a short description of the job',
         type: 'textArea',
         placeholder: 'Enter comments here',
         id: 'comments',
@@ -73,7 +75,7 @@ export const jsonForm = {
   'Custom Request': {
     fields: [
       {
-        name: 'Please provide additional comments?',
+        name: 'Please provide a description of what task youd like completed?',
         type: 'textArea',
         placeholder: 'Enter comments here',
         id: 'comments',
