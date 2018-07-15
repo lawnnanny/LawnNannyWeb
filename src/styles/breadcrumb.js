@@ -1,12 +1,15 @@
 export default {
-  example: {},
-  exampleAppear: {
-    opacity: 0.01,
+  base: {
+    opacity: 0,
   },
-
-  exampleAppearActive: {
+  appear: {
     opacity: 1,
-    transition: 'opacity .5s ease-in',
+    transition: 'all 5000ms',
+  },
+  enter: {
+    opacity: 0.5,
+    transition: 'all 5000ms',
+    background: '#4CAF50',
   },
   segment: {
     textAlign: 'center',

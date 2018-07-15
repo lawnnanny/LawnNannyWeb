@@ -54,7 +54,14 @@ export const breadcrumb = props => (
     <Grid.Row style={Styles.row}>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
-          <Transition>
+          <Transition
+            childrenStyles={{
+              base: Styles.base,
+              appear: Styles.appear,
+              enter: Styles.appear,
+              leave: Styles.leave,
+            }}
+          >
             <Icon
               style={returnIcon(props.icon, 0)}
               circular
