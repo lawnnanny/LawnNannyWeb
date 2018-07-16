@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import {
+  Menu,
+  Modal,
+  Input,
+  Grid,
+  Button,
+  Form,
+  Header
+} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import LoginQuestion from '../helpers/pipelineSignupModal';
 
