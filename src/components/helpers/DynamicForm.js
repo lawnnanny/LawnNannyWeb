@@ -14,7 +14,6 @@ import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
-
 class DynamicForm extends React.Component {
   constructor(props) {
     super();
@@ -27,15 +26,14 @@ class DynamicForm extends React.Component {
 
   onSubmit = () => {
     const data = {};
-    this.state.Requests[this.props.form]
-      .fields.forEach((element) => {
-        data[element.id] = {
-          entry: this.state.dataForSubmitting[element.id],
-          validation: element.validation,
-          id: element.id,
-          type: element.type,
-        };
-      });
+    this.state.Requests[this.props.form].fields.forEach((element) => {
+      data[element.id] = {
+        entry: this.state.dataForSubmitting[element.id],
+        validation: element.validation,
+        id: element.id,
+        type: element.type,
+      };
+    });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
       this.props.route();
@@ -179,14 +177,10 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.form}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(
-              this.props.form,
-              this.props.requestForm,
-              this.state.errors,
-            )}
+            {this.renderFormFromJson(this.props.form, this.props.requestForm, this.state.errors)}
           </Segment>
           <Segment style={Styles.segment}>
-            <Button type="submit" fluid positive size="large">
+            <Button type="submit" fluid positive size="large" style={Styles.button}>
               Continue
             </Button>
           </Segment>

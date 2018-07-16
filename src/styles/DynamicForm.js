@@ -4,4 +4,7 @@ export default {
     boxShadow: 'none',
     backgroundColor: '#E8E8E8',
   },
+  button: {
+    borderRadius: '25px',
+  },
 };
