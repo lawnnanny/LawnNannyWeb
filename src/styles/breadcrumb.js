@@ -24,6 +24,11 @@ export default {
   row: {
     paddingTop: '1.5rem',
   },
+  currentLabel: {
+    backgroundColor: 'white',
+    fontSize: '1rem',
+    color: 'black',
+  },
   label: {
     backgroundColor: 'white',
   },
@@ -33,7 +38,7 @@ export default {
     margin: '0',
   },
   currentIcon: {
-    boxShadow: '0 0 0 0.1em #2185d0 inset',
+    boxShadow: '0 0 10px 0.1em #2185d0 inset',
     margin: '0',
   },
   unfinishedIcon: {
