@@ -16,7 +16,7 @@ const returnStatus = (selection, id) => {
   } else if (id === 3) {
     return 'dollar';
   } else if (id === 4) {
-    return 'edit outline';
+    return 'pencil';
   }
   return 'cancel';
 };
