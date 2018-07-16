@@ -3,11 +3,9 @@ export const jsonForm = {
     fields: [
       {
         name: 'Would you like your grass bagged?',
-        type: 'radio',
-        options: ['yes', 'no'],
+        type: 'checkbox',
         placeholder: 'Would you like to have the grass bagged?',
         id: 'lawnGrassBagged',
-        validation: 'required',
       },
       {
         name: 'Does the lawn have a sprinkler system installed?',

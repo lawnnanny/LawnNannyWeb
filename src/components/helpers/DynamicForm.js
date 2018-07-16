@@ -99,12 +99,12 @@ class DynamicForm extends React.Component {
     const requests = this.state.Requests[form];
     const formUI = requests.fields.map((field) => {
       switch (field.type) {
-        case 'text':
+        case 'input':
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Input id={field.id} onChange={this.processChange(field.id)} />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
             </Form.Field>
           );
 
@@ -121,7 +121,7 @@ class DynamicForm extends React.Component {
                 fluid
                 selection
               />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
             </Form.Field>
           );
 
@@ -134,7 +134,7 @@ class DynamicForm extends React.Component {
                 placeholder={field.placeholder}
                 onChange={this.processChange(field.id)}
               />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
             </Form.Field>
           );
 
