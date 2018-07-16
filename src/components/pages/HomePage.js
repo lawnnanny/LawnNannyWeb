@@ -1,26 +1,16 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import {
-  Menu,
-  Modal,
-  Input,
-  Grid,
-  Button,
-  Form,
-  Segment,
-  Transition
-} from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import LoginQuestion from "../helpers/loginQuestion";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import LoginQuestion from '../helpers/pipelineSignupModal';
 
-import Styles from "../../styles/HomePage";
-import { statekeys } from "../../helpers/Common";
+import Styles from '../../styles/HomePage';
+import { statekeys } from '../../helpers/Common';
 
 export default class HomePage extends Component {
   state = { visible: true };
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
   render() {
-    const { visible } = this.state;
     return (
       <div>
         <div style={Styles.navbarContainer}>
@@ -197,6 +187,8 @@ export default class HomePage extends Component {
                 Make a Request
               </Button>
             </Link>
+          </Grid.Row>
+          <Grid.Row>
             <LoginQuestion />
           </Grid.Row>
         </Grid>

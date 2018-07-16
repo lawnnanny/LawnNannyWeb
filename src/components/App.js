@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import reducers from "../reducers/reducers";
-import { CSSTransition, TransitionGroup } from "";
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from '../reducers/reducers';
 
-import Error404 from "../components/errors/Error404";
-import HomePageComponent from "./pages/HomePage";
-import requestPipelineComponent from "./pages/requestPipeline";
+import Error404 from '../components/errors/Error404';
+import HomePageComponent from './pages/HomePage';
+import requestPipelineComponent from './pages/requestPipeline';
 
 export default class App extends Component {
   constructor() {
@@ -20,7 +19,7 @@ export default class App extends Component {
     };
 
     store.subscribe(() => {
-      console.log("store.getState()", store.getState());
+      console.log('store.getState()', store.getState());
     });
   }
   render() {
