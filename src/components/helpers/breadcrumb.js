@@ -1,5 +1,4 @@
 import React from 'react';
-import Transition from 'react-inline-transition-group';
 import PropTypes from 'prop-types';
 import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
 import Styles from '../../styles/breadcrumb';
@@ -53,22 +52,13 @@ export const breadcrumb = props => (
     <Grid.Row style={Styles.row}>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
-          <Transition
-            childrenStyles={{
-              base: Styles.base,
-              appear: Styles.appear,
-              enter: Styles.appear,
-              leave: Styles.leave,
-            }}
-          >
-            <Icon
-              style={returnIcon(props.icon, 0)}
-              circular
-              size="large"
-              color={returnColor(props.iconColor, 0)}
-              name={returnStatus(props.selection, 0)}
-            />
-          </Transition>
+          <Icon
+            style={returnIcon(props.icon, 0)}
+            circular
+            size="large"
+            color={returnColor(props.iconColor, 0)}
+            name={returnStatus(props.selection, 0)}
+          />
           <div style={returnRightBar(props.bar, 0)} />
         </Segment>
         <Segment style={Styles.segment}>
@@ -143,7 +133,10 @@ export const breadcrumb = props => (
 );
 
 breadcrumb.propTypes = {
-  activeStep: PropTypes.number.isRequired,
+  icon: PropTypes.number.isRequired,
+  iconColor: PropTypes.number.isRequired,
+  selection: PropTypes.number.isRequired,
+  bar: PropTypes.number.isRequired,
 };
 
 export default breadcrumb;
