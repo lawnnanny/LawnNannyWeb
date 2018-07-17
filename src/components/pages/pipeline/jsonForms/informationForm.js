@@ -6,7 +6,6 @@ export const jsonForm = {
         type: 'checkbox',
         placeholder: 'Would you like to have the grass bagged?',
         id: 'lawnGrassBagged',
-        validation: 'required',
       },
       {
         name: 'Does the lawn have a sprinkler system installed?',

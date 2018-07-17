@@ -116,6 +116,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Dropdown
+                search
                 value={this.state[field.id]}
                 onChange={this.processChange(field.id)}
                 id={field.id}
