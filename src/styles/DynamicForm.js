@@ -2,7 +2,7 @@ export default {
   segment: {
     border: 'none',
     boxShadow: 'none',
-    backgroundColor: '#e5f9ff',
+    backgroundColor: '#f2f0ee',
   },
   button: {
     borderRadius: '25px',
