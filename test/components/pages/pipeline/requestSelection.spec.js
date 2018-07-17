@@ -70,8 +70,8 @@ describe('RequestSelection', () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
 
-        it('has an active step', () => {
-          expect(Breadcrumb.props().activeStep).toEqual(0);
+        it('has a selection', () => {
+          expect(Breadcrumb.props().selection).toEqual(0);
         });
       });
     });

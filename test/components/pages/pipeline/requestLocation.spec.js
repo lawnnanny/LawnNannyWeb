@@ -64,8 +64,8 @@ describe('RequestInformation', () => {
         it('is a breadcrumb', () => {
           expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
         });
-        it('has an active step', () => {
-          expect(Breadcrumb.props().activeStep).toEqual(2);
+        it('has a selection', () => {
+          expect(Breadcrumb.props().selection).toEqual(2);
         });
       });
     });
@@ -102,11 +102,11 @@ describe('RequestInformation', () => {
         it('is a Form', () => {
           expect(form.type()).toEqual(DynamicFormComponent);
         });
-        it('has the correct requestType', () => {
-          expect(form.props().requestType).toEqual('Location');
+        it('has a form', () => {
+          expect(form.props().form).toBeTruthy();
         });
-        it('has the correct requestForm', () => {
-          expect(form.props().requestForm).toEqual('address');
+        it('has a route', () => {
+          expect(form.props().route).toBeTruthy();
         });
       });
     });
