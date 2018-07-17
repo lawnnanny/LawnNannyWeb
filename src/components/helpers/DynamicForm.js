@@ -104,16 +104,22 @@ class DynamicForm extends React.Component {
       switch (field.type) {
         case 'input':
           return (
-            <Form.Field>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input id={field.id} onChange={this.processChange(field.id)} />
-              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+            <Form.Field style={Styles.field}>
+              <Form.Input
+                error={errors[field.id]}
+                label={this.addAstricks(field.validation) + field.name}
+                onChange={this.processChange(field.id)}
+                placeholder={field.placeholder}
+              />
+              <div style={Styles.InLineErrorInput}>
+                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+              </div>
             </Form.Field>
           );
 
         case 'dropDown':
           return (
-            <Form.Field>
+            <Form.Field style={Styles.field}>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Dropdown
                 search
@@ -125,26 +131,30 @@ class DynamicForm extends React.Component {
                 fluid
                 selection
               />
-              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+              <div style={Styles.InLineErrorDropdown}>
+                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+              </div>
             </Form.Field>
           );
 
         case 'textArea':
           return (
-            <Form.Field>
+            <Form.Field style={Styles.field}>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <TextArea
                 id={field.id}
                 placeholder={field.placeholder}
                 onChange={this.processChange(field.id)}
               />
-              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+              <div style={Styles.InLineErrorTextArea}>
+                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+              </div>
             </Form.Field>
           );
 
         case 'checkbox':
           return (
-            <Form.Field>
+            <Form.Field style={Styles.field}>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
               {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
@@ -153,7 +163,7 @@ class DynamicForm extends React.Component {
 
         case 'radio':
           return (
-            <Form.Field>
+            <Form.Field style={Styles.field}>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Form.Group id={field.id} inline>
                 {this.renderRadioButtons(field.id, field.options)}
