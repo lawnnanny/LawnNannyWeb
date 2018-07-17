@@ -10,7 +10,7 @@ const InlineError = ({ text, pointing }) => (
 
 InlineError.propTypes = {
   text: PropTypes.string.isRequired,
-  pointing: PropTypes.bool.isRequired,
+  pointing: PropTypes.string.isRequired,
 };
 
 export default InlineError;

@@ -2,10 +2,11 @@ export const jsonForm = {
   'Lawn Mowing': {
     fields: [
       {
-        name: 'Would you like your grass bagged?',
+        name: 'I would like my grass bagged?',
         type: 'checkbox',
         placeholder: 'Would you like to have the grass bagged?',
         id: 'lawnGrassBagged',
+        validation: 'required',
       },
       {
         name: 'Does the lawn have a sprinkler system installed?',

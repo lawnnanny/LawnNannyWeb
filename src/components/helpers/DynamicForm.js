@@ -50,13 +50,16 @@ class DynamicForm extends React.Component {
               errors[validationEntryObject.id] = 'Empty Text Box';
               break;
             case 'input':
-              errors[validationEntryObject.id] = 'Empty Input';
+              errors[validationEntryObject.id] = 'Field is Required';
               break;
             case 'dropDown':
               errors[validationEntryObject.id] = 'Nothing is Selected';
               break;
             case 'radio':
-              errors[validationEntryObject.id] = 'Radio Button Not Selected';
+              errors[validationEntryObject.id] = 'Selection is Required';
+              break;
+            case 'checkbox':
+              errors[validationEntryObject.id] = 'Selection is Required';
               break;
             default:
           }
@@ -143,7 +146,7 @@ class DynamicForm extends React.Component {
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
               <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
+              {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
             </Form.Field>
           );
 
