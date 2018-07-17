@@ -2,13 +2,11 @@ const green = '#63BA18';
 const white = '#FFFFFF';
 
 export default {
-  navbarContainer: {
+  Menu: {
+    paddingRight: '1rem',
     width: '100%',
     minHeight: 42,
     backgroundColor: '#242729',
-  },
-  header: {
-    backgroundImage: "url('lawn.jpg')",
   },
   loginButton: {
     backgroundColor: '#1db802',
@@ -19,11 +17,12 @@ export default {
     backgroundColor: white,
     padding: '.7em',
   },
-  loginSignupMenu: {
-    paddingRight: '1rem',
-  },
   menuItem: {
     padding: '.5rem',
+  },
+  menuDropdown: {
+    color: white,
+    backgroundColor: '#242729',
   },
   modal: {
     backgroundColor: 'white',
