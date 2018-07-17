@@ -4,9 +4,10 @@ const getInitialState = () => ({
   selection: '',
 });
 
-const setState = (previousState, property, newValue) => Object.assign({}, previousState, {
-  [property]: newValue,
-});
+const setState = (previousState, property, newValue) =>
+  Object.assign({}, previousState, {
+    [property]: newValue,
+  });
 
 export default (state = getInitialState(), action) => {
   switch (action.type) {
@@ -16,6 +17,8 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'requestInformation', action.data);
     case Actions.requests.setRequestLocation:
       return setState(state, 'requestLocation', action.data);
+    case Actions.requests.setSignUp:
+      return setState(state, 'signup', action.data);
     default:
       return state;
   }

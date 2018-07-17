@@ -106,7 +106,11 @@ class DynamicForm extends React.Component {
           return (
             <Form.Field>
               <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input id={field.id} onChange={this.processChange(field.id)} />
+              <Input
+                id={field.id}
+                placeholder={field.placeholder}
+                onChange={this.processChange(field.id)}
+              />
               {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
             </Form.Field>
           );

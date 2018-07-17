@@ -20,5 +20,6 @@ export default {
     setTypeOfRequest: (i += 1),
     setRequestInformation: (i += 1),
     setRequestLocation: (i += 1),
+    setSignUp: (i += 1),
   },
 };
