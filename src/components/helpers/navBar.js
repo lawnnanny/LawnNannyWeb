@@ -5,7 +5,15 @@ import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
 import Styles from '../../styles/navBar';
 import DynamicComponent from '../helpers/DynamicForm';
 
-const navBar = (state, props) => (
+const navBar = ({
+  setEmail,
+  setPassword,
+  openLoginModal,
+  closeModal,
+  isLoginModalOpen,
+  openSignupModal,
+  isSignupModalOpen,
+}) => (
   <Menu style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
       <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon" />
@@ -15,12 +23,12 @@ const navBar = (state, props) => (
         style={Styles.modal}
         size="mini"
         trigger={
-          <Menu.Item style={Styles.menuItem} onClick={props.openLoginModal}>
+          <Menu.Item style={Styles.menuItem} onClick={openLoginModal}>
             <Button style={Styles.loginButton}>Login</Button>
           </Menu.Item>
         }
-        open={props.isLoginModalOpen}
-        onClose={props.closeModal}
+        open={isLoginModalOpen}
+        onClose={closeModal}
         closeIcon
       >
         <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
@@ -33,7 +41,7 @@ const navBar = (state, props) => (
                   icon="user"
                   iconPosition="left"
                   placeholder="someone@example.com"
-                  onChange={props.setEmail}
+                  onChange={setEmail}
                 />
               </Grid.Column>
             </Grid.Row>
@@ -45,13 +53,13 @@ const navBar = (state, props) => (
                   type="password"
                   iconPosition="left"
                   placeholder="Password"
-                  onChange={props.setPassword}
+                  onChange={setPassword}
                 />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row centered>
               <Grid.Column width={6}>
-                <Button style={Styles.modalButton} size="large" onClick={props.closeModal}>
+                <Button style={Styles.modalButton} size="large" onClick={closeModal}>
                   Login
                 </Button>
               </Grid.Column>
@@ -63,21 +71,17 @@ const navBar = (state, props) => (
         style={Styles.modal}
         size="tiny"
         trigger={
-          <Menu.Item style={Styles.menuItem} onClick={props.openSignupModal}>
+          <Menu.Item style={Styles.menuItem} onClick={openSignupModal}>
             <Button style={Styles.signupButton}>Sign Up</Button>
           </Menu.Item>
         }
-        open={props.isSignupModalOpen}
-        onClose={props.closeModal}
+        open={isSignupModalOpen}
+        onClose={closeModal}
         closeIcon
       >
         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
         <Modal.Description>
-          <DynamicComponent
-            jsonForm={() => jsonForm}
-            setRequest={state.setSignUp}
-            form={'SignUp'}
-          />
+          <DynamicComponent jsonForm={() => jsonForm} form={'SignUp'} />
         </Modal.Description>
       </Modal>
     </Menu.Menu>
