@@ -11,7 +11,7 @@ import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = ({ setTypeOfRequest }) => (
   <Grid container style={Styles.grid}>
-    <Grid.Row>
+    <Grid.Row style={Styles.breadrow}>
       <Segment style={Styles.segment}>
         <BreadcrumbComponent selection={0} />
       </Segment>

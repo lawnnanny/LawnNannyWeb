@@ -8,10 +8,11 @@ export default {
     width: '100%',
     minHeight: 42,
     backgroundColor: white,
-    margin: '0',
     paddingBottom: '.5rem',
     paddingTop: '.5rem',
+    boxShadow: 'none',
     border: 'none',
+    marginBottom: '0rem',
   },
   loginButton: {
     backgroundColor: white,

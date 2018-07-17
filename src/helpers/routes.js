@@ -13,6 +13,7 @@ import ConnectedRequestReviewComponent from '../connectedComponents/ConnectedReq
 import HomePageComponent from '../components/pages/HomePage';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
+import Styles from '../styles/App';
 
 export class Routes extends Component {
   constructor() {
@@ -32,8 +33,8 @@ export class Routes extends Component {
     return (
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
-          <div>
-            <ConnectedNavBarComponent />
+          <div style={Styles.div}>
+            <ConnectedNavBarComponent style={Styles.navBar} />
             <Switch>
               <Route exact path="/test" component={App} />
               <Route exact path="/pipeline" component={ConnectedRequestSelection} />

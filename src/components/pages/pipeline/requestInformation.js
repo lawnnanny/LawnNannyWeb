@@ -12,7 +12,7 @@ export const requestInformation = (state) => {
   }
   return (
     <Grid container style={Styles.grid}>
-      <Grid.Row>
+      <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
           <BreadcrumbComponent selection={1} />
         </Segment>

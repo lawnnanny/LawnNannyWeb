@@ -13,4 +13,7 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
+  breadrow: {
+    paddingTop: '0',
+  },
 };
