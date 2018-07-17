@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import HomePage from '../../src/connectedComponents/ConnectedHomePage';
+import NavBar from '../../src/connectedComponents/ConnectedNavBar';
 import * as LoginActions from '../../src/actions/Login';
 
 describe('Connected Home Page', () => {
@@ -15,7 +15,7 @@ describe('Connected Home Page', () => {
   });
 
   it('has the correct props', () => {
-    const wrapper = shallow(<HomePage store={store} />);
+    const wrapper = shallow(<NavBar store={store} />);
 
     const dispatchProps = Object.keys(LoginActions);
 

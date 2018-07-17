@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Menu, Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
+import { Grid, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import NavBarComponent from '../helpers/navBar';
 
 import Styles from '../../styles/HomePage';
 

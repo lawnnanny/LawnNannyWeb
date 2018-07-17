@@ -1,20 +1,11 @@
 import { connect } from 'react-redux';
-import NavBarComponent from '../components/helpers/navBar';
-import Actions from '../reducers/Actions';
+import { bindActionCreators } from 'redux';
+import NavBarComponent from '../components/pages/HomePage';
+import * as LoginActions from '../actions/Login';
 
-const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
-
-const mapDispatchToProps = dispatch => ({
-  setSignUp: (data) => {
-    const action = {
-      type: Actions.requests.setSignUp,
-      data,
-    };
-    dispatch(action);
-  },
-});
+const mapDispatchToProps = dispatch => bindActionCreators({ ...LoginActions }, dispatch);
 
 export default connect(
-  mapStateToProps,
+  undefined,
   mapDispatchToProps,
 )(NavBarComponent);
