@@ -14,7 +14,7 @@ const navBar = ({
   openSignupModal,
   isSignupModalOpen,
 }) => (
-  <Menu style={Styles.Menu}>
+  <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
       <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon" />
     </Menu.Item>

@@ -187,7 +187,7 @@ class DynamicForm extends React.Component {
             {this.renderFormFromJson(this.props.form, this.props.requestForm, this.state.errors)}
           </Segment>
           <Segment style={Styles.segment}>
-            <Button type="submit" fluid positive size="large" style={Styles.button}>
+            <Button type="submit" fluid size="large" style={Styles.button}>
               Continue
             </Button>
           </Segment>

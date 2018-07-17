@@ -19,14 +19,6 @@ const returnStatus = (selection, id) => {
   }
   return 'cancel';
 };
-const returnColor = (iconColor, id) => {
-  if (iconColor > id) {
-    return 'green';
-  } else if (iconColor === id) {
-    return 'blue';
-  }
-  return 'grey';
-};
 const returnIcon = (icon, id) => {
   if (icon > id) {
     return Styles.finishedIcon;
@@ -62,7 +54,6 @@ export const breadcrumb = props => (
             style={returnIcon(props.selection, 0)}
             circular
             size="large"
-            color={returnColor(props.selection, 0)}
             name={returnStatus(props.selection, 0)}
           />
           <div style={returnRightBar(props.selection, 0)} />
@@ -77,7 +68,6 @@ export const breadcrumb = props => (
             circular
             size="large"
             style={returnIcon(props.selection, 1)}
-            color={returnColor(props.selection, 1)}
             name={returnStatus(props.selection, 1)}
           />
           <div style={returnLeftBar(props.selection, 0)} />
@@ -93,7 +83,6 @@ export const breadcrumb = props => (
             circular
             size="large"
             style={returnIcon(props.selection, 2)}
-            color={returnColor(props.selection, 2)}
             name={returnStatus(props.selection, 2)}
           />
           <div style={returnLeftBar(props.selection, 1)} />
@@ -109,7 +98,6 @@ export const breadcrumb = props => (
             circular
             size="large"
             style={returnIcon(props.selection, 3)}
-            color={returnColor(props.selection, 3)}
             name={returnStatus(props.selection, 3)}
           />
           <div style={returnLeftBar(props.selection, 2)} />
@@ -125,7 +113,6 @@ export const breadcrumb = props => (
             circular
             size="large"
             style={returnIcon(props.selection, 4)}
-            color={returnColor(props.selection, 4)}
             name={returnStatus(props.selection, 4)}
           />
           <div style={returnLeftBar(props.selection, 3)} />

@@ -1,31 +1,41 @@
-const green = '#63BA18';
+const green = '#20ad1d';
 const white = '#FFFFFF';
+const black = '#000000';
+const blue = '#0e42ff';
 
 export default {
   Menu: {
-    paddingRight: '1rem',
     width: '100%',
     minHeight: 42,
-    backgroundColor: '#242729',
+    backgroundColor: white,
+    margin: '0',
+    paddingBottom: '.5rem',
+    paddingTop: '.5rem',
+    border: 'none',
   },
   loginButton: {
-    backgroundColor: '#1db802',
-    color: white,
+    backgroundColor: white,
+    color: blue,
     padding: '.7em',
+    borderRadius: '25px',
+    border: '.1rem solid',
+    borderColor: blue,
   },
   signupButton: {
-    backgroundColor: white,
+    color: 'white',
+    backgroundColor: green,
     padding: '.7em',
+    borderRadius: '25px',
   },
   menuItem: {
     padding: '.5rem',
   },
   menuDropdown: {
-    color: white,
-    backgroundColor: '#242729',
+    color: black,
+    backgroundColor: white,
   },
   modal: {
-    backgroundColor: 'white',
+    backgroundColor: white,
     padding: '1rem',
   },
   loginGrid: {
@@ -41,7 +51,7 @@ export default {
   },
   modalButton: {
     backgroundColor: green,
-    color: 'white',
+    color: white,
   },
   signUpForm: {
     padding: '1rem',

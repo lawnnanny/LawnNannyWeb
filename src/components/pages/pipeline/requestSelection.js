@@ -10,7 +10,7 @@ import snowBlower from '../../../images/pipeline/snowBlower.png';
 import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = ({ setTypeOfRequest }) => (
-  <Grid container>
+  <Grid container style={Styles.grid}>
     <Grid.Row>
       <Segment style={Styles.segment}>
         <BreadcrumbComponent selection={0} />

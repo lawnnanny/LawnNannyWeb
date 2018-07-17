@@ -1,3 +1,8 @@
+const green = '#20ad1d';
+const white = '#FFFFFF';
+const black = '#000000';
+const blue = '#0e42ff';
+
 export default {
   base: {
     opacity: 0,
@@ -25,25 +30,28 @@ export default {
     paddingTop: '1.5rem',
   },
   currentLabel: {
-    backgroundColor: 'white',
+    backgroundColor: white,
     fontSize: '1rem',
-    color: 'black',
+    color: black,
   },
   label: {
-    backgroundColor: 'white',
+    backgroundColor: white,
   },
   grid: {},
   finishedIcon: {
-    boxShadow: '0 0 0 0.1em #21ba45 inset',
+    boxShadow: '0 0 0 0.1em #20ad1d inset',
     margin: '0',
+    color: green,
   },
   currentIcon: {
-    boxShadow: '0 0 10px 0.1em #2185d0 inset',
+    boxShadow: '0 0 10px 0.1em #0e42ff inset',
     margin: '0',
+    color: blue,
   },
   unfinishedIcon: {
     margin: '0',
     boxShadow: '0 0 0 0.1em #D7D7D7 inset',
+    color: '#D7D7D7',
   },
   leftBarUnfinished: {
     position: 'absolute',
@@ -73,7 +81,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#21ba45',
+    borderTopColor: '#20ad1d',
     left: 0,
     right: '51%',
     marginRight: 20,
@@ -84,7 +92,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#21ba45',
+    borderTopColor: '#20ad1d',
     right: 0,
     left: '51%',
     marginLeft: 20,

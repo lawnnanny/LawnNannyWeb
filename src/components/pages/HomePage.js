@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Styles from '../../styles/HomePage';
 
 const HomePage = () => (
-  <Grid centered style={Styles.grid}>
+  <Grid container centered style={Styles.grid}>
     <Grid.Row>
       <Link to="/pipeline">
         <Button style={Styles.pipelineButton} size="large">
