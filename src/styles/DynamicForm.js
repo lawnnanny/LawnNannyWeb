@@ -16,6 +16,9 @@ export default {
   InLineErrorTextArea: {
     marginTop: '-.5em',
   },
+  group: {
+    margin: '0em 1em 1.5em -.5em', padding: '0em 1em 1.5em -.5em',
+  },
   field: {
     paddingBottom: '.2em',
   },

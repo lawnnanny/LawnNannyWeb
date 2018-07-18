@@ -98,7 +98,7 @@ class DynamicForm extends React.Component {
 
   renderInput = (field, comboRowStyle, errors) => (
     <Form.Field style={Styles.field}>
-      <label style={comboRowStyle} htmlFor={field.id}>
+      <label style={comboRowStyle.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
       <Form.Input
@@ -173,7 +173,7 @@ class DynamicForm extends React.Component {
   )
 
   renderRowFromJson = (field, style, errors) => (
-    <Form.Group>
+    <Form.Group width={field.fields.length} style={Styles.group}>
       {this.renderFormFromJson(
         field,
         {
