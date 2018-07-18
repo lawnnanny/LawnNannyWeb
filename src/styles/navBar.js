@@ -38,6 +38,7 @@ export default {
   modal: {
     backgroundColor: white,
     padding: '1rem',
+    margin: 'none',
   },
   loginGrid: {
     margin: '1rem',

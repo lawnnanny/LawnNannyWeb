@@ -70,5 +70,23 @@ export const jsonForm = {
       },
     ],
   },
+  Login: {
+    fields: [
+      {
+        name: 'Email',
+        type: 'input',
+        placeholder: 'email',
+        id: 'email',
+        validation: 'required',
+      },
+      {
+        name: 'Password',
+        type: 'input',
+        placeholder: 'password',
+        id: 'password',
+        validation: 'required',
+      },
+    ],
+  },
 };
 export default jsonForm;
