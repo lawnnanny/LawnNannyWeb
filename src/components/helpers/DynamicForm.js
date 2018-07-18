@@ -86,6 +86,85 @@ class DynamicForm extends React.Component {
     return '';
   };
 
+  defaultRender = (field, errors) => (
+    <Form.Field>
+      <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
+      <Input id={field.id} onChange={this.processChange(field.id)} />
+      {errors[field.id] && <InlineError text={errors[field.id]} />}
+    </Form.Field>
+  )
+
+  renderInput = (field, errors) => (
+    <Form.Field style={Styles.field}>
+      <Form.Input
+        error={errors[field.id]}
+        label={this.addAstricks(field.validation) + field.name}
+        onChange={this.processChange(field.id)}
+        placeholder={field.placeholder}
+      />
+      <div style={Styles.InLineErrorInput}>
+        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+      </div>
+    </Form.Field>
+  );
+
+  renderDropDown = (field, errors) => (
+    <Form.Field style={Styles.field}>
+      <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
+      <Dropdown
+        search
+        value={this.state[field.id]}
+        onChange={this.processChange(field.id)}
+        id={field.id}
+        placeholder={field.placeholder}
+        options={statekeys}
+        fluid
+        selection
+      />
+      <div style={Styles.InLineErrorDropdown}>
+        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+      </div>
+    </Form.Field>
+  )
+
+  renderTextArea = (field, errors) => (
+    <Form.Field style={Styles.field}>
+      <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
+      <TextArea
+        id={field.id}
+        placeholder={field.placeholder}
+        onChange={this.processChange(field.id)}
+      />
+      <div style={Styles.InLineErrorTextArea}>
+        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+      </div>
+    </Form.Field>
+  )
+
+  renderCheckbox = (field, errors) => (
+    <Form.Field style={Styles.field}>
+      <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
+      <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
+      {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
+    </Form.Field>
+  )
+
+  renderRadio = (field, errors) => (
+    <Form.Field style={Styles.field}>
+      <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
+      <Form.Group id={field.id} inline>
+        {this.renderRadioButtons(field.id, field.options)}
+        {errors[field.id] && <InlineError text={errors[field.id]} />}
+      </Form.Group>
+    </Form.Field>
+  )
+
+  renderRowFromJson = (field, errors) => (
+    <Form.Group inline>
+      {this.renderFormFromJson(field, errors)}
+    </Form.Group>
+  )
+
   renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (
       <Form.Radio
@@ -98,88 +177,23 @@ class DynamicForm extends React.Component {
     return radioButtons;
   };
 
-  renderFormFromJson = (form, requestForm, errors) => {
-    const requests = this.state.Requests[form];
-    const formUI = requests.fields.map((field) => {
+  renderFormFromJson = (subForm, errors) => {
+    const formUI = subForm.fields.map((field) => {
       switch (field.type) {
         case 'input':
-          return (
-            <Form.Field style={Styles.field}>
-              <Form.Input
-                error={errors[field.id]}
-                label={this.addAstricks(field.validation) + field.name}
-                onChange={this.processChange(field.id)}
-                placeholder={field.placeholder}
-              />
-              <div style={Styles.InLineErrorInput}>
-                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-              </div>
-            </Form.Field>
-          );
-
+          return this.renderInput(field, errors);
+        case 'rowCombination':
+          return this.renderRowFromJson(field, errors);
         case 'dropDown':
-          return (
-            <Form.Field style={Styles.field}>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Dropdown
-                search
-                value={this.state[field.id]}
-                onChange={this.processChange(field.id)}
-                id={field.id}
-                placeholder={field.placeholder}
-                options={statekeys}
-                fluid
-                selection
-              />
-              <div style={Styles.InLineErrorDropdown}>
-                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-              </div>
-            </Form.Field>
-          );
-
+          return this.renderDropDown(field, errors);
         case 'textArea':
-          return (
-            <Form.Field style={Styles.field}>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <TextArea
-                id={field.id}
-                placeholder={field.placeholder}
-                onChange={this.processChange(field.id)}
-              />
-              <div style={Styles.InLineErrorTextArea}>
-                {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-              </div>
-            </Form.Field>
-          );
-
+          return this.renderTextArea(field, errors);
         case 'checkbox':
-          return (
-            <Form.Field style={Styles.field}>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
-              {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
-            </Form.Field>
-          );
-
+          return this.renderCheckbox(field, errors);
         case 'radio':
-          return (
-            <Form.Field style={Styles.field}>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Form.Group id={field.id} inline>
-                {this.renderRadioButtons(field.id, field.options)}
-                {errors[field.id] && <InlineError text={errors[field.id]} />}
-              </Form.Group>
-            </Form.Field>
-          );
-
+          return this.renderRadio(field, errors);
         default:
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input id={field.id} onChange={this.processChange(field.id)} />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
+          return this.defaultRender(field, errors);
       }
     });
     return formUI;
@@ -191,7 +205,7 @@ class DynamicForm extends React.Component {
         <Header size="large">{this.props.form}</Header>
         <Form onSubmit={this.onSubmit}>
           <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.form, this.props.requestForm, this.state.errors)}
+            {this.renderFormFromJson(this.state.Requests[this.props.form], this.state.errors)}
           </Segment>
           <Segment style={Styles.segment}>
             <Button type="submit" fluid positive size="large" style={Styles.button}>
@@ -207,7 +221,6 @@ class DynamicForm extends React.Component {
 DynamicForm.propTypes = {
   jsonForm: PropTypes.func.isRequired,
   form: PropTypes.string.isRequired,
-  requestForm: PropTypes.string.isRequired,
   setRequest: PropTypes.func.isRequired,
   route: PropTypes.func.isRequired,
 };
