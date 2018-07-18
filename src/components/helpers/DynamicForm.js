@@ -27,12 +27,23 @@ class DynamicForm extends React.Component {
   onSubmit = () => {
     const data = {};
     this.state.Requests[this.props.form].fields.forEach((element) => {
-      data[element.id] = {
-        entry: this.state.dataForSubmitting[element.id],
-        validation: element.validation,
-        id: element.id,
-        type: element.type,
-      };
+      if (element.type === 'rowCombination') {
+        element.fields.forEach((field) => {
+          data[field.id] = {
+            entry: this.state.dataForSubmitting[field.id],
+            validation: field.validation,
+            id: field.id,
+            type: field.type,
+          };
+        });
+      } else {
+        data[element.id] = {
+          entry: this.state.dataForSubmitting[element.id],
+          validation: element.validation,
+          id: element.id,
+          type: element.type,
+        };
+      }
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
@@ -42,6 +53,7 @@ class DynamicForm extends React.Component {
 
   validateAndSetStateErrorsForDisplay = (data) => {
     const errors = {};
+    console.log(data);
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
         if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
