@@ -64,7 +64,7 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#D7D7D7',
     right: 0,
-    left: '51%',
+    left: '52%',
     marginLeft: 20,
   },
   leftBarFinished: {
