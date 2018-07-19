@@ -40,7 +40,7 @@ const randomType = (useRowCombination) => {
 };
 
 const failTest = (wrapper, field, count) => {
-  if (chance.integer() % 2) {
+  if ((chance.integer() % 2) && field.validation) {
     const state = { errors: {} };
     state.errors[field.id] = 'Nothing is Selected';
     wrapper.setState(state);
@@ -205,70 +205,70 @@ describe('DynamicForm', () => {
         console.log(formComponent.debug());
         let count = 0;
         testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
-          if (field.validation) {
-            it(`field ${count} is correct`, () => {
-              const label = formComponent.childAt(count).childAt(0);
-              console.log(formComponent.childAt(0).debug());
-              console.log(count);
-              console.log(label.debug());
-              if (field.validation) {
-                expect(label.text()).toEqual(` * ${field.name}`);
-              } else {
-                expect(label.text()).toEqual(field.name);
-              }
+          console.log(field);
+          console.log(count);
+          it(`field ${count} is correct`, () => {
+            console.log(count);
+            const label = formComponent.childAt(count).childAt(0);
+            if (field.validation) {
+              expect(label.text()).toEqual(` * ${field.name}`);
+            } else {
+              expect(label.text()).toEqual(field.name);
+            }
+            expect(
+              wrapper
+                .childAt(1)
+                .childAt(0)
+                .childAt(count)
+                .childAt(1)
+                .props().name === field.name,
+            );
+            if (field.type === 'checkbox') {
               expect(
                 wrapper
                   .childAt(1)
                   .childAt(0)
                   .childAt(count)
                   .childAt(1)
-                  .props().name === field.name,
-              );
-              if (field.type === 'checkbox') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(Checkbox);
-              }
-              if (field.type === 'radio') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(Radio);
-                failTest(wrapper, field, count);
-              }
-              if (field.type === 'textArea') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(TextArea);
-                failTest(wrapper, field, count);
-              }
-              if (field.type === 'dropDown') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(Dropdown);
-                failTest(wrapper, field, count);
-              }
+                  .type(),
+              ).toEqual(Checkbox);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'radio') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Radio);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'textArea') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(TextArea);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'dropDown') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Dropdown);
+              failTest(wrapper, field, count);
+            }
 
-              if (field.type === 'rowCombination') {
+            if (field.type === 'rowCombination') {
                 expect(
                   wrapper
                     .childAt(1)
@@ -310,21 +310,20 @@ describe('DynamicForm', () => {
                 });
               }
 
-              if (field.type === 'input') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(Input);
+            if (field.type === 'input') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Input);
 
-                failTest(wrapper, field, count);
-              }
-            });
-          }
-          count += 1;
+              failTest(wrapper, field, count);
+            }
+            count += 1;
+          });
         });
       });
 
