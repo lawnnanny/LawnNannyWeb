@@ -99,10 +99,10 @@ class DynamicForm extends React.Component {
 
   errorProperty = (error) => {
     if (error) {
-      return { backgroundColor: '#F8C3B6' };
+      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
     }
     return {};
-  }
+  };
 
   defaultRender = (field, comboRowStyle, errors) => (
     <Form.Field>
@@ -112,7 +112,7 @@ class DynamicForm extends React.Component {
       <Input error={errors[field.id]} id={field.id} onChange={this.processChange(field.id)} />
       {errors[field.id] && <InlineError text={errors[field.id]} />}
     </Form.Field>
-  )
+  );
 
   renderInput = (field, comboRowStyle, errors) => (
     <Form.Field style={Styles.field}>
@@ -150,7 +150,7 @@ class DynamicForm extends React.Component {
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
     </Form.Field>
-  )
+  );
 
   renderTextArea = (field, comboRowStyle, errors) => (
     <Form.Field style={Styles.field}>
@@ -168,17 +168,22 @@ class DynamicForm extends React.Component {
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
     </Form.Field>
-  )
+  );
 
   renderCheckbox = (field, comboRowStyle, errors) => (
     <Form.Field style={Styles.field}>
       <label style={comboRowStyle.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
-      <Checkbox error={errors[field.id]} name={field.name} onChange={this.processChange(field.id)} value="true" />
+      <Checkbox
+        error={errors[field.id]}
+        name={field.name}
+        onChange={this.processChange(field.id)}
+        value="true"
+      />
       {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
     </Form.Field>
-  )
+  );
 
   renderRadio = (field, comboRowStyle, errors) => (
     <Form.Field style={Styles.field}>
@@ -190,7 +195,7 @@ class DynamicForm extends React.Component {
         {errors[field.id] && <InlineError text={errors[field.id]} />}
       </Form.Group>
     </Form.Field>
-  )
+  );
 
   renderRowFromJson = (field, style, errors) => (
     <Form.Group width={field.fields.length} style={Styles.group}>
@@ -198,13 +203,14 @@ class DynamicForm extends React.Component {
         field,
         {
           label: {
-            margin: '1em 1em 0em 0em', padding: '1em 1em 0em 0em',
+            margin: '1em 1em 0em 0em',
+            padding: '1em 1em 0em 0em',
           },
         },
-        errors)
-      }
+        errors,
+      )}
     </Form.Group>
-  )
+  );
 
   renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (

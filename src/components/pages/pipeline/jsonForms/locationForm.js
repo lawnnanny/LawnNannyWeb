@@ -19,6 +19,13 @@ export const jsonForm = {
             id: 'zipcode',
             validation: 'required',
           },
+          {
+            name: 'Please provide a short description of the lawn.',
+            type: 'textArea',
+            placeholder: 'Enter comments here',
+            id: 'comments',
+            validation: 'required',
+          },
         ],
       },
       {
