@@ -53,7 +53,6 @@ class DynamicForm extends React.Component {
 
   validateAndSetStateErrorsForDisplay = (data) => {
     const errors = {};
-    console.log(data);
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
         if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
@@ -98,12 +97,19 @@ class DynamicForm extends React.Component {
     return '';
   };
 
+  errorProperty = (error) => {
+    if (error) {
+      return { backgroundColor: '#F8C3B6' };
+    }
+    return {};
+  }
+
   defaultRender = (field, comboRowStyle, errors) => (
     <Form.Field>
       <label style={comboRowStyle.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
-      <Input id={field.id} onChange={this.processChange(field.id)} />
+      <Input error={errors[field.id]} id={field.id} onChange={this.processChange(field.id)} />
       {errors[field.id] && <InlineError text={errors[field.id]} />}
     </Form.Field>
   )
@@ -114,7 +120,6 @@ class DynamicForm extends React.Component {
         {this.addAstricks(field.validation) + field.name}
       </label>
       <Form.Input
-
         error={errors[field.id]}
         onChange={this.processChange(field.id)}
         placeholder={field.placeholder}
@@ -132,6 +137,7 @@ class DynamicForm extends React.Component {
       </label>
       <Dropdown
         search
+        error={errors[field.id]}
         value={this.state[field.id]}
         onChange={this.processChange(field.id)}
         id={field.id}
@@ -152,6 +158,8 @@ class DynamicForm extends React.Component {
         {this.addAstricks(field.validation) + field.name}
       </label>
       <TextArea
+        style={this.errorProperty(errors[field.id])}
+        error={errors[field.id]}
         id={field.id}
         placeholder={field.placeholder}
         onChange={this.processChange(field.id)}
@@ -167,7 +175,7 @@ class DynamicForm extends React.Component {
       <label style={comboRowStyle.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
-      <Checkbox name={field.name} onChange={this.processChange(field.id)} value="true" />
+      <Checkbox error={errors[field.id]} name={field.name} onChange={this.processChange(field.id)} value="true" />
       {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
     </Form.Field>
   )
