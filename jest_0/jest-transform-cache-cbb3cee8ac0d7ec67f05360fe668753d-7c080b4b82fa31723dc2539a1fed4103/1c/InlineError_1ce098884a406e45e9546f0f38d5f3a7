@@ -1,0 +1,131 @@
+3f6310694d3f161be6d01707537bcbb1
+/* istanbul ignore next */'use strict';
+
+var cov_pe70lc1zl = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/components/helpers/InlineError.js',
+      hash = '7d0bf4c08d108afcb9bcbd500abfe4c7e9222bfc',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/components/helpers/InlineError.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 5,
+          column: 20
+        },
+        end: {
+          line: 9,
+          column: 1
+        }
+      },
+      '1': {
+        start: {
+          line: 6,
+          column: 2
+        },
+        end: {
+          line: 8,
+          column: 10
+        }
+      },
+      '2': {
+        start: {
+          line: 11,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 5,
+            column: 20
+          },
+          end: {
+            line: 5,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 6,
+            column: 2
+          },
+          end: {
+            line: 8,
+            column: 10
+          }
+        },
+        line: 6
+      }
+    },
+    branchMap: {},
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    f: {
+      '0': 0
+    },
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var /* istanbul ignore next */_react = require('react');
+
+/* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+
+var /* istanbul ignore next */_propTypes = require('prop-types');
+
+/* istanbul ignore next */var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var /* istanbul ignore next */_semanticUiReact = require('semantic-ui-react');
+
+/* istanbul ignore next */function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+cov_pe70lc1zl.s[0]++;
+
+
+var InlineError = function InlineError( /* istanbul ignore next */_ref) {
+  /* istanbul ignore next */var text = _ref.text,
+      pointing = _ref.pointing;
+  /* istanbul ignore next */cov_pe70lc1zl.f[0]++;
+  cov_pe70lc1zl.s[1]++;
+  return (/* istanbul ignore next */_react2.default.createElement(
+      /* istanbul ignore next */_semanticUiReact. /* istanbul ignore next */Label,
+      /* istanbul ignore next */{ basic: /* istanbul ignore next */true, color: 'red', pointing: pointing },
+      text
+    )
+  );
+};
+
+/* istanbul ignore next */cov_pe70lc1zl.s[2]++;
+InlineError.propTypes = {
+  text: /* istanbul ignore next */_propTypes2. /* istanbul ignore next */default.string.isRequired,
+  pointing: /* istanbul ignore next */_propTypes2. /* istanbul ignore next */default.string.isRequired
+};
+
+/* istanbul ignore next */exports.default = InlineError;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZUVycm9yLmpzIl0sIm5hbWVzIjpbIklubGluZUVycm9yIiwidGV4dCIsInBvaW50aW5nIiwicHJvcFR5cGVzIiwiUHJvcFR5cGVzIiwic3RyaW5nIiwiaXNSZXF1aXJlZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7OztBQUVBLElBQU1BLGNBQWMsU0FBZEEsV0FBYyxrQ0FDbEI7QUFBQSxnQ0FEcUJDLElBQ3JCLFFBRHFCQSxJQUNyQjtBQUFBLE1BRDJCQyxRQUMzQixRQUQyQkEsUUFDM0I7QUFBQTtBQUFBO0FBQUE7QUFBQyxpRkFBRDtBQUFBLGtDQUFPLHFDQUFQLEVBQWEsT0FBTSxLQUFuQixFQUF5QixVQUFVQSxRQUFuQztBQUNHRDtBQURIO0FBQUE7QUFFUSxDQUhWOzs7QUFNQUQsWUFBWUcsU0FBWixHQUF3QjtBQUN0QkYsUUFBTUcseUVBQVVDLE1BQVYsQ0FBaUJDLFVBREQ7QUFFdEJKLFlBQVVFLHlFQUFVQyxNQUFWLENBQWlCQztBQUZMLENBQXhCOzs0Q0FLZU4sVyIsImZpbGUiOiJJbmxpbmVFcnJvci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0IHsgTGFiZWwgfSBmcm9tICdzZW1hbnRpYy11aS1yZWFjdCc7XG5cbmNvbnN0IElubGluZUVycm9yID0gKHsgdGV4dCwgcG9pbnRpbmcgfSkgPT4gKFxuICA8TGFiZWwgYmFzaWMgY29sb3I9XCJyZWRcIiBwb2ludGluZz17cG9pbnRpbmd9PlxuICAgIHt0ZXh0fVxuICA8L0xhYmVsPlxuKTtcblxuSW5saW5lRXJyb3IucHJvcFR5cGVzID0ge1xuICB0ZXh0OiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG4gIHBvaW50aW5nOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG59O1xuXG5leHBvcnQgZGVmYXVsdCBJbmxpbmVFcnJvcjtcbiJdfQ==
