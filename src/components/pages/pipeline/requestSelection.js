@@ -25,8 +25,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
@@ -36,8 +37,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
           onClick={() => setTypeOfRequest('Leaf Raking')}
@@ -45,8 +47,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
           onClick={() => setTypeOfRequest('Snow Clearing')}
@@ -54,8 +57,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"
           onClick={() => setTypeOfRequest('Custom Request')}

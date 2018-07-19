@@ -5,4 +5,11 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
+  buttonSegment: {
+    boxShadow: 'none',
+    padding: '0',
+    width: '100%',
+    border: 'none',
+  },
+  buttonComponent: {},
 };
