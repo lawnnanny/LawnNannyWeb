@@ -1,6 +1,6 @@
 export const jsonForm = {
   Location: {
-    description: 'Descriptiion',
+    description: 'Please Enter Location of the Job',
     fields: [
       {
         name: 'cityZip',

@@ -106,11 +106,13 @@ class DynamicForm extends React.Component {
 
   renderInput = (field, isInRow, errors) => {
     let InLineErrorStyle = Styles.InLineErrorInput;
+    let fieldStyle = Styles.field;
     if (isInRow) {
       InLineErrorStyle = Styles.InLineErrorInputRow;
+      fieldStyle = Styles.groupField;
     }
     return (
-      <Form.Field style={Styles.field}>
+      <Form.Field style={fieldStyle}>
         <label style={Styles.label} htmlFor={field.id}>
           {this.addAstricks(field.validation) + field.name}
         </label>
