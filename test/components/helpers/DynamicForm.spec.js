@@ -40,7 +40,7 @@ const randomType = (useRowCombination) => {
 };
 
 const failTest = (wrapper, field, count) => {
-  if ((chance.integer() % 2) && field.validation) {
+  if (chance.integer() % 2 && field.validation) {
     const state = { errors: {} };
     state.errors[field.id] = 'Nothing is Selected';
     wrapper.setState(state);
@@ -199,21 +199,25 @@ describe('DynamicForm', () => {
       });
 
       describe('form data', () => {
+        let count = -1;
+        beforeEach(() => {
+          count += 1;
+        });
         wrapper = renderComponent();
         formSegment = wrapper.childAt(1);
         formComponent = formSegment.childAt(0);
         console.log(formComponent.debug());
-        let count = 0;
         testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
           console.log(field);
           console.log(count);
           it(`field ${count} is correct`, () => {
             console.log(count);
             const label = formComponent.childAt(count).childAt(0);
+            console.log();
             if (field.validation) {
-              expect(label.text()).toEqual(` * ${field.name}`);
+              expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
             } else {
-              expect(label.text()).toEqual(field.name);
+              expect(label.childAt(0).text()).toEqual(field.name);
             }
             expect(
               wrapper
@@ -242,7 +246,7 @@ describe('DynamicForm', () => {
                   .childAt(count)
                   .childAt(1)
                   .type(),
-              ).toEqual(Radio);
+              ).toEqual(Form.Group);
               failTest(wrapper, field, count);
             }
             if (field.type === 'textArea') {
@@ -269,46 +273,46 @@ describe('DynamicForm', () => {
             }
 
             if (field.type === 'rowCombination') {
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .type(),
-                ).toEqual(Form.Group);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Form.Group);
 
-                let subFieldCounter = 0;
-                field.fields.forEach((input) => {
-                  const rowInput = wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .childAt(1)
-                    .childAt(subFieldCounter);
+              let subFieldCounter = 0;
+              field.fields.forEach((input) => {
+                const rowInput = wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .childAt(subFieldCounter);
 
-                  switch (input.type) {
-                    case 'input':
-                      expect(rowInput.type()).toEqual(Input);
-                      break;
-                    case 'dropDown':
-                      expect(rowInput.type()).toEqual(Dropdown);
-                      break;
-                    case 'textArea':
-                      expect(rowInput.type()).toEqual(TextArea);
-                      break;
-                    case 'checkbox':
-                      expect(rowInput.type()).toEqual(Checkbox);
-                      break;
-                    case 'radio':
-                      expect(rowInput.type()).toEqual(Checkbox);
-                      break;
-                    default:
-                  }
-                  failTest(wrapper, field, count);
-                  subFieldCounter += 1;
-                });
-              }
+                switch (input.type) {
+                  case 'input':
+                    expect(rowInput.type()).toEqual(Input);
+                    break;
+                  case 'dropDown':
+                    expect(rowInput.type()).toEqual(Dropdown);
+                    break;
+                  case 'textArea':
+                    expect(rowInput.type()).toEqual(TextArea);
+                    break;
+                  case 'checkbox':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  case 'radio':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  default:
+                }
+                failTest(wrapper, field, count);
+                subFieldCounter += 1;
+              });
+            }
 
             if (field.type === 'input') {
               expect(
@@ -318,11 +322,10 @@ describe('DynamicForm', () => {
                   .childAt(count)
                   .childAt(1)
                   .type(),
-              ).toEqual(Input);
+              ).toEqual(Form.Input);
 
               failTest(wrapper, field, count);
             }
-            count += 1;
           });
         });
       });
