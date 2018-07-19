@@ -3,20 +3,23 @@ import navBarComponent from '../components/helpers/navBar';
 import Actions from '../reducers/Actions';
 
 const mapDispatchToProps = dispatch => ({
-  setRequestLogin: (data) => {
+  login: (data) => {
     const action = {
-      type: Actions.login.setRequestLogin,
+      type: Actions.login.login,
       data,
     };
     dispatch(action);
   },
-  setRequestSignup: (data) => {
+  signup: (data) => {
     const action = {
-      type: Actions.login.setRequestSignup,
+      type: Actions.login.signup,
       data,
     };
     dispatch(action);
   },
 });
 
-export default connect(mapDispatchToProps)(navBarComponent);
+export default connect(
+  () => ({}),
+  mapDispatchToProps,
+)(navBarComponent);

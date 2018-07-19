@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import { Error404 } from '../components/errors/Error404';
-import ConnectedNavBarComponent from '../components/helpers/navBar';
+import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
 import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
 import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
 import ConnectedRequestLocationComponent from '../connectedComponents/ConnectedRequestLocation';

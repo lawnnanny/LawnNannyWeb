@@ -35,6 +35,7 @@ class DynamicForm extends React.Component {
       };
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
+      console.log(this.props.setRequest);
       this.props.setRequest(data);
       this.props.route();
     }

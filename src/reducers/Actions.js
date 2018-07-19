@@ -2,8 +2,8 @@ let i = 0;
 
 export default {
   login: {
-    setRequestLogin: (i += 1),
-    setRequestSignup: (i += 1),
+    login: (i += 1),
+    signup: (i += 1),
   },
   requests: {
     setTypeOfRequest: (i += 1),
