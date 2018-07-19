@@ -9,4 +9,7 @@ export default {
     border: 'none',
     boxShadow: 'none',
   },
+  button: {
+    backgroundColor: '#e6e4e2',
+  },
 };
