@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, Modal, Button, Dropdown } from 'semantic-ui-react';
-import { Redirect } from 'react-router';
 import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
 import Styles from '../../styles/navBar';
 import DynamicComponent from '../helpers/DynamicForm';
