@@ -16,7 +16,8 @@ import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
 import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
-const numberOfFields = (chance.integer() % 11) + 1;
+
+const numberOfFields = (Math.abs(chance.integer()) % 11) + 1;
 
 const randomType = (useRowCombination) => {
   switch (chance.integer() % 5) {
@@ -75,7 +76,7 @@ const generateTestFormJson = () => {
     if (type === 'rowCombination') {
       const numberOfSubFields = (chance.integer() % 11) + 1;
       const subFields = [];
-      for (let count = 0; count < numberOfSubFields; count += 1) {
+      for (let counting = 0; counting < numberOfSubFields; counting += 1) {
         const subFieldType = randomType(false);
         const subField = {
           name: chance.word(),
@@ -95,7 +96,7 @@ const generateTestFormJson = () => {
           subField.placeholder = chance.word();
         }
 
-        subFields[count] = subField;
+        subFields[counting] = subField;
       }
 
       field = {
@@ -199,14 +200,17 @@ describe('DynamicForm', () => {
 
       describe('form data', () => {
         wrapper = renderComponent();
+        formSegment = wrapper.childAt(1);
+        formComponent = formSegment.childAt(0);
+        console.log(formComponent.debug());
+        let count = 0;
         testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
           if (field.validation) {
-            const fail = chance.integer() % 2;
-            let count = 0;
-            const form = wrapper.childAt(1);
-            const segmentOfFields = form.childAt(0);
             it(`field ${count} is correct`, () => {
-              const label = segmentOfFields.childAt(count).childAt(0);
+              const label = formComponent.childAt(count).childAt(0);
+              console.log(formComponent.childAt(0).debug());
+              console.log(count);
+              console.log(label.debug());
               if (field.validation) {
                 expect(label.text()).toEqual(` * ${field.name}`);
               } else {
@@ -301,7 +305,7 @@ describe('DynamicForm', () => {
                       break;
                     default:
                   }
-                  ifailTest(wrapper, field, count);
+                  failTest(wrapper, field, count);
                   subFieldCounter += 1;
                 });
               }
@@ -318,9 +322,9 @@ describe('DynamicForm', () => {
 
                 failTest(wrapper, field, count);
               }
-              count += 1;
             });
           }
+          count += 1;
         });
       });
 
@@ -332,8 +336,6 @@ describe('DynamicForm', () => {
         });
 
         it('It is a button', () => {
-          console.log(formComponent.debug());
-          console.log(numberOfFields);
           expect(formButton.type()).toEqual(Form.Button);
         });
       });
