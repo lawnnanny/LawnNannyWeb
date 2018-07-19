@@ -26,11 +26,13 @@ export default {
   },
   currentLabel: {
     backgroundColor: 'white',
-    fontSize: '1rem',
+    fontSize: '1.2rem',
     color: 'black',
+    padding: '0',
   },
   label: {
     backgroundColor: 'white',
+    padding: '0',
   },
   grid: {},
   finishedIcon: {
@@ -64,7 +66,7 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#D7D7D7',
     right: 0,
-    left: '52%',
+    left: '51%',
     marginLeft: 20,
   },
   leftBarFinished: {
