@@ -1,5 +1,6 @@
 export const jsonForm = {
   Location: {
+    description: 'Descriptiion',
     fields: [
       {
         name: 'cityZip',
@@ -17,13 +18,6 @@ export const jsonForm = {
             type: 'input',
             placeholder: 'zipcode',
             id: 'zipcode',
-            validation: 'required',
-          },
-          {
-            name: 'Please provide a short description of the lawn.',
-            type: 'textArea',
-            placeholder: 'Enter comments here',
-            id: 'comments',
             validation: 'required',
           },
         ],

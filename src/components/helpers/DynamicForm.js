@@ -97,42 +97,39 @@ class DynamicForm extends React.Component {
     return '';
   };
 
-  errorProperty = (error) => {
+  errorPropertyTextArea = (error) => {
     if (error) {
       return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
     }
     return {};
   };
 
-  defaultRender = (field, comboRowStyle, errors) => (
-    <Form.Field>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
-      </label>
-      <Input error={errors[field.id]} id={field.id} onChange={this.processChange(field.id)} />
-      {errors[field.id] && <InlineError text={errors[field.id]} />}
-    </Form.Field>
-  );
-
-  renderInput = (field, comboRowStyle, errors) => (
+  renderInput = (field, isInRow, errors) => {
+    let InLineErrorStyle = Styles.InLineErrorInput;
+    if (isInRow) {
+      InLineErrorStyle = Styles.InLineErrorInputRow;
+    }
+    return (
+      <Form.Field style={Styles.field}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {this.addAstricks(field.validation) + field.name}
+        </label>
+        <Form.Input
+          error={errors[field.id]}
+          onChange={this.processChange(field.id)}
+          placeholder={field.placeholder}
+        />
+        <div style={InLineErrorStyle}>
+          {errors[field.id] && (
+            <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+          )}
+        </div>
+      </Form.Field>
+    );
+  };
+  renderDropDown = (field, isInRow, errors) => (
     <Form.Field style={Styles.field}>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
-      </label>
-      <Form.Input
-        error={errors[field.id]}
-        onChange={this.processChange(field.id)}
-        placeholder={field.placeholder}
-      />
-      <div style={Styles.InLineErrorInput}>
-        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-      </div>
-    </Form.Field>
-  );
-
-  renderDropDown = (field, comboRowStyle, errors) => (
-    <Form.Field style={Styles.field}>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
+      <label style={Styles.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
       <Dropdown
@@ -152,13 +149,13 @@ class DynamicForm extends React.Component {
     </Form.Field>
   );
 
-  renderTextArea = (field, comboRowStyle, errors) => (
+  renderTextArea = (field, isInRow, errors) => (
     <Form.Field style={Styles.field}>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
+      <label style={Styles.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
       <TextArea
-        style={this.errorProperty(errors[field.id])}
+        style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
         id={field.id}
         placeholder={field.placeholder}
@@ -170,9 +167,9 @@ class DynamicForm extends React.Component {
     </Form.Field>
   );
 
-  renderCheckbox = (field, comboRowStyle, errors) => (
+  renderCheckbox = (field, isInRow, errors) => (
     <Form.Field style={Styles.field}>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
+      <label style={Styles.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
       <Checkbox
@@ -185,9 +182,9 @@ class DynamicForm extends React.Component {
     </Form.Field>
   );
 
-  renderRadio = (field, comboRowStyle, errors) => (
+  renderRadio = (field, isInRow, errors) => (
     <Form.Field style={Styles.field}>
-      <label style={comboRowStyle.label} htmlFor={field.id}>
+      <label style={Styles.label} htmlFor={field.id}>
         {this.addAstricks(field.validation) + field.name}
       </label>
       <Form.Group id={field.id} inline>
@@ -198,17 +195,8 @@ class DynamicForm extends React.Component {
   );
 
   renderRowFromJson = (field, style, errors) => (
-    <Form.Group width={field.fields.length} style={Styles.group}>
-      {this.renderFormFromJson(
-        field,
-        {
-          label: {
-            margin: '1em 1em 0em 0em',
-            padding: '1em 1em 0em 0em',
-          },
-        },
-        errors,
-      )}
+    <Form.Group width={field.fields.length} style={Styles.group} unstackable>
+      {this.renderFormFromJson(field, true, errors)}
     </Form.Group>
   );
 
@@ -224,23 +212,23 @@ class DynamicForm extends React.Component {
     return radioButtons;
   };
 
-  renderFormFromJson = (subForm, comboRowStyle, errors) => {
+  renderFormFromJson = (subForm, isInRow, errors) => {
     const formUI = subForm.fields.map((field) => {
       switch (field.type) {
         case 'input':
-          return this.renderInput(field, comboRowStyle, errors);
+          return this.renderInput(field, isInRow, errors);
         case 'rowCombination':
-          return this.renderRowFromJson(field, comboRowStyle, errors);
+          return this.renderRowFromJson(field, isInRow, errors);
         case 'dropDown':
-          return this.renderDropDown(field, comboRowStyle, errors);
+          return this.renderDropDown(field, isInRow, errors);
         case 'textArea':
-          return this.renderTextArea(field, comboRowStyle, errors);
+          return this.renderTextArea(field, isInRow, errors);
         case 'checkbox':
-          return this.renderCheckbox(field, comboRowStyle, errors);
+          return this.renderCheckbox(field, isInRow, errors);
         case 'radio':
-          return this.renderRadio(field, comboRowStyle, errors);
+          return this.renderRadio(field, isInRow, errors);
         default:
-          return this.defaultRender(field, comboRowStyle, errors);
+          return this.defaultRender(field, isInRow, errors);
       }
     });
     return formUI;
@@ -248,22 +236,20 @@ class DynamicForm extends React.Component {
 
   render() {
     return (
-      <Segment padded style={Styles.segment}>
-        <Header size="large">{this.props.form}</Header>
-        <Form onSubmit={this.onSubmit}>
-          <Segment style={Styles.segment}>
+      <Segment padded style={Styles.Dynamicsegment}>
+        <Header as="h3">{this.state.Requests[this.props.form].description}</Header>
+        <Segment style={Styles.formSegment}>
+          <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],
-              { label: {} },
+              false,
               this.state.errors,
             )}
-          </Segment>
-          <Segment style={Styles.segment}>
-            <Button type="submit" fluid positive size="large" style={Styles.button}>
+            <Form.Button positive fluid style={Styles.button}>
               Continue
-            </Button>
-          </Segment>
-        </Form>
+            </Form.Button>
+          </Form>
+        </Segment>
       </Segment>
     );
   }

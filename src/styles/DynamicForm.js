@@ -1,7 +1,9 @@
 export default {
-  segment: {
+  Dynamicsegment: {
     border: 'none',
     boxShadow: 'none',
+  },
+  formSegment: {
     backgroundColor: '#f2f0ee',
   },
   button: {
@@ -10,6 +12,9 @@ export default {
   InLineErrorInput: {
     marginTop: '-1.4em',
   },
+  InLineErrorInputRow: {
+    marginTop: '-.5em',
+  },
   InLineErrorDropdown: {
     marginTop: '-.5em',
   },
@@ -17,7 +22,8 @@ export default {
     marginTop: '-.5em',
   },
   group: {
-    margin: '0em 1em 1.5em -.5em', padding: '0em 1em 1.5em -.5em',
+    margin: '0em 1em 1.5em -.5em',
+    padding: '0em 1em 1.5em -.5em',
   },
   field: {
     paddingBottom: '.2em',

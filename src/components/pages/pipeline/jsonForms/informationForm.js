@@ -1,5 +1,6 @@
 export const jsonForm = {
   'Lawn Mowing': {
+    description: 'Please Enter Details for the Lawn',
     fields: [
       {
         name: 'I would like my grass bagged?',
@@ -24,6 +25,7 @@ export const jsonForm = {
     ],
   },
   'Leaf Raking': {
+    description: 'Please Enter Details for Raking',
     fields: [
       {
         name: 'How would you like your leaves?',
@@ -42,6 +44,7 @@ export const jsonForm = {
     ],
   },
   'Snow Clearing': {
+    description: 'Please Enter Details for Snow Clearing',
     fields: [
       {
         name: 'Side Walk',
@@ -71,6 +74,7 @@ export const jsonForm = {
     ],
   },
   'Custom Request': {
+    description: 'Please Enter Details',
     fields: [
       {
         name: 'Please provide a description of what task youd like completed?',
