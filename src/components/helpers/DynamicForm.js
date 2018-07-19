@@ -99,7 +99,7 @@ class DynamicForm extends React.Component {
 
   errorProperty = (error) => {
     if (error) {
-      return { backgroundColor: '#fcf7f3', borderColor: '#ffb4b0' };
+      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
     }
     return {};
   };
