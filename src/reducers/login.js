@@ -1,8 +1,6 @@
 import Actions from './Actions';
 
-const getInitialState = () => ({
-  selection: '',
-});
+const getInitialState = () => ({});
 
 const setState = (previousState, property, newValue) =>
   Object.assign({}, previousState, {
@@ -11,8 +9,6 @@ const setState = (previousState, property, newValue) =>
 
 export default (state = getInitialState(), action) => {
   switch (action.type) {
-    case Actions.requests.setTypeOfRequest:
-      return setState(state, 'selection', action.data);
     case Actions.login.setRequestLogin:
       return setState(state, 'requestLogin', action.data);
     case Actions.login.setRequestSignup:

@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store';
 import NavBar from '../../src/connectedComponents/ConnectedNavBar';
 import * as LoginActions from '../../src/actions/Login';
 
-describe('Connected Nav Bar', () => {
+describe('Connected NavBar', () => {
   let store;
 
   beforeEach(() => {

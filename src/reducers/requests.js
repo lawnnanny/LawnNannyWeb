@@ -17,12 +17,6 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'requestInformation', action.data);
     case Actions.requests.setRequestLocation:
       return setState(state, 'requestLocation', action.data);
-    case Actions.requests.setRequestSignup:
-      return setState(state, 'requestSignup', action.data);
-    case Actions.requests.setRequestLogin:
-      return setState(state, 'requestLogin', action.data);
-    case Actions.requests.setSignUp:
-      return setState(state, 'signup', action.data);
     default:
       return state;
   }
