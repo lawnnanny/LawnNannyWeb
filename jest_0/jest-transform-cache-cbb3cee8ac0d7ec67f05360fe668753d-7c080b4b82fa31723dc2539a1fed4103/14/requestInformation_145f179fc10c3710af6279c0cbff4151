@@ -1,0 +1,18 @@
+1bdd4ecf7259d7b62f0366cb22266b85
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  Grid: {
+    height: '100%'
+  },
+  segment: {
+    width: '100%',
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0'
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVlc3RJbmZvcm1hdGlvbi5qcyJdLCJuYW1lcyI6WyJHcmlkIiwiaGVpZ2h0Iiwic2VnbWVudCIsIndpZHRoIiwiYm9yZGVyIiwiYm94U2hhZG93IiwicGFkZGluZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7a0JBQWU7QUFDYkEsUUFBTTtBQUNKQyxZQUFRO0FBREosR0FETztBQUliQyxXQUFTO0FBQ1BDLFdBQU8sTUFEQTtBQUVQQyxZQUFRLE1BRkQ7QUFHUEMsZUFBVyxNQUhKO0FBSVBDLGFBQVM7QUFKRjtBQUpJLEMiLCJmaWxlIjoicmVxdWVzdEluZm9ybWF0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQge1xuICBHcmlkOiB7XG4gICAgaGVpZ2h0OiAnMTAwJScsXG4gIH0sXG4gIHNlZ21lbnQ6IHtcbiAgICB3aWR0aDogJzEwMCUnLFxuICAgIGJvcmRlcjogJ25vbmUnLFxuICAgIGJveFNoYWRvdzogJ25vbmUnLFxuICAgIHBhZGRpbmc6ICcwJyxcbiAgfSxcbn07XG4iXX0=

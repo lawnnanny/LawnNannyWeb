@@ -3,66 +3,49 @@ import PropTypes from 'prop-types';
 import {
   Form,
   Header,
-  Input,
-  Button,
   Segment,
   Checkbox,
   TextArea,
   Dropdown,
 } from 'semantic-ui-react';
-import { Requests } from '../pages/pipeline/jsonRequests';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
 class DynamicForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       errors: {},
+      dataForSubmitting: {},
+      Requests: props.jsonForm(),
     };
   }
 
-  onSubmit = (event) => {
+  onSubmit = () => {
     const data = {};
-    let counter = 0;
-    Requests.Requests[this.props.requestType].fields.forEach((element) => {
-      switch (element.type) {
-        case 'radio':
-          data[element.id] = {
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
+    this.state.Requests[this.props.form].fields.forEach((element) => {
+      if (element.type === 'rowCombination') {
+        element.fields.forEach((field) => {
+          data[field.id] = {
+            entry: this.state.dataForSubmitting[field.id],
+            validation: field.validation,
+            id: field.id,
+            type: field.type,
           };
-          element.options.forEach((option) => {
-            data[element.id][option] = {
-              entry: event.target[counter].checked,
-            };
-            counter += 1;
-          });
-          break;
-        case 'checkbox':
-          data[element.id] = {
-            entry: event.target[counter].checked,
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
-          };
-          counter += 1;
-          break;
-        default:
-          data[element.id] = {
-            entry: event.target[counter].value,
-            validation: element.validation,
-            id: element.id,
-            type: element.type,
-          };
-          counter += 1;
-          break;
+        });
+      } else {
+        data[element.id] = {
+          entry: this.state.dataForSubmitting[element.id],
+          validation: element.validation,
+          id: element.id,
+          type: element.type,
+        };
       }
     });
-    if (!this.validateAndSetStateErrorsForDisplay(data)) {
-      this.props.setRequestInformation(data);
+    if (this.validateAndSetStateErrorsForDisplay(data)) {
+      this.props.setRequest(data);
+      this.props.route();
     }
   };
 
@@ -70,20 +53,25 @@ class DynamicForm extends React.Component {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
-        switch (validationEntryObject.type) {
-          case 'textArea':
-            if (!validationEntryObject.entry.trim().length) {
+        if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
+          switch (validationEntryObject.type) {
+            case 'textArea':
               errors[validationEntryObject.id] = 'Empty Text Box';
-            }
-            break;
-          case 'radio':
-            if (
-              !Object.values(validationEntryObject).some(option => option.entry)
-            ) {
-              errors[validationEntryObject.id] = 'Radio Button Not Selected';
-            }
-            break;
-          default:
+              break;
+            case 'input':
+              errors[validationEntryObject.id] = 'Field is Required';
+              break;
+            case 'dropDown':
+              errors[validationEntryObject.id] = 'Nothing is Selected';
+              break;
+            case 'radio':
+              errors[validationEntryObject.id] = 'Selection is Required';
+              break;
+            case 'checkbox':
+              errors[validationEntryObject.id] = 'Selection is Required';
+              break;
+            default:
+          }
         }
       }
     });
@@ -91,10 +79,13 @@ class DynamicForm extends React.Component {
     return !Object.keys(errors).length;
   };
 
-  handleChange = (e, { value }) => {
-    const state = this.state;
-    state.radio = value;
-    this.setState(state);
+  processChange = (key) => {
+    const handle = (e, { value }) => {
+      const state = this.state;
+      state.dataForSubmitting[key] = value;
+      this.setState(state);
+    };
+    return handle;
   };
 
   addAstricks = (validation) => {
@@ -104,93 +95,140 @@ class DynamicForm extends React.Component {
     return '';
   };
 
-  renderRadioButtons = (field) => {
+  errorPropertyTextArea = (error) => {
+    if (error) {
+      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
+    }
+    return {};
+  };
+
+  renderInput = (field, isInRow, errors) => {
+    let InLineErrorStyle = Styles.InLineErrorInput;
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      InLineErrorStyle = Styles.InLineErrorInputRow;
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <Form.Field style={fieldStyle}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {this.addAstricks(field.validation) + field.name}
+        </label>
+        <Form.Input
+          error={errors[field.id]}
+          onChange={this.processChange(field.id)}
+          placeholder={field.placeholder}
+        />
+        <div style={InLineErrorStyle}>
+          {errors[field.id] && (
+            <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+          )}
+        </div>
+      </Form.Field>
+    );
+  };
+  renderDropDown = (field, isInRow, errors) => (
+    <Form.Field style={Styles.field}>
+      <label style={Styles.label} htmlFor={field.id}>
+        {this.addAstricks(field.validation) + field.name}
+      </label>
+      <Dropdown
+        search
+        error={errors[field.id]}
+        value={this.state[field.id]}
+        onChange={this.processChange(field.id)}
+        id={field.id}
+        placeholder={field.placeholder}
+        options={statekeys}
+        fluid
+        selection
+      />
+      <div style={Styles.InLineErrorDropdown}>
+        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+      </div>
+    </Form.Field>
+  );
+
+  renderTextArea = (field, isInRow, errors) => (
+    <Form.Field style={Styles.field}>
+      <label style={Styles.label} htmlFor={field.id}>
+        {this.addAstricks(field.validation) + field.name}
+      </label>
+      <TextArea
+        style={this.errorPropertyTextArea(errors[field.id])}
+        error={errors[field.id]}
+        id={field.id}
+        placeholder={field.placeholder}
+        onChange={this.processChange(field.id)}
+      />
+      <div style={Styles.InLineErrorTextArea}>
+        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
+      </div>
+    </Form.Field>
+  );
+
+  renderCheckbox = (field, isInRow, errors) => (
+    <Form.Field style={Styles.field}>
+      <label style={Styles.label} htmlFor={field.id}>
+        {this.addAstricks(field.validation) + field.name}
+      </label>
+      <Checkbox
+        error={errors[field.id]}
+        name={field.name}
+        onChange={this.processChange(field.id)}
+        value="true"
+      />
+      {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
+    </Form.Field>
+  );
+
+  renderRadio = (field, isInRow, errors) => (
+    <Form.Field style={Styles.field}>
+      <label style={Styles.label} htmlFor={field.id}>
+        {this.addAstricks(field.validation) + field.name}
+      </label>
+      <Form.Group id={field.id} inline>
+        {this.renderRadioButtons(field.id, field.options)}
+        {errors[field.id] && <InlineError text={errors[field.id]} />}
+      </Form.Group>
+    </Form.Field>
+  );
+
+  renderRowFromJson = (field, style, errors) => (
+    <Form.Group width={field.fields.length} style={Styles.group} unstackable>
+      {this.renderFormFromJson(field, true, errors)}
+    </Form.Group>
+  );
+
+  renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (
       <Form.Radio
         label={option}
         value={option}
-        onChange={this.handleChange}
-        checked={this.state.radio === option}
+        onChange={this.processChange(id)}
+        checked={this.state.dataForSubmitting[id] === option}
       />
     ));
     return radioButtons;
   };
 
-  renderFormFromJson = (requestType, errors) => {
-    const requests = Requests.Requests[requestType];
-    const formUI = requests.fields.map((field) => {
+  renderFormFromJson = (subForm, isInRow, errors) => {
+    const formUI = subForm.fields.map((field) => {
       switch (field.type) {
-        case 'text':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <Input id={field.id} />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
-
+        case 'input':
+          return this.renderInput(field, isInRow, errors);
+        case 'rowCombination':
+          return this.renderRowFromJson(field, isInRow, errors);
         case 'dropDown':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <Dropdown
-                id={field.id}
-                placeholder={field.placeholder}
-                options={statekeys}
-              />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
-
+          return this.renderDropDown(field, isInRow, errors);
         case 'textArea':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <TextArea id={field.id} placeholder={field.placeholder} />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
-
+          return this.renderTextArea(field, isInRow, errors);
         case 'checkbox':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <Checkbox name={field.name} value="true" />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
-
+          return this.renderCheckbox(field, isInRow, errors);
         case 'radio':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <Form.Group id={field.id} inline>
-                {this.renderRadioButtons(field.options)}
-                {errors[field.id] && <InlineError text={errors[field.id]} />}
-              </Form.Group>
-            </Form.Field>
-          );
-
+          return this.renderRadio(field, isInRow, errors);
         default:
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>
-                {this.addAstricks(field.validation) + field.name}
-              </label>
-              <Input id={field.id} />
-              {errors[field.id] && <InlineError text={errors[field.id]} />}
-            </Form.Field>
-          );
+          return this.defaultRender(field, isInRow, errors);
       }
     });
     return formUI;
@@ -198,26 +236,30 @@ class DynamicForm extends React.Component {
 
   render() {
     return (
-      <Segment padded style={Styles.segment}>
-        <Header size="large">{this.props.requestType}</Header>
-        <Form onSubmit={this.onSubmit}>
-          <Segment style={Styles.segment}>
-            {this.renderFormFromJson(this.props.requestType, this.state.errors)}
-          </Segment>
-          <Segment style={Styles.segment}>
-            <Button type="submit" fluid positive size="large">
+      <Segment padded style={Styles.Dynamicsegment}>
+        <Header as="h3">{this.state.Requests[this.props.form].description}</Header>
+        <Segment style={Styles.formSegment}>
+          <Form onSubmit={this.onSubmit}>
+            {this.renderFormFromJson(
+              this.state.Requests[this.props.form],
+              false,
+              this.state.errors,
+            )}
+            <Form.Button positive fluid style={Styles.button}>
               Continue
-            </Button>
-          </Segment>
-        </Form>
+            </Form.Button>
+          </Form>
+        </Segment>
       </Segment>
     );
   }
 }
 
 DynamicForm.propTypes = {
-  requestType: PropTypes.string.isRequired,
-  setRequestInformation: PropTypes.func.isRequired,
+  jsonForm: PropTypes.func.isRequired,
+  form: PropTypes.string.isRequired,
+  setRequest: PropTypes.func.isRequired,
+  route: PropTypes.func.isRequired,
 };
 
 export default DynamicForm;

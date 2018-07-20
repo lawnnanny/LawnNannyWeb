@@ -8,12 +8,7 @@ export const RequestOption = props => (
   <Link to="/pipeline/requestInformation">
     <Button fluid style={Styles.button} onClick={() => props.onClick()}>
       <Header as="h2" floated="left">
-        <Image
-          style={Styles.image}
-          src={props.imageURL}
-          size="massive"
-          circular
-        />
+        <Image style={Styles.image} src={props.imageURL} size="massive" circular />
         {props.title}
       </Header>
     </Button>

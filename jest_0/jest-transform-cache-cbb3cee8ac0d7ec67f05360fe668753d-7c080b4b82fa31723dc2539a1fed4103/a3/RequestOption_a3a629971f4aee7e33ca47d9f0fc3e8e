@@ -1,0 +1,58 @@
+d211805ba73c92eca59a71c132b825da
+/* istanbul ignore next */'use strict';
+
+var cov_1kesm05588 = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/styles/RequestOption.js',
+      hash = '7477d69aad783d351148bcb417c109ce4462b0ef',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/styles/RequestOption.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 1,
+          column: 14
+        },
+        end: {
+          line: 1,
+          column: 23
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      '0': 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var green = /* istanbul ignore next */(cov_1kesm05588.s[0]++, '#63BA18');
+
+/* istanbul ignore next */exports.default = {
+  image: {
+    border: 'solid',
+    borderColor: green
+  },
+  segment: {
+    border: 'none',
+    boxShadow: 'none'
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJlcXVlc3RPcHRpb24uanMiXSwibmFtZXMiOlsiZ3JlZW4iLCJpbWFnZSIsImJvcmRlciIsImJvcmRlckNvbG9yIiwic2VnbWVudCIsImJveFNoYWRvdyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFNQSwwREFBUSxTQUFSLENBQU47OzRDQUVlO0FBQ2JDLFNBQU87QUFDTEMsWUFBUSxPQURIO0FBRUxDLGlCQUFhSDtBQUZSLEdBRE07QUFLYkksV0FBUztBQUNQRixZQUFRLE1BREQ7QUFFUEcsZUFBVztBQUZKO0FBTEksQyIsImZpbGUiOiJSZXF1ZXN0T3B0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgZ3JlZW4gPSAnIzYzQkExOCc7XG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgaW1hZ2U6IHtcbiAgICBib3JkZXI6ICdzb2xpZCcsXG4gICAgYm9yZGVyQ29sb3I6IGdyZWVuLFxuICB9LFxuICBzZWdtZW50OiB7XG4gICAgYm9yZGVyOiAnbm9uZScsXG4gICAgYm94U2hhZG93OiAnbm9uZScsXG4gIH0sXG59O1xuIl19

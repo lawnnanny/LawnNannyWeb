@@ -17,10 +17,9 @@ const HomePage = ({
   setAddressState,
   setZipcode,
   openLoginModal,
-  closeLoginModal,
+  closeModal,
   isLoginModalOpen,
   openSignupModal,
-  closeSignupModal,
   isSignupModalOpen,
 }) => (
   <div>
@@ -36,12 +35,10 @@ const HomePage = ({
               </Menu.Item>
             }
             open={isLoginModalOpen}
-            onClose={closeLoginModal}
+            onClose={closeModal}
             closeIcon
           >
-            <Modal.Header style={Styles.modalHeader}>
-              Welcome Back!
-            </Modal.Header>
+            <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
             <Modal.Description>
               <Grid style={Styles.loginGrid}>
                 <Grid.Row>
@@ -69,11 +66,7 @@ const HomePage = ({
                 </Grid.Row>
                 <Grid.Row centered>
                   <Grid.Column width={6}>
-                    <Button
-                      style={Styles.modalButton}
-                      size="large"
-                      onClick={closeLoginModal}
-                    >
+                    <Button style={Styles.modalButton} size="large" onClick={closeModal}>
                       Login
                     </Button>
                   </Grid.Column>
@@ -90,7 +83,7 @@ const HomePage = ({
               </Menu.Item>
             }
             open={isSignupModalOpen}
-            onClose={closeSignupModal}
+            onClose={closeModal}
             closeIcon
           >
             <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
@@ -136,18 +129,8 @@ const HomePage = ({
                   />
                 </Form.Group>
                 <Form.Group widths="equal">
-                  <Form.Input
-                    fluid
-                    label="Address"
-                    placeholder="Address"
-                    onChange={setAddress}
-                  />
-                  <Form.Input
-                    fluid
-                    label="City"
-                    placeholder="City"
-                    onChange={setCity}
-                  />
+                  <Form.Input fluid label="Address" placeholder="Address" onChange={setAddress} />
+                  <Form.Input fluid label="City" placeholder="City" onChange={setCity} />
                 </Form.Group>
                 <Form.Group widths="equal">
                   <Form.Dropdown
@@ -159,22 +142,13 @@ const HomePage = ({
                     options={statekeys}
                     onChange={setAddressState}
                   />
-                  <Form.Input
-                    fluid
-                    label="Zipcode"
-                    placeholder="Zipcode"
-                    onChange={setZipcode}
-                  />
+                  <Form.Input fluid label="Zipcode" placeholder="Zipcode" onChange={setZipcode} />
                 </Form.Group>
                 <Form.Group style={Styles.signUpCheckbox}>
                   <Form.Checkbox label="I agree to the Terms and Conditions" />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Button
-                    style={Styles.modalButton}
-                    size="large"
-                    onClick={closeSignupModal}
-                  >
+                  <Form.Button style={Styles.modalButton} size="large" onClick={closeModal}>
                     Submit
                   </Form.Button>
                 </Form.Group>
@@ -209,11 +183,10 @@ HomePage.propTypes = {
   setAddressState: PropTypes.func.isRequired,
   setZipcode: PropTypes.func.isRequired,
   openLoginModal: PropTypes.func.isRequired,
-  closeLoginModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
   isSignupModalOpen: PropTypes.bool.isRequired,
   isLoginModalOpen: PropTypes.bool.isRequired,
   openSignupModal: PropTypes.func.isRequired,
-  closeSignupModal: PropTypes.func.isRequired,
 };
 
 HomePage.defaultProps = {};

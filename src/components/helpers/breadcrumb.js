@@ -1,28 +1,145 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stepper from 'react-stepper-horizontal';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
+import Styles from '../../styles/breadcrumb';
 
+const returnStatus = (selection, id) => {
+  if (selection > id) {
+    return 'check';
+  } else if (selection === id) {
+    return 'question';
+  } else if (id === 1) {
+    return 'wpforms';
+  } else if (id === 2) {
+    return 'location arrow';
+  } else if (id === 3) {
+    return 'dollar';
+  } else if (id === 4) {
+    return 'pencil';
+  }
+  return 'cancel';
+};
+const returnColor = (iconColor, id) => {
+  if (iconColor > id) {
+    return 'green';
+  } else if (iconColor === id) {
+    return 'blue';
+  }
+  return 'grey';
+};
+const returnIcon = (icon, id) => {
+  if (icon > id) {
+    return Styles.finishedIcon;
+  } else if (icon === id) {
+    return Styles.currentIcon;
+  }
+  return Styles.unfinishedIcon;
+};
+const returnRightBar = (bar, id) => {
+  if (bar > id) {
+    return Styles.rightBarFinished;
+  }
+  return Styles.rightBarUnfinished;
+};
+const returnLeftBar = (bar, id) => {
+  if (bar > id) {
+    return Styles.leftBarFinished;
+  }
+  return Styles.leftBarUnfinished;
+};
+const returnLabel = (label, id) => {
+  if (label === id) {
+    return Styles.currentLabel;
+  }
+  return Styles.label;
+};
 export const breadcrumb = props => (
-  <Grid container>
-    <Grid.Row>
-      <Stepper
-        completeColor="#63BA18"
-        activeColor="#ffdd43"
-        steps={[
-          { title: 'Request' },
-          { title: 'Details' },
-          { title: 'Location' },
-          { title: 'Review' },
-        ]}
-        activeStep={props.activeStep}
-      />
+  <Grid columns="equal" style={Styles.grid}>
+    <Grid.Row style={Styles.row}>
+      <Grid.Column style={Styles.column}>
+        <Segment style={Styles.segment}>
+          <div style={returnRightBar(props.selection, 0)} />
+          <Icon
+            style={returnIcon(props.selection, 0)}
+            circular
+            size="large"
+            color={returnColor(props.selection, 0)}
+            name={returnStatus(props.selection, 0)}
+          />
+        </Segment>
+        <Segment style={Styles.segment}>
+          <Label style={returnLabel(props.selection, 0)}>Request</Label>
+        </Segment>
+      </Grid.Column>
+      <Grid.Column style={Styles.column}>
+        <Segment style={Styles.segment}>
+          <Icon
+            circular
+            size="large"
+            style={returnIcon(props.selection, 1)}
+            color={returnColor(props.selection, 1)}
+            name={returnStatus(props.selection, 1)}
+          />
+          <div style={returnLeftBar(props.selection, 0)} />
+          <div style={returnRightBar(props.selection, 1)} />
+        </Segment>
+        <Segment style={Styles.segment}>
+          <Label style={returnLabel(props.selection, 1)}>Details</Label>
+        </Segment>
+      </Grid.Column>
+      <Grid.Column style={Styles.column}>
+        <Segment style={Styles.segment}>
+          <div style={returnRightBar(props.selection, 2)} />
+          <Icon
+            circular
+            size="large"
+            style={returnIcon(props.selection, 2)}
+            color={returnColor(props.selection, 2)}
+            name={returnStatus(props.selection, 2)}
+          />
+          <div style={returnLeftBar(props.selection, 1)} />
+        </Segment>
+        <Segment style={Styles.segment}>
+          <Label style={returnLabel(props.selection, 2)}>Location</Label>
+        </Segment>
+      </Grid.Column>
+      <Grid.Column style={Styles.column}>
+        <Segment style={Styles.segment}>
+          <Icon
+            circular
+            size="large"
+            style={returnIcon(props.selection, 3)}
+            color={returnColor(props.selection, 3)}
+            name={returnStatus(props.selection, 3)}
+          />
+          <div style={returnLeftBar(props.selection, 2)} />
+          <div style={returnRightBar(props.selection, 3)} />
+        </Segment>
+        <Segment style={Styles.segment}>
+          <Label style={returnLabel(props.selection, 3)}>Price</Label>
+        </Segment>
+      </Grid.Column>
+      <Grid.Column style={Styles.column}>
+        <Segment style={Styles.segment}>
+          <Icon
+            circular
+            size="large"
+            style={returnIcon(props.selection, 4)}
+            color={returnColor(props.selection, 4)}
+            name={returnStatus(props.selection, 4)}
+          />
+          <div style={returnLeftBar(props.selection, 3)} />
+        </Segment>
+        <Segment style={Styles.segment}>
+          <Label style={returnLabel(props.selection, 4)}>Review</Label>
+        </Segment>
+      </Grid.Column>
     </Grid.Row>
   </Grid>
 );
 
 breadcrumb.propTypes = {
-  activeStep: PropTypes.string.isRequired,
+  selection: PropTypes.number.isRequired,
 };
 
 export default breadcrumb;

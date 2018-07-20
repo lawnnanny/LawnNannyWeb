@@ -1,0 +1,120 @@
+4f2ab2da8ad0967edf5e636ee8f8165e
+/* istanbul ignore next */'use strict';
+
+var cov_11zxp3e58n = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonForms/informationForm.js',
+      hash = 'dd9136fe9575eb8cdd673d0da5b9027e44600497',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonForms/informationForm.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 1,
+          column: 24
+        },
+        end: {
+          line: 87,
+          column: 1
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      '0': 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var jsonForm = /* istanbul ignore next */exports.jsonForm = (cov_11zxp3e58n.s[0]++, {
+  'Lawn Mowing': {
+    description: 'Please Enter Details for the Lawn',
+    fields: [{
+      name: 'I would like my grass bagged?',
+      type: 'checkbox',
+      placeholder: 'Would you like to have the grass bagged?',
+      id: 'lawnGrassBagged'
+    }, {
+      name: 'Does the lawn have a sprinkler system installed?',
+      options: ['yes', 'no'],
+      type: 'radio',
+      id: 'lawnSprinkler',
+      validation: 'required'
+    }, {
+      name: 'Please provide a short description of the lawn.',
+      type: 'textArea',
+      placeholder: 'Enter comments here',
+      id: 'comments',
+      validation: 'required'
+    }]
+  },
+  'Leaf Raking': {
+    description: 'Please Enter Details for Raking',
+    fields: [{
+      name: 'How would you like your leaves?',
+      options: ['Bagged', 'Into Piles', 'Taken Away', 'Other'],
+      type: 'radio',
+      id: 'leavesCollection',
+      validation: 'required'
+    }, {
+      name: 'Please provide a short description of the job',
+      type: 'textArea',
+      placeholder: 'Enter comments here',
+      id: 'comments',
+      validation: 'required'
+    }]
+  },
+  'Snow Clearing': {
+    description: 'Please Enter Details for Snow Clearing',
+    fields: [{
+      name: 'Side Walk',
+      type: 'checkbox',
+      placeholder: 'Snowblow Your SideWalk?',
+      id: 'snowBlowSideWalk'
+    }, {
+      name: 'Driveway',
+      type: 'checkbox',
+      placeholder: 'Snwoblow Your Driveway?',
+      id: 'snowBlowDriveWay'
+    }, {
+      name: 'Porch/Deck',
+      type: 'checkbox',
+      placeholder: 'Snowblow Your Porch/Deck?',
+      id: 'snowBlowPorchDeck'
+    }, {
+      name: 'Please provide a short description of the job',
+      type: 'textArea',
+      placeholder: 'Enter comments here',
+      id: 'comments',
+      validation: 'required'
+    }]
+  },
+  'Custom Request': {
+    description: 'Please Enter Details',
+    fields: [{
+      name: 'Please provide a description of what task youd like completed?',
+      type: 'textArea',
+      placeholder: 'Enter comments here',
+      id: 'comments'
+    }]
+  }
+});
+/* istanbul ignore next */exports.default = jsonForm;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZm9ybWF0aW9uRm9ybS5qcyJdLCJuYW1lcyI6WyJqc29uRm9ybSIsImRlc2NyaXB0aW9uIiwiZmllbGRzIiwibmFtZSIsInR5cGUiLCJwbGFjZWhvbGRlciIsImlkIiwib3B0aW9ucyIsInZhbGlkYXRpb24iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU8sSUFBTUEsZ0ZBQVc7QUFDdEIsaUJBQWU7QUFDYkMsaUJBQWEsbUNBREE7QUFFYkMsWUFBUSxDQUNOO0FBQ0VDLFlBQU0sK0JBRFI7QUFFRUMsWUFBTSxVQUZSO0FBR0VDLG1CQUFhLDBDQUhmO0FBSUVDLFVBQUk7QUFKTixLQURNLEVBT047QUFDRUgsWUFBTSxrREFEUjtBQUVFSSxlQUFTLENBQUMsS0FBRCxFQUFRLElBQVIsQ0FGWDtBQUdFSCxZQUFNLE9BSFI7QUFJRUUsVUFBSSxlQUpOO0FBS0VFLGtCQUFZO0FBTGQsS0FQTSxFQWNOO0FBQ0VMLFlBQU0saURBRFI7QUFFRUMsWUFBTSxVQUZSO0FBR0VDLG1CQUFhLHFCQUhmO0FBSUVDLFVBQUksVUFKTjtBQUtFRSxrQkFBWTtBQUxkLEtBZE07QUFGSyxHQURPO0FBMEJ0QixpQkFBZTtBQUNiUCxpQkFBYSxpQ0FEQTtBQUViQyxZQUFRLENBQ047QUFDRUMsWUFBTSxpQ0FEUjtBQUVFSSxlQUFTLENBQUMsUUFBRCxFQUFXLFlBQVgsRUFBeUIsWUFBekIsRUFBdUMsT0FBdkMsQ0FGWDtBQUdFSCxZQUFNLE9BSFI7QUFJRUUsVUFBSSxrQkFKTjtBQUtFRSxrQkFBWTtBQUxkLEtBRE0sRUFRTjtBQUNFTCxZQUFNLCtDQURSO0FBRUVDLFlBQU0sVUFGUjtBQUdFQyxtQkFBYSxxQkFIZjtBQUlFQyxVQUFJLFVBSk47QUFLRUUsa0JBQVk7QUFMZCxLQVJNO0FBRkssR0ExQk87QUE2Q3RCLG1CQUFpQjtBQUNmUCxpQkFBYSx3Q0FERTtBQUVmQyxZQUFRLENBQ047QUFDRUMsWUFBTSxXQURSO0FBRUVDLFlBQU0sVUFGUjtBQUdFQyxtQkFBYSx5QkFIZjtBQUlFQyxVQUFJO0FBSk4sS0FETSxFQU9OO0FBQ0VILFlBQU0sVUFEUjtBQUVFQyxZQUFNLFVBRlI7QUFHRUMsbUJBQWEseUJBSGY7QUFJRUMsVUFBSTtBQUpOLEtBUE0sRUFhTjtBQUNFSCxZQUFNLFlBRFI7QUFFRUMsWUFBTSxVQUZSO0FBR0VDLG1CQUFhLDJCQUhmO0FBSUVDLFVBQUk7QUFKTixLQWJNLEVBbUJOO0FBQ0VILFlBQU0sK0NBRFI7QUFFRUMsWUFBTSxVQUZSO0FBR0VDLG1CQUFhLHFCQUhmO0FBSUVDLFVBQUksVUFKTjtBQUtFRSxrQkFBWTtBQUxkLEtBbkJNO0FBRk8sR0E3Q0s7QUEyRXRCLG9CQUFrQjtBQUNoQlAsaUJBQWEsc0JBREc7QUFFaEJDLFlBQVEsQ0FDTjtBQUNFQyxZQUFNLGdFQURSO0FBRUVDLFlBQU0sVUFGUjtBQUdFQyxtQkFBYSxxQkFIZjtBQUlFQyxVQUFJO0FBSk4sS0FETTtBQUZRO0FBM0VJLENBQVgsQ0FBTjs0Q0F1RlFOLFEiLCJmaWxlIjoiaW5mb3JtYXRpb25Gb3JtLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGpzb25Gb3JtID0ge1xuICAnTGF3biBNb3dpbmcnOiB7XG4gICAgZGVzY3JpcHRpb246ICdQbGVhc2UgRW50ZXIgRGV0YWlscyBmb3IgdGhlIExhd24nLFxuICAgIGZpZWxkczogW1xuICAgICAge1xuICAgICAgICBuYW1lOiAnSSB3b3VsZCBsaWtlIG15IGdyYXNzIGJhZ2dlZD8nLFxuICAgICAgICB0eXBlOiAnY2hlY2tib3gnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ1dvdWxkIHlvdSBsaWtlIHRvIGhhdmUgdGhlIGdyYXNzIGJhZ2dlZD8nLFxuICAgICAgICBpZDogJ2xhd25HcmFzc0JhZ2dlZCcsXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBuYW1lOiAnRG9lcyB0aGUgbGF3biBoYXZlIGEgc3ByaW5rbGVyIHN5c3RlbSBpbnN0YWxsZWQ/JyxcbiAgICAgICAgb3B0aW9uczogWyd5ZXMnLCAnbm8nXSxcbiAgICAgICAgdHlwZTogJ3JhZGlvJyxcbiAgICAgICAgaWQ6ICdsYXduU3ByaW5rbGVyJyxcbiAgICAgICAgdmFsaWRhdGlvbjogJ3JlcXVpcmVkJyxcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdQbGVhc2UgcHJvdmlkZSBhIHNob3J0IGRlc2NyaXB0aW9uIG9mIHRoZSBsYXduLicsXG4gICAgICAgIHR5cGU6ICd0ZXh0QXJlYScsXG4gICAgICAgIHBsYWNlaG9sZGVyOiAnRW50ZXIgY29tbWVudHMgaGVyZScsXG4gICAgICAgIGlkOiAnY29tbWVudHMnLFxuICAgICAgICB2YWxpZGF0aW9uOiAncmVxdWlyZWQnLFxuICAgICAgfSxcbiAgICBdLFxuICB9LFxuICAnTGVhZiBSYWtpbmcnOiB7XG4gICAgZGVzY3JpcHRpb246ICdQbGVhc2UgRW50ZXIgRGV0YWlscyBmb3IgUmFraW5nJyxcbiAgICBmaWVsZHM6IFtcbiAgICAgIHtcbiAgICAgICAgbmFtZTogJ0hvdyB3b3VsZCB5b3UgbGlrZSB5b3VyIGxlYXZlcz8nLFxuICAgICAgICBvcHRpb25zOiBbJ0JhZ2dlZCcsICdJbnRvIFBpbGVzJywgJ1Rha2VuIEF3YXknLCAnT3RoZXInXSxcbiAgICAgICAgdHlwZTogJ3JhZGlvJyxcbiAgICAgICAgaWQ6ICdsZWF2ZXNDb2xsZWN0aW9uJyxcbiAgICAgICAgdmFsaWRhdGlvbjogJ3JlcXVpcmVkJyxcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdQbGVhc2UgcHJvdmlkZSBhIHNob3J0IGRlc2NyaXB0aW9uIG9mIHRoZSBqb2InLFxuICAgICAgICB0eXBlOiAndGV4dEFyZWEnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ0VudGVyIGNvbW1lbnRzIGhlcmUnLFxuICAgICAgICBpZDogJ2NvbW1lbnRzJyxcbiAgICAgICAgdmFsaWRhdGlvbjogJ3JlcXVpcmVkJyxcbiAgICAgIH0sXG4gICAgXSxcbiAgfSxcbiAgJ1Nub3cgQ2xlYXJpbmcnOiB7XG4gICAgZGVzY3JpcHRpb246ICdQbGVhc2UgRW50ZXIgRGV0YWlscyBmb3IgU25vdyBDbGVhcmluZycsXG4gICAgZmllbGRzOiBbXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdTaWRlIFdhbGsnLFxuICAgICAgICB0eXBlOiAnY2hlY2tib3gnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ1Nub3dibG93IFlvdXIgU2lkZVdhbGs/JyxcbiAgICAgICAgaWQ6ICdzbm93Qmxvd1NpZGVXYWxrJyxcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdEcml2ZXdheScsXG4gICAgICAgIHR5cGU6ICdjaGVja2JveCcsXG4gICAgICAgIHBsYWNlaG9sZGVyOiAnU253b2Jsb3cgWW91ciBEcml2ZXdheT8nLFxuICAgICAgICBpZDogJ3Nub3dCbG93RHJpdmVXYXknLFxuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgbmFtZTogJ1BvcmNoL0RlY2snLFxuICAgICAgICB0eXBlOiAnY2hlY2tib3gnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ1Nub3dibG93IFlvdXIgUG9yY2gvRGVjaz8nLFxuICAgICAgICBpZDogJ3Nub3dCbG93UG9yY2hEZWNrJyxcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdQbGVhc2UgcHJvdmlkZSBhIHNob3J0IGRlc2NyaXB0aW9uIG9mIHRoZSBqb2InLFxuICAgICAgICB0eXBlOiAndGV4dEFyZWEnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ0VudGVyIGNvbW1lbnRzIGhlcmUnLFxuICAgICAgICBpZDogJ2NvbW1lbnRzJyxcbiAgICAgICAgdmFsaWRhdGlvbjogJ3JlcXVpcmVkJyxcbiAgICAgIH0sXG4gICAgXSxcbiAgfSxcbiAgJ0N1c3RvbSBSZXF1ZXN0Jzoge1xuICAgIGRlc2NyaXB0aW9uOiAnUGxlYXNlIEVudGVyIERldGFpbHMnLFxuICAgIGZpZWxkczogW1xuICAgICAge1xuICAgICAgICBuYW1lOiAnUGxlYXNlIHByb3ZpZGUgYSBkZXNjcmlwdGlvbiBvZiB3aGF0IHRhc2sgeW91ZCBsaWtlIGNvbXBsZXRlZD8nLFxuICAgICAgICB0eXBlOiAndGV4dEFyZWEnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJ0VudGVyIGNvbW1lbnRzIGhlcmUnLFxuICAgICAgICBpZDogJ2NvbW1lbnRzJyxcbiAgICAgIH0sXG4gICAgXSxcbiAgfSxcbn07XG5leHBvcnQgZGVmYXVsdCBqc29uRm9ybTtcbiJdfQ==

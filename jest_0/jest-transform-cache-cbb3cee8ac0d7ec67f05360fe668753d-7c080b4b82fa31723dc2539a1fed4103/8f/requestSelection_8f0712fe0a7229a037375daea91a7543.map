@@ -1,0 +1,1 @@
+{"version":3,"sources":["requestSelection.js"],"names":["segment","width","border","boxShadow"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;kBAAe;AACbA,WAAS;AACPC,WAAO,MADA;AAEPC,YAAQ,MAFD;AAGPC,eAAW;AAHJ;AADI,C","file":"requestSelection.js","sourcesContent":["export default {\n  segment: {\n    width: '100%',\n    border: 'none',\n    boxShadow: 'none',\n  },\n};\n"]}

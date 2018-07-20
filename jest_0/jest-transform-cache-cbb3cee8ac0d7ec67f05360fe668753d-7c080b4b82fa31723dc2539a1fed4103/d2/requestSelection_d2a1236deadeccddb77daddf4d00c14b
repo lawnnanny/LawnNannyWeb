@@ -1,0 +1,15 @@
+fa387d0d6c57bd503ad2f4d22e88d082
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  segment: {
+    width: '100%',
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0'
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVlc3RTZWxlY3Rpb24uanMiXSwibmFtZXMiOlsic2VnbWVudCIsIndpZHRoIiwiYm9yZGVyIiwiYm94U2hhZG93IiwicGFkZGluZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7a0JBQWU7QUFDYkEsV0FBUztBQUNQQyxXQUFPLE1BREE7QUFFUEMsWUFBUSxNQUZEO0FBR1BDLGVBQVcsTUFISjtBQUlQQyxhQUFTO0FBSkY7QUFESSxDIiwiZmlsZSI6InJlcXVlc3RTZWxlY3Rpb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gIHNlZ21lbnQ6IHtcbiAgICB3aWR0aDogJzEwMCUnLFxuICAgIGJvcmRlcjogJ25vbmUnLFxuICAgIGJveFNoYWRvdzogJ25vbmUnLFxuICAgIHBhZGRpbmc6ICcwJyxcbiAgfSxcbn07XG4iXX0=

@@ -1,0 +1,130 @@
+f29ffde0520d14799d995dce6e63c3b6
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Routes = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = require('react-router-dom');
+
+var _redux = require('redux');
+
+var _reactRedux = require('react-redux');
+
+var _reduxThunk = require('redux-thunk');
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var _Error = require('../components/errors/Error404');
+
+var _ConnectedHomePage = require('../connectedComponents/ConnectedHomePage');
+
+var _ConnectedHomePage2 = _interopRequireDefault(_ConnectedHomePage);
+
+var _ConnectedRequestSelection = require('../connectedComponents/ConnectedRequestSelection');
+
+var _ConnectedRequestSelection2 = _interopRequireDefault(_ConnectedRequestSelection);
+
+var _ConnectedRequestInformation = require('../connectedComponents/ConnectedRequestInformation');
+
+var _ConnectedRequestInformation2 = _interopRequireDefault(_ConnectedRequestInformation);
+
+var _ConnectedRequestLocation = require('../connectedComponents/ConnectedRequestLocation');
+
+var _ConnectedRequestLocation2 = _interopRequireDefault(_ConnectedRequestLocation);
+
+var _ConnectedRequestReview = require('../connectedComponents/ConnectedRequestReview');
+
+var _ConnectedRequestReview2 = _interopRequireDefault(_ConnectedRequestReview);
+
+var _App = require('../components/App');
+
+var _reducers = require('../reducers/reducers');
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Routes = exports.Routes = function (_Component) {
+  _inherits(Routes, _Component);
+
+  function Routes() {
+    _classCallCheck(this, Routes);
+
+    var _this = _possibleConstructorReturn(this, (Routes.__proto__ || Object.getPrototypeOf(Routes)).call(this));
+
+    var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+
+    _this.state = {
+      store: store
+    };
+
+    store.subscribe(function () {
+      console.log('store.getState()', store.getState());
+    });
+    return _this;
+  }
+
+  _createClass(Routes, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _reactRedux.Provider,
+        { store: this.state.store },
+        _react2.default.createElement(
+          _reactRouterDom.BrowserRouter,
+          { className: 'router' },
+          _react2.default.createElement(
+            _reactRouterDom.Switch,
+            null,
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/test', component: _App.App }),
+            _react2.default.createElement(_reactRouterDom.Route, {
+              exact: true,
+              path: '/pipeline',
+              component: _ConnectedRequestSelection2.default
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, {
+              exact: true,
+              path: '/HomePage',
+              component: _ConnectedHomePage2.default
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, {
+              exact: true,
+              path: '/pipeline/requestInformation',
+              component: _ConnectedRequestInformation2.default
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, {
+              exact: true,
+              path: '/pipeline/requestLocation',
+              component: _ConnectedRequestLocation2.default
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, {
+              exact: true,
+              path: '/pipeline/review',
+              component: _ConnectedRequestReview2.default
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/*', component: _Error.Error404 })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Routes;
+}(_react.Component);
+
+exports.default = Routes;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy5qcyJdLCJuYW1lcyI6WyJSb3V0ZXMiLCJzdG9yZSIsInJlZHVjZXJzIiwidGh1bmsiLCJzdGF0ZSIsInN1YnNjcmliZSIsImNvbnNvbGUiLCJsb2ciLCJnZXRTdGF0ZSIsIkFwcCIsIkNvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb24iLCJDb25uZWN0ZWRIb21lUGFnZUNvbXBvbmVudCIsIkNvbm5lY3RlZFJlcXVlc3RJbmZvcm1hdGlvbkNvbXBvbmVudCIsIkNvbm5lY3RlZFJlcXVlc3RMb2NhdGlvbkNvbXBvbmVudCIsIkNvbm5lY3RlZFJlcXVlc3RSZXZpZXdDb21wb25lbnQiLCJFcnJvcjQwNCIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUE7Ozs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7OztBQUVBOztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7Ozs7Ozs7O0lBRWFBLE0sV0FBQUEsTTs7O0FBQ1gsb0JBQWM7QUFBQTs7QUFBQTs7QUFHWixRQUFNQyxRQUFRLHdCQUFZQyxrQkFBWixFQUFzQiw0QkFBZ0JDLG9CQUFoQixDQUF0QixDQUFkOztBQUVBLFVBQUtDLEtBQUwsR0FBYTtBQUNYSDtBQURXLEtBQWI7O0FBSUFBLFVBQU1JLFNBQU4sQ0FBZ0IsWUFBTTtBQUNwQkMsY0FBUUMsR0FBUixDQUFZLGtCQUFaLEVBQWdDTixNQUFNTyxRQUFOLEVBQWhDO0FBQ0QsS0FGRDtBQVRZO0FBWWI7Ozs7NkJBQ1E7QUFDUCxhQUNFO0FBQUMsNEJBQUQ7QUFBQSxVQUFVLE9BQU8sS0FBS0osS0FBTCxDQUFXSCxLQUE1QjtBQUNFO0FBQUMsdUNBQUQ7QUFBQSxZQUFlLFdBQVUsUUFBekI7QUFDRTtBQUFDLGtDQUFEO0FBQUE7QUFDRSwwQ0FBQyxxQkFBRCxJQUFPLFdBQVAsRUFBYSxNQUFLLE9BQWxCLEVBQTBCLFdBQVdRLFFBQXJDLEdBREY7QUFFRSwwQ0FBQyxxQkFBRDtBQUNFLHlCQURGO0FBRUUsb0JBQUssV0FGUDtBQUdFLHlCQUFXQztBQUhiLGNBRkY7QUFPRSwwQ0FBQyxxQkFBRDtBQUNFLHlCQURGO0FBRUUsb0JBQUssV0FGUDtBQUdFLHlCQUFXQztBQUhiLGNBUEY7QUFZRSwwQ0FBQyxxQkFBRDtBQUNFLHlCQURGO0FBRUUsb0JBQUssOEJBRlA7QUFHRSx5QkFBV0M7QUFIYixjQVpGO0FBaUJFLDBDQUFDLHFCQUFEO0FBQ0UseUJBREY7QUFFRSxvQkFBSywyQkFGUDtBQUdFLHlCQUFXQztBQUhiLGNBakJGO0FBc0JFLDBDQUFDLHFCQUFEO0FBQ0UseUJBREY7QUFFRSxvQkFBSyxrQkFGUDtBQUdFLHlCQUFXQztBQUhiLGNBdEJGO0FBMkJFLDBDQUFDLHFCQUFELElBQU8sTUFBSyxJQUFaLEVBQWlCLFdBQVdDLGVBQTVCO0FBM0JGO0FBREY7QUFERixPQURGO0FBbUNEOzs7O0VBbER5QkMsZ0I7O2tCQXFEYmhCLE0iLCJmaWxlIjoicm91dGVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IEJyb3dzZXJSb3V0ZXIsIFN3aXRjaCwgUm91dGUgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJztcbmltcG9ydCB7IGNyZWF0ZVN0b3JlLCBhcHBseU1pZGRsZXdhcmUgfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQgeyBQcm92aWRlciB9IGZyb20gJ3JlYWN0LXJlZHV4JztcbmltcG9ydCB0aHVuayBmcm9tICdyZWR1eC10aHVuayc7XG5cbmltcG9ydCB7IEVycm9yNDA0IH0gZnJvbSAnLi4vY29tcG9uZW50cy9lcnJvcnMvRXJyb3I0MDQnO1xuaW1wb3J0IENvbm5lY3RlZEhvbWVQYWdlQ29tcG9uZW50IGZyb20gJy4uL2Nvbm5lY3RlZENvbXBvbmVudHMvQ29ubmVjdGVkSG9tZVBhZ2UnO1xuaW1wb3J0IENvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb24gZnJvbSAnLi4vY29ubmVjdGVkQ29tcG9uZW50cy9Db25uZWN0ZWRSZXF1ZXN0U2VsZWN0aW9uJztcbmltcG9ydCBDb25uZWN0ZWRSZXF1ZXN0SW5mb3JtYXRpb25Db21wb25lbnQgZnJvbSAnLi4vY29ubmVjdGVkQ29tcG9uZW50cy9Db25uZWN0ZWRSZXF1ZXN0SW5mb3JtYXRpb24nO1xuaW1wb3J0IENvbm5lY3RlZFJlcXVlc3RMb2NhdGlvbkNvbXBvbmVudCBmcm9tICcuLi9jb25uZWN0ZWRDb21wb25lbnRzL0Nvbm5lY3RlZFJlcXVlc3RMb2NhdGlvbic7XG5pbXBvcnQgQ29ubmVjdGVkUmVxdWVzdFJldmlld0NvbXBvbmVudCBmcm9tICcuLi9jb25uZWN0ZWRDb21wb25lbnRzL0Nvbm5lY3RlZFJlcXVlc3RSZXZpZXcnO1xuaW1wb3J0IHsgQXBwIH0gZnJvbSAnLi4vY29tcG9uZW50cy9BcHAnO1xuaW1wb3J0IHJlZHVjZXJzIGZyb20gJy4uL3JlZHVjZXJzL3JlZHVjZXJzJztcblxuZXhwb3J0IGNsYXNzIFJvdXRlcyBleHRlbmRzIENvbXBvbmVudCB7XG4gIGNvbnN0cnVjdG9yKCkge1xuICAgIHN1cGVyKCk7XG5cbiAgICBjb25zdCBzdG9yZSA9IGNyZWF0ZVN0b3JlKHJlZHVjZXJzLCBhcHBseU1pZGRsZXdhcmUodGh1bmspKTtcblxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICBzdG9yZSxcbiAgICB9O1xuXG4gICAgc3RvcmUuc3Vic2NyaWJlKCgpID0+IHtcbiAgICAgIGNvbnNvbGUubG9nKCdzdG9yZS5nZXRTdGF0ZSgpJywgc3RvcmUuZ2V0U3RhdGUoKSk7XG4gICAgfSk7XG4gIH1cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8UHJvdmlkZXIgc3RvcmU9e3RoaXMuc3RhdGUuc3RvcmV9PlxuICAgICAgICA8QnJvd3NlclJvdXRlciBjbGFzc05hbWU9XCJyb3V0ZXJcIj5cbiAgICAgICAgICA8U3dpdGNoPlxuICAgICAgICAgICAgPFJvdXRlIGV4YWN0IHBhdGg9XCIvdGVzdFwiIGNvbXBvbmVudD17QXBwfSAvPlxuICAgICAgICAgICAgPFJvdXRlXG4gICAgICAgICAgICAgIGV4YWN0XG4gICAgICAgICAgICAgIHBhdGg9XCIvcGlwZWxpbmVcIlxuICAgICAgICAgICAgICBjb21wb25lbnQ9e0Nvbm5lY3RlZFJlcXVlc3RTZWxlY3Rpb259XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICAgPFJvdXRlXG4gICAgICAgICAgICAgIGV4YWN0XG4gICAgICAgICAgICAgIHBhdGg9XCIvSG9tZVBhZ2VcIlxuICAgICAgICAgICAgICBjb21wb25lbnQ9e0Nvbm5lY3RlZEhvbWVQYWdlQ29tcG9uZW50fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxSb3V0ZVxuICAgICAgICAgICAgICBleGFjdFxuICAgICAgICAgICAgICBwYXRoPVwiL3BpcGVsaW5lL3JlcXVlc3RJbmZvcm1hdGlvblwiXG4gICAgICAgICAgICAgIGNvbXBvbmVudD17Q29ubmVjdGVkUmVxdWVzdEluZm9ybWF0aW9uQ29tcG9uZW50fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxSb3V0ZVxuICAgICAgICAgICAgICBleGFjdFxuICAgICAgICAgICAgICBwYXRoPVwiL3BpcGVsaW5lL3JlcXVlc3RMb2NhdGlvblwiXG4gICAgICAgICAgICAgIGNvbXBvbmVudD17Q29ubmVjdGVkUmVxdWVzdExvY2F0aW9uQ29tcG9uZW50fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxSb3V0ZVxuICAgICAgICAgICAgICBleGFjdFxuICAgICAgICAgICAgICBwYXRoPVwiL3BpcGVsaW5lL3Jldmlld1wiXG4gICAgICAgICAgICAgIGNvbXBvbmVudD17Q29ubmVjdGVkUmVxdWVzdFJldmlld0NvbXBvbmVudH1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8Um91dGUgcGF0aD1cIi8qXCIgY29tcG9uZW50PXtFcnJvcjQwNH0gLz5cbiAgICAgICAgICA8L1N3aXRjaD5cbiAgICAgICAgPC9Ccm93c2VyUm91dGVyPlxuICAgICAgPC9Qcm92aWRlcj5cbiAgICApO1xuICB9XG59XG5cbmV4cG9ydCBkZWZhdWx0IFJvdXRlcztcbiJdfQ==

@@ -13,22 +13,21 @@ export const requestSelection = ({ setTypeOfRequest }) => (
   <Grid container>
     <Grid.Row>
       <Segment style={Styles.segment}>
-        <BreadcrumbComponent activeStep={0} />
+        <BreadcrumbComponent selection={0} />
       </Segment>
     </Grid.Row>
     <Grid.Row>
       <Segment style={Styles.segment}>
         <Header as="h2">
           Choose Your Service
-          <Header.Subheader>
-            Choose a Service for someone to perform
-          </Header.Subheader>
+          <Header.Subheader>Choose a Service for someone to perform</Header.Subheader>
         </Header>
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
@@ -38,8 +37,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
           onClick={() => setTypeOfRequest('Leaf Raking')}
@@ -47,8 +47,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
           onClick={() => setTypeOfRequest('Snow Clearing')}
@@ -56,8 +57,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
       </Segment>
     </Grid.Row>
     <Grid.Row>
-      <Segment style={Styles.segment}>
+      <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"
           onClick={() => setTypeOfRequest('Custom Request')}
@@ -69,6 +71,9 @@ export const requestSelection = ({ setTypeOfRequest }) => (
 
 requestSelection.propTypes = {
   setTypeOfRequest: PropTypes.func.isRequired,
+};
+requestSelection.defaultProps = {
+  imageURL: PropTypes.object,
 };
 
 export default requestSelection;

@@ -1,76 +1,334 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 import {
-    Menu
-    , Modal
-    , Grid
-    , Input
-    , Button
-    , Form
-    , Segment
-    , Header
-    , Image
-} from "semantic-ui-react";
-import { shallow } from "enzyme";
-import DynamicFormComponent from "../../../src/components/helpers/DynamicForm";
+  Button,
+  Form,
+  Segment,
+  Header,
+  Radio,
+  Checkbox,
+  TextArea,
+  Dropdown,
+  Input,
+} from 'semantic-ui-react';
+import { shallow } from 'enzyme';
+import { Chance } from 'chance';
+import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
+import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
-describe("DynamicForm", () => {
-    let wrapper;
-    const renderComponent = () => shallow(<DynamicFormComponent requestType="Lawn Mowing" />);
+const chance = new Chance();
+
+const numberOfFields = (Math.abs(chance.integer()) % 20) + 2;
+
+const randomType = (useRowCombination) => {
+  switch (chance.integer() % 5) {
+    case 0:
+      return 'textArea';
+    case 1:
+      return 'radio';
+    case 2:
+      return 'checkbox';
+    case 3:
+      if (useRowCombination) {
+        return 'rowCombination';
+      }
+      return 'input';
+    case 4:
+      return 'input';
+    default:
+      return 'textArea';
+  }
+};
+
+const failTest = (wrapper, field, count) => {
+  if (chance.integer() % 2 && field.validation) {
+    const state = { errors: {} };
+    state.errors[field.id] = 'Nothing is Selected';
+    wrapper.setState(state);
+    wrapper.update();
+    expect(
+      wrapper
+        .childAt(1)
+        .childAt(0)
+        .childAt(count)
+        .find(InlineErrorComponent)
+        .props().text,
+    ).toEqual('Nothing is Selected');
+  }
+};
+
+const createRandomOptions = () => {
+  const options = [];
+  const numberOfOptions = (Math.abs(chance.integer()) % 11) + 2;
+  for (let counter = 0; counter < numberOfOptions; counter += 1) {
+    options[counter] = chance.word();
+  }
+  return options;
+};
+
+const generateTestFormJson = () => {
+  const name = chance.word();
+  const jsonForm = {};
+  const fields = [];
+  for (let counter = 0; counter < numberOfFields; counter += 1) {
+    const type = randomType(true);
+
+    let field = {};
+    if (type === 'rowCombination') {
+      const numberOfSubFields = (chance.integer() % 11) + 2;
+      const subFields = [];
+      for (let counting = 0; counting < numberOfSubFields; counting += 1) {
+        const subFieldType = randomType(false);
+        const subField = {
+          name: chance.word(),
+          type: subFieldType,
+          id: chance.word(),
+        };
+
+        if (chance.integer() % 2 === 0) {
+          subField.validation = 'required';
+        }
+
+        if (type === 'radio') {
+          subField.options = createRandomOptions();
+        }
+
+        if (subFieldType === 'textArea' || type === 'input') {
+          subField.placeholder = chance.word();
+        }
+        subFields[counting] = subField;
+      }
+
+      field = {
+        name: chance.word(),
+        type: 'rowCombination',
+        fields: subFields,
+      };
+    } else {
+      field = {
+        name: chance.word(),
+        type,
+        id: chance.word(),
+      };
+
+      if (chance.integer() % 2 === 0) {
+        field.validation = 'required';
+      }
+      if (type === 'radio') {
+        field.options = createRandomOptions();
+      }
+      if (type === 'textArea' || type === 'input') {
+        field.placeholder = chance.word();
+      }
+    }
+
+    fields[counter] = field;
+  }
+  jsonForm[name] = {};
+  jsonForm[name].description = chance.word();
+  jsonForm[name].fields = fields;
+  return jsonForm;
+};
+
+describe('DynamicForm', () => {
+  let wrapper;
+  const setRequest = jest.fn();
+  const testJson = generateTestFormJson();
+  const route = jest.fn();
+  const renderComponent = () =>
+    shallow(
+      <DynamicFormComponent
+        jsonForm={() => testJson}
+        setRequest={setRequest}
+        form={Object.keys(testJson)[0]}
+        route={() => {
+          route();
+        }}
+      />,
+    );
+
+  beforeEach(() => {
+    wrapper = renderComponent();
+  });
+
+  it('is wrapped in a Segment', () => {
+    expect(wrapper.type()).toEqual(Segment);
+  });
+
+  it('is styled as a padded Segment', () => {
+    expect(wrapper.props().padded).toBeTruthy();
+  });
+
+  describe('header', () => {
+    let header;
 
     beforeEach(() => {
-        wrapper = renderComponent();
+      header = wrapper.childAt(0);
     });
 
-    it("is wrapped in a Segment", () => {
-        expect(wrapper.type()).toEqual(Segment);
+    it('is a header', () => {
+      expect(header.type()).toEqual(Header);
     });
 
-    it("is styled as a padded Segment", () => {
-        expect(wrapper.props().padded).toBeTruthy();
+    it('is has an as equal to h3', () => {
+      expect(header.props().as).toEqual('h3');
     });
 
-    describe("header", () => {
-        let header;
+    it('is the correct text in the header', () => {
+      expect(header.childAt(0).debug()).toEqual(testJson[Object.keys(testJson)[0]].description);
+    });
+  });
+  describe('form segment', () => {
+    let formSegment;
+
+    beforeEach(() => {
+      formSegment = wrapper.childAt(1);
+    });
+
+    it('is a segment', () => {
+      expect(formSegment.type()).toEqual(Segment);
+    });
+
+    describe('form', () => {
+      let formComponent;
+      beforeEach(() => {
+        formComponent = formSegment.childAt(0);
+      });
+      it('is a form', () => {
+        expect(formComponent.type()).toEqual(Form);
+      });
+
+      describe('form data', () => {
+        let count = -1;
+        beforeEach(() => {
+          count += 1;
+          wrapper = renderComponent();
+          formSegment = wrapper.childAt(1);
+          formComponent = formSegment.childAt(0);
+        });
+        testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
+          it(`field ${count} is correct`, () => {
+            if (field.type !== 'rowCombination') {
+              const pre = formComponent.childAt(count);
+              const label = pre.childAt(0);
+              if (field.validation) {
+                expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
+              } else {
+                expect(label.childAt(0).text()).toEqual(field.name);
+              }
+            }
+            expect(
+              wrapper
+                .childAt(1)
+                .childAt(0)
+                .childAt(count)
+                .childAt(1)
+                .props().name === field.name,
+            );
+            if (field.type === 'checkbox') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Checkbox);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'radio') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Form.Group);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'textArea') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(TextArea);
+              failTest(wrapper, field, count);
+            }
+            if (field.type === 'dropDown') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Dropdown);
+              failTest(wrapper, field, count);
+            }
+
+            if (field.type === 'rowCombination') {
+              let subFieldCounter = 0;
+              field.fields.forEach((input) => {
+                const rowInput = wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(subFieldCounter)
+                  .childAt(1);
+
+                switch (input.type) {
+                  case 'input':
+                    expect(rowInput.type()).toEqual(Form.Input);
+                    break;
+                  case 'dropDown':
+                    expect(rowInput.type()).toEqual(Dropdown);
+                    break;
+                  case 'textArea':
+                    expect(rowInput.type()).toEqual(TextArea);
+                    break;
+                  case 'checkbox':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  case 'radio':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  default:
+                }
+                failTest(wrapper, field, count);
+                subFieldCounter += 1;
+              });
+            }
+
+            if (field.type === 'input') {
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .type(),
+              ).toEqual(Form.Input);
+
+              failTest(wrapper, field, count);
+            }
+          });
+        });
+      });
+
+      describe('Form Button', () => {
+        let formButton;
 
         beforeEach(() => {
-            header = wrapper.childAt(0);
+          formButton = formComponent.childAt(numberOfFields);
         });
 
-        it("is a header", () => {
-            expect(header.type()).toEqual(Header);
+        it('It is a button', () => {
+          expect(formButton.type()).toEqual(Form.Button);
         });
-        it("is has a size", () => {
-            expect(header.props().size).toEqual("large");
-        });
+      });
     });
-
-    describe("form", () => {
-        let form;
-
-        beforeEach(() => {
-            form = wrapper.childAt(1);
-        });
-
-        it("is a form", () => {
-            expect(form.type()).toEqual(Form);
-        });
-    });
-
-    describe("Submit Button", () => {
-        let submitSegment;
-
-        beforeEach(() => {
-            submitSegment = wrapper.childAt(1).childAt(1);
-        });
-
-        it("It is a segment", () => {
-            expect(submitSegment.type()).toEqual(Segment);
-        });
-
-        it("There is a button in the segment", () => {
-            const button = submitSegment.childAt(0);
-            expect(button.type()).toEqual(Button);
-        });
-    })
+  });
 });
