@@ -17,7 +17,7 @@ import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
-const numberOfFields = (Math.abs(chance.integer()) % 4) + 1;
+const numberOfFields = (Math.abs(chance.integer()) % 20) + 100;
 
 const randomType = (useRowCombination) => {
   switch (chance.integer() % 5) {
@@ -33,9 +33,6 @@ const randomType = (useRowCombination) => {
       }
       return 'input';
     case 4:
-      if (useRowCombination) {
-        return 'rowCombination';
-      }
       return 'input';
     default:
       return 'textArea';
@@ -61,7 +58,7 @@ const failTest = (wrapper, field, count) => {
 
 const createRandomOptions = () => {
   const options = [];
-  const numberOfOptions = (chance.integer() % 11) + 2;
+  const numberOfOptions = (Math.abs(chance.integer()) % 11) + 2;
   for (let counter = 0; counter < numberOfOptions; counter += 1) {
     options[counter] = chance.word();
   }
@@ -211,7 +208,8 @@ describe('DynamicForm', () => {
         testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
           it(`field ${count} is correct`, () => {
             if (field.type !== 'rowCombination') {
-              const label = formComponent.childAt(count).childAt(0);
+              const pre = formComponent.childAt(count);
+              const label = pre.childAt(0);
               if (field.validation) {
                 expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
               } else {
@@ -283,7 +281,7 @@ describe('DynamicForm', () => {
 
                 switch (input.type) {
                   case 'input':
-                    expect(rowInput.type()).toEqual(Input);
+                    expect(rowInput.type()).toEqual(Form.Input);
                     break;
                   case 'dropDown':
                     expect(rowInput.type()).toEqual(Dropdown);

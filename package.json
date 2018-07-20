@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage --collectCoverageFrom=src/**/*.js",
+    "test": "jest --coverage --collectCoverageFrom=src/**/*.js --runInBand",
     "eject": "react-scripts eject",
     "lint": "eslint src"
   },
