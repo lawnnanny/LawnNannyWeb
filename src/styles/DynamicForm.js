@@ -1,3 +1,6 @@
+const green = '#20ad1d';
+const white = '#FFFFFF';
+
 export default {
   Dynamicsegment: {
     border: 'none',
@@ -8,6 +11,8 @@ export default {
   },
   button: {
     borderRadius: '25px',
+    backgroundColor: green,
+    color: white,
   },
   InLineErrorInput: {
     marginTop: '-1.4em',

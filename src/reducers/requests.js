@@ -4,9 +4,10 @@ const getInitialState = () => ({
   selection: '',
 });
 
-const setState = (previousState, property, newValue) => Object.assign({}, previousState, {
-  [property]: newValue,
-});
+const setState = (previousState, property, newValue) =>
+  Object.assign({}, previousState, {
+    [property]: newValue,
+  });
 
 export default (state = getInitialState(), action) => {
   switch (action.type) {

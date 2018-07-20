@@ -11,8 +11,8 @@ export const requestLocation = (state) => {
     return <Redirect to="/pipeline" />;
   }
   return (
-    <Grid container style={Styles.Grid}>
-      <Grid.Row>
+    <Grid container style={Styles.grid}>
+      <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
           <BreadcrumbComponent selection={2} />
         </Segment>

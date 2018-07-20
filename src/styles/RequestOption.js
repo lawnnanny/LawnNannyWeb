@@ -1,4 +1,4 @@
-const green = '#63BA18';
+const green = '#20ad1d';
 
 export default {
   image: {
