@@ -9,6 +9,7 @@ import {
   TextArea,
   Dropdown,
   Input,
+  Popup,
 } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import { Chance } from 'chance';
@@ -169,12 +170,23 @@ describe('DynamicForm', () => {
       expect(header.type()).toEqual(Header);
     });
 
-    it('is has an as equal to h3', () => {
-      expect(header.props().as).toEqual('h3');
+    it('is has an as equal to h1', () => {
+      expect(header.props().as).toEqual('h1');
     });
 
     it('is the correct text in the header', () => {
       expect(header.childAt(0).debug()).toEqual(testJson[Object.keys(testJson)[0]].description);
+    });
+    describe('popup', () => {
+      let popup;
+
+      beforeEach(() => {
+        popup = header.childAt(1);
+      });
+
+      it('is a popup', () => {
+        expect(popup.type()).toEqual(Popup);
+      });
     });
   });
   describe('form segment', () => {

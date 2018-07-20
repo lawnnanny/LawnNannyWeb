@@ -6,8 +6,8 @@ import Styles from '../../styles/breadcrumb';
 const returnStatus = (selection, id) => {
   if (selection > id) {
     return 'check';
-  } else if (selection === id) {
-    return 'question';
+  } else if (id === 0) {
+    return 'map signs';
   } else if (id === 1) {
     return 'wpforms';
   } else if (id === 2) {
