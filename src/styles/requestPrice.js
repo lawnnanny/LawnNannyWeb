@@ -2,15 +2,6 @@ const green = '#20ad1d';
 const white = '#FFFFFF';
 
 export default {
-  topTriangle: {
-    color: green,
-    fontSize: '15em',
-    marginBottom: '-2em',
-  },
-  bottomTriangle: {
-    color: green,
-    fontSize: '15em',
-  },
   grid: {
     marginTop: '0',
   },
@@ -27,17 +18,25 @@ export default {
     marginTop: '1em',
   },
   priceRow: {
-    paddingTop: '2.5em',
     textAlign: 'center',
   },
   triangleBottomRow: {
+    marginTop: '1em',
     textAlign: 'center',
-    marginTop: '2.2em',
-    marginBottom: '-8em',
+    marginBottom: '2em',
   },
   triangleTopRow: {
     textAlign: 'center',
-    marginBottom: '-4.5em',
+    marginTop: '.8em',
+    marginBottom: '.8em',
+  },
+  triangleBottomButton: {
+    padding: '0',
+    backgroundColor: white,
+  },
+  triangleTopButton: {
+    padding: '0',
+    backgroundColor: white,
   },
   input: {
     width: '6em',
@@ -47,9 +46,10 @@ export default {
   dollar: {
     fontSize: '7em',
   },
+  image: {},
   button: {
+    width: '20em',
     backgroundColor: green,
     color: white,
-    width: '20em',
   },
 };

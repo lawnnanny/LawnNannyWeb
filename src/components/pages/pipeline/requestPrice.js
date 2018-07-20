@@ -1,7 +1,9 @@
 import React from 'react';
-import { Grid, Segment, Header, Icon, Input, Button } from 'semantic-ui-react';
+import { Grid, Segment, Header, Icon, Input, Button, Image } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import Styles from '../../../styles/requestPrice';
+import up from '../../../images/pipeline/sort-down.png';
+import down from '../../../images/pipeline/sort-up.png';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestPrice = (state) => {
@@ -19,15 +21,19 @@ export const requestPrice = (state) => {
         <Header as="h1">Set A Price </Header>
       </Grid.Row>
       <Grid.Row style={Styles.priceRow}>
-        <Grid.Column>
+        <Grid.Column style={Styles.priceColumn}>
           <Grid.Row style={Styles.triangleTopRow}>
-            <Icon name="triangle up" style={Styles.topTriangle} />
+            <Button style={Styles.triangleTopButton}>
+              <Image centered size="small" style={Styles.image} src={down} />
+            </Button>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
-            <Input icon="dollar" iconPosition="left" placeholder="Set Price" style={Styles.input} />
+            <Input icon="dollar" iconPosition="left" style={Styles.input} />
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
-            <Icon name="triangle down" style={Styles.bottomTriangle} />
+            <Button style={Styles.triangleBottomButton}>
+              <Image centered size="small" style={Styles.image} src={up} />
+            </Button>
           </Grid.Row>
         </Grid.Column>
       </Grid.Row>
