@@ -50,13 +50,13 @@ export const breadcrumb = props => (
     <Grid.Row style={Styles.row}>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
+          <div style={returnRightBar(props.selection, 0)} />
           <Icon
             style={returnIcon(props.selection, 0)}
             circular
             size="large"
             name={returnStatus(props.selection, 0)}
           />
-          <div style={returnRightBar(props.selection, 0)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={returnLabel(props.selection, 0)}>Request</Label>
@@ -79,6 +79,7 @@ export const breadcrumb = props => (
       </Grid.Column>
       <Grid.Column style={Styles.column}>
         <Segment style={Styles.segment}>
+          <div style={returnRightBar(props.selection, 2)} />
           <Icon
             circular
             size="large"
@@ -86,7 +87,6 @@ export const breadcrumb = props => (
             name={returnStatus(props.selection, 2)}
           />
           <div style={returnLeftBar(props.selection, 1)} />
-          <div style={returnRightBar(props.selection, 2)} />
         </Segment>
         <Segment style={Styles.segment}>
           <Label style={returnLabel(props.selection, 2)}>Location</Label>

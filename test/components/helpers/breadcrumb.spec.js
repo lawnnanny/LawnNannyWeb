@@ -52,7 +52,7 @@ describe('RequestInformation', () => {
           let requestIcon;
 
           beforeEach(() => {
-            requestIcon = requestSegment.childAt(0);
+            requestIcon = requestSegment.childAt(1);
           });
 
           it('is a segment', () => {
@@ -117,7 +117,7 @@ describe('RequestInformation', () => {
             let locationIcon;
 
             beforeEach(() => {
-              locationIcon = locationSegment.childAt(0);
+              locationIcon = locationSegment.childAt(1);
             });
 
             it('is a segment', () => {

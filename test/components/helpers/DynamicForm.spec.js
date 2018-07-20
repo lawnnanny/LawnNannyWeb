@@ -17,8 +17,10 @@ import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
-const randomType = () => {
-  switch (chance.integer() % 4) {
+const numberOfFields = (Math.abs(chance.integer()) % 20) + 2;
+
+const randomType = (useRowCombination) => {
+  switch (chance.integer() % 5) {
     case 0:
       return 'textArea';
     case 1:
@@ -26,15 +28,37 @@ const randomType = () => {
     case 2:
       return 'checkbox';
     case 3:
+      if (useRowCombination) {
+        return 'rowCombination';
+      }
+      return 'input';
+    case 4:
       return 'input';
     default:
       return 'textArea';
   }
 };
 
+const failTest = (wrapper, field, count) => {
+  if (chance.integer() % 2 && field.validation) {
+    const state = { errors: {} };
+    state.errors[field.id] = 'Nothing is Selected';
+    wrapper.setState(state);
+    wrapper.update();
+    expect(
+      wrapper
+        .childAt(1)
+        .childAt(0)
+        .childAt(count)
+        .find(InlineErrorComponent)
+        .props().text,
+    ).toEqual('Nothing is Selected');
+  }
+};
+
 const createRandomOptions = () => {
   const options = [];
-  const numberOfOptions = (chance.integer() % 11) + 1;
+  const numberOfOptions = (Math.abs(chance.integer()) % 11) + 2;
   for (let counter = 0; counter < numberOfOptions; counter += 1) {
     options[counter] = chance.word();
   }
@@ -44,30 +68,63 @@ const createRandomOptions = () => {
 const generateTestFormJson = () => {
   const name = chance.word();
   const jsonForm = {};
-  const numberOfFields = (chance.integer() % 11) + 1;
   const fields = [];
   for (let counter = 0; counter < numberOfFields; counter += 1) {
-    const type = randomType();
+    const type = randomType(true);
 
-    const field = {
-      name: chance.word(),
-      type,
-      id: chance.word(),
-    };
+    let field = {};
+    if (type === 'rowCombination') {
+      const numberOfSubFields = (chance.integer() % 11) + 2;
+      const subFields = [];
+      for (let counting = 0; counting < numberOfSubFields; counting += 1) {
+        const subFieldType = randomType(false);
+        const subField = {
+          name: chance.word(),
+          type: subFieldType,
+          id: chance.word(),
+        };
 
-    if (chance.integer() % 2 === 0) {
-      field.validation = 'required';
-    }
-    if (type === 'radio') {
-      field.options = createRandomOptions();
-    }
-    if (type === 'textArea' || type === 'input') {
-      field.placeholder = chance.word();
+        if (chance.integer() % 2 === 0) {
+          subField.validation = 'required';
+        }
+
+        if (type === 'radio') {
+          subField.options = createRandomOptions();
+        }
+
+        if (subFieldType === 'textArea' || type === 'input') {
+          subField.placeholder = chance.word();
+        }
+        subFields[counting] = subField;
+      }
+
+      field = {
+        name: chance.word(),
+        type: 'rowCombination',
+        fields: subFields,
+      };
+    } else {
+      field = {
+        name: chance.word(),
+        type,
+        id: chance.word(),
+      };
+
+      if (chance.integer() % 2 === 0) {
+        field.validation = 'required';
+      }
+      if (type === 'radio') {
+        field.options = createRandomOptions();
+      }
+      if (type === 'textArea' || type === 'input') {
+        field.placeholder = chance.word();
+      }
     }
 
     fields[counter] = field;
   }
   jsonForm[name] = {};
+  jsonForm[name].description = chance.word();
   jsonForm[name].fields = fields;
   return jsonForm;
 };
@@ -112,34 +169,52 @@ describe('DynamicForm', () => {
       expect(header.type()).toEqual(Header);
     });
 
-    it('is has a large size', () => {
-      expect(header.props().size).toEqual('large');
+    it('is has an as equal to h3', () => {
+      expect(header.props().as).toEqual('h3');
     });
 
     it('is the correct text in the header', () => {
-      expect(header.childAt(0).debug()).toEqual(Object.keys(testJson)[0]);
+      expect(header.childAt(0).debug()).toEqual(testJson[Object.keys(testJson)[0]].description);
     });
   });
+  describe('form segment', () => {
+    let formSegment;
 
-  describe('form', () => {
-    it('is a form', () => {
-      expect(wrapper.childAt(1).type()).toEqual(Form);
+    beforeEach(() => {
+      formSegment = wrapper.childAt(1);
     });
 
-    describe('form data', () => {
-      wrapper = renderComponent();
-      testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
-        if (field.validation) {
-          const fail = chance.integer() % 2;
-          let count = 0;
-          const form = wrapper.childAt(1);
-          const segmentOfFields = form.childAt(0);
+    it('is a segment', () => {
+      expect(formSegment.type()).toEqual(Segment);
+    });
+
+    describe('form', () => {
+      let formComponent;
+      beforeEach(() => {
+        formComponent = formSegment.childAt(0);
+      });
+      it('is a form', () => {
+        expect(formComponent.type()).toEqual(Form);
+      });
+
+      describe('form data', () => {
+        let count = -1;
+        beforeEach(() => {
+          count += 1;
+          wrapper = renderComponent();
+          formSegment = wrapper.childAt(1);
+          formComponent = formSegment.childAt(0);
+        });
+        testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
           it(`field ${count} is correct`, () => {
-            const label = segmentOfFields.childAt(count).childAt(0);
-            if (field.validation) {
-              expect(label.text()).toEqual(` * ${field.name}`);
-            } else {
-              expect(label.text()).toEqual(field.name);
+            if (field.type !== 'rowCombination') {
+              const pre = formComponent.childAt(count);
+              const label = pre.childAt(0);
+              if (field.validation) {
+                expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
+              } else {
+                expect(label.childAt(0).text()).toEqual(field.name);
+              }
             }
             expect(
               wrapper
@@ -158,6 +233,7 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Checkbox);
+              failTest(wrapper, field, count);
             }
             if (field.type === 'radio') {
               expect(
@@ -167,22 +243,8 @@ describe('DynamicForm', () => {
                   .childAt(count)
                   .childAt(1)
                   .type(),
-              ).toEqual(Radio);
-
-              if (fail) {
-                const state = { errors: {} };
-                state.errors[field.id] = 'Radio Button Not Selected';
-                wrapper.setState(state);
-                wrapper.update();
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .find(InlineErrorComponent)
-                    .props().text,
-                ).toEqual('Radio Button Not Selected');
-              }
+              ).toEqual(Form.Group);
+              failTest(wrapper, field, count);
             }
             if (field.type === 'textArea') {
               expect(
@@ -193,21 +255,7 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(TextArea);
-
-              if (fail) {
-                const state = { errors: {} };
-                state.errors[field.id] = 'Empty Text Box';
-                wrapper.setState(state);
-                wrapper.update();
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .find(InlineErrorComponent)
-                    .props().text,
-                ).toEqual('Empty Text Box');
-              }
+              failTest(wrapper, field, count);
             }
             if (field.type === 'dropDown') {
               expect(
@@ -218,21 +266,40 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Dropdown);
+              failTest(wrapper, field, count);
+            }
 
-              if (fail) {
-                const state = { errors: {} };
-                state.errors[field.id] = 'Nothing is Selected';
-                wrapper.setState(state);
-                wrapper.update();
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .find(InlineErrorComponent)
-                    .props().text,
-                ).toEqual('Nothing is Selected');
-              }
+            if (field.type === 'rowCombination') {
+              let subFieldCounter = 0;
+              field.fields.forEach((input) => {
+                const rowInput = wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(subFieldCounter)
+                  .childAt(1);
+
+                switch (input.type) {
+                  case 'input':
+                    expect(rowInput.type()).toEqual(Form.Input);
+                    break;
+                  case 'dropDown':
+                    expect(rowInput.type()).toEqual(Dropdown);
+                    break;
+                  case 'textArea':
+                    expect(rowInput.type()).toEqual(TextArea);
+                    break;
+                  case 'checkbox':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  case 'radio':
+                    expect(rowInput.type()).toEqual(Checkbox);
+                    break;
+                  default:
+                }
+                failTest(wrapper, field, count);
+                subFieldCounter += 1;
+              });
             }
 
             if (field.type === 'input') {
@@ -243,44 +310,25 @@ describe('DynamicForm', () => {
                   .childAt(count)
                   .childAt(1)
                   .type(),
-              ).toEqual(Input);
+              ).toEqual(Form.Input);
 
-              if (fail) {
-                const state = { errors: {} };
-                state.errors[field.id] = 'Empty Input';
-                wrapper.setState(state);
-                wrapper.update();
-                expect(
-                  wrapper
-                    .childAt(1)
-                    .childAt(0)
-                    .childAt(count)
-                    .find(InlineErrorComponent)
-                    .props().text,
-                ).toEqual('Empty Input');
-              }
+              failTest(wrapper, field, count);
             }
-            count += 1;
           });
-        }
+        });
       });
-    });
-  });
 
-  describe('Submit Button', () => {
-    let submitSegment;
+      describe('Form Button', () => {
+        let formButton;
 
-    beforeEach(() => {
-      submitSegment = wrapper.childAt(1).childAt(1);
-    });
+        beforeEach(() => {
+          formButton = formComponent.childAt(numberOfFields);
+        });
 
-    it('It is a segment', () => {
-      expect(submitSegment.type()).toEqual(Segment);
-    });
-
-    it('There is a button in the segment', () => {
-      const button = submitSegment.childAt(0);
-      expect(button.type()).toEqual(Button);
+        it('It is a button', () => {
+          expect(formButton.type()).toEqual(Form.Button);
+        });
+      });
     });
   });
 });

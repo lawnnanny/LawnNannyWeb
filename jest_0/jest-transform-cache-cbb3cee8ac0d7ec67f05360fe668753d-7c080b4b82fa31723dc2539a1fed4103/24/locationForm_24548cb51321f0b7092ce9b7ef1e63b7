@@ -1,0 +1,81 @@
+e39b65fe4e0d4e9b97d26b23ba90645a
+/* istanbul ignore next */'use strict';
+
+var cov_266orpx9gu = function () {
+  var path = '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonForms/locationForm.js',
+      hash = '39d957d6a6712851be1e70780b270dc8cc098a6e',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/home/sdrafahl/code/TerraWeb/src/components/pages/pipeline/jsonForms/locationForm.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 1,
+          column: 24
+        },
+        end: {
+          line: 42,
+          column: 1
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      '0': 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var jsonForm = /* istanbul ignore next */exports.jsonForm = (cov_266orpx9gu.s[0]++, {
+  Location: {
+    description: 'Descriptiion',
+    fields: [{
+      name: 'cityZip',
+      type: 'rowCombination',
+      fields: [{
+        name: 'City',
+        type: 'input',
+        placeholder: 'city',
+        id: 'city',
+        validation: 'required'
+      }, {
+        name: 'Zipcode',
+        type: 'input',
+        placeholder: 'zipcode',
+        id: 'zipcode',
+        validation: 'required'
+      }]
+    }, {
+      name: 'Street Address',
+      type: 'input',
+      placeholder: '',
+      id: 'streetAddress',
+      validation: 'required'
+    }, {
+      name: 'State',
+      type: 'dropDown',
+      placeholder: 'State',
+      id: 'state',
+      validation: 'required'
+    }]
+  }
+});
+/* istanbul ignore next */exports.default = jsonForm;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvY2F0aW9uRm9ybS5qcyJdLCJuYW1lcyI6WyJqc29uRm9ybSIsIkxvY2F0aW9uIiwiZGVzY3JpcHRpb24iLCJmaWVsZHMiLCJuYW1lIiwidHlwZSIsInBsYWNlaG9sZGVyIiwiaWQiLCJ2YWxpZGF0aW9uIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFPLElBQU1BLGdGQUFXO0FBQ3RCQyxZQUFVO0FBQ1JDLGlCQUFhLGNBREw7QUFFUkMsWUFBUSxDQUNOO0FBQ0VDLFlBQU0sU0FEUjtBQUVFQyxZQUFNLGdCQUZSO0FBR0VGLGNBQVEsQ0FDTjtBQUNFQyxjQUFNLE1BRFI7QUFFRUMsY0FBTSxPQUZSO0FBR0VDLHFCQUFhLE1BSGY7QUFJRUMsWUFBSSxNQUpOO0FBS0VDLG9CQUFZO0FBTGQsT0FETSxFQVFOO0FBQ0VKLGNBQU0sU0FEUjtBQUVFQyxjQUFNLE9BRlI7QUFHRUMscUJBQWEsU0FIZjtBQUlFQyxZQUFJLFNBSk47QUFLRUMsb0JBQVk7QUFMZCxPQVJNO0FBSFYsS0FETSxFQXFCTjtBQUNFSixZQUFNLGdCQURSO0FBRUVDLFlBQU0sT0FGUjtBQUdFQyxtQkFBYSxFQUhmO0FBSUVDLFVBQUksZUFKTjtBQUtFQyxrQkFBWTtBQUxkLEtBckJNLEVBNkJOO0FBQ0VKLFlBQU0sT0FEUjtBQUVFQyxZQUFNLFVBRlI7QUFHRUMsbUJBQWEsT0FIZjtBQUlFQyxVQUFJLE9BSk47QUFLRUMsa0JBQVk7QUFMZCxLQTdCTTtBQUZBO0FBRFksQ0FBWCxDQUFOOzRDQTBDUVIsUSIsImZpbGUiOiJsb2NhdGlvbkZvcm0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QganNvbkZvcm0gPSB7XG4gIExvY2F0aW9uOiB7XG4gICAgZGVzY3JpcHRpb246ICdEZXNjcmlwdGlpb24nLFxuICAgIGZpZWxkczogW1xuICAgICAge1xuICAgICAgICBuYW1lOiAnY2l0eVppcCcsXG4gICAgICAgIHR5cGU6ICdyb3dDb21iaW5hdGlvbicsXG4gICAgICAgIGZpZWxkczogW1xuICAgICAgICAgIHtcbiAgICAgICAgICAgIG5hbWU6ICdDaXR5JyxcbiAgICAgICAgICAgIHR5cGU6ICdpbnB1dCcsXG4gICAgICAgICAgICBwbGFjZWhvbGRlcjogJ2NpdHknLFxuICAgICAgICAgICAgaWQ6ICdjaXR5JyxcbiAgICAgICAgICAgIHZhbGlkYXRpb246ICdyZXF1aXJlZCcsXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBuYW1lOiAnWmlwY29kZScsXG4gICAgICAgICAgICB0eXBlOiAnaW5wdXQnLFxuICAgICAgICAgICAgcGxhY2Vob2xkZXI6ICd6aXBjb2RlJyxcbiAgICAgICAgICAgIGlkOiAnemlwY29kZScsXG4gICAgICAgICAgICB2YWxpZGF0aW9uOiAncmVxdWlyZWQnLFxuICAgICAgICAgIH0sXG4gICAgICAgIF0sXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBuYW1lOiAnU3RyZWV0IEFkZHJlc3MnLFxuICAgICAgICB0eXBlOiAnaW5wdXQnLFxuICAgICAgICBwbGFjZWhvbGRlcjogJycsXG4gICAgICAgIGlkOiAnc3RyZWV0QWRkcmVzcycsXG4gICAgICAgIHZhbGlkYXRpb246ICdyZXF1aXJlZCcsXG4gICAgICB9LFxuXG4gICAgICB7XG4gICAgICAgIG5hbWU6ICdTdGF0ZScsXG4gICAgICAgIHR5cGU6ICdkcm9wRG93bicsXG4gICAgICAgIHBsYWNlaG9sZGVyOiAnU3RhdGUnLFxuICAgICAgICBpZDogJ3N0YXRlJyxcbiAgICAgICAgdmFsaWRhdGlvbjogJ3JlcXVpcmVkJyxcbiAgICAgIH0sXG4gICAgXSxcbiAgfSxcbn07XG5leHBvcnQgZGVmYXVsdCBqc29uRm9ybTtcbiJdfQ==

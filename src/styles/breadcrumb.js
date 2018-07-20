@@ -30,12 +30,14 @@ export default {
     paddingTop: '1.5rem',
   },
   currentLabel: {
-    backgroundColor: white,
-    fontSize: '1rem',
-    color: black,
+    backgroundColor: 'white',
+    fontSize: '1.2rem',
+    color: 'black',
+    padding: '0',
   },
   label: {
-    backgroundColor: white,
+    backgroundColor: 'white',
+    padding: '0',
   },
   grid: {},
   finishedIcon: {
