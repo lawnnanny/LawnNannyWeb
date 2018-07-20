@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment, Header, Icon, Input, Button, Image } from 'semantic-ui-react';
+import { Grid, Segment, Header, Icon, Input, Button, Image, Popup, Label } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import Styles from '../../../styles/requestPrice';
 import up from '../../../images/pipeline/sort-down.png';
@@ -18,7 +18,14 @@ export const requestPrice = (state) => {
         </Segment>
       </Grid.Row>
       <Grid.Row style={Styles.headerRow}>
-        <Header as="h1">Set A Price </Header>
+        <Header as="h1" style={Styles.header}>
+          Set A Price{' '}
+          <Popup
+            trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+            content="Please specify what you would like the price of the request to be set at. You can change this later on"
+            on={['hover', 'click']}
+          />
+        </Header>
       </Grid.Row>
       <Grid.Row style={Styles.priceRow}>
         <Grid.Column style={Styles.priceColumn}>

@@ -1,5 +1,6 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
+const blue = '#0e42ff';
 
 export default {
   grid: {
@@ -16,6 +17,12 @@ export default {
   },
   headerRow: {
     marginTop: '1em',
+  },
+  header: {
+    marginLeft: '1.5em',
+  },
+  headerLabel: {
+    backgroundColor: white,
   },
   priceRow: {
     textAlign: 'center',
@@ -46,10 +53,18 @@ export default {
   dollar: {
     fontSize: '7em',
   },
-  image: {},
+  image: {
+    boxShadow: '1px solid black',
+  },
   button: {
     width: '20em',
     backgroundColor: green,
     color: white,
+  },
+  popupIcon: {
+    color: blue,
+    boxShadow: '0 0 0 0.1em #0e42ff inset',
+    fontSize: '.5em',
+    marginTop: '-3em',
   },
 };
