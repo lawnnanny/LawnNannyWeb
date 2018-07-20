@@ -1,13 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Form,
-  Header,
-  Segment,
-  Checkbox,
-  TextArea,
-  Dropdown,
-} from 'semantic-ui-react';
+import { Form, Header, Segment, Checkbox, TextArea, Dropdown } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
@@ -44,7 +37,6 @@ class DynamicForm extends React.Component {
       }
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
-      console.log(this.props.setRequest);
       this.props.setRequest(data);
       this.props.route();
     }
@@ -229,7 +221,7 @@ class DynamicForm extends React.Component {
         case 'radio':
           return this.renderRadio(field, isInRow, errors);
         default:
-          return this.defaultRender(field, isInRow, errors);
+          return 'string';
       }
     });
     return formUI;
