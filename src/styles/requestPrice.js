@@ -40,8 +40,8 @@ export default {
     marginBottom: '-4.5em',
   },
   input: {
-    width: '4em',
-    fontSize: '4em',
+    width: '6em',
+    fontSize: '3em',
     padding: '0',
   },
   dollar: {
