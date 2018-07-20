@@ -24,7 +24,7 @@ export const requestLocation = (state) => {
             setRequest={state.setRequestLocation}
             form={'Location'}
             route={() => {
-              state.history.push('/pipeline/review');
+              state.history.push('/pipeline/requestPrice');
             }}
           />
         </Segment>

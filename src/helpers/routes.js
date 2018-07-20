@@ -9,7 +9,7 @@ import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
 import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
 import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
 import ConnectedRequestLocationComponent from '../connectedComponents/ConnectedRequestLocation';
-import ConnectedRequestReviewComponent from '../connectedComponents/ConnectedRequestReview';
+import ConnectedRequestPriceComponent from '../connectedComponents/ConnectedRequestPrice';
 import HomePageComponent from '../components/pages/HomePage';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
@@ -49,7 +49,11 @@ export class Routes extends Component {
                 path="/pipeline/requestLocation"
                 component={ConnectedRequestLocationComponent}
               />
-              <Route exact path="/pipeline/review" component={ConnectedRequestReviewComponent} />
+              <Route
+                exact
+                path="/pipeline/requestPrice"
+                component={ConnectedRequestPriceComponent}
+              />
               <Route path="/*" component={Error404} />
             </Switch>
           </div>

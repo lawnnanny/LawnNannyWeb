@@ -17,6 +17,8 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'requestInformation', action.data);
     case Actions.requests.setRequestLocation:
       return setState(state, 'requestLocation', action.data);
+    case Actions.requests.setRequestPrice:
+      return setState(state, 'requestPrice', action.data);
     default:
       return state;
   }
