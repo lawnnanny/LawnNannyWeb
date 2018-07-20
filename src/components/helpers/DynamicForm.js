@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
   Form,
   Header,
-  Input,
-  Button,
   Segment,
   Checkbox,
   TextArea,

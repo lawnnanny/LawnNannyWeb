@@ -17,7 +17,7 @@ import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
-const numberOfFields = (Math.abs(chance.integer()) % 11) + 1;
+const numberOfFields = (Math.abs(chance.integer()) % 4) + 1;
 
 const randomType = (useRowCombination) => {
   switch (chance.integer() % 5) {
@@ -28,6 +28,9 @@ const randomType = (useRowCombination) => {
     case 2:
       return 'checkbox';
     case 3:
+      if (useRowCombination) {
+        return 'rowCombination';
+      }
       return 'input';
     case 4:
       if (useRowCombination) {
@@ -58,7 +61,7 @@ const failTest = (wrapper, field, count) => {
 
 const createRandomOptions = () => {
   const options = [];
-  const numberOfOptions = (chance.integer() % 11) + 1;
+  const numberOfOptions = (chance.integer() % 11) + 2;
   for (let counter = 0; counter < numberOfOptions; counter += 1) {
     options[counter] = chance.word();
   }
@@ -74,7 +77,7 @@ const generateTestFormJson = () => {
 
     let field = {};
     if (type === 'rowCombination') {
-      const numberOfSubFields = (chance.integer() % 11) + 1;
+      const numberOfSubFields = (chance.integer() % 11) + 2;
       const subFields = [];
       for (let counting = 0; counting < numberOfSubFields; counting += 1) {
         const subFieldType = randomType(false);
@@ -95,7 +98,6 @@ const generateTestFormJson = () => {
         if (subFieldType === 'textArea' || type === 'input') {
           subField.placeholder = chance.word();
         }
-
         subFields[counting] = subField;
       }
 
@@ -202,22 +204,19 @@ describe('DynamicForm', () => {
         let count = -1;
         beforeEach(() => {
           count += 1;
+          wrapper = renderComponent();
+          formSegment = wrapper.childAt(1);
+          formComponent = formSegment.childAt(0);
         });
-        wrapper = renderComponent();
-        formSegment = wrapper.childAt(1);
-        formComponent = formSegment.childAt(0);
-        console.log(formComponent.debug());
         testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
-          console.log(field);
-          console.log(count);
           it(`field ${count} is correct`, () => {
-            console.log(count);
-            const label = formComponent.childAt(count).childAt(0);
-            console.log();
-            if (field.validation) {
-              expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
-            } else {
-              expect(label.childAt(0).text()).toEqual(field.name);
+            if (field.type !== 'rowCombination') {
+              const label = formComponent.childAt(count).childAt(0);
+              if (field.validation) {
+                expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
+              } else {
+                expect(label.childAt(0).text()).toEqual(field.name);
+              }
             }
             expect(
               wrapper
@@ -273,23 +272,14 @@ describe('DynamicForm', () => {
             }
 
             if (field.type === 'rowCombination') {
-              expect(
-                wrapper
-                  .childAt(1)
-                  .childAt(0)
-                  .childAt(count)
-                  .childAt(1)
-                  .type(),
-              ).toEqual(Form.Group);
-
               let subFieldCounter = 0;
               field.fields.forEach((input) => {
                 const rowInput = wrapper
                   .childAt(1)
                   .childAt(0)
                   .childAt(count)
-                  .childAt(1)
-                  .childAt(subFieldCounter);
+                  .childAt(subFieldCounter)
+                  .childAt(1);
 
                 switch (input.type) {
                   case 'input':
