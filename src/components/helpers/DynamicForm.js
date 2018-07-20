@@ -217,17 +217,6 @@ class DynamicForm extends React.Component {
     const formUI = subForm.fields.map((field) => {
       switch (field.type) {
         case 'input':
-          return (
-            <Form.Field>
-              <label htmlFor={field.id}>{this.addAstricks(field.validation) + field.name}</label>
-              <Input
-                id={field.id}
-                placeholder={field.placeholder}
-                onChange={this.processChange(field.id)}
-              />
-              {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-            </Form.Field>
-          );
           return this.renderInput(field, isInRow, errors);
         case 'rowCombination':
           return this.renderRowFromJson(field, isInRow, errors);
