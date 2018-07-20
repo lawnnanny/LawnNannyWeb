@@ -5,11 +5,13 @@ import Actions from '../reducers/Actions';
 const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
 
 const mapDispatchToProps = dispatch => ({
-  setRequestPrice: (data) => {
+  setRequestPrice: (event) => {
+    const value = event.target.value;
     const action = {
       type: Actions.requests.setRequestPrice,
-      data,
+      value,
     };
+
     dispatch(action);
   },
 });

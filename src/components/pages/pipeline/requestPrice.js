@@ -35,7 +35,12 @@ export const requestPrice = (state) => {
             </Button>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
-            <Input icon="dollar" iconPosition="left" style={Styles.input} />
+            <Input
+              icon="dollar"
+              iconPosition="left"
+              style={Styles.input}
+              onChange={state.setRequestPrice}
+            />
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
             <Button style={Styles.triangleBottomButton}>

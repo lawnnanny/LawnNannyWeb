@@ -1,7 +1,7 @@
 import Actions from './Actions';
 
 const getInitialState = () => ({
-  selection: '',
+  requestPrice: '',
 });
 
 const setState = (previousState, property, newValue) =>
@@ -18,7 +18,7 @@ export default (state = getInitialState(), action) => {
     case Actions.requests.setRequestLocation:
       return setState(state, 'requestLocation', action.data);
     case Actions.requests.setRequestPrice:
-      return setState(state, 'requestPrice', action.data);
+      return setState(state, 'requestPrice', action.value);
     default:
       return state;
   }
