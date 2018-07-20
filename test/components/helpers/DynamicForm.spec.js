@@ -17,7 +17,7 @@ import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
-const numberOfFields = (Math.abs(chance.integer()) % 20) + 100;
+const numberOfFields = (Math.abs(chance.integer()) % 20) + 2;
 
 const randomType = (useRowCombination) => {
   switch (chance.integer() % 5) {
