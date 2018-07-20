@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Header, Segment, Checkbox, TextArea, Dropdown } from 'semantic-ui-react';
+import {
+  Form,
+  Header,
+  Segment,
+  Checkbox,
+  TextArea,
+  Dropdown,
+  Popup,
+  Icon,
+} from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
@@ -230,7 +239,14 @@ class DynamicForm extends React.Component {
   render() {
     return (
       <Segment padded style={Styles.Dynamicsegment}>
-        <Header as="h3">{this.state.Requests[this.props.form].description}</Header>
+        <Header as="h1">
+          {this.state.Requests[this.props.form].description}
+          <Popup
+            trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+            content={this.state.Requests[this.props.form].popup}
+            on={['hover', 'click']}
+          />
+        </Header>
         <Segment style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(

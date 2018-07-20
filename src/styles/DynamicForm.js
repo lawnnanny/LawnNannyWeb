@@ -1,5 +1,6 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
+const blue = '#0e42ff';
 
 export default {
   Dynamicsegment: {
@@ -31,5 +32,11 @@ export default {
   },
   groupField: {
     paddingBottom: '1em',
+  },
+  popupIcon: {
+    color: blue,
+    boxShadow: '0 0 0 0.1em #0e42ff inset',
+    fontSize: '.5em',
+    marginTop: '-3em',
   },
 };
