@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
 import Styles from '../../styles/breadcrumb';
@@ -48,79 +49,89 @@ const returnLabel = (label, id) => {
 export const breadcrumb = props => (
   <Grid columns="equal" style={Styles.grid}>
     <Grid.Row style={Styles.row}>
-      <Grid.Column style={Styles.column}>
-        <Segment style={Styles.segment}>
-          <div style={returnRightBar(props.selection, 0)} />
-          <Icon
-            style={returnIcon(props.selection, 0)}
-            circular
-            size="large"
-            name={returnStatus(props.selection, 0)}
-          />
-        </Segment>
-        <Segment style={Styles.segment}>
-          <Label style={returnLabel(props.selection, 0)}>Request</Label>
-        </Segment>
-      </Grid.Column>
-      <Grid.Column style={Styles.column}>
-        <Segment style={Styles.segment}>
-          <Icon
-            circular
-            size="large"
-            style={returnIcon(props.selection, 1)}
-            name={returnStatus(props.selection, 1)}
-          />
-          <div style={returnLeftBar(props.selection, 0)} />
-          <div style={returnRightBar(props.selection, 1)} />
-        </Segment>
-        <Segment style={Styles.segment}>
-          <Label style={returnLabel(props.selection, 1)}>Details</Label>
-        </Segment>
-      </Grid.Column>
-      <Grid.Column style={Styles.column}>
-        <Segment style={Styles.segment}>
-          <div style={returnRightBar(props.selection, 2)} />
-          <Icon
-            circular
-            size="large"
-            style={returnIcon(props.selection, 2)}
-            name={returnStatus(props.selection, 2)}
-          />
-          <div style={returnLeftBar(props.selection, 1)} />
-        </Segment>
-        <Segment style={Styles.segment}>
-          <Label style={returnLabel(props.selection, 2)}>Location</Label>
-        </Segment>
-      </Grid.Column>
-      <Grid.Column style={Styles.column}>
-        <Segment style={Styles.segment}>
-          <Icon
-            circular
-            size="large"
-            style={returnIcon(props.selection, 3)}
-            name={returnStatus(props.selection, 3)}
-          />
-          <div style={returnLeftBar(props.selection, 2)} />
-          <div style={returnRightBar(props.selection, 3)} />
-        </Segment>
-        <Segment style={Styles.segment}>
-          <Label style={returnLabel(props.selection, 3)}>Price</Label>
-        </Segment>
-      </Grid.Column>
-      <Grid.Column style={Styles.column}>
-        <Segment style={Styles.segment}>
-          <Icon
-            circular
-            size="large"
-            style={returnIcon(props.selection, 4)}
-            name={returnStatus(props.selection, 4)}
-          />
-          <div style={returnLeftBar(props.selection, 3)} />
-        </Segment>
-        <Segment style={Styles.segment}>
-          <Label style={returnLabel(props.selection, 4)}>Review</Label>
-        </Segment>
-      </Grid.Column>
+      <Link to="/pipeline" style={Styles.link}>
+        <Grid.Column style={Styles.column}>
+          <Segment style={Styles.segment}>
+            <div style={returnRightBar(props.selection, 0)} />
+            <Icon
+              style={returnIcon(props.selection, 0)}
+              circular
+              size="large"
+              name={returnStatus(props.selection, 0)}
+            />
+          </Segment>
+          <Segment style={Styles.segment}>
+            <Label style={returnLabel(props.selection, 0)}>Request</Label>
+          </Segment>
+        </Grid.Column>
+      </Link>
+      <Link to="/pipeline/requestInformation" style={Styles.link}>
+        <Grid.Column style={Styles.column}>
+          <Segment style={Styles.segment}>
+            <Icon
+              circular
+              size="large"
+              style={returnIcon(props.selection, 1)}
+              name={returnStatus(props.selection, 1)}
+            />
+            <div style={returnLeftBar(props.selection, 0)} />
+            <div style={returnRightBar(props.selection, 1)} />
+          </Segment>
+          <Segment style={Styles.segment}>
+            <Label style={returnLabel(props.selection, 1)}>Details</Label>
+          </Segment>
+        </Grid.Column>
+      </Link>
+      <Link to="/pipeline/requestLocation" style={Styles.link}>
+        <Grid.Column style={Styles.column}>
+          <Segment style={Styles.segment}>
+            <div style={returnRightBar(props.selection, 2)} />
+            <Icon
+              circular
+              size="large"
+              style={returnIcon(props.selection, 2)}
+              name={returnStatus(props.selection, 2)}
+            />
+            <div style={returnLeftBar(props.selection, 1)} />
+          </Segment>
+          <Segment style={Styles.segment}>
+            <Label style={returnLabel(props.selection, 2)}>Location</Label>
+          </Segment>
+        </Grid.Column>
+      </Link>
+      <Link to="/pipeline/requestPrice" style={Styles.link}>
+        <Grid.Column style={Styles.column}>
+          <Segment style={Styles.segment}>
+            <Icon
+              circular
+              size="large"
+              style={returnIcon(props.selection, 3)}
+              name={returnStatus(props.selection, 3)}
+            />
+            <div style={returnLeftBar(props.selection, 2)} />
+            <div style={returnRightBar(props.selection, 3)} />
+          </Segment>
+          <Segment style={Styles.segment}>
+            <Label style={returnLabel(props.selection, 3)}>Price</Label>
+          </Segment>
+        </Grid.Column>
+      </Link>
+      <Link to="/pipeline/requestReview" style={Styles.link}>
+        <Grid.Column style={Styles.column}>
+          <Segment style={Styles.segment}>
+            <Icon
+              circular
+              size="large"
+              style={returnIcon(props.selection, 4)}
+              name={returnStatus(props.selection, 4)}
+            />
+            <div style={returnLeftBar(props.selection, 3)} />
+          </Segment>
+          <Segment style={Styles.segment}>
+            <Label style={returnLabel(props.selection, 4)}>Review</Label>
+          </Segment>
+        </Grid.Column>
+      </Link>
     </Grid.Row>
   </Grid>
 );

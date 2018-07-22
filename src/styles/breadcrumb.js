@@ -4,17 +4,12 @@ const black = '#000000';
 const blue = '#0e42ff';
 
 export default {
-  base: {
-    opacity: 0,
-  },
-  appear: {
-    opacity: 1,
-    transition: 'all 5000ms',
-  },
-  enter: {
-    opacity: 0.5,
-    transition: 'all 5000ms',
-    background: '#4CAF50',
+  link: {
+    width: '20%',
+    padding: '0',
+    border: 'none',
+    boxShadow: 'none',
+    margin: '0',
   },
   segment: {
     textAlign: 'center',
@@ -39,7 +34,6 @@ export default {
     backgroundColor: 'white',
     padding: '0',
   },
-  grid: {},
   finishedIcon: {
     boxShadow: '0 0 0 0.1em #20ad1d inset',
     margin: '0',
@@ -98,5 +92,17 @@ export default {
     right: 0,
     left: '51%',
     marginLeft: 20,
+  },
+  base: {
+    opacity: 0,
+  },
+  appear: {
+    opacity: 1,
+    transition: 'all 5000ms',
+  },
+  enter: {
+    opacity: 0.5,
+    transition: 'all 5000ms',
+    background: '#4CAF50',
   },
 };
