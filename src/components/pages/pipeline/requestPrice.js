@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Segment, Header, Icon, Input, Button, Image, Popup, Label } from 'semantic-ui-react';
+import { Grid, Segment, Header, Icon, Input, Button, Image, Popup } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import Styles from '../../../styles/requestPrice';
 import up from '../../../images/pipeline/sort-down.png';
 import down from '../../../images/pipeline/sort-up.png';
@@ -50,9 +51,11 @@ export const requestPrice = (state) => {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Button size="big" style={Styles.button}>
-          Continue
-        </Button>
+        <Link to="/pipeline/requestReview">
+          <Button size="big" style={Styles.button}>
+            Continue
+          </Button>
+        </Link>
       </Grid.Row>
     </Grid>
   );
