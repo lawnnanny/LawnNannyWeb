@@ -31,12 +31,13 @@ export const requestPrice = (state) => {
       <Grid.Row style={Styles.priceRow}>
         <Grid.Column style={Styles.priceColumn}>
           <Grid.Row style={Styles.triangleTopRow}>
-            <Button style={Styles.triangleTopButton}>
+            <Button style={Styles.triangleTopButton} onClick={state.incrementRequestPrice}>
               <Image centered size="small" style={Styles.image} src={down} />
             </Button>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
             <Input
+              value={state.requestPrice}
               icon="dollar"
               iconPosition="left"
               style={Styles.input}
@@ -44,7 +45,7 @@ export const requestPrice = (state) => {
             />
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
-            <Button style={Styles.triangleBottomButton}>
+            <Button style={Styles.triangleBottomButton} onClick={state.decrementRequestPrice}>
               <Image centered size="small" style={Styles.image} src={up} />
             </Button>
           </Grid.Row>
