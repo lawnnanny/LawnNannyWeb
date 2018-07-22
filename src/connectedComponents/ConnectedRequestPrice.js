@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch => ({
     if (isNaN(value)) {
       value = '';
     }
+    if (stringValue.indexOf('.') > -1) {
+      value = stringValue;
+    }
     const action = {
       type: Actions.requests.setRequestPrice,
       value,
