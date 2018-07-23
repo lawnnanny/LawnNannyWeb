@@ -22,8 +22,9 @@ export const requestPrice = (state) => {
         <Header as="h1" style={Styles.header}>
           Set A Price{' '}
           <Popup
+            size="large"
             trigger={<Icon name="question" style={Styles.popupIcon} circular />}
-            content="Please specify what you would like the price of the request to be set at. You can change this later on"
+            content="Please specify what you would like the price of the request to be set at. You can change this later on."
             on={['hover', 'click']}
           />
         </Header>
@@ -51,7 +52,7 @@ export const requestPrice = (state) => {
           </Grid.Row>
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
+      <Grid.Row style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
           <Button size="big" style={Styles.button}>
             Continue

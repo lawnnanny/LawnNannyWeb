@@ -242,6 +242,7 @@ class DynamicForm extends React.Component {
         <Header as="h1">
           {this.state.Requests[this.props.form].description}
           <Popup
+            size="large"
             trigger={<Icon name="question" style={Styles.popupIcon} circular />}
             content={this.state.Requests[this.props.form].popup}
             on={['hover', 'click']}

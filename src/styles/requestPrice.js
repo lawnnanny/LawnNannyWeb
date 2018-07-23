@@ -16,7 +16,7 @@ export default {
     paddingTop: '0',
   },
   headerRow: {
-    marginTop: '1em',
+    marginTop: '2em',
   },
   header: {
     marginLeft: '1.5em',
@@ -60,6 +60,9 @@ export default {
     width: '20em',
     backgroundColor: green,
     color: white,
+  },
+  buttonRow: {
+    marginTop: '2em',
   },
   popupIcon: {
     color: blue,
