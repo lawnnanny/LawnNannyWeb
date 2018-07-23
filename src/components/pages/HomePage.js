@@ -10,7 +10,7 @@ import {
   Header
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import LoginQuestion from '../helpers/pipelineSignupModal';
+import ReviewModalComponent from '../helpers/reviewModal';
 
 import Styles from '../../styles/HomePage';
 import { statekeys } from '../../helpers/Common';
@@ -197,7 +197,7 @@ export default class HomePage extends Component {
             </Link>
           </Grid.Row>
           <Grid.Row>
-            <LoginQuestion />
+            <ReviewModalComponent />
           </Grid.Row>
         </Grid>
       </div>

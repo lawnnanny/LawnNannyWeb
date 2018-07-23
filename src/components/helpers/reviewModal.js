@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Modal, Button, Segment, Divider } from 'semantic-ui-react';
-import Styles from '../../styles/pipelineSignupModal';
+import Styles from '../../styles/reviewModal';
 
 export const pipelineSignup = () => (
   <Modal
