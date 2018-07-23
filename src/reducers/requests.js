@@ -4,9 +4,9 @@ const getInitialState = () => ({
   requestPrice: 0,
   selection: '',
   completedRequest: false,
-  completedRequestPrice: false,
-  completedRequestLocation: false,
   completedRequestInformation: false,
+  completedRequestLocation: false,
+  completedRequestPrice: false,
   completedRequestReview: false,
 });
 

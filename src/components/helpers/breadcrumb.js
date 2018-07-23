@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
 import Styles from '../../styles/breadcrumb';
 
-const returnStatus = (selection, id) => {
-  if (selection > id) {
+const returnStatus = (isComplete, id) => {
+  if (isComplete) {
     return 'check';
   } else if (id === 0) {
     return 'map signs';
@@ -21,10 +21,10 @@ const returnStatus = (selection, id) => {
   return 'cancel';
 };
 const returnIcon = (icon, id, isComplete) => {
-  if (isComplete) {
-    return Styles.finishedIcon;
-  } else if (icon === id) {
+  if (icon === id) {
     return Styles.currentIcon;
+  } else if (isComplete) {
+    return Styles.finishedIcon;
   }
   return Styles.unfinishedIcon;
 };
@@ -57,7 +57,7 @@ export const breadcrumb = props => (
               style={returnIcon(props.selection, 0, props.requestComplete)}
               circular
               size="large"
-              name={returnStatus(props.selection, 0)}
+              name={returnStatus(props.requestComplete, 0)}
             />
           </Segment>
           <Segment style={Styles.segment}>
@@ -72,7 +72,7 @@ export const breadcrumb = props => (
               circular
               size="large"
               style={returnIcon(props.selection, 1, props.infoComplete)}
-              name={returnStatus(props.selection, 1)}
+              name={returnStatus(props.infoComplete, 1)}
             />
             <div style={returnLeftBar(props.requestComplete)} />
             <div style={returnRightBar(props.infoComplete)} />
@@ -90,7 +90,7 @@ export const breadcrumb = props => (
               circular
               size="large"
               style={returnIcon(props.selection, 2, props.locationComplete)}
-              name={returnStatus(props.selection, 2)}
+              name={returnStatus(props.locationComplete, 2)}
             />
             <div style={returnLeftBar(props.infoComplete)} />
           </Segment>
@@ -106,7 +106,7 @@ export const breadcrumb = props => (
               circular
               size="large"
               style={returnIcon(props.selection, 3, props.priceComplete)}
-              name={returnStatus(props.selection, 3)}
+              name={returnStatus(props.priceComplete, 3)}
             />
             <div style={returnLeftBar(props.locationComplete)} />
             <div style={returnRightBar(props.priceComplete)} />
@@ -123,7 +123,7 @@ export const breadcrumb = props => (
               circular
               size="large"
               style={returnIcon(props.selection, 4, props.reviewComplete)}
-              name={returnStatus(props.selection, 4)}
+              name={returnStatus(props.reviewComplete, 4)}
             />
             <div style={returnLeftBar(props.priceComplete)} />
           </Segment>
