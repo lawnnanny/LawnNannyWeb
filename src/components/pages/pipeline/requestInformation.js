@@ -7,7 +7,7 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/requestInformation';
 
 export const requestInformation = (state) => {
-  if (!state.typeOfRequest) {
+  if (!state.redux.selection) {
     return <Redirect to="/pipeline" />;
   }
   return (
@@ -21,8 +21,9 @@ export const requestInformation = (state) => {
         <Segment style={Styles.segment}>
           <DynamicFormComponent
             jsonForm={() => jsonForm}
+            reduxInfo={state.redux.requestInformation}
             setRequest={state.setRequestInformation}
-            form={state.typeOfRequest}
+            form={state.redux.selection}
             route={() => {
               state.history.push('/pipeline/requestLocation');
             }}

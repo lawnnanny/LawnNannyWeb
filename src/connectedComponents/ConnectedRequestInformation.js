@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Actions from '../reducers/Actions';
 import requestInformationComponent from '../components/pages/pipeline/requestInformation';
 
-const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
+const mapStateToProps = state => ({ redux: state.requests });
 
 const mapDispatchToProps = dispatch => ({
   setRequestInformation: (data) => {

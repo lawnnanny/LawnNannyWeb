@@ -81,6 +81,20 @@ class DynamicForm extends React.Component {
     return !Object.keys(errors).length;
   };
 
+  returnValue = (reduxInfo, id, method, optionForCheckmark) => {
+    if (method === 'entry') {
+      if (reduxInfo) {
+        return reduxInfo[id].entry;
+      }
+    } else if (method === 'checked') {
+      if (reduxInfo) {
+        return reduxInfo[id].checked === optionForCheckmark;
+      }
+      return this.state.dataForSubmitting[id] === optionForCheckmark;
+    }
+    return this.state.dataForSubmitting[id];
+  }
+
   processChange = (key) => {
     const handle = (e, { value }) => {
       const state = this.state;
@@ -157,6 +171,7 @@ class DynamicForm extends React.Component {
         {this.addAstricks(field.validation) + field.name}
       </label>
       <TextArea
+        value={this.returnValue(this.props.reduxInfo, field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
         id={field.id}
@@ -208,7 +223,7 @@ class DynamicForm extends React.Component {
         label={option}
         value={option}
         onChange={this.processChange(id)}
-        checked={this.state.dataForSubmitting[id] === option}
+        checked={this.returnValue(this.props.reduxInfo, id, 'checked', option)}
       />
     ));
     return radioButtons;
