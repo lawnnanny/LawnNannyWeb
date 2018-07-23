@@ -12,6 +12,15 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
+  setCompletedRequestInformation: (data) => {
+    const action = {
+      type: Actions.requests.setCompletedRequestInformation,
+      data,
+    };
+    dispatch(action);
+  },
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(requestInformationComponent);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(requestInformationComponent);

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Grid, Icon, Label, Segment } from 'semantic-ui-react';
 import Styles from '../../styles/breadcrumb';
 
-const returnStatus = (selection, id) => {
-  if (selection > id) {
+const returnStatus = (isComplete, id) => {
+  if (isComplete) {
     return 'check';
   } else if (id === 0) {
     return 'map signs';
@@ -20,22 +20,22 @@ const returnStatus = (selection, id) => {
   }
   return 'cancel';
 };
-const returnIcon = (icon, id) => {
-  if (icon > id) {
-    return Styles.finishedIcon;
-  } else if (icon === id) {
+const returnIcon = (icon, id, isComplete) => {
+  if (icon === id) {
     return Styles.currentIcon;
+  } else if (isComplete) {
+    return Styles.finishedIcon;
   }
   return Styles.unfinishedIcon;
 };
-const returnRightBar = (bar, id) => {
-  if (bar > id) {
+const returnRightBar = (isComplete) => {
+  if (isComplete) {
     return Styles.rightBarFinished;
   }
   return Styles.rightBarUnfinished;
 };
-const returnLeftBar = (bar, id) => {
-  if (bar > id) {
+const returnLeftBar = (isComplete) => {
+  if (isComplete) {
     return Styles.leftBarFinished;
   }
   return Styles.leftBarUnfinished;
@@ -52,12 +52,12 @@ export const breadcrumb = props => (
       <Link to="/pipeline" style={Styles.link}>
         <Grid.Column style={Styles.column}>
           <Segment style={Styles.segment}>
-            <div style={returnRightBar(props.selection, 0)} />
+            <div style={returnRightBar(props.requestComplete)} />
             <Icon
-              style={returnIcon(props.selection, 0)}
+              style={returnIcon(props.selection, 0, props.requestComplete)}
               circular
               size="large"
-              name={returnStatus(props.selection, 0)}
+              name={returnStatus(props.requestComplete, 0)}
             />
           </Segment>
           <Segment style={Styles.segment}>
@@ -71,11 +71,11 @@ export const breadcrumb = props => (
             <Icon
               circular
               size="large"
-              style={returnIcon(props.selection, 1)}
-              name={returnStatus(props.selection, 1)}
+              style={returnIcon(props.selection, 1, props.infoComplete)}
+              name={returnStatus(props.infoComplete, 1)}
             />
-            <div style={returnLeftBar(props.selection, 0)} />
-            <div style={returnRightBar(props.selection, 1)} />
+            <div style={returnLeftBar(props.requestComplete)} />
+            <div style={returnRightBar(props.infoComplete)} />
           </Segment>
           <Segment style={Styles.segment}>
             <Label style={returnLabel(props.selection, 1)}>Details</Label>
@@ -85,14 +85,14 @@ export const breadcrumb = props => (
       <Link to="/pipeline/requestLocation" style={Styles.link}>
         <Grid.Column style={Styles.column}>
           <Segment style={Styles.segment}>
-            <div style={returnRightBar(props.selection, 2)} />
+            <div style={returnRightBar(props.locationComplete)} />
             <Icon
               circular
               size="large"
-              style={returnIcon(props.selection, 2)}
-              name={returnStatus(props.selection, 2)}
+              style={returnIcon(props.selection, 2, props.locationComplete)}
+              name={returnStatus(props.locationComplete, 2)}
             />
-            <div style={returnLeftBar(props.selection, 1)} />
+            <div style={returnLeftBar(props.infoComplete)} />
           </Segment>
           <Segment style={Styles.segment}>
             <Label style={returnLabel(props.selection, 2)}>Location</Label>
@@ -105,11 +105,11 @@ export const breadcrumb = props => (
             <Icon
               circular
               size="large"
-              style={returnIcon(props.selection, 3)}
-              name={returnStatus(props.selection, 3)}
+              style={returnIcon(props.selection, 3, props.priceComplete)}
+              name={returnStatus(props.priceComplete, 3)}
             />
-            <div style={returnLeftBar(props.selection, 2)} />
-            <div style={returnRightBar(props.selection, 3)} />
+            <div style={returnLeftBar(props.locationComplete)} />
+            <div style={returnRightBar(props.priceComplete)} />
           </Segment>
           <Segment style={Styles.segment}>
             <Label style={returnLabel(props.selection, 3)}>Price</Label>
@@ -122,10 +122,10 @@ export const breadcrumb = props => (
             <Icon
               circular
               size="large"
-              style={returnIcon(props.selection, 4)}
-              name={returnStatus(props.selection, 4)}
+              style={returnIcon(props.selection, 4, props.reviewComplete)}
+              name={returnStatus(props.reviewComplete, 4)}
             />
-            <div style={returnLeftBar(props.selection, 3)} />
+            <div style={returnLeftBar(props.priceComplete)} />
           </Segment>
           <Segment style={Styles.segment}>
             <Label style={returnLabel(props.selection, 4)}>Review</Label>
@@ -135,9 +135,13 @@ export const breadcrumb = props => (
     </Grid.Row>
   </Grid>
 );
-
 breadcrumb.propTypes = {
   selection: PropTypes.number.isRequired,
+  requestComplete: PropTypes.number.isRequired,
+  priceComplete: PropTypes.number.isRequired,
+  locationComplete: PropTypes.number.isRequired,
+  infoComplete: PropTypes.number.isRequired,
+  reviewComplete: PropTypes.number.isRequired,
 };
 
 export default breadcrumb;

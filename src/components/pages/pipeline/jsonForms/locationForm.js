@@ -1,8 +1,7 @@
 export const jsonForm = {
   Location: {
     description: 'Job Location',
-    popup:
-      'Please specify the address of where you would like the job to be performed. NOTE: PLEASE DO NOT SPECIFY YOUR OWN ADDREESS',
+    popup: 'Please specify the address of where you would like the job to be performed.',
     fields: [
       {
         name: 'cityZip',
