@@ -3,8 +3,8 @@ import { Grid, Segment, Header, Icon, Input, Button, Image, Popup } from 'semant
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import Styles from '../../../styles/requestPrice';
-import up from '../../../images/pipeline/sort-down.png';
-import down from '../../../images/pipeline/sort-up.png';
+import up from '../../../images/pipeline/up.png';
+import down from '../../../images/pipeline/down.png';
 import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
 
 export const requestPrice = (state) => {
@@ -33,7 +33,7 @@ export const requestPrice = (state) => {
         <Grid.Column style={Styles.priceColumn}>
           <Grid.Row style={Styles.triangleTopRow}>
             <Button style={Styles.triangleTopButton} onClick={state.incrementRequestPrice}>
-              <Image centered size="small" style={Styles.image} src={down} />
+              <Image centered style={Styles.image} src={up} />
             </Button>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
@@ -47,7 +47,7 @@ export const requestPrice = (state) => {
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
             <Button style={Styles.triangleBottomButton} onClick={state.decrementRequestPrice}>
-              <Image centered size="small" style={Styles.image} src={up} />
+              <Image centered style={Styles.image} src={down} />
             </Button>
           </Grid.Row>
         </Grid.Column>

@@ -39,14 +39,14 @@ export default {
   },
   triangleBottomButton: {
     padding: '0',
-    backgroundColor: white,
+    width: '12em',
   },
   triangleTopButton: {
     padding: '0',
-    backgroundColor: white,
+    width: '12em',
   },
   input: {
-    width: '6em',
+    width: '7em',
     fontSize: '3em',
     padding: '0',
   },
@@ -54,7 +54,7 @@ export default {
     fontSize: '7em',
   },
   image: {
-    boxShadow: '1px solid black',
+    width: '8em',
   },
   button: {
     width: '20em',
