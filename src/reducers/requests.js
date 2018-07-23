@@ -29,15 +29,15 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'requestPrice', state.requestPrice + 1);
     case Actions.requests.decrementPrice:
       return setState(state, 'requestPrice', state.requestPrice - 1);
-    case Actions.requests.setcompletedRequest:
+    case Actions.requests.setCompletedRequest:
       return setState(state, 'completedRequest', true);
-    case Actions.requests.setcompletedRequestPrice:
+    case Actions.requests.setCompletedRequestPrice:
       return setState(state, 'completedRequestPrice', true);
-    case Actions.requests.setcompletedRequestInformation:
+    case Actions.requests.setCompletedRequestInformation:
       return setState(state, 'completedRequestInformation', true);
-    case Actions.requests.setcompletedRequestLocation:
+    case Actions.requests.setCompletedRequestLocation:
       return setState(state, 'completedRequestLocation', true);
-    case Actions.requests.setcompletedRequestReview:
+    case Actions.requests.setCompletedRequestReview:
       return setState(state, 'completedRequestReview', true);
     default:
       return state;
