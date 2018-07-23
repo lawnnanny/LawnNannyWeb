@@ -12,6 +12,13 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
+  setCompletedRequestLocation: (data) => {
+    const action = {
+      type: Actions.requests.setCompletedRequestLocation,
+      data,
+    };
+    dispatch(action);
+  },
 });
 
 export default connect(

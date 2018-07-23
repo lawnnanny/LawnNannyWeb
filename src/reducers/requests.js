@@ -3,6 +3,11 @@ import Actions from './Actions';
 const getInitialState = () => ({
   requestPrice: 0,
   selection: '',
+  completedRequest: false,
+  completedRequestPrice: false,
+  completedRequestLocation: false,
+  completedRequestInformation: false,
+  completedRequestReview: false,
 });
 
 const setState = (previousState, property, newValue) =>
@@ -24,6 +29,16 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'requestPrice', state.requestPrice + 1);
     case Actions.requests.decrementPrice:
       return setState(state, 'requestPrice', state.requestPrice - 1);
+    case Actions.requests.setcompletedRequest:
+      return setState(state, 'completedRequest', true);
+    case Actions.requests.setcompletedRequestPrice:
+      return setState(state, 'completedRequestPrice', true);
+    case Actions.requests.setcompletedRequestInformation:
+      return setState(state, 'completedRequestInformation', true);
+    case Actions.requests.setcompletedRequestLocation:
+      return setState(state, 'completedRequestLocation', true);
+    case Actions.requests.setcompletedRequestReview:
+      return setState(state, 'completedRequestReview', true);
     default:
       return state;
   }

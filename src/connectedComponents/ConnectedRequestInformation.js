@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import Actions from '../reducers/Actions';
 import requestInformationComponent from '../components/pages/pipeline/requestInformation';
 
-const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
+const mapStateToProps = state => ({
+  typeOfRequest: state.requests.selection,
+});
 
 const mapDispatchToProps = dispatch => ({
   setRequestInformation: (data) => {
@@ -12,6 +14,15 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
+  setCompletedRequestInformation: (data) => {
+    const action = {
+      type: Actions.requests.setCompletedRequestInformation,
+      data,
+    };
+    dispatch(action);
+  },
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(requestInformationComponent);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(requestInformationComponent);

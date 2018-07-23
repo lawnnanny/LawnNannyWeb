@@ -10,6 +10,13 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
+  setCompletedRequest: (data) => {
+    const action = {
+      type: Actions.requests.setCompletedRequest,
+      data,
+    };
+    dispatch(action);
+  },
 });
 
 export default connect(

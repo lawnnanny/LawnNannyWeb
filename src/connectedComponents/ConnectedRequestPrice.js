@@ -37,6 +37,13 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
+  setCompletedRequestPrice: (data) => {
+    const action = {
+      type: Actions.requests.setCompletedRequestPrice,
+      data,
+    };
+    dispatch(action);
+  },
 });
 
 export default connect(
