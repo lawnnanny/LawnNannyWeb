@@ -22,7 +22,7 @@ export const requestLocation = (state) => {
           <DynamicFormComponent
             popup
             jsonForm={() => jsonForm}
-            reduxInfo={state.redux.requestInformation}
+            reduxInfo={state.redux.requestLocation}
             setRequest={state.setRequestLocation}
             form={'Location'}
             route={() => {

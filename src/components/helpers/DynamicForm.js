@@ -86,7 +86,7 @@ class DynamicForm extends React.Component {
   loadStoreWithReduxData = (props) => {
     if (props.reduxInfo) {
       Object.keys(props.reduxInfo).forEach((entryKey) => {
-        console.log(props.reduxInfo[entryKey]);
+        console.log(props.reduxInfo[entryKey].entry);
         this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
       });
     }
@@ -101,13 +101,8 @@ class DynamicForm extends React.Component {
     } else if (method === 'checked') {
       return this.state.dataForSubmitting[id] === optionForCheckmark;
     }
-<<<<<<< HEAD
     return '';
   }
-=======
-    return this.state.dataForSubmitting[id];
-  };
->>>>>>> 2f0836d18ba55f976b2937c9e72e53f702890ea8
 
   processChange = (key, type) => {
     const handle = (e, { value }) => {
@@ -118,6 +113,7 @@ class DynamicForm extends React.Component {
         state.dataForSubmitting[key] = value;
       }
       this.setState(state);
+      console.log(state);
     };
     return handle;
   };
