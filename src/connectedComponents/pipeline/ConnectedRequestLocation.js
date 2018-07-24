@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import requestLocationComponent from '../components/pages/pipeline/requestLocation';
-import Actions from '../reducers/Actions';
+import requestLocationComponent from '../../components/pages/pipeline/requestLocation';
+import Actions from '../../reducers/Actions';
 
 const mapStateToProps = state => ({ requests: state.requests });
 

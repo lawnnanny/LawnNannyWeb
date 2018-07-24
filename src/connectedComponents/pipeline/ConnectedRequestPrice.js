@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import requestPriceComponent from '../components/pages/pipeline/requestPrice';
-import Actions from '../reducers/Actions';
+import requestPriceComponent from '../../components/pages/pipeline/requestPrice';
+import Actions from '../../reducers/Actions';
 
 const mapStateToProps = state => ({
   typeOfRequest: state.requests.selection,

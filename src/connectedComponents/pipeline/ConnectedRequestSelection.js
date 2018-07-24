@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Actions from '../reducers/Actions';
-import requestSelectionComponent from '../components/pages/pipeline/requestSelection';
+import Actions from '../../reducers/Actions';
+import requestSelectionComponent from '../../components/pages/pipeline/requestSelection';
 
 const mapDispatchToProps = dispatch => ({
   setTypeOfRequest: (data) => {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import breadcrumbComponent from '../components/helpers/breadcrumb';
+import breadcrumbComponent from '../../components/helpers/breadcrumb';
 
 const mapStateToProps = state => ({
   typeOfRequest: state.requests.selection,
