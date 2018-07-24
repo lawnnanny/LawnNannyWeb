@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form,
@@ -89,7 +89,7 @@ class DynamicForm extends React.Component {
         this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
       });
     }
-  }
+  };
 
   returnValue = (id, method, optionForCheckmark) => {
     if (method === 'entry') {
@@ -100,7 +100,7 @@ class DynamicForm extends React.Component {
       return this.state.dataForSubmitting[id] === optionForCheckmark;
     }
     return '';
-  }
+  };
 
   processChange = (key, type) => {
     const handle = (e, { value }) => {

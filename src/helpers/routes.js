@@ -6,11 +6,11 @@ import thunk from 'redux-thunk';
 
 import { Error404 } from '../components/errors/Error404';
 import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
-import ConnectedRequestSelection from '../connectedComponents/ConnectedRequestSelection';
-import ConnectedRequestInformationComponent from '../connectedComponents/ConnectedRequestInformation';
-import ConnectedRequestLocationComponent from '../connectedComponents/ConnectedRequestLocation';
-import ConnectedRequestPriceComponent from '../connectedComponents/ConnectedRequestPrice';
-import RequestReviewComponent from '../components/pages/pipeline/requestReview';
+import ConnectedRequestSelection from '../connectedComponents/pipeline/ConnectedRequestSelection';
+import ConnectedRequestInformationComponent from '../connectedComponents/pipeline/ConnectedRequestInformation';
+import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/ConnectedRequestLocation';
+import ConnectedRequestPriceComponent from '../connectedComponents/pipeline/ConnectedRequestPrice';
+import ConnectedRequestReviewComponent from '../connectedComponents/pipeline/ConnectedRequestReview';
 import HomePageComponent from '../components/pages/HomePage';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
@@ -55,7 +55,11 @@ export class Routes extends Component {
                 path="/pipeline/requestPrice"
                 component={ConnectedRequestPriceComponent}
               />
-              <Route exact path="/pipeline/requestReview" component={RequestReviewComponent} />
+              <Route
+                exact
+                path="/pipeline/requestReview"
+                component={ConnectedRequestReviewComponent}
+              />
               <Route path="/*" component={Error404} />
             </Switch>
           </div>
