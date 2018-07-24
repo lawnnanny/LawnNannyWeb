@@ -40,9 +40,9 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  setCompletedRequestPrice: (data) => {
+  setCompletedRequestLocation: (data) => {
     const action = {
-      type: Actions.requests.setCompletedRequestPrice,
+      type: Actions.requests.setCompletedRequestLocation,
       data,
     };
     dispatch(action);

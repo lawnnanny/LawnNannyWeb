@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import requestLocationComponent from '../components/pages/pipeline/requestLocation';
 import Actions from '../reducers/Actions';
 
-const mapStateToProps = state => ({ redux: state.requests });
+const mapStateToProps = state => ({ requests: state.requests });
 
 const mapDispatchToProps = dispatch => ({
   setRequestLocation: (data) => {
@@ -12,9 +12,9 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
-  setCompletedRequestLocation: (data) => {
+  setCompletedRequestInformation: (data) => {
     const action = {
-      type: Actions.requests.setCompletedRequestLocation,
+      type: Actions.requests.setCompletedRequestInformation,
       data,
     };
     dispatch(action);

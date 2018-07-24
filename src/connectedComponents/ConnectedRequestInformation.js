@@ -3,8 +3,9 @@ import Actions from '../reducers/Actions';
 import requestInformationComponent from '../components/pages/pipeline/requestInformation';
 
 const mapStateToProps = state => ({
-  redux: state.requests,
+  requests: state.requests,
   completedRequest: state.completedRequest,
+  selection: state.selection,
 });
 
 const mapDispatchToProps = dispatch => ({
