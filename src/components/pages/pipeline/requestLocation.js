@@ -20,6 +20,7 @@ export const requestLocation = (state) => {
       <Grid.Row padding style={Styles.Grid}>
         <Segment style={Styles.segment}>
           <DynamicFormComponent
+            popup
             jsonForm={() => jsonForm}
             reduxInfo={state.redux.requestInformation}
             setRequest={state.setRequestLocation}

@@ -101,8 +101,13 @@ class DynamicForm extends React.Component {
     } else if (method === 'checked') {
       return this.state.dataForSubmitting[id] === optionForCheckmark;
     }
+<<<<<<< HEAD
     return '';
   }
+=======
+    return this.state.dataForSubmitting[id];
+  };
+>>>>>>> 2f0836d18ba55f976b2937c9e72e53f702890ea8
 
   processChange = (key, type) => {
     const handle = (e, { value }) => {
@@ -272,12 +277,14 @@ class DynamicForm extends React.Component {
       <Segment padded style={Styles.Dynamicsegment}>
         <Header as="h1">
           {this.state.Requests[this.props.form].description}
-          <Popup
-            size="large"
-            trigger={<Icon name="question" style={Styles.popupIcon} circular />}
-            content={this.state.Requests[this.props.form].popup}
-            on={['hover', 'click']}
-          />
+          {this.props.popup && (
+            <Popup
+              size="large"
+              trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+              content={this.state.Requests[this.props.form].popup}
+              on={['hover', 'click']}
+            />
+          )}
         </Header>
         <Segment style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
@@ -301,6 +308,7 @@ DynamicForm.propTypes = {
   form: PropTypes.string.isRequired,
   setRequest: PropTypes.func.isRequired,
   route: PropTypes.func.isRequired,
+  popup: PropTypes.func.isRequired,
 };
 
 export default DynamicForm;
