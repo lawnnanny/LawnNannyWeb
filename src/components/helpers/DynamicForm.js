@@ -18,6 +18,7 @@ class DynamicForm extends React.Component {
   constructor(props) {
     super();
     this.state = {
+      placeholderUsed: false,
       errors: {},
       dataForSubmitting: {},
       Requests: props.jsonForm(),
@@ -55,6 +56,7 @@ class DynamicForm extends React.Component {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
+        console.log(validationEntryObject.entry);
         if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
           switch (validationEntryObject.type) {
             case 'textArea':
@@ -81,24 +83,35 @@ class DynamicForm extends React.Component {
     return !Object.keys(errors).length;
   };
 
-  returnValue = (reduxInfo, id, method, optionForCheckmark) => {
-    if (method === 'entry') {
-      if (reduxInfo) {
-        return reduxInfo[id].entry;
-      }
-    } else if (method === 'checked') {
-      if (reduxInfo) {
-        return reduxInfo[id].checked === optionForCheckmark;
-      }
-      return this.state.dataForSubmitting[id] === optionForCheckmark;
+  loadStoreWithReduxData = (props) => {
+    if (props.reduxInfo) {
+      Object.keys(props.reduxInfo).forEach((entryKey) => {
+        console.log(props.reduxInfo[entryKey]);
+        this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
+      });
     }
-    return this.state.dataForSubmitting[id];
   }
 
-  processChange = (key) => {
+  returnValue = (id, method, optionForCheckmark) => {
+    if (method === 'entry') {
+      if (this.state.dataForSubmitting[id] !== null) {
+        console.log(this.state.dataForSubmitting[id]);
+        return this.state.dataForSubmitting[id];
+      }
+    } else if (method === 'checked') {
+      return this.state.dataForSubmitting[id] === optionForCheckmark;
+    }
+    return '';
+  }
+
+  processChange = (key, type) => {
     const handle = (e, { value }) => {
       const state = this.state;
-      state.dataForSubmitting[key] = value;
+      if (type === 'boolean') {
+        state.dataForSubmitting[key] = !state.dataForSubmitting[key];
+      } else {
+        state.dataForSubmitting[key] = value;
+      }
       this.setState(state);
     };
     return handle;
@@ -132,7 +145,8 @@ class DynamicForm extends React.Component {
         </label>
         <Form.Input
           error={errors[field.id]}
-          onChange={this.processChange(field.id)}
+          value={this.returnValue(field.id, 'entry', '')}
+          onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
         />
         <div style={InLineErrorStyle}>
@@ -151,8 +165,8 @@ class DynamicForm extends React.Component {
       <Dropdown
         search
         error={errors[field.id]}
-        value={this.state[field.id]}
-        onChange={this.processChange(field.id)}
+        value={this.returnValue(field.id, 'entry', '')}
+        onChange={this.processChange(field.id, '')}
         id={field.id}
         placeholder={field.placeholder}
         options={statekeys}
@@ -171,12 +185,12 @@ class DynamicForm extends React.Component {
         {this.addAstricks(field.validation) + field.name}
       </label>
       <TextArea
-        value={this.returnValue(this.props.reduxInfo, field.id, 'entry', '')}
+        value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
         id={field.id}
         placeholder={field.placeholder}
-        onChange={this.processChange(field.id)}
+        onChange={this.processChange(field.id, '')}
       />
       <div style={Styles.InLineErrorTextArea}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
@@ -192,8 +206,8 @@ class DynamicForm extends React.Component {
       <Checkbox
         error={errors[field.id]}
         name={field.name}
-        onChange={this.processChange(field.id)}
-        value="true"
+        onChange={this.processChange(field.id, 'boolean')}
+        checked={this.returnValue(field.id, 'entry', '')}
       />
       {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
     </Form.Field>
@@ -222,8 +236,8 @@ class DynamicForm extends React.Component {
       <Form.Radio
         label={option}
         value={option}
-        onChange={this.processChange(id)}
-        checked={this.returnValue(this.props.reduxInfo, id, 'checked', option)}
+        onChange={this.processChange(id, '')}
+        checked={this.returnValue(id, 'checked', option)}
       />
     ));
     return radioButtons;
@@ -252,6 +266,8 @@ class DynamicForm extends React.Component {
   };
 
   render() {
+    this.loadStoreWithReduxData(this.props);
+    console.log(this.state);
     return (
       <Segment padded style={Styles.Dynamicsegment}>
         <Header as="h1">

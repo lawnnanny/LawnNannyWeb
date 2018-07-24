@@ -7,7 +7,7 @@ import DynamicFormComponent from '../../helpers/DynamicForm';
 import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
 
 export const requestLocation = (state) => {
-  if (!state.typeOfRequest) {
+  if (!state.redux.selection) {
     return <Redirect to="/pipeline" />;
   }
   return (
@@ -21,6 +21,7 @@ export const requestLocation = (state) => {
         <Segment style={Styles.segment}>
           <DynamicFormComponent
             jsonForm={() => jsonForm}
+            reduxInfo={state.redux.requestInformation}
             setRequest={state.setRequestLocation}
             form={'Location'}
             route={() => {

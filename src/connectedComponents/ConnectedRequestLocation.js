@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import requestLocationComponent from '../components/pages/pipeline/requestLocation';
 import Actions from '../reducers/Actions';
 
-const mapStateToProps = state => ({ typeOfRequest: state.requests.selection });
+const mapStateToProps = state => ({ redux: state.requests });
 
 const mapDispatchToProps = dispatch => ({
   setRequestLocation: (data) => {
