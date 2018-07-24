@@ -18,7 +18,7 @@ class DynamicForm extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      placeholderUsed: false,
+      loadedData: false,
       errors: {},
       dataForSubmitting: {},
       Requests: props.jsonForm(),
@@ -56,7 +56,6 @@ class DynamicForm extends React.Component {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
       if (validationEntryObject.validation === 'required') {
-        console.log(validationEntryObject.entry);
         if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
           switch (validationEntryObject.type) {
             case 'textArea':
@@ -84,9 +83,9 @@ class DynamicForm extends React.Component {
   };
 
   loadStoreWithReduxData = (props) => {
-    if (props.reduxInfo) {
+    if (props.reduxInfo && !this.state.loadedData) {
+      this.state.loadedData = true;
       Object.keys(props.reduxInfo).forEach((entryKey) => {
-        console.log(props.reduxInfo[entryKey].entry);
         this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
       });
     }
@@ -95,7 +94,6 @@ class DynamicForm extends React.Component {
   returnValue = (id, method, optionForCheckmark) => {
     if (method === 'entry') {
       if (this.state.dataForSubmitting[id] !== null) {
-        console.log(this.state.dataForSubmitting[id]);
         return this.state.dataForSubmitting[id];
       }
     } else if (method === 'checked') {
@@ -113,7 +111,6 @@ class DynamicForm extends React.Component {
         state.dataForSubmitting[key] = value;
       }
       this.setState(state);
-      console.log(state);
     };
     return handle;
   };
@@ -268,7 +265,6 @@ class DynamicForm extends React.Component {
 
   render() {
     this.loadStoreWithReduxData(this.props);
-    console.log(this.state);
     return (
       <Segment padded style={Styles.Dynamicsegment}>
         <Header as="h1">
