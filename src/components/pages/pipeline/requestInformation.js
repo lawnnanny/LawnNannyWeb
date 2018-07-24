@@ -3,16 +3,10 @@ import { Grid, Segment, Button } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import { jsonForm } from './jsonForms/informationForm';
 import DynamicFormComponent from '../../helpers/DynamicForm';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
+import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 import Styles from '../../../styles/requestInformation';
 
 export default class requestInformation extends Component {
-  constructor(props) {
-    super(props);
-    if (!this.props.requests.selection) {
-      return <Redirect to="/pipeline" />;
-    }
-  }
   componentWillMount() {
     this.props.setCompletedRequest();
   }

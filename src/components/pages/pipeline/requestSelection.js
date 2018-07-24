@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import RequestOptionComponent from '../../helpers/RequestOption';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
+import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 import Styles from '../../../styles/requestSelection';
 import mower from '../../../images/pipeline/mower.png';
 import rake from '../../../images/pipeline/rake.png';

@@ -3,7 +3,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 
 import Styles from '../../../styles/requestReview';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
+import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export default class requestInformation extends Component {
   componentWillMount() {
