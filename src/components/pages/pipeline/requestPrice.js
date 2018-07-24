@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Styles from '../../../styles/requestPrice';
 import up from '../../../images/pipeline/up.png';
 import down from '../../../images/pipeline/down.png';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
+import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export default class requestPrice extends Component {
   componentWillMount() {

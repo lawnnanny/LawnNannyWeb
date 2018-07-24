@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import { jsonForm } from './jsonForms/locationForm';
 import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/ConnectedBreadcrumb';
+import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export default class requestLocation extends Component {
   constructor(props) {
