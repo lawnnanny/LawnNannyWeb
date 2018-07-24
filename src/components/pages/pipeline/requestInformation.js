@@ -7,12 +7,6 @@ import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/
 import Styles from '../../../styles/requestInformation';
 
 export default class requestInformation extends Component {
-  constructor(props) {
-    super(props);
-    if (!this.props.requests.selection) {
-      return <Redirect to="/pipeline" />;
-    }
-  }
   componentWillMount() {
     this.props.setCompletedRequest();
   }

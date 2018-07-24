@@ -7,12 +7,6 @@ import DynamicFormComponent from '../../helpers/DynamicForm';
 import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export default class requestLocation extends Component {
-  constructor(props) {
-    super(props);
-    if (!this.props.requests.selection) {
-      return <Redirect to="/pipeline" />;
-    }
-  }
   componentWillMount() {
     this.props.setCompletedRequestInformation();
   }
