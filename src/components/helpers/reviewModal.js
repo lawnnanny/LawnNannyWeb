@@ -1,9 +1,10 @@
 import React from 'react';
-import { Modal, Button, Segment, Divider } from 'semantic-ui-react';
+import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
 import Styles from '../../styles/reviewModal';
 
 export const pipelineSignup = () => (
   <Modal
+    style={Styles.modal}
     size="small"
     trigger={
       <Button size="large" color="black">
@@ -14,12 +15,19 @@ export const pipelineSignup = () => (
     <Modal.Header>To Make A Request Please...</Modal.Header>
     <Modal.Content>
       <Segment style={Styles.segment}>
-        <Button positive size="large" fluid style={Styles.loginButton}>
-          Login
-        </Button>
+        <Input
+          style={Styles.Input}
+          placeholder="Your Email"
+          action={
+            <Button size="large" style={Styles.signUpButton}>
+              Sign Up Now{' '}
+            </Button>
+          }
+          actionPosition="right"
+        />
         <Divider horizontal>Or</Divider>
-        <Button secondary fluid size="large" style={Styles.signupButton}>
-          Sign Up Now
+        <Button secondary fluid size="large" style={Styles.loginButton}>
+          Log In
         </Button>
       </Segment>
     </Modal.Content>

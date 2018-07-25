@@ -2,10 +2,6 @@ const green = '#20ad1d';
 const blue = '#0e42ff';
 
 export default {
-  signupButton: {
-    backgroundColor: green,
-    color: 'white'
-  },
   loginButton: {
     backgroundColor: blue,
     color: 'white'
@@ -13,5 +9,16 @@ export default {
   segment: {
     boxShadow: 'none',
     border: 'none'
+  },
+  modal: {
+    width: '30em',
+    left: '37%'
+  },
+  signUpButton: {
+    backgroundColor: green,
+    color: 'white'
+  },
+  Input: {
+    width: '100%'
   }
 };
