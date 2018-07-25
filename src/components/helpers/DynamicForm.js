@@ -305,14 +305,12 @@ DynamicForm.propTypes = {
   form: PropTypes.string,
   setRequest: PropTypes.func,
   route: PropTypes.func,
-  popup: PropTypes.func,
 };
 DynamicForm.defaultProps = {
   jsonForm: PropTypes.func,
   form: PropTypes.string,
   setRequest: PropTypes.func,
   route: PropTypes.func,
-  popup: PropTypes.func,
 };
 
 export default DynamicForm;

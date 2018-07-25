@@ -1,7 +1,3 @@
-const green = '#20ad1d';
-const white = '#FFFFFF';
-const blue = '#0e42ff';
-
 export default {
   grid: {
     marginTop: '0',
