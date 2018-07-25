@@ -42,6 +42,9 @@ export default {
     backgroundColor: white,
     color: black,
   },
+  dropDownMenu: {
+    fontSize: '.6em',
+  },
   modal: {
     backgroundColor: white,
     padding: '1rem',

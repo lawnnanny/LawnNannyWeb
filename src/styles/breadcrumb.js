@@ -4,6 +4,9 @@ const black = '#000000';
 const blue = '#0e42ff';
 
 export default {
+  grid: {
+    marginTop: '.3em',
+  },
   link: {
     width: '20%',
     padding: '0',

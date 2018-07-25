@@ -9,6 +9,7 @@ import {
   Dropdown,
   Popup,
   Icon,
+  Button,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
@@ -285,7 +286,7 @@ class DynamicForm extends React.Component {
               false,
               this.state.errors,
             )}
-            <Form.Button positive fluid style={Styles.button}>
+            <Form.Button size="big" fluid style={Styles.button}>
               Continue
             </Form.Button>
           </Form>

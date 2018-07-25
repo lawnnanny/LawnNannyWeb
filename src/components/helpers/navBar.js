@@ -8,7 +8,15 @@ import DynamicComponent from '../helpers/DynamicForm';
 export const navBar = state => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
-      <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon" />
+      <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
+        <Dropdown.Menu style={Styles.dropDownMenu}>
+          <Dropdown.Item text="Find Requests" />
+          <Dropdown.Item text="Settings" />
+          <Dropdown.Item text="Terms of Service" />
+          <Dropdown.Item text="What is Terra" />
+          <Dropdown.Item text="More Info" />
+        </Dropdown.Menu>
+      </Dropdown>
     </Menu.Item>
     <Menu.Menu position="right">
       <Modal
