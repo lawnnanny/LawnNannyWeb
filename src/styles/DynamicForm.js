@@ -9,6 +9,7 @@ export default {
   },
   formSegment: {
     backgroundColor: '#f2f0ee',
+    maxWidth: '50em',
   },
   button: {
     backgroundColor: green,
