@@ -9,13 +9,12 @@ import {
   Dropdown,
   Popup,
   Icon,
-  Button,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
-class DynamicForm extends React.Component {
+class DynamicForm extends Component {
   constructor(props) {
     super();
     this.state = {

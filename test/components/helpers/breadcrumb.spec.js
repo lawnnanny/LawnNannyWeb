@@ -1,7 +1,7 @@
 import React from 'react';
-import { Menu, Modal, Grid, Input, Button, Form, Segment, Header, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Grid, Segment, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import Chance from 'chance';
 import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
 
 describe('RequestInformation', () => {
@@ -27,44 +27,65 @@ describe('RequestInformation', () => {
     it('is a row', () => {
       expect(row.type()).toEqual(Grid.Row);
     });
-
-    describe('request column', () => {
-      let requestColumn;
+    describe('request Link', () => {
+      let requestLink;
 
       beforeEach(() => {
-        requestColumn = row.childAt(0);
+        requestLink = row.childAt(0);
       });
 
-      it('is a column', () => {
-        expect(requestColumn.type()).toEqual(Grid.Column);
+      it('is a link', () => {
+        expect(requestLink.type()).toEqual(Link);
       });
-      describe('request segment', () => {
-        let requestSegment;
+      describe('request column', () => {
+        let requestColumn;
 
         beforeEach(() => {
-          requestSegment = requestColumn.childAt(0);
+          requestColumn = requestLink.childAt(0);
         });
 
-        it('is a segment', () => {
-          expect(requestSegment.type()).toEqual(Segment);
+        it('is a column', () => {
+          expect(requestColumn.type()).toEqual(Grid.Column);
         });
-        describe('request icon', () => {
-          let requestIcon;
+        describe('request segment', () => {
+          let requestSegment;
 
           beforeEach(() => {
-            requestIcon = requestSegment.childAt(1);
+            requestSegment = requestColumn.childAt(0);
           });
 
           it('is a segment', () => {
-            expect(requestIcon.type()).toEqual(Icon);
+            expect(requestSegment.type()).toEqual(Segment);
+          });
+          describe('request icon', () => {
+            let requestIcon;
+
+            beforeEach(() => {
+              requestIcon = requestSegment.childAt(1);
+            });
+
+            it('is a icon', () => {
+              expect(requestIcon.type()).toEqual(Icon);
+            });
           });
         });
+      });
+    });
+    describe('request Link', () => {
+      let informationLink;
+
+      beforeEach(() => {
+        informationLink = row.childAt(1);
+      });
+
+      it('is a link', () => {
+        expect(informationLink.type()).toEqual(Link);
       });
       describe('information column', () => {
         let informationColumn;
 
         beforeEach(() => {
-          informationColumn = row.childAt(1);
+          informationColumn = informationLink.childAt(0);
         });
 
         it('is a column', () => {
@@ -93,11 +114,22 @@ describe('RequestInformation', () => {
           });
         });
       });
+    });
+    describe('location Link', () => {
+      let locationLink;
+
+      beforeEach(() => {
+        locationLink = row.childAt(2);
+      });
+
+      it('is a link', () => {
+        expect(locationLink.type()).toEqual(Link);
+      });
       describe('location column', () => {
         let locationColumn;
 
         beforeEach(() => {
-          locationColumn = row.childAt(2);
+          locationColumn = locationLink.childAt(0);
         });
 
         it('is a column', () => {
@@ -126,11 +158,22 @@ describe('RequestInformation', () => {
           });
         });
       });
+    });
+    describe('price Link', () => {
+      let priceLink;
+
+      beforeEach(() => {
+        priceLink = row.childAt(3);
+      });
+
+      it('is a link', () => {
+        expect(priceLink.type()).toEqual(Link);
+      });
       describe('price column', () => {
         let priceColumn;
 
         beforeEach(() => {
-          priceColumn = row.childAt(3);
+          priceColumn = priceLink.childAt(0);
         });
 
         it('is a column', () => {
@@ -159,11 +202,22 @@ describe('RequestInformation', () => {
           });
         });
       });
+    });
+    describe('review Link', () => {
+      let reviewLink;
+
+      beforeEach(() => {
+        reviewLink = row.childAt(4);
+      });
+
+      it('is a link', () => {
+        expect(reviewLink.type()).toEqual(Link);
+      });
       describe('review column', () => {
         let reviewColumn;
 
         beforeEach(() => {
-          reviewColumn = row.childAt(4);
+          reviewColumn = reviewLink.childAt(0);
         });
 
         it('is a column', () => {

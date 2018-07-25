@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
-
+import PropTypes from 'prop-types';
 import Styles from '../../../styles/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
@@ -18,5 +18,12 @@ export const requestReview = (props) => {
       </Grid.Row>
     </Grid>
   );
+};
+requestReview.propTypes = {
+  pageInProgress: PropTypes.number,
+};
+
+requestReview.defaultProps = {
+  pageInProgress: 0,
 };
 export default requestReview;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/informationForm';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
@@ -34,5 +35,20 @@ export const requestInformation = (props) => {
       </Grid.Row>
     </Grid>
   );
+};
+requestInformation.propTypes = {
+  pageInProgress: PropTypes.number,
+  requests: PropTypes.obj,
+  setRequestInformation: PropTypes.func,
+  requestInProgress: PropTypes.number,
+  history: PropTypes.func,
+};
+
+requestInformation.defaultProps = {
+  pageInProgress: 0,
+  requests: {},
+  setRequestInformation: {},
+  requestInProgress: 0,
+  history: {},
 };
 export default requestInformation;

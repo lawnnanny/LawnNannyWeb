@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/locationForm';
 import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
@@ -34,5 +35,20 @@ export const requestLocation = (props) => {
       </Grid.Row>
     </Grid>
   );
+};
+requestLocation.propTypes = {
+  pageInProgress: PropTypes.number,
+  requests: PropTypes.obj,
+  setRequestLocation: PropTypes.func,
+  requestInProgress: PropTypes.number,
+  history: PropTypes.func,
+};
+
+requestLocation.defaultProps = {
+  pageInProgress: 0,
+  requests: {},
+  setRequestLocation: {},
+  requestInProgress: 0,
+  history: {},
 };
 export default requestLocation;

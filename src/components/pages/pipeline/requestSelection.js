@@ -80,11 +80,15 @@ export const requestSelection = props => (
 );
 
 requestSelection.propTypes = {
-  setTypeOfRequest: PropTypes.func.isRequired,
-  setCompletedRequest: PropTypes.func.isRequired,
+  pageInProgress: PropTypes.number,
+  setTypeOfRequest: PropTypes.func,
+  requestInProgress: PropTypes.number,
 };
+
 requestSelection.defaultProps = {
-  imageURL: PropTypes.object,
+  pageInProgress: 0,
+  setTypeOfRequest: {},
+  requestInProgress: 0,
 };
 
 export default requestSelection;

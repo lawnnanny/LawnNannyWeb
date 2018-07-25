@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
 import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
 import Styles from '../../styles/navBar';
-import bars from '../../images/bars.png';
 import DynamicComponent from '../helpers/DynamicForm';
 
 export const navBar = state => (

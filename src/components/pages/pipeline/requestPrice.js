@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment, Header, Icon, Input, Button, Image, Popup } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Styles from '../../../styles/requestPrice';
 import up from '../../../images/pipeline/up.png';
@@ -69,5 +70,22 @@ export const requestPrice = (props) => {
       </Grid.Row>
     </Grid>
   );
+};
+requestPrice.propTypes = {
+  pageInProgress: PropTypes.number,
+  requestPrice: PropTypes.number,
+  setRequestPrice: PropTypes.func,
+  requestInProgress: PropTypes.number,
+  incrementRequestPrice: PropTypes.func,
+  decrementRequestPrice: PropTypes.func,
+};
+
+requestPrice.defaultProps = {
+  pageInProgress: 0,
+  requestPrice: 0,
+  setRequestPrice: {},
+  requestInProgress: 0,
+  incrementRequestPrice: {},
+  decrementRequestPrice: {},
 };
 export default requestPrice;

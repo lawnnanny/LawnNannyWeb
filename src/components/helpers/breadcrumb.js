@@ -136,12 +136,13 @@ export const breadcrumb = props => (
   </Grid>
 );
 breadcrumb.propTypes = {
-  selection: PropTypes.number.isRequired,
-  requestComplete: PropTypes.number.isRequired,
-  priceComplete: PropTypes.number.isRequired,
-  locationComplete: PropTypes.number.isRequired,
-  infoComplete: PropTypes.number.isRequired,
-  reviewComplete: PropTypes.number.isRequired,
+  current: PropTypes.number,
+  selection: PropTypes.number,
+};
+
+breadcrumb.defaultProps = {
+  current: 0,
+  selection: 0,
 };
 
 export default breadcrumb;
