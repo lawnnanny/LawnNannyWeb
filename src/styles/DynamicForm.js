@@ -14,6 +14,7 @@ export default {
     borderRadius: '25px',
     backgroundColor: green,
     color: white,
+    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
   },
   InLineErrorInput: {
     marginTop: '-1.4em',

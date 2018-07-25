@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, Modal, Button, Dropdown } from 'semantic-ui-react';
 import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
 import Styles from '../../styles/navBar';
+import bars from '../../images/bars.png';
 import DynamicComponent from '../helpers/DynamicForm';
 
 export const navBar = state => (

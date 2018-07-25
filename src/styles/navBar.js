@@ -14,10 +14,14 @@ export default {
     border: 'none',
     marginBottom: '0rem',
   },
+  bars: {
+    width: '10%',
+    height: '10%',
+  },
   loginButton: {
     backgroundColor: white,
     color: blue,
-    padding: '.7em',
+    padding: '.8em',
     borderRadius: '25px',
     border: '.1rem solid',
     borderColor: blue,
@@ -25,15 +29,18 @@ export default {
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.7em',
+    padding: '.8em',
     borderRadius: '25px',
   },
   menuItem: {
     padding: '.5rem',
   },
   menuDropdown: {
-    color: black,
+    padding: '0',
+    margin: 'none',
+    fontSize: '2em',
     backgroundColor: white,
+    color: black,
   },
   modal: {
     backgroundColor: white,
