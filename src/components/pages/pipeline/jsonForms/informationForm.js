@@ -2,6 +2,7 @@ export const jsonForm = {
   'Lawn Mowing': {
     description: 'Lawn Details',
     popup: 'Please specify some details about the lawn so a worker can better fit your needs',
+    button: 'Continue',
     fields: [
       {
         name: 'I would like my grass bagged?',
@@ -28,6 +29,7 @@ export const jsonForm = {
   'Leaf Raking': {
     description: 'Raking Details',
     popup: 'Please specify some details about raking so a worker can better fit your needs',
+    button: 'Continue',
     fields: [
       {
         name: 'How would you like your leaves?',
@@ -49,6 +51,7 @@ export const jsonForm = {
     description: 'Snow Clearing',
     popup:
       'Please specify some details about the snow clearing so a worker can better fit your needs',
+    button: 'Continue',
     fields: [
       {
         name: 'Side Walk',
@@ -80,6 +83,7 @@ export const jsonForm = {
   'Custom Request': {
     description: 'Custom Details',
     popup: 'Please specify some details so a worker can better fit your needs',
+    button: 'Continue',
     fields: [
       {
         name: 'Please provide a description of what task youd like completed?',

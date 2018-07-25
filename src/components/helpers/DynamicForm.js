@@ -287,7 +287,7 @@ class DynamicForm extends React.Component {
               this.state.errors,
             )}
             <Form.Button size="big" fluid style={Styles.button}>
-              Continue
+              {this.state.Requests[this.props.form].button}
             </Form.Button>
           </Form>
         </Segment>
