@@ -40,10 +40,14 @@ export default {
   triangleBottomButton: {
     padding: '0',
     width: '12em',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
+    borderRadius: '5px',
   },
   triangleTopButton: {
     padding: '0',
     width: '12em',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
+    borderRadius: '5px',
   },
   input: {
     width: '7em',

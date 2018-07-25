@@ -26,6 +26,7 @@ export const requestInformation = (state) => {
             setRequest={state.setRequestInformation}
             form={state.requests.selection}
             route={() => {
+              state.requestInProgress(2);
               state.history.push('/pipeline/requestLocation');
             }}
           />

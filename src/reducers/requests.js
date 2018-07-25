@@ -1,20 +1,15 @@
 import Actions from './Actions';
 
 const getInitialState = () => ({
-  requestPrice: 0,
+  requestPrice: 1,
   selection: '',
-  completedRequest: false,
-  completedRequestInformation: false,
-  completedRequestLocation: false,
-  completedRequestPrice: false,
-  completedRequestReview: false,
+  requestInProgress: 0,
 });
 
 const setState = (previousState, property, newValue) =>
   Object.assign({}, previousState, {
     [property]: newValue,
   });
-
 export default (state = getInitialState(), action) => {
   switch (action.type) {
     case Actions.requests.setTypeOfRequest:
@@ -28,17 +23,9 @@ export default (state = getInitialState(), action) => {
     case Actions.requests.incrementPrice:
       return setState(state, 'requestPrice', state.requestPrice + 1);
     case Actions.requests.decrementPrice:
-      return setState(state, 'requestPrice', state.requestPrice - 1);
-    case Actions.requests.setCompletedRequest:
-      return setState(state, 'completedRequest', true);
-    case Actions.requests.setCompletedRequestPrice:
-      return setState(state, 'completedRequestPrice', true);
-    case Actions.requests.setCompletedRequestInformation:
-      return setState(state, 'completedRequestInformation', true);
-    case Actions.requests.setCompletedRequestLocation:
-      return setState(state, 'completedRequestLocation', true);
-    case Actions.requests.setCompletedRequestReview:
-      return setState(state, 'completedRequestReview', true);
+      return setState(state, 'requestPrice', Math.max(1, state.requestPrice - 1));
+    case Actions.requests.requestInProgress:
+      return setState(state, 'requestInProgress', Math.max(state.requestInProgress, action.data));
     default:
       return state;
   }

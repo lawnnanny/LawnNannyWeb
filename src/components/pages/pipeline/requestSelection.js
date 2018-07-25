@@ -31,6 +31,7 @@ export const requestSelection = props => (
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
+            props.requestInProgress(1);
             props.setTypeOfRequest('Lawn Mowing');
           }}
         />
@@ -42,7 +43,10 @@ export const requestSelection = props => (
           style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
-          onClick={() => props.setTypeOfRequest('Leaf Raking')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Leaf Raking');
+          }}
         />
       </Segment>
     </Grid.Row>
@@ -52,7 +56,10 @@ export const requestSelection = props => (
           style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
-          onClick={() => props.setTypeOfRequest('Snow Clearing')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Snow Clearing');
+          }}
         />
       </Segment>
     </Grid.Row>
@@ -62,7 +69,10 @@ export const requestSelection = props => (
           style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"
-          onClick={() => props.setTypeOfRequest('Custom Request')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Custom Request');
+          }}
         />
       </Segment>
     </Grid.Row>

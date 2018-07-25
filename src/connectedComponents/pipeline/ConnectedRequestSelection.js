@@ -10,9 +10,9 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(action);
   },
-  setCompletedRequest: (data) => {
+  requestInProgress: (data) => {
     const action = {
-      type: Actions.requests.setCompletedRequest,
+      type: Actions.requests.requestInProgress,
       data,
     };
     dispatch(action);
