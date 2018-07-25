@@ -8,7 +8,7 @@ import down from '../../../images/pipeline/down.png';
 import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export const requestPrice = (state) => {
-  if (!state.typeOfRequest) {
+  if (!state.requests.selection) {
     return <Redirect to="/pipeline" />;
   }
   return (

@@ -27,7 +27,6 @@ export const requestSelection = props => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
-          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={mower}
           title="Lawn Mowing"
@@ -40,7 +39,6 @@ export const requestSelection = props => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
-          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
@@ -51,7 +49,6 @@ export const requestSelection = props => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
-          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
@@ -62,7 +59,6 @@ export const requestSelection = props => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
-          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"

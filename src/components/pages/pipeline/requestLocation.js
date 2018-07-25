@@ -7,7 +7,7 @@ import DynamicFormComponent from '../../helpers/DynamicForm';
 import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
 
 export const requestLocation = (state) => {
-  if (!state.typeOfRequest) {
+  if (!state.requests.selection) {
     return <Redirect to="/pipeline" />;
   }
   return (

@@ -7,7 +7,7 @@ import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/
 import Styles from '../../../styles/requestInformation';
 
 export const requestInformation = (state) => {
-  if (!state.typeOfRequest) {
+  if (!state.requests.selection) {
     return <Redirect to="/pipeline" />;
   }
   return (
