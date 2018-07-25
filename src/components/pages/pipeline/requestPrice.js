@@ -83,9 +83,9 @@ requestPrice.propTypes = {
 requestPrice.defaultProps = {
   pageInProgress: 0,
   requestPrice: 0,
-  setRequestPrice: {},
+  setRequestPrice: PropTypes.func,
   requestInProgress: 0,
-  incrementRequestPrice: {},
-  decrementRequestPrice: {},
+  incrementRequestPrice: PropTypes.func,
+  decrementRequestPrice: PropTypes.func,
 };
 export default requestPrice;

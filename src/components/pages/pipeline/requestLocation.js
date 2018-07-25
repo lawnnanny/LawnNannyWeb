@@ -46,9 +46,9 @@ requestLocation.propTypes = {
 
 requestLocation.defaultProps = {
   pageInProgress: 0,
-  requests: {},
-  setRequestLocation: {},
+  requests: PropTypes.obj,
+  setRequestLocation: PropTypes.func,
   requestInProgress: 0,
-  history: {},
+  history: PropTypes.func,
 };
 export default requestLocation;

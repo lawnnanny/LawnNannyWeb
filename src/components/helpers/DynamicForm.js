@@ -296,11 +296,18 @@ class DynamicForm extends Component {
 }
 
 DynamicForm.propTypes = {
-  jsonForm: PropTypes.func.isRequired,
-  form: PropTypes.string.isRequired,
-  setRequest: PropTypes.func.isRequired,
-  route: PropTypes.func.isRequired,
-  popup: PropTypes.func.isRequired,
+  jsonForm: PropTypes.func,
+  form: PropTypes.string,
+  setRequest: PropTypes.func,
+  route: PropTypes.func,
+  popup: PropTypes.func,
+};
+DynamicForm.defaultProps = {
+  jsonForm: PropTypes.func,
+  form: PropTypes.string,
+  setRequest: PropTypes.func,
+  route: PropTypes.func,
+  popup: PropTypes.func,
 };
 
 export default DynamicForm;

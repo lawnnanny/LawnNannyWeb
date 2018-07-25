@@ -46,9 +46,9 @@ requestInformation.propTypes = {
 
 requestInformation.defaultProps = {
   pageInProgress: 0,
-  requests: {},
-  setRequestInformation: {},
+  requests: PropTypes.obj,
+  setRequestInformation: PropTypes.func,
   requestInProgress: 0,
-  history: {},
+  history: PropTypes.func,
 };
 export default requestInformation;

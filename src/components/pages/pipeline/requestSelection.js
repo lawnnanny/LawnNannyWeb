@@ -87,7 +87,7 @@ requestSelection.propTypes = {
 
 requestSelection.defaultProps = {
   pageInProgress: 0,
-  setTypeOfRequest: {},
+  setTypeOfRequest: PropTypes.func,
   requestInProgress: 0,
 };
 

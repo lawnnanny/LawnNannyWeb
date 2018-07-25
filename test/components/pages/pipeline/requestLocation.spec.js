@@ -8,7 +8,10 @@ import DynamicFormComponent from '../../../../src/components/helpers/DynamicForm
 describe('RequestInformation', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<RequestLocationComponent typeOfRequest="Lawn Mowing" />);
+  const renderComponent = () =>
+    shallow(
+      <RequestLocationComponent typeOfRequest="Lawn Mowing" pageInProgress={2} current={2} />,
+    );
 
   beforeEach(() => {
     wrapper = renderComponent();

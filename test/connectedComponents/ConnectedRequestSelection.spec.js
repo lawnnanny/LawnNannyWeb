@@ -1,13 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import RequestSelection from '../../src/connectedComponents/ConnectedRequestSelection';
+import RequestSelection from '../../src/connectedComponents/pipeline/ConnectedRequestSelection';
 
 describe('Connected RequestSelection Page', () => {
   let store;
 
   beforeEach(() => {
-    const state = {};
+    const state = {
+      requests: {
+        requestInProgress: 0,
+      },
+    };
 
     const mockStore = configureStore();
     store = mockStore(state);

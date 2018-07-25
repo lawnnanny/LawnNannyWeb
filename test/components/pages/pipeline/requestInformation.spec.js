@@ -9,7 +9,7 @@ describe('RequestInformation', () => {
   let wrapper;
 
   const renderComponent = () =>
-    shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing" />);
+    shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing" pageInProgress={1} />);
 
   beforeEach(() => {
     wrapper = renderComponent();

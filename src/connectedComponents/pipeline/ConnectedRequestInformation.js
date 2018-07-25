@@ -4,7 +4,6 @@ import requestInformationComponent from '../../components/pages/pipeline/request
 
 const mapStateToProps = state => ({
   requests: state.requests,
-  completedRequest: state.requests.completedRequest,
   pageInProgress: state.requests.requestInProgress,
 });
 

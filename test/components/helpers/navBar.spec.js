@@ -53,31 +53,31 @@ describe('navBar', () => {
       });
     });
   });
-  describe('home menu', () => {
-    let homeMenu;
+  describe('home link', () => {
+    let homeLink;
 
     beforeEach(() => {
-      homeMenu = wrapper.childAt(1);
+      homeLink = wrapper.childAt(1);
     });
 
-    it('is a home menu', () => {
-      expect(homeMenu.type()).toEqual(Menu.Item);
+    it('is a home link', () => {
+      expect(homeLink.type()).toEqual(Link);
     });
-    describe('home link', () => {
-      let homeLink;
+    describe('home menu', () => {
+      let homeMenu;
 
       beforeEach(() => {
-        homeLink = homeMenu.childAt(0);
+        homeMenu = homeLink.childAt(0);
       });
 
-      it('is a home link', () => {
-        expect(homeLink.type()).toEqual(Link);
+      it('is a home menu', () => {
+        expect(homeMenu.type()).toEqual(Menu.Item);
       });
       describe('home icon', () => {
         let homeIcon;
 
         beforeEach(() => {
-          homeIcon = homeLink.childAt(0);
+          homeIcon = homeMenu.childAt(0);
         });
 
         it('is a home icon', () => {

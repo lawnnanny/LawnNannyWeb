@@ -7,7 +7,8 @@ import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 describe('RequestInformation', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<RequestPriceComponent typeOfRequest="Lawn Mowing" />);
+  const renderComponent = () =>
+    shallow(<RequestPriceComponent typeOfRequest="Lawn Mowing" pageInProgress={3} current={3} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -22,7 +23,7 @@ describe('RequestInformation', () => {
   });
 
   it('contains three rows', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     const GridRows = wrapper.children();
 
@@ -94,7 +95,7 @@ describe('RequestInformation', () => {
       describe('popup', () => {
         let popup;
         beforeEach(() => {
-          popup = header.childAt(1);
+          popup = header.childAt(0);
         });
 
         it('is a popup', () => {
