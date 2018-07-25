@@ -5,6 +5,7 @@ import Actions from '../../reducers/Actions';
 const mapStateToProps = state => ({
   typeOfRequest: state.requests.selection,
   requestPrice: state.requests.requestPrice,
+  pageInProgress: state.requests.requestInProgress,
 });
 const mapDispatchToProps = dispatch => ({
   setRequestPrice: (event) => {
@@ -34,9 +35,9 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  setCompletedRequestLocation: (data) => {
+  requestInProgress: (data) => {
     const action = {
-      type: Actions.requests.setCompletedRequestLocation,
+      type: Actions.requests.requestInProgress,
       data,
     };
     dispatch(action);

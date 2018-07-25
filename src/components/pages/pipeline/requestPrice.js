@@ -7,8 +7,8 @@ import up from '../../../images/pipeline/up.png';
 import down from '../../../images/pipeline/down.png';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
-export const requestPrice = (state) => {
-  if (!state.typeOfRequest) {
+export const requestPrice = (props) => {
+  if (props.pageInProgress < 3) {
     return <Redirect to="/pipeline" />;
   }
   return (
@@ -32,21 +32,21 @@ export const requestPrice = (state) => {
       <Grid.Row style={Styles.priceRow}>
         <Grid.Column style={Styles.priceColumn}>
           <Grid.Row style={Styles.triangleTopRow}>
-            <Button style={Styles.triangleTopButton} onClick={state.incrementRequestPrice}>
+            <Button style={Styles.triangleTopButton} onClick={props.incrementRequestPrice}>
               <Image centered style={Styles.image} src={up} />
             </Button>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
             <Input
-              value={state.requestPrice}
+              value={props.requestPrice}
               icon="dollar"
               iconPosition="left"
               style={Styles.input}
-              onChange={state.setRequestPrice}
+              onChange={props.setRequestPrice}
             />
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
-            <Button style={Styles.triangleBottomButton} onClick={state.decrementRequestPrice}>
+            <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
               <Image centered style={Styles.image} src={down} />
             </Button>
           </Grid.Row>
@@ -54,7 +54,7 @@ export const requestPrice = (state) => {
       </Grid.Row>
       <Grid.Row style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
-          <Button size="big" style={Styles.button}>
+          <Button size="big" style={Styles.button} onClick={props.requestInProgress(4)}>
             Continue
           </Button>
         </Link>

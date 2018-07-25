@@ -6,8 +6,8 @@ import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
-export const requestLocation = (state) => {
-  if (!state.requests.selection) {
+export const requestLocation = (props) => {
+  if (props.pageInProgress < 2) {
     return <Redirect to="/pipeline" />;
   }
   return (
@@ -22,11 +22,12 @@ export const requestLocation = (state) => {
           <DynamicFormComponent
             popup
             jsonForm={() => jsonForm}
-            reduxInfo={state.requests.requestLocation}
-            setRequest={state.setRequestLocation}
+            reduxInfo={props.requests.requestLocation}
+            setRequest={props.setRequestLocation}
             form={'Location'}
             route={() => {
-              state.history.push('/pipeline/requestPrice');
+              props.requestInProgress(3);
+              props.history.push('/pipeline/requestPrice');
             }}
           />
         </Segment>

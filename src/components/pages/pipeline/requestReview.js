@@ -5,8 +5,8 @@ import { Redirect } from 'react-router';
 import Styles from '../../../styles/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
-export const requestReview = (state) => {
-  if (!state.requests.selection) {
+export const requestReview = (props) => {
+  if (props.pageInProgress < 4) {
     return <Redirect to="/pipeline" />;
   }
   return (
