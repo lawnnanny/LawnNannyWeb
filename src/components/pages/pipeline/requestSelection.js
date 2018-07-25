@@ -9,7 +9,7 @@ import rake from '../../../images/pipeline/rake.png';
 import snowBlower from '../../../images/pipeline/snowBlower.png';
 import custom from '../../../images/pipeline/custom.png';
 
-export const requestSelection = ({ setTypeOfRequest }) => (
+export const requestSelection = props => (
   <Grid container style={Styles.grid}>
     <Grid.Row style={Styles.breadrow}>
       <Segment style={Styles.segment}>
@@ -27,11 +27,12 @@ export const requestSelection = ({ setTypeOfRequest }) => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
-            setTypeOfRequest('Lawn Mowing');
+            props.setTypeOfRequest('Lawn Mowing');
           }}
         />
       </Segment>
@@ -39,30 +40,33 @@ export const requestSelection = ({ setTypeOfRequest }) => (
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
-          onClick={() => setTypeOfRequest('Leaf Raking')}
+          onClick={() => props.setTypeOfRequest('Leaf Raking')}
         />
       </Segment>
     </Grid.Row>
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
-          onClick={() => setTypeOfRequest('Snow Clearing')}
+          onClick={() => props.setTypeOfRequest('Snow Clearing')}
         />
       </Segment>
     </Grid.Row>
     <Grid.Row>
       <Segment style={Styles.buttonSegment}>
         <RequestOptionComponent
+          completed={props.setCompletedRequest()}
           style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"
-          onClick={() => setTypeOfRequest('Custom Request')}
+          onClick={() => props.setTypeOfRequest('Custom Request')}
         />
       </Segment>
     </Grid.Row>
@@ -71,6 +75,7 @@ export const requestSelection = ({ setTypeOfRequest }) => (
 
 requestSelection.propTypes = {
   setTypeOfRequest: PropTypes.func.isRequired,
+  setCompletedRequest: PropTypes.func.isRequired,
 };
 requestSelection.defaultProps = {
   imageURL: PropTypes.object,
