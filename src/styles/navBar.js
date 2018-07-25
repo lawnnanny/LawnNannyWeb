@@ -14,10 +14,6 @@ export default {
     border: 'none',
     marginBottom: '0rem',
   },
-  bars: {
-    width: '10%',
-    height: '10%',
-  },
   loginButton: {
     backgroundColor: white,
     color: blue,
@@ -44,6 +40,9 @@ export default {
   },
   dropDownMenu: {
     fontSize: '.6em',
+  },
+  homeIcon: {
+    fontSize: '2em',
   },
   modal: {
     backgroundColor: white,

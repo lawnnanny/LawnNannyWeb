@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, Modal, Button, Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
 import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
 import Styles from '../../styles/navBar';
 import bars from '../../images/bars.png';
@@ -18,6 +19,11 @@ export const navBar = state => (
         </Dropdown.Menu>
       </Dropdown>
     </Menu.Item>
+    <Link to="/HomePage">
+      <Menu.Item style={Styles.menuItem}>
+        <Icon name="home" style={Styles.homeIcon} />
+      </Menu.Item>
+    </Link>
     <Menu.Menu position="right">
       <Modal
         style={Styles.modal}
