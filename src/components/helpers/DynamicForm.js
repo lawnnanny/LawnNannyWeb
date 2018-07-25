@@ -128,6 +128,19 @@ class DynamicForm extends Component {
     }
     return {};
   };
+  showPopup = (popup) => {
+    if (popup) {
+      return (
+        <Popup
+          size="large"
+          trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+          content={this.state.Requests[this.props.form].popup}
+          on={['hover', 'click']}
+        />
+      );
+    }
+    return null;
+  };
 
   renderInput = (field, isInRow, errors) => {
     let InLineErrorStyle = Styles.InLineErrorInput;
@@ -262,21 +275,13 @@ class DynamicForm extends Component {
     });
     return formUI;
   };
-
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
       <Segment padded style={Styles.Dynamicsegment}>
         <Header as="h1">
           {this.state.Requests[this.props.form].description}
-          {this.props.popup && (
-            <Popup
-              size="large"
-              trigger={<Icon name="question" style={Styles.popupIcon} circular />}
-              content={this.state.Requests[this.props.form].popup}
-              on={['hover', 'click']}
-            />
-          )}
+          {this.showPopup(this.state.Requests[this.props.form].popup)}
         </Header>
         <Segment style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
