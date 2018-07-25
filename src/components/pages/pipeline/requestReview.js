@@ -3,7 +3,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 
 import Styles from '../../../styles/requestReview';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestReview = (state) => {
   if (!state.requests.selection) {
@@ -13,7 +13,7 @@ export const requestReview = (state) => {
     <Grid centered container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <ConnectedBreadcrumbComponent selection={4} />
+          <BreadcrumbComponent selection={4} />
         </Segment>
       </Grid.Row>
     </Grid>

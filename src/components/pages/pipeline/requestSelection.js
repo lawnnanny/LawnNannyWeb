@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import RequestOptionComponent from '../../helpers/RequestOption';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/requestSelection';
 import mower from '../../../images/pipeline/mower.png';
 import rake from '../../../images/pipeline/rake.png';
@@ -13,7 +13,7 @@ export const requestSelection = props => (
   <Grid container style={Styles.grid}>
     <Grid.Row style={Styles.breadrow}>
       <Segment style={Styles.segment}>
-        <ConnectedBreadcrumbComponent selection={0} />
+        <BreadcrumbComponent selection={0} />
       </Segment>
     </Grid.Row>
     <Grid.Row>

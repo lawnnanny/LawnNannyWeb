@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import { jsonForm } from './jsonForms/locationForm';
 import Styles from '../../../styles/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (state) => {
   if (!state.requests.selection) {
@@ -14,7 +14,7 @@ export const requestLocation = (state) => {
     <Grid container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <ConnectedBreadcrumbComponent selection={2} />
+          <BreadcrumbComponent selection={2} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Styles from '../../../styles/requestPrice';
 import up from '../../../images/pipeline/up.png';
 import down from '../../../images/pipeline/down.png';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestPrice = (state) => {
   if (!state.typeOfRequest) {
@@ -15,7 +15,7 @@ export const requestPrice = (state) => {
     <Grid centered container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <ConnectedBreadcrumbComponent selection={3} />
+          <BreadcrumbComponent selection={3} />
         </Segment>
       </Grid.Row>
       <Grid.Row style={Styles.headerRow}>

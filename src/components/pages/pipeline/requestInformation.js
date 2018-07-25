@@ -3,7 +3,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import { jsonForm } from './jsonForms/informationForm';
 import DynamicFormComponent from '../../helpers/DynamicForm';
-import ConnectedBreadcrumbComponent from '../../../connectedComponents/pipeline/ConnectedBreadcrumb';
+import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/requestInformation';
 
 export const requestInformation = (state) => {
@@ -14,7 +14,7 @@ export const requestInformation = (state) => {
     <Grid container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <ConnectedBreadcrumbComponent selection={1} />
+          <BreadcrumbComponent selection={1} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>
