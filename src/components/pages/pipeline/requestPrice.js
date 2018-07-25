@@ -15,7 +15,7 @@ export const requestPrice = (props) => {
     <Grid centered container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={3} />
+          <BreadcrumbComponent selection={props.pageInProgress} current={3} />
         </Segment>
       </Grid.Row>
       <Grid.Row style={Styles.headerRow}>
@@ -54,7 +54,13 @@ export const requestPrice = (props) => {
       </Grid.Row>
       <Grid.Row style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
-          <Button size="big" style={Styles.button} onClick={props.requestInProgress(4)}>
+          <Button
+            size="big"
+            style={Styles.button}
+            onClick={() => {
+              props.requestInProgress(4);
+            }}
+          >
             Continue
           </Button>
         </Link>

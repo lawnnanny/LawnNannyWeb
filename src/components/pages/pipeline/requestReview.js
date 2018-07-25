@@ -13,7 +13,7 @@ export const requestReview = (props) => {
     <Grid centered container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={4} />
+          <BreadcrumbComponent selection={props.pageInProgress} current={4} />
         </Segment>
       </Grid.Row>
     </Grid>

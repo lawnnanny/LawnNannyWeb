@@ -2,6 +2,10 @@ import { connect } from 'react-redux';
 import Actions from '../../reducers/Actions';
 import requestSelectionComponent from '../../components/pages/pipeline/requestSelection';
 
+const mapStateToProps = state => ({
+  pageInProgress: state.requests.requestInProgress,
+});
+
 const mapDispatchToProps = dispatch => ({
   setTypeOfRequest: (data) => {
     const action = {
@@ -20,6 +24,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  () => ({}),
+  () => mapStateToProps,
   mapDispatchToProps,
 )(requestSelectionComponent);

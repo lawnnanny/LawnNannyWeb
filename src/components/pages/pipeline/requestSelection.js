@@ -13,7 +13,7 @@ export const requestSelection = props => (
   <Grid container style={Styles.grid}>
     <Grid.Row style={Styles.breadrow}>
       <Segment style={Styles.segment}>
-        <BreadcrumbComponent selection={0} />
+        <BreadcrumbComponent selection={props.pageInProgress} current={0} />
       </Segment>
     </Grid.Row>
     <Grid.Row>

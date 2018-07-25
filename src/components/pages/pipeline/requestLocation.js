@@ -14,7 +14,7 @@ export const requestLocation = (props) => {
     <Grid container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={2} />
+          <BreadcrumbComponent selection={props.pageInProgress} current={2} />
         </Segment>
       </Grid.Row>
       <Grid.Row padding style={Styles.Grid}>
