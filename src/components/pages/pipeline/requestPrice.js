@@ -39,11 +39,13 @@ export const requestPrice = (props) => {
           <Grid.Row style={Styles.priceRow}>
             <Input
               value={props.requestPrice}
-              icon="dollar"
               iconPosition="left"
               style={Styles.input}
               onChange={props.setRequestPrice}
-            />
+            >
+              <Icon name="dollar" style={Styles.inputIcon} />
+              <input />
+            </Input>
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
             <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>

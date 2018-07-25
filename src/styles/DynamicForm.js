@@ -37,7 +37,7 @@ export default {
   popupIcon: {
     color: blue,
     boxShadow: '0 0 0 0.1em #0e42ff inset',
-    fontSize: '.5em',
+    fontSize: '.4em',
     marginTop: '-3em',
   },
 };

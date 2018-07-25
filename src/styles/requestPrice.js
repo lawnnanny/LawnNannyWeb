@@ -54,8 +54,9 @@ export default {
     fontSize: '3em',
     padding: '0',
   },
-  dollar: {
-    fontSize: '7em',
+  inputIcon: {
+    color: green,
+    opacity: '1',
   },
   image: {
     width: '8em',
@@ -72,7 +73,7 @@ export default {
   popupIcon: {
     color: blue,
     boxShadow: '0 0 0 0.1em #0e42ff inset',
-    fontSize: '.5em',
+    fontSize: '.4em',
     marginTop: '-3em',
   },
 };
