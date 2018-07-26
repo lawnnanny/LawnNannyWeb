@@ -23,7 +23,7 @@ describe('Connected RequestInformation Page', () => {
     const wrapper = shallow(<RequestPrice store={store} />);
 
     const dispatchProps = [
-      'setRequesPrice',
+      'setRequestPrice',
       'decrementRequestPrice',
       'incrementRequestPrice',
       'requestInProgress',
