@@ -21,7 +21,7 @@ describe('Connected RequestInformation Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<RequestInformation store={store} />);
 
-    const dispatchProps = ['setRequestInformation'];
+    const dispatchProps = ['setRequestInformation', 'requestInProgress'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));

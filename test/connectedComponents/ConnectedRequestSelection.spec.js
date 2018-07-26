@@ -20,7 +20,7 @@ describe('Connected RequestSelection Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<RequestSelection store={store} />);
 
-    const dispatchProps = ['setTypeOfRequest'];
+    const dispatchProps = ['setTypeOfRequest', 'requestInProgress'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));

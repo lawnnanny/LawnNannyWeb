@@ -21,7 +21,7 @@ describe('Connected RequestLocation Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<RequestLocation store={store} />);
 
-    const dispatchProps = ['setRequestLocation'];
+    const dispatchProps = ['setRequestLocation', 'requestInProgress'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));
