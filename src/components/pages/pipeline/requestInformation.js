@@ -12,7 +12,7 @@ export const requestInformation = (props) => {
     return <Redirect to="/pipeline" />;
   }
   return (
-    <Grid container style={Styles.grid}>
+    <Grid centered container style={Styles.grid}>
       <Grid.Row style={Styles.breadrow}>
         <Segment style={Styles.segment}>
           <BreadcrumbComponent selection={props.pageInProgress} current={1} />

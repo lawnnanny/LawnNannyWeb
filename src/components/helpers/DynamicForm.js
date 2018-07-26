@@ -278,12 +278,12 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <Segment padded style={Styles.Dynamicsegment}>
+      <Segment textAlign="left" padded style={Styles.Dynamicsegment}>
         <Header as="h1">
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
         </Header>
-        <Segment style={Styles.formSegment}>
+        <Segment textAlign="left" style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],
