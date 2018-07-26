@@ -57,7 +57,7 @@ export const breadcrumb = props => (
     <Grid.Row style={Styles.row}>
       <Link to="/pipeline" style={Styles.link}>
         <Grid.Column style={Styles.column}>
-          <Segment style={Styles.segment}>
+          <Segment style={Styles.iconSegment}>
             <div style={returnRightBar(props.selection, 0)} />
             <ButtonDiv>
               <Button
