@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Grid, Segment, Header, Icon, Input, Button, Image, Popup } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
@@ -8,6 +9,11 @@ import up from '../../../images/pipeline/up.png';
 import down from '../../../images/pipeline/down.png';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
+const ButtonDiv = styled.div`
+  :active {
+    transform: translateY(4px);
+  }
+`;
 export const requestPrice = (props) => {
   if (props.pageInProgress < 3) {
     return <Redirect to="/pipeline/requestLocation" />;
@@ -33,9 +39,11 @@ export const requestPrice = (props) => {
       <Grid.Row style={Styles.priceRow}>
         <Grid.Column style={Styles.priceColumn}>
           <Grid.Row style={Styles.triangleTopRow}>
-            <Button style={Styles.triangleTopButton} onClick={props.incrementRequestPrice}>
-              <Image centered style={Styles.image} src={up} />
-            </Button>
+            <ButtonDiv>
+              <Button style={Styles.triangleTopButton} onClick={props.incrementRequestPrice}>
+                <Image centered style={Styles.image} src={up} />
+              </Button>
+            </ButtonDiv>
           </Grid.Row>
           <Grid.Row style={Styles.priceRow}>
             <Input
@@ -49,23 +57,27 @@ export const requestPrice = (props) => {
             </Input>
           </Grid.Row>
           <Grid.Row style={Styles.triangleBottomRow}>
-            <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
-              <Image centered style={Styles.image} src={down} />
-            </Button>
+            <ButtonDiv>
+              <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
+                <Image centered style={Styles.image} src={down} />
+              </Button>
+            </ButtonDiv>
           </Grid.Row>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
-          <Button
-            size="big"
-            style={Styles.button}
-            onClick={() => {
-              props.requestInProgress(4);
-            }}
-          >
-            Continue
-          </Button>
+          <ButtonDiv>
+            <Button
+              size="big"
+              style={Styles.button}
+              onClick={() => {
+                props.requestInProgress(4);
+              }}
+            >
+              Continue
+            </Button>
+          </ButtonDiv>
         </Link>
       </Grid.Row>
     </Grid>

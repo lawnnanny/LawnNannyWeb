@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import {
   Form,
   Header,
@@ -14,6 +15,11 @@ import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
+const ButtonDiv = styled.div`
+  :active {
+    transform: translateY(4px);
+  }
+`;
 class DynamicForm extends Component {
   constructor(props) {
     super();
@@ -278,21 +284,23 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <Segment padded style={Styles.Dynamicsegment}>
+      <Segment textAlign="left" padded style={Styles.Dynamicsegment}>
         <Header as="h1">
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
         </Header>
-        <Segment style={Styles.formSegment}>
+        <Segment textAlign="left" style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],
               false,
               this.state.errors,
             )}
-            <Form.Button size="big" fluid style={Styles.button}>
-              {this.state.Requests[this.props.form].button}
-            </Form.Button>
+            <ButtonDiv>
+              <Form.Button size="big" fluid style={Styles.button}>
+                {this.state.Requests[this.props.form].button}
+              </Form.Button>
+            </ButtonDiv>
           </Form>
         </Segment>
       </Segment>
