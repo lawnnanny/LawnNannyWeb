@@ -19,6 +19,14 @@ export default {
     boxShadow: 'none',
     margin: '0',
   },
+  iconSegment: {
+    textAlign: 'center',
+    padding: '0',
+    border: 'none',
+    boxShadow: 'none',
+    margin: '0',
+    marginBottom: '.4em',
+  },
   column: {
     padding: '0',
   },
@@ -34,6 +42,11 @@ export default {
   label: {
     backgroundColor: 'white',
     padding: '0',
+  },
+  iconButton: {
+    padding: '0',
+    boxShadow: '0px 0px 40px -10px rgba(0,0,0,1)',
+    backgroundColor: 'white',
   },
   finishedIcon: {
     boxShadow: '0 0 0 0.1em #20ad1d inset',
