@@ -7,7 +7,7 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestReview = (props) => {
   if (props.pageInProgress < 4) {
-    return <Redirect to="/pipeline" />;
+    return <Redirect to="/pipeline/requestPrice" />;
   }
   return (
     <Grid centered container style={Styles.grid}>

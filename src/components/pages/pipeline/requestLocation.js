@@ -9,7 +9,7 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
   if (props.pageInProgress < 2) {
-    return <Redirect to="/pipeline" />;
+    return <Redirect to="/pipeline/requestInformation" />;
   }
   return (
     <Grid container style={Styles.grid}>
