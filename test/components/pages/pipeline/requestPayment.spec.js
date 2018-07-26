@@ -205,34 +205,34 @@ describe('RequestInformation', () => {
           });
         });
       });
-      describe('buttonRow', () => {
-        let buttonRow;
+    });
+  });
+  describe('buttonRow', () => {
+    let buttonRow;
+    beforeEach(() => {
+      buttonRow = wrapper.childAt(3);
+    });
+
+    it('is a row', () => {
+      expect(buttonRow.type()).toEqual(Grid.Row);
+    });
+    describe('buttonLink', () => {
+      let buttonLink;
+      beforeEach(() => {
+        buttonLink = buttonRow.childAt(0);
+      });
+
+      it('is a Link', () => {
+        expect(buttonLink.type()).toEqual(Link);
+      });
+      describe('buttonComplete', () => {
+        let buttonComplete;
         beforeEach(() => {
-          buttonRow = PriceColumn.childAt(3);
+          buttonComplete = buttonLink.childAt(0);
         });
 
-        it('is a row', () => {
-          expect(buttonRow.type()).toEqual(Grid.Row);
-        });
-        describe('buttonLink', () => {
-          let buttonLink;
-          beforeEach(() => {
-            buttonLink = buttonRow.childAt(0);
-          });
-
-          it('is a Link', () => {
-            expect(buttonLink.type()).toEqual(Link);
-          });
-          describe('buttonComplete', () => {
-            let buttonComplete;
-            beforeEach(() => {
-              buttonComplete = buttonLink.childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(buttonComplete.type()).toEqual(Button);
-            });
-          });
+        it('is a button', () => {
+          expect(buttonComplete.type()).toEqual(Button);
         });
       });
     });
