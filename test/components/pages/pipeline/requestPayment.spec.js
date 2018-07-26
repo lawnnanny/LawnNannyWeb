@@ -128,7 +128,7 @@ describe('RequestInformation', () => {
         describe('triangleTopButton', () => {
           let triangleTopbutton;
           beforeEach(() => {
-            triangleTopbutton = triangleTopRow.childAt(0);
+            triangleTopbutton = triangleTopRow.childAt(0).childAt(0);
           });
 
           it('is a button', () => {
@@ -188,7 +188,7 @@ describe('RequestInformation', () => {
         describe('triangleBottomButton', () => {
           let triangleBottombutton;
           beforeEach(() => {
-            triangleBottombutton = triangleBottomRow.childAt(0);
+            triangleBottombutton = triangleBottomRow.childAt(0).childAt(0);
           });
 
           it('is a button', () => {
@@ -229,7 +229,7 @@ describe('RequestInformation', () => {
       describe('buttonComplete', () => {
         let buttonComplete;
         beforeEach(() => {
-          buttonComplete = buttonLink.childAt(0);
+          buttonComplete = buttonLink.childAt(0).childAt(0);
         });
 
         it('is a button', () => {

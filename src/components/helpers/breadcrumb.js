@@ -58,7 +58,6 @@ export const breadcrumb = props => (
       <Link to="/pipeline" style={Styles.link}>
         <Grid.Column style={Styles.column}>
           <Segment style={Styles.iconSegment}>
-            <div style={returnRightBar(props.selection, 0)} />
             <ButtonDiv>
               <Button
                 style={Styles.iconButton}
@@ -73,6 +72,7 @@ export const breadcrumb = props => (
                 }
               />
             </ButtonDiv>
+            <div style={returnRightBar(props.selection, 0)} />
           </Segment>
           <Segment style={Styles.segment}>
             <Label style={returnLabel(props.current, 0)}>Request</Label>
@@ -107,7 +107,6 @@ export const breadcrumb = props => (
       <Link to="/pipeline/requestLocation" style={Styles.link}>
         <Grid.Column style={Styles.column}>
           <Segment style={Styles.iconSegment}>
-            <div style={returnRightBar(props.selection, 2)} />
             <ButtonDiv>
               <Button
                 style={Styles.iconButton}
@@ -122,6 +121,7 @@ export const breadcrumb = props => (
                 }
               />
             </ButtonDiv>
+            <div style={returnRightBar(props.selection, 2)} />
             <div style={returnLeftBar(props.selection, 1)} />
           </Segment>
           <Segment style={Styles.segment}>

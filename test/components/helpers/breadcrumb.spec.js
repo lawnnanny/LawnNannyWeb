@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Segment, Icon } from 'semantic-ui-react';
+import { Grid, Segment, Button } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
 
@@ -57,15 +57,15 @@ describe('RequestInformation', () => {
           it('is a segment', () => {
             expect(requestSegment.type()).toEqual(Segment);
           });
-          describe('request icon', () => {
-            let requestIcon;
+          describe('request button', () => {
+            let requestbutton;
 
             beforeEach(() => {
-              requestIcon = requestSegment.childAt(1);
+              requestbutton = requestSegment.childAt(0).childAt(0);
             });
 
-            it('is a icon', () => {
-              expect(requestIcon.type()).toEqual(Icon);
+            it('is a button', () => {
+              expect(requestbutton.type()).toEqual(Button);
             });
           });
         });
@@ -101,15 +101,15 @@ describe('RequestInformation', () => {
           it('is a segment', () => {
             expect(informationSegment.type()).toEqual(Segment);
           });
-          describe('information icon', () => {
-            let informationIcon;
+          describe('information button', () => {
+            let informationbutton;
 
             beforeEach(() => {
-              informationIcon = informationSegment.childAt(0);
+              informationbutton = informationSegment.childAt(0).childAt(0);
             });
 
-            it('is a segment', () => {
-              expect(informationIcon.type()).toEqual(Icon);
+            it('is a button', () => {
+              expect(informationbutton.type()).toEqual(Button);
             });
           });
         });
@@ -145,15 +145,15 @@ describe('RequestInformation', () => {
           it('is a segment', () => {
             expect(locationSegment.type()).toEqual(Segment);
           });
-          describe('location icon', () => {
-            let locationIcon;
+          describe('location button', () => {
+            let locationbutton;
 
             beforeEach(() => {
-              locationIcon = locationSegment.childAt(1);
+              locationbutton = locationSegment.childAt(0).childAt(0);
             });
 
-            it('is a segment', () => {
-              expect(locationIcon.type()).toEqual(Icon);
+            it('is a button', () => {
+              expect(locationbutton.type()).toEqual(Button);
             });
           });
         });
@@ -189,15 +189,15 @@ describe('RequestInformation', () => {
           it('is a segment', () => {
             expect(priceSegment.type()).toEqual(Segment);
           });
-          describe('price icon', () => {
-            let priceIcon;
+          describe('price button', () => {
+            let pricebutton;
 
             beforeEach(() => {
-              priceIcon = priceSegment.childAt(0);
+              pricebutton = priceSegment.childAt(0).childAt(0);
             });
 
-            it('is a segment', () => {
-              expect(priceIcon.type()).toEqual(Icon);
+            it('is a button', () => {
+              expect(pricebutton.type()).toEqual(Button);
             });
           });
         });
@@ -233,15 +233,15 @@ describe('RequestInformation', () => {
           it('is a segment', () => {
             expect(reviewSegment.type()).toEqual(Segment);
           });
-          describe('review icon', () => {
-            let reviewIcon;
+          describe('review button', () => {
+            let reviewbutton;
 
             beforeEach(() => {
-              reviewIcon = reviewSegment.childAt(0);
+              reviewbutton = reviewSegment.childAt(0).childAt(0);
             });
 
-            it('is a segment', () => {
-              expect(reviewIcon.type()).toEqual(Icon);
+            it('is a button', () => {
+              expect(reviewbutton.type()).toEqual(Button);
             });
           });
         });

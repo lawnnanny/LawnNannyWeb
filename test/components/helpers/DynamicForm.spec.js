@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  Form,
-  Segment,
-  Header,
-  Radio,
-  Checkbox,
-  TextArea,
-  Dropdown,
-  Input,
-  Popup,
-} from 'semantic-ui-react';
+import { Form, Segment, Header, Checkbox, TextArea, Dropdown, Popup } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import { Chance } from 'chance';
 import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
@@ -159,8 +148,7 @@ describe('DynamicForm', () => {
                   .childAt(0)
                   .childAt(count)
                   .childAt(1)
-                  .props()
-                  .checked,
+                  .props().checked,
               ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
@@ -179,8 +167,7 @@ describe('DynamicForm', () => {
                   .childAt(0)
                   .childAt(count)
                   .childAt(1)
-                  .props()
-                  .checked,
+                  .props().checked,
               ).toEqual(testReduxState[field.id].checked);
               failTest(wrapper, field, count);
             }
@@ -199,8 +186,7 @@ describe('DynamicForm', () => {
                   .childAt(0)
                   .childAt(count)
                   .childAt(1)
-                  .props()
-                  .value,
+                  .props().value,
               ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
@@ -219,8 +205,7 @@ describe('DynamicForm', () => {
                   .childAt(0)
                   .childAt(count)
                   .childAt(1)
-                  .props()
-                  .value,
+                  .props().value,
               ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
@@ -273,12 +258,11 @@ describe('DynamicForm', () => {
           });
         });
       });
-
       describe('Form Button', () => {
         let formButton;
 
         beforeEach(() => {
-          formButton = formComponent.childAt(testDataFunctions.numberOfFields);
+          formButton = formComponent.childAt(testDataFunctions.numberOfFields).childAt(0);
         });
 
         it('It is a button', () => {
