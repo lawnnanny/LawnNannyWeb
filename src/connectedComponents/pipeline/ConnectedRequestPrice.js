@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
   setRequestPrice: (event) => {
     const stringValue = event.target.value;
     let value = parseFloat(stringValue);
-    if (isNaN(value)) {
+    if (isNaN(value) || value === 0) {
       value = '';
     }
     const action = {
