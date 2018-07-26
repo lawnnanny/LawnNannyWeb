@@ -100,8 +100,6 @@ const generateTestFormJson = () => {
 
 const generateTestStateJson = (testJson) => {
   const jsonForm = {};
-  console.log(testJson);
-  console.log(testJson[Object.keys(testJson)[0]]);
   testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
     if (field.type === 'checkbox') {
       jsonForm[field.id] = {
