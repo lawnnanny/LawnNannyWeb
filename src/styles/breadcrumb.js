@@ -82,7 +82,7 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#D7D7D7',
     right: 0,
-    left: '51%',
+    left: '49.7%',
     marginLeft: 20,
   },
   leftBarFinished: {
@@ -104,7 +104,7 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#20ad1d',
     right: 0,
-    left: '51%',
+    left: '49.5%',
     marginLeft: 20,
   },
   base: {
