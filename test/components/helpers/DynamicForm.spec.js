@@ -18,7 +18,7 @@ import InlineErrorComponent from '../../../src/components/helpers/InlineError';
 
 const chance = new Chance();
 
-const numberOfFields = (Math.abs(chance.integer()) % 20) + 2;
+const numberOfFields = (Math.abs(chance.integer()) % 10) + 2;
 
 const randomType = (useRowCombination) => {
   switch (chance.integer() % 5) {
@@ -75,7 +75,7 @@ const generateTestFormJson = () => {
 
     let field = {};
     if (type === 'rowCombination') {
-      const numberOfSubFields = (chance.integer() % 11) + 2;
+      const numberOfSubFields = (chance.integer() % 15) + 2;
       const subFields = [];
       for (let counting = 0; counting < numberOfSubFields; counting += 1) {
         const subFieldType = randomType(false);
@@ -125,8 +125,31 @@ const generateTestFormJson = () => {
     fields[counter] = field;
   }
   jsonForm[name] = {};
+  jsonForm[name].popup = chance.word();
   jsonForm[name].description = chance.word();
   jsonForm[name].fields = fields;
+  return jsonForm;
+};
+
+const generateTestStateJson = (testJson) => {
+  const jsonForm = {};
+  testJson[Object.keys(testJson)[0]].fields.forEach((field) => {
+    if (field.type === 'checkbox') {
+      jsonForm[field.id] = {
+        entry: chance.bool(),
+        id: chance.word(),
+        type: randomType(),
+        validation: 'required',
+      };
+    } else {
+      jsonForm[field.id] = {
+        entry: chance.word(),
+        id: chance.word(),
+        type: randomType(),
+        validation: 'required',
+      };
+    }
+  });
   return jsonForm;
 };
 
@@ -135,10 +158,13 @@ describe('DynamicForm', () => {
   const setRequest = jest.fn();
   const testJson = generateTestFormJson();
   const route = jest.fn();
+  const testReduxState = generateTestStateJson(testJson);
   const renderComponent = () =>
     shallow(
       <DynamicFormComponent
+        popup
         jsonForm={() => testJson}
+        reduxInfo={testReduxState}
         setRequest={setRequest}
         form={Object.keys(testJson)[0]}
         route={() => {
@@ -146,7 +172,6 @@ describe('DynamicForm', () => {
         }}
       />,
     );
-
   beforeEach(() => {
     wrapper = renderComponent();
   });
@@ -245,6 +270,15 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Checkbox);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props()
+                  .checked,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
             if (field.type === 'radio') {
@@ -256,6 +290,15 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Form.Group);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props()
+                  .checked,
+              ).toEqual(testReduxState[field.id].checked);
               failTest(wrapper, field, count);
             }
             if (field.type === 'textArea') {
@@ -267,6 +310,15 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(TextArea);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props()
+                  .value,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
             if (field.type === 'dropDown') {
@@ -278,6 +330,15 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Dropdown);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props()
+                  .value,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
 
