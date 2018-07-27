@@ -4,11 +4,24 @@ import { shallow } from 'enzyme';
 import RequestLocationComponent from '../../../../src/components/pages/pipeline/requestLocation';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 import DynamicFormComponent from '../../../../src/components/helpers/DynamicForm';
+import testDataFunctions from '../../../testDataGenerators/generateTestData';
+import formPipelineJson from '../../../../src/components/pages/pipeline/jsonForms/informationForm';
 
 describe('RequestInformation', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<RequestLocationComponent typeOfRequest="Lawn Mowing" />);
+  const testReduxState = testDataFunctions.generateTestStateJson(
+    formPipelineJson,
+  );
+
+  const reduxTestState = {
+    requests: testReduxState,
+  };
+
+  const renderComponent = () =>
+    shallow(
+      <RequestLocationComponent requests={reduxTestState} typeOfRequest="Lawn Mowing" pageInProgress={2} current={2} />,
+    );
 
   beforeEach(() => {
     wrapper = renderComponent();

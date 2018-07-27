@@ -9,11 +9,11 @@ import rake from '../../../images/pipeline/rake.png';
 import snowBlower from '../../../images/pipeline/snowBlower.png';
 import custom from '../../../images/pipeline/custom.png';
 
-export const requestSelection = ({ setTypeOfRequest }) => (
+export const requestSelection = props => (
   <Grid container style={Styles.grid}>
     <Grid.Row style={Styles.breadrow}>
       <Segment style={Styles.segment}>
-        <BreadcrumbComponent selection={0} />
+        <BreadcrumbComponent selection={props.pageInProgress} current={0} />
       </Segment>
     </Grid.Row>
     <Grid.Row>
@@ -31,7 +31,8 @@ export const requestSelection = ({ setTypeOfRequest }) => (
           imageURL={mower}
           title="Lawn Mowing"
           onClick={() => {
-            setTypeOfRequest('Lawn Mowing');
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Lawn Mowing');
           }}
         />
       </Segment>
@@ -42,7 +43,10 @@ export const requestSelection = ({ setTypeOfRequest }) => (
           style={Styles.buttonComponent}
           imageURL={rake}
           title="Leaf Raking"
-          onClick={() => setTypeOfRequest('Leaf Raking')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Leaf Raking');
+          }}
         />
       </Segment>
     </Grid.Row>
@@ -52,7 +56,10 @@ export const requestSelection = ({ setTypeOfRequest }) => (
           style={Styles.buttonComponent}
           imageURL={snowBlower}
           title="Snow Clearing"
-          onClick={() => setTypeOfRequest('Snow Clearing')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Snow Clearing');
+          }}
         />
       </Segment>
     </Grid.Row>
@@ -62,7 +69,10 @@ export const requestSelection = ({ setTypeOfRequest }) => (
           style={Styles.buttonComponent}
           imageURL={custom}
           title="Custom Request"
-          onClick={() => setTypeOfRequest('Custom Request')}
+          onClick={() => {
+            props.requestInProgress(1);
+            props.setTypeOfRequest('Custom Request');
+          }}
         />
       </Segment>
     </Grid.Row>
@@ -70,10 +80,15 @@ export const requestSelection = ({ setTypeOfRequest }) => (
 );
 
 requestSelection.propTypes = {
-  setTypeOfRequest: PropTypes.func.isRequired,
+  pageInProgress: PropTypes.number,
+  setTypeOfRequest: PropTypes.func,
+  requestInProgress: PropTypes.number,
 };
+
 requestSelection.defaultProps = {
-  imageURL: PropTypes.object,
+  pageInProgress: 0,
+  setTypeOfRequest: PropTypes.func,
+  requestInProgress: 0,
 };
 
 export default requestSelection;

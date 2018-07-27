@@ -1,20 +1,16 @@
 const green = '#20ad1d';
-const white = '#FFFFFF';
-const black = '#000000';
 const blue = '#0e42ff';
 
 export default {
-  base: {
-    opacity: 0,
+  grid: {
+    marginTop: '.3em',
   },
-  appear: {
-    opacity: 1,
-    transition: 'all 5000ms',
-  },
-  enter: {
-    opacity: 0.5,
-    transition: 'all 5000ms',
-    background: '#4CAF50',
+  link: {
+    width: '20%',
+    padding: '0',
+    border: 'none',
+    boxShadow: 'none',
+    margin: '0',
   },
   segment: {
     textAlign: 'center',
@@ -22,6 +18,14 @@ export default {
     border: 'none',
     boxShadow: 'none',
     margin: '0',
+  },
+  iconSegment: {
+    textAlign: 'center',
+    padding: '0',
+    border: 'none',
+    boxShadow: 'none',
+    margin: '0',
+    marginBottom: '.4em',
   },
   column: {
     padding: '0',
@@ -39,7 +43,11 @@ export default {
     backgroundColor: 'white',
     padding: '0',
   },
-  grid: {},
+  iconButton: {
+    padding: '0',
+    boxShadow: '0px 0px 40px -10px rgba(0,0,0,1)',
+    backgroundColor: 'white',
+  },
   finishedIcon: {
     boxShadow: '0 0 0 0.1em #20ad1d inset',
     margin: '0',
@@ -74,7 +82,7 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#D7D7D7',
     right: 0,
-    left: '51%',
+    left: '49.7%',
     marginLeft: 20,
   },
   leftBarFinished: {
@@ -96,7 +104,19 @@ export default {
     borderTopWidth: 3,
     borderTopColor: '#20ad1d',
     right: 0,
-    left: '51%',
+    left: '49.5%',
     marginLeft: 20,
+  },
+  base: {
+    opacity: 0,
+  },
+  appear: {
+    opacity: 1,
+    transition: 'all 5000ms',
+  },
+  enter: {
+    opacity: 0.5,
+    transition: 'all 5000ms',
+    background: '#4CAF50',
   },
 };

@@ -1,43 +1,12 @@
 import React from 'react';
-import {
-  Button,
-  Form,
-  Segment,
-  Header,
-  Radio,
-  Checkbox,
-  TextArea,
-  Dropdown,
-  Input,
-} from 'semantic-ui-react';
+import { Form, Segment, Header, Checkbox, TextArea, Dropdown, Popup } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import { Chance } from 'chance';
 import DynamicFormComponent from '../../../src/components/helpers/DynamicForm';
 import InlineErrorComponent from '../../../src/components/helpers/InlineError';
+import testDataFunctions from '../../testDataGenerators/generateTestData';
 
 const chance = new Chance();
-
-const numberOfFields = (Math.abs(chance.integer()) % 20) + 2;
-
-const randomType = (useRowCombination) => {
-  switch (chance.integer() % 5) {
-    case 0:
-      return 'textArea';
-    case 1:
-      return 'radio';
-    case 2:
-      return 'checkbox';
-    case 3:
-      if (useRowCombination) {
-        return 'rowCombination';
-      }
-      return 'input';
-    case 4:
-      return 'input';
-    default:
-      return 'textArea';
-  }
-};
 
 const failTest = (wrapper, field, count) => {
   if (chance.integer() % 2 && field.validation) {
@@ -56,88 +25,18 @@ const failTest = (wrapper, field, count) => {
   }
 };
 
-const createRandomOptions = () => {
-  const options = [];
-  const numberOfOptions = (Math.abs(chance.integer()) % 11) + 2;
-  for (let counter = 0; counter < numberOfOptions; counter += 1) {
-    options[counter] = chance.word();
-  }
-  return options;
-};
-
-const generateTestFormJson = () => {
-  const name = chance.word();
-  const jsonForm = {};
-  const fields = [];
-  for (let counter = 0; counter < numberOfFields; counter += 1) {
-    const type = randomType(true);
-
-    let field = {};
-    if (type === 'rowCombination') {
-      const numberOfSubFields = (chance.integer() % 11) + 2;
-      const subFields = [];
-      for (let counting = 0; counting < numberOfSubFields; counting += 1) {
-        const subFieldType = randomType(false);
-        const subField = {
-          name: chance.word(),
-          type: subFieldType,
-          id: chance.word(),
-        };
-
-        if (chance.integer() % 2 === 0) {
-          subField.validation = 'required';
-        }
-
-        if (type === 'radio') {
-          subField.options = createRandomOptions();
-        }
-
-        if (subFieldType === 'textArea' || type === 'input') {
-          subField.placeholder = chance.word();
-        }
-        subFields[counting] = subField;
-      }
-
-      field = {
-        name: chance.word(),
-        type: 'rowCombination',
-        fields: subFields,
-      };
-    } else {
-      field = {
-        name: chance.word(),
-        type,
-        id: chance.word(),
-      };
-
-      if (chance.integer() % 2 === 0) {
-        field.validation = 'required';
-      }
-      if (type === 'radio') {
-        field.options = createRandomOptions();
-      }
-      if (type === 'textArea' || type === 'input') {
-        field.placeholder = chance.word();
-      }
-    }
-
-    fields[counter] = field;
-  }
-  jsonForm[name] = {};
-  jsonForm[name].description = chance.word();
-  jsonForm[name].fields = fields;
-  return jsonForm;
-};
-
 describe('DynamicForm', () => {
   let wrapper;
   const setRequest = jest.fn();
-  const testJson = generateTestFormJson();
+  const testJson = testDataFunctions.generateTestFormJson();
   const route = jest.fn();
+  const testReduxState = testDataFunctions.generateTestStateJson(testJson);
   const renderComponent = () =>
     shallow(
       <DynamicFormComponent
+        popup
         jsonForm={() => testJson}
+        reduxInfo={testReduxState}
         setRequest={setRequest}
         form={Object.keys(testJson)[0]}
         route={() => {
@@ -145,7 +44,6 @@ describe('DynamicForm', () => {
         }}
       />,
     );
-
   beforeEach(() => {
     wrapper = renderComponent();
   });
@@ -169,12 +67,23 @@ describe('DynamicForm', () => {
       expect(header.type()).toEqual(Header);
     });
 
-    it('is has an as equal to h3', () => {
-      expect(header.props().as).toEqual('h3');
+    it('is has an as equal to h1', () => {
+      expect(header.props().as).toEqual('h1');
     });
 
     it('is the correct text in the header', () => {
       expect(header.childAt(0).debug()).toEqual(testJson[Object.keys(testJson)[0]].description);
+    });
+    describe('popup', () => {
+      let popup;
+
+      beforeEach(() => {
+        popup = header.childAt(1);
+      });
+
+      it('is a popup', () => {
+        expect(popup.type()).toEqual(Popup);
+      });
     });
   });
   describe('form segment', () => {
@@ -233,6 +142,14 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Checkbox);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props().checked,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
             if (field.type === 'radio') {
@@ -244,6 +161,14 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Form.Group);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props().checked,
+              ).toEqual(testReduxState[field.id].checked);
               failTest(wrapper, field, count);
             }
             if (field.type === 'textArea') {
@@ -255,6 +180,14 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(TextArea);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props().value,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
             if (field.type === 'dropDown') {
@@ -266,6 +199,14 @@ describe('DynamicForm', () => {
                   .childAt(1)
                   .type(),
               ).toEqual(Dropdown);
+              expect(
+                wrapper
+                  .childAt(1)
+                  .childAt(0)
+                  .childAt(count)
+                  .childAt(1)
+                  .props().value,
+              ).toEqual(testReduxState[field.id].entry);
               failTest(wrapper, field, count);
             }
 
@@ -317,12 +258,11 @@ describe('DynamicForm', () => {
           });
         });
       });
-
       describe('Form Button', () => {
         let formButton;
 
         beforeEach(() => {
-          formButton = formComponent.childAt(numberOfFields);
+          formButton = formComponent.childAt(testDataFunctions.numberOfFields).childAt(0);
         });
 
         it('It is a button', () => {

@@ -1,6 +1,8 @@
 export const jsonForm = {
   Location: {
-    description: 'Please Enter Location of the Job',
+    description: 'Job Location',
+    popup: 'Please specify the address of where you would like the job to be performed.',
+    button: 'Continue',
     fields: [
       {
         name: 'cityZip',
@@ -40,6 +42,7 @@ export const jsonForm = {
     ],
   },
   SignUp: {
+    button: 'Sign Up',
     fields: [
       {
         name: 'First Name',
@@ -79,6 +82,7 @@ export const jsonForm = {
     ],
   },
   Login: {
+    button: 'Login',
     fields: [
       {
         name: 'Email',

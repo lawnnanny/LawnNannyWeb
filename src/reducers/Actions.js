@@ -9,5 +9,9 @@ export default {
     setTypeOfRequest: (i += 1),
     setRequestInformation: (i += 1),
     setRequestLocation: (i += 1),
+    setRequestPrice: (i += 1),
+    incrementPrice: (i += 1),
+    decrementPrice: (i += 1),
+    requestInProgress: (i += 1),
   },
 };

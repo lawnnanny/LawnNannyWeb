@@ -17,7 +17,7 @@ export default {
   loginButton: {
     backgroundColor: white,
     color: blue,
-    padding: '.7em',
+    padding: '.8em',
     borderRadius: '25px',
     border: '.1rem solid',
     borderColor: blue,
@@ -25,15 +25,24 @@ export default {
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.7em',
+    padding: '.8em',
     borderRadius: '25px',
   },
   menuItem: {
     padding: '.5rem',
   },
   menuDropdown: {
-    color: black,
+    padding: '0',
+    margin: 'none',
+    fontSize: '2em',
     backgroundColor: white,
+    color: black,
+  },
+  dropDownMenu: {
+    fontSize: '.6em',
+  },
+  homeIcon: {
+    fontSize: '2em',
   },
   modal: {
     backgroundColor: white,

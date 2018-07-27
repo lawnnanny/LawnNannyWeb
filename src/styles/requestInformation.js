@@ -11,4 +11,5 @@ export default {
   breadrow: {
     paddingTop: '0',
   },
+  dynamicSegment: {},
 };

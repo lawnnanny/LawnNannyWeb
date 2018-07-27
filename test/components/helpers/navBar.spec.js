@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, Modal, Button, Dropdown } from 'semantic-ui-react';
+import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import NavBar from '../../../src/components/helpers/navBar';
 
@@ -39,13 +40,57 @@ describe('navBar', () => {
       it('is a dropdown', () => {
         expect(dropdown.type()).toEqual(Dropdown);
       });
+      describe('dropdown menu', () => {
+        let dropdownMenu;
+
+        beforeEach(() => {
+          dropdownMenu = dropdown.childAt(0);
+        });
+
+        it('is a dropdown menu', () => {
+          expect(dropdownMenu.type()).toEqual(Dropdown.Menu);
+        });
+      });
+    });
+  });
+  describe('home link', () => {
+    let homeLink;
+
+    beforeEach(() => {
+      homeLink = wrapper.childAt(1);
+    });
+
+    it('is a home link', () => {
+      expect(homeLink.type()).toEqual(Link);
+    });
+    describe('home menu', () => {
+      let homeMenu;
+
+      beforeEach(() => {
+        homeMenu = homeLink.childAt(0);
+      });
+
+      it('is a home menu', () => {
+        expect(homeMenu.type()).toEqual(Menu.Item);
+      });
+      describe('home icon', () => {
+        let homeIcon;
+
+        beforeEach(() => {
+          homeIcon = homeMenu.childAt(0);
+        });
+
+        it('is a home icon', () => {
+          expect(homeIcon.type()).toEqual(Icon);
+        });
+      });
     });
   });
   describe('Login/signup menu', () => {
     let loginSignupContainer;
 
     beforeEach(() => {
-      loginSignupContainer = wrapper.childAt(1);
+      loginSignupContainer = wrapper.childAt(2);
     });
 
     it('is a menu subcomponent', () => {

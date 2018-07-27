@@ -1,5 +1,6 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
+const blue = '#0e42ff';
 
 export default {
   Dynamicsegment: {
@@ -8,11 +9,13 @@ export default {
   },
   formSegment: {
     backgroundColor: '#f2f0ee',
+    boxShadow: '0px 10px 10px -10px rgba(0,0,0,0.4)',
   },
   button: {
-    borderRadius: '25px',
     backgroundColor: green,
     color: white,
+    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    marginTop: '2em',
   },
   InLineErrorInput: {
     marginTop: '-1.4em',
@@ -31,5 +34,11 @@ export default {
   },
   groupField: {
     paddingBottom: '1em',
+  },
+  popupIcon: {
+    color: blue,
+    boxShadow: '0 0 0 0.1em #0e42ff inset',
+    fontSize: '.4em',
+    marginTop: '-3em',
   },
 };

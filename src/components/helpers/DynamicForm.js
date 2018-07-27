@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Header, Segment, Checkbox, TextArea, Dropdown } from 'semantic-ui-react';
+import styled from 'styled-components';
+import {
+  Form,
+  Header,
+  Segment,
+  Checkbox,
+  TextArea,
+  Dropdown,
+  Popup,
+  Icon,
+} from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/DynamicForm';
 import InlineError from './InlineError';
 
-class DynamicForm extends React.Component {
+const ButtonDiv = styled.div`
+  :active {
+    transform: translateY(4px);
+  }
+`;
+class DynamicForm extends Component {
   constructor(props) {
     super();
     this.state = {
+      loadedData: false,
       errors: {},
       dataForSubmitting: {},
       Requests: props.jsonForm(),
@@ -72,10 +88,34 @@ class DynamicForm extends React.Component {
     return !Object.keys(errors).length;
   };
 
-  processChange = (key) => {
+  loadStoreWithReduxData = (props) => {
+    if (props.reduxInfo && !this.state.loadedData) {
+      this.state.loadedData = true;
+      Object.keys(props.reduxInfo).forEach((entryKey) => {
+        this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
+      });
+    }
+  };
+
+  returnValue = (id, method, optionForCheckmark) => {
+    if (method === 'entry') {
+      if (this.state.dataForSubmitting[id] !== null) {
+        return this.state.dataForSubmitting[id];
+      }
+    } else if (method === 'checked') {
+      return this.state.dataForSubmitting[id] === optionForCheckmark;
+    }
+    return '';
+  };
+
+  processChange = (key, type) => {
     const handle = (e, { value }) => {
       const state = this.state;
-      state.dataForSubmitting[key] = value;
+      if (type === 'boolean') {
+        state.dataForSubmitting[key] = !state.dataForSubmitting[key];
+      } else {
+        state.dataForSubmitting[key] = value;
+      }
       this.setState(state);
     };
     return handle;
@@ -94,6 +134,19 @@ class DynamicForm extends React.Component {
     }
     return {};
   };
+  showPopup = (popup) => {
+    if (popup) {
+      return (
+        <Popup
+          size="large"
+          trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+          content={this.state.Requests[this.props.form].popup}
+          on={['hover', 'click']}
+        />
+      );
+    }
+    return null;
+  };
 
   renderInput = (field, isInRow, errors) => {
     let InLineErrorStyle = Styles.InLineErrorInput;
@@ -109,7 +162,8 @@ class DynamicForm extends React.Component {
         </label>
         <Form.Input
           error={errors[field.id]}
-          onChange={this.processChange(field.id)}
+          value={this.returnValue(field.id, 'entry', '')}
+          onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
         />
         <div style={InLineErrorStyle}>
@@ -128,8 +182,8 @@ class DynamicForm extends React.Component {
       <Dropdown
         search
         error={errors[field.id]}
-        value={this.state[field.id]}
-        onChange={this.processChange(field.id)}
+        value={this.returnValue(field.id, 'entry', '')}
+        onChange={this.processChange(field.id, '')}
         id={field.id}
         placeholder={field.placeholder}
         options={statekeys}
@@ -148,11 +202,12 @@ class DynamicForm extends React.Component {
         {this.addAstricks(field.validation) + field.name}
       </label>
       <TextArea
+        value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
         id={field.id}
         placeholder={field.placeholder}
-        onChange={this.processChange(field.id)}
+        onChange={this.processChange(field.id, '')}
       />
       <div style={Styles.InLineErrorTextArea}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
@@ -168,8 +223,8 @@ class DynamicForm extends React.Component {
       <Checkbox
         error={errors[field.id]}
         name={field.name}
-        onChange={this.processChange(field.id)}
-        value="true"
+        onChange={this.processChange(field.id, 'boolean')}
+        checked={this.returnValue(field.id, 'entry', '')}
       />
       {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
     </Form.Field>
@@ -198,8 +253,8 @@ class DynamicForm extends React.Component {
       <Form.Radio
         label={option}
         value={option}
-        onChange={this.processChange(id)}
-        checked={this.state.dataForSubmitting[id] === option}
+        onChange={this.processChange(id, '')}
+        checked={this.returnValue(id, 'checked', option)}
       />
     ));
     return radioButtons;
@@ -226,21 +281,26 @@ class DynamicForm extends React.Component {
     });
     return formUI;
   };
-
   render() {
+    this.loadStoreWithReduxData(this.props);
     return (
-      <Segment padded style={Styles.Dynamicsegment}>
-        <Header as="h3">{this.state.Requests[this.props.form].description}</Header>
-        <Segment style={Styles.formSegment}>
+      <Segment textAlign="left" padded style={Styles.Dynamicsegment}>
+        <Header as="h1">
+          {this.state.Requests[this.props.form].description}
+          {this.showPopup(this.state.Requests[this.props.form].popup)}
+        </Header>
+        <Segment textAlign="left" style={Styles.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],
               false,
               this.state.errors,
             )}
-            <Form.Button positive fluid style={Styles.button}>
-              Continue
-            </Form.Button>
+            <ButtonDiv>
+              <Form.Button size="big" fluid style={Styles.button}>
+                {this.state.Requests[this.props.form].button}
+              </Form.Button>
+            </ButtonDiv>
           </Form>
         </Segment>
       </Segment>
@@ -249,10 +309,16 @@ class DynamicForm extends React.Component {
 }
 
 DynamicForm.propTypes = {
-  jsonForm: PropTypes.func.isRequired,
-  form: PropTypes.string.isRequired,
-  setRequest: PropTypes.func.isRequired,
-  route: PropTypes.func.isRequired,
+  jsonForm: PropTypes.func,
+  form: PropTypes.string,
+  setRequest: PropTypes.func,
+  route: PropTypes.func,
+};
+DynamicForm.defaultProps = {
+  jsonForm: PropTypes.func,
+  form: PropTypes.string,
+  setRequest: PropTypes.func,
+  route: PropTypes.func,
 };
 
 export default DynamicForm;

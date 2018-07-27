@@ -1,20 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Modal, Grid, Input, Button, Form } from 'semantic-ui-react';
+import { Grid, Button } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
-import Chance from 'chance';
 import HomePage from '../../../src/components/pages/HomePage';
-import NavBarComponent from '../../../src/components/helpers/navBar';
-import * as Common from '../../../src/helpers/Common';
 
 describe('Home Page', () => {
   let wrapper;
-  let chance;
 
   const renderComponent = () => shallow(<HomePage />);
 
   beforeEach(() => {
-    chance = Chance();
     wrapper = renderComponent();
   });
 
@@ -46,7 +41,7 @@ describe('Home Page', () => {
         let button;
 
         beforeEach(() => {
-          button = link.childAt(0);
+          button = link.childAt(0).childAt(0);
         });
 
         it('is a button', () => {

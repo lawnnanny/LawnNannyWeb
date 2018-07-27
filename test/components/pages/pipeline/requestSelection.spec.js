@@ -12,8 +12,12 @@ import RequestOptionComponent from '../../../../src/components/helpers/RequestOp
 describe('RequestSelection', () => {
   let wrapper;
   const setTypeOfRequest = jest.fn();
+  const requestInProgress = jest.fn();
   const renderComponent = () =>
-    shallow(<RequestSelectionComponent setTypeOfRequest={setTypeOfRequest} />);
+    shallow(<RequestSelectionComponent
+      requestInProgress={requestInProgress}
+      setTypeOfRequest={setTypeOfRequest}
+    />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -168,6 +172,7 @@ describe('RequestSelection', () => {
         });
         it('has a onClick that uses function from redux', () => {
           LawnMowingComponent.props().onClick();
+          expect(requestInProgress.mock.calls.length).toBe(1);
           expect(setTypeOfRequest.mock.calls.length).toBe(1);
         });
       });

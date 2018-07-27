@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import RequestInformation from '../../src/connectedComponents/ConnectedRequestInformation';
+import RequestInformation from '../../src/connectedComponents/pipeline/ConnectedRequestInformation';
 
 describe('Connected RequestInformation Page', () => {
   let store;
@@ -10,6 +10,7 @@ describe('Connected RequestInformation Page', () => {
     const state = {
       requests: {
         selection: 'Lawn Mowing',
+        requestInProgress: 1,
       },
     };
 
@@ -20,7 +21,7 @@ describe('Connected RequestInformation Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<RequestInformation store={store} />);
 
-    const dispatchProps = ['setRequestInformation'];
+    const dispatchProps = ['setRequestInformation', 'requestInProgress'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));
