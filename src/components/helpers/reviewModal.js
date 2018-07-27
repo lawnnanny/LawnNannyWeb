@@ -26,7 +26,7 @@ export const pipelineSignup = () => (
           actionPosition="right"
         />
         <Divider horizontal>Or</Divider>
-        <Button secondary fluid size="large" style={Styles.loginButton}>
+        <Button fluid size="large" style={Styles.loginButton}>
           Log In
         </Button>
       </Segment>

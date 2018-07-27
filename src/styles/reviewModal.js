@@ -3,8 +3,9 @@ const blue = '#0e42ff';
 
 export default {
   loginButton: {
-    backgroundColor: blue,
-    color: 'white'
+    color: blue,
+    border: '1.5px solid #0e42ff',
+    backgroundColor: '#ffffff'
   },
   segment: {
     boxShadow: 'none',
