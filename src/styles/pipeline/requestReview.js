@@ -18,4 +18,7 @@ export default {
     padding: '0',
     paddingBottom: '2em',
   },
+  submitRow: {
+    padding: '0',
+  },
 };

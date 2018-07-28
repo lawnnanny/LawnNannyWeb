@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
-import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
+import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
+import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/navBar';
 import DynamicComponent from '../helpers/DynamicForm';
 
@@ -37,7 +38,7 @@ export const navBar = state => (
         <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
         <Modal.Description>
           <DynamicComponent
-            jsonForm={() => jsonForm}
+            jsonForm={() => loginJsonForm}
             setRequest={state.login}
             form={'Login'}
             route={() => {}}
@@ -57,7 +58,7 @@ export const navBar = state => (
         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
         <Modal.Description>
           <DynamicComponent
-            jsonForm={() => jsonForm}
+            jsonForm={() => signupJsonForm}
             form={'SignUp'}
             setRequest={state.signup}
             route={() => {}}

@@ -15,7 +15,7 @@ export const pipelineSignup = () => (
     size="small"
     trigger={
       <ButtonDiv>
-        <Button size="large" fluid style={Styles.modalButton}>
+        <Button size="big" floated="right" style={Styles.modalButton}>
           Submit Request
         </Button>
       </ButtonDiv>
