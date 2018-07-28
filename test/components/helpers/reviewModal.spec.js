@@ -1,14 +1,14 @@
 import { shallow } from 'enzyme';
 import { Menu, Modal, Grid } from 'semantic-ui-react';
 import React from 'react';
-import reviewModal from '../../../src/components/helpers/reviewModal';
+import ReviewModal from '../../../src/components/helpers/reviewModal';
 
 describe('pipelineSignupModal', () => {
   let wrapper
 
   const renderComponent = (props = {}) =>
     shallow(
-      <reviewModal />
+      <ReviewModal />
     );
 
   beforeEach(() => {
