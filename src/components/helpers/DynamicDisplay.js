@@ -10,7 +10,16 @@ export const DynamicDisplay = props => (
     <DynamicChunkComponent requests={props.requests.requestInformation} name="Details" />
     <DynamicChunkComponent requests={props.requests.requestLocation} name="Location" />
     <Segment>
-      <Header dividing>Price</Header>
+      <Segment.Group horizontal style={Styles.topSegment}>
+        <Segment style={Styles.headerSegment}>
+          <Header as="h3" style={Styles.priceHeader}>
+            Price
+          </Header>
+        </Segment>
+        <Segment textAlign="right" style={Styles.editSegment}>
+          <Icon name="edit" style={Styles.editIcon} />
+        </Segment>
+      </Segment.Group>
       <Label style={Styles.priceLabel}>
         <Icon name="dollar" style={Styles.priceIcon} />
         {props.requests.requestPrice}

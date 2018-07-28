@@ -7,6 +7,9 @@ export default {
     backgroundColor: '#e6e4e2',
     width: '100%',
   },
+  priceHeader: {
+    textDecoration: 'underline',
+  },
   priceLabel: {
     backgroundColor: white,
     color: 'black',
@@ -18,5 +21,29 @@ export default {
     color: green,
     margin: '0 .3em 0 0',
     fontSize: '.9em',
+  },
+  topSegment: {
+    border: '0',
+    padding: '0',
+    paddingBottom: '1em',
+    margin: '0',
+    boxShadow: 'none',
+  },
+  headerSegment: {
+    border: '0',
+    padding: '0',
+    margin: '0',
+    boxShadow: 'none',
+  },
+  editSegment: {
+    border: '0',
+    padding: '0',
+    margin: '0',
+    boxShadow: 'none',
+  },
+  editIcon: {
+    margin: '.3em 0 0 0',
+    fontSize: '1.2em',
+    color: blue,
   },
 };

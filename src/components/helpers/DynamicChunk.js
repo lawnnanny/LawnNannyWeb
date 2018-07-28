@@ -36,9 +36,16 @@ export const DynamicChunk = (props) => {
   };
   return (
     <Segment style={Styles.segment}>
-      <Header as="h3" dividing>
-        {props.name}
-      </Header>
+      <Segment.Group horizontal style={Styles.topSegment}>
+        <Segment style={Styles.headerSegment}>
+          <Header as="h3" style={Styles.header}>
+            {props.name}
+          </Header>
+        </Segment>
+        <Segment textAlign="right" style={Styles.editSegment}>
+          <Icon name="edit" style={Styles.editIcon} />
+        </Segment>
+      </Segment.Group>
       {getValues(props.requests)}
     </Segment>
   );
