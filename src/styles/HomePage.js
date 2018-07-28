@@ -1,48 +1,12 @@
-const green = '#63BA18';
 const white = '#FFFFFF';
-
+const green = '#20ad1d';
 export default {
-  navbarContainer: {
-    width: '100%',
-    minHeight: 42,
-    backgroundColor: green
-  },
-  header: {
-    backgroundImage: "url('lawn.jpg')"
-  },
-  loginSignupMenu: {
-    paddingRight: '1rem'
-  },
-  menuItem: {
-    color: 'white'
-  },
-  modal: {
-    backgroundColor: 'white',
-    padding: '1rem'
-  },
-  loginGrid: {
-    margin: '1rem'
-  },
-  modalHeader: {
-    display: 'flex',
-    justifyContent: 'center',
-    color: green,
-    fontSize: '2rem',
-    backgroundColor: white,
-    borderBottom: 'none'
-  },
-  modalButton: {
-    backgroundColor: green,
-    color: 'white'
-  },
-  signUpForm: {
-    padding: '1rem'
-  },
-  signUpCheckbox: {
-    paddingBottom: '.5rem'
-  },
   pipelineButton: {
     color: white,
-    backgroundColor: green
-  }
+    backgroundColor: green,
+    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+  },
+  grid: {
+    margin: '0',
+  },
 };

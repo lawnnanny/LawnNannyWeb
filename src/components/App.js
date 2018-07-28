@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import reducers from '../reducers/reducers';
 
-import Error404 from '../components/errors/Error404';
-import HomePageComponent from './pages/HomePage';
-import requestPipelineComponent from './pages/requestPipeline';
+import { Routes } from '../helpers/routes';
 
-export default class App extends Component {
+export class App extends Component {
   constructor() {
     super();
 
     const store = createStore(reducers);
 
     this.state = {
-      store
+      store,
     };
 
     store.subscribe(() => {
@@ -23,21 +19,8 @@ export default class App extends Component {
     });
   }
   render() {
-    return (
-      <Provider store={this.state.store}>
-        <BrowserRouter className="router">
-          <Switch>
-            <Route exact path="/test" component={App} />
-            <Route exact path="/HomePage" component={HomePageComponent} />
-            <Route
-              exact
-              path="/requestPipeline"
-              component={requestPipelineComponent}
-            />
-            <Route path="/*" component={Error404} />
-          </Switch>
-        </BrowserRouter>
-      </Provider>
-    );
+    return <Routes />;
   }
 }
+
+export default App;
