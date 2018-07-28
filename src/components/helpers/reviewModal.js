@@ -1,15 +1,25 @@
 import React from 'react';
 import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
-import Styles from '../../styles/reviewModal';
+import styled from 'styled-components';
+import Styles from '../../styles/helpers/reviewModal';
+
+
+const ButtonDiv = styled.div`
+  :active {
+    transform: translateY(4px);
+  }
+`;
 
 export const pipelineSignup = () => (
   <Modal
     style={Styles.modal}
     size="small"
     trigger={
-      <Button size="large" style={Styles.modalButton}>
+      <ButtonDiv>
+        <Button size="large" style={Styles.modalButton}>
         Submit Request
-      </Button>
+        </Button>
+      </ButtonDiv>
     }
   >
     <Modal.Header>To Make A Request Please...</Modal.Header>

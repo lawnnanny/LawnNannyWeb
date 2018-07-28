@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Image, Header, Button } from 'semantic-ui-react';
-import Styles from '../../styles/RequestOption';
+import Styles from '../../styles/helpers/RequestOption';
 
 const ButtonDiv = styled.div`
   :active {

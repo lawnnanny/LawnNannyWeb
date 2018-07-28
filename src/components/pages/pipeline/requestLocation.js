@@ -3,7 +3,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/locationForm';
-import Styles from '../../../styles/requestInformation';
+import Styles from '../../../styles/pipeline/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 

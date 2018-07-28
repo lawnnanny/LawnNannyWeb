@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Icon, Label, Segment, Button } from 'semantic-ui-react';
-import Styles from '../../styles/breadcrumb';
+import Styles from '../../styles/helpers/breadcrumb';
 
 const ButtonDiv = styled.div`
   :active {

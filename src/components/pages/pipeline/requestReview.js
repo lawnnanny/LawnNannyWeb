@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import Styles from '../../../styles/requestReview';
+import Styles from '../../../styles/pipeline/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 import SubmitModalComponent from '../../helpers/reviewModal';
