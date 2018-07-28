@@ -12,7 +12,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
-import Styles from '../../styles/DynamicForm';
+import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
 
 const ButtonDiv = styled.div`

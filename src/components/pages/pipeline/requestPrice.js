@@ -4,7 +4,7 @@ import { Grid, Segment, Header, Icon, Input, Button, Image, Popup } from 'semant
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Styles from '../../../styles/requestPrice';
+import Styles from '../../../styles/pipeline/requestPrice';
 import up from '../../../images/pipeline/up.png';
 import down from '../../../images/pipeline/down.png';
 import BreadcrumbComponent from '../../helpers/breadcrumb';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import RequestOptionComponent from '../../helpers/RequestOption';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/requestSelection';
+import Styles from '../../../styles/pipeline/requestSelection';
 import mower from '../../../images/pipeline/mower.png';
 import rake from '../../../images/pipeline/rake.png';
 import snowBlower from '../../../images/pipeline/snowBlower.png';

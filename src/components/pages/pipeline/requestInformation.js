@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/informationForm';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/requestInformation';
+import Styles from '../../../styles/pipeline/requestInformation';
 
 export const requestInformation = (props) => {
   if (props.pageInProgress < 1) {

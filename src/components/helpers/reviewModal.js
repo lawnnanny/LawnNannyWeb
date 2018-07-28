@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
 import styled from 'styled-components';
-import Styles from '../../styles/reviewModal';
+import Styles from '../../styles/helpers/reviewModal';
 
 
 const ButtonDiv = styled.div`
