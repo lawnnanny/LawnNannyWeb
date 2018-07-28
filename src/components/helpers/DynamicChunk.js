@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   Form,
   Header,
@@ -43,7 +44,9 @@ export const DynamicChunk = (props) => {
           </Header>
         </Segment>
         <Segment textAlign="right" style={Styles.editSegment}>
-          <Icon name="edit" style={Styles.editIcon} />
+          <Link to={props.link}>
+            <Icon name="edit" style={Styles.editIcon} />
+          </Link>
         </Segment>
       </Segment.Group>
       {getValues(props.requests)}
