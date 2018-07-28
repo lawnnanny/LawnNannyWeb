@@ -1,32 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import {
-  Form,
-  Header,
-  Segment,
-  Checkbox,
-  TextArea,
-  Dropdown,
-  Popup,
-  Icon,
-} from 'semantic-ui-react';
-import { statekeys } from '../../helpers/Common';
-import Styles from '../../styles/helpers/DynamicForm';
-import InlineError from './InlineError';
+import { Segment } from 'semantic-ui-react';
+import DynamicChunkComponent from './DynamicChunk';
 
-class DynamicDisplay extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Segment>
-        DynamicDisplay
-      </Segment>
-    );
-  }
-}
+export const DynamicDisplay = props => (
+  <Segment>
+    <DynamicChunkComponent selection={props.requests.selection} />
+    <DynamicChunkComponent information={props.requests.information} />
+    <DynamicChunkComponent selection={props.requests.location} />
+    <DynamicChunkComponent selection={props.requests.price} />
+  </Segment>
+);
 export default DynamicDisplay;

@@ -19,7 +19,7 @@ export const requestReview = (props) => {
         </Segment>
       </Grid.Row>
       <Grid.Row>
-        <DynamicDisplayComponent />
+        <DynamicDisplayComponent requests={props.requests} />
       </Grid.Row>
       <Grid.Row>
         <SubmitModalComponent />
