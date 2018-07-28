@@ -11,4 +11,11 @@ export default {
   breadrow: {
     paddingTop: '0',
   },
+  buttonSegment: {
+    width: '100%',
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0',
+    paddingBottom: '2em',
+  },
 };

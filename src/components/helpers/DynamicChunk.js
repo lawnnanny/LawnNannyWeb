@@ -9,30 +9,36 @@ import {
   Dropdown,
   Popup,
   Icon,
+  List,
 } from 'semantic-ui-react';
+import Styles from '../../styles/helpers/DynamicChunk';
 
 export const DynamicChunk = (props) => {
   const getEntry = (entry) => {
     if (typeof entry === 'boolean') {
       if (entry) {
-        return 'yes';
+        return 'Yes';
       }
-      return 'no';
+      return 'No';
     }
     return entry;
   };
   const getValues = (fields) => {
     const jsxValues = Object.values(fields).map(value => (
-      <Segment>
-        <Header as="h4">{value.name}</Header>
-        <div>{getEntry(value.entry)}</div>
-      </Segment>
+      <List style={Styles.section}>
+        <List.Item style={Styles.value}>
+          <List.Header style={Styles.name}>{value.name}</List.Header>
+          {getEntry(value.entry)}
+        </List.Item>
+      </List>
     ));
     return jsxValues;
   };
   return (
-    <Segment>
-      <Header>{props.name}</Header>
+    <Segment style={Styles.segment}>
+      <Header as="h3" dividing>
+        {props.name}
+      </Header>
       {getValues(props.requests)}
     </Segment>
   );

@@ -3,7 +3,6 @@ import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/helpers/reviewModal';
 
-
 const ButtonDiv = styled.div`
   :active {
     transform: translateY(4px);
@@ -16,8 +15,8 @@ export const pipelineSignup = () => (
     size="small"
     trigger={
       <ButtonDiv>
-        <Button size="large" style={Styles.modalButton}>
-        Submit Request
+        <Button size="large" fluid style={Styles.modalButton}>
+          Submit Request
         </Button>
       </ButtonDiv>
     }

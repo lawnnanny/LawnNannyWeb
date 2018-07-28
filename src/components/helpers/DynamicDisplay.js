@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Segment, Header } from 'semantic-ui-react';
+import Styles from '../../styles/helpers/DynamicDisplay';
+import { Segment, Header, Label, Icon } from 'semantic-ui-react';
 import DynamicChunkComponent from './DynamicChunk';
 
 export const DynamicDisplay = props => (
-  <Segment.Group raised>
+  <Segment raised style={Styles.container} textAlign="left">
     <Header as="h1">{props.requests.selection}</Header>
     <DynamicChunkComponent requests={props.requests.requestInformation} name="Details" />
     <DynamicChunkComponent requests={props.requests.requestLocation} name="Location" />
     <Segment>
-      <Header>Price</Header>
-      <Segment> {props.requests.requestPrice}</Segment>{' '}
+      <Header dividing>Price</Header>
+      <Label style={Styles.priceLabel}>
+        <Icon name="dollar" style={Styles.priceIcon} />
+        {props.requests.requestPrice}
+      </Label>
     </Segment>
-  </Segment.Group>
+  </Segment>
 );
 export default DynamicDisplay;
