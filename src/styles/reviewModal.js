@@ -2,28 +2,28 @@ const green = '#20ad1d';
 const blue = '#0e42ff';
 
 export default {
-  modalButton:{
-    backgroundColor:green,
-    color:'white'
+  modalButton: {
+    backgroundColor: green,
+    color: 'white',
   },
   loginButton: {
     color: blue,
     border: '1.5px solid #0e42ff',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
   },
   segment: {
     boxShadow: 'none',
-    border: 'none'
+    border: 'none',
   },
   modal: {
     width: '30em',
-    left: '37%'
+    left: '37%',
   },
   signUpButton: {
     backgroundColor: green,
-    color: 'white'
+    color: 'white',
   },
   Input: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 };
