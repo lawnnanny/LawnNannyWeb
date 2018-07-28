@@ -7,8 +7,8 @@ export const pipelineSignup = () => (
     style={Styles.modal}
     size="small"
     trigger={
-      <Button size="large" color="black">
-        Make a Request
+      <Button size="large" style={Styles.modalButton}>
+        Submit Request
       </Button>
     }
   >

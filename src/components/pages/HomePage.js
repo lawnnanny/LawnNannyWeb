@@ -7,7 +7,6 @@ import {
   Grid,
   Button,
   Form,
-  Header
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import ReviewModalComponent from '../helpers/reviewModal';
