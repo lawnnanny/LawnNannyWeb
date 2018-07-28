@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import Styles from '../../../styles/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
+import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 
 export const requestReview = (props) => {
   if (props.pageInProgress < 4) {
@@ -15,6 +16,9 @@ export const requestReview = (props) => {
         <Segment style={Styles.segment}>
           <BreadcrumbComponent selection={props.pageInProgress} current={4} />
         </Segment>
+      </Grid.Row>
+      <Grid.Row>
+        <DynamicDisplayComponent />
       </Grid.Row>
     </Grid>
   );

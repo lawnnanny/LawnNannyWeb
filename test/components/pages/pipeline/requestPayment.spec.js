@@ -23,7 +23,7 @@ describe('RequestInformation', () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it('contains three rows', () => {
+  it('contains four rows', () => {
     expect.assertions(4);
 
     const GridRows = wrapper.children();
