@@ -38,6 +38,7 @@ class DynamicForm extends Component {
         element.fields.forEach((field) => {
           data[field.id] = {
             entry: this.state.dataForSubmitting[field.id],
+            name: field.name,
             validation: field.validation,
             id: field.id,
             type: field.type,
@@ -46,6 +47,7 @@ class DynamicForm extends Component {
       } else {
         data[element.id] = {
           entry: this.state.dataForSubmitting[element.id],
+          name: element.name,
           validation: element.validation,
           id: element.id,
           type: element.type,

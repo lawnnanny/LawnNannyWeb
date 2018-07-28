@@ -15,6 +15,10 @@ const ButtonDiv = styled.div`
   }
 `;
 export const requestPrice = (props) => {
+  let buttonString = 'Continue';
+  if (props.pageInProgress > 3) {
+    buttonString = 'Save';
+  }
   if (props.pageInProgress < 3) {
     return <Redirect to="/pipeline/requestLocation" />;
   }
@@ -75,7 +79,7 @@ export const requestPrice = (props) => {
                 props.requestInProgress(4);
               }}
             >
-              Continue
+              {buttonString}
             </Button>
           </ButtonDiv>
         </Link>

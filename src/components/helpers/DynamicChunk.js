@@ -10,10 +10,31 @@ import {
   Popup,
   Icon,
 } from 'semantic-ui-react';
-import DynamicChunkComponent from './DynamicChunk';
 
 export const DynamicChunk = (props) => {
-  console.log(props.pageRequest);
-  return <div>hello</div>;
+  const getEntry = (entry) => {
+    if (typeof entry === 'boolean') {
+      if (entry) {
+        return 'yes';
+      }
+      return 'no';
+    }
+    return entry;
+  };
+  const getValues = (fields) => {
+    const jsxValues = Object.values(fields).map(value => (
+      <Segment>
+        <Header as="h4">{value.name}</Header>
+        <div>{getEntry(value.entry)}</div>
+      </Segment>
+    ));
+    return jsxValues;
+  };
+  return (
+    <Segment>
+      <Header>{props.name}</Header>
+      {getValues(props.requests)}
+    </Segment>
+  );
 };
 export default DynamicChunk;

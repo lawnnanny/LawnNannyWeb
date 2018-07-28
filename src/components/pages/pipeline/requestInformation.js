@@ -8,6 +8,11 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/pipeline/requestInformation';
 
 export const requestInformation = (props) => {
+  let destinationString = '/pipeline/requestLocation';
+  if (props.pageInProgress > 1) {
+    jsonForm[props.requests.selection].button = 'Save';
+    destinationString = '/pipeline/requestReview';
+  }
   if (props.pageInProgress < 1) {
     return <Redirect to="/pipeline" />;
   }
@@ -28,7 +33,7 @@ export const requestInformation = (props) => {
             form={props.requests.selection}
             route={() => {
               props.requestInProgress(2);
-              props.history.push('/pipeline/requestLocation');
+              props.history.push(destinationString);
             }}
           />
         </Segment>
