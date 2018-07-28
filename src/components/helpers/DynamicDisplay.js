@@ -5,10 +5,10 @@ import DynamicChunkComponent from './DynamicChunk';
 
 export const DynamicDisplay = props => (
   <Segment>
-    <DynamicChunkComponent selection={props.requests.selection} />
-    <DynamicChunkComponent information={props.requests.information} />
-    <DynamicChunkComponent selection={props.requests.location} />
-    <DynamicChunkComponent selection={props.requests.price} />
+    <DynamicChunkComponent pageRequest={props.requests.selection} />
+    <DynamicChunkComponent pageRequest={props.requests.requestInformation} />
+    <DynamicChunkComponent pageRequest={props.requests.requestLocation} />
+    <DynamicChunkComponent pageRequest={props.requests.requestPrice} />
   </Segment>
 );
 export default DynamicDisplay;

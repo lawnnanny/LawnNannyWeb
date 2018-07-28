@@ -12,5 +12,8 @@ import {
 } from 'semantic-ui-react';
 import DynamicChunkComponent from './DynamicChunk';
 
-export const DynamicChunk = props => <div>Hello</div>;
+export const DynamicChunk = (props) => {
+  console.log(props.pageRequest);
+  return <div>hello</div>;
+};
 export default DynamicChunk;
