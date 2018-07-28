@@ -1,281 +1,82 @@
 import React from 'react';
-import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
+import { Menu, Modal, Button, Dropdown, Icon, Segment, Header, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
-import NavBar from '../../../src/components/helpers/navBar';
+import DynamicComponent from '../../../src/components/helpers/DynamicChunk';
 
-import DynamicComponent from '../../../src/components/helpers/DynamicForm';
-
-describe('navBar', () => {
+describe('dynamic display', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<NavBar />);
+  const renderComponent = () => shallow(<DynamicComponent />);
 
   beforeEach(() => {
     wrapper = renderComponent();
   });
 
-  it('is a menu', () => {
-    expect(wrapper.type()).toEqual(Menu);
+  it('is a segment', () => {
+    expect(wrapper.type()).toEqual(Segment);
   });
-
-  describe('dropdown item', () => {
-    let dropdownItem;
+  describe('heading group', () => {
+    let headingGroup;
 
     beforeEach(() => {
-      dropdownItem = wrapper.childAt(0);
+      headingGroup = wrapper.childAt(0);
     });
 
-    it('is a menu item', () => {
-      expect(dropdownItem.type()).toEqual(Menu.Item);
+    it('is a segment group', () => {
+      expect(headingGroup.type()).toEqual(Segment.Group);
     });
-
-    describe('dropdown', () => {
-      let dropdown;
+    describe('header segment', () => {
+      let headerSegment;
 
       beforeEach(() => {
-        dropdown = dropdownItem.childAt(0);
+        headerSegment = headingGroup.childAt(0);
       });
 
-      it('is a dropdown', () => {
-        expect(dropdown.type()).toEqual(Dropdown);
+      it('is a segment', () => {
+        expect(headerSegment.type()).toEqual(Segment);
       });
-      describe('dropdown menu', () => {
-        let dropdownMenu;
+      describe('group header', () => {
+        let groupHeader;
 
         beforeEach(() => {
-          dropdownMenu = dropdown.childAt(0);
+          groupHeader = headerSegment.childAt(0);
         });
 
-        it('is a dropdown menu', () => {
-          expect(dropdownMenu.type()).toEqual(Dropdown.Menu);
+        it('is a header', () => {
+          expect(groupHeader.type()).toEqual(Header);
         });
       });
     });
-  });
-  describe('home link', () => {
-    let homeLink;
-
-    beforeEach(() => {
-      homeLink = wrapper.childAt(1);
-    });
-
-    it('is a home link', () => {
-      expect(homeLink.type()).toEqual(Link);
-    });
-    describe('home menu', () => {
-      let homeMenu;
+    describe('group icon link', () => {
+      let iconSegment;
 
       beforeEach(() => {
-        homeMenu = homeLink.childAt(0);
+        iconSegment = headingGroup.childAt(1);
       });
 
-      it('is a home menu', () => {
-        expect(homeMenu.type()).toEqual(Menu.Item);
+      it('is a segment', () => {
+        expect(iconSegment.type()).toEqual(Segment);
       });
-      describe('home icon', () => {
-        let homeIcon;
+      describe('icon link', () => {
+        let iconLink;
 
         beforeEach(() => {
-          homeIcon = homeMenu.childAt(0);
+          iconLink = iconSegment.childAt(0);
         });
 
-        it('is a home icon', () => {
-          expect(homeIcon.type()).toEqual(Icon);
+        it('is a link', () => {
+          expect(iconLink.type()).toEqual(Link);
         });
-      });
-    });
-  });
-  describe('Login/signup menu', () => {
-    let loginSignupContainer;
-
-    beforeEach(() => {
-      loginSignupContainer = wrapper.childAt(2);
-    });
-
-    it('is a menu subcomponent', () => {
-      expect(loginSignupContainer.type()).toEqual(Menu.Menu);
-    });
-
-    it('is positioned correctly', () => {
-      expect(loginSignupContainer.props().position).toEqual('right');
-    });
-
-    describe('Login Modal', () => {
-      let loginModal;
-
-      beforeEach(() => {
-        loginModal = loginSignupContainer.childAt(0);
-      });
-
-      it('is a modal', () => {
-        expect(loginModal.type()).toEqual(Modal);
-      });
-
-      it('is a mini modal', () => {
-        expect(loginModal.props().size).toEqual('mini');
-      });
-
-      it('displays a close modal button', () => {
-        expect(loginModal.props().closeIcon).toBeTruthy();
-      });
-
-      describe('Login Modal trigger', () => {
-        let loginModalTrigger;
-
-        beforeEach(() => {
-          loginModalTrigger = shallow(loginModal.props().trigger);
-        });
-
-        it('is a menu item', () => {
-          const expectedType = shallow(<Menu.Item />).type();
-
-          expect(loginModalTrigger.type()).toEqual(expectedType);
-        });
-        describe('Login Modal Button', () => {
-          let loginModalButton;
-          beforeEach(() => {
-            loginModalButton = loginModalTrigger.childAt(0);
-          });
-
-          it('is a modal button', () => {
-            expect(loginModalButton.type()).toEqual(Button);
-          });
-          it('it displays the correct text', () => {
-            const buttonText = loginModalButton.childAt(0);
-            expect(buttonText.text()).toEqual('Login');
-          });
-        });
-      });
-
-      describe('Login Modal Header', () => {
-        let loginModalHeader;
-
-        beforeEach(() => {
-          loginModalHeader = loginModal.childAt(0);
-        });
-
-        it('is a modal header', () => {
-          expect(loginModalHeader.type()).toEqual(Modal.Header);
-        });
-
-        it('displays the correct text', () => {
-          const loginModalHeaderText = loginModalHeader.childAt(0);
-
-          expect(loginModalHeaderText.text()).toEqual('Welcome Back!');
-        });
-      });
-
-      describe('Login Modal Description', () => {
-        let loginModalDescription;
-
-        beforeEach(() => {
-          loginModalDescription = loginModal.childAt(1);
-        });
-
-        it('is a modal description', () => {
-          expect(loginModalDescription.type()).toEqual(Modal.Description);
-        });
-
-        describe('Dynamic Form Description', () => {
-          let loginDescriptionForm;
+        describe('icon', () => {
+          let icon;
 
           beforeEach(() => {
-            loginDescriptionForm = loginModalDescription.childAt(0);
+            icon = iconLink.childAt(0);
           });
 
-          it('is a dynamic component', () => {
-            expect(loginDescriptionForm.type()).toEqual(DynamicComponent);
-          });
-        });
-      });
-    });
-
-    describe('Signup Modal', () => {
-      let signupModal;
-
-      beforeEach(() => {
-        signupModal = loginSignupContainer.childAt(1);
-      });
-
-      it('is a modal', () => {
-        expect(signupModal.type()).toEqual(Modal);
-      });
-
-      it('is a tiny modal', () => {
-        expect(signupModal.props().size).toEqual('tiny');
-      });
-
-      it('displays a close icon', () => {
-        expect(signupModal.props().closeIcon).toBeTruthy();
-      });
-
-      describe('Signup Modal trigger', () => {
-        let signupModalTrigger;
-
-        beforeEach(() => {
-          signupModalTrigger = shallow(signupModal.props().trigger);
-        });
-
-        it('is a menu item', () => {
-          const expectedType = shallow(<Menu.Item />).type();
-
-          expect(signupModalTrigger.type()).toEqual(expectedType);
-        });
-        describe('signup Modal Button', () => {
-          let signupModalButton;
-          beforeEach(() => {
-            signupModalButton = signupModalTrigger.childAt(0);
-          });
-
-          it('is a modal button', () => {
-            expect(signupModalButton.type()).toEqual(Button);
-          });
-          it('it displays the correct text', () => {
-            const buttonText = signupModalButton.childAt(0);
-            expect(buttonText.text()).toEqual('Sign Up');
-          });
-        });
-      });
-
-      describe('Signup Modal Header', () => {
-        let signupModalHeader;
-
-        beforeEach(() => {
-          signupModalHeader = signupModal.childAt(0);
-        });
-
-        it('is a modal header', () => {
-          expect(signupModalHeader.type()).toEqual(Modal.Header);
-        });
-
-        it('displays the correct message', () => {
-          const signupModalHeaderText = signupModalHeader.childAt(0);
-
-          expect(signupModalHeaderText.text()).toEqual('Sign Up!');
-        });
-      });
-
-      describe('Signup Modal Description', () => {
-        let signupModalDescription;
-
-        beforeEach(() => {
-          signupModalDescription = signupModal.childAt(1);
-        });
-
-        it('is a modal description', () => {
-          expect(signupModalDescription.type()).toEqual(Modal.Description);
-        });
-
-        describe('Signup Modal Form', () => {
-          let signupModalForm;
-
-          beforeEach(() => {
-            signupModalForm = signupModalDescription.childAt(0);
-          });
-
-          it('is a dynamic form', () => {
-            expect(signupModalForm.type()).toEqual(DynamicComponent);
+          it('is a icon', () => {
+            expect(icon.type()).toEqual(Icon);
           });
         });
       });
