@@ -3,7 +3,9 @@ const white = '#FFFFFF';
 const blue = '#0e42ff';
 
 export default {
-  segment: {},
+  segment: {
+    backgroundColor: '#fffaf6',
+  },
   section: {},
   name: {
     fontWeight: '100',
@@ -18,6 +20,7 @@ export default {
     padding: '0',
     margin: '0',
     boxShadow: 'none',
+    backgroundColor: '#fffaf6',
   },
   headerSegment: {
     border: '0',

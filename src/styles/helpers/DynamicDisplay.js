@@ -7,6 +7,9 @@ export default {
     backgroundColor: '#e6e4e2',
     width: '100%',
   },
+  priceSegment: {
+    backgroundColor: '#fffaf6',
+  },
   priceHeader: {
     textDecoration: 'underline',
   },

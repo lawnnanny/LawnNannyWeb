@@ -36,7 +36,7 @@ export const DynamicChunk = (props) => {
     return jsxValues;
   };
   return (
-    <Segment style={Styles.segment}>
+    <Segment raised style={Styles.segment}>
       <Segment.Group horizontal style={Styles.topSegment}>
         <Segment style={Styles.headerSegment}>
           <Header as="h3" style={Styles.header}>

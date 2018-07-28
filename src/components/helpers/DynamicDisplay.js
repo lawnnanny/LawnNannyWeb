@@ -18,7 +18,7 @@ export const DynamicDisplay = props => (
       name="Location"
       link="/pipeline/requestLocation"
     />
-    <Segment>
+    <Segment raised style={Styles.priceSegment}>
       <Segment.Group horizontal style={Styles.topSegment}>
         <Segment style={Styles.headerSegment}>
           <Header as="h3" style={Styles.priceHeader}>
