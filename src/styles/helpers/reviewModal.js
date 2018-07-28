@@ -8,7 +8,8 @@ export default {
     borderRadius: '2px',
     border: '1.5px solid #20ad1d',
     color: green,
-    width: '20em',
+    width: '30em',
+    maxWidth:'70%',
   },
   loginButton: {
     color: blue,
