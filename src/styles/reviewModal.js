@@ -3,7 +3,9 @@ const blue = '#0e42ff';
 
 export default {
   modalButton:{
-    backgroundColor:green,
+    backgroundColor: green,
+    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    borderRadius: '2px',
     color:'white'
   },
   loginButton: {
