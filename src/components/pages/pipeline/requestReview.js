@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Styles from '../../../styles/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
+import SubmitModalComponent from '../../helpers/reviewModal';
 
 export const requestReview = (props) => {
   if (props.pageInProgress < 4) {
@@ -19,6 +20,9 @@ export const requestReview = (props) => {
       </Grid.Row>
       <Grid.Row>
         <DynamicDisplayComponent />
+      </Grid.Row>
+      <Grid.Row>
+        <SubmitModalComponent />
       </Grid.Row>
     </Grid>
   );

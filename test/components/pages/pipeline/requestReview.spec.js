@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import RequestReviewComponent from '../../../../src/components/pages/pipeline/requestReview';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 import DynamicDisplayComponent from '../../../../src/components/helpers/DynamicDisplay';
-
+import SubmitModalComponent from '../../../../src/components/helpers/reviewModal';
 
 describe('RequestReview', () => {
   let wrapper;
@@ -25,7 +25,7 @@ describe('RequestReview', () => {
   });
 
   it('contains two rows', () => {
-    expect.assertions(2);
+    expect.assertions(3);
 
     const GridRows = wrapper.children();
 
@@ -86,17 +86,37 @@ describe('RequestReview', () => {
 
     describe('It contains a DynamicDisplay Component', () => {
 
-        let dynamicDisplayRowComponent;
+      let dynamicDisplayRowComponent;
 
-        beforeEach(() => {
-            dynamicDisplayRowComponent = dynamicDisplayRow.childAt(0);
-        });
+      beforeEach(() => {
+        dynamicDisplayRowComponent = dynamicDisplayRow.childAt(0);
+      });
 
-        it('is a dynamic dynamic display component', () => {
-            expect(dynamicDisplayRowComponent.type()).toEqual(DynamicDisplayComponent);
-        })
-
+      it('is a dynamic dynamic display component', () => {
+        expect(dynamicDisplayRowComponent.type()).toEqual(DynamicDisplayComponent);
+      })
     });
   })
+  describe('Submit Row', () => {
+    let submitRow;
 
+    beforeEach(() => {
+      submitRow = wrapper.childAt(2);
+    });
+
+    it('It is a row', () => {
+      expect(submitRow.type()).toEqual(Grid.Row);
+    })
+    describe('Submit Row Component', () => {
+      let submitRowComponent;
+
+      beforeEach(() => {
+        submitRowComponent = submitRow.childAt(0);
+      });
+
+      it('It is a submit component', () => {
+        expect(submitRowComponent.type()).toEqual(SubmitModalComponent);
+      })
+    });
+  });
 });
