@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Styles from '../../styles/helpers/DynamicDisplay';
 import { Segment, Header, Label, Icon } from 'semantic-ui-react';
+import Styles from '../../styles/helpers/DynamicDisplay';
 import DynamicChunkComponent from './DynamicChunk';
 
 export const DynamicDisplay = props => (
@@ -38,4 +38,10 @@ export const DynamicDisplay = props => (
     </Segment>
   </Segment>
 );
+DynamicDisplay.propTypes = {
+  requests: PropTypes.obj,
+};
+DynamicDisplay.defaultProps = {
+  requests: PropTypes.obj,
+};
 export default DynamicDisplay;

@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import {
-  Form,
-  Header,
-  Segment,
-  Checkbox,
-  TextArea,
-  Dropdown,
-  Popup,
-  Icon,
-  List,
-} from 'semantic-ui-react';
+import { Header, Segment, Icon, List } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/DynamicChunk';
 
 export const DynamicChunk = (props) => {
@@ -52,5 +42,15 @@ export const DynamicChunk = (props) => {
       {getValues(props.requests)}
     </Segment>
   );
+};
+DynamicChunk.propTypes = {
+  name: PropTypes.string,
+  link: PropTypes.string,
+  requests: PropTypes.obj,
+};
+DynamicChunk.defaultProps = {
+  name: PropTypes.string,
+  link: PropTypes.string,
+  requests: PropTypes.obj,
 };
 export default DynamicChunk;

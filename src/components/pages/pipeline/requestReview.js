@@ -31,9 +31,11 @@ export const requestReview = (props) => {
 };
 requestReview.propTypes = {
   pageInProgress: PropTypes.number,
+  requests: PropTypes.obj,
 };
 
 requestReview.defaultProps = {
   pageInProgress: 0,
+  requests: PropTypes.obj,
 };
 export default requestReview;
