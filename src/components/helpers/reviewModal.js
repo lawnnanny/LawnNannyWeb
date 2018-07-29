@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
 import Styles from '../../styles/reviewModal';
 
-export const pipelineSignup = () => (
+export const reviewModal = () => (
   <Modal
     style={Styles.modal}
     size="small"
@@ -33,4 +33,4 @@ export const pipelineSignup = () => (
     </Modal.Content>
   </Modal>
 );
-export default pipelineSignup;
+export default reviewModal;

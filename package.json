@@ -63,6 +63,7 @@
     "webdriverio": "^4.13.0"
   },
   "jest": {
+    "testEnvironment": "node",
     "moduleDirectories": [
       "src",
       "test",
