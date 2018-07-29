@@ -4,12 +4,9 @@ import React from 'react';
 import ReviewModal from '../../../src/components/helpers/reviewModal';
 
 describe('pipelineSignupModal', () => {
-  let wrapper
+  let wrapper;
 
-  const renderComponent = (props = {}) =>
-    shallow(
-      <ReviewModal />
-    );
+  const renderComponent = (props = {}) => shallow(<ReviewModal />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -30,14 +27,14 @@ describe('pipelineSignupModal', () => {
       expect(modalHeader.type()).toEqual(Modal.Header);
     });
   });
-    describe('Modal content', () => {
-      let modalContent;
+  describe('Modal content', () => {
+    let modalContent;
 
-      beforeEach(() => {
-        modalContent = wrapper.childAt(1);
-      });
-      it('is modal content', () => {
-        expect(modalContent.type()).toEqual(Modal.Content);
-      });
-});
+    beforeEach(() => {
+      modalContent = wrapper.childAt(1);
+    });
+    it('is modal content', () => {
+      expect(modalContent.type()).toEqual(Modal.Content);
+    });
+  });
 });

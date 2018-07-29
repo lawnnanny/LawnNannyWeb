@@ -7,7 +7,13 @@ import DynamicComponent from '../../../src/components/helpers/DynamicChunk';
 describe('dynamic display', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<DynamicComponent />);
+  const requestInformation = {
+    comments: {
+      entry: 'Hello',
+      name: 'cheese',
+    },
+  };
+  const renderComponent = () => shallow(<DynamicComponent requests={requestInformation} />);
 
   beforeEach(() => {
     wrapper = renderComponent();

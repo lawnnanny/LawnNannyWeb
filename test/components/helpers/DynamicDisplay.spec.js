@@ -7,8 +7,23 @@ import Chunk from '../../../src/components/helpers/DynamicChunk';
 
 describe('dynamic display', () => {
   let wrapper;
-
-  const renderComponent = () => shallow(<DynamicComponent />);
+  const Requests = {
+    selection: 'Custom Request',
+    requestInformation: {
+      comments: {
+        entry: 'Hello',
+        name: 'cheese',
+      },
+    },
+    requestLocation: {
+      city: {
+        entry: 'Hello',
+        name: 'cheese',
+      },
+    },
+    requestPrice: 5,
+  };
+  const renderComponent = () => shallow(<DynamicComponent requests={Requests} />);
 
   beforeEach(() => {
     wrapper = renderComponent();

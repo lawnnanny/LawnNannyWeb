@@ -82,10 +82,9 @@ describe('RequestReview', () => {
 
     it('It is a row', () => {
       expect(dynamicDisplayRow.type()).toEqual(Grid.Row);
-    })
+    });
 
     describe('It contains a DynamicDisplay Component', () => {
-
       let dynamicDisplayRowComponent;
 
       beforeEach(() => {
@@ -94,9 +93,9 @@ describe('RequestReview', () => {
 
       it('is a dynamic dynamic display component', () => {
         expect(dynamicDisplayRowComponent.type()).toEqual(DynamicDisplayComponent);
-      })
+      });
     });
-  })
+  });
   describe('Submit Row', () => {
     let submitRow;
 
@@ -106,17 +105,28 @@ describe('RequestReview', () => {
 
     it('It is a row', () => {
       expect(submitRow.type()).toEqual(Grid.Row);
-    })
-    describe('Submit Row Component', () => {
-      let submitRowComponent;
+    });
+    describe('Submit Row Segment', () => {
+      let submitRowSegment;
 
       beforeEach(() => {
-        submitRowComponent = submitRow.childAt(0);
+        submitRowSegment = submitRow.childAt(0);
       });
 
-      it('It is a submit component', () => {
-        expect(submitRowComponent.type()).toEqual(SubmitModalComponent);
-      })
+      it('It is a segmnet', () => {
+        expect(submitRowSegment.type()).toEqual(Segment);
+      });
+      describe('Submit Row Component', () => {
+        let submitRowComponent;
+
+        beforeEach(() => {
+          submitRowComponent = submitRowSegment.childAt(0);
+        });
+
+        it('It is a submit component', () => {
+          expect(submitRowComponent.type()).toEqual(SubmitModalComponent);
+        });
+      });
     });
   });
 });
