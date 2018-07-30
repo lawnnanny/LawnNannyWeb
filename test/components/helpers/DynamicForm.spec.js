@@ -119,11 +119,7 @@ describe('DynamicForm', () => {
             if (field.type !== 'rowCombination') {
               const pre = formComponent.childAt(count);
               const label = pre.childAt(0);
-              if (field.validation) {
-                expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
-              } else {
-                expect(label.childAt(0).text()).toEqual(field.name);
-              }
+              expect(label.childAt(0).text()).toEqual(field.name);
             }
             expect(
               wrapper

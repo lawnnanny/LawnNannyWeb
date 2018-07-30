@@ -16,10 +16,7 @@ export default {
     paddingTop: '0',
   },
   headerRow: {
-    marginTop: '2em',
-  },
-  header: {
-    marginLeft: '1.5em',
+    marginTop: '1em',
   },
   headerLabel: {
     backgroundColor: white,
@@ -30,11 +27,11 @@ export default {
   triangleBottomRow: {
     marginTop: '1em',
     textAlign: 'center',
-    marginBottom: '2em',
+    marginBottom: '1em',
   },
   triangleTopRow: {
     textAlign: 'center',
-    marginTop: '.8em',
+    marginTop: '.5em',
     marginBottom: '.8em',
   },
   triangleBottomButton: {
