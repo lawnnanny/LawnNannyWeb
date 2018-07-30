@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/navBar';
@@ -29,4 +29,17 @@ export const signupModal = props => (
     </Modal.Description>
   </Modal>
 );
+signupModal.propTypes = {
+  size: PropTypes.string,
+  fluid: PropTypes.bool,
+  signupButton: PropTypes.func,
+  signup: PropTypes.func,
+};
+
+signupModal.defaultProps = {
+  size: PropTypes.string,
+  fluid: PropTypes.bool,
+  signupButton: PropTypes.func,
+  signup: PropTypes.func,
+};
 export default signupModal;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import Styles from '../../styles/helpers/navBar';
@@ -29,4 +29,17 @@ export const loginModal = props => (
     </Modal.Description>
   </Modal>
 );
+loginModal.propTypes = {
+  size: PropTypes.string,
+  fluid: PropTypes.bool,
+  loginButton: PropTypes.func,
+  login: PropTypes.func,
+};
+
+loginModal.defaultProps = {
+  size: PropTypes.string,
+  fluid: PropTypes.bool,
+  loginButton: PropTypes.func,
+  login: PropTypes.func,
+};
 export default loginModal;

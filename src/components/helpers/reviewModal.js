@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
+import { Modal, Button, Segment, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/helpers/reviewModal';
 import LoginModal from '../helpers/loginModal';
