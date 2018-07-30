@@ -16,40 +16,39 @@ export default {
     paddingTop: '0',
   },
   headerRow: {
-    marginTop: '1em',
+    marginTop: '2em',
+    marginBottom: '2em',
   },
   headerLabel: {
     backgroundColor: white,
   },
   priceRow: {
     textAlign: 'center',
+    marginBottom: '2em',
   },
-  triangleBottomRow: {
-    marginTop: '1em',
-    textAlign: 'center',
-    marginBottom: '1em',
-  },
-  triangleTopRow: {
-    textAlign: 'center',
-    marginTop: '.5em',
-    marginBottom: '.8em',
+  label: {
+    padding: '0',
+    backgroundColor: white,
+    border: '1px solid #e6e6e6',
   },
   triangleBottomButton: {
     padding: '0',
-    width: '12em',
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
-    borderRadius: '5px',
+    width: '8em',
+    margin: '0',
+    backgroundColor: white,
   },
   triangleTopButton: {
     padding: '0',
-    width: '12em',
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
-    borderRadius: '5px',
+    width: '8em',
+    margin: '0',
+    borderBottom: '1px solid #c5c5c5',
+    backgroundColor: white,
   },
   input: {
-    width: '7em',
+    width: '6em',
     fontSize: '3em',
     padding: '0',
+    marginLeft: '-2.7em',
   },
   inputIcon: {
     color: green,
@@ -59,7 +58,8 @@ export default {
     width: '8em',
   },
   button: {
-    width: '20em',
+    width: '18em',
+    margin: '0',
     backgroundColor: green,
     color: white,
     boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
