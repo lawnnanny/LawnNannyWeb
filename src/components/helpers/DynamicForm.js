@@ -125,9 +125,9 @@ class DynamicForm extends Component {
 
   errorPropertyTextArea = (error) => {
     if (error) {
-      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
+      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0', fontSize: '1.3em' };
     }
-    return {};
+    return { fontSize: '1.3em' };
   };
   showPopup = (popup) => {
     if (popup) {
@@ -176,6 +176,7 @@ class DynamicForm extends Component {
         {field.name}
       </label>
       <Dropdown
+        style={Styles.dropdown}
         search
         error={errors[field.id]}
         value={this.returnValue(field.id, 'entry', '')}

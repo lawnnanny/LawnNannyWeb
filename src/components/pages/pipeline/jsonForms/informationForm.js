@@ -12,7 +12,7 @@ export const jsonForm = {
       },
       {
         name: 'Does the lawn have a sprinkler system installed?',
-        options: ['yes', 'no'],
+        options: ['Yes', 'No'],
         type: 'radio',
         id: 'lawnSprinkler',
         validation: 'required',

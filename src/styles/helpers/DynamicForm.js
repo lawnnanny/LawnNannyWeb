@@ -39,4 +39,7 @@ export default {
   input: {
     fontSize: '1.3em',
   },
+  dropdown: {
+    fontSize: '1.3em',
+  },
 };
