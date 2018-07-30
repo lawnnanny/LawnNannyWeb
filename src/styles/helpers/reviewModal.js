@@ -2,6 +2,14 @@ const green = '#20ad1d';
 const blue = '#0e42ff';
 
 export default {
+  modal: {
+    position: 'absolute',
+    float: 'left',
+    left: '50%',
+    top: '65%',
+    transform: 'translate(-50%, -50%)',
+    padding: '1em',
+  },
   modalButton: {
     backgroundColor: green,
     borderRadius: '5px',
@@ -20,10 +28,6 @@ export default {
   segment: {
     boxShadow: 'none',
     border: 'none',
-  },
-  modal: {
-    width: '30em',
-    left: '37%',
   },
   content: {
     padding: '0',

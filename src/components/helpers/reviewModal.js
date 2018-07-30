@@ -22,6 +22,7 @@ export const pipelineSignup = () => (
         </Button>
       </ButtonDiv>
     }
+    closeIcon
   >
     <Modal.Header style={Styles.header}>To Make A Request Please...</Modal.Header>
     <Modal.Content style={Styles.content}>

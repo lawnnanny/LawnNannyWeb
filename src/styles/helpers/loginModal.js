@@ -25,9 +25,12 @@ export default {
     padding: '.5rem',
   },
   modal: {
-    backgroundColor: white,
-    padding: '1rem',
-    margin: 'none',
+    position: 'absolute',
+    float: 'left',
+    left: '50%',
+    top: '65%',
+    transform: 'translate(-50%, -50%)',
+    padding: '1em',
   },
   modalHeader: {
     display: 'flex',
