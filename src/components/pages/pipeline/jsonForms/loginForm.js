@@ -15,6 +15,7 @@ export const loginJsonForm = {
         placeholder: 'password',
         id: 'password',
         validation: 'required',
+        password: 'password',
       },
     ],
   },

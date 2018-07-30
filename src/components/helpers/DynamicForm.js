@@ -161,6 +161,7 @@ class DynamicForm extends Component {
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
           style={Styles.input}
+          type={field.password}
         />
         <div style={InLineErrorStyle}>
           {errors[field.id] && (

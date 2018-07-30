@@ -15,6 +15,7 @@ export const signupJsonForm = {
         placeholder: 'password',
         id: 'password',
         validation: 'required',
+        password: 'password',
       },
       {
         name: 'Retype Password',
@@ -22,6 +23,7 @@ export const signupJsonForm = {
         placeholder: 'retype password',
         id: 'retypedPassword',
         validation: 'required',
+        password: 'password',
       },
     ],
   },
