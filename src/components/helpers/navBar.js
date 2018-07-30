@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
-import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
-import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
+import { Menu, Dropdown, Icon } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/navBar';
-import DynamicComponent from '../helpers/DynamicForm';
+import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
+import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
-export const navBar = state => (
+export const navBar = () => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
       <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
@@ -25,46 +24,8 @@ export const navBar = state => (
       </Menu.Item>
     </Link>
     <Menu.Menu position="right">
-      <Modal
-        style={Styles.modal}
-        size="mini"
-        trigger={
-          <Menu.Item style={Styles.menuItem}>
-            <Button style={Styles.loginButton}>Login</Button>
-          </Menu.Item>
-        }
-        closeIcon
-      >
-        <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
-        <Modal.Description>
-          <DynamicComponent
-            jsonForm={() => loginJsonForm}
-            setRequest={state.login}
-            form={'Login'}
-            route={() => {}}
-          />
-        </Modal.Description>
-      </Modal>
-      <Modal
-        style={Styles.modal}
-        size="tiny"
-        trigger={
-          <Menu.Item style={Styles.menuItem}>
-            <Button style={Styles.signupButton}>Sign Up</Button>
-          </Menu.Item>
-        }
-        closeIcon
-      >
-        <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
-        <Modal.Description>
-          <DynamicComponent
-            jsonForm={() => signupJsonForm}
-            form={'SignUp'}
-            setRequest={state.signup}
-            route={() => {}}
-          />
-        </Modal.Description>
-      </Modal>
+      <LoginModal />
+      <SignupModal />
     </Menu.Menu>
   </Menu>
 );

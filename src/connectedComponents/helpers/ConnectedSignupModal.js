@@ -1,15 +1,8 @@
 import { connect } from 'react-redux';
-import navBarComponent from '../components/helpers/navBar';
-import Actions from '../reducers/Actions';
+import signupModalComponent from '../../components/helpers/signupModal';
+import Actions from '../../reducers/Actions';
 
 const mapDispatchToProps = dispatch => ({
-  login: (data) => {
-    const action = {
-      type: Actions.login.login,
-      data,
-    };
-    dispatch(action);
-  },
   signup: (data) => {
     const action = {
       type: Actions.login.signup,
@@ -22,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   () => ({}),
   mapDispatchToProps,
-)(navBarComponent);
+)(signupModalComponent);

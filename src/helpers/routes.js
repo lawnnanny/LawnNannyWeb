@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import { Error404 } from '../components/errors/Error404';
-import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
+import NavBarComponent from '../components/helpers/navBar';
 import ConnectedRequestSelection from '../connectedComponents/pipeline/ConnectedRequestSelection';
 import ConnectedRequestInformationComponent from '../connectedComponents/pipeline/ConnectedRequestInformation';
 import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/ConnectedRequestLocation';
@@ -35,7 +35,7 @@ export class Routes extends Component {
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
           <div style={Styles.div}>
-            <ConnectedNavBarComponent style={Styles.navBar} />
+            <NavBarComponent style={Styles.navBar} />
             <Switch>
               <Route exact path="/test" component={App} />
               <Route exact path="/pipeline" component={ConnectedRequestSelection} />
