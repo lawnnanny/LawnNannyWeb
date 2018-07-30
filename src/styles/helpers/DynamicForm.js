@@ -3,14 +3,6 @@ const white = '#FFFFFF';
 const blue = '#0e42ff';
 
 export default {
-  Dynamicsegment: {
-    border: 'none',
-    boxShadow: 'none',
-  },
-  formSegment: {
-    backgroundColor: '#f2f0ee',
-    boxShadow: '0px 10px 10px -10px rgba(0,0,0,0.4)',
-  },
   button: {
     backgroundColor: green,
     color: white,
@@ -40,5 +32,11 @@ export default {
     boxShadow: '0 0 0 0.1em #0e42ff inset',
     fontSize: '.4em',
     marginTop: '-3em',
+  },
+  label: {
+    fontSize: '1.2em',
+  },
+  input: {
+    fontSize: '1.3em',
   },
 };

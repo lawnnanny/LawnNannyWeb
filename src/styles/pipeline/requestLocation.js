@@ -8,6 +8,14 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
+  formSegment: {
+    backgroundColor: '#f2f0ee',
+    boxShadow: '0px 10px 10px -10px rgba(0,0,0,0.4)',
+  },
+  dynamicSegment: {
+    border: 'none',
+    boxShadow: 'none',
+  },
   breadrow: {
     paddingTop: '0',
   },

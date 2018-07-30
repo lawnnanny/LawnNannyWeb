@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
-import Styles from '../../styles/helpers/navBar';
+import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
 
 export const signupModal = props => (
@@ -25,6 +25,7 @@ export const signupModal = props => (
         form={'SignUp'}
         setRequest={props.signup}
         route={() => {}}
+        styling={Styles}
       />
     </Modal.Description>
   </Modal>

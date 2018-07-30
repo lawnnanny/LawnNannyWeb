@@ -160,6 +160,7 @@ class DynamicForm extends Component {
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
+          style={Styles.input}
         />
         <div style={InLineErrorStyle}>
           {errors[field.id] && (
@@ -197,6 +198,7 @@ class DynamicForm extends Component {
         {field.name}
       </label>
       <TextArea
+        autoHeight
         value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
@@ -279,12 +281,12 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <Segment textAlign="left" padded style={Styles.Dynamicsegment}>
-        <Header as="h1">
+      <Segment textAlign="left" padded style={this.props.styling.dynamicSegment}>
+        <Header as="h1" style={this.props.styling.header}>
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
         </Header>
-        <Segment textAlign="left" style={Styles.formSegment}>
+        <Segment textAlign="left" style={this.props.styling.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],

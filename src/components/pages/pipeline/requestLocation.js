@@ -35,6 +35,7 @@ export const requestLocation = (props) => {
               props.requestInProgress(3);
               props.history.push(destinationString);
             }}
+            styling={Styles}
           />
         </Segment>
       </Grid.Row>
