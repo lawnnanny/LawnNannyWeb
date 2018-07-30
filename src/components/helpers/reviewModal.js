@@ -2,8 +2,8 @@ import React from 'react';
 import { Modal, Button, Segment, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/helpers/reviewModal';
-import LoginModal from '../helpers/loginModal';
-import SignupModal from '../helpers/signupModal';
+import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
+import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
 const ButtonDiv = styled.div`
   :active {

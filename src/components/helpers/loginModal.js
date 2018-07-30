@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import Styles from '../../styles/helpers/loginModal';
