@@ -1,9 +1,10 @@
 import React from 'react';
-import { Grid, Segment, Header, Button, Image, Input, Icon } from 'semantic-ui-react';
+import { Grid, Segment, Header, Button, Image, Input, Icon, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import RequestPriceComponent from '../../../../src/components/pages/pipeline/requestPrice';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
+import Clicker from '../../../../src/components/helpers/Clicker';
 
 describe('RequestInformation', () => {
   let wrapper;
@@ -104,105 +105,44 @@ describe('RequestInformation', () => {
     it('is a Price Row', () => {
       expect(PriceRow.type()).toEqual(Grid.Row);
     });
-
-    describe('Price Column', () => {
-      let PriceColumn;
-
+    describe('Input', () => {
+      let priceInput;
       beforeEach(() => {
-        PriceColumn = PriceRow.childAt(0);
+        priceInput = PriceRow.childAt(0);
       });
 
-      it('is a Column', () => {
-        expect(PriceColumn.type()).toEqual(Grid.Column);
+      it('is an input', () => {
+        expect(priceInput.type()).toEqual(Input);
       });
-
-      describe('triangleTopRow', () => {
-        let triangleTopRow;
+      describe('Icon', () => {
+        let priceIcon;
         beforeEach(() => {
-          triangleTopRow = PriceColumn.childAt(0);
+          priceIcon = priceInput.childAt(0);
         });
 
-        it('is a row', () => {
-          expect(triangleTopRow.type()).toEqual(Grid.Row);
-        });
-        describe('triangleTopButton', () => {
-          let triangleTopbutton;
-          beforeEach(() => {
-            triangleTopbutton = triangleTopRow.childAt(0).childAt(0);
-          });
-
-          it('is a button', () => {
-            expect(triangleTopbutton.type()).toEqual(Button);
-          });
-          describe('triangleTopImage', () => {
-            let triangleTopimage;
-            beforeEach(() => {
-              triangleTopimage = triangleTopbutton.childAt(0);
-            });
-
-            it('is a image', () => {
-              expect(triangleTopimage.type()).toEqual(Image);
-            });
-          });
+        it('is an icon', () => {
+          expect(priceIcon.type()).toEqual(Icon);
         });
       });
-      describe('priceRow', () => {
-        let priceRow;
+      describe('label', () => {
+        let label;
+
         beforeEach(() => {
-          priceRow = PriceColumn.childAt(1);
+          label = priceInput.childAt(2);
         });
 
-        it('is a row', () => {
-          expect(priceRow.type()).toEqual(Grid.Row);
+        it('is an icon', () => {
+          expect(label.type()).toEqual(Label);
         });
-        describe('Input', () => {
-          let priceInput;
+        describe('Clicker', () => {
+          let clicker;
+
           beforeEach(() => {
-            priceInput = priceRow.childAt(0);
+            clicker = label.childAt(0);
           });
 
-          it('is an input', () => {
-            expect(priceInput.type()).toEqual(Input);
-          });
-          describe('Icon', () => {
-            let priceIcon;
-            beforeEach(() => {
-              priceIcon = priceInput.childAt(0);
-            });
-
-            it('is an icon', () => {
-              expect(priceIcon.type()).toEqual(Icon);
-            });
-          });
-        });
-      });
-      describe('triangleBottomRow', () => {
-        let triangleBottomRow;
-        beforeEach(() => {
-          triangleBottomRow = PriceColumn.childAt(2);
-        });
-
-        it('is a row', () => {
-          expect(triangleBottomRow.type()).toEqual(Grid.Row);
-        });
-        describe('triangleBottomButton', () => {
-          let triangleBottombutton;
-          beforeEach(() => {
-            triangleBottombutton = triangleBottomRow.childAt(0).childAt(0);
-          });
-
-          it('is a button', () => {
-            expect(triangleBottombutton.type()).toEqual(Button);
-          });
-          describe('triangleBottomImage', () => {
-            let triangleBottomimage;
-            beforeEach(() => {
-              triangleBottomimage = triangleBottombutton.childAt(0);
-            });
-
-            it('is a image', () => {
-              expect(triangleBottomimage.type()).toEqual(Image);
-            });
+          it('is an clicker', () => {
+            expect(clicker.type()).toEqual(Clicker);
           });
         });
       });

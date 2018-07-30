@@ -1,33 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Segment, Header, Icon, Input, Button, Image, Popup, Label } from 'semantic-ui-react';
+import { Grid, Segment, Header, Icon, Input, Button, Popup, Label } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Styles from '../../../styles/pipeline/requestPrice';
-import up from '../../../images/pipeline/up.png';
-import down from '../../../images/pipeline/down.png';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
+import Clicker from '../../helpers/Clicker';
 
 const ButtonDiv = styled.div`
   :active {
     transform: translateY(4px);
   }
 `;
-const Clickers = props => (
-  <div>
-    <ButtonDiv>
-      <Button style={Styles.triangleTopButton} onClick={props.incrementRequestPrice}>
-        <Image centered style={Styles.image} src={up} />
-      </Button>
-    </ButtonDiv>
-    <ButtonDiv>
-      <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
-        <Image centered style={Styles.image} src={down} />
-      </Button>
-    </ButtonDiv>
-  </div>
-);
+
 export const requestPrice = (props) => {
   let buttonString = 'Continue';
   if (props.pageInProgress > 3) {
@@ -65,7 +51,7 @@ export const requestPrice = (props) => {
           <Icon name="dollar" style={Styles.inputIcon} />
           <input />
           <Label style={Styles.label}>
-            <Clickers
+            <Clicker
               incrementRequestPrice={props.incrementRequestPrice}
               decrementRequestPrice={props.decrementRequestPrice}
             />
@@ -104,15 +90,6 @@ requestPrice.defaultProps = {
   requestPrice: 0,
   setRequestPrice: PropTypes.func,
   requestInProgress: 0,
-  incrementRequestPrice: PropTypes.func,
-  decrementRequestPrice: PropTypes.func,
-};
-Clickers.propTypes = {
-  incrementRequestPrice: PropTypes.func,
-  decrementRequestPrice: PropTypes.func,
-};
-
-Clickers.defaultProps = {
   incrementRequestPrice: PropTypes.func,
   decrementRequestPrice: PropTypes.func,
 };
