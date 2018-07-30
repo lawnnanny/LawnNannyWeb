@@ -14,6 +14,9 @@ export default {
     border: '1.5px solid #0e42ff',
     backgroundColor: '#ffffff',
   },
+  header: {
+    fontSize: '1.5em',
+  },
   segment: {
     boxShadow: 'none',
     border: 'none',
@@ -22,9 +25,18 @@ export default {
     width: '30em',
     left: '37%',
   },
-  signUpButton: {
+  content: {
+    padding: '0',
+  },
+  divider: {
+    fontSize: '1.5em',
+    fontWeight: '700',
+    margin: '0',
+  },
+  signupButton: {
     backgroundColor: green,
     color: 'white',
+    borderRadius: '3px',
   },
   Input: {
     width: '100%',

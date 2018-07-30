@@ -2,6 +2,8 @@ import React from 'react';
 import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/helpers/reviewModal';
+import LoginModal from '../helpers/loginModal';
+import SignupModal from '../helpers/signupModal';
 
 const ButtonDiv = styled.div`
   :active {
@@ -21,23 +23,14 @@ export const pipelineSignup = () => (
       </ButtonDiv>
     }
   >
-    <Modal.Header>To Make A Request Please...</Modal.Header>
-    <Modal.Content>
+    <Modal.Header style={Styles.header}>To Make A Request Please...</Modal.Header>
+    <Modal.Content style={Styles.content}>
       <Segment style={Styles.segment}>
-        <Input
-          style={Styles.Input}
-          placeholder="Your Email"
-          action={
-            <Button size="large" style={Styles.signUpButton}>
-              Sign Up Now{' '}
-            </Button>
-          }
-          actionPosition="right"
-        />
-        <Divider horizontal>Or</Divider>
-        <Button fluid size="large" style={Styles.loginButton}>
-          Log In
-        </Button>
+        <SignupModal size="big" fluid signupButton={Styles.signupButton} />
+        <Divider horizontal style={Styles.divider}>
+          Or
+        </Divider>
+        <LoginModal size="big" fluid loginButton={Styles.loginButton} />
       </Segment>
     </Modal.Content>
   </Modal>

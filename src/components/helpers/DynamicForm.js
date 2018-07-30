@@ -123,13 +123,6 @@ class DynamicForm extends Component {
     return handle;
   };
 
-  addAstricks = (validation) => {
-    if (validation) {
-      return ' * ';
-    }
-    return '';
-  };
-
   errorPropertyTextArea = (error) => {
     if (error) {
       return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
@@ -158,9 +151,9 @@ class DynamicForm extends Component {
       fieldStyle = Styles.groupField;
     }
     return (
-      <Form.Field style={fieldStyle}>
+      <Form.Field style={fieldStyle} required={field.validation}>
         <label style={Styles.label} htmlFor={field.id}>
-          {this.addAstricks(field.validation) + field.name}
+          {field.name}
         </label>
         <Form.Input
           error={errors[field.id]}
@@ -177,9 +170,9 @@ class DynamicForm extends Component {
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Dropdown
         search
@@ -199,9 +192,9 @@ class DynamicForm extends Component {
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <TextArea
         value={this.returnValue(field.id, 'entry', '')}
@@ -218,9 +211,9 @@ class DynamicForm extends Component {
   );
 
   renderCheckbox = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Checkbox
         error={errors[field.id]}
@@ -233,9 +226,9 @@ class DynamicForm extends Component {
   );
 
   renderRadio = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Form.Group id={field.id} inline>
         {this.renderRadioButtons(field.id, field.options)}

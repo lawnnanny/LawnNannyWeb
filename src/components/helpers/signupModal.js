@@ -5,13 +5,15 @@ import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/navBar';
 import DynamicComponent from '../helpers/DynamicForm';
 
-export const signupModal = state => (
+export const signupModal = props => (
   <Modal
     style={Styles.modal}
     size="tiny"
     trigger={
       <Menu.Item style={Styles.menuItem}>
-        <Button style={Styles.signupButton}>Sign Up</Button>
+        <Button size={props.size} fluid={props.fluid} style={props.signupButton}>
+          Sign Up
+        </Button>
       </Menu.Item>
     }
     closeIcon
@@ -21,7 +23,7 @@ export const signupModal = state => (
       <DynamicComponent
         jsonForm={() => signupJsonForm}
         form={'SignUp'}
-        setRequest={state.signup}
+        setRequest={props.signup}
         route={() => {}}
       />
     </Modal.Description>

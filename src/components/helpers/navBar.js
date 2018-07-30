@@ -24,8 +24,8 @@ export const navBar = () => (
       </Menu.Item>
     </Link>
     <Menu.Menu position="right">
-      <LoginModal />
-      <SignupModal />
+      <LoginModal loginButton={Styles.loginButton} />
+      <SignupModal signupButton={Styles.signupButton} />
     </Menu.Menu>
   </Menu>
 );
