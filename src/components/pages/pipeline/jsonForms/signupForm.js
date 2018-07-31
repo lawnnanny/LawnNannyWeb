@@ -11,17 +11,9 @@ export const signupJsonForm = {
       },
       {
         name: 'Password',
-        type: 'input',
+        type: 'registration password',
         placeholder: 'password',
         id: 'password',
-        validation: 'required',
-        password: 'password',
-      },
-      {
-        name: 'Retype Password',
-        type: 'input',
-        placeholder: 'retype password',
-        id: 'retypedPassword',
         validation: 'required',
         password: 'password',
       },

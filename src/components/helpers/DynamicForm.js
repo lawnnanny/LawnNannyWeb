@@ -63,7 +63,7 @@ class DynamicForm extends Component {
   validateAndSetStateErrorsForDisplay = (data) => {
     const errors = {};
     Object.values(data).forEach((validationEntryObject) => {
-      if (validationEntryObject.validation === 'required') {
+      if (validationEntryObject.validation.length > 0) {
         if (!validationEntryObject.entry || !validationEntryObject.entry.trim().length) {
           switch (validationEntryObject.type) {
             case 'textArea':
@@ -151,7 +151,7 @@ class DynamicForm extends Component {
       fieldStyle = Styles.groupField;
     }
     return (
-      <Form.Field style={fieldStyle} required={field.validation}>
+      <Form.Field style={fieldStyle} required={field.validation.length > 0}>
         <label style={Styles.label} htmlFor={field.id}>
           {field.name}
         </label>
@@ -172,7 +172,7 @@ class DynamicForm extends Component {
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <Form.Field style={Styles.field} required={field.validation.length > 0}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
@@ -195,7 +195,7 @@ class DynamicForm extends Component {
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <Form.Field style={Styles.field} required={field.validation.length > 0}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
@@ -215,7 +215,7 @@ class DynamicForm extends Component {
   );
 
   renderCheckbox = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <Form.Field style={Styles.field} required={field.validation.length > 0}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
@@ -230,7 +230,7 @@ class DynamicForm extends Component {
   );
 
   renderRadio = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <Form.Field style={Styles.field} required={field.validation.length > 0}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
