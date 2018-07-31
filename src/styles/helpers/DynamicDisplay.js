@@ -31,6 +31,7 @@ export default {
     paddingBottom: '1em',
     margin: '0',
     boxShadow: 'none',
+    backgroundColor: '#fffaf6',
   },
   headerSegment: {
     border: '0',
