@@ -14,4 +14,14 @@ export default {
     boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
     borderRadius: '2px',
   },
+  header: {
+    margin: '0',
+  },
+  icon: {
+    float: 'right',
+    color: 'black',
+    fontSize: '2em',
+    marginTop: '.8em',
+    marginLeft: '0',
+  },
 };
