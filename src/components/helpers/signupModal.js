@@ -24,7 +24,9 @@ export const signupModal = props => (
         jsonForm={() => signupJsonForm}
         form={'SignUp'}
         setRequest={props.signup}
-        route={() => {}}
+        route={() => {
+          props.history.push(props.destination);
+        }}
         styling={Styles}
       />
     </Modal.Description>

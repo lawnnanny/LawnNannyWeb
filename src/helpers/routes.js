@@ -34,35 +34,39 @@ export class Routes extends Component {
     return (
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
-          <div style={Styles.div}>
-            <NavBarComponent style={Styles.navBar} />
-            <Switch>
-              <Route exact path="/test" component={App} />
-              <Route exact path="/pipeline" component={ConnectedRequestSelection} />
-              <Route exact path="/HomePage" component={HomePageComponent} />
-              <Route
-                exact
-                path="/pipeline/requestInformation"
-                component={ConnectedRequestInformationComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestLocation"
-                component={ConnectedRequestLocationComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestPrice"
-                component={ConnectedRequestPriceComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestReview"
-                component={ConnectedRequestReviewComponent}
-              />
-              <Route path="/*" component={Error404} />
-            </Switch>
-          </div>
+          <Route
+            render={props => (
+              <div style={Styles.div} {...props}>
+                <NavBarComponent style={Styles.navBar} {...props} />
+                <Switch>
+                  <Route exact path="/test" component={App} />
+                  <Route exact path="/pipeline" component={ConnectedRequestSelection} />
+                  <Route exact path="/HomePage" component={HomePageComponent} />
+                  <Route
+                    exact
+                    path="/pipeline/requestInformation"
+                    component={ConnectedRequestInformationComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestLocation"
+                    component={ConnectedRequestLocationComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestPrice"
+                    component={ConnectedRequestPriceComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestReview"
+                    component={ConnectedRequestReviewComponent}
+                  />
+                  <Route path="/*" component={Error404} />
+                </Switch>
+              </div>
+            )}
+          />
         </BrowserRouter>
       </Provider>
     );

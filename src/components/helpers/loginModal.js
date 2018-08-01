@@ -24,7 +24,9 @@ export const loginModal = props => (
         jsonForm={() => loginJsonForm}
         setRequest={props.login}
         form={'Login'}
-        route={() => {}}
+        route={() => {
+          props.history.push(props.destination);
+        }}
         styling={Styles}
       />
     </Modal.Description>
