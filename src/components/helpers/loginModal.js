@@ -25,6 +25,9 @@ export const loginModal = props => (
         setRequest={props.login}
         form={'Login'}
         route={() => {
+          if (props.requestInProgress) {
+            props.requestInProgress(5);
+          }
           props.history.push(props.destination);
         }}
         styling={Styles}

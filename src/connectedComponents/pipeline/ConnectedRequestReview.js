@@ -5,6 +5,7 @@ import Actions from '../../reducers/Actions';
 const mapStateToProps = state => ({
   requests: state.requests,
   pageInProgress: state.requests.requestInProgress,
+  isLoggedIn: state.login.isLoggedIn,
 });
 
 const mapDispatchToProps = dispatch => ({

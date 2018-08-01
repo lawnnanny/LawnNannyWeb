@@ -22,12 +22,14 @@ class requestReview extends Component {
     this.state = {
       dataBaseError: null,
       open: false,
-      loggedIn: false,
     };
   }
   handleOpen = (loggedIn) => {
     if (!loggedIn) {
       this.setState({ open: true });
+    } else {
+      this.props.requestInProgress(5);
+      this.props.history.push('/pipeline/requestComplete');
     }
   };
   handleClose = () => this.setState({ open: false });
@@ -54,7 +56,7 @@ class requestReview extends Component {
           <Segment style={Styles.buttonSegment}>
             <ButtonDiv>
               <Button
-                onClick={() => this.handleOpen(this.state.loggedIn)}
+                onClick={() => this.handleOpen(this.props.isLoggedIn)}
                 size="big"
                 floated="right"
                 style={Styles.modalButton}
@@ -72,11 +74,25 @@ class requestReview extends Component {
               <Modal.Header style={Styles.header}>To Make A Request Please...</Modal.Header>
               <Modal.Content style={Styles.content}>
                 <Segment style={Styles.segment}>
-                  <SignupModal size="big" fluid signupButton={Styles.signupButton} />
+                  <SignupModal
+                    size="big"
+                    fluid
+                    signupButton={Styles.signupButton}
+                    history={this.props.history}
+                    destination="/pipeline/requestComplete"
+                    requestInProgress={this.props.requestInProgress}
+                  />
                   <Divider horizontal style={Styles.divider}>
                     Or
                   </Divider>
-                  <LoginModal size="big" fluid loginButton={Styles.loginButton} />
+                  <LoginModal
+                    size="big"
+                    fluid
+                    loginButton={Styles.loginButton}
+                    history={this.props.history}
+                    destination="/pipeline/requestComplete"
+                    requestInProgress={this.props.requestInProgress}
+                  />
                 </Segment>
               </Modal.Content>
             </Modal>
