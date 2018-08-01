@@ -16,7 +16,7 @@ export default (state = getInitialState(), action) => {
     case Actions.login.signup:
       return setState(state, 'signupDetails', action.data);
     case Actions.login.isLoggedIn:
-      return setState(state, 'isLoggedIn', action.data);
+      return setState(state, 'isLoggedIn', true);
     default:
       return state;
   }
