@@ -1,10 +1,8 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
+import { Grid, Segment, Button, Header, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestCompleteComponent from '../../../../src/components/pages/pipeline/requestComplete';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
-import testDataFunctions from '../../../testDataGenerators/generateTestData';
-import formPipelineJson from '../../../../src/components/pages/pipeline/jsonForms/informationForm';
 
 describe('Request Complete', () => {
   let wrapper;
@@ -24,8 +22,8 @@ describe('Request Complete', () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it('contains two rows', () => {
-    expect.assertions(2);
+  it('contains three rows', () => {
+    expect.assertions(3);
 
     const GridRows = wrapper.children();
 
@@ -82,6 +80,61 @@ describe('Request Complete', () => {
 
     it('is a Complete Row', () => {
       expect(CompleteRow.type()).toEqual(Grid.Row);
+    });
+    describe('header', () => {
+      let header;
+
+      beforeEach(() => {
+        header = CompleteRow.childAt(0);
+      });
+
+      it('is a header', () => {
+        expect(header.type()).toEqual(Header);
+      });
+      describe('header icon', () => {
+        let headerIcon;
+
+        beforeEach(() => {
+          headerIcon = header.childAt(0);
+        });
+
+        it('is an icon', () => {
+          expect(headerIcon.type()).toEqual(Icon);
+        });
+      });
+      describe('header content', () => {
+        let headerContent;
+
+        beforeEach(() => {
+          headerContent = header.childAt(1);
+        });
+
+        it('is a header content', () => {
+          expect(headerContent.type()).toEqual(Header.Content);
+        });
+      });
+    });
+  });
+  describe('button row', () => {
+    let ButtonRow;
+
+    beforeEach(() => {
+      ButtonRow = wrapper.childAt(2);
+    });
+
+    it('is a button Row', () => {
+      expect(ButtonRow.type()).toEqual(Grid.Row);
+    });
+    describe('button ', () => {
+      let button;
+
+      beforeEach(() => {
+        button = ButtonRow.childAt(0).childAt(0);
+      });
+
+      it('is a button Row', () => {
+        expect(button.type()).toEqual(Button);
+      });
     });
   });
 });

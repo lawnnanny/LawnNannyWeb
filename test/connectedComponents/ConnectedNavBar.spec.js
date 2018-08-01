@@ -20,7 +20,7 @@ describe('Connected RequestInformation Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<NavBar store={store} />);
 
-    const dispatchProps = [];
+    const dispatchProps = ['setLoggedIn'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));
