@@ -70,4 +70,15 @@ export default {
   signUpCheckbox: {
     paddingBottom: '.5rem',
   },
+  userIcon: {
+    fontSize: '1.8em',
+    marginTop: '.5em',
+    marginRight: '.8em',
+  },
+  logoutButton: {
+    backgroundColor: blue,
+    color: white,
+    marginRight: '.5em',
+    padding: '.7em',
+  },
 };

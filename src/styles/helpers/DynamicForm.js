@@ -6,7 +6,7 @@ export default {
   button: {
     backgroundColor: green,
     color: white,
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     marginTop: '2em',
   },
   InLineErrorInput: {

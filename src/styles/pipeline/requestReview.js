@@ -28,7 +28,7 @@ export default {
     backgroundColor: green,
     borderRadius: '5px',
     color: 'white',
-    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.5)',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     width: '100%',
   },
   modal: {
