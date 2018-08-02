@@ -19,7 +19,7 @@ class requestReview extends Component {
   constructor() {
     super();
     this.state = {
-      dataBaseError: 'error occured on server side',
+      dataBaseError: null,
       open: false,
     };
   }
