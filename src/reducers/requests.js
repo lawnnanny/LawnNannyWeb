@@ -3,7 +3,7 @@ import Actions from './Actions';
 const getInitialState = () => ({
   requestPrice: 1,
   selection: '',
-  requestInProgress: 0,
+  requestInProgress: 5,
 });
 
 const setState = (previousState, property, newValue) =>

@@ -63,4 +63,5 @@ export default {
   Input: {
     width: '100%',
   },
+  message: {},
 };

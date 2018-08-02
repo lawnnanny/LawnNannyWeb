@@ -31,51 +31,11 @@ describe('Request Complete', () => {
       expect(row.type()).toEqual(Grid.Row);
     });
   });
-
-  describe('BreadcrumbRow', () => {
-    let BreadcrumbRow;
-
-    beforeEach(() => {
-      BreadcrumbRow = wrapper.childAt(0);
-    });
-
-    it('is a Breadcrumb Row', () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
-    });
-
-    describe('BreadcrumbSegment', () => {
-      let BreadcrumbSegment;
-
-      beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
-      });
-
-      it('is a Breadcrumb Segment', () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
-      });
-
-      describe('BreadcrumbComponent', () => {
-        let Breadcrumb;
-
-        beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
-        });
-
-        it('is a breadcrumb', () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
-        });
-        it('has a selection', () => {
-          expect(Breadcrumb.props().selection).toEqual(5);
-        });
-      });
-    });
-  });
-
   describe('complete row', () => {
     let CompleteRow;
 
     beforeEach(() => {
-      CompleteRow = wrapper.childAt(1);
+      CompleteRow = wrapper.childAt(0);
     });
 
     it('is a Complete Row', () => {
@@ -119,7 +79,7 @@ describe('Request Complete', () => {
     let ButtonRow;
 
     beforeEach(() => {
-      ButtonRow = wrapper.childAt(2);
+      ButtonRow = wrapper.childAt(1);
     });
 
     it('is a button Row', () => {

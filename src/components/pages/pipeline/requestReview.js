@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Button, Modal, Divider } from 'semantic-ui-react';
+import { Grid, Segment, Button, Modal, Divider, Message } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -20,7 +20,7 @@ class requestReview extends Component {
   constructor() {
     super();
     this.state = {
-      dataBaseError: null,
+      dataBaseError: 'error occured on server side',
       open: false,
     };
   }
@@ -46,7 +46,10 @@ class requestReview extends Component {
         </Grid.Row>
         {this.state.dataBaseError && (
           <Grid.Row>
-            <InlineError text={this.state.dataBaseError} pointing />
+            <Message size="big" negative style={Styles.message}>
+              <Message.Header>Were sorry we cant apply that discount</Message.Header>
+              <p>{this.state.dataBaseError}</p>
+            </Message>
           </Grid.Row>
         )}
         <Grid.Row>

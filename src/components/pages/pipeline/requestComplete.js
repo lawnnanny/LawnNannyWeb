@@ -25,20 +25,15 @@ class requestComplete extends Component {
     }
     return (
       <Grid centered container style={Styles.grid}>
-        <Grid.Row style={Styles.breadrow}>
-          <Segment style={Styles.segment}>
-            <BreadcrumbComponent selection={this.props.pageInProgress} current={5} />
-          </Segment>
-        </Grid.Row>
         <Grid.Row style={Styles.completedRow}>
           <Header icon textAlign="center">
             <Icon style={Styles.icon} name="checkmark" />
-            <Header.Content style={Styles.header}>Request Submitted!</Header.Content>
+            <Header.Content style={Styles.header}>Request Submitted</Header.Content>
           </Header>
         </Grid.Row>
         <Grid.Row style={Styles.buttonRow}>
           <ButtonDiv>
-            <Button style={Styles.button}>Continue to Request </Button>
+            <Button style={Styles.button}>Continue </Button>
           </ButtonDiv>
         </Grid.Row>
       </Grid>
