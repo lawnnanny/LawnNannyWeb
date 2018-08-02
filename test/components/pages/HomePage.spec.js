@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Segment, Header } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import HomePage from '../../../src/components/pages/HomePage';
 
@@ -16,32 +15,43 @@ describe('Home Page', () => {
   it('is wrapped in a Grid', () => {
     expect(wrapper.type()).toEqual(Grid);
   });
-  describe('button Row', () => {
-    let buttonRow;
+  describe('heading Row', () => {
+    let headingRow;
 
     beforeEach(() => {
-      buttonRow = wrapper.childAt(0);
+      headingRow = wrapper.childAt(0);
     });
 
     it('is a row', () => {
-      expect(buttonRow.type()).toEqual(Grid.Row);
+      expect(headingRow.type()).toEqual(Grid.Row);
     });
 
-    describe('link', () => {
-      let link;
+    describe('segment', () => {
+      let segment;
 
       beforeEach(() => {
-        link = buttonRow.childAt(0);
+        segment = headingRow.childAt(0);
       });
 
-      it('is a link', () => {
-        expect(link.type()).toEqual(Link);
+      it('is a segment', () => {
+        expect(segment.type()).toEqual(Segment);
+      });
+      describe('header', () => {
+        let header;
+
+        beforeEach(() => {
+          header = segment.childAt(0);
+        });
+
+        it('is a button', () => {
+          expect(header.type()).toEqual(Header);
+        });
       });
       describe('button', () => {
         let button;
 
         beforeEach(() => {
-          button = link.childAt(0).childAt(0);
+          button = segment.childAt(1).childAt(0);
         });
 
         it('is a button', () => {

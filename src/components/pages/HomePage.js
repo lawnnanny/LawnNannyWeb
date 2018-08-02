@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button, Segment, Header, Image } from 'semantic-ui-react';
+import { Grid, Button, Segment, Header } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/HomePage';
 
