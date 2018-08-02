@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button, Segment, Header } from 'semantic-ui-react';
+import { Grid, Button, Segment, Header, Image } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/HomePage';
 
@@ -9,9 +9,9 @@ const ButtonDiv = styled.div`
   }
 `;
 const HomePage = props => (
-  <Grid centered style={Styles.grid}>
+  <Grid stackable centered style={Styles.grid}>
     <Grid.Row verticalAlign="middle" style={Styles.headingRow}>
-      <Segment style={Styles.headerSegment}>
+      <Segment vertical style={Styles.headerSegment}>
         <Header style={Styles.header}>Quicker Easier Services</Header>
         <ButtonDiv style={Styles.div}>
           <Button

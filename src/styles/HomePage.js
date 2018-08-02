@@ -5,14 +5,13 @@ const green = '#20ad1d';
 export default {
   grid: {
     margin: '0',
-    height: '100em',
   },
   headingRow: {
     backgroundImage: `url(${lawn})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'noRepeat',
     backgroundPosition: 'center',
-    height: '60em',
+    height: '40em',
     overflow: 'hidden',
   },
   header: {
