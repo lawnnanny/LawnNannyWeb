@@ -16,7 +16,9 @@ export default {
     boxShadow: 'none',
     padding: '0',
     width: '100%',
-    border: 'none',
+    margin: '0',
+    border: '2px solid #20ad1d',
+    marginBottom: '1em',
   },
   buttonComponent: {},
 };

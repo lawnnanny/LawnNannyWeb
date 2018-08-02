@@ -1,7 +1,7 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
 const black = '#000000';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   Menu: {
@@ -18,15 +18,15 @@ export default {
     backgroundColor: white,
     color: blue,
     padding: '.8em',
-    borderRadius: '25px',
-    border: '.1rem solid',
+    borderRadius: '10px',
+    border: '.15em solid',
     borderColor: blue,
   },
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.8em',
-    borderRadius: '25px',
+    padding: '.95em',
+    borderRadius: '10px',
   },
   menuItem: {
     padding: '.5rem',

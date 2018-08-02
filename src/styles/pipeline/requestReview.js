@@ -1,5 +1,5 @@
 const green = '#20ad1d';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   grid: {
