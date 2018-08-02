@@ -15,6 +15,7 @@ export default {
   dynamicSegment: {
     border: 'none',
     boxShadow: 'none',
+    padding: '0',
   },
   breadrow: {
     paddingTop: '0',

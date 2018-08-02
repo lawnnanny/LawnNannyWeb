@@ -40,9 +40,8 @@ export default {
     padding: '1em',
   },
   loginButton: {
-    color: blue,
-    border: '1.5px solid #0e42ff',
-    backgroundColor: '#ffffff',
+    color: 'white',
+    backgroundColor: blue,
   },
   header: {
     fontSize: '1.5em',

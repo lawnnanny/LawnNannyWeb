@@ -9,12 +9,13 @@ export default {
     padding: '0',
   },
   formSegment: {
-    backgroundColor: '#f2f0ee',
+    backgroundColor: '#d0e2ed',
     boxShadow: '0px 10px 10px -10px rgba(0,0,0,0.4)',
   },
   dynamicSegment: {
     border: 'none',
     boxShadow: 'none',
+    padding: '0',
   },
   breadrow: {
     paddingTop: '0',
