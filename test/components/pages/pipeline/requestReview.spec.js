@@ -23,8 +23,8 @@ describe('RequestReview', () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it('contains two rows', () => {
-    expect.assertions(3);
+  it('contains four rows', () => {
+    expect.assertions(4);
 
     const GridRows = wrapper.children();
 
@@ -76,7 +76,7 @@ describe('RequestReview', () => {
     let dynamicDisplayRow;
 
     beforeEach(() => {
-      dynamicDisplayRow = wrapper.childAt(1);
+      dynamicDisplayRow = wrapper.childAt(2);
     });
 
     it('It is a row', () => {
@@ -99,7 +99,7 @@ describe('RequestReview', () => {
     let submitRow;
 
     beforeEach(() => {
-      submitRow = wrapper.childAt(2);
+      submitRow = wrapper.childAt(3);
     });
 
     it('It is a row', () => {

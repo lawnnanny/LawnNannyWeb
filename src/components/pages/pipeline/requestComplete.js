@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Icon, Header, Button } from 'semantic-ui-react';
+import { Grid, Icon, Header, Button } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Styles from '../../../styles/pipeline/requestComplete';
-import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 const ButtonDiv = styled.div`
   :active {

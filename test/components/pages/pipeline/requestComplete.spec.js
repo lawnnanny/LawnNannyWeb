@@ -1,8 +1,7 @@
 import React from 'react';
-import { Grid, Segment, Button, Header, Icon } from 'semantic-ui-react';
+import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestCompleteComponent from '../../../../src/components/pages/pipeline/requestComplete';
-import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 
 describe('Request Complete', () => {
   let wrapper;
@@ -22,8 +21,8 @@ describe('Request Complete', () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it('contains three rows', () => {
-    expect.assertions(3);
+  it('contains two rows', () => {
+    expect.assertions(2);
 
     const GridRows = wrapper.children();
 

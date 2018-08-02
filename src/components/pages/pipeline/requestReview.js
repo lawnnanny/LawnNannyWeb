@@ -8,7 +8,6 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 import LoginModal from '../../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../../connectedComponents/helpers/ConnectedSignupModal';
-import InlineError from '../../helpers/InlineError';
 
 const ButtonDiv = styled.div`
   :active {
