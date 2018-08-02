@@ -8,7 +8,7 @@ export default {
     width: '100%',
     minHeight: 42,
     backgroundColor: white,
-    paddingBottom: '.5rem',
+    paddingBottom: '1.2rem',
     paddingTop: '.5rem',
     boxShadow: 'none',
     border: 'none',
