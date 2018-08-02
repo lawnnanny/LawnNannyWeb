@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Grid, Button, Segment, Header } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/HomePage';
 
@@ -9,16 +8,21 @@ const ButtonDiv = styled.div`
     transform: translateY(4px);
   }
 `;
-const HomePage = () => (
-  <Grid container centered style={Styles.grid}>
-    <Grid.Row>
-      <Link to="/pipeline">
-        <ButtonDiv>
-          <Button style={Styles.pipelineButton} size="large">
+const HomePage = props => (
+  <Grid centered style={Styles.grid}>
+    <Grid.Row verticalAlign="middle" style={Styles.headingRow}>
+      <Segment style={Styles.headerSegment}>
+        <Header style={Styles.header}>Quicker Easier Services</Header>
+        <ButtonDiv style={Styles.div}>
+          <Button
+            style={Styles.requestButton}
+            size="large"
+            onClick={() => props.history.push('/pipeline')}
+          >
             Make a Request
           </Button>
         </ButtonDiv>
-      </Link>
+      </Segment>
     </Grid.Row>
   </Grid>
 );
