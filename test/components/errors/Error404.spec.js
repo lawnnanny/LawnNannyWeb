@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import { shallow } from 'enzyme';
 import { Error404 } from '../../../src/components/errors/Error404';
 
@@ -11,11 +12,7 @@ describe('404 Error', () => {
     wrapper = renderComponent();
   });
 
-  it('is a p', () => {
-    expect(wrapper.type()).toEqual('p');
-  });
-
-  it('contains the correct message', () => {
-    expect(wrapper.text()).toEqual('404 Not Found :');
+  it('is a reidrect', () => {
+    expect(wrapper.type()).toEqual(Redirect);
   });
 });

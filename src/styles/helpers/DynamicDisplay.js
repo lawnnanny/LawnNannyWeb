@@ -1,6 +1,6 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   container: {
@@ -31,6 +31,7 @@ export default {
     paddingBottom: '1em',
     margin: '0',
     boxShadow: 'none',
+    backgroundColor: '#fffaf6',
   },
   headerSegment: {
     border: '0',

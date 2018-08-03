@@ -44,6 +44,21 @@ class DynamicForm extends Component {
             type: field.type,
           };
         });
+      } else if (element.type === 'registerPassword') {
+        data[element.id] = {
+          entry: this.state.dataForSubmitting[element.id],
+          name: element.name,
+          validation: element.validation,
+          id: element.id,
+          type: element.type,
+        };
+        data[element.id2] = {
+          entry: this.state.dataForSubmitting[element.id2],
+          name: element.name2,
+          validation: element.validation,
+          id: element.id2,
+          type: element.type,
+        };
       } else {
         data[element.id] = {
           entry: this.state.dataForSubmitting[element.id],
@@ -79,6 +94,9 @@ class DynamicForm extends Component {
               errors[validationEntryObject.id] = 'Selection is Required';
               break;
             case 'checkbox':
+              errors[validationEntryObject.id] = 'Selection is Required';
+              break;
+            case 'registerPassword':
               errors[validationEntryObject.id] = 'Selection is Required';
               break;
             default:
@@ -259,6 +277,55 @@ class DynamicForm extends Component {
     return radioButtons;
   };
 
+  renderRegisterPassword = (field, isInRow, errors) => {
+    let InLineErrorStyle = Styles.InLineErrorInput;
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      InLineErrorStyle = Styles.InLineErrorInputRow;
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <div>
+        <Form.Field style={fieldStyle} required={field.validation}>
+          <label style={Styles.label} htmlFor={field.id}>
+            {field.name}
+          </label>
+          <Form.Input
+            error={errors[field.id]}
+            value={this.returnValue(field.id, 'entry', '')}
+            onChange={this.processChange(field.id, '')}
+            placeholder={field.placeholder}
+            style={Styles.input}
+            type={field.password}
+          />
+          <div style={InLineErrorStyle}>
+            {errors[field.id] && (
+              <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+            )}
+          </div>
+        </Form.Field>
+        <Form.Field style={fieldStyle} required={field.validation}>
+          <label style={Styles.label} htmlFor={field.id2}>
+            {field.name2}
+          </label>
+          <Form.Input
+            error={errors[field.id2]}
+            value={this.returnValue(field.id2, 'entry', '')}
+            onChange={this.processChange(field.id2, '')}
+            placeholder={field.placeholder2}
+            style={Styles.input}
+            type={field.password}
+          />
+          <div style={InLineErrorStyle}>
+            {errors[field.id2] && (
+              <InlineError text={errors[field.id2]} pointing style={Styles.InlineError} />
+            )}
+          </div>
+        </Form.Field>
+      </div>
+    );
+  };
+
   renderFormFromJson = (subForm, isInRow, errors) => {
     const formUI = subForm.fields.map((field) => {
       switch (field.type) {
@@ -274,6 +341,8 @@ class DynamicForm extends Component {
           return this.renderCheckbox(field, isInRow, errors);
         case 'radio':
           return this.renderRadio(field, isInRow, errors);
+        case 'registerPassword':
+          return this.renderRegisterPassword(field, isInRow, errors);
         default:
           return 'string';
       }

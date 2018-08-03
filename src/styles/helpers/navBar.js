@@ -1,14 +1,14 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
 const black = '#000000';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   Menu: {
     width: '100%',
     minHeight: 42,
     backgroundColor: white,
-    paddingBottom: '.5rem',
+    paddingBottom: '1.2rem',
     paddingTop: '.5rem',
     boxShadow: 'none',
     border: 'none',
@@ -18,15 +18,15 @@ export default {
     backgroundColor: white,
     color: blue,
     padding: '.8em',
-    borderRadius: '25px',
-    border: '.1rem solid',
+    borderRadius: '10px',
+    border: '.15em solid',
     borderColor: blue,
   },
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.8em',
-    borderRadius: '25px',
+    padding: '.95em',
+    borderRadius: '10px',
   },
   menuItem: {
     padding: '.5rem',
@@ -69,5 +69,16 @@ export default {
   },
   signUpCheckbox: {
     paddingBottom: '.5rem',
+  },
+  userIcon: {
+    fontSize: '1.8em',
+    marginTop: '.5em',
+    marginRight: '.8em',
+  },
+  logoutButton: {
+    backgroundColor: blue,
+    color: white,
+    marginRight: '.5em',
+    padding: '.7em',
   },
 };

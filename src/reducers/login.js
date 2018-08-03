@@ -1,6 +1,8 @@
 import Actions from './Actions';
 
-const getInitialState = () => ({});
+const getInitialState = () => ({
+  isLoggedIn: false,
+});
 
 const setState = (previousState, property, newValue) =>
   Object.assign({}, previousState, {
@@ -13,6 +15,8 @@ export default (state = getInitialState(), action) => {
       return setState(state, 'loginDetails', action.data);
     case Actions.login.signup:
       return setState(state, 'signupDetails', action.data);
+    case Actions.login.isLoggedIn:
+      return setState(state, 'isLoggedIn', !state.isLoggedIn);
     default:
       return state;
   }

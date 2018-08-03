@@ -31,7 +31,14 @@ export const signupModal = props => (
         form={'SignUp'}
         setRequest={props.signup}
         route={() => {
+<<<<<<< HEAD
           console.log(props);
+=======
+          if (props.requestInProgress) {
+            props.requestInProgress(5);
+          }
+          props.history.push(props.destination);
+>>>>>>> 63d3d4c92bb6808fea22292432988665b6992428
         }}
         styling={Styles}
       />

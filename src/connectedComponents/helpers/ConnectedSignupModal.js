@@ -13,7 +13,12 @@ const mapDispatchToProps = dispatch => ({
       type: Actions.login.signup,
       data,
     };
+    const action2 = {
+      type: Actions.login.isLoggedIn,
+      data,
+    };
     dispatch(action);
+    dispatch(action2);
   },
 });
 

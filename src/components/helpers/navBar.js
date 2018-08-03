@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Dropdown, Icon } from 'semantic-ui-react';
+import { Menu, Dropdown, Icon, Button } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/navBar';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
-export const navBar = () => (
+export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
       <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
@@ -23,10 +23,19 @@ export const navBar = () => (
         <Icon name="home" style={Styles.homeIcon} />
       </Menu.Item>
     </Link>
-    <Menu.Menu position="right">
-      <LoginModal loginButton={Styles.loginButton} />
-      <SignupModal signupButton={Styles.signupButton} />
-    </Menu.Menu>
+    {props.isLoggedIn ? (
+      <Menu.Menu position="right">
+        <Icon name="user" style={Styles.userIcon} />
+        <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
+          Logout
+        </Button>
+      </Menu.Menu>
+    ) : (
+      <Menu.Menu position="right">
+        <LoginModal loginButton={Styles.loginButton} history={props.history} />
+        <SignupModal signupButton={Styles.signupButton} history={props.history} />
+      </Menu.Menu>
+    )}
   </Menu>
 );
 export default navBar;

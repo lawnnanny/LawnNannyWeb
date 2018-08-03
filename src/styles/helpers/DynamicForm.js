@@ -1,12 +1,12 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   button: {
-    backgroundColor: green,
+    backgroundColor: blue,
     color: white,
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     marginTop: '2em',
   },
   InLineErrorInput: {

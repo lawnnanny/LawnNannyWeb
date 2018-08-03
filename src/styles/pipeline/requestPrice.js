@@ -1,6 +1,6 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
   grid: {
@@ -60,9 +60,9 @@ export default {
   button: {
     width: '18em',
     margin: '0',
-    backgroundColor: green,
+    backgroundColor: blue,
     color: white,
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.4)',
   },
   buttonRow: {
     marginTop: '2em',

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Grid, Segment, Header, Button, Image, Input, Icon } from 'semantic-ui-react';
+import { Grid, Segment, Button, Modal } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestReviewComponent from '../../../../src/components/pages/pipeline/requestReview';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 import DynamicDisplayComponent from '../../../../src/components/helpers/DynamicDisplay';
-import SubmitModalComponent from '../../../../src/components/helpers/reviewModal';
 
 describe('RequestReview', () => {
   let wrapper;
@@ -24,8 +23,8 @@ describe('RequestReview', () => {
     expect(wrapper.props().container).toBeTruthy();
   });
 
-  it('contains two rows', () => {
-    expect.assertions(3);
+  it('contains four rows', () => {
+    expect.assertions(4);
 
     const GridRows = wrapper.children();
 
@@ -77,7 +76,7 @@ describe('RequestReview', () => {
     let dynamicDisplayRow;
 
     beforeEach(() => {
-      dynamicDisplayRow = wrapper.childAt(1);
+      dynamicDisplayRow = wrapper.childAt(2);
     });
 
     it('It is a row', () => {
@@ -100,7 +99,7 @@ describe('RequestReview', () => {
     let submitRow;
 
     beforeEach(() => {
-      submitRow = wrapper.childAt(2);
+      submitRow = wrapper.childAt(3);
     });
 
     it('It is a row', () => {
@@ -116,15 +115,47 @@ describe('RequestReview', () => {
       it('It is a segmnet', () => {
         expect(submitRowSegment.type()).toEqual(Segment);
       });
-      describe('Submit Row Component', () => {
-        let submitRowComponent;
+      describe('Submit Row Button', () => {
+        let submitRowButton;
 
         beforeEach(() => {
-          submitRowComponent = submitRowSegment.childAt(0);
+          submitRowButton = submitRowSegment.childAt(0).childAt(0);
         });
 
-        it('It is a submit component', () => {
-          expect(submitRowComponent.type()).toEqual(SubmitModalComponent);
+        it('It is a submit button', () => {
+          expect(submitRowButton.type()).toEqual(Button);
+        });
+      });
+      describe('Submit Row Modal', () => {
+        let submitRowModal;
+
+        beforeEach(() => {
+          submitRowModal = submitRowSegment.childAt(1);
+        });
+        it('is a modal', () => {
+          expect(submitRowModal.type()).toEqual(Modal);
+        });
+
+        describe('modal header', () => {
+          let modalHeader;
+
+          beforeEach(() => {
+            modalHeader = submitRowModal.childAt(0);
+          });
+
+          it('is a modal header', () => {
+            expect(modalHeader.type()).toEqual(Modal.Header);
+          });
+        });
+        describe('Modal content', () => {
+          let modalContent;
+
+          beforeEach(() => {
+            modalContent = submitRowModal.childAt(1);
+          });
+          it('is modal content', () => {
+            expect(modalContent.type()).toEqual(Modal.Content);
+          });
         });
       });
     });
