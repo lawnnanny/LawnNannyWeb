@@ -34,7 +34,7 @@ export default {
   menuDropdown: {
     padding: '0',
     margin: 'none',
-    fontSize: '2em',
+    fontSize: '2.5em',
     backgroundColor: white,
     color: black,
   },
@@ -42,7 +42,8 @@ export default {
     fontSize: '.6em',
   },
   homeIcon: {
-    fontSize: '2em',
+    fontSize: '2.5em',
+    opacity: '1',
   },
   modal: {
     backgroundColor: white,
@@ -70,15 +71,28 @@ export default {
   signUpCheckbox: {
     paddingBottom: '.5rem',
   },
-  userIcon: {
-    fontSize: '1.8em',
-    marginTop: '.5em',
-    marginRight: '.8em',
+  userMenu: {
+    padding: '0',
+    margin: 'none',
+    fontSize: '2.5em',
+    backgroundColor: white,
+    color: black,
+    marginTop: '.2em',
+    marginRight: '.5em',
+  },
+  requestButton: {
+    backgroundColor: blue,
+    color: white,
+    marginRight: '.5em',
+    padding: '.7em',
   },
   logoutButton: {
     backgroundColor: blue,
     color: white,
     marginRight: '.5em',
     padding: '.7em',
+  },
+  logoutItem: {
+    padding: '0 !important',
   },
 };
