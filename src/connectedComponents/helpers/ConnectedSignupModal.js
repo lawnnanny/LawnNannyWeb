@@ -2,6 +2,11 @@ import { connect } from 'react-redux';
 import signupModalComponent from '../../components/helpers/signupModal';
 import Actions from '../../reducers/Actions';
 
+const mapStateToProps = (state, ownProps) => ({
+  signupDetailsJson: state.login,
+  signupButton: ownProps.signupButton,
+});
+
 const mapDispatchToProps = dispatch => ({
   signup: (data) => {
     const action = {
@@ -13,6 +18,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  () => ({}),
+  mapStateToProps,
   mapDispatchToProps,
 )(signupModalComponent);

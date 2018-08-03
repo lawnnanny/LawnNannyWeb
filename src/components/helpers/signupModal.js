@@ -4,6 +4,7 @@ import { Menu, Modal, Button } from 'semantic-ui-react';
 import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
+import { createUser } from '../../networkRequests/userRequests';
 
 export const signupModal = props => (
   <Modal
@@ -11,7 +12,12 @@ export const signupModal = props => (
     size="tiny"
     trigger={
       <Menu.Item style={Styles.menuItem}>
-        <Button size={props.size} fluid={props.fluid} style={props.signupButton}>
+        <Button
+          size={props.size}
+          onclick={() => {}}
+          fluid={props.fluid}
+          style={props.signupButton}
+        >
           Sign Up
         </Button>
       </Menu.Item>
@@ -24,12 +30,13 @@ export const signupModal = props => (
         jsonForm={() => signupJsonForm}
         form={'SignUp'}
         setRequest={props.signup}
-        route={() => {}}
+        route={() => {
+          console.log(props);
+        }}
         styling={Styles}
       />
     </Modal.Description>
-  </Modal>
-);
+  </Modal>);
 signupModal.propTypes = {
   size: PropTypes.string,
   fluid: PropTypes.bool,
