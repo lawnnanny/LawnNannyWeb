@@ -8,7 +8,15 @@ import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal'
 export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
-      <Icon name="bars" style={Styles.menuDropdown} />
+      <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
+        <Dropdown.Menu style={Styles.dropDownMenu}>
+          <Dropdown.Item text="Home" onClick={() => props.history.push('/HomePage')} />
+          <Dropdown.Item text="Settings" />
+          <Dropdown.Item text="Terms of Service" />
+          <Dropdown.Item text="What is Terra" />
+          <Dropdown.Item text="More Info" />
+        </Dropdown.Menu>
+      </Dropdown>
     </Menu.Item>
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
@@ -17,10 +25,10 @@ export const navBar = props => (
         </Menu.Item>
         <Menu.Item style={Styles.menuItem}>
           <Dropdown icon="user circle" style={Styles.userMenu}>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={Styles.userDropMenu}>
               <Dropdown.Item>
                 <Button style={Styles.logoutButton} onClick={() => props.setLoggedIn()}>
-                  logout
+                  Logout
                 </Button>
               </Dropdown.Item>
             </Dropdown.Menu>

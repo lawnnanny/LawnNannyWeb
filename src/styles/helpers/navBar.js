@@ -38,6 +38,9 @@ export default {
     backgroundColor: white,
     color: black,
   },
+  dropDownMenu: {
+    fontSize: '.5em',
+  },
   homeIcon: {
     fontSize: '2.5em',
     opacity: '1',
@@ -74,6 +77,9 @@ export default {
     fontSize: '3.5em',
     color: blue,
   },
+  userDropMenu: {
+    fontSize: '.4em',
+  },
   requestButton: {
     backgroundColor: green,
     color: white,
@@ -84,7 +90,7 @@ export default {
     backgroundColor: blue,
     color: white,
     marginRight: '.5em',
-    padding: '.7em',
+    padding: '.5em',
   },
   logoutItem: {
     padding: '0 !important',
