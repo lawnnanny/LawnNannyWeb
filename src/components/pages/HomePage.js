@@ -27,7 +27,7 @@ const HomePage = props => (
           <Button
             style={Styles.jobButton}
             size="large"
-            onClick={() => props.history.push('/pipeline')}
+            onClick={() => props.history.push('/Requests')}
           >
             Find Requests Near You
           </Button>

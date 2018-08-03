@@ -8,38 +8,33 @@ import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal'
 export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
-      <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
-        <Dropdown.Menu style={Styles.dropDownMenu}>
-          <Dropdown.Item text="Find Requests" />
-          <Dropdown.Item text="Settings" />
-          <Dropdown.Item text="Terms of Service" />
-          <Dropdown.Item text="What is Terra" />
-          <Dropdown.Item text="More Info" />
-        </Dropdown.Menu>
-      </Dropdown>
+      <Icon name="bars" style={Styles.menuDropdown} />
     </Menu.Item>
-    <Link to="/HomePage">
-      <Menu.Item style={Styles.menuItem}>
-        <Icon name="home" style={Styles.homeIcon} />
-      </Menu.Item>
-    </Link>
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
-        <Dropdown icon="user" style={Styles.userMenu} button className="icon">
-          <Dropdown.Menu style={Styles.dropDownMenu}>
-            <Dropdown.Item style={Styles.logoutItem}>
-              <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
-                Logout
-              </Button>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Button style={Styles.requestButton}>Your Requests</Button>
+        <Menu.Item style={Styles.menuItem}>
+          <Button style={Styles.requestButton}>Your Requests</Button>
+        </Menu.Item>
+        <Menu.Item style={Styles.menuItem}>
+          <Dropdown icon="user circle" style={Styles.userMenu}>
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Button style={Styles.logoutButton} onClick={() => props.setLoggedIn()}>
+                  logout
+                </Button>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Item>
       </Menu.Menu>
     ) : (
       <Menu.Menu position="right">
-        <LoginModal loginButton={Styles.loginButton} history={props.history} />
-        <SignupModal signupButton={Styles.signupButton} history={props.history} />
+        <Menu.Item style={Styles.menuItem}>
+          <LoginModal loginButton={Styles.loginButton} history={props.history} />
+        </Menu.Item>{' '}
+        <Menu.Item style={Styles.menuItem}>
+          <SignupModal signupButton={Styles.signupButton} history={props.history} />
+        </Menu.Item>
       </Menu.Menu>
     )}
   </Menu>

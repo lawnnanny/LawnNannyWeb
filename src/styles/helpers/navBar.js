@@ -29,7 +29,7 @@ export default {
     borderRadius: '10px',
   },
   menuItem: {
-    padding: '.5rem',
+    padding: '.3em',
   },
   menuDropdown: {
     padding: '0',
@@ -37,9 +37,6 @@ export default {
     fontSize: '2.5em',
     backgroundColor: white,
     color: black,
-  },
-  dropDownMenu: {
-    fontSize: '.6em',
   },
   homeIcon: {
     fontSize: '2.5em',
@@ -74,17 +71,14 @@ export default {
   userMenu: {
     padding: '0',
     margin: 'none',
-    fontSize: '2.5em',
-    backgroundColor: white,
-    color: black,
-    marginTop: '.2em',
-    marginRight: '.5em',
+    fontSize: '3.5em',
+    color: blue,
   },
   requestButton: {
-    backgroundColor: blue,
+    backgroundColor: green,
     color: white,
-    marginRight: '.5em',
     padding: '.7em',
+    height: '3em',
   },
   logoutButton: {
     backgroundColor: blue,
