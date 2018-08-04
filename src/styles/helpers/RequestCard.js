@@ -4,7 +4,10 @@ export default {
   card: {
     margin: '1em',
   },
-  image: {},
+  image: {
+    height: '13em',
+    overflow: 'hidden',
+  },
   content: {
     borderBottom: '1px solid rgba(0,0,0,.2)',
     padding: '.5em',

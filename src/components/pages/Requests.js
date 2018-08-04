@@ -3,35 +3,40 @@ import { Grid, Search } from 'semantic-ui-react';
 import Styles from '../../styles/Requests';
 import RequestCardComponent from '../helpers/requestCard';
 import lawn from '../../images/homepage/lawn.jpg';
+import grinnell from '../../images/homepage/grinnell.png';
+import pella from '../../images/homepage/pella.jpg';
 
 const jsonForm = {
   fields: [
     {
+      link: '/pipeline',
       image: lawn,
       header: 'Lawn in Newton',
-      distance: '10 miles away',
+      distance: '2 miles away',
       description: 'Full yard with a few trees scattered',
       price: '25',
-      reviewCount: '86',
+      reviewCount: '11',
+      rating: 5,
+    },
+    {
+      link: '/HomePage',
+      image: grinnell,
+      header: 'Lawn in Grinnell',
+      distance: '18 miles away',
+      description: 'Small Yard not a lot of trouble.',
+      price: '20',
+      reviewCount: '6',
       rating: 4,
     },
     {
-      image: lawn,
-      header: 'Lawn in Newton',
-      distance: '10 miles away',
-      description: 'Full yard with a few trees scattered',
-      price: '25',
-      reviewCount: '86',
-      rating: 2,
-    },
-    {
-      image: lawn,
-      header: 'Lawn in Newton',
-      distance: '10 miles away',
-      description: 'Full yard with a few trees scattered',
-      price: '25',
-      reviewCount: '86',
-      rating: 3,
+      link: '/pipeline/requestReview',
+      image: pella,
+      header: 'Lawn in Sully',
+      distance: '14 miles away',
+      description: 'Long grass in back may take longer',
+      price: '30',
+      reviewCount: '2',
+      rating: 4,
     },
   ],
 };
@@ -39,6 +44,7 @@ const jsonForm = {
 const Requests = () => {
   const renderCard = field => (
     <RequestCardComponent
+      link={field.link}
       image={field.image}
       header={field.header}
       distance={field.distance}
