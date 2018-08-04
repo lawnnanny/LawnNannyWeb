@@ -1,34 +1,37 @@
 import React from 'react';
-import { Image, Card, Rating, Label } from 'semantic-ui-react';
+import { Image, Card, Rating, Label, Header } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/RequestCard';
-import lawn from '../../images/homepage/lawn.jpg';
 
-export const RequestCard = () => (
+export const RequestCard = props => (
   <Card style={Styles.card}>
     <Image
       style={Styles.image}
-      src={lawn}
+      src={props.image}
       label={{
         as: 'a',
         color: 'black',
-        content: '25',
+        content: props.price,
         icon: 'dollar',
         ribbon: true,
         size: 'huge',
       }}
     />
-    <Card.Content>
-      <Card.Header style={Styles.header}>Lawn in Newton</Card.Header>
+    <Card.Content style={Styles.content}>
+      <Card.Header style={Styles.header}>{props.header}</Card.Header>
       <Card.Meta style={Styles.subheader}>
-        <span>10 miles away</span>
+        <span>{props.distance}</span>
       </Card.Meta>
-      <Card.Description style={Styles.description}>
-        Full yard with a few trees scattered
-      </Card.Description>
+      <Card.Description style={Styles.description}>{props.description}</Card.Description>
     </Card.Content>
-    <Card.Content extra>
-      <Rating icon="star" defaultRating={4} maxRating={5} />
-      86
+    <Card.Content style={Styles.extra}>
+      <Rating
+        icon="star"
+        disabled
+        defaultRating={props.rating}
+        maxRating={5}
+        style={Styles.rating}
+      />
+      {props.reviewCount}
     </Card.Content>
   </Card>
 );

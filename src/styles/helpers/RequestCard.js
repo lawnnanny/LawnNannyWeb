@@ -2,8 +2,18 @@ const green = '#20ad1d';
 
 export default {
   card: {
-    marginTop: '10em',
+    margin: '1em',
   },
   image: {},
-  header: {},
+  content: {
+    borderBottom: '1px solid rgba(0,0,0,.2)',
+    padding: '.5em',
+  },
+  header: {
+    fontSize: '1.5em',
+  },
+  extra: {},
+  rating: {
+    marginRight: '.3em',
+  },
 };
