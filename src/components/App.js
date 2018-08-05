@@ -40,8 +40,9 @@ export class App extends Component {
                   {...props}
                   handleButtonClick={this.handleButtonClick}
                 />
-                <Sidebar.Pushable as={Segment}>
+                <Sidebar.Pushable as={Segment} style={Styles.sidebarContainer}>
                   <Sidebar
+                    style={Styles.sidebar}
                     as={Menu}
                     animation="overlay"
                     icon="labeled"

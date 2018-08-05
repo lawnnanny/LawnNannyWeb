@@ -1,20 +1,20 @@
 import React from 'react';
-import { Menu, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Menu, Icon, Button } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
 
-export const SidebarContent = () => (
+export const SidebarContent = props => (
   <div>
-    <Menu.Item as="a">
-      <Icon name="home" />
-      Home
-    </Menu.Item>
-    <Menu.Item as="a">
-      <Icon name="gamepad" />
-      Games
-    </Menu.Item>
-    <Menu.Item as="a">
-      <Icon name="camera" />
-      Channels
+    <Link to="/HomePage">
+      <Menu.Item>
+        <Icon name="home" />
+        Home
+      </Menu.Item>
+    </Link>
+    <Menu.Item>
+      <Button size="huge" style={Styles.requestButton}>
+        Show Requests
+      </Button>
     </Menu.Item>
   </div>
 );
