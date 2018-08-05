@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Dropdown, Icon } from 'semantic-ui-react';
+import { Menu, Icon, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import NavBar from '../../../src/components/helpers/navBar';
@@ -20,68 +20,35 @@ describe('navBar', () => {
   });
 
   describe('dropdown item', () => {
-    let dropdownItem;
+    let sidebarButton;
 
     beforeEach(() => {
-      dropdownItem = wrapper.childAt(0);
+      sidebarButton = wrapper.childAt(0);
     });
 
     it('is a menu item', () => {
-      expect(dropdownItem.type()).toEqual(Menu.Item);
+      expect(sidebarButton.type()).toEqual(Menu.Item);
     });
 
-    describe('dropdown', () => {
-      let dropdown;
+    describe('button', () => {
+      let button;
 
       beforeEach(() => {
-        dropdown = dropdownItem.childAt(0);
+        button = sidebarButton.childAt(0);
       });
 
-      it('is a dropdown', () => {
-        expect(dropdown.type()).toEqual(Dropdown);
+      it('is a button', () => {
+        expect(button.type()).toEqual(Button);
       });
-      describe('dropdown menu', () => {
-        let dropdownMenu;
+      describe('sidebar icon', () => {
+        let sidebarIcon;
 
         beforeEach(() => {
-          dropdownMenu = dropdown.childAt(0);
+          sidebarIcon = button.childAt(0);
         });
 
-        it('is a dropdown menu', () => {
-          expect(dropdownMenu.type()).toEqual(Dropdown.Menu);
-        });
-      });
-    });
-  });
-  describe('home link', () => {
-    let homeLink;
-
-    beforeEach(() => {
-      homeLink = wrapper.childAt(1);
-    });
-
-    it('is a home link', () => {
-      expect(homeLink.type()).toEqual(Link);
-    });
-    describe('home menu', () => {
-      let homeMenu;
-
-      beforeEach(() => {
-        homeMenu = homeLink.childAt(0);
-      });
-
-      it('is a home menu', () => {
-        expect(homeMenu.type()).toEqual(Menu.Item);
-      });
-      describe('home icon', () => {
-        let homeIcon;
-
-        beforeEach(() => {
-          homeIcon = homeMenu.childAt(0);
-        });
-
-        it('is a home icon', () => {
-          expect(homeIcon.type()).toEqual(Icon);
+        it('is an icon', () => {
+          expect(sidebarIcon.type()).toEqual(Icon);
         });
       });
     });
@@ -90,7 +57,7 @@ describe('navBar', () => {
     let loginSignupContainer;
 
     beforeEach(() => {
-      loginSignupContainer = wrapper.childAt(2);
+      loginSignupContainer = wrapper.childAt(1);
     });
 
     it('is a menu subcomponent', () => {
@@ -100,26 +67,48 @@ describe('navBar', () => {
     it('is positioned correctly', () => {
       expect(loginSignupContainer.props().position).toEqual('right');
     });
-    describe('Login modal', () => {
-      let loginModal;
+    describe('Login modal item', () => {
+      let loginModalItem;
 
       beforeEach(() => {
-        loginModal = loginSignupContainer.childAt(0);
+        loginModalItem = loginSignupContainer.childAt(0);
       });
 
-      it('is a login component', () => {
-        expect(loginModal.type()).toEqual(LoginModalComponent);
+      it('is a menu item', () => {
+        expect(loginModalItem.type()).toEqual(Menu.Item);
+      });
+      describe('Login modal', () => {
+        let loginModal;
+
+        beforeEach(() => {
+          loginModal = loginModalItem.childAt(0);
+        });
+
+        it('is a login component', () => {
+          expect(loginModal.type()).toEqual(LoginModalComponent);
+        });
       });
     });
-    describe('Signup modal', () => {
-      let signupModal;
+    describe('Signup modal item', () => {
+      let signupModalItem;
 
       beforeEach(() => {
-        signupModal = loginSignupContainer.childAt(1);
+        signupModalItem = loginSignupContainer.childAt(1);
       });
 
-      it('is a signup component', () => {
-        expect(signupModal.type()).toEqual(SignupModalComponent);
+      it('is a menu item', () => {
+        expect(signupModalItem.type()).toEqual(Menu.Item);
+      });
+      describe('Signup modal', () => {
+        let signupModal;
+
+        beforeEach(() => {
+          signupModal = signupModalItem.childAt(0);
+        });
+
+        it('is a signup component', () => {
+          expect(signupModal.type()).toEqual(SignupModalComponent);
+        });
       });
     });
   });

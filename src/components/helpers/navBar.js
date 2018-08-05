@@ -38,7 +38,7 @@ export const navBar = props => (
       <Menu.Menu position="right">
         <Menu.Item style={Styles.menuItem}>
           <LoginModal loginButton={Styles.loginButton} history={props.history} />
-        </Menu.Item>{' '}
+        </Menu.Item>
         <Menu.Item style={Styles.menuItem}>
           <SignupModal signupButton={Styles.signupButton} history={props.history} />
         </Menu.Item>
