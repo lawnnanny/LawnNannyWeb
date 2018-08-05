@@ -1,5 +1,3 @@
-const green = '#20ad1d';
-
 export default {
   requestButton: {
     color: 'black',
