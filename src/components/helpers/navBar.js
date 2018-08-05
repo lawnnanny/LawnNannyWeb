@@ -11,7 +11,7 @@ export const navBar = props => (
         name="bars"
         style={Styles.menuDropdown}
         onClick={() => {
-          props.setButton();
+          props.handleButtonClick();
         }}
       />
     </Menu.Item>

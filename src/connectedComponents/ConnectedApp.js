@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import appComponent from '../components/App';
+import AppComponent from '../components/App';
 import Actions from '../reducers/Actions';
 
 const mapStateToProps = state => ({
-  visible: state.sidebar.visible,
+  sidebarVisible: state.sidebar.visible,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -25,4 +25,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(appComponent);
+)(AppComponent);

@@ -6,10 +6,6 @@ export default {
     signup: (i += 1),
     isLoggedIn: (i += 1),
   },
-  sidebar: {
-    setButton: (i += 1),
-    setSidebar: (i += 1),
-  },
   requests: {
     setTypeOfRequest: (i += 1),
     setRequestInformation: (i += 1),

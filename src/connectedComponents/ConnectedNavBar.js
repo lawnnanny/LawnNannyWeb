@@ -14,13 +14,6 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  setButton: () => {
-    const action = {
-      type: Actions.sidebar.setButton,
-    };
-
-    dispatch(action);
-  },
 });
 export default connect(
   mapStateToProps,
