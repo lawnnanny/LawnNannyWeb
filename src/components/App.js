@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Sidebar, Menu, Segment, Icon } from 'semantic-ui-react';
 import reducers from '../reducers/reducers';
 import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
 import Styles from '../styles/App';
@@ -26,14 +27,39 @@ export class App extends Component {
     return (
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
-          <Route
-            render={props => (
-              <div style={Styles.div} {...props}>
-                <ConnectedNavBarComponent style={Styles.navBar} {...props} />
+          <div style={Styles.div}>
+            <ConnectedNavBarComponent style={Styles.navBar} />
+            <Sidebar.Pushable as={Segment}>
+              <Sidebar
+                as={Menu}
+                animation="overlay"
+                icon="labeled"
+                inverted
+                onHide={() => {
+                  this.props.setSidebar();
+                }}
+                vertical
+                visible
+                width="thin"
+              >
+                <Menu.Item as="a">
+                  <Icon name="home" />
+                  Home
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <Icon name="gamepad" />
+                  Games
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <Icon name="camera" />
+                  Channels
+                </Menu.Item>
+              </Sidebar>
+              <Sidebar.Pusher>
                 <Routes />
-              </div>
-            )}
-          />
+              </Sidebar.Pusher>
+            </Sidebar.Pushable>
+          </div>
         </BrowserRouter>
       </Provider>
     );

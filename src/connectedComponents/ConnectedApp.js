@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import navBarComponent from '../components/helpers/navBar';
+import appComponent from '../components/App';
 import Actions from '../reducers/Actions';
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.login.isLoggedIn,
+  visible: state.sidebar.visible,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,9 +14,9 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  setButton: () => {
+  setSidebar: () => {
     const action = {
-      type: Actions.sidebar.setButton,
+      type: Actions.sidebar.setSidebar,
     };
 
     dispatch(action);
@@ -25,4 +25,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(navBarComponent);
+)(appComponent);
