@@ -1,7 +1,15 @@
+const blue = '#1205ff';
+
 export default {
   requestButton: {
     color: 'black',
     fontSize: '1.5em',
+  },
+  menuButton: {
+    color: 'white',
+    backgroundColor: blue,
+    fontSize: '1.3em',
+    marginLeft: '.8em',
   },
   buttonItem: {
     marginLeft: '.5em',
