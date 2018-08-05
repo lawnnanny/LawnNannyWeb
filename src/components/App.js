@@ -45,11 +45,9 @@ export class App extends Component {
                     style={Styles.sidebar}
                     as={Menu}
                     animation="overlay"
-                    icon="labeled"
                     inverted
                     vertical
                     visible={this.state.visible}
-                    width="thin"
                   >
                     <SidebarContent />
                   </Sidebar>

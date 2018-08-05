@@ -34,12 +34,18 @@ export default {
   menuDropdown: {
     padding: '0',
     margin: 'none',
+    boxShadow: 'none',
     fontSize: '2.5em',
     backgroundColor: white,
     color: black,
   },
-  dropDownMenu: {
-    fontSize: '.5em',
+  barsButton: {
+    padding: '0',
+    margin: 'none',
+    boxShadow: 'none',
+    backgroundColor: white,
+    marginTop: '.3em',
+    marginRight: '.4em',
   },
   homeIcon: {
     fontSize: '2.5em',

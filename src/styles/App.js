@@ -12,5 +12,6 @@ export default {
   sidebarContainer: {
     border: 'none',
     boxShadow: 'none',
+    margin: '0',
   },
 };

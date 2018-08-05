@@ -7,13 +7,15 @@ import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal'
 export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
-      <Icon
-        name="bars"
-        style={Styles.menuDropdown}
+      <Button
+        icon
         onClick={() => {
           props.handleButtonClick();
         }}
-      />
+        style={Styles.barsButton}
+      >
+        <Icon name="bars" style={Styles.menuDropdown} />
+      </Button>
     </Menu.Item>
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
