@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+
 import thunk from 'redux-thunk';
 
 import { Error404 } from '../components/errors/Error404';
-import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
 import ConnectedRequestSelection from '../connectedComponents/pipeline/ConnectedRequestSelection';
 import ConnectedRequestInformationComponent from '../connectedComponents/pipeline/ConnectedRequestInformation';
 import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/ConnectedRequestLocation';
@@ -16,7 +15,6 @@ import HomePageComponent from '../components/pages/HomePage';
 import ConnectedRequests from '../connectedComponents/ConnectedRequests';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
-import Styles from '../styles/App';
 
 export class Routes extends Component {
   constructor() {
@@ -34,49 +32,30 @@ export class Routes extends Component {
   }
   render() {
     return (
-      <Provider store={this.state.store}>
-        <BrowserRouter className="router">
-          <Route
-            render={props => (
-              <div style={Styles.div} {...props}>
-                <ConnectedNavBarComponent style={Styles.navBar} {...props} />
-                <Switch>
-                  <Route exact path="/test" component={App} />
-                  <Route exact path="/pipeline" component={ConnectedRequestSelection} />
-                  <Route exact path="/HomePage" component={HomePageComponent} />
-                  <Route
-                    exact
-                    path="/pipeline/requestInformation"
-                    component={ConnectedRequestInformationComponent}
-                  />
-                  <Route
-                    exact
-                    path="/pipeline/requestLocation"
-                    component={ConnectedRequestLocationComponent}
-                  />
-                  <Route
-                    exact
-                    path="/pipeline/requestPrice"
-                    component={ConnectedRequestPriceComponent}
-                  />
-                  <Route
-                    exact
-                    path="/pipeline/requestReview"
-                    component={ConnectedRequestReviewComponent}
-                  />
-                  <Route
-                    exact
-                    path="/pipeline/requestComplete"
-                    component={ConnectedRequestCompleteComponent}
-                  />
-                  <Route exact path="/Requests" component={ConnectedRequests} />
-                  <Route path="/*" component={Error404} />
-                </Switch>
-              </div>
-            )}
-          />
-        </BrowserRouter>
-      </Provider>
+      <Switch>
+        <Route exact path="/test" component={App} />
+        <Route exact path="/pipeline" component={ConnectedRequestSelection} />
+        <Route exact path="/HomePage" component={HomePageComponent} />
+        <Route
+          exact
+          path="/pipeline/requestInformation"
+          component={ConnectedRequestInformationComponent}
+        />
+        <Route
+          exact
+          path="/pipeline/requestLocation"
+          component={ConnectedRequestLocationComponent}
+        />
+        <Route exact path="/pipeline/requestPrice" component={ConnectedRequestPriceComponent} />
+        <Route exact path="/pipeline/requestReview" component={ConnectedRequestReviewComponent} />
+        <Route
+          exact
+          path="/pipeline/requestComplete"
+          component={ConnectedRequestCompleteComponent}
+        />
+        <Route exact path="/Requests" component={ConnectedRequests} />
+        <Route path="/*" component={Error404} />
+      </Switch>
     );
   }
 }
