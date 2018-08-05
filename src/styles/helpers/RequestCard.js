@@ -3,6 +3,7 @@ const green = '#20ad1d';
 export default {
   card: {
     margin: '1em',
+    width: '19.5em',
   },
   image: {
     height: '13em',

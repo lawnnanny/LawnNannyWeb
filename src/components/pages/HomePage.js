@@ -29,7 +29,7 @@ const HomePage = props => (
             size="large"
             onClick={() => props.history.push('/Requests')}
           >
-            Find Requests Near You
+            Become a Landscaper
           </Button>
         </ButtonDiv>
       </Segment>

@@ -3,7 +3,7 @@ import { Grid, Search } from 'semantic-ui-react';
 import Styles from '../../styles/Requests';
 import RequestCardComponent from '../helpers/requestCard';
 import lawn from '../../images/homepage/lawn.jpg';
-import grinnell from '../../images/homepage/grinnell.png';
+import grinnell from '../../images/homepage/grinnell.jpg';
 import pella from '../../images/homepage/pella.jpg';
 
 const jsonForm = {
@@ -41,9 +41,10 @@ const jsonForm = {
   ],
 };
 
-const Requests = () => {
+const Requests = (props) => {
   const renderCard = field => (
     <RequestCardComponent
+      history={props.history}
       link={field.link}
       image={field.image}
       header={field.header}
