@@ -5,11 +5,28 @@ import home from '../../images/nicehome2.jpg';
 import UserReview from '../helpers/userReview';
 
 const review = {
+  fields:[
+    {
   username: 'Tom Sawyer',
   date: 'January 6, 2016',
   rating: 4,
   text: 'oirjewgporengorengorewn',
+},
+]
 };
+const Reviews = (props) => {
+  const reviewCard = field => (
+    <UserReview
+    rating={field.rating}
+    username={field.username}
+    date={field.date}
+    text={field.text}
+    />
+  );
+  const renderCards = (form) => {
+    const formUI = form.fields.map(field => renderCard(field));
+    return formUI;
+  };
 const requestReview = () => (
   <Grid container style={Styles.grid}>
     <Menu fixed="bottom" style={Styles.menu}>
@@ -43,10 +60,7 @@ const requestReview = () => (
       <Header as="h1" style={Styles.reviewHeader}>
         Top Reviews
       </Header>
-      <UserReview username date rating text />
-      <UserReview />
-      <UserReview />
-      <UserReview />
+    {renderReviews(review)}
     </Grid.Row>
   </Grid>
 );
