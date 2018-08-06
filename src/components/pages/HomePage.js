@@ -8,29 +8,45 @@ const ButtonDiv = styled.div`
     transform: translateY(4px);
   }
 `;
+const RequestButton = styled(Button)`
+  &[style] {
+    :hover {
+      background: white !important;
+      color: #20ad1d !important;
+    }
+  }
+`;
+const RegisterButton = styled(Button)`
+  &[style] {
+    :hover {
+      background: white !important;
+      color: #1205ff !important;
+    }
+  }
+`;
 const HomePage = props => (
   <Grid stackable centered style={Styles.grid}>
     <Grid.Row verticalAlign="middle" style={Styles.headingRow}>
       <Segment vertical style={Styles.headerSegment}>
         <Header style={Styles.header}>Quicker. Easier. Better.</Header>
         <ButtonDiv style={Styles.div}>
-          <Button
+          <RequestButton
             style={Styles.requestButton}
             size="large"
             onClick={() => props.history.push('/pipeline')}
           >
             Make a Request
-          </Button>
+          </RequestButton>
         </ButtonDiv>
         <Header style={Styles.divider}> OR </Header>
         <ButtonDiv>
-          <Button
+          <RegisterButton
             style={Styles.jobButton}
             size="large"
             onClick={() => props.history.push('/Requests')}
           >
             Become a Landscaper
-          </Button>
+          </RegisterButton>
         </ButtonDiv>
       </Segment>
     </Grid.Row>
