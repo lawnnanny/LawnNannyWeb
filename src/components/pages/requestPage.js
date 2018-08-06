@@ -4,6 +4,12 @@ import Styles from '../../styles/requestPage';
 import home from '../../images/nicehome2.jpg';
 import UserReview from '../helpers/userReview';
 
+const review = {
+  username: 'Tom Sawyer',
+  date: 'January 6, 2016',
+  rating: 4,
+  text: 'oirjewgporengorengorewn',
+};
 const requestReview = () => (
   <Grid container style={Styles.grid}>
     <Menu fixed="bottom" style={Styles.menu}>
@@ -37,7 +43,7 @@ const requestReview = () => (
       <Header as="h1" style={Styles.reviewHeader}>
         Top Reviews
       </Header>
-      <UserReview />
+      <UserReview username date rating text />
       <UserReview />
       <UserReview />
       <UserReview />
