@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Icon, Button } from 'semantic-ui-react';
+import { Menu, Icon, Button, Checkbox } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
 
 export default class SidebarContent extends Component {
@@ -11,35 +11,52 @@ export default class SidebarContent extends Component {
   requestChange = () => this.setState({ request: !this.state.request });
   render() {
     return this.state.request ? (
-      <Menu.Item>
+      <Menu.Item style={Styles.topItem}>
         <Button
-          style={Styles.menuButton}
+          icon
+          onClick={() => {
+            this.props.handleButtonClick();
+          }}
+          style={Styles.barsButton}
+        >
+          <Icon name="bars" style={Styles.menuDropdown} />
+        </Button>
+        <Button
+          style={Styles.requestMenuButton}
           onClick={() => {
             this.requestChange();
           }}
         >
-          Return to Menu
+          Open Menu
         </Button>
       </Menu.Item>
     ) : (
       <div>
+        <Menu.Item style={Styles.topItem}>
+          <Button
+            icon
+            onClick={() => {
+              this.props.handleButtonClick();
+            }}
+            style={Styles.barsButton}
+          >
+            <Icon name="bars" style={Styles.menuDropdown} />
+          </Button>
+          <Button
+            style={Styles.requestButton}
+            onClick={() => {
+              this.requestChange();
+            }}
+          >
+            Open Requests
+          </Button>
+        </Menu.Item>
         <Link to="/HomePage" style={Styles.homeItem}>
           <Menu.Item>
             <Icon name="home" />
             Home
           </Menu.Item>
         </Link>
-        <Menu.Item style={Styles.buttonItem}>
-          <Button
-            size="huge"
-            style={Styles.requestButton}
-            onClick={() => {
-              this.requestChange();
-            }}
-          >
-            Show Requests
-          </Button>
-        </Menu.Item>
         <Link to="/HomePage" style={Styles.aboutItem}>
           <Menu.Item>
             <Icon name="info" style={Styles.aboutIcon} />

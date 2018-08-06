@@ -35,11 +35,6 @@ export class App extends Component {
           <Route
             render={props => (
               <div style={Styles.div} {...props}>
-                <ConnectedNavBarComponent
-                  style={Styles.navBar}
-                  {...props}
-                  handleButtonClick={this.handleButtonClick}
-                />
                 <Sidebar.Pushable as={Segment} style={Styles.sidebarContainer}>
                   <Sidebar
                     style={Styles.sidebar}
@@ -49,9 +44,14 @@ export class App extends Component {
                     vertical
                     visible={this.state.visible}
                   >
-                    <SidebarContent />
+                    <SidebarContent handleButtonClick={this.handleButtonClick} />
                   </Sidebar>
                   <Sidebar.Pusher dimmed={this.state.visible}>
+                    <ConnectedNavBarComponent
+                      style={Styles.navBar}
+                      {...props}
+                      handleButtonClick={this.handleButtonClick}
+                    />
                     <Routes
                       onClick={() => {
                         this.handleSidebarHide();
