@@ -1,9 +1,18 @@
 import React from 'react';
 import { Menu, Dropdown, Icon, Button, Checkbox } from 'semantic-ui-react';
+import styled from 'styled-components';
 import Styles from '../../styles/helpers/navBar';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
+const RequestButton = styled(Button)`
+  &[style] {
+    :hover {
+      background: #1205ff !important;
+      color: white !important;
+    }
+  }
+`;
 export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
@@ -20,7 +29,7 @@ export const navBar = props => (
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
         <Menu.Item style={Styles.menuItem}>
-          <Button style={Styles.requestButton}>Your Requests</Button>
+          <RequestButton style={Styles.requestButton}>Your Requests</RequestButton>
         </Menu.Item>
         <Menu.Item style={Styles.menuItem}>
           <Dropdown icon="user circle" style={Styles.userMenu}>
