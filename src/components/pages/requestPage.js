@@ -1,8 +1,9 @@
 import React from 'react';
-import { Grid, Image, Menu, Header, Button, Rating } from 'semantic-ui-react';
+import { Grid, Image, Menu, Header, Button, Rating, Icon } from 'semantic-ui-react';
 import Styles from '../../styles/requestPage';
 import home from '../../images/nicehome2.jpg';
 import UserReview from '../helpers/userReview';
+import JobDescription from '../helpers/JobDescription';
 
 const review = {
   fields: [
@@ -64,26 +65,29 @@ const requestReview = () => {
       <Grid.Row textAlign="center">
         <Image src={home} style={Styles.image} />
       </Grid.Row>
-      <Grid.Row textAlign="left">
-        <Header as="h1">Nice Clean Lawn with a few trees in backyard</Header>
-        <Rating disabled icon="star" defaultRating={3} maxRating={4} />
+      <Grid.Row textAlign="left" style={Styles.headerRow}>
+        <Header as="h1" style={Styles.header}>
+          Looking for someone to mow lawn this weekend
+        </Header>
+      </Grid.Row>
+      <Grid.Row textAlign="left" style={Styles.userRow}>
+        <Header>
+          <Icon circular name="user" />
+          Shane Drafahl
+        </Header>
+      </Grid.Row>
+      <Grid.Row style={Styles.ratingRow}>
+        <Rating disabled icon="star" defaultRating={5} maxRating={5} style={Styles.userRating} />
+        73 Reviews
       </Grid.Row>
       <Grid.Row textAlign="left">
         <Header as="h2">Newton 10 miles Away</Header>
       </Grid.Row>
       <Grid.Row textAlign="left">
-        <Header as="h3" style={Styles.descriptionHeader}>
-          Lawn Description
-        </Header>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industrys standard dummy text ever since the cheese, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting, remaining essentially
-          unchanged. It was popularised in the cheese with the release of Letraset sheets containing
-          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </p>
+        <JobDescription
+          title="Job Description:"
+          text="s 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of eth"
+        />
       </Grid.Row>
       <Grid.Row textAlign="left">
         <Header as="h1" style={Styles.reviewHeader}>

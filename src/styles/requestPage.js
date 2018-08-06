@@ -18,6 +18,19 @@ export default {
   image: {
     height: '20em',
   },
+  header: {
+    color: '#3d3b3b',
+  },
+  userRow: {
+    paddingBottom: '.5em',
+  },
+  ratingRow: {
+    paddingTop: '0em',
+    paddingLeft: '1em',
+  },
+  userRating: {
+    paddingRight: '.2em',
+  },
   descriptionHeader: {
     textDecoration: 'underline',
   },
