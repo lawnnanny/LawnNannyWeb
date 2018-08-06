@@ -13,5 +13,15 @@ export default {
     fontSize: '1.9em',
     backgroundColor: green,
     color: white,
+    margin: '0',
+  },
+  image: {
+    height: '20em',
+  },
+  descriptionHeader: {
+    textDecoration: 'underline',
+  },
+  reviewHeader: {
+    textDecoration: 'underline',
   },
 };
