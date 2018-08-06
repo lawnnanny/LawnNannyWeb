@@ -27,6 +27,7 @@ export default {
     backgroundColor: green,
     padding: '.95em',
     borderRadius: '10px',
+    border: '1px solid #20ad1d',
   },
   menuItem: {
     padding: '.3em',

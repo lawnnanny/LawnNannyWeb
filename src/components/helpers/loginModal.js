@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import Styles from '../../styles/helpers/loginModal';
 import DynamicComponent from '../helpers/DynamicForm';
 
+const LoginButton = styled(Button)`
+  &[style] {
+    :hover {
+      background: #1205ff !important;
+      color: white !important;
+    }
+  }
+`;
 export const loginModal = props => (
   <Modal
     style={Styles.modal}
     size="mini"
     trigger={
       <Menu.Item style={Styles.menuItem}>
-        <Button size={props.size} fluid={props.fluid} style={props.loginButton}>
+        <LoginButton size={props.size} fluid={props.fluid} style={props.loginButton}>
           Login
-        </Button>
+        </LoginButton>
       </Menu.Item>
     }
     closeIcon
