@@ -1,4 +1,5 @@
 const blue = '#1205ff';
+const green = '#20ad1d';
 
 export default {
   topItem: {
@@ -30,6 +31,7 @@ export default {
   },
   requestButton: {
     fontSize: '1.2em',
+    fontWeight: '700',
     margin: '0',
     marginLeft: '.6em',
     color: 'black',
@@ -40,11 +42,17 @@ export default {
     marginLeft: '1.5em',
     color: 'black',
   },
+  homeLink: {
+    fontSize: '2em',
+  },
   homeItem: {
+    paddingLeft: '.8em',
+  },
+  aboutLink: {
     fontSize: '2em',
   },
   aboutItem: {
-    fontSize: '2em',
+    paddingLeft: '.8em',
   },
   aboutIcon: {
     margin: '0',

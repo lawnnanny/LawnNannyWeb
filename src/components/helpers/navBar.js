@@ -41,7 +41,6 @@ export const navBar = props => (
         </Menu.Item>
         <Menu.Item style={Styles.menuItem}>
           <SignupModal signupButton={Styles.signupButton} history={props.history} />
-          <Checkbox toggle />
         </Menu.Item>
       </Menu.Menu>
     )}

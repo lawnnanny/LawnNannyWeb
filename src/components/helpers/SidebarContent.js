@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Icon, Button, Checkbox } from 'semantic-ui-react';
+import styled from 'styled-components';
+import { Menu, Icon, Button } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
 
+const MyButton = styled(Button)`
+  &&& {
+    :hover {
+      background: white;
+      font-size: 1.5em;
+    }
+  }
+`;
+const MyItem = styled(Menu.Item)`
+  &&& {
+    :hover {
+      background: #20ad1d;
+      color: white !important;
+    }
+  }
+`;
 export default class SidebarContent extends Component {
   constructor() {
     super();
@@ -21,14 +38,14 @@ export default class SidebarContent extends Component {
         >
           <Icon name="bars" style={Styles.menuDropdown} />
         </Button>
-        <Button
+        <MyButton
           style={Styles.requestMenuButton}
           onClick={() => {
             this.requestChange();
           }}
         >
           Open Menu
-        </Button>
+        </MyButton>
       </Menu.Item>
     ) : (
       <div>
@@ -42,29 +59,29 @@ export default class SidebarContent extends Component {
           >
             <Icon name="bars" style={Styles.menuDropdown} />
           </Button>
-          <Button
+          <MyButton
             style={Styles.requestButton}
             onClick={() => {
               this.requestChange();
             }}
           >
             Open Requests
-          </Button>
+          </MyButton>
         </Menu.Item>
-        <Link to="/HomePage" style={Styles.homeItem}>
-          <Menu.Item>
+        <Link to="/HomePage" style={Styles.homeLink}>
+          <MyItem style={Styles.homeItem}>
             <Icon name="home" />
             Home
-          </Menu.Item>
+          </MyItem>
         </Link>
-        <Link to="/HomePage" style={Styles.aboutItem}>
-          <Menu.Item>
+        <Link to="/HomePage" style={Styles.aboutLink}>
+          <MyItem style={Styles.homeItem}>
             <Icon name="info" style={Styles.aboutIcon} />
             About Terra
-          </Menu.Item>
+          </MyItem>
         </Link>
         <Link to="/HomePage">
-          <Menu.Item style={Styles.termsItem}>Terms of Service</Menu.Item>
+          <MyItem style={Styles.termsItem}>Terms of Service</MyItem>
         </Link>
       </div>
     );
