@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, Icon, Button, Header } from 'semantic-ui-react';
+import { Menu, Icon, Button, Header,Sticky } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
 import SideRequest from './SideRequest'
 
@@ -14,6 +14,14 @@ const MyButton = styled(Button)`
   }
 `;
 const MyItem = styled(Menu.Item)`
+  &&& {
+    :hover {
+      background: #20ad1d;
+      color: white !important;
+    }
+  }
+`;
+const RequestItem = styled(Menu.Item)`
   &&& {
     :hover {
       background: #20ad1d;
@@ -82,13 +90,13 @@ export default class SidebarContent extends Component {
   }
   requestChange = () => this.setState({ request: !this.state.request });
   renderRequest = field => (
-    <Menu.Item>
+    <RequestItem>
     <SideRequest
     header={field.header}
     rating={field.rating}
     price={field.price}
     />
-    </Menu.Item>
+    </RequestItem>
   );
   renderRequests = (form) => {
     const formUI = form.fields.map(field => this.renderRequest(field));
@@ -97,7 +105,7 @@ export default class SidebarContent extends Component {
   render() {
     return this.state.request ? (
     <div>
-      <Menu.Item fixed='top' style={Styles.topItem}>
+      <Menu.Item style={Styles.topItem}>
         <Button
           icon
           onClick={() => {
