@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Image, Menu, Header, Button, Rating, Icon } from 'semantic-ui-react';
 import Styles from '../../styles/requestPage';
-import home from '../../images/nicehome2.jpg';
+import home from '../../images/trash.jpg';
+import shane from '../../images/shane.png'
 import UserReview from '../helpers/userReview';
 import JobDescription from '../helpers/JobDescription';
 
@@ -67,21 +68,21 @@ const requestReview = () => {
       </Grid.Row>
       <Grid.Row textAlign="left" style={Styles.headerRow}>
         <Header as="h1" style={Styles.header}>
-          Looking for someone to mow lawn this weekend
+          Please Help! Unidentifyable beings growing in my lawn!
         </Header>
       </Grid.Row>
       <Grid.Row textAlign="left" style={Styles.userRow}>
         <Header>
-          <Icon circular name="user" />
+          <Image circular src={shane} />
           Shane Drafahl
         </Header>
       </Grid.Row>
       <Grid.Row style={Styles.ratingRow}>
-        <Rating disabled icon="star" defaultRating={5} maxRating={5} style={Styles.userRating} />
-        73 Reviews
+        <Rating disabled icon="star" defaultRating={1} maxRating={5} style={Styles.userRating} />
+        10 Reviews
       </Grid.Row>
       <Grid.Row textAlign="left">
-        <Header as="h2">Newton 10 miles Away</Header>
+        <Header as="h2">Grinnell 18 miles Away</Header>
       </Grid.Row>
       <Grid.Row textAlign="left">
         <JobDescription
