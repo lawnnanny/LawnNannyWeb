@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Menu, Icon, Button } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
+import SideRequest from './SideRequest'
 
 const MyButton = styled(Button)`
   &&& {
@@ -28,6 +29,7 @@ export default class SidebarContent extends Component {
   requestChange = () => this.setState({ request: !this.state.request });
   render() {
     return this.state.request ? (
+    <div>
       <Menu.Item style={Styles.topItem}>
         <Button
           icon
@@ -47,6 +49,10 @@ export default class SidebarContent extends Component {
           Open Menu
         </MyButton>
       </Menu.Item>
+      <Menu.Item>
+        <SideRequest />
+      </Menu.Item>
+    </div>
     ) : (
       <div>
         <Menu.Item style={Styles.topItem}>
