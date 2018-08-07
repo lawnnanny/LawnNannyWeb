@@ -1,10 +1,24 @@
 import React from 'react';
-import { Grid, Button, Segment, Header, Divider } from 'semantic-ui-react';
-import Styles from '../../styles/HomePage';
+import { Grid, Image, Header,Rating, Icon } from 'semantic-ui-react';
+import Styles from '../../styles/helpers/SideRequest';
+import lawn from '../../images/homepage/lawn.jpg';
 
 const SideRequest = props => (
-  <div>
-  Hello
-  </div>
+  <Grid columns='equal'>
+  <Grid.Row style={Styles.row}>
+  <Grid.Column>
+    <Header style={Styles.header}> {props.header}</Header>
+    </Grid.Column>
+    <Grid.Column>
+    <Grid.Row>
+    <Rating icon='star' defaultRating={props.rating} maxRating={5} />
+    </Grid.Row>
+    <Grid.Row style={Styles.priceRow}>
+    <Icon name='dollar'/>
+    {props.price}
+    </Grid.Row>
+    </Grid.Column>
+    </Grid.Row>
+  </Grid>
 );
 export default SideRequest;

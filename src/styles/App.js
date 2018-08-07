@@ -6,7 +6,7 @@ export default {
     border: 'none',
   },
   sidebar: {
-    width: '18em',
+    width: '22em',
     opacity: '.97',
   },
   sidebarContainer: {

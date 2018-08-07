@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, Icon, Button } from 'semantic-ui-react';
+import { Menu, Icon, Button, Header } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
 import SideRequest from './SideRequest'
 
@@ -21,12 +21,79 @@ const MyItem = styled(Menu.Item)`
     }
   }
 `;
+const request = {
+  fields: [
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+    {
+      header: 'Lawn in Newton',
+      rating:3,
+      price:'25'
+    },
+  ],
+};
 export default class SidebarContent extends Component {
   constructor() {
     super();
     this.state = { request: false };
   }
   requestChange = () => this.setState({ request: !this.state.request });
+  renderRequest = field => (
+    <Menu.Item>
+    <SideRequest
+    header={field.header}
+    rating={field.rating}
+    price={field.price}
+    />
+    </Menu.Item>
+  );
+  renderRequests = (form) => {
+    const formUI = form.fields.map(field => this.renderRequest(field));
+    return formUI;
+  };
   render() {
     return this.state.request ? (
     <div>
@@ -49,9 +116,8 @@ export default class SidebarContent extends Component {
           Open Menu
         </MyButton>
       </Menu.Item>
-      <Menu.Item>
-        <SideRequest />
-      </Menu.Item>
+      <Header style={Styles.requestHeader}> Nearby Requests </Header>
+      {this.renderRequests(request)}
     </div>
     ) : (
       <div>
