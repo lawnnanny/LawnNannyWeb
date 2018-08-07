@@ -44,7 +44,7 @@ export class App extends Component {
                     vertical
                     visible={this.state.visible}
                   >
-                    <SidebarContent handleButtonClick={this.handleButtonClick} />
+                    <SidebarContent handleButtonClick={this.handleButtonClick} history={props.history}/>
                   </Sidebar>
                   <Sidebar.Pusher dimmed={this.state.visible}>
                     <ConnectedNavBarComponent

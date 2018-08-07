@@ -32,51 +32,61 @@ const RequestItem = styled(Menu.Item)`
 const request = {
   fields: [
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
     },
     {
+      click:'/pipeline',
       header: 'Lawn in Newton',
       rating:3,
       price:'25'
@@ -92,6 +102,7 @@ export default class SidebarContent extends Component {
   renderRequest = field => (
     <RequestItem>
     <SideRequest
+    onClick = {() => (this.props.history.push(field.click))}
     header={field.header}
     rating={field.rating}
     price={field.price}
