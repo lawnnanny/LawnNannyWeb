@@ -97,7 +97,7 @@ export default class SidebarContent extends Component {
   render() {
     return this.state.request ? (
     <div>
-      <Menu.Item style={Styles.topItem}>
+      <Menu.Item fixed='top' style={Styles.topItem}>
         <Button
           icon
           onClick={() => {
@@ -137,7 +137,7 @@ export default class SidebarContent extends Component {
               this.requestChange();
             }}
           >
-            Open Requests
+            Nearby Requests
           </MyButton>
         </Menu.Item>
         <Link to="/HomePage" style={Styles.homeLink}>
