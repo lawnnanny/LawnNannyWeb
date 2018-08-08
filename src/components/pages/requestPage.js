@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Image, Menu, Header, Button, Rating, Icon } from 'semantic-ui-react';
 import Styles from '../../styles/requestPage';
-import home from '../../images/trash.jpg';
 import shane from '../../images/shane.png'
 import UserReview from '../helpers/userReview';
 import JobDescription from '../helpers/JobDescription';
@@ -63,8 +62,8 @@ const requestReview = () => {
       <Menu fixed="bottom" style={Styles.menu}>
         <Button style={Styles.requestButton}>Choose Request </Button>
       </Menu>
-      <Grid.Row textAlign="center">
-        <Image src={home} style={Styles.image} />
+      <Grid.Row textAlign="center" style={Styles.imageRow}>
+        <div style={Styles.image}/>
       </Grid.Row>
       <Grid.Row textAlign="left" style={Styles.headerRow}>
         <Header as="h1" style={Styles.header}>
