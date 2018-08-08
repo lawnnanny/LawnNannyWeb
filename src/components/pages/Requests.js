@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Search, Dropdown } from 'semantic-ui-react';
+import { Grid, Search, Dropdown, Label } from 'semantic-ui-react';
 import Styles from '../../styles/Requests';
 import RequestCardComponent from '../helpers/requestCard';
 import lawn from '../../images/homepage/lawn.jpg';
@@ -41,6 +41,19 @@ const jsonForm = {
   ],
 };
 
+const options = [
+  { key: 'edit',  text: 'Nearest Location', value: 'Nearest Location' },
+  { key: 'delete',  text: 'Lowest Price', value: 'Lowest Price' },
+  { key: 'hide',  text: 'Highest Price', value: 'Highest Price' },
+  { key: 'hide',  text: 'Best Rated', value: 'Best Rated' },
+]
+const DistanceOptions = [
+  { key: 'edit',  text: '20 Miles', value: '20' },
+  { key: 'delete',  text: '50 Miles', value: '50' },
+  { key: 'hide',  text: '100 Miles', value: '100' },
+  { key: 'hide',  text: '250 Miles', value: '250' },
+]
+
 const Requests = (props) => {
   const renderCard = field => (
     <RequestCardComponent
@@ -62,22 +75,8 @@ const Requests = (props) => {
   return (
     <Grid stackable centered style={Styles.grid}>
       <Grid.Row verticalAlign="middle">
-        <Dropdown placeholder="Search By">
-        <Dropdown.Menu>
-        <Dropdown.Item>
-        Nearest
-        </Dropdown.Item>
-        <Dropdown.Item>
-        Best Rated
-        </Dropdown.Item>
-        <Dropdown.Item>
-        Lowest Price
-        </Dropdown.Item>
-        <Dropdown.Item>
-        Highest Price
-        </Dropdown.Item>
-        </Dropdown.Menu>
-        </Dropdown>
+        <Dropdown placeholder="Search By" selection options={options} style={Styles.searchDropdown}/>
+        <Dropdown placeholder="Search Within x Miles" selection options={DistanceOptions}/>
       </Grid.Row>
       <Grid.Row centered>{renderCards(jsonForm)}</Grid.Row>
     </Grid>
