@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Search } from 'semantic-ui-react';
+import { Grid, Search, Dropdown } from 'semantic-ui-react';
 import Styles from '../../styles/Requests';
 import RequestCardComponent from '../helpers/requestCard';
 import lawn from '../../images/homepage/lawn.jpg';
@@ -62,7 +62,22 @@ const Requests = (props) => {
   return (
     <Grid stackable centered style={Styles.grid}>
       <Grid.Row verticalAlign="middle">
-        <Search placeholder="Type a location" />
+        <Dropdown placeholder="Search By">
+        <Dropdown.Menu>
+        <Dropdown.Item>
+        Nearest
+        </Dropdown.Item>
+        <Dropdown.Item>
+        Best Rated
+        </Dropdown.Item>
+        <Dropdown.Item>
+        Lowest Price
+        </Dropdown.Item>
+        <Dropdown.Item>
+        Highest Price
+        </Dropdown.Item>
+        </Dropdown.Menu>
+        </Dropdown>
       </Grid.Row>
       <Grid.Row centered>{renderCards(jsonForm)}</Grid.Row>
     </Grid>
