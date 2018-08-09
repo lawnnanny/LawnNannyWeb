@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid, Image, Menu, Header, Button, Rating, Icon } from 'semantic-ui-react';
+import { Grid, Image, Menu, Header, Button, Rating } from 'semantic-ui-react';
 import styled from 'styled-components';
-import ImageGallery from 'react-image-gallery';
 import device from '../../helpers/devices';
 import Styles from '../../styles/requestPage';
 import shane from '../../images/shane.png';
@@ -9,26 +8,7 @@ import home from '../../images/nicehome2.jpg';
 import UserReview from '../helpers/userReview';
 import JobDescription from '../helpers/JobDescription';
 
-const images = [
-  {
-    original: 'home',
-    thumbnail: 'home',
-  },
-  {
-    original: 'shane',
-    thumbnail: 'shane',
-  },
-  {
-    original: 'home',
-    thumbnail: 'home',
-  },
-  {
-    original: 'shane',
-    thumbnail: 'shane',
-  },
-];
-
-const MyImageGallery = styled(ImageGallery)`
+const MyImage = styled(Image)`
   &&& {
     width: 100%;
 
@@ -102,7 +82,7 @@ const requestReview = () => {
         <Button style={Styles.requestButton}>Choose Request </Button>
       </Menu>
       <Grid.Row textAlign="center" style={Styles.imageRow}>
-        <MyImageGallery items={images} />
+        <MyImage src={home} />
       </Grid.Row>
       <Grid.Row textAlign="left" style={Styles.headerRow}>
         <Header as="h1" style={Styles.header}>
