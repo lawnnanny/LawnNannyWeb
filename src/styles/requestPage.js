@@ -3,6 +3,16 @@ const green = '#20ad1d';
 const blue = '#1205ff';
 export default {
   grid: {},
+  leftContent: {
+    width: 'auto',
+    maxWidth: '50em',
+  },
+  rightContent: {
+    width: '30em',
+  },
+  headerRow: {
+    paddingBottom: '2em',
+  },
   header: {
     color: '#3d3b3b',
   },
@@ -17,6 +27,8 @@ export default {
   ratingRow: {
     paddingTop: '.2em',
     fontSize: '1.3em',
+    paddingBottom: '2em',
+    display: 'flex',
   },
   userRating: {
     paddingRight: '.2em',
@@ -27,9 +39,11 @@ export default {
     marginTop: '.15em',
   },
   descriptionSegment: {
-    border: 'none',
-    boxShadow: 'none',
-    padding: '0',
+    maxWidth: '40em',
+    fontSize: '1.5em',
+  },
+  descriptionHeader: {
+    fontSize: '1em',
   },
   bottomPadding: {
     paddingBottom: '8em',
@@ -67,5 +81,15 @@ export default {
     backgroundColor: green,
     color: white,
     margin: '0',
+  },
+  requestButtonDesktop: {
+    height: '2.5em',
+    padding: '.5em',
+    fontSize: '1.9em',
+    backgroundColor: green,
+    color: white,
+    margin: '0',
+    marginTop: '1em',
+    marginBottom: '.5em',
   },
 };
