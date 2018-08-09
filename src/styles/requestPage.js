@@ -2,6 +2,7 @@ const white = '#FFFFFF';
 const green = '#20ad1d';
 const blue = '#1205ff';
 export default {
+  grid: {},
   menu: {
     height: '6em',
     alignItems: 'center',

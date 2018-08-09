@@ -1,29 +1,44 @@
 import React from 'react';
 import { Grid, Image, Menu, Header, Button, Rating, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
-import device from '../../helpers/devices'
+import ImageGallery from 'react-image-gallery';
+import device from '../../helpers/devices';
 import Styles from '../../styles/requestPage';
-import shane from '../../images/shane.png'
+import shane from '../../images/shane.png';
 import home from '../../images/nicehome2.jpg';
 import UserReview from '../helpers/userReview';
 import JobDescription from '../helpers/JobDescription';
 
-const MyImage = styled.div`
+const images = [
+  {
+    original: 'home',
+    thumbnail: 'home',
+  },
+  {
+    original: 'shane',
+    thumbnail: 'shane',
+  },
+  {
+    original: 'home',
+    thumbnail: 'home',
+  },
+  {
+    original: 'shane',
+    thumbnail: 'shane',
+  },
+];
+
+const MyImageGallery = styled(ImageGallery)`
   &&& {
-    width:100%;
-    background-image: url(${home});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
 
-
-    @media ${device.mobileS}  {
+    @media ${device.mobileS} {
       height: 320px;
     }
-    @media ${device.mobileM}  {
+    @media ${device.mobileM} {
       height: 368px;
     }
-    @media ${device.tablet}  {
+    @media ${device.tablet} {
       height: 440px;
     }
   }
@@ -82,12 +97,12 @@ const requestReview = () => {
     return formUI;
   };
   return (
-    <Grid container style={Styles.grid}>
+    <Grid centered container style={Styles.grid}>
       <Menu fixed="bottom" style={Styles.menu}>
         <Button style={Styles.requestButton}>Choose Request </Button>
       </Menu>
       <Grid.Row textAlign="center" style={Styles.imageRow}>
-        <MyImage/>
+        <MyImageGallery items={images} />
       </Grid.Row>
       <Grid.Row textAlign="left" style={Styles.headerRow}>
         <Header as="h1" style={Styles.header}>
