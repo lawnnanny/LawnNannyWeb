@@ -29,9 +29,6 @@ export default {
   userRating: {
     paddingRight: '.2em',
   },
-  descriptionHeader: {
-    textDecoration: 'underline',
-  },
   reviewHeader: {
     textDecoration: 'underline',
   },
