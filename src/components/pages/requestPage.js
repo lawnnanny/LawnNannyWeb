@@ -49,13 +49,13 @@ const requestPage = () => (
     </Grid.Row>
     <Grid.Row textAlign="left" style={Styles.userRow}>
       <Header>
-        <Image circular src={shane} />
+        <Image circular src={shane} style={Styles.userIcon} />
         Shane Drafahl
       </Header>
     </Grid.Row>
     <Grid.Row style={Styles.ratingRow}>
-      <Rating disabled icon="star" defaultRating={1} maxRating={5} style={Styles.userRating} />
-      10 Reviews
+      <Rating disabled icon="star" defaultRating={5} maxRating={5} style={Styles.userRating} />
+      <div style={Styles.ratingReviews}>10 Reviews</div>
     </Grid.Row>
     <Grid.Row textAlign="left">
       <Segment style={Styles.descriptionSegment}>

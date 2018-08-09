@@ -8,13 +8,23 @@ export default {
   },
   userRow: {
     paddingBottom: '.5em',
+    fontSize: '1.5em',
+  },
+  userIcon: {
+    fontSize: '.9em',
+    marginTop: '0',
   },
   ratingRow: {
-    paddingTop: '0em',
-    paddingLeft: '1em',
+    paddingTop: '.2em',
+    fontSize: '1.3em',
   },
   userRating: {
     paddingRight: '.2em',
+    fontSize: '1.3em',
+  },
+  ratingReviews: {
+    fontWeight: '700',
+    marginTop: '.15em',
   },
   descriptionSegment: {
     border: 'none',
