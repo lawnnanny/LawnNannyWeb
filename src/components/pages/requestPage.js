@@ -14,12 +14,23 @@ import {
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Media from 'react-media';
+import ShowMoreText from 'react-show-more-text';
 import device from '../../helpers/devices';
 import Styles from '../../styles/requestPage';
 import shane from '../../images/shane.png';
 import home from '../../images/home.jpg';
 import JobDescription from '../helpers/JobDescription';
 
+const longText = (
+  <p>
+    This cozy newly remodeled 1 bedroom has everything you need to relax and still be close to the
+    action. Bedroom has 1 queen and 1 fold down futon and there is 1 full size leather couch in the
+    Living Room.mile stroll or bike ride down to the Court Avenue District for stylish and hopping
+    bars and restaurants! Around the corner 2.5 blocks is the historic Graziano Brothers Italian
+    Grocery and Principal Park, home of the ICubs. Large fenced backyard provides privacy and shaded
+    tranquility.
+  </p>
+);
 const MyImage = styled(Image)`
   &&& {
     width: 100%;
@@ -79,172 +90,14 @@ export default class requestPage extends Component {
                 <Grid.Row textAlign="left">
                   <Segment style={Styles.descriptionSegment}>
                     <Header style={Styles.descriptionHeader}>Job Description</Header>
-                    <p>
-                      My apartment is very unique and well finished in the Tuscan tradition. He has
-                      his privacy in all, well tenuto.C kitchen is a living room of about 14sqm with
-                      small sofa bed for one and a half, provided fgrigorifero, electric oven, sink,
-                      stove, washing machine and all the accessories to be able to safely eat , then
-                      there is a well-kept brick bathroom with shower and sink, bathroom, we also
-                      have the sleeping area consists of a small room with a French bed, hallway
-                      with wardrobe, etc. .... including heating independent heating for the winter
-                      period. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same od. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same od. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same od. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same od. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same od. In the exterior we have a private parking, a swimming pool and a
-                      relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same My apartment is very unique and well finished in the Tuscan tradition. He
-                      has his privacy in all, well tenuto.C kitchen is a living room of about 14sqm
-                      with small sofa bed for one and a half, provided fgrigorifero, electric oven,
-                      sink, stove, washing machine and all the accessories to be able to safely eat
-                      , then there is a well-kept brick bathroom with shower and sink, bathroom, we
-                      also have the sleeping area consists of a small room with a French bed,
-                      hallway with wardrobe, etc. .... including heating independent heating for the
-                      winter period. In the exterior we have a private parking, a swimming pool and
-                      a relaxing space to use for breakfasts, lunches and dinners during the summer.
-                      All located in the village of Rignano SullArno (just 40 minutes by train from
-                      Florence center) served by the national railways to get anywhere, and at the
-                      same
-                    </p>
+                    <ShowMoreText
+                      lines={3}
+                      more="Show more"
+                      less="Show less"
+                      onClick={this.executeOnClick}
+                    >
+                      {longText}
+                    </ShowMoreText>
                   </Segment>
                 </Grid.Row>
               </Grid.Column>

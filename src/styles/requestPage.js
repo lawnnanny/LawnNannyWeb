@@ -46,6 +46,9 @@ export default {
   descriptionHeader: {
     fontSize: '1em',
   },
+  jobDescription: {
+    lineHeight: '25px',
+  },
   bottomMenu: {
     height: '6em',
     padding: '0',
