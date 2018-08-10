@@ -28,7 +28,7 @@ export const navBar = props => (
     </Menu.Item>
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
-        <Menu.Item style={Styles.menuItem}>
+        <Menu.Item style={Styles.requestItem}>
           <RequestButton style={Styles.requestButton}>Your Requests</RequestButton>
         </Menu.Item>
         <Menu.Item style={Styles.menuItem}>

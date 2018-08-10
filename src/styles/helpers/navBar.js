@@ -37,6 +37,9 @@ export default {
   menuItem: {
     padding: '.3em',
   },
+  requestItem: {
+    padding: '1em',
+  },
   menuDropdown: {
     padding: '0',
     margin: 'none',
@@ -90,17 +93,19 @@ export default {
     fontSize: '1.9em',
   },
   userIcon: {
-    color: '#5860bb',
+    color: 'rgb(155, 163, 255)',
     backgroundColor: '#0e2758',
+    boxShadow: 'rgb(155, 163, 255) 0px 0px 50px 2px',
   },
   userDropMenu: {
-    fontSize: '.4em',
+    fontSize: '.7em',
+    marginTop: '.9em',
   },
   requestButton: {
     backgroundColor: green,
     color: white,
-    padding: '.7em',
-    height: '3em',
+    padding: '.6em',
+    fontSize: '1.4em',
   },
   logoutButton: {
     backgroundColor: blue,
