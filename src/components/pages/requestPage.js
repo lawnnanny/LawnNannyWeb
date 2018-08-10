@@ -48,8 +48,7 @@ const requestPage = () => (
       <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
         <Grid.Row textAlign="left" style={Styles.headerRow}>
           <Header as="h1" style={Styles.header}>
-            Small lawn by the river. No problems Small lawn by the river. No problems Small lawn by
-            the river. No problems Small lawn by the river. No problems
+            Small lawn by the river. No problems
           </Header>
         </Grid.Row>
         <Grid.Row textAlign="left" style={Styles.userRow}>
@@ -130,8 +129,8 @@ const requestPage = () => (
           ))
         }
       </Media>
-      <div style={Styles.bottomPadding} />
     </Grid.Row>
+    <div style={Styles.Bottom} />
   </Grid>
 );
 export default requestPage;

@@ -43,9 +43,6 @@ export default {
   descriptionHeader: {
     fontSize: '1em',
   },
-  bottomPadding: {
-    paddingBottom: '8em',
-  },
   bottomMenu: {
     height: '6em',
     padding: '0',
@@ -89,5 +86,8 @@ export default {
     margin: '0',
     marginTop: '1em',
     marginBottom: '.5em',
+  },
+  Bottom: {
+    paddingBottom: '8em',
   },
 };
