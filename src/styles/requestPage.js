@@ -3,13 +3,8 @@ const green = '#20ad1d';
 const blue = '#1205ff';
 export default {
   grid: {},
-  leftContent: {
-    width: 'auto',
-    maxWidth: '50em',
-  },
-  rightContent: {
-    width: '30em',
-  },
+  leftContent: {},
+  rightContent: {},
   headerRow: {
     paddingBottom: '2em',
   },

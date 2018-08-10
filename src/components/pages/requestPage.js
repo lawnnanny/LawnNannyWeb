@@ -45,7 +45,7 @@ const requestPage = () => (
       <MyImage src={home} />
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column style={Styles.leftContent}>
+      <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
         <Grid.Row textAlign="left" style={Styles.headerRow}>
           <Header as="h1" style={Styles.header}>
             Small lawn by the river. No problems
@@ -150,19 +150,17 @@ const requestPage = () => (
       <Media query={device.laptop}>
         {matches =>
           (matches ? (
-            <Grid.Column style={Styles.rightContent} floated="right">
-              <Sticky>
-                <Segment raised padded textAlign="center">
-                  <Label style={Styles.priceLabel}>
-                    <Icon name="dollar" style={Styles.priceIcon} />
-                    25
-                  </Label>
-                  <Button fluid style={Styles.requestButtonDesktop}>
-                    Request Service
-                  </Button>
-                  <Header>Contact User</Header>
-                </Segment>
-              </Sticky>
+            <Grid.Column computer={6} style={Styles.rightContent} floated="right">
+              <Segment raised padded textAlign="center">
+                <Label style={Styles.priceLabel}>
+                  <Icon name="dollar" style={Styles.priceIcon} />
+                  25
+                </Label>
+                <Button fluid style={Styles.requestButtonDesktop}>
+                  Request Service
+                </Button>
+                <Header>Contact User</Header>
+              </Segment>
             </Grid.Column>
           ) : (
             <Menu borderless fixed="bottom" style={Styles.bottomMenu} fluid>
