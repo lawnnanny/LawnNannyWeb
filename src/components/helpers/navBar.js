@@ -32,7 +32,10 @@ export const navBar = props => (
           <RequestButton style={Styles.requestButton}>Your Requests</RequestButton>
         </Menu.Item>
         <Menu.Item style={Styles.menuItem}>
-          <Dropdown icon="user circle" style={Styles.userMenu}>
+          <Dropdown
+            icon={{ name: 'user', circular: true, style: Styles.userIcon }}
+            style={Styles.userMenu}
+          >
             <Dropdown.Menu style={Styles.userDropMenu}>
               <Dropdown.Item>
                 <Button style={Styles.logoutButton} onClick={() => props.setLoggedIn()}>
@@ -44,7 +47,7 @@ export const navBar = props => (
         </Menu.Item>
       </Menu.Menu>
     ) : (
-      <Menu.Menu position="right">
+      <Menu.Menu position="right" style={Styles.signupLoginMenu}>
         <Menu.Item style={Styles.menuItem}>
           <LoginModal loginButton={Styles.loginButton} history={props.history} />
         </Menu.Item>

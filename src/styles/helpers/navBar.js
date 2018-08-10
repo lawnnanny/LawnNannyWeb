@@ -17,7 +17,8 @@ export default {
   loginButton: {
     backgroundColor: white,
     color: blue,
-    padding: '.8em',
+    padding: '.6em',
+    fontSize: '1.3em',
     borderRadius: '10px',
     border: '.15em solid',
     borderColor: blue,
@@ -25,9 +26,13 @@ export default {
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.95em',
+    padding: '.75em',
+    fontSize: '1.25em',
     borderRadius: '10px',
     border: '1px solid #20ad1d',
+  },
+  signupLoginMenu: {
+    marginRight: '.5em',
   },
   menuItem: {
     padding: '.3em',
@@ -81,8 +86,12 @@ export default {
   userMenu: {
     padding: '0',
     margin: 'none',
-    fontSize: '3.5em',
-    color: blue,
+    marginRight: '.5em',
+    fontSize: '1.9em',
+  },
+  userIcon: {
+    color: '#5860bb',
+    backgroundColor: '#0e2758',
   },
   userDropMenu: {
     fontSize: '.4em',

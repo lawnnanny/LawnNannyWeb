@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, Icon, Button, Header,Sticky } from 'semantic-ui-react';
+import { Menu, Icon, Button, Header, Sticky } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/SidebarContent';
-import SideRequest from './SideRequest'
+import SideRequest from './SideRequest';
 
 const MyButton = styled(Button)`
   &&& {
@@ -32,64 +32,64 @@ const RequestItem = styled(Menu.Item)`
 const request = {
   fields: [
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
     {
-      click:'/pipeline',
+      click: '/pipeline',
       header: 'Lawn in Newton',
-      rating:3,
-      price:'25'
+      rating: 3,
+      price: '25',
     },
   ],
 };
@@ -101,12 +101,12 @@ export default class SidebarContent extends Component {
   requestChange = () => this.setState({ request: !this.state.request });
   renderRequest = field => (
     <RequestItem>
-    <SideRequest
-    onClick = {() => (this.props.history.push(field.click))}
-    header={field.header}
-    rating={field.rating}
-    price={field.price}
-    />
+      <SideRequest
+        onClick={() => this.props.history.push(field.click)}
+        header={field.header}
+        rating={field.rating}
+        price={field.price}
+      />
     </RequestItem>
   );
   renderRequests = (form) => {
@@ -115,29 +115,29 @@ export default class SidebarContent extends Component {
   };
   render() {
     return this.state.request ? (
-    <div>
-      <Menu.Item style={Styles.topItem}>
-        <Button
-          icon
-          onClick={() => {
-            this.props.handleButtonClick();
-          }}
-          style={Styles.barsButton}
-        >
-          <Icon name="bars" style={Styles.menuDropdown} />
-        </Button>
-        <MyButton
-          style={Styles.requestMenuButton}
-          onClick={() => {
-            this.requestChange();
-          }}
-        >
-          Open Menu
-        </MyButton>
-      </Menu.Item>
-      <Header style={Styles.requestHeader}> Nearby Requests </Header>
-      {this.renderRequests(request)}
-    </div>
+      <div>
+        <Menu.Item style={Styles.topItem}>
+          <Button
+            icon
+            onClick={() => {
+              this.props.handleButtonClick();
+            }}
+            style={Styles.barsButton}
+          >
+            <Icon name="bars" style={Styles.menuDropdown} />
+          </Button>
+          <MyButton
+            style={Styles.requestMenuButton}
+            onClick={() => {
+              this.requestChange();
+            }}
+          >
+            Open Menu
+          </MyButton>
+        </Menu.Item>
+        <Header style={Styles.requestHeader}> Nearby Requests </Header>
+        {this.renderRequests(request)}
+      </div>
     ) : (
       <div>
         <Menu.Item style={Styles.topItem}>
