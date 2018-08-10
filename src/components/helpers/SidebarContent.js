@@ -127,7 +127,7 @@ export default class SidebarContent extends Component {
             <Icon name="bars" style={Styles.menuDropdown} />
           </Button>
           <MyButton
-            style={Styles.requestMenuButton}
+            style={Styles.sidebarMenuButton}
             onClick={() => {
               this.requestChange();
             }}

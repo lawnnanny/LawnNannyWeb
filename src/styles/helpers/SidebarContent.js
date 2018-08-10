@@ -4,6 +4,7 @@ const green = '#20ad1d';
 export default {
   topItem: {
     paddingLeft: '.4em',
+    paddingTop: '1.2em',
   },
   menuButton: {
     color: 'white',
@@ -33,20 +34,20 @@ export default {
     fontSize: '1.2em',
     fontWeight: '700',
     margin: '0',
-    marginLeft: '.6em',
+    marginLeft: '2em',
     color: 'black',
   },
-  requestMenuButton: {
+  sidebarMenuButton: {
     fontSize: '1.2em',
+    fontWeight: '700',
     margin: '0',
-    marginLeft: '1.5em',
+    marginLeft: '3em',
     color: 'black',
   },
-  requestHeader:{
-    color:'white',
-    fontSize:'2em',
-    textDecoration:'underline',
-    paddingLeft:'.5em'
+  requestHeader: {
+    color: 'white',
+    fontSize: '2em',
+    paddingLeft: '.2em',
   },
   homeLink: {
     fontSize: '2em',
