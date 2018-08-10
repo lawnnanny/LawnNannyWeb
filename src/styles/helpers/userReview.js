@@ -12,5 +12,12 @@ export default {
     paddingBottom: '0em',
   },
   ratingRow: {},
-  textRow: {},
+  textRow: {
+    fontSize: '1.2em',
+    lineHeight: '1.4em',
+  },
+  userImage: {
+    marginTop: '0',
+    width: '3em',
+  },
 };

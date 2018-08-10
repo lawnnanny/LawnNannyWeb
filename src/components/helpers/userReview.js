@@ -1,12 +1,13 @@
 import React from 'react';
-import { Grid, Icon, Header, Rating } from 'semantic-ui-react';
+import { Grid, Icon, Header, Rating, Image } from 'semantic-ui-react';
+import ShowMoreText from 'react-show-more-text';
 import Styles from '../../styles/helpers/userReview';
 
 const userReview = props => (
   <Grid container style={Styles.grid}>
     <Grid.Row style={Styles.userRow}>
       <Header>
-        <Icon circular name="user" />
+        <Image circular src={props.image} style={Styles.userImage} />
         {props.username}
       </Header>
     </Grid.Row>
@@ -17,7 +18,9 @@ const userReview = props => (
       <Rating disabled icon="star" defaultRating={props.rating} maxRating={5} />
     </Grid.Row>
     <Grid.Row style={Styles.textRow}>
-      <p>{props.text}</p>
+      <ShowMoreText lines={2} more="Show more" less="Show less" onClick={this.executeOnClick}>
+        <p>{props.text}</p>
+      </ShowMoreText>
     </Grid.Row>
   </Grid>
 );

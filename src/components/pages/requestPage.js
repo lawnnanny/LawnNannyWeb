@@ -14,23 +14,61 @@ import {
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Media from 'react-media';
-import ShowMoreText from 'react-show-more-text';
 import device from '../../helpers/devices';
 import Styles from '../../styles/requestPage';
 import shane from '../../images/shane.png';
+import donald from '../../images/donald.jpg';
+import lebron from '../../images/lebron.png';
+import blackman from '../../images/blackman.jpg';
+import donaldkek from '../../images/donaldkek.jpg';
 import home from '../../images/home.jpg';
-import JobDescription from '../helpers/JobDescription';
+import UserReview from '../helpers/userReview';
 
-const longText = (
-  <p>
-    This cozy newly remodeled 1 bedroom has everything you need to relax and still be close to the
-    action. Bedroom has 1 queen and 1 fold down futon and there is 1 full size leather couch in the
-    Living Room.mile stroll or bike ride down to the Court Avenue District for stylish and hopping
-    bars and restaurants! Around the corner 2.5 blocks is the historic Graziano Brothers Italian
-    Grocery and Principal Park, home of the ICubs. Large fenced backyard provides privacy and shaded
-    tranquility.
-  </p>
-);
+const review = {
+  fields: [
+    {
+      image: lebron,
+      username: 'Lebron James',
+      date: 'January 6, 2018',
+      rating: 5,
+      text:
+        'This service is really one of a kind. I feel as though this user was easy and able to give me simple directions on how he would like me to mow his lawn. I worked really hard and I feel as though I was able to achieve a lot from him. He payed quickly too!',
+    },
+    {
+      image: donald,
+      username: 'The Donald',
+      date: 'November 9, 2016',
+      rating: 3,
+      text:
+        'Really needs to work on his communications skills I spent over half the time trying to reach him and get the proper details so i could do a good job. This service is really one of a kind. I feel as though this user was easy and able to give me simple directions on how he would like me to mow his lawn. I worked really hard and I feel as though I was able to achieve a lot from him. He payed quickly too!',
+    },
+    {
+      image: blackman,
+      username: 'Black Man',
+      date: 'August 9, 2018',
+      rating: 4,
+      text:
+        'This service is really one of a kind. I feel as though this user was easy and able to give me simple directions on how he would like me to mow his lawn. I worked really hard and I feel as though I was able to achieve a lot from him. He payed quickly too!',
+    },
+    {
+      image: donaldkek,
+      username: 'Kek',
+      date: 'July 4, 2018',
+      rating: 4,
+      text:
+        'Really needs to work on his communications skills I spent over half the time trying to reach him and get the proper details so i could do a good job. This service is really one of a kind. This service is really one of a kind. I feel as though this user was easy and able to give me simple directions on how he would like me to mow his lawn. I worked really hard and I feel as though I was able to achieve a lot from him. He payed quickly too!',
+    },
+    {
+      image: shane,
+      username: 'Shane Paul',
+      date: 'July 2, 2018',
+      rating: 5,
+      text:
+        'This service is really one of a kind. I feel as though this user was easy and able to give me simple directions on how he would like me to mow his lawn. I worked really hard and I feel as though I was able to achieve a lot from him. He payed quickly too!',
+    },
+  ],
+};
+
 const MyImage = styled(Image)`
   &&& {
     width: 100%;
@@ -55,6 +93,19 @@ export default class requestPage extends Component {
 
   handleContextRef = (ref) => {
     this.setState({ context: ref });
+  };
+  renderReview = field => (
+    <UserReview
+      rating={field.rating}
+      username={field.username}
+      date={field.date}
+      text={field.text}
+      image={field.image}
+    />
+  );
+  renderReviews = (form) => {
+    const formUI = form.fields.map(field => this.renderReview(field));
+    return formUI;
   };
   render() {
     return (
@@ -81,24 +132,37 @@ export default class requestPage extends Component {
                   <Rating
                     disabled
                     icon="star"
-                    defaultRating={5}
+                    defaultRating={4}
                     maxRating={5}
                     style={Styles.userRating}
                   />
                   <div style={Styles.ratingReviews}>10 Reviews</div>
                 </Grid.Row>
-                <Grid.Row textAlign="left">
+                <Grid.Row textAlign="left" style={Styles.jobRow}>
                   <Segment style={Styles.descriptionSegment}>
                     <Header style={Styles.descriptionHeader}>Job Description</Header>
-                    <ShowMoreText
-                      lines={3}
-                      more="Show more"
-                      less="Show less"
-                      onClick={this.executeOnClick}
-                    >
-                      {longText}
-                    </ShowMoreText>
+                    <p>
+                      Thea and Georges cottage, set off a quiet road, is bright, clean, and
+                      cheerful. Its newly renovated, with great attention to detail, making for a
+                      relaxing stay. The location is a short walk to the main drag of Abbot Kinney,
+                      where youll find lots of shops, cafes, restaurants, and the buzz of Venice.
+                      Overall, its a beautiful flat and is recommended for anyone who wants a
+                      relaxing time in a great neighborhood with friendly, attentive hosts.This is a
+                      super-sweet cottage in the back of our property, perfect for a professional
+                      looking for a quiet place to come home to after a hard days work, for a couple
+                      wanting some peace and quiet, or for a family with one or two small children.
+                      Weve just renovated it, and furnished it with lots of love and care.Were one
+                      mile from Venice Beach, half a mile to the Venice Canals, and six blocks from
+                      the famous Abbot Kinney shopping street, with LAs trendiest boutiques and
+                      restaurants.
+                    </p>
                   </Segment>
+                </Grid.Row>
+                <Grid.Row textAlign="left">
+                  <Header as="h1" style={Styles.reviewHeader}>
+                    User Reviews
+                  </Header>
+                  {this.renderReviews(review)}
                 </Grid.Row>
               </Grid.Column>
               <Media query={device.laptop}>

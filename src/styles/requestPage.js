@@ -38,6 +38,9 @@ export default {
     fontWeight: '700',
     marginTop: '.15em',
   },
+  jobRow: {
+    paddingBottom: '4em',
+  },
   descriptionSegment: {
     maxWidth: '40em',
     fontSize: '1.5em',
@@ -48,6 +51,9 @@ export default {
   },
   jobDescription: {
     lineHeight: '25px',
+  },
+  reviewHeader: {
+    marginBottom: '1.5em',
   },
   bottomMenu: {
     height: '6em',
