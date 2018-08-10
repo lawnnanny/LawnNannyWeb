@@ -3,7 +3,9 @@ const green = '#20ad1d';
 const blue = '#1205ff';
 export default {
   grid: {},
-  leftContent: {},
+  leftContent: {
+    padding: '0',
+  },
   rightContent: {},
   headerRow: {
     paddingBottom: '2em',
@@ -36,6 +38,7 @@ export default {
   descriptionSegment: {
     maxWidth: '40em',
     fontSize: '1.5em',
+    padding: '.5em',
   },
   descriptionHeader: {
     fontSize: '1em',
