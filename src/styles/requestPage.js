@@ -128,7 +128,7 @@ export default {
   },
   nearbyItem: {},
   nearbyCard: {
-    boxShadow: '0 4px 2px -2px gray',
+    boxShadow: '0 5px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15)',
   },
   dollarIcon: {
     fontSize: '.9em',

@@ -12,10 +12,10 @@ import {
   Sticky,
   Rail,
   List,
-  Card,
 } from 'semantic-ui-react';
-import styled from 'styled-components';
 import Media from 'react-media';
+import styled from 'styled-components';
+import NearbyRequest from '../helpers/nearbyRequest';
 import device from '../../helpers/devices';
 import Styles from '../../styles/requestPage';
 import shane from '../../images/shane.png';
@@ -90,21 +90,6 @@ const MyImage = styled(Image)`
   }
 `;
 
-const ListItem = styled(List.Item)`
-  &&& {
-    :hover {
-      transform: translateY(4px);
-    }
-  }
-`;
-
-const MyCard = styled(Card)`
-  &[style] {
-    :hover {
-      box-shadow: 0 12px 24px -2px gray !important;
-    }
-  }
-`;
 const MySegment = styled(Segment)`
   &&& {
     :hover {
@@ -239,72 +224,10 @@ export default class requestPage extends Component {
           <Segment style={Styles.nearbySegment}>
             <Header style={Styles.nearbyHeader}>Nearby Requests</Header>
             <List horizontal style={Styles.nearbyList}>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
-              <ListItem style={Styles.nearbyItem}>
-                <MyCard style={Styles.nearbyCard}>
-                  <Image src={home} />
-                  <Card.Content style={Styles.cardContent}>
-                    <Header style={Styles.cardHeader}>
-                      <Icon name="dollar" style={Styles.dollarIcon} />
-                      28 Grinnell
-                    </Header>
-                  </Card.Content>
-                </MyCard>
-              </ListItem>
+              <NearbyRequest price={30} city="Grinnell" image={home} />
+              <NearbyRequest price={25} city="Sully" image={home} />
+              <NearbyRequest price={40} city="Newton" image={home} />
+              <NearbyRequest price={15} city="Kellogg" image={home} />
             </List>
           </Segment>
         </Grid.Row>
