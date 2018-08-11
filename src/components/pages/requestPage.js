@@ -92,8 +92,24 @@ const MyImage = styled(Image)`
 
 const ListItem = styled(List.Item)`
   &&& {
-    onHover:{
-      transform(0,.5)
+    :hover {
+      transform: translateY(4px);
+    }
+  }
+`;
+
+const MyCard = styled(Card)`
+  &[style] {
+    :hover {
+      box-shadow: 0 12px 24px -2px gray !important;
+    }
+  }
+`;
+const MySegment = styled(Segment)`
+  &&& {
+    :hover {
+      box-shadow: 0 12px 24px -2px gray !important;
+      transform: translateY(4px);
     }
   }
 `;
@@ -188,7 +204,7 @@ export default class requestPage extends Component {
                         style={{ top: 'auto', height: 'auto', width: '100%' }}
                       >
                         <Sticky bottomOffset={50} context={this.state.context} offset={50}>
-                          <Segment raised padded textAlign="center">
+                          <MySegment raised padded textAlign="center">
                             <Label style={Styles.priceLabel}>
                               <Icon name="dollar" style={Styles.priceIcon} />
                               25
@@ -197,7 +213,7 @@ export default class requestPage extends Component {
                               Request Service
                             </Button>
                             <Header>Contact User</Header>
-                          </Segment>
+                          </MySegment>
                         </Sticky>
                       </Rail>
                     </Grid.Column>
@@ -223,8 +239,8 @@ export default class requestPage extends Component {
           <Segment style={Styles.nearbySegment}>
             <Header style={Styles.nearbyHeader}>Nearby Requests</Header>
             <List horizontal style={Styles.nearbyList}>
-              <List.Item>
-                <Card>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -232,10 +248,10 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
-              <List.Item>
-                <Card>
+                </MyCard>
+              </ListItem>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -243,10 +259,10 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
-              <List.Item>
-                <Card>
+                </MyCard>
+              </ListItem>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -254,10 +270,10 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
-              <List.Item>
-                <Card>
+                </MyCard>
+              </ListItem>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -265,10 +281,10 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
-              <List.Item>
-                <Card>
+                </MyCard>
+              </ListItem>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -276,10 +292,10 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
-              <List.Item>
-                <Card>
+                </MyCard>
+              </ListItem>
+              <ListItem style={Styles.nearbyItem}>
+                <MyCard style={Styles.nearbyCard}>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
                     <Header style={Styles.cardHeader}>
@@ -287,8 +303,8 @@ export default class requestPage extends Component {
                       28 Grinnell
                     </Header>
                   </Card.Content>
-                </Card>
-              </List.Item>
+                </MyCard>
+              </ListItem>
             </List>
           </Segment>
         </Grid.Row>

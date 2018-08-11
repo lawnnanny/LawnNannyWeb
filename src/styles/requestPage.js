@@ -126,6 +126,10 @@ export default {
   nearbyList: {
     display: 'flex',
   },
+  nearbyItem: {},
+  nearbyCard: {
+    boxShadow: '0 4px 2px -2px gray',
+  },
   dollarIcon: {
     fontSize: '.9em',
     color: green,
