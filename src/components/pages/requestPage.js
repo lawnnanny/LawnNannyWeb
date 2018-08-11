@@ -90,6 +90,14 @@ const MyImage = styled(Image)`
   }
 `;
 
+const ListItem = styled(List.Item)`
+  &&& {
+    onHover:{
+      transform(0,.5)
+    }
+  }
+`;
+
 export default class requestPage extends Component {
   state = { context: null };
 
@@ -213,14 +221,16 @@ export default class requestPage extends Component {
         </div>
         <Grid.Row style={Styles.nearbyRow}>
           <Segment style={Styles.nearbySegment}>
-            <Header>Nearby Requests</Header>
-            <List horizontal>
+            <Header style={Styles.nearbyHeader}>Nearby Requests</Header>
+            <List horizontal style={Styles.nearbyList}>
               <List.Item>
                 <Card>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
-                    <Icon name="dollar" style={Styles.dollarIcon} />
-                    25
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
                   </Card.Content>
                 </Card>
               </List.Item>
@@ -228,8 +238,10 @@ export default class requestPage extends Component {
                 <Card>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
-                    <Icon name="dollar" style={Styles.dollarIcon} />
-                    30
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
                   </Card.Content>
                 </Card>
               </List.Item>
@@ -237,8 +249,43 @@ export default class requestPage extends Component {
                 <Card>
                   <Image src={home} />
                   <Card.Content style={Styles.cardContent}>
-                    <Icon name="dollar" style={Styles.dollarIcon} />
-                    25
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
+                  </Card.Content>
+                </Card>
+              </List.Item>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
+                  </Card.Content>
+                </Card>
+              </List.Item>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
+                  </Card.Content>
+                </Card>
+              </List.Item>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Header style={Styles.cardHeader}>
+                      <Icon name="dollar" style={Styles.dollarIcon} />
+                      28 Grinnell
+                    </Header>
                   </Card.Content>
                 </Card>
               </List.Item>

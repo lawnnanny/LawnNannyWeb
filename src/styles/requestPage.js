@@ -113,16 +113,32 @@ export default {
     marginTop: '1em',
     marginBottom: '.5em',
   },
+  nearbyRow: {
+    overflow: 'hidden',
+  },
   nearbySegment: {
     border: 'none',
     boxShadow: 'none',
   },
+  nearbyHeader: {
+    fontSize: '2em',
+  },
+  nearbyList: {
+    display: 'flex',
+  },
   dollarIcon: {
     fontSize: '.9em',
     color: green,
+    marginTop: '-.6em',
+    marginRight: '0em',
+  },
+  cardHeader: {
+    color: '#828282',
+    wordSpacing: '.5em',
   },
   cardContent: {
     fontSize: '2em',
+    padding: '.5em',
   },
   Bottom: {
     paddingBottom: '8em',
