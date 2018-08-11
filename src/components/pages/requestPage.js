@@ -118,9 +118,12 @@ export default class requestPage extends Component {
             <Grid.Row>
               <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
                 <Grid.Row textAlign="left" style={Styles.headerRow}>
-                  <Header as="h1" style={Styles.header}>
-                    Small lawn by the river. No problems
+                  <Header style={Styles.mainHeader}>
+                    Just a small cabin near clear creek lake with a few trees and sticks.
                   </Header>
+                </Grid.Row>
+                <Grid.Row textAlign="left" style={Styles.locationRow}>
+                  <Header style={Styles.locationHeader}>Grinnell, IA</Header>
                 </Grid.Row>
                 <Grid.Row textAlign="left" style={Styles.userRow}>
                   <Header>

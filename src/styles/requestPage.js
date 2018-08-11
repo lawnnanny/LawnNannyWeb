@@ -11,10 +11,19 @@ export default {
   },
   rightContent: {},
   headerRow: {
+    paddingBottom: '1em',
+  },
+  mainHeader: {
+    color: '#3d3b3b',
+    fontSize: '3em',
+    lineHeight: '1em',
+  },
+  locationRow: {
     paddingBottom: '2em',
   },
-  header: {
-    color: '#3d3b3b',
+  locationHeader: {
+    fontSize: '2.5em',
+    color: '#868686',
   },
   userRow: {
     paddingBottom: '.5em',
