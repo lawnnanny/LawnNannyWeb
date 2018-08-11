@@ -6,6 +6,11 @@ export default {
     fontSize: '10em',
   },
   grid: {},
+  mainRow: {
+    paddingBottom: '5em',
+    borderBottom: '2px solid rgb(222,222,222)',
+    marginBottom: '3em',
+  },
   leftContent: {
     padding: '0',
   },
@@ -22,7 +27,7 @@ export default {
     paddingBottom: '2em',
   },
   locationHeader: {
-    fontSize: '2.5em',
+    fontSize: '2.1em',
     color: '#868686',
   },
   userRow: {
@@ -107,6 +112,17 @@ export default {
     margin: '0',
     marginTop: '1em',
     marginBottom: '.5em',
+  },
+  nearbySegment: {
+    border: 'none',
+    boxShadow: 'none',
+  },
+  dollarIcon: {
+    fontSize: '.9em',
+    color: green,
+  },
+  cardContent: {
+    fontSize: '2em',
   },
   Bottom: {
     paddingBottom: '8em',

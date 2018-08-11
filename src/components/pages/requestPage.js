@@ -11,6 +11,8 @@ import {
   Label,
   Sticky,
   Rail,
+  List,
+  Card,
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Media from 'react-media';
@@ -115,7 +117,7 @@ export default class requestPage extends Component {
         </Grid.Row>
         <div ref={this.handleContextRef} style={{ width: '100%' }}>
           <Grid>
-            <Grid.Row>
+            <Grid.Row style={Styles.mainRow}>
               <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
                 <Grid.Row textAlign="left" style={Styles.headerRow}>
                   <Header style={Styles.mainHeader}>
@@ -209,6 +211,40 @@ export default class requestPage extends Component {
             </Grid.Row>
           </Grid>
         </div>
+        <Grid.Row style={Styles.nearbyRow}>
+          <Segment style={Styles.nearbySegment}>
+            <Header>Nearby Requests</Header>
+            <List horizontal>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Icon name="dollar" style={Styles.dollarIcon} />
+                    25
+                  </Card.Content>
+                </Card>
+              </List.Item>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Icon name="dollar" style={Styles.dollarIcon} />
+                    30
+                  </Card.Content>
+                </Card>
+              </List.Item>
+              <List.Item>
+                <Card>
+                  <Image src={home} />
+                  <Card.Content style={Styles.cardContent}>
+                    <Icon name="dollar" style={Styles.dollarIcon} />
+                    25
+                  </Card.Content>
+                </Card>
+              </List.Item>
+            </List>
+          </Segment>
+        </Grid.Row>
         <div style={Styles.Bottom} />
       </Grid>
     );
