@@ -10,8 +10,12 @@ export default {
   },
   dateRow: {
     paddingBottom: '0em',
+    paddingTop: '0em',
   },
-  ratingRow: {},
+  ratingRow: {
+    paddingBottom: '.3em',
+    paddingTop: '.5em',
+  },
   textRow: {
     fontSize: '1.2em',
     lineHeight: '1.4em',

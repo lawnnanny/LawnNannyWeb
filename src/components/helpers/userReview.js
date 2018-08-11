@@ -11,11 +11,11 @@ const userReview = props => (
         {props.username}
       </Header>
     </Grid.Row>
-    <Grid.Row style={Styles.dateRow}>
-      <Header>{props.date}</Header>
-    </Grid.Row>
     <Grid.Row style={Styles.ratingRow}>
       <Rating disabled icon="star" defaultRating={props.rating} maxRating={5} />
+    </Grid.Row>
+    <Grid.Row style={Styles.dateRow}>
+      <Header>{props.date}</Header>
     </Grid.Row>
     <Grid.Row style={Styles.textRow}>
       <ShowMoreText lines={2} more="Show more" less="Show less" onClick={this.executeOnClick}>
