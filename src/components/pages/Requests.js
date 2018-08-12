@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Search, Dropdown, Label } from 'semantic-ui-react';
+import { Grid, Dropdown, Segment, Header, Button } from 'semantic-ui-react';
 import Styles from '../../styles/Requests';
 import RequestCardComponent from '../helpers/requestCard';
 import lawn from '../../images/homepage/lawn.jpg';
@@ -11,8 +11,8 @@ const jsonForm = {
     {
       link: '/pipeline',
       image: lawn,
-      header: 'Lawn in Newton',
-      distance: '2 miles away',
+      header: 'Lawn',
+      city: 'Newton',
       description: 'Full yard with a few trees scattered',
       price: '25',
       reviewCount: '11',
@@ -21,8 +21,8 @@ const jsonForm = {
     {
       link: '/HomePage',
       image: grinnell,
-      header: 'Lawn in Grinnell',
-      distance: '18 miles away',
+      header: 'Lawn',
+      city: 'Newton',
       description: 'Small Yard not a lot of trouble.',
       price: '20',
       reviewCount: '6',
@@ -31,8 +31,8 @@ const jsonForm = {
     {
       link: '/pipeline/requestReview',
       image: pella,
-      header: 'Lawn in Sully',
-      distance: '14 miles away',
+      header: 'Lawn',
+      city: 'Sully',
       description: 'Long grass in back may take longer',
       price: '30',
       reviewCount: '2',
@@ -42,17 +42,17 @@ const jsonForm = {
 };
 
 const options = [
-  { key: 'edit',  text: 'Nearest Location', value: 'Nearest Location' },
-  { key: 'delete',  text: 'Lowest Price', value: 'Lowest Price' },
-  { key: 'hide',  text: 'Highest Price', value: 'Highest Price' },
-  { key: 'hide',  text: 'Best Rated', value: 'Best Rated' },
-]
+  { key: 'edit', text: 'Nearest Location', value: 'Nearest Location' },
+  { key: 'delete', text: 'Lowest Price', value: 'Lowest Price' },
+  { key: 'hide', text: 'Highest Price', value: 'Highest Price' },
+  { key: 'hide', text: 'Best Rated', value: 'Best Rated' },
+];
 const DistanceOptions = [
-  { key: 'edit',  text: '20 Miles', value: '20' },
-  { key: 'delete',  text: '50 Miles', value: '50' },
-  { key: 'hide',  text: '100 Miles', value: '100' },
-  { key: 'hide',  text: '250 Miles', value: '250' },
-]
+  { key: 'edit', text: '20 Miles', value: '20' },
+  { key: 'delete', text: '50 Miles', value: '50' },
+  { key: 'hide', text: '100 Miles', value: '100' },
+  { key: 'hide', text: '250 Miles', value: '250' },
+];
 
 const Requests = (props) => {
   const renderCard = field => (
@@ -61,7 +61,7 @@ const Requests = (props) => {
       link={field.link}
       image={field.image}
       header={field.header}
-      distance={field.distance}
+      city={field.city}
       description={field.description}
       price={field.price}
       reviewCount={field.reviewCount}
@@ -73,10 +73,27 @@ const Requests = (props) => {
     return formUI;
   };
   return (
-    <Grid stackable centered style={Styles.grid}>
+    <Grid stackable container centered style={Styles.grid}>
       <Grid.Row verticalAlign="middle">
-        <Dropdown placeholder="Search By" selection options={options} style={Styles.searchDropdown}/>
-        <Dropdown placeholder="Search Within x Miles" selection options={DistanceOptions}/>
+        <Segment style={Styles.searchSegment}>
+          <Header style={Styles.searchHeader}>Refine Search</Header>
+          <Dropdown
+            placeholder="Search By"
+            selection
+            options={options}
+            style={Styles.searchDropdown}
+          />
+          <span style={Styles.within}>within</span>
+          <Dropdown
+            style={Styles.distanceDropdown}
+            placeholder="Miles"
+            selection
+            options={DistanceOptions}
+          />
+          <Button fluid style={Styles.searchButton}>
+            Search
+          </Button>
+        </Segment>
       </Grid.Row>
       <Grid.Row centered>{renderCards(jsonForm)}</Grid.Row>
     </Grid>
