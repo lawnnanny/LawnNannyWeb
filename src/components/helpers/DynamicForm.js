@@ -71,7 +71,7 @@ class DynamicForm extends Component {
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
-      this.props.route();
+      this.props.route(data);
     }
   };
 
