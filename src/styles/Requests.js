@@ -50,7 +50,7 @@ export default {
   },
   menuDistanceDropdown: {
     border: 'none',
-    minWidth: '6em',
+    minWidth: '7.3em',
     paddingRight: '0em',
     paddingLeft: '.5em',
     fontSize: '1.1em',
