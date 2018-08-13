@@ -143,12 +143,10 @@ export default class requestPage extends Component {
     return (
       <div ref={this.handleContextRef2}>
         <Grid container style={Styles.grid}>
-          <a href="overview" id="overview">
-            <Grid.Row textAlign="center" style={Styles.imageRow}>
-              <MyImage src={home} />
-            </Grid.Row>
-          </a>
-          <div ref={this.handleContextRef} style={{ width: '100%' }}>
+          <Grid.Row textAlign="center" style={Styles.imageRow}>
+            <MyImage src={home} />
+          </Grid.Row>
+          <div ref={this.handleContextRef} style={{ width: '100%', paddingTop: '1em' }}>
             <Grid>
               <Grid.Row style={Styles.mainRow}>
                 <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
@@ -171,6 +169,11 @@ export default class requestPage extends Component {
                             <Menu fluid widths={3} borderless style={Styles.TopMenu}>
                               <Menu.Item style={Styles.menuItem}>
                                 <ItemLink
+                                  activeClassName="selected"
+                                  activeStyle={{
+                                    fontWeight: 'bold',
+                                    color: 'red',
+                                  }}
                                   smooth
                                   to="/users/RequestPage#overview"
                                   style={Styles.itemLink}
@@ -180,6 +183,11 @@ export default class requestPage extends Component {
                               </Menu.Item>
                               <Menu.Item style={Styles.menuItem}>
                                 <ItemLink
+                                  activeClassName="selected"
+                                  activeStyle={{
+                                    fontWeight: 'bold',
+                                    color: 'red',
+                                  }}
                                   smooth
                                   to="/users/RequestPage#reviews"
                                   style={Styles.itemLink}
@@ -189,6 +197,11 @@ export default class requestPage extends Component {
                               </Menu.Item>
                               <Menu.Item style={Styles.menuItem}>
                                 <ItemLink
+                                  activeClassName="selected"
+                                  activeStyle={{
+                                    fontWeight: 'bold',
+                                    color: 'red',
+                                  }}
                                   smooth
                                   to="/users/RequestPage#map"
                                   style={Styles.itemLink}
@@ -204,7 +217,7 @@ export default class requestPage extends Component {
                   />
 
                   <HeaderRow textAlign="left" style={Styles.headerRow}>
-                    <Header style={Styles.mainHeader}>
+                    <Header style={Styles.mainHeader} id="overview">
                       Just a small cabin near clear creek lake with a few trees and sticks.
                     </Header>
                   </HeaderRow>
@@ -247,14 +260,12 @@ export default class requestPage extends Component {
                       </p>
                     </Segment>
                   </Grid.Row>
-                  <a href="reviews" id="reviews">
-                    <Grid.Row textAlign="left">
-                      <Header as="h1" style={Styles.reviewHeader}>
-                        User Reviews
-                      </Header>
-                      {this.renderReviews(review)}
-                    </Grid.Row>
-                  </a>
+                  <Grid.Row textAlign="left" id="reviews">
+                    <Header as="h1" style={Styles.reviewHeader}>
+                      User Reviews
+                    </Header>
+                    {this.renderReviews(review)}
+                  </Grid.Row>
                 </Grid.Column>
                 <Media query={device.laptop}>
                   {matches =>
