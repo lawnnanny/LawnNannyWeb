@@ -15,9 +15,6 @@ export default {
     padding: '0',
   },
   rightContent: {},
-  headerRow: {
-    paddingBottom: '1em',
-  },
   sticky: {
     height: '100em',
   },
@@ -30,6 +27,9 @@ export default {
     borderBottom: '2px solid gray',
     fontSize: '1.8em',
     fontWeight: '700',
+  },
+  headerRow: {
+    paddingBottom: '1em',
   },
   mainHeader: {
     color: '#3d3b3b',

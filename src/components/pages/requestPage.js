@@ -108,6 +108,14 @@ const MyItem = styled(Menu.Item)`
   }
 `;
 
+const HeaderRow = styled(Menu.Item)`
+  &&& {
+    @media (min-width: 768px) {
+      margin-top: 7em !important;
+    }
+  }
+`;
+
 export default class requestPage extends Component {
   state = { context: null, context2: null };
 
@@ -145,27 +153,34 @@ export default class requestPage extends Component {
                     query={device.tablet}
                     render={() => (
                       <Grid.Row>
-                        <Sticky
-                          context={this.state.context2}
-                          onStick={() => {
-                            this.state.context2.children[0].children[1].children[0].children[0].children[0].children[0].children[0].children[1].style.zIndex = 1000;
-                          }}
+                        <Rail
+                          internal
+                          position="left"
+                          attached
+                          style={{ top: 'auto', height: 'auto', width: '100%' }}
                         >
-                          <Menu fluid widths={3} borderless style={Styles.TopMenu}>
-                            <MyItem style={Styles.menuItem}>Overview</MyItem>
-                            <MyItem style={Styles.menuItem}>Reviews</MyItem>
-                            <MyItem style={Styles.menuItem}>Map</MyItem>
-                          </Menu>
-                        </Sticky>
+                          <Sticky
+                            context={this.state.context2}
+                            onStick={() => {
+                              this.state.context2.children[0].children[1].children[0].children[0].children[0].children[0].children[0].children[0].children[1].style.zIndex = 1000;
+                            }}
+                          >
+                            <Menu fluid widths={3} borderless style={Styles.TopMenu}>
+                              <MyItem style={Styles.menuItem}>Overview</MyItem>
+                              <MyItem style={Styles.menuItem}>Reviews</MyItem>
+                              <MyItem style={Styles.menuItem}>Map</MyItem>
+                            </Menu>
+                          </Sticky>
+                        </Rail>
                       </Grid.Row>
                     )}
                   />
 
-                  <Grid.Row textAlign="left" style={Styles.headerRow}>
+                  <HeaderRow textAlign="left" style={Styles.headerRow}>
                     <Header style={Styles.mainHeader}>
                       Just a small cabin near clear creek lake with a few trees and sticks.
                     </Header>
-                  </Grid.Row>
+                  </HeaderRow>
                   <Grid.Row textAlign="left" style={Styles.locationRow}>
                     <Header style={Styles.locationHeader}>Grinnell, IA</Header>
                   </Grid.Row>
