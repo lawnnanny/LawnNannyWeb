@@ -58,4 +58,7 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
+  InLineErrorInput: {
+    marginTop: '-1.4em',
+  },
 };

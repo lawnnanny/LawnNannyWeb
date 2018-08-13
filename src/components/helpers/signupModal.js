@@ -5,9 +5,9 @@ import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { createUser } from '../../networkRequests/userRequests';
+import InlineErrorComponent from './InlineError';
 
 export class signupModal extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -36,28 +36,49 @@ export class signupModal extends Component {
       >
         <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
         <Modal.Description>
+          <div>
+            {this.state.registerUserError && (
+              <InlineErrorComponent
+                text={this.state.registerUserError}
+                pointing
+                style={Styles.InlineError}
+              />
+            )}
+          </div>
           <DynamicComponent
             jsonForm={() => signupJsonForm}
             form={'SignUp'}
-            setRequest={this.props.signup}
+            setRequest={() => {}}
             route={(signupDetailsJson) => {
               if (this.props.requestInProgress) {
                 this.props.requestInProgress(5);
               }
-              let serverResponse = createUser({
-                email: signupDetailsJson.email,
-                password: signupDetailsJson.password
+              const serverResponse = createUser({
+                email: signupDetailsJson.email.entry,
+                password: signupDetailsJson.password.entry,
               });
-              console.log(serverResponse);
-              if (this.state.registerUserError !== null) {
-                this.props.history.push(this.props.destination);
-              }
+              serverResponse.then((data) => {
+                if (this.state.registerUserError !== null && data.success) {
+                  console.log('push');
+                  this.props.history.push(this.props.destination);
+                }
+                if (!data.success) {
+                  console.log(data.message.name);
+                  const currentState = this.state;
+                  let message = '';
+                  if (data.message.name === 'DupplicateError') {
+                    message = 'Account with that username or email already exists!';
+                  }
+                  currentState.registerUserError = message;
+                  this.setState(currentState);
+                }
+              });
             }}
             styling={Styles}
           />
         </Modal.Description>
       </Modal>
-    )
+    );
   }
 }
 signupModal.propTypes = {
