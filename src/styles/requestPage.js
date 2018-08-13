@@ -24,9 +24,20 @@ export default {
     marginBottom: '2em',
   },
   menuItem: {
-    borderBottom: '2px solid gray',
+    border: 'none',
     fontSize: '1.8em',
     fontWeight: '700',
+    padding: '0',
+  },
+  itemLink: {
+    padding: '0.92em 1.14em',
+    borderBottom: '2px solid gray',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    color: 'black',
   },
   headerRow: {
     paddingBottom: '1em',

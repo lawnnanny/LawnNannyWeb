@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import {
   Grid,
   Image,
@@ -99,11 +100,11 @@ const MySegment = styled(Segment)`
   }
 `;
 
-const MyItem = styled(Menu.Item)`
+const ItemLink = styled(Link)`
   &&& {
     :hover {
-      border-bottom: 2px solid #1205ff !important;
       color: #1205ff !important;
+      border-bottom: 2px solid #1205ff !important;
     }
   }
 `;
@@ -142,9 +143,11 @@ export default class requestPage extends Component {
     return (
       <div ref={this.handleContextRef2}>
         <Grid container style={Styles.grid}>
-          <Grid.Row textAlign="center" style={Styles.imageRow}>
-            <MyImage src={home} />
-          </Grid.Row>
+          <a href="overview" id="overview">
+            <Grid.Row textAlign="center" style={Styles.imageRow}>
+              <MyImage src={home} />
+            </Grid.Row>
+          </a>
           <div ref={this.handleContextRef} style={{ width: '100%' }}>
             <Grid>
               <Grid.Row style={Styles.mainRow}>
@@ -166,9 +169,33 @@ export default class requestPage extends Component {
                             }}
                           >
                             <Menu fluid widths={3} borderless style={Styles.TopMenu}>
-                              <MyItem style={Styles.menuItem}>Overview</MyItem>
-                              <MyItem style={Styles.menuItem}>Reviews</MyItem>
-                              <MyItem style={Styles.menuItem}>Map</MyItem>
+                              <Menu.Item style={Styles.menuItem}>
+                                <ItemLink
+                                  smooth
+                                  to="/users/RequestPage#overview"
+                                  style={Styles.itemLink}
+                                >
+                                  Overview
+                                </ItemLink>
+                              </Menu.Item>
+                              <Menu.Item style={Styles.menuItem}>
+                                <ItemLink
+                                  smooth
+                                  to="/users/RequestPage#reviews"
+                                  style={Styles.itemLink}
+                                >
+                                  Reviews
+                                </ItemLink>
+                              </Menu.Item>
+                              <Menu.Item style={Styles.menuItem}>
+                                <ItemLink
+                                  smooth
+                                  to="/users/RequestPage#map"
+                                  style={Styles.itemLink}
+                                >
+                                  Map
+                                </ItemLink>
+                              </Menu.Item>
                             </Menu>
                           </Sticky>
                         </Rail>
@@ -220,12 +247,14 @@ export default class requestPage extends Component {
                       </p>
                     </Segment>
                   </Grid.Row>
-                  <Grid.Row textAlign="left">
-                    <Header as="h1" style={Styles.reviewHeader}>
-                      User Reviews
-                    </Header>
-                    {this.renderReviews(review)}
-                  </Grid.Row>
+                  <a href="reviews" id="reviews">
+                    <Grid.Row textAlign="left">
+                      <Header as="h1" style={Styles.reviewHeader}>
+                        User Reviews
+                      </Header>
+                      {this.renderReviews(review)}
+                    </Grid.Row>
+                  </a>
                 </Grid.Column>
                 <Media query={device.laptop}>
                   {matches =>
