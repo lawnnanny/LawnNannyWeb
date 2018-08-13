@@ -111,7 +111,7 @@ const ItemLink = styled(Link)`
 
 const HeaderRow = styled(Menu.Item)`
   &&& {
-    @media (min-width: 768px) {
+    @media ${device.tablet} {
       margin-top: 7em !important;
     }
   }
@@ -146,7 +146,7 @@ export default class requestPage extends Component {
           <Grid.Row textAlign="center" style={Styles.imageRow}>
             <MyImage src={home} />
           </Grid.Row>
-          <div ref={this.handleContextRef} style={{ width: '100%', paddingTop: '1em' }}>
+          <div ref={this.handleContextRef} style={{ width: '100%' }}>
             <Grid>
               <Grid.Row style={Styles.mainRow}>
                 <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
