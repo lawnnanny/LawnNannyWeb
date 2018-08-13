@@ -141,20 +141,26 @@ export default class requestPage extends Component {
             <Grid>
               <Grid.Row style={Styles.mainRow}>
                 <Grid.Column mobile={16} tablet={16} computer={10} style={Styles.leftContent}>
-                  <Grid.Row>
-                    <Sticky
-                      context={this.state.context2}
-                      onStick={() => {
-                        this.state.context2.children[0].children[1].children[0].children[0].children[0].children[0].children[0].children[1].style.zIndex = 1000;
-                      }}
-                    >
-                      <Menu fluid widths={3} borderless style={Styles.TopMenu}>
-                        <MyItem style={Styles.menuItem}>Overview</MyItem>
-                        <MyItem style={Styles.menuItem}>Reviews</MyItem>
-                        <MyItem style={Styles.menuItem}>Map</MyItem>
-                      </Menu>
-                    </Sticky>
-                  </Grid.Row>
+                  <Media
+                    query={device.tablet}
+                    render={() => (
+                      <Grid.Row>
+                        <Sticky
+                          context={this.state.context2}
+                          onStick={() => {
+                            this.state.context2.children[0].children[1].children[0].children[0].children[0].children[0].children[0].children[1].style.zIndex = 1000;
+                          }}
+                        >
+                          <Menu fluid widths={3} borderless style={Styles.TopMenu}>
+                            <MyItem style={Styles.menuItem}>Overview</MyItem>
+                            <MyItem style={Styles.menuItem}>Reviews</MyItem>
+                            <MyItem style={Styles.menuItem}>Map</MyItem>
+                          </Menu>
+                        </Sticky>
+                      </Grid.Row>
+                    )}
+                  />
+
                   <Grid.Row textAlign="left" style={Styles.headerRow}>
                     <Header style={Styles.mainHeader}>
                       Just a small cabin near clear creek lake with a few trees and sticks.
