@@ -37,17 +37,6 @@ describe('step', () => {
       it('is a segment', () => {
         expect(informationSegment.type()).toEqual(Segment);
       });
-      describe('information button', () => {
-        let informationbutton;
-
-        beforeEach(() => {
-          informationbutton = informationSegment.childAt(0).childAt(0);
-        });
-
-        it('is a button', () => {
-          expect(informationbutton.type()).toEqual(Button);
-        });
-      });
     });
     describe('label segment', () => {
       let labelSegment;
