@@ -115,17 +115,6 @@ describe('RequestReview', () => {
       it('It is a segmnet', () => {
         expect(submitRowSegment.type()).toEqual(Segment);
       });
-      describe('Submit Row Button', () => {
-        let submitRowButton;
-
-        beforeEach(() => {
-          submitRowButton = submitRowSegment.childAt(0).childAt(0);
-        });
-
-        it('It is a submit button', () => {
-          expect(submitRowButton.type()).toEqual(Button);
-        });
-      });
       describe('Submit Row Modal', () => {
         let submitRowModal;
 

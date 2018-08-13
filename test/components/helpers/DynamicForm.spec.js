@@ -254,17 +254,6 @@ describe('DynamicForm', () => {
           });
         });
       });
-      describe('Form Button', () => {
-        let formButton;
-
-        beforeEach(() => {
-          formButton = formComponent.childAt(testDataFunctions.numberOfFields).childAt(0);
-        });
-
-        it('It is a button', () => {
-          expect(formButton.type()).toEqual(Form.Button);
-        });
-      });
     });
   });
 });

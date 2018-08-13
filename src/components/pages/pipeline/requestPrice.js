@@ -8,9 +8,12 @@ import Styles from '../../../styles/pipeline/requestPrice';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Clicker from '../../helpers/Clicker';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
+const MyButton = styled(Button)`
+  &&& {
+    :active {
+      background-color: #221891 !important;
+      transform: translateY(4px) !important;
+    }
   }
 `;
 
@@ -60,17 +63,15 @@ export const requestPrice = (props) => {
       </Grid.Row>
       <Grid.Row style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
-          <ButtonDiv>
-            <Button
-              size="huge"
-              style={Styles.button}
-              onClick={() => {
-                props.requestInProgress(4);
-              }}
-            >
-              {buttonString}
-            </Button>
-          </ButtonDiv>
+          <MyButton
+            size="huge"
+            style={Styles.button}
+            onClick={() => {
+              props.requestInProgress(4);
+            }}
+          >
+            {buttonString}
+          </MyButton>
         </Link>
       </Grid.Row>
     </Grid>

@@ -9,9 +9,12 @@ import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 import LoginModal from '../../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../../connectedComponents/helpers/ConnectedSignupModal';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
+const MyButton = styled(Button)`
+  &&& {
+    :active {
+      background-color: #197307 !important;
+      transform: translateY(4px) !important;
+    }
   }
 `;
 
@@ -56,16 +59,15 @@ class requestReview extends Component {
         </Grid.Row>
         <Grid.Row style={Styles.submitRow}>
           <Segment style={Styles.buttonSegment}>
-            <ButtonDiv>
-              <Button
-                onClick={() => this.handleOpen(this.props.isLoggedIn)}
-                size="big"
-                floated="right"
-                style={Styles.modalButton}
-              >
-                Submit Request
-              </Button>
-            </ButtonDiv>
+            <MyButton
+              onClick={() => this.handleOpen(this.props.isLoggedIn)}
+              size="big"
+              floated="right"
+              style={Styles.modalButton}
+            >
+              Submit Request
+            </MyButton>
+
             <Modal
               open={this.state.open}
               onClose={this.handleClose}

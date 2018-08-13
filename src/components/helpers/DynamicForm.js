@@ -10,14 +10,18 @@ import {
   Dropdown,
   Popup,
   Icon,
+  Button,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
+const FormButton = styled(Button)`
+  &&& {
+    :active {
+      background-color: #221891 !important;
+      transform: translateY(4px) !important;
+    }
   }
 `;
 class DynamicForm extends Component {
@@ -364,11 +368,9 @@ class DynamicForm extends Component {
               false,
               this.state.errors,
             )}
-            <ButtonDiv>
-              <Form.Button size="big" fluid style={Styles.button}>
-                {this.state.Requests[this.props.form].button}
-              </Form.Button>
-            </ButtonDiv>
+            <FormButton size="big" fluid style={Styles.button}>
+              {this.state.Requests[this.props.form].button}
+            </FormButton>
           </Form>
         </Segment>
       </Segment>

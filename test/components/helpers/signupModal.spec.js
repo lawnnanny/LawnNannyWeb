@@ -87,7 +87,7 @@ describe('signup modal', () => {
       let signupModalForm;
 
       beforeEach(() => {
-        signupModalForm = signupModalDescription.childAt(0);
+        signupModalForm = signupModalDescription.childAt(1);
       });
 
       it('is a dynamic form', () => {
