@@ -18,6 +18,19 @@ export default {
   headerRow: {
     paddingBottom: '1em',
   },
+  sticky: {
+    height: '100em',
+  },
+  TopMenu: {
+    border: 'none',
+    boxShadow: 'none',
+    marginBottom: '2em',
+  },
+  menuItem: {
+    borderBottom: '2px solid gray',
+    fontSize: '1.8em',
+    fontWeight: '700',
+  },
   mainHeader: {
     color: '#3d3b3b',
     fontSize: '3em',
