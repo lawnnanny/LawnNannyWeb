@@ -5,15 +5,10 @@ import styled from 'styled-components';
 import { Grid, Icon, Label, Segment, Button } from 'semantic-ui-react';
 import Styles from '../../styles/helpers/breadcrumb';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
-  }
-`;
-const Iconic = styled(Button)`
-  &[style] {
-    :hover {
-      color: red;
+const MyButton = styled(Button)`
+  &&& {
+    :active {
+      transform: translateY(4px);
     }
   }
 `;
@@ -64,20 +59,18 @@ export const breadcrumb = props => (
   <Link to={props.link} style={Styles.link}>
     <Grid.Column style={Styles.column}>
       <Segment style={Styles.iconSegment}>
-        <ButtonDiv>
-          <Button
-            style={Styles.iconButton}
-            circular
-            icon={
-              <Icon
-                circular
-                size="large"
-                style={returnIcon(props.current, props.selection, props.value)}
-                name={returnStatus(props.selection, props.value)}
-              />
-            }
-          />
-        </ButtonDiv>
+        <MyButton
+          style={Styles.iconButton}
+          circular
+          icon={
+            <Icon
+              circular
+              size="large"
+              style={returnIcon(props.current, props.selection, props.value)}
+              name={returnStatus(props.selection, props.value)}
+            />
+          }
+        />
         {(() => {
           switch (props.value) {
             case 0:

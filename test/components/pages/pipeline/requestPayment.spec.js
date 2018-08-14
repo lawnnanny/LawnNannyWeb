@@ -166,16 +166,6 @@ describe('RequestInformation', () => {
       it('is a Link', () => {
         expect(buttonLink.type()).toEqual(Link);
       });
-      describe('buttonComplete', () => {
-        let buttonComplete;
-        beforeEach(() => {
-          buttonComplete = buttonLink.childAt(0).childAt(0);
-        });
-
-        it('is a button', () => {
-          expect(buttonComplete.type()).toEqual(Button);
-        });
-      });
     });
   });
 });
