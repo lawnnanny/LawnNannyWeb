@@ -38,7 +38,7 @@ class requestReview extends Component {
         state: this.props.requests.requestLocation.state.entry,
         country: 'USA',
         price: this.props.requests.requestPrice,
-        serviceRequests: this.props.requests.requestInformation,
+        serviceRequest: this.props.requests.requestInformation,
       });
       networkResponsePromise.then((serverResponse) => {
         console.log(serverResponse);

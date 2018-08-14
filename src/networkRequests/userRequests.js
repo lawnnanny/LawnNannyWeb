@@ -1,40 +1,37 @@
+import axios from 'axios';
 import domainRequests from '../domainRequests.json';
 import encrypt from './networkUtilities';
 
 export const isTheCurrentUserLoggedIn = () => Promise((resolve) => {
-  fetch(domainRequests.isLoggedIn, {
+  axios(domainRequests.isLoggedIn, {
     method: 'POST',
-  }).then(response => response.json()).then(data => resolve(data));
+    withCredentials: true,
+  }).then((response) => {
+    resolve(response.data);
+  });
 });
 
 export const loginUser = usernameAndPassword => new Promise((resolve) => {
-  fetch(domainRequests.login, {
+  axios(domainRequests.login, {
     method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
+    data: {
       username: usernameAndPassword.username,
-      password: encrypt(usernameAndPassword.password),
-    }),
-  }).then(response => response.json()).then(data => resolve(data));
+      password: encrypt(usernameAndPassword.password) },
+    withCredentials: true,
+  }).then((response) => {
+    resolve(response.data);
+  });
 });
 
 export const createUser = userRequest => new Promise((resolve) => {
-  fetch(domainRequests.create, {
+  axios(domainRequests.create, {
     method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      password: encrypt(userRequest.password),
+    data: {
       email: userRequest.email,
-    }),
-  }).then(response => response.json()).then(data => resolve(data));
+      password: encrypt(userRequest.password),
+    },
+    withCredentials: true,
+  }).then((response) => {
+    resolve(response.data);
+  });
 });
