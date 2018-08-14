@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { sessionService } from 'redux-react-session';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -22,6 +23,8 @@ export class Routes extends Component {
     super();
 
     const store = createStore(reducers, applyMiddleware(thunk));
+
+    sessionService.initSessionService(store);
 
     this.state = {
       store,

@@ -59,11 +59,9 @@ export class signupModal extends Component {
               });
               serverResponse.then((data) => {
                 if (this.state.registerUserError !== null && data.success) {
-                  console.log('push');
                   this.props.history.push(this.props.destination);
                 }
                 if (!data.success) {
-                  console.log(data.message.name);
                   const currentState = this.state;
                   let message = '';
                   if (data.message.name === 'DupplicateError') {

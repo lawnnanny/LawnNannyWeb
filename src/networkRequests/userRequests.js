@@ -1,22 +1,27 @@
 import domainRequests from '../domainRequests.json';
-import { encrypt, jsonToUrlEncode } from './networkUtilities';
+import encrypt from './networkUtilities';
 
-export const isTheCurrentUserLoggedIn = () => {
+export const isTheCurrentUserLoggedIn = () => Promise((resolve) => {
   fetch(domainRequests.isLoggedIn, {
     method: 'POST',
-  }).then(response => response.json());
-};
+  }).then(response => response.json()).then(data => resolve(data));
+});
 
-export const loginUser = (usernameAndPassword) => {
-  fetch(domainRequests.create, {
+export const loginUser = usernameAndPassword => new Promise((resolve) => {
+  fetch(domainRequests.login, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: jsonToUrlEncode({
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
       username: usernameAndPassword.username,
       password: encrypt(usernameAndPassword.password),
     }),
-  }).then(response => response.json());
-};
+  }).then(response => response.json()).then(data => resolve(data));
+});
 
 export const createUser = userRequest => new Promise((resolve) => {
   fetch(domainRequests.create, {

@@ -8,6 +8,7 @@ import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 import LoginModal from '../../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../../connectedComponents/helpers/ConnectedSignupModal';
+import handleRequest from '../../../networkRequests/requests';
 
 const ButtonDiv = styled.div`
   :active {
@@ -27,8 +28,26 @@ class requestReview extends Component {
     if (!loggedIn) {
       this.setState({ open: true });
     } else {
-      this.props.requestInProgress(5);
-      this.props.history.push('/pipeline/requestComplete');
+      const networkResponsePromise = handleRequest({
+        address: this.props.requests.requestLocation.streetAddress.entry,
+        city: this.props.requests.requestLocation.city.entry,
+        zip: this.props.requests.requestLocation.zipcode.entry,
+        state: this.props.requests.requestLocation.state.entry,
+        country: 'USA',
+        price: this.props.requests.requestPrice,
+        serviceRequests: this.props.requests.requestInformation,
+      });
+      networkResponsePromise.then((serverResponse) => {
+        console.log(serverResponse);
+        if (serverResponse.success) {
+          this.props.requestInProgress(5);
+          this.props.history.push('/pipeline/requestComplete');
+        } else {
+          const currentState = this.state;
+          currentState.dataBaseError = serverResponse.message;
+          this.setState(currentState);
+        }
+      });
     }
   };
   handleClose = () => this.setState({ open: false });
@@ -46,7 +65,7 @@ class requestReview extends Component {
         {this.state.dataBaseError && (
           <Grid.Row>
             <Message size="big" negative style={Styles.message}>
-              <Message.Header>Were sorry we cant apply that discount</Message.Header>
+              <Message.Header>Error while trying to submit request</Message.Header>
               <p>{this.state.dataBaseError}</p>
             </Message>
           </Grid.Row>
@@ -81,7 +100,7 @@ class requestReview extends Component {
                     fluid
                     signupButton={Styles.signupButton}
                     history={this.props.history}
-                    destination="/pipeline/requestComplete"
+                    destination="/pipeline/requestReview"
                     requestInProgress={this.props.requestInProgress}
                   />
                   <Divider horizontal style={Styles.divider}>
@@ -92,7 +111,7 @@ class requestReview extends Component {
                     fluid
                     loginButton={Styles.loginButton}
                     history={this.props.history}
-                    destination="/pipeline/requestComplete"
+                    destination="/pipeline/requestReview"
                     requestInProgress={this.props.requestInProgress}
                   />
                 </Segment>
