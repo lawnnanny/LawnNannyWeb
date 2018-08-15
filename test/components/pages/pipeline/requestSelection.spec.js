@@ -145,32 +145,32 @@ describe('RequestSelection', () => {
       });
     });
   });
-  describe('RakingSegment', () => {
-    let RakingSegment;
+  describe('YardWorkSegment', () => {
+    let YardWorkSegment;
 
     beforeEach(() => {
-      RakingSegment = wrapper.childAt(3);
+      YardWorkSegment = wrapper.childAt(3);
     });
 
-    it('is a Raking Segment', () => {
-      expect(RakingSegment.type()).toEqual(Segment);
+    it('is a Yard Work Segment', () => {
+      expect(YardWorkSegment.type()).toEqual(Segment);
     });
 
-    describe('RakingComponent', () => {
-      let RakingComponent;
+    describe('Yard WorkComponent', () => {
+      let YardWorkComponent;
 
       beforeEach(() => {
-        RakingComponent = RakingSegment.childAt(0);
+        YardWorkComponent = YardWorkSegment.childAt(0);
       });
 
-      it('is a Raking Component', () => {
-        expect(RakingComponent.type()).toEqual(RequestOptionComponent);
+      it('is a Yard Work Component', () => {
+        expect(YardWorkComponent.type()).toEqual(RequestOptionComponent);
       });
       it('has the correct title', () => {
-        expect(RakingComponent.props().title).toEqual('Leaf Raking');
+        expect(YardWorkComponent.props().title).toEqual('Yard Work');
       });
       it('has an imageURL', () => {
-        expect(RakingComponent.props().imageURL).toBeTruthy();
+        expect(YardWorkComponent.props().imageURL).toBeTruthy();
       });
     });
   });

@@ -37,7 +37,7 @@ export const requestSelection = props => (
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={rake}
-        title="Leaf Raking"
+        title="Yard Work"
         onClick={() => {
           props.requestInProgress(1);
           props.setTypeOfRequest('Leaf Raking');
