@@ -36,16 +36,7 @@ export class App extends Component {
             render={props => (
               <div style={Styles.div} {...props}>
                 <Sidebar.Pushable as={Segment} style={Styles.sidebarContainer}>
-                  <Sidebar
-                    style={Styles.sidebar}
-                    as={Menu}
-                    animation="overlay"
-                    inverted
-                    vertical
-                    visible={this.state.visible}
-                  >
-                    <SidebarContent handleButtonClick={this.handleButtonClick} history={props.history}/>
-                  </Sidebar>
+                    <SidebarContent visible={this.state.visible} handleButtonClick={this.handleButtonClick} history={props.history}/>
                   <Sidebar.Pusher dimmed={this.state.visible}>
                     <ConnectedNavBarComponent
                       style={Styles.navBar}

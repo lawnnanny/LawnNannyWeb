@@ -2,6 +2,10 @@ const blue = '#1205ff';
 const green = '#20ad1d';
 
 export default {
+  sidebar: {
+    width: '22em',
+    opacity: '.97',
+  },
   topItem: {
     paddingLeft: '.4em',
     paddingTop: '1.2em',
