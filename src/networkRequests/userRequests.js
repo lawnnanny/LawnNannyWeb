@@ -32,6 +32,7 @@ export const createUser = userRequest => new Promise((resolve) => {
     },
     withCredentials: true,
   }).then((response) => {
+    console.log(response);
     resolve(response.data);
   });
 });
