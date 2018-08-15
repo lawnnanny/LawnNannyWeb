@@ -26,20 +26,35 @@ export const jsonForm = {
       },
     ],
   },
-  'Leaf Raking': {
-    description: 'Raking Details',
-    popup: 'Please specify some details about raking so a worker can better fit your needs',
+  'Yard Work': {
+    description: 'Yard Work Details',
+    popup: 'Please specify some details about your yard work so a worker can better fit your needs',
     button: 'Continue',
     fields: [
       {
-        name: 'How would you like your leaves?',
-        options: ['Bagged', 'Into Piles', 'Taken Away', 'Other'],
-        type: 'radio',
-        id: 'leavesCollection',
-        validation: 'required',
+        name: 'Yard Work Options',
+        type: 'rowCombination',
+        fields: [
+          {
+            name: 'Leaf Raking',
+            type: 'checkbox',
+          },
+          {
+            name: 'Shoveling Rock/Mulch',
+            type: 'checkbox',
+          },
+          {
+            name: 'Weeding',
+            type: 'checkbox',
+          },
+          {
+            name: 'Trimming',
+            type: 'checkbox',
+          },
+        ],
       },
       {
-        name: 'Please provide a short description of the job',
+        name: 'Please provide a short description of the yard work',
         type: 'textArea',
         placeholder: 'Enter comments here',
         id: 'comments',

@@ -40,7 +40,7 @@ export const requestSelection = props => (
         title="Yard Work"
         onClick={() => {
           props.requestInProgress(1);
-          props.setTypeOfRequest('Leaf Raking');
+          props.setTypeOfRequest('Yard Work');
         }}
       />
     </Segment>
