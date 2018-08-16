@@ -87,7 +87,7 @@ describe('loginModal', () => {
       let loginDescriptionForm;
 
       beforeEach(() => {
-        loginDescriptionForm = loginModalDescription.childAt(0);
+        loginDescriptionForm = loginModalDescription.childAt(1);
       });
 
       it('is a dynamic component', () => {
