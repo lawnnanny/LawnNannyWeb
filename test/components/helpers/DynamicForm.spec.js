@@ -39,6 +39,11 @@ describe('DynamicForm', () => {
         reduxInfo={testReduxState}
         setRequest={setRequest}
         form={Object.keys(testJson)[0]}
+        styling={{
+          dynamicSegment: {},
+          header: {},
+          formSegment: {},
+        }}
         route={() => {
           route();
         }}
