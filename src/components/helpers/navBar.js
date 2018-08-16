@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Dropdown, Icon, Button } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import Styles from '../../styles/helpers/navBar';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
@@ -38,4 +39,17 @@ export const navBar = props => (
     )}
   </Menu>
 );
+
+navBar.propTypes = {
+  setLoggedIn: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+};
+
+navBar.defaultProps = {
+  setLoggedIn: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+};
+
 export default navBar;

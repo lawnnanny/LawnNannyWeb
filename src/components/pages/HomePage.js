@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Button, Segment, Header } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Styles from '../../styles/HomePage';
@@ -26,4 +27,12 @@ const HomePage = props => (
     </Grid.Row>
   </Grid>
 );
+
+HomePage.propTypes = {
+  history: PropTypes.func,
+};
+
+HomePage.defaultProps = {
+  history: PropTypes.func,
+};
 export default HomePage;

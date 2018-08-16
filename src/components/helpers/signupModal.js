@@ -81,15 +81,19 @@ export class signupModal extends Component {
 }
 signupModal.propTypes = {
   size: PropTypes.string,
+  destination: PropTypes.string,
   fluid: PropTypes.bool,
   signupButton: PropTypes.func,
-  signup: PropTypes.func,
+  requestInProgress: PropTypes.func,
+  history: PropTypes.func,
 };
 
 signupModal.defaultProps = {
   size: PropTypes.string,
+  destination: PropTypes.string,
   fluid: PropTypes.bool,
   signupButton: PropTypes.func,
-  signup: PropTypes.func,
+  requestInProgress: PropTypes.func,
+  history: PropTypes.func,
 };
 export default signupModal;

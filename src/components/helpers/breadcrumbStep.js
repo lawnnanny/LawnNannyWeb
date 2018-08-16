@@ -95,12 +95,18 @@ export const breadcrumb = props => (
 );
 breadcrumb.propTypes = {
   current: PropTypes.number,
+  value: PropTypes.number,
   selection: PropTypes.number,
+  link: PropTypes.string,
+  name: PropTypes.string,
 };
 
 breadcrumb.defaultProps = {
   current: 0,
   selection: 0,
+  value: PropTypes.number,
+  link: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default breadcrumb;

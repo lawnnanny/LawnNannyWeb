@@ -76,6 +76,9 @@ loginModal.propTypes = {
   fluid: PropTypes.bool,
   loginButton: PropTypes.func,
   login: PropTypes.func,
+  requestInProgress: PropTypes.func,
+  destination: PropTypes.string,
+  history: PropTypes.func,
 };
 
 loginModal.defaultProps = {
@@ -83,5 +86,8 @@ loginModal.defaultProps = {
   fluid: PropTypes.bool,
   loginButton: PropTypes.func,
   login: PropTypes.func,
+  requestInProgress: PropTypes.func,
+  destination: PropTypes.string,
+  history: PropTypes.func,
 };
 export default loginModal;

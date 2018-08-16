@@ -43,9 +43,11 @@ class requestComplete extends Component {
 
 requestComplete.propTypes = {
   pageInProgress: PropTypes.number,
+  history: PropTypes.func,
 };
 
 requestComplete.defaultProps = {
   pageInProgress: 0,
+  history: PropTypes.func,
 };
 export default requestComplete;

@@ -128,10 +128,16 @@ class requestReview extends Component {
 requestReview.propTypes = {
   pageInProgress: PropTypes.number,
   requests: PropTypes.obj,
+  requestInProgress: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
 };
 
 requestReview.defaultProps = {
   pageInProgress: 0,
   requests: PropTypes.obj,
+  requestInProgress: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
 };
 export default requestReview;

@@ -1,4 +1,3 @@
-const green = '#20ad1d';
 const white = '#FFFFFF';
 const blue = '#1205ff';
 
