@@ -32,7 +32,7 @@ class requestComplete extends Component {
         </Grid.Row>
         <Grid.Row style={Styles.buttonRow}>
           <ButtonDiv>
-            <Button style={Styles.button}>Continue </Button>
+            <Button style={Styles.button} onClick={this.props.history.push('/HomePage')} >Continue </Button>
           </ButtonDiv>
         </Grid.Row>
       </Grid>

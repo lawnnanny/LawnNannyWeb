@@ -5,9 +5,10 @@ import RequestCompleteComponent from '../../../../src/components/pages/pipeline/
 
 describe('Request Complete', () => {
   let wrapper;
+  const push = jest.fn();
 
   const renderComponent = () =>
-    shallow(<RequestCompleteComponent pageInProgress={5} current={5} />);
+    shallow(<RequestCompleteComponent history={{ push }} pageInProgress={5} current={5} />);
 
   beforeEach(() => {
     wrapper = renderComponent();

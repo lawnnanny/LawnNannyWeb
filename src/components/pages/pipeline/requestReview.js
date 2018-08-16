@@ -41,7 +41,6 @@ class requestReview extends Component {
         serviceRequest: this.props.requests.requestInformation,
       });
       networkResponsePromise.then((serverResponse) => {
-        console.log(serverResponse);
         if (serverResponse.success) {
           this.props.requestInProgress(5);
           this.props.history.push('/pipeline/requestComplete');
