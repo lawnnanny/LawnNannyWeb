@@ -58,7 +58,6 @@ export class signupModal extends Component {
                 password: signupDetailsJson.password.entry,
               });
               serverResponse.then((data) => {
-                console.log(data);
                 if (this.state.registerUserError !== null && data.success) {
                   this.props.history.push(this.props.destination);
                 }

@@ -2,7 +2,6 @@ import lawn from '../images/homepage/lawn.jpg';
 
 const white = '#FFFFFF';
 const green = '#20ad1d';
-console.log(lawn);
 export default {
   grid: {
     margin: '0',

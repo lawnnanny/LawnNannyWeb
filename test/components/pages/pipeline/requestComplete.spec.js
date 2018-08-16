@@ -95,6 +95,11 @@ describe('Request Complete', () => {
       it('is a button Row', () => {
         expect(button.type()).toEqual(Button);
       });
+
+      it('button onClick should be clicked', () => {
+        button.props().onClick();
+        expect(push.mock.calls.length).toBe(1);
+      });
     });
   });
 });

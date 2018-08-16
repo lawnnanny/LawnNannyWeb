@@ -18,6 +18,7 @@ class requestComplete extends Component {
       dataBaseError: null,
     };
   }
+
   render() {
     if (this.props.pageInProgress < 5) {
       return <Redirect to="/pipeline/requestReview" />;
@@ -32,7 +33,7 @@ class requestComplete extends Component {
         </Grid.Row>
         <Grid.Row style={Styles.buttonRow}>
           <ButtonDiv>
-            <Button style={Styles.button} onClick={this.props.history.push('/HomePage')} >Continue </Button>
+            <Button style={Styles.button} onClick={() => { this.props.history.push('/HomePage'); }} >Continue </Button>
           </ButtonDiv>
         </Grid.Row>
       </Grid>
