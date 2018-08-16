@@ -9,7 +9,7 @@ import SignupModalComponent from '../../../src/connectedComponents/helpers/Conne
 describe('navBar', () => {
   let wrapper;
 
-  const renderComponent = () => shallow(<NavBar />);
+  const renderComponent = () => shallow(<NavBar isLoggedIn={false} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
