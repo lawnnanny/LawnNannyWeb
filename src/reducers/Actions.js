@@ -4,6 +4,7 @@ export default {
   login: {
     login: (i += 1),
     signup: (i += 1),
+    isLoggedIn: (i += 1),
   },
   requests: {
     setTypeOfRequest: (i += 1),

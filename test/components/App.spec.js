@@ -5,7 +5,6 @@ import { Routes } from '../../src/helpers/routes';
 
 describe('App', () => {
   let wrapper;
-
   const renderComponent = () => shallow(<App />);
 
   beforeEach(() => {

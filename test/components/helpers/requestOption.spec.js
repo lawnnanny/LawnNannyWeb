@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Header, Image } from 'semantic-ui-react';
+import { Button, Header, Image, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestOptionComponent from '../../../src/components/helpers/RequestOption';
 
@@ -62,6 +62,17 @@ describe('requestOption', () => {
         it('has a size', () => {
           expect(image.props().size).toEqual('massive');
         });
+      });
+    });
+    describe('header', () => {
+      let icon;
+
+      beforeEach(() => {
+        icon = button.childAt(1);
+      });
+
+      it('is a header', () => {
+        expect(icon.type()).toEqual(Icon);
       });
     });
   });

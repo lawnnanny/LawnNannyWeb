@@ -3,11 +3,16 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/locationForm';
-import Styles from '../../../styles/requestInformation';
+import Styles from '../../../styles/pipeline/requestInformation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
+  let destinationString = '/pipeline/requestPrice';
+  if (props.pageInProgress > 2) {
+    jsonForm.Location.button = 'Save';
+    destinationString = '/pipeline/requestReview';
+  }
   if (props.pageInProgress < 2) {
     return <Redirect to="/pipeline/requestInformation" />;
   }
@@ -28,8 +33,9 @@ export const requestLocation = (props) => {
             form={'Location'}
             route={() => {
               props.requestInProgress(3);
-              props.history.push('/pipeline/requestPrice');
+              props.history.push(destinationString);
             }}
+            styling={Styles}
           />
         </Segment>
       </Grid.Row>

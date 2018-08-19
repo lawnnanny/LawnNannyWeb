@@ -22,3 +22,10 @@ The testing framework used with Mocha with a Selenium webdriver. To run the test
 ```
 npm test
 ```
+
+If you want to run specific tests use
+
+```
+npm test -- -u -t="<name of test or description>"
+
+```

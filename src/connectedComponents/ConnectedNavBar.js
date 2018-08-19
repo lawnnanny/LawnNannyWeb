@@ -2,24 +2,20 @@ import { connect } from 'react-redux';
 import navBarComponent from '../components/helpers/navBar';
 import Actions from '../reducers/Actions';
 
+const mapStateToProps = state => ({
+  isLoggedIn: state.login.isLoggedIn,
+});
+
 const mapDispatchToProps = dispatch => ({
-  login: (data) => {
+  setLoggedIn: () => {
     const action = {
-      type: Actions.login.login,
-      data,
+      type: Actions.login.isLoggedIn,
     };
-    dispatch(action);
-  },
-  signup: (data) => {
-    const action = {
-      type: Actions.login.signup,
-      data,
-    };
+
     dispatch(action);
   },
 });
-
 export default connect(
-  () => ({}),
+  mapStateToProps,
   mapDispatchToProps,
 )(navBarComponent);

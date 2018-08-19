@@ -10,14 +10,18 @@ import {
   Dropdown,
   Popup,
   Icon,
+  Button,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
-import Styles from '../../styles/DynamicForm';
+import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
+const FormButton = styled(Button)`
+  &&& {
+    :active {
+      background-color: #221891 !important;
+      transform: translateY(4px) !important;
+    }
   }
 `;
 class DynamicForm extends Component {
@@ -38,14 +42,31 @@ class DynamicForm extends Component {
         element.fields.forEach((field) => {
           data[field.id] = {
             entry: this.state.dataForSubmitting[field.id],
+            name: field.name,
             validation: field.validation,
             id: field.id,
             type: field.type,
           };
         });
+      } else if (element.type === 'registerPassword') {
+        data[element.id] = {
+          entry: this.state.dataForSubmitting[element.id],
+          name: element.name,
+          validation: element.validation,
+          id: element.id,
+          type: element.type,
+        };
+        data[element.id2] = {
+          entry: this.state.dataForSubmitting[element.id2],
+          name: element.name2,
+          validation: element.validation,
+          id: element.id2,
+          type: element.type,
+        };
       } else {
         data[element.id] = {
           entry: this.state.dataForSubmitting[element.id],
+          name: element.name,
           validation: element.validation,
           id: element.id,
           type: element.type,
@@ -54,7 +75,7 @@ class DynamicForm extends Component {
     });
     if (this.validateAndSetStateErrorsForDisplay(data)) {
       this.props.setRequest(data);
-      this.props.route();
+      this.props.route(data);
     }
   };
 
@@ -77,6 +98,9 @@ class DynamicForm extends Component {
               errors[validationEntryObject.id] = 'Selection is Required';
               break;
             case 'checkbox':
+              errors[validationEntryObject.id] = 'Selection is Required';
+              break;
+            case 'registerPassword':
               errors[validationEntryObject.id] = 'Selection is Required';
               break;
             default:
@@ -121,18 +145,11 @@ class DynamicForm extends Component {
     return handle;
   };
 
-  addAstricks = (validation) => {
-    if (validation) {
-      return ' * ';
-    }
-    return '';
-  };
-
   errorPropertyTextArea = (error) => {
     if (error) {
-      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0' };
+      return { backgroundColor: '#f6f5f3', borderColor: '#ffb4b0', fontSize: '1.3em' };
     }
-    return {};
+    return { fontSize: '1.3em' };
   };
   showPopup = (popup) => {
     if (popup) {
@@ -156,15 +173,17 @@ class DynamicForm extends Component {
       fieldStyle = Styles.groupField;
     }
     return (
-      <Form.Field style={fieldStyle}>
+      <Form.Field style={fieldStyle} required={field.validation}>
         <label style={Styles.label} htmlFor={field.id}>
-          {this.addAstricks(field.validation) + field.name}
+          {field.name}
         </label>
         <Form.Input
           error={errors[field.id]}
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
+          style={Styles.input}
+          type={field.password}
         />
         <div style={InLineErrorStyle}>
           {errors[field.id] && (
@@ -175,11 +194,12 @@ class DynamicForm extends Component {
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Dropdown
+        style={Styles.dropdown}
         search
         error={errors[field.id]}
         value={this.returnValue(field.id, 'entry', '')}
@@ -197,11 +217,12 @@ class DynamicForm extends Component {
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <TextArea
+        autoHeight
         value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
@@ -216,9 +237,9 @@ class DynamicForm extends Component {
   );
 
   renderCheckbox = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Checkbox
         error={errors[field.id]}
@@ -231,9 +252,9 @@ class DynamicForm extends Component {
   );
 
   renderRadio = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field}>
+    <Form.Field style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
-        {this.addAstricks(field.validation) + field.name}
+        {field.name}
       </label>
       <Form.Group id={field.id} inline>
         {this.renderRadioButtons(field.id, field.options)}
@@ -260,6 +281,55 @@ class DynamicForm extends Component {
     return radioButtons;
   };
 
+  renderRegisterPassword = (field, isInRow, errors) => {
+    let InLineErrorStyle = Styles.InLineErrorInput;
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      InLineErrorStyle = Styles.InLineErrorInputRow;
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <div>
+        <Form.Field style={fieldStyle} required={field.validation}>
+          <label style={Styles.label} htmlFor={field.id}>
+            {field.name}
+          </label>
+          <Form.Input
+            error={errors[field.id]}
+            value={this.returnValue(field.id, 'entry', '')}
+            onChange={this.processChange(field.id, '')}
+            placeholder={field.placeholder}
+            style={Styles.input}
+            type={field.password}
+          />
+          <div style={InLineErrorStyle}>
+            {errors[field.id] && (
+              <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+            )}
+          </div>
+        </Form.Field>
+        <Form.Field style={fieldStyle} required={field.validation}>
+          <label style={Styles.label} htmlFor={field.id2}>
+            {field.name2}
+          </label>
+          <Form.Input
+            error={errors[field.id2]}
+            value={this.returnValue(field.id2, 'entry', '')}
+            onChange={this.processChange(field.id2, '')}
+            placeholder={field.placeholder2}
+            style={Styles.input}
+            type={field.password}
+          />
+          <div style={InLineErrorStyle}>
+            {errors[field.id2] && (
+              <InlineError text={errors[field.id2]} pointing style={Styles.InlineError} />
+            )}
+          </div>
+        </Form.Field>
+      </div>
+    );
+  };
+
   renderFormFromJson = (subForm, isInRow, errors) => {
     const formUI = subForm.fields.map((field) => {
       switch (field.type) {
@@ -275,6 +345,8 @@ class DynamicForm extends Component {
           return this.renderCheckbox(field, isInRow, errors);
         case 'radio':
           return this.renderRadio(field, isInRow, errors);
+        case 'registerPassword':
+          return this.renderRegisterPassword(field, isInRow, errors);
         default:
           return 'string';
       }
@@ -284,23 +356,21 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <Segment textAlign="left" padded style={Styles.Dynamicsegment}>
-        <Header as="h1">
+      <Segment textAlign="left" padded style={this.props.styling.dynamicSegment}>
+        <Header as="h1" style={this.props.styling.header}>
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
         </Header>
-        <Segment textAlign="left" style={Styles.formSegment}>
+        <Segment textAlign="left" style={this.props.styling.formSegment}>
           <Form onSubmit={this.onSubmit}>
             {this.renderFormFromJson(
               this.state.Requests[this.props.form],
               false,
               this.state.errors,
             )}
-            <ButtonDiv>
-              <Form.Button size="big" fluid style={Styles.button}>
-                {this.state.Requests[this.props.form].button}
-              </Form.Button>
-            </ButtonDiv>
+            <FormButton size="big" fluid style={Styles.button}>
+              {this.state.Requests[this.props.form].button}
+            </FormButton>
           </Form>
         </Segment>
       </Segment>
@@ -311,14 +381,16 @@ class DynamicForm extends Component {
 DynamicForm.propTypes = {
   jsonForm: PropTypes.func,
   form: PropTypes.string,
-  setRequest: PropTypes.func,
   route: PropTypes.func,
+  styling: PropTypes.obj,
+  setRequest: PropTypes.func,
 };
 DynamicForm.defaultProps = {
   jsonForm: PropTypes.func,
   form: PropTypes.string,
-  setRequest: PropTypes.func,
   route: PropTypes.func,
+  styling: PropTypes.obj,
+  setRequest: PropTypes.func,
 };
 
 export default DynamicForm;

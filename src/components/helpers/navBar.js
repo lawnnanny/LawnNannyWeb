@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Modal, Button, Dropdown, Icon } from 'semantic-ui-react';
-import { jsonForm } from '../pages/pipeline/jsonForms/locationForm';
-import Styles from '../../styles/navBar';
-import DynamicComponent from '../helpers/DynamicForm';
+import { Menu, Dropdown, Icon, Button } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import Styles from '../../styles/helpers/navBar';
+import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
+import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
-export const navBar = state => (
+export const navBar = props => (
   <Menu borderless style={Styles.Menu}>
     <Menu.Item style={Styles.menuItem}>
       <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
@@ -23,48 +24,32 @@ export const navBar = state => (
         <Icon name="home" style={Styles.homeIcon} />
       </Menu.Item>
     </Link>
-    <Menu.Menu position="right">
-      <Modal
-        style={Styles.modal}
-        size="mini"
-        trigger={
-          <Menu.Item style={Styles.menuItem}>
-            <Button style={Styles.loginButton}>Login</Button>
-          </Menu.Item>
-        }
-        closeIcon
-      >
-        <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
-        <Modal.Description>
-          <DynamicComponent
-            jsonForm={() => jsonForm}
-            setRequest={state.login}
-            form={'Login'}
-            route={() => {}}
-          />
-        </Modal.Description>
-      </Modal>
-      <Modal
-        style={Styles.modal}
-        size="tiny"
-        trigger={
-          <Menu.Item style={Styles.menuItem}>
-            <Button style={Styles.signupButton}>Sign Up</Button>
-          </Menu.Item>
-        }
-        closeIcon
-      >
-        <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
-        <Modal.Description>
-          <DynamicComponent
-            jsonForm={() => jsonForm}
-            form={'SignUp'}
-            setRequest={state.signup}
-            route={() => {}}
-          />
-        </Modal.Description>
-      </Modal>
-    </Menu.Menu>
+    {props.isLoggedIn ? (
+      <Menu.Menu position="right">
+        <Icon name="user" style={Styles.userIcon} />
+        <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
+          Logout
+        </Button>
+      </Menu.Menu>
+    ) : (
+      <Menu.Menu position="right">
+        <LoginModal loginButton={Styles.loginButton} history={props.history} />
+        <SignupModal signupButton={Styles.signupButton} history={props.history} />
+      </Menu.Menu>
+    )}
   </Menu>
 );
+
+navBar.propTypes = {
+  setLoggedIn: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+};
+
+navBar.defaultProps = {
+  setLoggedIn: PropTypes.func,
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.bool,
+};
+
 export default navBar;

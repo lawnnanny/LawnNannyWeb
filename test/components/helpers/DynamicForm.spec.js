@@ -39,6 +39,11 @@ describe('DynamicForm', () => {
         reduxInfo={testReduxState}
         setRequest={setRequest}
         form={Object.keys(testJson)[0]}
+        styling={{
+          dynamicSegment: {},
+          header: {},
+          formSegment: {},
+        }}
         route={() => {
           route();
         }}
@@ -119,11 +124,7 @@ describe('DynamicForm', () => {
             if (field.type !== 'rowCombination') {
               const pre = formComponent.childAt(count);
               const label = pre.childAt(0);
-              if (field.validation) {
-                expect(label.childAt(0).text()).toEqual(` * ${field.name}`);
-              } else {
-                expect(label.childAt(0).text()).toEqual(field.name);
-              }
+              expect(label.childAt(0).text()).toEqual(field.name);
             }
             expect(
               wrapper
@@ -256,17 +257,6 @@ describe('DynamicForm', () => {
               failTest(wrapper, field, count);
             }
           });
-        });
-      });
-      describe('Form Button', () => {
-        let formButton;
-
-        beforeEach(() => {
-          formButton = formComponent.childAt(testDataFunctions.numberOfFields).childAt(0);
-        });
-
-        it('It is a button', () => {
-          expect(formButton.type()).toEqual(Form.Button);
         });
       });
     });

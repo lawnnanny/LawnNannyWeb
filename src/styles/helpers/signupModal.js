@@ -1,7 +1,5 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
-const black = '#000000';
-const blue = '#0e42ff';
 
 export default {
   Menu: {
@@ -14,14 +12,6 @@ export default {
     border: 'none',
     marginBottom: '0rem',
   },
-  loginButton: {
-    backgroundColor: white,
-    color: blue,
-    padding: '.8em',
-    borderRadius: '25px',
-    border: '.1rem solid',
-    borderColor: blue,
-  },
   signupButton: {
     color: 'white',
     backgroundColor: green,
@@ -31,26 +21,13 @@ export default {
   menuItem: {
     padding: '.5rem',
   },
-  menuDropdown: {
-    padding: '0',
-    margin: 'none',
-    fontSize: '2em',
-    backgroundColor: white,
-    color: black,
-  },
-  dropDownMenu: {
-    fontSize: '.6em',
-  },
-  homeIcon: {
-    fontSize: '2em',
-  },
   modal: {
-    backgroundColor: white,
-    padding: '1rem',
-    margin: 'none',
-  },
-  loginGrid: {
-    margin: '1rem',
+    position: 'absolute',
+    float: 'left',
+    left: '50%',
+    top: '75%',
+    transform: 'translate(-50%, -50%)',
+    padding: '1em',
   },
   modalHeader: {
     display: 'flex',
@@ -69,5 +46,19 @@ export default {
   },
   signUpCheckbox: {
     paddingBottom: '.5rem',
+  },
+  dynamicSegment: {
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0',
+  },
+  formSegment: {
+    backgroundColor: white,
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0',
+  },
+  InLineErrorInput: {
+    marginTop: '-1.4em',
   },
 };

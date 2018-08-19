@@ -14,10 +14,12 @@ describe('RequestSelection', () => {
   const setTypeOfRequest = jest.fn();
   const requestInProgress = jest.fn();
   const renderComponent = () =>
-    shallow(<RequestSelectionComponent
-      requestInProgress={requestInProgress}
-      setTypeOfRequest={setTypeOfRequest}
-    />);
+    shallow(
+      <RequestSelectionComponent
+        requestInProgress={requestInProgress}
+        setTypeOfRequest={setTypeOfRequest}
+      />,
+    );
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -29,16 +31,6 @@ describe('RequestSelection', () => {
 
   it('is styled as a container Grid', () => {
     expect(wrapper.props().container).toBeTruthy();
-  });
-
-  it('contains five rows', () => {
-    expect.assertions(6);
-
-    const GridRows = wrapper.children();
-
-    GridRows.forEach((row) => {
-      expect(row.type()).toEqual(Grid.Row);
-    });
   });
 
   describe('BreadcrumbRow', () => {
@@ -80,227 +72,163 @@ describe('RequestSelection', () => {
       });
     });
   });
-
-  describe('HeaderRow', () => {
-    let HeaderRow;
+  describe('HeaderSegment', () => {
+    let HeaderSegment;
 
     beforeEach(() => {
-      HeaderRow = wrapper.childAt(1);
+      HeaderSegment = wrapper.childAt(1);
     });
 
-    it('is a Header Row', () => {
-      expect(HeaderRow.type()).toEqual(Grid.Row);
+    it('is a Header Segment', () => {
+      expect(HeaderSegment.type()).toEqual(Segment);
     });
 
-    describe('HeaderSegment', () => {
-      let HeaderSegment;
+    describe('Header', () => {
+      let header;
 
       beforeEach(() => {
-        HeaderSegment = HeaderRow.childAt(0);
+        header = HeaderSegment.childAt(0);
       });
 
-      it('is a Header Segment', () => {
-        expect(HeaderSegment.type()).toEqual(Segment);
+      it('is a Header', () => {
+        expect(header.type()).toEqual(Header);
       });
 
-      describe('Header', () => {
-        let header;
+      it('is a Header', () => {
+        expect(header.props().as).toEqual('h2');
+      });
+
+      describe('SubHeader', () => {
+        let subHeader;
 
         beforeEach(() => {
-          header = HeaderSegment.childAt(0);
+          subHeader = header.childAt(0);
         });
 
-        it('is a Header', () => {
-          expect(header.type()).toEqual(Header);
-        });
-
-        it('is a Header', () => {
-          expect(header.props().as).toEqual('h2');
-        });
-
-        describe('SubHeader', () => {
-          let subHeader;
-
-          beforeEach(() => {
-            subHeader = header.childAt(0);
-          });
-
-          it('is a SubHeader', () => {
-            expect(subHeader.type()).toEqual(Header.SubHeader);
-          });
+        it('is a SubHeader', () => {
+          expect(subHeader.type()).toEqual(Header.SubHeader);
         });
       });
     });
   });
-  describe('LawnMowingRow', () => {
-    let LawnMowingRow;
+  describe('LawnMowingSegment', () => {
+    let LawnMowingSegment;
 
     beforeEach(() => {
-      LawnMowingRow = wrapper.childAt(2);
+      LawnMowingSegment = wrapper.childAt(2);
     });
 
-    it('is a LawnMowing Row', () => {
-      expect(LawnMowingRow.type()).toEqual(Grid.Row);
+    it('is a LawnMowing Segment', () => {
+      expect(LawnMowingSegment.type()).toEqual(Segment);
     });
 
-    describe('LawnMowingSegment', () => {
-      let LawnMowingSegment;
+    describe('LawnMowingComponent', () => {
+      let LawnMowingComponent;
 
       beforeEach(() => {
-        LawnMowingSegment = LawnMowingRow.childAt(0);
+        LawnMowingComponent = LawnMowingSegment.childAt(0);
       });
 
-      it('is a LawnMowing Segment', () => {
-        expect(LawnMowingSegment.type()).toEqual(Segment);
+      it('is a LawnMowing', () => {
+        expect(LawnMowingComponent.type()).toEqual(RequestOptionComponent);
       });
-
-      describe('LawnMowingComponent', () => {
-        let LawnMowingComponent;
-
-        beforeEach(() => {
-          LawnMowingComponent = LawnMowingSegment.childAt(0);
-        });
-
-        it('is a LawnMowing', () => {
-          expect(LawnMowingComponent.type()).toEqual(RequestOptionComponent);
-        });
-        it('has the correct title', () => {
-          expect(LawnMowingComponent.props().title).toEqual('Lawn Mowing');
-        });
-        it('has an imageURL', () => {
-          expect(LawnMowingComponent.props().imageURL).toBeTruthy();
-        });
-        it('has a onClick that uses function from redux', () => {
-          LawnMowingComponent.props().onClick();
-          expect(requestInProgress.mock.calls.length).toBe(1);
-          expect(setTypeOfRequest.mock.calls.length).toBe(1);
-        });
+      it('has the correct title', () => {
+        expect(LawnMowingComponent.props().title).toEqual('Lawn Mowing');
+      });
+      it('has an imageURL', () => {
+        expect(LawnMowingComponent.props().imageURL).toBeTruthy();
+      });
+      it('has a onClick that uses function from redux', () => {
+        LawnMowingComponent.props().onClick();
+        expect(requestInProgress.mock.calls.length).toBe(1);
+        expect(setTypeOfRequest.mock.calls.length).toBe(1);
       });
     });
   });
-
-  describe('RakingRow', () => {
-    let RakingRow;
+  describe('YardWorkSegment', () => {
+    let YardWorkSegment;
 
     beforeEach(() => {
-      RakingRow = wrapper.childAt(3);
+      YardWorkSegment = wrapper.childAt(3);
     });
 
-    it('is a Raking Row', () => {
-      expect(RakingRow.type()).toEqual(Grid.Row);
+    it('is a Yard Work Segment', () => {
+      expect(YardWorkSegment.type()).toEqual(Segment);
     });
 
-    describe('RakingSegment', () => {
-      let RakingSegment;
+    describe('Yard WorkComponent', () => {
+      let YardWorkComponent;
 
       beforeEach(() => {
-        RakingSegment = RakingRow.childAt(0);
+        YardWorkComponent = YardWorkSegment.childAt(0);
       });
 
-      it('is a Raking Segment', () => {
-        expect(RakingSegment.type()).toEqual(Segment);
+      it('is a Yard Work Component', () => {
+        expect(YardWorkComponent.type()).toEqual(RequestOptionComponent);
       });
-
-      describe('RakingComponent', () => {
-        let RakingComponent;
-
-        beforeEach(() => {
-          RakingComponent = RakingSegment.childAt(0);
-        });
-
-        it('is a Raking Component', () => {
-          expect(RakingComponent.type()).toEqual(RequestOptionComponent);
-        });
-        it('has the correct title', () => {
-          expect(RakingComponent.props().title).toEqual('Leaf Raking');
-        });
-        it('has an imageURL', () => {
-          expect(RakingComponent.props().imageURL).toBeTruthy();
-        });
+      it('has the correct title', () => {
+        expect(YardWorkComponent.props().title).toEqual('Yard Work');
+      });
+      it('has an imageURL', () => {
+        expect(YardWorkComponent.props().imageURL).toBeTruthy();
       });
     });
   });
-
-  describe('snowClearingRow', () => {
-    let snowClearingRow;
+  describe('snowClearingSegment', () => {
+    let snowClearingSegment;
 
     beforeEach(() => {
-      snowClearingRow = wrapper.childAt(4);
+      snowClearingSegment = wrapper.childAt(4);
     });
 
-    it('is a snowClearing Row', () => {
-      expect(snowClearingRow.type()).toEqual(Grid.Row);
+    it('is a snowClearing Segment', () => {
+      expect(snowClearingSegment.type()).toEqual(Segment);
     });
 
-    describe('snowClearingSegment', () => {
-      let snowClearingSegment;
+    describe('snowClearingComponent', () => {
+      let snowClearingComponent;
 
       beforeEach(() => {
-        snowClearingSegment = snowClearingRow.childAt(0);
+        snowClearingComponent = snowClearingSegment.childAt(0);
       });
 
-      it('is a snowClearing Segment', () => {
-        expect(snowClearingSegment.type()).toEqual(Segment);
+      it('is a snowClearing', () => {
+        expect(snowClearingComponent.type()).toEqual(RequestOptionComponent);
       });
-
-      describe('snowClearingComponent', () => {
-        let snowClearingComponent;
-
-        beforeEach(() => {
-          snowClearingComponent = snowClearingSegment.childAt(0);
-        });
-
-        it('is a snowClearing', () => {
-          expect(snowClearingComponent.type()).toEqual(RequestOptionComponent);
-        });
-        it('has the correct title', () => {
-          expect(snowClearingComponent.props().title).toEqual('Snow Clearing');
-        });
-        it('has an imageURL', () => {
-          expect(snowClearingComponent.props().imageURL).toBeTruthy();
-        });
+      it('has the correct title', () => {
+        expect(snowClearingComponent.props().title).toEqual('Snow Clearing');
+      });
+      it('has an imageURL', () => {
+        expect(snowClearingComponent.props().imageURL).toBeTruthy();
       });
     });
   });
-
-  describe('CustomRow', () => {
-    let CustomRow;
+  describe('CustomSegment', () => {
+    let CustomSegment;
 
     beforeEach(() => {
-      CustomRow = wrapper.childAt(5);
+      CustomSegment = wrapper.childAt(5);
     });
 
-    it('is a Custom Row', () => {
-      expect(CustomRow.type()).toEqual(Grid.Row);
+    it('is a Custom Segment', () => {
+      expect(CustomSegment.type()).toEqual(Segment);
     });
 
-    describe('CustomSegment', () => {
-      let CustomSegment;
+    describe('CustomComponent', () => {
+      let CustomComponent;
 
       beforeEach(() => {
-        CustomSegment = CustomRow.childAt(0);
+        CustomComponent = CustomSegment.childAt(0);
       });
 
-      it('is a Custom Segment', () => {
-        expect(CustomSegment.type()).toEqual(Segment);
+      it('is a Custom', () => {
+        expect(CustomComponent.type()).toEqual(RequestOptionComponent);
       });
-
-      describe('CustomComponent', () => {
-        let CustomComponent;
-
-        beforeEach(() => {
-          CustomComponent = CustomSegment.childAt(0);
-        });
-
-        it('is a Custom', () => {
-          expect(CustomComponent.type()).toEqual(RequestOptionComponent);
-        });
-        it('has the correct title', () => {
-          expect(CustomComponent.props().title).toEqual('Custom Request');
-        });
-        it('has an imageURL', () => {
-          expect(CustomComponent.props().imageURL).toBeTruthy();
-        });
+      it('has the correct title', () => {
+        expect(CustomComponent.props().title).toEqual('Custom Request');
+      });
+      it('has an imageURL', () => {
+        expect(CustomComponent.props().imageURL).toBeTruthy();
       });
     });
   });

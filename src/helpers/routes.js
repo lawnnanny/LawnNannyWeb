@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { sessionService } from 'redux-react-session';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -11,6 +12,7 @@ import ConnectedRequestInformationComponent from '../connectedComponents/pipelin
 import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/ConnectedRequestLocation';
 import ConnectedRequestPriceComponent from '../connectedComponents/pipeline/ConnectedRequestPrice';
 import ConnectedRequestReviewComponent from '../connectedComponents/pipeline/ConnectedRequestReview';
+import ConnectedRequestCompleteComponent from '../connectedComponents/pipeline/ConnectedRequestComplete';
 import HomePageComponent from '../components/pages/HomePage';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
@@ -21,6 +23,8 @@ export class Routes extends Component {
     super();
 
     const store = createStore(reducers, applyMiddleware(thunk));
+
+    sessionService.initSessionService(store);
 
     this.state = {
       store,
@@ -34,35 +38,44 @@ export class Routes extends Component {
     return (
       <Provider store={this.state.store}>
         <BrowserRouter className="router">
-          <div style={Styles.div}>
-            <ConnectedNavBarComponent style={Styles.navBar} />
-            <Switch>
-              <Route exact path="/test" component={App} />
-              <Route exact path="/pipeline" component={ConnectedRequestSelection} />
-              <Route exact path="/HomePage" component={HomePageComponent} />
-              <Route
-                exact
-                path="/pipeline/requestInformation"
-                component={ConnectedRequestInformationComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestLocation"
-                component={ConnectedRequestLocationComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestPrice"
-                component={ConnectedRequestPriceComponent}
-              />
-              <Route
-                exact
-                path="/pipeline/requestReview"
-                component={ConnectedRequestReviewComponent}
-              />
-              <Route path="/*" component={Error404} />
-            </Switch>
-          </div>
+          <Route
+            render={props => (
+              <div style={Styles.div} {...props}>
+                <ConnectedNavBarComponent style={Styles.navBar} {...props} />
+                <Switch>
+                  <Route exact path="/test" component={App} />
+                  <Route exact path="/pipeline" component={ConnectedRequestSelection} />
+                  <Route exact path="/HomePage" component={HomePageComponent} />
+                  <Route
+                    exact
+                    path="/pipeline/requestInformation"
+                    component={ConnectedRequestInformationComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestLocation"
+                    component={ConnectedRequestLocationComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestPrice"
+                    component={ConnectedRequestPriceComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestReview"
+                    component={ConnectedRequestReviewComponent}
+                  />
+                  <Route
+                    exact
+                    path="/pipeline/requestComplete"
+                    component={ConnectedRequestCompleteComponent}
+                  />
+                  <Route path="/*" component={Error404} />
+                </Switch>
+              </div>
+            )}
+          />
         </BrowserRouter>
       </Provider>
     );

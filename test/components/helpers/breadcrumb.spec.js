@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Grid, Segment, Button } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import BreadcrumbComponent from '../../../src/components/helpers/breadcrumb';
+import Step from '../../../src/components/helpers/breadcrumbStep';
 
 describe('RequestInformation', () => {
   let wrapper;
@@ -27,224 +27,59 @@ describe('RequestInformation', () => {
     it('is a row', () => {
       expect(row.type()).toEqual(Grid.Row);
     });
-    describe('request Link', () => {
-      let requestLink;
+    describe('Step 1', () => {
+      let step1;
 
       beforeEach(() => {
-        requestLink = row.childAt(0);
+        step1 = row.childAt(0);
       });
 
-      it('is a link', () => {
-        expect(requestLink.type()).toEqual(Link);
-      });
-      describe('request column', () => {
-        let requestColumn;
-
-        beforeEach(() => {
-          requestColumn = requestLink.childAt(0);
-        });
-
-        it('is a column', () => {
-          expect(requestColumn.type()).toEqual(Grid.Column);
-        });
-        describe('request segment', () => {
-          let requestSegment;
-
-          beforeEach(() => {
-            requestSegment = requestColumn.childAt(0);
-          });
-
-          it('is a segment', () => {
-            expect(requestSegment.type()).toEqual(Segment);
-          });
-          describe('request button', () => {
-            let requestbutton;
-
-            beforeEach(() => {
-              requestbutton = requestSegment.childAt(0).childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(requestbutton.type()).toEqual(Button);
-            });
-          });
-        });
+      it('is a Step', () => {
+        expect(step1.type()).toEqual(Step);
       });
     });
-    describe('request Link', () => {
-      let informationLink;
+    describe('Step 2', () => {
+      let step2;
 
       beforeEach(() => {
-        informationLink = row.childAt(1);
+        step2 = row.childAt(1);
       });
 
-      it('is a link', () => {
-        expect(informationLink.type()).toEqual(Link);
-      });
-      describe('information column', () => {
-        let informationColumn;
-
-        beforeEach(() => {
-          informationColumn = informationLink.childAt(0);
-        });
-
-        it('is a column', () => {
-          expect(informationColumn.type()).toEqual(Grid.Column);
-        });
-        describe('information segment', () => {
-          let informationSegment;
-
-          beforeEach(() => {
-            informationSegment = informationColumn.childAt(0);
-          });
-
-          it('is a segment', () => {
-            expect(informationSegment.type()).toEqual(Segment);
-          });
-          describe('information button', () => {
-            let informationbutton;
-
-            beforeEach(() => {
-              informationbutton = informationSegment.childAt(0).childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(informationbutton.type()).toEqual(Button);
-            });
-          });
-        });
+      it('is a Step', () => {
+        expect(step2.type()).toEqual(Step);
       });
     });
-    describe('location Link', () => {
-      let locationLink;
+    describe('Step 3', () => {
+      let step3;
 
       beforeEach(() => {
-        locationLink = row.childAt(2);
+        step3 = row.childAt(2);
       });
 
-      it('is a link', () => {
-        expect(locationLink.type()).toEqual(Link);
-      });
-      describe('location column', () => {
-        let locationColumn;
-
-        beforeEach(() => {
-          locationColumn = locationLink.childAt(0);
-        });
-
-        it('is a column', () => {
-          expect(locationColumn.type()).toEqual(Grid.Column);
-        });
-        describe('location segment', () => {
-          let locationSegment;
-
-          beforeEach(() => {
-            locationSegment = locationColumn.childAt(0);
-          });
-
-          it('is a segment', () => {
-            expect(locationSegment.type()).toEqual(Segment);
-          });
-          describe('location button', () => {
-            let locationbutton;
-
-            beforeEach(() => {
-              locationbutton = locationSegment.childAt(0).childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(locationbutton.type()).toEqual(Button);
-            });
-          });
-        });
+      it('is a Step', () => {
+        expect(step3.type()).toEqual(Step);
       });
     });
-    describe('price Link', () => {
-      let priceLink;
+    describe('Step 4', () => {
+      let step4;
 
       beforeEach(() => {
-        priceLink = row.childAt(3);
+        step4 = row.childAt(3);
       });
 
-      it('is a link', () => {
-        expect(priceLink.type()).toEqual(Link);
-      });
-      describe('price column', () => {
-        let priceColumn;
-
-        beforeEach(() => {
-          priceColumn = priceLink.childAt(0);
-        });
-
-        it('is a column', () => {
-          expect(priceColumn.type()).toEqual(Grid.Column);
-        });
-        describe('price segment', () => {
-          let priceSegment;
-
-          beforeEach(() => {
-            priceSegment = priceColumn.childAt(0);
-          });
-
-          it('is a segment', () => {
-            expect(priceSegment.type()).toEqual(Segment);
-          });
-          describe('price button', () => {
-            let pricebutton;
-
-            beforeEach(() => {
-              pricebutton = priceSegment.childAt(0).childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(pricebutton.type()).toEqual(Button);
-            });
-          });
-        });
+      it('is a Step', () => {
+        expect(step4.type()).toEqual(Step);
       });
     });
-    describe('review Link', () => {
-      let reviewLink;
+    describe('Step 5', () => {
+      let step5;
 
       beforeEach(() => {
-        reviewLink = row.childAt(4);
+        step5 = row.childAt(4);
       });
 
-      it('is a link', () => {
-        expect(reviewLink.type()).toEqual(Link);
-      });
-      describe('review column', () => {
-        let reviewColumn;
-
-        beforeEach(() => {
-          reviewColumn = reviewLink.childAt(0);
-        });
-
-        it('is a column', () => {
-          expect(reviewColumn.type()).toEqual(Grid.Column);
-        });
-        describe('review segment', () => {
-          let reviewSegment;
-
-          beforeEach(() => {
-            reviewSegment = reviewColumn.childAt(0);
-          });
-
-          it('is a segment', () => {
-            expect(reviewSegment.type()).toEqual(Segment);
-          });
-          describe('review button', () => {
-            let reviewbutton;
-
-            beforeEach(() => {
-              reviewbutton = reviewSegment.childAt(0).childAt(0);
-            });
-
-            it('is a button', () => {
-              expect(reviewbutton.type()).toEqual(Button);
-            });
-          });
-        });
+      it('is a Step', () => {
+        expect(step5.type()).toEqual(Step);
       });
     });
   });

@@ -1,20 +1,11 @@
-const green = '#20ad1d';
 const white = '#FFFFFF';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
-  Dynamicsegment: {
-    border: 'none',
-    boxShadow: 'none',
-  },
-  formSegment: {
-    backgroundColor: '#f2f0ee',
-    boxShadow: '0px 10px 10px -10px rgba(0,0,0,0.4)',
-  },
   button: {
-    backgroundColor: green,
+    backgroundColor: blue,
     color: white,
-    boxShadow: '0px 14px 10px -10px rgba(0,0,0,0.5)',
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     marginTop: '2em',
   },
   InLineErrorInput: {
@@ -40,5 +31,14 @@ export default {
     boxShadow: '0 0 0 0.1em #0e42ff inset',
     fontSize: '.4em',
     marginTop: '-3em',
+  },
+  label: {
+    fontSize: '1.2em',
+  },
+  input: {
+    fontSize: '1.3em',
+  },
+  dropdown: {
+    fontSize: '1.3em',
   },
 };

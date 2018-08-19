@@ -1,10 +1,8 @@
 const green = '#20ad1d';
-const blue = '#0e42ff';
+const blue = '#1205ff';
 
 export default {
-  grid: {
-    marginTop: '.3em',
-  },
+  grid: {},
   link: {
     width: '20%',
     padding: '0',
