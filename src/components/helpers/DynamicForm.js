@@ -15,6 +15,7 @@ import {
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
+import { StepByStepCreator } from './StepByStepCreator';
 
 const FormButton = styled(Button)`
   &&& {
@@ -281,6 +282,10 @@ class DynamicForm extends Component {
     return radioButtons;
   };
 
+  renderStepByStep = () => (
+    <StepByStepCreator />
+  )
+
   renderRegisterPassword = (field, isInRow, errors) => {
     let InLineErrorStyle = Styles.InLineErrorInput;
     let fieldStyle = Styles.field;
@@ -347,6 +352,8 @@ class DynamicForm extends Component {
           return this.renderRadio(field, isInRow, errors);
         case 'registerPassword':
           return this.renderRegisterPassword(field, isInRow, errors);
+        case 'stepByStep':
+          return this.renderStepByStep();
         default:
           return 'string';
       }

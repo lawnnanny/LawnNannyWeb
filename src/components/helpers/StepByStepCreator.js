@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TransitionablePortal, Segment, Button } from 'semantic-ui-react';
+import { TransitionablePortal, Segment, Button, Form, Grid } from 'semantic-ui-react';
 
-export class StepBystepCreator extends Component {
+export class StepByStepCreator extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,15 +24,14 @@ export class StepBystepCreator extends Component {
 
   renderSteps = () => {
     this.state.steps.map(listItem => (
-      (
-        <Segment>
-            stuff
-        </Segment>
-      )
+      <Segment>
+        stuff
+      </Segment>
     ));
   }
 
   render() {
+    const { open } = this.state;
     return (
       <TransitionablePortal
         closeOnTriggerClick
@@ -41,18 +40,28 @@ export class StepBystepCreator extends Component {
         onClose={this.toggleClose}
         trigger={
           <Button
+            type="button"
             content={open ? 'Close Portal' : 'Open Portal'}
             negative={open}
             positive={!open}
           />
         }
       >
-        <Segment style={{ left: '40%', position: 'fixed', top: '50%', zIndex: 1000 }}>
-          stuff
-        </Segment>
+        <Grid centered columns={2} style={{ position: 'fixed', width: '100%', top: '50%', zIndex: 1000 }}>
+          <Grid.Column>
+            <Segment>
+              { this.renderSteps() }
+              <Form>
+                <Form.Input label="Image Upload" type="file" />
+              </Form>
+            </Segment>
+          </Grid.Column>
+        </Grid>
+
+
       </TransitionablePortal>
     );
   }
 }
 
-export default StepBystepCreator;
+export default StepByStepCreator;

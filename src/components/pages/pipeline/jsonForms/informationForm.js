@@ -24,6 +24,11 @@ export const jsonForm = {
         id: 'comments',
         validation: 'required',
       },
+      {
+        name: 'Add Steps',
+        type: 'stepByStep',
+        id: 'stepByStep',
+      },
     ],
   },
   'Yard Work': {
