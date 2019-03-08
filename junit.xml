@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="195" failures="0" time="3.374">
+  <testsuite name="dynamic display" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.248" tests="7">
+    <testcase classname="dynamic display is a segment" name="dynamic display is a segment" time="0.018">
+    </testcase>
+    <testcase classname="dynamic display heading group is a segment group" name="dynamic display heading group is a segment group" time="0.005">
+    </testcase>
+    <testcase classname="dynamic display heading group header segment is a segment" name="dynamic display heading group header segment is a segment" time="0.005">
+    </testcase>
+    <testcase classname="dynamic display heading group header segment group header is a header" name="dynamic display heading group header segment group header is a header" time="0.008">
+    </testcase>
+    <testcase classname="dynamic display heading group group icon link is a segment" name="dynamic display heading group group icon link is a segment" time="0.006">
+    </testcase>
+    <testcase classname="dynamic display heading group group icon link icon link is a link" name="dynamic display heading group group icon link icon link is a link" time="0.006">
+    </testcase>
+    <testcase classname="dynamic display heading group group icon link icon link icon is a icon" name="dynamic display heading group group icon link icon link icon is a icon" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.265" tests="7">
+    <testcase classname="RequestInformation is wrapped in a Grid" name="RequestInformation is wrapped in a Grid" time="0.012">
+    </testcase>
+    <testcase classname="RequestInformation  Row is a row" name="RequestInformation  Row is a row" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation  Row Step 1 is a Step" name="RequestInformation  Row Step 1 is a Step" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation  Row Step 2 is a Step" name="RequestInformation  Row Step 2 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation  Row Step 3 is a Step" name="RequestInformation  Row Step 3 is a Step" time="0.004">
+    </testcase>
+    <testcase classname="RequestInformation  Row Step 4 is a Step" name="RequestInformation  Row Step 4 is a Step" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation  Row Step 5 is a Step" name="RequestInformation  Row Step 5 is a Step" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="dynamic display" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.334" tests="13">
+    <testcase classname="dynamic display is a segment" name="dynamic display is a segment" time="0.022">
+    </testcase>
+    <testcase classname="dynamic display header is a header" name="dynamic display header is a header" time="0.005">
+    </testcase>
+    <testcase classname="dynamic display info chunk is a dropdown" name="dynamic display info chunk is a dropdown" time="0.007">
+    </testcase>
+    <testcase classname="dynamic display location chunk is a dropdown" name="dynamic display location chunk is a dropdown" time="0.005">
+    </testcase>
+    <testcase classname="dynamic display price segment is a segment" name="dynamic display price segment is a segment" time="0.007">
+    </testcase>
+    <testcase classname="dynamic display price segment header group is a segment group" name="dynamic display price segment header group is a segment group" time="0.005">
+    </testcase>
+    <testcase classname="dynamic display price segment header group header section is a segment Section" name="dynamic display price segment header group header section is a segment Section" time="0.019">
+    </testcase>
+    <testcase classname="dynamic display price segment header group header section price header is a header" name="dynamic display price segment header group header section price header is a header" time="0.006">
+    </testcase>
+    <testcase classname="dynamic display price segment header group header section icon section is a icon Section" name="dynamic display price segment header group header section icon section is a icon Section" time="0.004">
+    </testcase>
+    <testcase classname="dynamic display price segment header group header section icon section icon Link is a icon Link" name="dynamic display price segment header group header section icon section icon Link is a icon Link" time="0.004">
+    </testcase>
+    <testcase classname="dynamic display price segment header group header section icon section icon Link icon is a icon" name="dynamic display price segment header group header section icon section icon Link icon is a icon" time="0.004">
+    </testcase>
+    <testcase classname="dynamic display price segment label is a label" name="dynamic display price segment label is a label" time="0.004">
+    </testcase>
+    <testcase classname="dynamic display price segment label label icon is a label icon" name="dynamic display price segment label label icon is a label icon" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.323" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.301" tests="1">
+    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.435" tests="14">
+    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.017">
+    </testcase>
+    <testcase classname="RequestReview is styled as a container Grid" name="RequestReview is styled as a container Grid" time="0.003">
+    </testcase>
+    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.006">
+    </testcase>
+    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.004">
+    </testcase>
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestReview BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.003">
+    </testcase>
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.005">
+    </testcase>
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.006">
+    </testcase>
+    <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.015">
+    </testcase>
+    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.006">
+    </testcase>
+    <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.007">
+    </testcase>
+    <testcase classname="RequestReview Submit Row Submit Row Segment It is a segmnet" name="RequestReview Submit Row Submit Row Segment It is a segmnet" time="0.005">
+    </testcase>
+    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal is a modal" name="RequestReview Submit Row Submit Row Segment Submit Row Modal is a modal" time="0.003">
+    </testcase>
+    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal modal header is a modal header" name="RequestReview Submit Row Submit Row Segment Submit Row Modal modal header is a modal header" time="0.002">
+    </testcase>
+    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal Modal content is modal content" name="RequestReview Submit Row Submit Row Segment Submit Row Modal Modal content is modal content" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.447" tests="1">
+    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.372" tests="1">
+    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.299" tests="5">
+    <testcase classname="RequestInformation is a div" name="RequestInformation is a div" time="0.02">
+    </testcase>
+    <testcase classname="RequestInformation triangleTopButton is a button" name="RequestInformation triangleTopButton is a button" time="0.008">
+    </testcase>
+    <testcase classname="RequestInformation triangleTopButton triangleTopImage is a image" name="RequestInformation triangleTopButton triangleTopImage is a image" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation triangleBottomButton is a button" name="RequestInformation triangleBottomButton is a button" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation triangleBottomButton triangleBottomImage is a image" name="RequestInformation triangleBottomButton triangleBottomImage is a image" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.449" tests="27">
+    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.015">
+    </testcase>
+    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.005">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestSelection BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.004">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.008">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.017">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.006">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.009">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.007">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection YardWorkSegment is a Yard Work Segment" name="RequestSelection YardWorkSegment is a Yard Work Segment" time="0.005">
+    </testcase>
+    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" name="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" name="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" name="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" time="0.005">
+    </testcase>
+    <testcase classname="RequestSelection snowClearingSegment is a snowClearing Segment" name="RequestSelection snowClearingSegment is a snowClearing Segment" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" name="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" time="0.003">
+    </testcase>
+    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has the correct title" name="RequestSelection snowClearingSegment snowClearingComponent has the correct title" time="0.004">
+    </testcase>
+    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" name="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection CustomSegment is a Custom Segment" name="RequestSelection CustomSegment is a Custom Segment" time="0.008">
+    </testcase>
+    <testcase classname="RequestSelection CustomSegment CustomComponent is a Custom" name="RequestSelection CustomSegment CustomComponent is a Custom" time="0.004">
+    </testcase>
+    <testcase classname="RequestSelection CustomSegment CustomComponent has the correct title" name="RequestSelection CustomSegment CustomComponent has the correct title" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection CustomSegment CustomComponent has an imageURL" name="RequestSelection CustomSegment CustomComponent has an imageURL" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.325" tests="10">
+    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.019">
+    </testcase>
+    <testcase classname="Request Complete is styled as a container Grid" name="Request Complete is styled as a container Grid" time="0.003">
+    </testcase>
+    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.004">
+    </testcase>
+    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete complete row header header icon is an icon" name="Request Complete complete row header header icon is an icon" time="0.004">
+    </testcase>
+    <testcase classname="Request Complete complete row header header content is a header content" name="Request Complete complete row header header content is a header content" time="0.006">
+    </testcase>
+    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.008">
+    </testcase>
+    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.474" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.554" tests="11">
+    <testcase classname="navBar is a menu" name="navBar is a menu" time="0.021">
+    </testcase>
+    <testcase classname="navBar dropdown item is a menu item" name="navBar dropdown item is a menu item" time="0.011">
+    </testcase>
+    <testcase classname="navBar dropdown item dropdown is a dropdown" name="navBar dropdown item dropdown is a dropdown" time="0.012">
+    </testcase>
+    <testcase classname="navBar dropdown item dropdown dropdown menu is a dropdown menu" name="navBar dropdown item dropdown dropdown menu is a dropdown menu" time="0.005">
+    </testcase>
+    <testcase classname="navBar home link is a home link" name="navBar home link is a home link" time="0.005">
+    </testcase>
+    <testcase classname="navBar home link home menu is a home menu" name="navBar home link home menu is a home menu" time="0.006">
+    </testcase>
+    <testcase classname="navBar home link home menu home icon is a home icon" name="navBar home link home menu home icon is a home icon" time="0.008">
+    </testcase>
+    <testcase classname="navBar Login/signup menu is a menu subcomponent" name="navBar Login/signup menu is a menu subcomponent" time="0.009">
+    </testcase>
+    <testcase classname="navBar Login/signup menu is positioned correctly" name="navBar Login/signup menu is positioned correctly" time="0.006">
+    </testcase>
+    <testcase classname="navBar Login/signup menu Login modal is a login component" name="navBar Login/signup menu Login modal is a login component" time="0.007">
+    </testcase>
+    <testcase classname="navBar Login/signup menu Signup modal is a signup component" name="navBar Login/signup menu Signup modal is a signup component" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.516" tests="16">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.024">
+    </testcase>
+    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.004">
+    </testcase>
+    <testcase classname="RequestInformation contains four rows" name="RequestInformation contains four rows" time="0.013">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.007">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.01">
+    </testcase>
+    <testcase classname="RequestInformation HeaderRow is a Row" name="RequestInformation HeaderRow is a Row" time="0.006">
+    </testcase>
+    <testcase classname="RequestInformation HeaderRow Header  is a header" name="RequestInformation HeaderRow Header  is a header" time="0.009">
+    </testcase>
+    <testcase classname="RequestInformation PriceRow is a Price Row" name="RequestInformation PriceRow is a Price Row" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation PriceRow Input is an input" name="RequestInformation PriceRow Input is an input" time="0.004">
+    </testcase>
+    <testcase classname="RequestInformation PriceRow Input Icon is an icon" name="RequestInformation PriceRow Input Icon is an icon" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation PriceRow Input label is an icon" name="RequestInformation PriceRow Input label is an icon" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation PriceRow Input label Clicker is an clicker" name="RequestInformation PriceRow Input label Clicker is an clicker" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation buttonRow is a row" name="RequestInformation buttonRow is a row" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation buttonRow buttonLink is a Link" name="RequestInformation buttonRow buttonLink is a Link" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected NavBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.363" tests="1">
+    <testcase classname="Connected NavBar has the correct props" name="Connected NavBar has the correct props" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.243" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected NavBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.274" tests="1">
+    <testcase classname="Connected NavBar has the correct props" name="Connected NavBar has the correct props" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="DynamicForm" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.324" tests="10">
+    <testcase classname="DynamicForm is wrapped in a Segment" name="DynamicForm is wrapped in a Segment" time="0.011">
+    </testcase>
+    <testcase classname="DynamicForm is styled as a padded Segment" name="DynamicForm is styled as a padded Segment" time="0.004">
+    </testcase>
+    <testcase classname="DynamicForm header is a header" name="DynamicForm header is a header" time="0.007">
+    </testcase>
+    <testcase classname="DynamicForm header is has an as equal to h1" name="DynamicForm header is has an as equal to h1" time="0.005">
+    </testcase>
+    <testcase classname="DynamicForm header is the correct text in the header" name="DynamicForm header is the correct text in the header" time="0.004">
+    </testcase>
+    <testcase classname="DynamicForm header popup is a popup" name="DynamicForm header popup is a popup" time="0.004">
+    </testcase>
+    <testcase classname="DynamicForm form segment is a segment" name="DynamicForm form segment is a segment" time="0.005">
+    </testcase>
+    <testcase classname="DynamicForm form segment form is a form" name="DynamicForm form segment form is a form" time="0.002">
+    </testcase>
+    <testcase classname="DynamicForm form segment form form data field -1 is correct" name="DynamicForm form segment form form data field -1 is correct" time="0.017">
+    </testcase>
+    <testcase classname="DynamicForm form segment form form data field -1 is correct" name="DynamicForm form segment form form data field -1 is correct" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="loginModal" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.281" tests="10">
+    <testcase classname="loginModal is a modal" name="loginModal is a modal" time="0.009">
+    </testcase>
+    <testcase classname="loginModal is a mini modal" name="loginModal is a mini modal" time="0.003">
+    </testcase>
+    <testcase classname="loginModal displays a close modal button" name="loginModal displays a close modal button" time="0.001">
+    </testcase>
+    <testcase classname="loginModal Login Modal trigger is a menu item" name="loginModal Login Modal trigger is a menu item" time="0.005">
+    </testcase>
+    <testcase classname="loginModal Login Modal trigger Login Modal Button is a modal button" name="loginModal Login Modal trigger Login Modal Button is a modal button" time="0.004">
+    </testcase>
+    <testcase classname="loginModal Login Modal trigger Login Modal Button it displays the correct text" name="loginModal Login Modal trigger Login Modal Button it displays the correct text" time="0.005">
+    </testcase>
+    <testcase classname="loginModal Login Modal Header is a modal header" name="loginModal Login Modal Header is a modal header" time="0.005">
+    </testcase>
+    <testcase classname="loginModal Login Modal Header displays the correct text" name="loginModal Login Modal Header displays the correct text" time="0.002">
+    </testcase>
+    <testcase classname="loginModal Login Modal Description is a modal description" name="loginModal Login Modal Description is a modal description" time="0.003">
+    </testcase>
+    <testcase classname="loginModal Login Modal Description Dynamic Form Description is a dynamic component" name="loginModal Login Modal Description Dynamic Form Description is a dynamic component" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="signup modal" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.307" tests="10">
+    <testcase classname="signup modal is a modal" name="signup modal is a modal" time="0.006">
+    </testcase>
+    <testcase classname="signup modal is a tiny modal" name="signup modal is a tiny modal" time="0.003">
+    </testcase>
+    <testcase classname="signup modal displays a close icon" name="signup modal displays a close icon" time="0.004">
+    </testcase>
+    <testcase classname="signup modal Signup Modal trigger is a menu item" name="signup modal Signup Modal trigger is a menu item" time="0.005">
+    </testcase>
+    <testcase classname="signup modal Signup Modal trigger signup Modal Button is a modal button" name="signup modal Signup Modal trigger signup Modal Button is a modal button" time="0.003">
+    </testcase>
+    <testcase classname="signup modal Signup Modal trigger signup Modal Button it displays the correct text" name="signup modal Signup Modal trigger signup Modal Button it displays the correct text" time="0.009">
+    </testcase>
+    <testcase classname="signup modal Signup Modal Header is a modal header" name="signup modal Signup Modal Header is a modal header" time="0.004">
+    </testcase>
+    <testcase classname="signup modal Signup Modal Header displays the correct message" name="signup modal Signup Modal Header displays the correct message" time="0.002">
+    </testcase>
+    <testcase classname="signup modal Signup Modal Description is a modal description" name="signup modal Signup Modal Description is a modal description" time="0.003">
+    </testcase>
+    <testcase classname="signup modal Signup Modal Description Signup Modal Form is a dynamic form" name="signup modal Signup Modal Description Signup Modal Form is a dynamic form" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.273" tests="5">
+    <testcase classname="step is a link" name="step is a link" time="0.006">
+    </testcase>
+    <testcase classname="step information column is a column" name="step information column is a column" time="0.005">
+    </testcase>
+    <testcase classname="step information column information segment is a segment" name="step information column information segment is a segment" time="0.001">
+    </testcase>
+    <testcase classname="step information column label segment is a segment" name="step information column label segment is a segment" time="0.001">
+    </testcase>
+    <testcase classname="step information column label segment label is a label" name="step information column label segment label is a label" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="InlineError" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.253" tests="1">
+    <testcase classname="InlineError Inline Error text got set" name="InlineError Inline Error text got set" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.348" tests="12">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment is a Form Segment" name="RequestInformation FormRow FormSegment is a Form Segment" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment form is a Form" name="RequestInformation FormRow FormSegment form is a Form" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment form has a form" name="RequestInformation FormRow FormSegment form has a form" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment form has a route" name="RequestInformation FormRow FormSegment form has a route" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.286" tests="5">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.007">
+    </testcase>
+    <testcase classname="Home Page heading Row is a row" name="Home Page heading Row is a row" time="0.002">
+    </testcase>
+    <testcase classname="Home Page heading Row segment is a segment" name="Home Page heading Row segment is a segment" time="0.003">
+    </testcase>
+    <testcase classname="Home Page heading Row segment header is a button" name="Home Page heading Row segment header is a button" time="0.004">
+    </testcase>
+    <testcase classname="Home Page heading Row segment button is a button" name="Home Page heading Row segment button is a button" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:09" time="0.139" tests="1">
+    <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.379" tests="13">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.006">
+    </testcase>
+    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.004">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment is a Form Segment" name="RequestInformation FormRow FormSegment is a Form Segment" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment Form is a Form" name="RequestInformation FormRow FormSegment Form is a Form" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment Form has a json" name="RequestInformation FormRow FormSegment Form has a json" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment Form has a form" name="RequestInformation FormRow FormSegment Form has a form" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation FormRow FormSegment Form has a route" name="RequestInformation FormRow FormSegment Form has a route" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.285" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="3.045" tests="9">
+    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.154">
+    </testcase>
+    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.098">
+    </testcase>
+    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.083">
+    </testcase>
+    <testcase classname="requestOption button is styled as a fluid button" name="requestOption button is styled as a fluid button" time="0.094">
+    </testcase>
+    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.051">
+    </testcase>
+    <testcase classname="requestOption button header image is a image" name="requestOption button header image is a image" time="0.049">
+    </testcase>
+    <testcase classname="requestOption button header image is styled as a circular image" name="requestOption button header image is styled as a circular image" time="0.049">
+    </testcase>
+    <testcase classname="requestOption button header image has a size" name="requestOption button header image has a size" time="0.048">
+    </testcase>
+    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.05">
+    </testcase>
+  </testsuite>
+</testsuites>
