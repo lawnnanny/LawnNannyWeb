@@ -114,9 +114,15 @@ class DynamicForm extends Component {
 
   loadStoreWithReduxData = (props) => {
     if (props.reduxInfo && !this.state.loadedData) {
-      this.state.loadedData = true;
+      this.setState({
+         loadedData: true
+      });
       Object.keys(props.reduxInfo).forEach((entryKey) => {
-        this.state.dataForSubmitting[entryKey] = props.reduxInfo[entryKey].entry;
+        const dataForSubmition = this.state.dataForSubmitting;
+        dataForSubmition[entryKey] = props.reduxInfo[entryKey].entry;
+        this.setState({
+            dataForSubmitting: dataForSubmition
+        });
       });
     }
   };
