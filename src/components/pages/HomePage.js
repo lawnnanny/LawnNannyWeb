@@ -1,28 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Button, Segment, Header } from 'semantic-ui-react';
-import styled from 'styled-components';
-import Styles from '../../styles/HomePage';
+import styles from '../../styles/Homepage.module.css';
 
-const ButtonDiv = styled.div`
-  :active {
-    transform: translateY(4px);
-  }
-`;
 const HomePage = props => (
-  <Grid stackable centered style={Styles.grid}>
-    <Grid.Row verticalAlign="middle" style={Styles.headingRow}>
-      <Segment vertical style={Styles.headerSegment}>
-        <Header style={Styles.header}>Quicker Easier Services</Header>
-        <ButtonDiv style={Styles.div}>
+  <Grid stackable centered className={styles.grid}>
+    <Grid.Row verticalAlign="middle" className={styles.headingRow}>
+      <Segment vertical className={styles.headerSegment}>
+        <Header className={styles.header}>Lawn Nanny</Header>
+        <div className={styles.div}>
           <Button
-            style={Styles.requestButton}
+            className={styles.requestButton}
             size="large"
             onClick={() => props.history.push('/pipeline')}
           >
-            Make a Request
+            Create a Request
           </Button>
-        </ButtonDiv>
+        </div>
       </Segment>
     </Grid.Row>
   </Grid>

@@ -44,7 +44,7 @@ export const requestLocation = (props) => {
 };
 requestLocation.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   setRequestLocation: PropTypes.func,
   requestInProgress: PropTypes.number,
   history: PropTypes.func,
@@ -52,7 +52,7 @@ requestLocation.propTypes = {
 
 requestLocation.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   setRequestLocation: PropTypes.func,
   requestInProgress: 0,
   history: PropTypes.func,

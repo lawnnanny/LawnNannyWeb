@@ -1,18 +1,8 @@
-import lawn from '../images/homepage/lawn.jpg';
-
 const white = '#FFFFFF';
 const green = '#20ad1d';
 export default {
   grid: {
     margin: '0',
-  },
-  headingRow: {
-    backgroundImage: `url(${lawn})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'noRepeat',
-    backgroundPosition: 'center',
-    height: '40em',
-    overflow: 'hidden',
   },
   header: {
     fontSize: '3em',
