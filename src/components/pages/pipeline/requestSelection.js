@@ -3,28 +3,28 @@ import PropTypes from 'prop-types';
 import { Grid, Header, Segment } from 'semantic-ui-react';
 import RequestOptionComponent from '../../helpers/RequestOption';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/pipeline/requestSelection';
+import styles from '../../../styles/pipeline/requestSelection.module.css';
 import mower from '../../../images/pipeline/mower.png';
 import rake from '../../../images/pipeline/rake.png';
 import snowBlower from '../../../images/pipeline/snowBlower.png';
 import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = props => (
-  <Grid container style={Styles.grid} verticalAlign="middle">
-    <Grid.Row style={Styles.breadrow}>
-      <Segment style={Styles.segment}>
+  <Grid container className={styles.grid} verticalAlign="middle">
+    <Grid.Row className={styles.breadrow}>
+      <Segment className={styles.segment}>
         <BreadcrumbComponent selection={props.pageInProgress} current={0} />
       </Segment>
     </Grid.Row>
-    <Segment style={Styles.segment}>
+    <Segment className={styles.segment}>
       <Header as="h2">
         Choose Your Service
         <Header.Subheader>Choose a Service for someone to perform</Header.Subheader>
       </Header>
     </Segment>
-    <Segment style={Styles.buttonSegment}>
+    <Segment className={styles.buttonSegment}>
       <RequestOptionComponent
-        style={Styles.buttonComponent}
+        className={styles.buttonComponent}
         imageURL={mower}
         title="Lawn Mowing"
         onClick={() => {
@@ -33,9 +33,9 @@ export const requestSelection = props => (
         }}
       />
     </Segment>
-    <Segment style={Styles.buttonSegment}>
+    <Segment className={styles.buttonSegment}>
       <RequestOptionComponent
-        style={Styles.buttonComponent}
+        className={styles.buttonComponent}
         imageURL={rake}
         title="Yard Work"
         onClick={() => {
@@ -44,9 +44,9 @@ export const requestSelection = props => (
         }}
       />
     </Segment>
-    <Segment style={Styles.buttonSegment}>
+    <Segment className={styles.buttonSegment}>
       <RequestOptionComponent
-        style={Styles.buttonComponent}
+        className={styles.buttonComponent}
         imageURL={snowBlower}
         title="Snow Clearing"
         onClick={() => {
@@ -55,9 +55,9 @@ export const requestSelection = props => (
         }}
       />
     </Segment>
-    <Segment style={Styles.buttonSegment}>
+    <Segment className={styles.buttonSegment}>
       <RequestOptionComponent
-        style={Styles.buttonComponent}
+        className={styles.buttonComponent}
         imageURL={custom}
         title="Custom Request"
         onClick={() => {

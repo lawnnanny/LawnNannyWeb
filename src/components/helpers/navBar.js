@@ -2,15 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Dropdown, Icon, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/helpers/navBar.module.css';
 import Styles from '../../styles/helpers/navBar';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
 
 export const navBar = props => (
-  <Menu borderless style={Styles.Menu}>
-    <Menu.Item style={Styles.menuItem}>
-      <Dropdown icon="bars" style={Styles.menuDropdown} button className="icon">
-        <Dropdown.Menu style={Styles.dropDownMenu}>
+  <Menu borderless className={styles.Menu}>
+    <Menu.Item className={styles.menuItem}>
+      <Dropdown icon="bars" className={styles.menuDropdown} button>
+        <Dropdown.Menu className={styles.dropDownMenu}>
           <Dropdown.Item text="Find Requests" />
           <Dropdown.Item text="Settings" />
           <Dropdown.Item text="Terms of Service" />
@@ -20,14 +21,14 @@ export const navBar = props => (
       </Dropdown>
     </Menu.Item>
     <Link to="/HomePage">
-      <Menu.Item style={Styles.menuItem}>
-        <Icon name="home" style={Styles.homeIcon} />
+      <Menu.Item className={styles.menuItem}>
+        <Icon name="home" className={styles.homeIcon} />
       </Menu.Item>
     </Link>
     {props.isLoggedIn ? (
       <Menu.Menu position="right">
-        <Icon name="user" style={Styles.userIcon} />
-        <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
+        <Icon name="user" className={styles.userIcon} />
+        <Button onClick={props.setLoggedIn} className={styles.logoutButton}>
           Logout
         </Button>
       </Menu.Menu>

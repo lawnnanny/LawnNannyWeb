@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
+import styles from '../../styles/helpers/signupModal.module.css';
 import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { createUser } from '../../networkRequests/userRequests';
@@ -18,10 +19,10 @@ export class signupModal extends Component {
   render() {
     return (
       <Modal
-        style={Styles.modal}
+        className={styles.modal}
         size="tiny"
         trigger={
-          <Menu.Item style={Styles.menuItem}>
+          <Menu.Item className={styles.menuItem}>
             <Button
               size={this.props.size}
               onclick={() => {}}
@@ -34,14 +35,14 @@ export class signupModal extends Component {
         }
         closeIcon
       >
-        <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
+        <Modal.Header className={styles.modalHeader}>Sign Up!</Modal.Header>
         <Modal.Description>
           <div>
             {this.state.registerUserError && (
               <InlineErrorComponent
                 text={this.state.registerUserError}
                 pointing
-                style={Styles.InlineError}
+                className={styles.InlineError}
               />
             )}
           </div>

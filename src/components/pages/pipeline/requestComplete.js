@@ -3,7 +3,7 @@ import { Grid, Icon, Header, Button } from 'semantic-ui-react';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Styles from '../../../styles/pipeline/requestComplete';
+import styles from '../../../styles/pipeline/requestComplete.module.css';
 
 const ButtonDiv = styled.div`
   :active {
@@ -24,16 +24,23 @@ class requestComplete extends Component {
       return <Redirect to="/pipeline/requestReview" />;
     }
     return (
-      <Grid centered container style={Styles.grid}>
-        <Grid.Row style={Styles.completedRow}>
+      <Grid centered container className={styles.grid}>
+        <Grid.Row className={styles.completedRow}>
           <Header icon textAlign="center">
-            <Icon style={Styles.icon} name="checkmark" />
-            <Header.Content style={Styles.header}>Request Submitted</Header.Content>
+            <Icon className={styles.icon} name="checkmark" />
+            <Header.Content className={styles.header}>Request Submitted</Header.Content>
           </Header>
         </Grid.Row>
-        <Grid.Row style={Styles.buttonRow}>
+        <Grid.Row className={styles.buttonRow}>
           <ButtonDiv>
-            <Button style={Styles.button} onClick={() => { this.props.history.push('/HomePage'); }} >Continue </Button>
+            <Button
+              className={styles.button}
+              onClick={() => {
+                this.props.history.push('/HomePage');
+              }}
+            >
+              Continue{' '}
+            </Button>
           </ButtonDiv>
         </Grid.Row>
       </Grid>

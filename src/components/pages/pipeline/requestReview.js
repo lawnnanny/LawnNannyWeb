@@ -3,6 +3,7 @@ import { Grid, Segment, Button, Modal, Divider, Message } from 'semantic-ui-reac
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styles from '../../../styles/pipeline/requestReview.module.css';
 import Styles from '../../../styles/pipeline/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
@@ -58,15 +59,15 @@ class requestReview extends Component {
       return <Redirect to="/pipeline/requestPrice" />;
     }
     return (
-      <Grid centered container style={Styles.grid}>
-        <Grid.Row style={Styles.breadrow}>
-          <Segment style={Styles.segment}>
+      <Grid centered container className={styles.grid}>
+        <Grid.Row className={styles.breadrow}>
+          <Segment className={styles.segment}>
             <BreadcrumbComponent selection={this.props.pageInProgress} current={4} />
           </Segment>
         </Grid.Row>
         {this.state.dataBaseError && (
           <Grid.Row>
-            <Message size="big" negative style={Styles.message}>
+            <Message size="big" negative className={styles.message}>
               <Message.Header>Error while trying to submit request</Message.Header>
               <p>{this.state.dataBaseError}</p>
             </Message>
@@ -75,13 +76,13 @@ class requestReview extends Component {
         <Grid.Row>
           <DynamicDisplayComponent requests={this.props.requests} />
         </Grid.Row>
-        <Grid.Row style={Styles.submitRow}>
-          <Segment style={Styles.buttonSegment}>
+        <Grid.Row className={styles.submitRow}>
+          <Segment className={styles.buttonSegment}>
             <MyButton
               onClick={() => this.handleOpen(this.props.isLoggedIn)}
               size="big"
               floated="right"
-              style={Styles.modalButton}
+              className={styles.modalButton}
             >
               Submit Request
             </MyButton>
@@ -89,13 +90,13 @@ class requestReview extends Component {
             <Modal
               open={this.state.open}
               onClose={this.handleClose}
-              style={Styles.modal}
+              className={styles.modal}
               size="small"
               closeIcon
             >
-              <Modal.Header style={Styles.header}>To Make A Request Please...</Modal.Header>
-              <Modal.Content style={Styles.content}>
-                <Segment style={Styles.segment}>
+              <Modal.Header className={styles.header}>To Make A Request Please...</Modal.Header>
+              <Modal.Content className={styles.content}>
+                <Segment className={styles.segment}>
                   <SignupModal
                     size="big"
                     fluid
@@ -104,7 +105,7 @@ class requestReview extends Component {
                     destination="/pipeline/requestReview"
                     requestInProgress={this.props.requestInProgress}
                   />
-                  <Divider horizontal style={Styles.divider}>
+                  <Divider horizontal className={styles.divider}>
                     Or
                   </Divider>
                   <LoginModal

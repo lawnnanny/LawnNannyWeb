@@ -13,6 +13,7 @@ import {
   Button,
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
+import styles from '../../styles/helpers/DynamicForm.module.css';
 import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
 
@@ -162,7 +163,7 @@ class DynamicForm extends Component {
       return (
         <Popup
           size="large"
-          trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+          trigger={<Icon name="question" className={styles.popupIcon} circular />}
           content={this.state.Requests[this.props.form].popup}
           on={['hover', 'click']}
         />
@@ -180,7 +181,7 @@ class DynamicForm extends Component {
     }
     return (
       <Form.Field style={fieldStyle} required={field.validation}>
-        <label style={Styles.label} htmlFor={field.id}>
+        <label className={styles.label} htmlFor={field.id}>
           {field.name}
         </label>
         <Form.Input
@@ -188,24 +189,24 @@ class DynamicForm extends Component {
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
-          style={Styles.input}
+          className={styles.input}
           type={field.password}
         />
         <div style={InLineErrorStyle}>
           {errors[field.id] && (
-            <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+            <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
           )}
         </div>
       </Form.Field>
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
+    <Form.Field className={styles.field} required={field.validation}>
+      <label className={styles.label} htmlFor={field.id}>
         {field.name}
       </label>
       <Dropdown
-        style={Styles.dropdown}
+        className={styles.dropdown}
         search
         error={errors[field.id]}
         value={this.returnValue(field.id, 'entry', '')}
@@ -216,15 +217,15 @@ class DynamicForm extends Component {
         fluid
         selection
       />
-      <div style={Styles.InLineErrorDropdown}>
+      <div className={styles.InLineErrorDropdown}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
     </Form.Field>
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
+    <Form.Field className={styles.field} required={field.validation}>
+      <label className={styles.label} htmlFor={field.id}>
         {field.name}
       </label>
       <TextArea
@@ -236,15 +237,15 @@ class DynamicForm extends Component {
         placeholder={field.placeholder}
         onChange={this.processChange(field.id, '')}
       />
-      <div style={Styles.InLineErrorTextArea}>
+      <div className={styles.InLineErrorTextArea}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
     </Form.Field>
   );
 
   renderCheckbox = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
+    <Form.Field className={styles.field} required={field.validation}>
+      <label className={styles.label} htmlFor={field.id}>
         {field.name}
       </label>
       <Checkbox
@@ -258,8 +259,8 @@ class DynamicForm extends Component {
   );
 
   renderRadio = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
+    <Form.Field className={styles.field} required={field.validation}>
+      <label className={styles.label} htmlFor={field.id}>
         {field.name}
       </label>
       <Form.Group id={field.id} inline>
@@ -270,7 +271,7 @@ class DynamicForm extends Component {
   );
 
   renderRowFromJson = (field, style, errors) => (
-    <Form.Group width={field.fields.length} style={Styles.group} unstackable>
+    <Form.Group width={field.fields.length} className={styles.group} unstackable>
       {this.renderFormFromJson(field, true, errors)}
     </Form.Group>
   );
@@ -297,7 +298,7 @@ class DynamicForm extends Component {
     return (
       <div>
         <Form.Field style={fieldStyle} required={field.validation}>
-          <label style={Styles.label} htmlFor={field.id}>
+          <label className={styles.label} htmlFor={field.id}>
             {field.name}
           </label>
           <Form.Input
@@ -305,17 +306,17 @@ class DynamicForm extends Component {
             value={this.returnValue(field.id, 'entry', '')}
             onChange={this.processChange(field.id, '')}
             placeholder={field.placeholder}
-            style={Styles.input}
+            className={styles.input}
             type={field.password}
           />
           <div style={InLineErrorStyle}>
             {errors[field.id] && (
-              <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
+              <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
             )}
           </div>
         </Form.Field>
         <Form.Field style={fieldStyle} required={field.validation}>
-          <label style={Styles.label} htmlFor={field.id2}>
+          <label className={styles.label} htmlFor={field.id2}>
             {field.name2}
           </label>
           <Form.Input
@@ -323,12 +324,12 @@ class DynamicForm extends Component {
             value={this.returnValue(field.id2, 'entry', '')}
             onChange={this.processChange(field.id2, '')}
             placeholder={field.placeholder2}
-            style={Styles.input}
+            className={styles.input}
             type={field.password}
           />
           <div style={InLineErrorStyle}>
             {errors[field.id2] && (
-              <InlineError text={errors[field.id2]} pointing style={Styles.InlineError} />
+              <InlineError text={errors[field.id2]} pointing className={styles.InlineError} />
             )}
           </div>
         </Form.Field>
@@ -374,7 +375,7 @@ class DynamicForm extends Component {
               false,
               this.state.errors,
             )}
-            <FormButton size="big" fluid style={Styles.button}>
+            <FormButton size="big" fluid className={styles.button}>
               {this.state.Requests[this.props.form].button}
             </FormButton>
           </Form>

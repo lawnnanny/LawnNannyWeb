@@ -4,7 +4,7 @@ import { Grid, Segment, Header, Icon, Input, Button, Popup, Label } from 'semant
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Styles from '../../../styles/pipeline/requestPrice';
+import styles from '../../../styles/pipeline/requestPrice.module.css';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Clicker from '../../helpers/Clicker';
 
@@ -26,34 +26,34 @@ export const requestPrice = (props) => {
     return <Redirect to="/pipeline/requestLocation" />;
   }
   return (
-    <Grid centered container style={Styles.grid} verticalAlign="middle">
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
+    <Grid centered container className={styles.grid} verticalAlign="middle">
+      <Grid.Row className={styles.breadrow}>
+        <Segment className={styles.segment}>
           <BreadcrumbComponent selection={props.pageInProgress} current={3} />
         </Segment>
       </Grid.Row>
-      <Grid.Row style={Styles.headerRow}>
-        <Header as="h1" style={Styles.header}>
+      <Grid.Row className={styles.headerRow}>
+        <Header as="h1" className={styles.header}>
           Set A Price{' '}
           <Popup
             size="large"
-            trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+            trigger={<Icon name="question" className={styles.popupIcon} circular />}
             content="Please specify what you would like the price of the request to be set at. You can change this later on."
             on={['hover', 'click']}
           />
         </Header>
       </Grid.Row>
-      <Grid.Row style={Styles.priceRow}>
+      <Grid.Row className={styles.priceRow}>
         <Input
           labelPosition="right"
           value={props.requestPrice}
           iconPosition="left"
-          style={Styles.input}
+          className={styles.input}
           onChange={props.setRequestPrice}
         >
-          <Icon name="dollar" style={Styles.inputIcon} />
+          <Icon name="dollar" className={styles.inputIcon} />
           <input />
-          <Label style={Styles.label}>
+          <Label className={styles.label}>
             <Clicker
               incrementRequestPrice={props.incrementRequestPrice}
               decrementRequestPrice={props.decrementRequestPrice}
@@ -61,11 +61,11 @@ export const requestPrice = (props) => {
           </Label>
         </Input>
       </Grid.Row>
-      <Grid.Row style={Styles.buttonRow}>
+      <Grid.Row className={styles.buttonRow}>
         <Link to="/pipeline/requestReview">
           <MyButton
             size="huge"
-            style={Styles.button}
+            className={styles.button}
             onClick={() => {
               props.requestInProgress(4);
             }}

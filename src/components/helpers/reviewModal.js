@@ -1,32 +1,32 @@
 import React from 'react';
 import { Modal, Button, Segment, Divider, Input } from 'semantic-ui-react';
-import Styles from '../../styles/reviewModal';
+import styles from '../../styles/reviewModal.module.css';
 
 export const reviewModal = () => (
   <Modal
-    style={Styles.modal}
+    className={styles.modal}
     size="small"
     trigger={
-      <Button size="large" style={Styles.modalButton}>
+      <Button size="large" className={styles.modalButton}>
         Submit Request
       </Button>
     }
   >
     <Modal.Header>To Make A Request Please...</Modal.Header>
     <Modal.Content>
-      <Segment style={Styles.segment}>
+      <Segment className={styles.segment}>
         <Input
-          style={Styles.Input}
+          className={styles.Input}
           placeholder="Your Email"
           action={
-            <Button size="large" style={Styles.signUpButton}>
+            <Button size="large" className={styles.signUpButton}>
               Sign Up Now{' '}
             </Button>
           }
           actionPosition="right"
         />
         <Divider horizontal>Or</Divider>
-        <Button fluid size="large" style={Styles.loginButton}>
+        <Button fluid size="large" className={styles.loginButton}>
           Log In
         </Button>
       </Segment>

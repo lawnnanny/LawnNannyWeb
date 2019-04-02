@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Menu, Modal, Button } from 'semantic-ui-react';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
+import styles from '../../styles/helpers/loginModal.module.css';
 import Styles from '../../styles/helpers/loginModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { loginUser } from '../../networkRequests/userRequests';
@@ -18,25 +19,25 @@ export class loginModal extends Component {
   render() {
     return (
       <Modal
-        style={Styles.modal}
+        className={styles.modal}
         size="mini"
         trigger={
-          <Menu.Item style={Styles.menuItem}>
+          <Menu.Item className={styles.menuItem}>
             <Button size={this.props.size} fluid={this.props.fluid} style={this.props.loginButton}>
-            Login
+              Login
             </Button>
           </Menu.Item>
         }
         closeIcon
       >
-        <Modal.Header style={Styles.modalHeader}>Welcome Back!</Modal.Header>
+        <Modal.Header className={styles.modalHeader}>Welcome Back!</Modal.Header>
         <Modal.Description>
           <div>
             {this.state.loginUserError && (
               <InlineErrorComponent
                 text={this.state.loginUserError}
                 pointing
-                style={Styles.InlineError}
+                className={styles.InlineError}
               />
             )}
           </div>

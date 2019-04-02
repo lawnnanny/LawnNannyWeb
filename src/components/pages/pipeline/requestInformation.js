@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/informationForm';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
+import styles from '../../../styles/pipeline/requestInformation.module.css';
 import Styles from '../../../styles/pipeline/requestInformation';
 
 export const requestInformation = (props) => {
@@ -17,14 +18,14 @@ export const requestInformation = (props) => {
     return <Redirect to="/pipeline" />;
   }
   return (
-    <Grid centered container style={Styles.grid}>
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
+    <Grid className={styles.grid} centered container>
+      <Grid.Row className={styles.breadrow}>
+        <Segment className={styles.segment}>
           <BreadcrumbComponent selection={props.pageInProgress} current={1} />
         </Segment>
       </Grid.Row>
-      <Grid.Row padding style={Styles.Grid}>
-        <Segment style={Styles.segment}>
+      <Grid.Row padding className={styles.Grid}>
+        <Segment className={styles.segment}>
           <DynamicFormComponent
             popup
             jsonForm={() => jsonForm}

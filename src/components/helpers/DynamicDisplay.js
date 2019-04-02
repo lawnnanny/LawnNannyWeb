@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Segment, Header, Label, Icon } from 'semantic-ui-react';
-import Styles from '../../styles/helpers/DynamicDisplay';
+import styles from '../../styles/helpers/DynamicDisplay.module.css';
 import DynamicChunkComponent from './DynamicChunk';
 
 export const DynamicDisplay = props => (
-  <Segment raised style={Styles.container} textAlign="left">
+  <Segment raised className={styles.container} textAlign="left">
     <Header as="h1">{props.requests.selection}</Header>
     <DynamicChunkComponent
       requests={props.requests.requestInformation}
@@ -18,21 +18,21 @@ export const DynamicDisplay = props => (
       name="Location"
       link="/pipeline/requestLocation"
     />
-    <Segment raised style={Styles.priceSegment}>
-      <Segment.Group horizontal style={Styles.topSegment}>
-        <Segment style={Styles.headerSegment}>
-          <Header as="h3" style={Styles.priceHeader}>
+    <Segment raised className={styles.priceSegment}>
+      <Segment.Group horizontal className={styles.topSegment}>
+        <Segment className={styles.headerSegment}>
+          <Header as="h3" className={styles.priceHeader}>
             Price
           </Header>
         </Segment>
-        <Segment textAlign="right" style={Styles.editSegment}>
+        <Segment textAlign="right" className={styles.editSegment}>
           <Link to="/pipeline/requestPrice">
-            <Icon name="edit" style={Styles.editIcon} />
+            <Icon name="edit" className={styles.editIcon} />
           </Link>
         </Segment>
       </Segment.Group>
-      <Label style={Styles.priceLabel}>
-        <Icon name="dollar" style={Styles.priceIcon} />
+      <Label className={styles.priceLabel}>
+        <Icon name="dollar" className={styles.priceIcon} />
         {props.requests.requestPrice}
       </Label>
     </Segment>
