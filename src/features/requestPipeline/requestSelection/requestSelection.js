@@ -4,10 +4,10 @@ import { Grid, Header, Segment } from 'semantic-ui-react';
 import RequestOptionComponent from './genericSelection';
 import BreadcrumbComponent from '../breadcrumb/breadcrumb';
 import styles from '../../../styles/requestPipeline/requestSelection/requestSelection.module.css';
-import mower from '../../../images/requestPipeline/mower.png';
-import rake from '../../../images/requestPipeline/rake.png';
-import snowBlower from '../../../images/requestPipeline/snowBlower.png';
-import custom from '../../../images/requestPipeline/custom.png';
+import mower from '../../../images/requestPipeline/requestSelection/mower.png';
+import rake from '../../../images/requestPipeline/requestSelection/rake.png';
+import snowBlower from '../../../images/requestPipeline/requestSelection/snowBlower.png';
+import custom from '../../../images/requestPipeline/requestSelection/custom.png';
 
 export const requestSelection = props => (
   <Grid container className={styles.grid} verticalAlign="middle">

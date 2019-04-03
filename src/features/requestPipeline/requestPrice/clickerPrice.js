@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import up from '../../../images/requestPipeline/up.png';
-import down from '../../../images/requestPipeline/down.png';
+import up from '../../../images/requestPipeline/requestPrice/up.png';
+import down from '../../../images/requestPipeline/requestPrice/down.png';
 import styles from '../../../styles/requestPipeline/requestPrice/requestPrice.module.css';
 
 const ButtonDiv = styled.div`
