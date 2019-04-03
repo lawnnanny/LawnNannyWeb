@@ -5,16 +5,16 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { Error404 } from '../components/errors/Error404';
-import ConnectedNavBarComponent from '../connectedComponents/ConnectedNavBar';
-import ConnectedRequestSelection from '../connectedComponents/pipeline/ConnectedRequestSelection';
-import ConnectedRequestInformationComponent from '../connectedComponents/pipeline/ConnectedRequestInformation';
-import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/ConnectedRequestLocation';
-import ConnectedRequestPriceComponent from '../connectedComponents/pipeline/ConnectedRequestPrice';
-import ConnectedRequestReviewComponent from '../connectedComponents/pipeline/ConnectedRequestReview';
-import ConnectedRequestCompleteComponent from '../connectedComponents/pipeline/ConnectedRequestComplete';
-import HomePageComponent from '../components/pages/HomePage';
-import { App } from '../components/App';
+import { Error404 } from '../features/errors/Error404';
+import ConnectedNavBarComponent from '../ConnectedFeatures/ConnectedNavBar/ConnectedNavBar';
+import ConnectedRequestSelection from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestSelection';
+import ConnectedRequestInformationComponent from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestInformation';
+import ConnectedRequestLocationComponent from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestLocation';
+import ConnectedRequestPriceComponent from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestPrice';
+import ConnectedRequestReviewComponent from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestReview';
+import ConnectedRequestCompleteComponent from '../ConnectedFeatures/ConnectedRequestPipeline/ConnectedRequestComplete';
+import HomePageComponent from '../features/homepage/homepage';
+import { App } from '../features/App';
 import reducers from '../reducers/reducers';
 import Styles from '../styles/App';
 
