@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import Step from './breadcrumbStep';
-import Styles from '../../styles/helpers/breadcrumb';
+import styles from '../../styles/helpers/breadcrumb.module.css';
 
 export const breadcrumb = props => (
-  <Grid columns="equal" style={Styles.grid}>
-    <Grid.Row style={Styles.row}>
+  <Grid columns="equal" className={styles.grid}>
+    <Grid.Row className={styles.row}>
       <Step
         value={0}
         name="Selection"

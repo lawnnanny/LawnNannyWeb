@@ -4,6 +4,7 @@ import { Menu, Modal, Button } from 'semantic-ui-react';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import styles from '../../styles/helpers/loginModal.module.css';
 import Styles from '../../styles/helpers/loginModal';
+
 import DynamicComponent from '../helpers/DynamicForm';
 import { loginUser } from '../../networkRequests/userRequests';
 import InlineErrorComponent from './InlineError';

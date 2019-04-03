@@ -14,7 +14,6 @@ import {
 } from 'semantic-ui-react';
 import { statekeys } from '../../helpers/Common';
 import styles from '../../styles/helpers/DynamicForm.module.css';
-import Styles from '../../styles/helpers/DynamicForm';
 import InlineError from './InlineError';
 
 const FormButton = styled(Button)`
@@ -172,34 +171,26 @@ class DynamicForm extends Component {
     return null;
   };
 
-  renderInput = (field, isInRow, errors) => {
-    let InLineErrorStyle = Styles.InLineErrorInput;
-    let fieldStyle = Styles.field;
-    if (isInRow) {
-      InLineErrorStyle = Styles.InLineErrorInputRow;
-      fieldStyle = Styles.groupField;
-    }
-    return (
-      <Form.Field style={fieldStyle} required={field.validation}>
-        <label className={styles.label} htmlFor={field.id}>
-          {field.name}
-        </label>
-        <Form.Input
-          error={errors[field.id]}
-          value={this.returnValue(field.id, 'entry', '')}
-          onChange={this.processChange(field.id, '')}
-          placeholder={field.placeholder}
-          className={styles.input}
-          type={field.password}
-        />
-        <div style={InLineErrorStyle}>
-          {errors[field.id] && (
-            <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
-          )}
-        </div>
-      </Form.Field>
-    );
-  };
+  renderInput = (field, isInRow, errors) => (
+    <Form.Field className={isInRow ? styles.groupField : styles.field} required={field.validation}>
+      <label className={styles.label} htmlFor={field.id}>
+        {field.name}
+      </label>
+      <Form.Input
+        error={errors[field.id]}
+        value={this.returnValue(field.id, 'entry', '')}
+        onChange={this.processChange(field.id, '')}
+        placeholder={field.placeholder}
+        className={styles.input}
+        type={field.password}
+      />
+      <div className={isInRow ? styles.InLineErrorInputRow : styles.InLineErrorInput}>
+        {errors[field.id] && (
+          <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
+        )}
+      </div>
+    </Form.Field>
+  );
   renderDropDown = (field, isInRow, errors) => (
     <Form.Field className={styles.field} required={field.validation}>
       <label className={styles.label} htmlFor={field.id}>
@@ -288,54 +279,52 @@ class DynamicForm extends Component {
     return radioButtons;
   };
 
-  renderRegisterPassword = (field, isInRow, errors) => {
-    let InLineErrorStyle = Styles.InLineErrorInput;
-    let fieldStyle = Styles.field;
-    if (isInRow) {
-      InLineErrorStyle = Styles.InLineErrorInputRow;
-      fieldStyle = Styles.groupField;
-    }
-    return (
-      <div>
-        <Form.Field style={fieldStyle} required={field.validation}>
-          <label className={styles.label} htmlFor={field.id}>
-            {field.name}
-          </label>
-          <Form.Input
-            error={errors[field.id]}
-            value={this.returnValue(field.id, 'entry', '')}
-            onChange={this.processChange(field.id, '')}
-            placeholder={field.placeholder}
-            className={styles.input}
-            type={field.password}
-          />
-          <div style={InLineErrorStyle}>
-            {errors[field.id] && (
-              <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
-            )}
-          </div>
-        </Form.Field>
-        <Form.Field style={fieldStyle} required={field.validation}>
-          <label className={styles.label} htmlFor={field.id2}>
-            {field.name2}
-          </label>
-          <Form.Input
-            error={errors[field.id2]}
-            value={this.returnValue(field.id2, 'entry', '')}
-            onChange={this.processChange(field.id2, '')}
-            placeholder={field.placeholder2}
-            className={styles.input}
-            type={field.password}
-          />
-          <div style={InLineErrorStyle}>
-            {errors[field.id2] && (
-              <InlineError text={errors[field.id2]} pointing className={styles.InlineError} />
-            )}
-          </div>
-        </Form.Field>
-      </div>
-    );
-  };
+  renderRegisterPassword = (field, isInRow, errors) => (
+    <div>
+      <Form.Field
+        className={isInRow ? styles.groupField : styles.field}
+        required={field.validation}
+      >
+        <label className={styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
+        <Form.Input
+          error={errors[field.id]}
+          value={this.returnValue(field.id, 'entry', '')}
+          onChange={this.processChange(field.id, '')}
+          placeholder={field.placeholder}
+          className={styles.input}
+          type={field.password}
+        />
+        <div className={isInRow ? styles.InLineErrorInputRow : styles.InLineErrorInput}>
+          {errors[field.id] && (
+            <InlineError text={errors[field.id]} pointing className={styles.InlineError} />
+          )}
+        </div>
+      </Form.Field>
+      <Form.Field
+        className={isInRow ? styles.groupField : styles.field}
+        required={field.validation}
+      >
+        <label className={styles.label} htmlFor={field.id2}>
+          {field.name2}
+        </label>
+        <Form.Input
+          error={errors[field.id2]}
+          value={this.returnValue(field.id2, 'entry', '')}
+          onChange={this.processChange(field.id2, '')}
+          placeholder={field.placeholder2}
+          className={styles.input}
+          type={field.password}
+        />
+        <div className={isInRow ? styles.InLineErrorInputRow : styles.InLineErrorInput}>
+          {errors[field.id2] && (
+            <InlineError text={errors[field.id2]} pointing className={styles.InlineError} />
+          )}
+        </div>
+      </Form.Field>
+    </div>
+  );
 
   renderFormFromJson = (subForm, isInRow, errors) => {
     const formUI = subForm.fields.map((field) => {

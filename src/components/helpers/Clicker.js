@@ -4,7 +4,7 @@ import { Button, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import up from '../../images/pipeline/up.png';
 import down from '../../images/pipeline/down.png';
-import Styles from '../../styles/pipeline/requestPrice';
+import styles from '../../styles/pipeline/requestPrice.module.css';
 
 const ButtonDiv = styled.div`
   :active {
@@ -14,13 +14,13 @@ const ButtonDiv = styled.div`
 export const Clickers = props => (
   <div>
     <ButtonDiv>
-      <Button style={Styles.triangleTopButton} onClick={props.incrementRequestPrice}>
-        <Image centered style={Styles.image} src={up} />
+      <Button className={styles.triangleTopButton} onClick={props.incrementRequestPrice}>
+        <Image centered className={styles.image} src={up} />
       </Button>
     </ButtonDiv>
     <ButtonDiv>
-      <Button style={Styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
-        <Image centered style={Styles.image} src={down} />
+      <Button className={styles.triangleBottomButton} onClick={props.decrementRequestPrice}>
+        <Image centered className={styles.image} src={down} />
       </Button>
     </ButtonDiv>
   </div>
