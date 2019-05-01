@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Header, Segment } from 'semantic-ui-react';
+import Grid from '@material-ui/core/Grid';
 import RequestOptionComponent from '../../helpers/RequestOption';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/pipeline/requestSelection';
@@ -10,19 +10,26 @@ import snowBlower from '../../../images/pipeline/snowBlower.png';
 import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = props => (
-  <Grid container style={Styles.grid} verticalAlign="middle">
-    <Grid.Row style={Styles.breadrow}>
-      <Segment style={Styles.segment}>
-        <BreadcrumbComponent selection={props.pageInProgress} current={0} />
-      </Segment>
-    </Grid.Row>
-    <Segment style={Styles.segment}>
-      <Header as="h2">
-        Choose Your Service
-        <Header.Subheader>Choose a Service for someone to perform</Header.Subheader>
-      </Header>
-    </Segment>
-    <Segment style={Styles.buttonSegment}>
+  <Grid
+    md={9}
+    lg={8}
+    xl={7}
+    alignItems="center"
+    alignContent="center"
+    justify="center"
+    container
+    spacing={24}
+    style={Styles.grid}
+    verticalAlign="middle"
+  >
+    <Grid item sm={12} style={Styles.pipelineSegment}>
+      <BreadcrumbComponent selection={props.pageInProgress} current={0} />
+    </Grid>
+    <Grid item sm={12} style={Styles.headerSegment}>
+      <h1 style={Styles.header}>Choose Your Service</h1>
+      <h3 style={Styles.subHeader}>Choose a Service for someone to perform</h3>
+    </Grid>
+    <Grid item sm={12} style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={mower}
@@ -32,8 +39,8 @@ export const requestSelection = props => (
           props.setTypeOfRequest('Lawn Mowing');
         }}
       />
-    </Segment>
-    <Segment style={Styles.buttonSegment}>
+    </Grid>
+    <Grid item sm={12} style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={rake}
@@ -43,8 +50,8 @@ export const requestSelection = props => (
           props.setTypeOfRequest('Yard Work');
         }}
       />
-    </Segment>
-    <Segment style={Styles.buttonSegment}>
+    </Grid>
+    <Grid item sm={12} style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={snowBlower}
@@ -54,8 +61,8 @@ export const requestSelection = props => (
           props.setTypeOfRequest('Snow Clearing');
         }}
       />
-    </Segment>
-    <Segment style={Styles.buttonSegment}>
+    </Grid>
+    <Grid item sm={12} style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={custom}
@@ -65,7 +72,7 @@ export const requestSelection = props => (
           props.setTypeOfRequest('Custom Request');
         }}
       />
-    </Segment>
+    </Grid>
   </Grid>
 );
 

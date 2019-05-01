@@ -1,13 +1,25 @@
 export default {
   grid: {
-    marginTop: '0',
-    paddingTop: '0',
+    margin: '0em .5em',
   },
-  segment: {
+  pipelineSegment: {
     width: '100%',
     border: 'none',
     boxShadow: 'none',
     padding: '0',
+  },
+  headerSegment: {
+    width: '100%',
+    border: 'none',
+    boxShadow: 'none',
+    padding: '0',
+    margin: '1em 0',
+  },
+  header: {
+    marginBottom: '.25em',
+  },
+  subHeader: {
+    marginTop: '0em',
   },
   breadrow: {
     paddingTop: '0',

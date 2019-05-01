@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
+import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/informationForm';
@@ -17,28 +17,35 @@ export const requestInformation = (props) => {
     return <Redirect to="/pipeline" />;
   }
   return (
-    <Grid centered container style={Styles.grid}>
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={props.pageInProgress} current={1} />
-        </Segment>
-      </Grid.Row>
-      <Grid.Row padding style={Styles.Grid}>
-        <Segment style={Styles.segment}>
-          <DynamicFormComponent
-            popup
-            jsonForm={() => jsonForm}
-            reduxInfo={props.requests.requestInformation}
-            setRequest={props.setRequestInformation}
-            form={props.requests.selection}
-            route={() => {
-              props.requestInProgress(2);
-              props.history.push(destinationString);
-            }}
-            styling={Styles}
-          />
-        </Segment>
-      </Grid.Row>
+    <Grid
+      md={9}
+      lg={8}
+      xl={7}
+      alignItems="center"
+      alignContent="center"
+      justify="center"
+      container
+      spacing={24}
+      style={Styles.grid}
+      verticalAlign="middle"
+    >
+      <Grid item sm={12} style={Styles.breadRow}>
+        <BreadcrumbComponent selection={props.pageInProgress} current={1} />
+      </Grid>
+      <Grid item sm={12} style={Styles.formRow}>
+        <DynamicFormComponent
+          popup
+          jsonForm={() => jsonForm}
+          reduxInfo={props.requests.requestInformation}
+          setRequest={props.setRequestInformation}
+          form={props.requests.selection}
+          route={() => {
+            props.requestInProgress(2);
+            props.history.push(destinationString);
+          }}
+          styling={Styles}
+        />
+      </Grid>
     </Grid>
   );
 };
