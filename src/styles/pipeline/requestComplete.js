@@ -2,24 +2,13 @@ const green = '#20ad1d';
 
 export default {
   grid: {
-    marginTop: '0',
-  },
-  segment: {
-    width: '100%',
-    border: 'none',
-    boxShadow: 'none',
+    marginLeft: '.5em',
+    marginRight: '.5em',
+    marginTop: '0em',
     padding: '0',
   },
-  breadrow: {
-    paddingTop: '0',
-  },
-  completedRow: {
+  headerRow: {
     paddingTop: '5em',
-  },
-  icon: {
-    margin: '0',
-    color: green,
-    fontSize: '6em',
   },
   header: {
     fontSize: '2em',

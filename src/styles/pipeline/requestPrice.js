@@ -1,10 +1,12 @@
-const green = '#20ad1d';
 const white = '#FFFFFF';
 const blue = '#1205ff';
 
 export default {
   grid: {
-    marginTop: '0',
+    marginLeft: '.5em',
+    marginRight: '.5em',
+    marginTop: '0em',
+    padding: '0',
   },
   segment: {
     width: '100%',
@@ -12,12 +14,15 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
-  breadrow: {
-    paddingTop: '0',
+  breadRow: {
+    padding: '0',
+    width: '100%',
   },
   headerRow: {
     marginTop: '2em',
     marginBottom: '2em',
+    padding: '0',
+    width: '100%',
   },
   headerLabel: {
     backgroundColor: white,
@@ -25,40 +30,12 @@ export default {
   priceRow: {
     textAlign: 'center',
     marginBottom: '2em',
-  },
-  label: {
     padding: '0',
-    backgroundColor: white,
-    border: '1px solid #e6e6e6',
+    width: '100%',
   },
-  triangleBottomButton: {
-    padding: '0',
-    width: '8em',
-    margin: '0',
-    backgroundColor: white,
-  },
-  triangleTopButton: {
-    padding: '0',
-    width: '8em',
-    margin: '0',
-    borderBottom: '1px solid #c5c5c5',
-    backgroundColor: white,
-  },
-  input: {
-    width: '6em',
-    fontSize: '3em',
-    padding: '0',
-    marginLeft: '-2.7em',
-  },
-  inputIcon: {
-    color: green,
-    opacity: '1',
-  },
-  image: {
-    width: '8em',
-  },
+  inputPrice: {},
   button: {
-    width: '18em',
+    width: '100%',
     margin: '0',
     backgroundColor: blue,
     color: white,
@@ -66,6 +43,9 @@ export default {
   },
   buttonRow: {
     marginTop: '2em',
+    padding: '0',
+    width: '100%',
+    textAlign: 'center',
   },
   popupIcon: {
     color: blue,

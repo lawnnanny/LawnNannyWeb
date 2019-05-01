@@ -3,19 +3,13 @@ export default {
     margin: '0 .5em',
     padding: '0',
   },
-  pipelineSegment: {
-    width: '100%',
-    border: 'none',
-    boxShadow: 'none',
-    padding: '0',
-  },
   breadRow: {
     padding: '0',
     width: '100%',
   },
   formRow: {
     padding: '0',
-    marginTop: '1em',
+    marginTop: '2em',
   },
   formSegment: {
     backgroundColor: '#f2f0ee',

@@ -3,33 +3,32 @@ const blue = '#1205ff';
 
 export default {
   grid: {
-    marginTop: '0',
-  },
-  segment: {
-    width: '100%',
-    border: 'none',
-    boxShadow: 'none',
+    marginLeft: '.5em',
+    marginRight: '.5em',
+    marginTop: '0em',
     padding: '0',
   },
-  breadrow: {
-    paddingTop: '0',
-  },
-  buttonSegment: {
-    width: '100%',
-    border: 'none',
-    boxShadow: 'none',
+
+  breadRow: {
     padding: '0',
-    paddingBottom: '2em',
+    width: '100%',
   },
+  formRow: {
+    padding: '0',
+    width: '100%',
+    marginTop: '2em',
+  },
+
   submitRow: {
     padding: '0',
   },
   modalButton: {
+    width: '100%',
+    margin: '2em 0em',
     backgroundColor: green,
     borderRadius: '5px',
     color: 'white',
     boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
-    width: '100%',
   },
   modal: {
     position: 'absolute',

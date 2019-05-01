@@ -1,9 +1,9 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
+import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { jsonForm } from './jsonForms/locationForm';
-import Styles from '../../../styles/pipeline/requestInformation';
+import Styles from '../../../styles/pipeline/requestLocation';
 import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
@@ -17,28 +17,35 @@ export const requestLocation = (props) => {
     return <Redirect to="/pipeline/requestInformation" />;
   }
   return (
-    <Grid container style={Styles.grid}>
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={props.pageInProgress} current={2} />
-        </Segment>
-      </Grid.Row>
-      <Grid.Row padding style={Styles.Grid}>
-        <Segment style={Styles.segment}>
-          <DynamicFormComponent
-            popup
-            jsonForm={() => jsonForm}
-            reduxInfo={props.requests.requestLocation}
-            setRequest={props.setRequestLocation}
-            form={'Location'}
-            route={() => {
-              props.requestInProgress(3);
-              props.history.push(destinationString);
-            }}
-            styling={Styles}
-          />
-        </Segment>
-      </Grid.Row>
+    <Grid
+      md={9}
+      lg={8}
+      xl={7}
+      alignItems="center"
+      alignContent="center"
+      justify="center"
+      container
+      spacing={24}
+      style={Styles.grid}
+      verticalAlign="middle"
+    >
+      <Grid item sm={12} style={Styles.breadRow}>
+        <BreadcrumbComponent selection={props.pageInProgress} current={2} />
+      </Grid>
+      <Grid item sm={12} style={Styles.locationRow}>
+        <DynamicFormComponent
+          popup
+          jsonForm={() => jsonForm}
+          reduxInfo={props.requests.requestLocation}
+          setRequest={props.setRequestLocation}
+          form={'Location'}
+          route={() => {
+            props.requestInProgress(3);
+            props.history.push(destinationString);
+          }}
+          styling={Styles}
+        />
+      </Grid>
     </Grid>
   );
 };

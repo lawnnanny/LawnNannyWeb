@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Segment, Header, Icon, Input, Button, Popup, Label } from 'semantic-ui-react';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Styles from '../../../styles/pipeline/requestPrice';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Clicker from '../../helpers/Clicker';
 
 const MyButton = styled(Button)`
   &&& {
@@ -26,45 +28,41 @@ export const requestPrice = (props) => {
     return <Redirect to="/pipeline/requestLocation" />;
   }
   return (
-    <Grid centered container style={Styles.grid} verticalAlign="middle">
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={props.pageInProgress} current={3} />
-        </Segment>
-      </Grid.Row>
-      <Grid.Row style={Styles.headerRow}>
-        <Header as="h1" style={Styles.header}>
-          Set A Price{' '}
-          <Popup
-            size="large"
-            trigger={<Icon name="question" style={Styles.popupIcon} circular />}
-            content="Please specify what you would like the price of the request to be set at. You can change this later on."
-            on={['hover', 'click']}
-          />
-        </Header>
-      </Grid.Row>
-      <Grid.Row style={Styles.priceRow}>
-        <Input
-          labelPosition="right"
+    <Grid
+      md={9}
+      lg={8}
+      xl={7}
+      alignItems="center"
+      alignContent="center"
+      justify="center"
+      container
+      spacing={24}
+      style={Styles.grid}
+      verticalAlign="middle"
+    >
+      <Grid item sm={12} style={Styles.breadRow}>
+        <BreadcrumbComponent selection={props.pageInProgress} current={3} />
+      </Grid>
+      <Grid item sm={12} style={Styles.headerRow}>
+        <h1 style={Styles.header}>Set A Price</h1>
+      </Grid>
+      <Grid item sm={12} style={Styles.priceRow}>
+        <TextField
+          id="outlined-adornment-amount"
+          variant="outlined"
+          label="Amount"
           value={props.requestPrice}
-          iconPosition="left"
-          style={Styles.input}
+          style={Styles.inputPrice}
           onChange={props.setRequestPrice}
-        >
-          <Icon name="dollar" style={Styles.inputIcon} />
-          <input />
-          <Label style={Styles.label}>
-            <Clicker
-              incrementRequestPrice={props.incrementRequestPrice}
-              decrementRequestPrice={props.decrementRequestPrice}
-            />
-          </Label>
-        </Input>
-      </Grid.Row>
-      <Grid.Row style={Styles.buttonRow}>
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          }}
+        />
+      </Grid>
+      <Grid item sm={12} style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">
           <MyButton
-            size="huge"
+            size="large"
             style={Styles.button}
             onClick={() => {
               props.requestInProgress(4);
@@ -73,7 +71,7 @@ export const requestPrice = (props) => {
             {buttonString}
           </MyButton>
         </Link>
-      </Grid.Row>
+      </Grid>
     </Grid>
   );
 };
@@ -82,8 +80,6 @@ requestPrice.propTypes = {
   requestPrice: PropTypes.number,
   setRequestPrice: PropTypes.func,
   requestInProgress: PropTypes.number,
-  incrementRequestPrice: PropTypes.func,
-  decrementRequestPrice: PropTypes.func,
 };
 
 requestPrice.defaultProps = {
@@ -91,7 +87,5 @@ requestPrice.defaultProps = {
   requestPrice: 0,
   setRequestPrice: PropTypes.func,
   requestInProgress: 0,
-  incrementRequestPrice: PropTypes.func,
-  decrementRequestPrice: PropTypes.func,
 };
 export default requestPrice;
