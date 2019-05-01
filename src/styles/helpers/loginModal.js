@@ -3,6 +3,9 @@ const blue = '#1205ff';
 const white = '#FFFFFF';
 
 export default {
+  loginDiv: {
+    paddingRight: '1em',
+  },
   Menu: {
     width: '100%',
     minHeight: 42,
@@ -16,10 +19,9 @@ export default {
   loginButton: {
     backgroundColor: white,
     color: blue,
-    padding: '.8em',
-    borderRadius: '25px',
-    border: '.1rem solid',
-    borderColor: blue,
+    padding: '.5em',
+    borderRadius: '10px',
+    border: '1px solid rgb(18, 5, 255)',
   },
   menuItem: {
     padding: '.5rem',

@@ -2,6 +2,9 @@ const green = '#20ad1d';
 const white = '#FFFFFF';
 
 export default {
+  signupDiv: {
+    paddingRight: '.5em',
+  },
   Menu: {
     width: '100%',
     minHeight: 42,
@@ -15,8 +18,8 @@ export default {
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.8em',
-    borderRadius: '25px',
+    padding: '.6em',
+    borderRadius: '10px',
   },
   menuItem: {
     padding: '.5rem',

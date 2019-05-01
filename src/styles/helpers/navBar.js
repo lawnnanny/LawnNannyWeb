@@ -14,20 +14,6 @@ export default {
     border: 'none',
     marginBottom: '0rem',
   },
-  loginButton: {
-    backgroundColor: white,
-    color: blue,
-    padding: '.8em',
-    borderRadius: '10px',
-    border: '.15em solid',
-    borderColor: blue,
-  },
-  signupButton: {
-    color: 'white',
-    backgroundColor: green,
-    padding: '.95em',
-    borderRadius: '10px',
-  },
   menuItem: {
     padding: '.5rem',
   },

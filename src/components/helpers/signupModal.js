@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Menu, Modal, Button } from 'semantic-ui-react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
@@ -12,70 +15,74 @@ export class signupModal extends Component {
     super();
     this.state = {
       registerUserError: null,
+      open: false,
     };
   }
 
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   render() {
     return (
-      <Modal
-        style={Styles.modal}
-        size="tiny"
-        trigger={
-          <Menu.Item style={Styles.menuItem}>
-            <Button
-              size={this.props.size}
-              onclick={() => {}}
-              fluid={this.props.fluid}
-              style={this.props.signupButton}
-            >
-              Sign Up
-            </Button>
-          </Menu.Item>
-        }
-        closeIcon
-      >
-        <Modal.Header style={Styles.modalHeader}>Sign Up!</Modal.Header>
-        <Modal.Description>
-          <div>
-            {this.state.registerUserError && (
-              <InlineErrorComponent
-                text={this.state.registerUserError}
-                pointing
-                style={Styles.InlineError}
-              />
-            )}
-          </div>
-          <DynamicComponent
-            jsonForm={() => signupJsonForm}
-            form={'SignUp'}
-            setRequest={() => {}}
-            route={(signupDetailsJson) => {
-              if (this.props.requestInProgress) {
-                this.props.requestInProgress(5);
-              }
-              const serverResponse = createUser({
-                email: signupDetailsJson.email.entry,
-                password: signupDetailsJson.password.entry,
-              });
-              serverResponse.then((data) => {
-                if (this.state.registerUserError !== null && data.success) {
-                  this.props.history.push(this.props.destination);
+      <div style={Styles.signupDiv}>
+        <Button size="large" onClick={this.handleClickOpen} style={Styles.signupButton}>
+          Sign Up
+        </Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title" style={Styles.modalHeader}>
+            Sign Up!
+          </DialogTitle>
+          <DialogContent>
+            <div>
+              {this.state.registerUserError && (
+                <InlineErrorComponent
+                  text={this.state.registerUserError}
+                  pointing
+                  style={Styles.InlineError}
+                />
+              )}
+            </div>
+            <DynamicComponent
+              jsonForm={() => signupJsonForm}
+              form={'SignUp'}
+              setRequest={() => {}}
+              route={(signupDetailsJson) => {
+                if (this.props.requestInProgress) {
+                  this.props.requestInProgress(5);
                 }
-                if (!data.success) {
-                  const currentState = this.state;
-                  let message = '';
-                  if (data.message.name === 'DupplicateError') {
-                    message = 'Account with that username or email already exists!';
+                const serverResponse = createUser({
+                  email: signupDetailsJson.email.entry,
+                  password: signupDetailsJson.password.entry,
+                });
+                serverResponse.then((data) => {
+                  if (this.state.registerUserError !== null && data.success) {
+                    this.props.history.push(this.props.destination);
                   }
-                  currentState.registerUserError = message;
-                  this.setState(currentState);
-                }
-              });
-            }}
-            styling={Styles}
-          />
-        </Modal.Description>
-      </Modal>
+                  if (!data.success) {
+                    const currentState = this.state;
+                    let message = '';
+                    if (data.message.name === 'DupplicateError') {
+                      message = 'Account with that username or email already exists!';
+                    }
+                    currentState.registerUserError = message;
+                    this.setState(currentState);
+                  }
+                });
+              }}
+              styling={Styles}
+            />
+          </DialogContent>
+        </Dialog>
+      </div>
     );
   }
 }

@@ -33,8 +33,8 @@ export const navBar = props => (
       </Menu.Menu>
     ) : (
       <Menu.Menu position="right">
-        <LoginModal loginButton={Styles.loginButton} history={props.history} />
-        <SignupModal signupButton={Styles.signupButton} history={props.history} />
+        <LoginModal history={props.history} />
+        <SignupModal history={props.history} />
       </Menu.Menu>
     )}
   </Menu>
