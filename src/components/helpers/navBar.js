@@ -20,12 +20,14 @@ function HomeIcon(props) {
 
 export const navBar = props => (
   <AppBar position="static" style={Styles.Menu}>
-    <Sidebar />
-    <Link to="/HomePage">
-      <IconButton color="inherit" aria-label="Menu">
-        <HomeIcon />
-      </IconButton>
-    </Link>
+    <div style={Styles.leftMenuDiv}>
+      <Sidebar />
+      <Link to="/HomePage">
+        <IconButton color="inherit" aria-label="Menu">
+          <HomeIcon />
+        </IconButton>
+      </Link>
+    </div>
     {props.isLoggedIn ? (
       <div style={Styles.rightMenuDiv}>
         <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>

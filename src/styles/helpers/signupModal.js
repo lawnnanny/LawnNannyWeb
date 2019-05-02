@@ -20,8 +20,7 @@ export default {
     color: 'white',
     backgroundColor: green,
     padding: '.3em',
-    fontSize: '1.2em',
-    fontWeight: 'bold',
+    fontSize: '1.3em',
     borderRadius: '3px',
   },
   menuItem: {

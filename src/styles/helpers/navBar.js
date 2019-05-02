@@ -1,4 +1,4 @@
-const green = '#20ad1d';
+const green = '#25ff03';
 const white = '#FFFFFF';
 const blue = '#1205ff';
 
@@ -14,12 +14,16 @@ export default {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  leftMenuDiv: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   rightMenuDiv: {
     display: 'flex',
   },
   homeIcon: {
-    fontSize: '2em',
-    color: '#25ff03',
+    fontSize: '2.5em',
+    color: green,
   },
   userIcon: {
     fontSize: '1.8em',

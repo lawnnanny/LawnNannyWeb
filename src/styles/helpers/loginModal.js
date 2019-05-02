@@ -1,4 +1,4 @@
-const green = '#20ad1d';
+const green = '#25ff03';
 const blue = '#1205ff';
 const white = '#FFFFFF';
 
@@ -19,8 +19,7 @@ export default {
   loginButton: {
     backgroundColor: 'black',
     color: white,
-    fontWeight: 'bold',
-    fontSize: '1.25em',
+    fontSize: '1.4em',
   },
   menuItem: {
     padding: '.5rem',
