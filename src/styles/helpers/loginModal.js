@@ -17,11 +17,10 @@ export default {
     marginBottom: '0rem',
   },
   loginButton: {
-    backgroundColor: white,
-    color: blue,
-    padding: '.5em',
-    borderRadius: '10px',
-    border: '1px solid rgb(18, 5, 255)',
+    backgroundColor: 'black',
+    color: white,
+    fontWeight: 'bold',
+    fontSize: '1.25em',
   },
   menuItem: {
     padding: '.5rem',

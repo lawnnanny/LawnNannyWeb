@@ -3,7 +3,8 @@ const white = '#FFFFFF';
 
 export default {
   signupDiv: {
-    paddingRight: '.5em',
+    paddingRight: '1.5em',
+    alignSelf: 'center',
   },
   Menu: {
     width: '100%',
@@ -18,8 +19,10 @@ export default {
   signupButton: {
     color: 'white',
     backgroundColor: green,
-    padding: '.6em',
-    borderRadius: '10px',
+    padding: '.3em',
+    fontSize: '1.2em',
+    fontWeight: 'bold',
+    borderRadius: '3px',
   },
   menuItem: {
     padding: '.5rem',

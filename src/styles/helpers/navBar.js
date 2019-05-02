@@ -1,60 +1,25 @@
 const green = '#20ad1d';
 const white = '#FFFFFF';
-const black = '#000000';
 const blue = '#1205ff';
 
 export default {
   Menu: {
     width: '100%',
-    minHeight: 42,
-    backgroundColor: white,
-    paddingBottom: '1rem',
-    paddingTop: '1rem',
+    minHeight: '6em',
+    backgroundColor: 'black',
     boxShadow: 'none',
     border: 'none',
-    marginBottom: '0rem',
+    margin: '0',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  menuItem: {
-    padding: '.5rem',
-  },
-  menuDropdown: {
-    padding: '0',
-    margin: 'none',
-    fontSize: '2em',
-    backgroundColor: white,
-    color: black,
-  },
-  dropDownMenu: {
-    fontSize: '.6em',
+  rightMenuDiv: {
+    display: 'flex',
   },
   homeIcon: {
     fontSize: '2em',
-  },
-  modal: {
-    backgroundColor: white,
-    padding: '1rem',
-    margin: 'none',
-  },
-  loginGrid: {
-    margin: '1rem',
-  },
-  modalHeader: {
-    display: 'flex',
-    justifyContent: 'center',
-    color: green,
-    fontSize: '2rem',
-    backgroundColor: white,
-    borderBottom: 'none',
-  },
-  modalButton: {
-    backgroundColor: green,
-    color: white,
-  },
-  signUpForm: {
-    padding: '1rem',
-  },
-  signUpCheckbox: {
-    paddingBottom: '.5rem',
+    color: '#25ff03',
   },
   userIcon: {
     fontSize: '1.8em',
