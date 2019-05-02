@@ -2,10 +2,9 @@ const green = '#20ad1d';
 
 export default {
   grid: {
-    marginLeft: '.5em',
-    marginRight: '.5em',
-    marginTop: '0em',
-    padding: '0',
+    padding: '0.2em',
+    width: '100%',
+    margin: '0',
   },
   headerRow: {
     paddingTop: '5em',

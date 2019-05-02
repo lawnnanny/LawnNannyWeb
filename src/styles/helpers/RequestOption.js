@@ -11,10 +11,15 @@ export default {
   },
   button: {
     backgroundColor: 'white',
+    width: '100%',
   },
   header: {
     margin: '0',
   },
+  arrow: {
+    marginLeft: 'auto',
+  },
+
   icon: {
     float: 'right',
     color: 'black',

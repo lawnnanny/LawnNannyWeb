@@ -1,1 +1,5 @@
-export default {};
+export default {
+  homepageContainer: {
+    margin: '0',
+  },
+};

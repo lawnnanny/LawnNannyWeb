@@ -1,6 +1,7 @@
 export default {
   grid: {
-    margin: '0em .5em',
+    padding: '0.2em',
+    width: '100%',
   },
   pipelineSegment: {
     width: '100%',

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
@@ -47,17 +49,16 @@ export const requestPrice = (props) => {
         <h1 style={Styles.header}>Set A Price</h1>
       </Grid>
       <Grid item sm={12} style={Styles.priceRow}>
-        <TextField
-          id="outlined-adornment-amount"
-          variant="outlined"
-          label="Amount"
-          value={props.requestPrice}
-          style={Styles.inputPrice}
-          onChange={props.setRequestPrice}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">$</InputAdornment>,
-          }}
-        />
+        <FormControl>
+          <InputLabel htmlFor="component-simple">Name</InputLabel>
+          <Input id="component-simple" />
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor="component-helper">Name</InputLabel>
+          <Input id="component-helper" aria-describedby="component-helper-text" />
+
+          <FormHelperText id="component-helper-text">Some important helper text</FormHelperText>
+        </FormControl>
       </Grid>
       <Grid item sm={12} style={Styles.buttonRow}>
         <Link to="/pipeline/requestReview">

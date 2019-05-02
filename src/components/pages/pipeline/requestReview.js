@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import { Modal, Divider, Message } from 'semantic-ui-react';
-import { Redirect } from 'react-router';
-import styled from 'styled-components';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import { Redirect, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import Styles from '../../../styles/pipeline/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
-import LoginModal from '../../../connectedComponents/helpers/ConnectedLoginModal';
-import SignupModal from '../../../connectedComponents/helpers/ConnectedSignupModal';
-import handleRequest from '../../../networkRequests/requests';
+import ReviewModal from '../../helpers/reviewModal';
 
-const MyButton = styled(Button)`
-  &&& {
-    :active {
-      background-color: #197307 !important;
-      transform: translateY(4px) !important;
-    }
-  }
-`;
+import handleRequest from '../../../networkRequests/requests';
 
 class requestReview extends Component {
   constructor() {
@@ -77,67 +66,29 @@ class requestReview extends Component {
         </Grid>
         {this.state.dataBaseError && (
           <Grid item sm={12}>
-            <Message size="big" negative style={Styles.message}>
-              <Message.Header>Error while trying to submit request</Message.Header>
+            <SnackbarContent style={Styles.message} message="Error while trying to submit request">
               <p>{this.state.dataBaseError}</p>
-            </Message>
+            </SnackbarContent>
           </Grid>
         )}
         <Grid item sm={12} style={Styles.formRow}>
           <DynamicDisplayComponent requests={this.props.requests} />
         </Grid>
         <Grid item sm={12} style={Styles.submitRow}>
-          <MyButton
-            onClick={() => this.handleOpen(this.props.isLoggedIn)}
-            size="large"
-            floated="right"
-            style={Styles.modalButton}
-          >
-            Submit Request
-          </MyButton>
-
-          <Modal
-            open={this.state.open}
-            onClose={this.handleClose}
-            style={Styles.modal}
-            size="small"
-            closeIcon
-          >
-            <Modal.Header style={Styles.header}>To Make A Request Please...</Modal.Header>
-            <Modal.Content style={Styles.content}>
-              <SignupModal
-                size="big"
-                fluid
-                signupButton={Styles.signupButton}
-                history={this.props.history}
-                destination="/pipeline/requestReview"
-                requestInProgress={this.props.requestInProgress}
-              />
-              <Divider horizontal style={Styles.divider}>
-                Or
-              </Divider>
-              <LoginModal
-                size="big"
-                fluid
-                loginButton={Styles.loginButton}
-                history={this.props.history}
-                destination="/pipeline/requestReview"
-                requestInProgress={this.props.requestInProgress}
-              />
-            </Modal.Content>
-          </Modal>
+          <ReviewModalWithRouter />
         </Grid>
       </Grid>
     );
   }
 }
 
+const ReviewModalWithRouter = withRouter(ReviewModal);
+
 requestReview.propTypes = {
   pageInProgress: PropTypes.number,
   requests: PropTypes.obj,
   requestInProgress: PropTypes.func,
   history: PropTypes.func,
-  isLoggedIn: PropTypes.bool,
 };
 
 requestReview.defaultProps = {

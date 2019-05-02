@@ -115,13 +115,13 @@ class DynamicForm extends Component {
   loadStoreWithReduxData = (props) => {
     if (props.reduxInfo && !this.state.loadedData) {
       this.setState({
-         loadedData: true
+        loadedData: true,
       });
       Object.keys(props.reduxInfo).forEach((entryKey) => {
         const dataForSubmition = this.state.dataForSubmitting;
         dataForSubmition[entryKey] = props.reduxInfo[entryKey].entry;
         this.setState({
-            dataForSubmitting: dataForSubmition
+          dataForSubmitting: dataForSubmition,
         });
       });
     }
@@ -159,14 +159,15 @@ class DynamicForm extends Component {
   };
   showPopup = (popup) => {
     if (popup) {
-      return (
-        <Popup
-          size="large"
-          trigger={<Icon name="question" style={Styles.popupIcon} circular />}
-          content={this.state.Requests[this.props.form].popup}
-          on={['hover', 'click']}
-        />
-      );
+      return null;
+      // return (
+      //  <Popup
+      //    size="large"
+      //    trigger={<Icon name="question" style={Styles.popupIcon} circular />}
+      //    content={this.state.Requests[this.props.form].popup}
+      //    on={['hover', 'click']}
+      //  />
+      //  );
     }
     return null;
   };

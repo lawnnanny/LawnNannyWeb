@@ -1,7 +1,8 @@
 export default {
   grid: {
-    margin: '0 .5em',
-    padding: '0',
+    padding: '0.2em',
+    width: '100%',
+    margin: '0',
   },
   breadRow: {
     padding: '0',

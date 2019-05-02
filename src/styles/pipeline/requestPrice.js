@@ -3,10 +3,9 @@ const blue = '#1205ff';
 
 export default {
   grid: {
-    marginLeft: '.5em',
-    marginRight: '.5em',
-    marginTop: '0em',
-    padding: '0',
+    padding: '0.2em',
+    width: '100%',
+    margin: '0',
   },
   segment: {
     width: '100%',

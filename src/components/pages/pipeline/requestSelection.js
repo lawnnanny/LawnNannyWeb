@@ -17,19 +17,17 @@ export const requestSelection = props => (
     alignItems="center"
     alignContent="center"
     justify="center"
-    container
-    spacing={24}
     style={Styles.grid}
     verticalAlign="middle"
   >
-    <Grid item sm={12} style={Styles.pipelineSegment}>
+    <Grid item style={Styles.pipelineSegment}>
       <BreadcrumbComponent selection={props.pageInProgress} current={0} />
     </Grid>
-    <Grid item sm={12} style={Styles.headerSegment}>
+    <Grid item style={Styles.headerSegment}>
       <h1 style={Styles.header}>Choose Your Service</h1>
       <h3 style={Styles.subHeader}>Choose a Service for someone to perform</h3>
     </Grid>
-    <Grid item sm={12} style={Styles.buttonSegment}>
+    <Grid item style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={mower}
@@ -40,7 +38,7 @@ export const requestSelection = props => (
         }}
       />
     </Grid>
-    <Grid item sm={12} style={Styles.buttonSegment}>
+    <Grid item style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={rake}
@@ -51,7 +49,7 @@ export const requestSelection = props => (
         }}
       />
     </Grid>
-    <Grid item sm={12} style={Styles.buttonSegment}>
+    <Grid item style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={snowBlower}
@@ -62,7 +60,7 @@ export const requestSelection = props => (
         }}
       />
     </Grid>
-    <Grid item sm={12} style={Styles.buttonSegment}>
+    <Grid item style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}
         imageURL={custom}

@@ -4,11 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import { Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Styles from '../../styles/helpers/navBar';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
+import Sidebar from './sidebar';
 
 function HomeIcon(props) {
   return (
@@ -20,6 +20,7 @@ function HomeIcon(props) {
 
 export const navBar = props => (
   <AppBar position="static" style={Styles.Menu}>
+    <Sidebar />
     <Link to="/HomePage">
       <IconButton color="inherit" aria-label="Menu">
         <HomeIcon />
@@ -27,7 +28,6 @@ export const navBar = props => (
     </Link>
     {props.isLoggedIn ? (
       <div style={Styles.rightMenuDiv}>
-        <Icon name="user" style={Styles.userIcon} />
         <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
           Logout
         </Button>
