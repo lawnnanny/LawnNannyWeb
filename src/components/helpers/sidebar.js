@@ -22,14 +22,6 @@ const MyItem = styled(ListItem)`
   }
 `;
 
-const MyListItemText = styled(ListItemText)`
-  &&& {
-    :hover {
-      color: white !important;
-    }
-  }
-`;
-
 const styles = {
   paperOverride: {
     opacity: '.95',

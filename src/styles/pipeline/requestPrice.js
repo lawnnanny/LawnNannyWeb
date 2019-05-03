@@ -17,14 +17,28 @@ export default {
     padding: '0',
     width: '100%',
   },
+  header: {
+    color: 'black',
+    fontSize: '2.5em',
+  },
   headerRow: {
     marginTop: '2em',
-    marginBottom: '2em',
+    marginBottom: '1.5em',
     padding: '0',
     width: '100%',
   },
   headerLabel: {
     backgroundColor: white,
+  },
+  tooltipIcon: {
+    color: blue,
+    fontSize: '2.2em',
+  },
+  tooltipDiv: {
+    backgroundColor: 'white',
+  },
+  tooltipText: {
+    color: 'white',
   },
   priceRow: {
     textAlign: 'center',
@@ -32,7 +46,13 @@ export default {
     padding: '0',
     width: '100%',
   },
-  inputPrice: {},
+  input: {
+    fontSize: '7.5em',
+  },
+  priceIcon: {
+    fontSize: '.8em',
+    color: 'rgba(0,0,0,.87)',
+  },
   button: {
     width: '100%',
     margin: '0',

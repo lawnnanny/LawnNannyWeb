@@ -20,7 +20,7 @@ export default {
   headingShadowContainer: {
     backgroundColor: 'rgba(0,0,0,0.7)',
     width: '100%',
-    margin: '4em 0',
+    margin: '2em 0',
   },
   headingHeader: {
     textAlign: 'center',
@@ -30,7 +30,7 @@ export default {
   header: {
     fontSize: '5em',
     color: 'white',
-    paddingTop: '1em',
+    paddingTop: '.5em',
   },
   buttonContainer: {
     width: '100%',
