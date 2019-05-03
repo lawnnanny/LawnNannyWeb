@@ -3,10 +3,11 @@ const blue = '#1205ff';
 
 export default {
   button: {
-    backgroundColor: blue,
+    backgroundColor: '#20ad1d',
     color: white,
     boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
-    marginTop: '2em',
+    marginTop: '1em',
+    height: '3em',
   },
   InLineErrorInput: {
     marginTop: '-1.4em',

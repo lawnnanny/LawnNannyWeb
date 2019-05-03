@@ -74,6 +74,7 @@ export default {
     marginBottom: '.5em',
   },
   facebookButton: {
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     backgroundColor: '#3b5998',
     width: '100%',
     height: '4.6em',
@@ -97,6 +98,7 @@ export default {
     fontWeight: 'bold',
   },
   googleButton: {
+    boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
     backgroundColor: '#D44638',
     width: '100%',
     height: '4.6em',
