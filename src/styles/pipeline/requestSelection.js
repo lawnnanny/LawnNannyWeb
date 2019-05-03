@@ -1,6 +1,6 @@
 export default {
   grid: {
-    padding: '0.2em',
+    padding: '1em 0.5em',
     width: '100%',
   },
   pipelineSegment: {
@@ -27,11 +27,13 @@ export default {
   },
   buttonSegment: {
     boxShadow: 'none',
+    display: 'flex',
     padding: '0',
     width: '100%',
     margin: '0',
     border: '2px solid #20ad1d',
     marginBottom: '1em',
+    height: '7em',
   },
   buttonComponent: {},
 };

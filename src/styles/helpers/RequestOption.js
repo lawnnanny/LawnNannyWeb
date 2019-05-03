@@ -1,9 +1,16 @@
 const green = '#20ad1d';
 
 export default {
-  image: {
-    border: 'solid',
-    borderColor: green,
+  link: {
+    height: '100%',
+    padding: '.2em',
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+  },
+  icon: {
+    height: '4em',
+    width: '4em',
   },
   segment: {
     border: 'none',
@@ -18,13 +25,7 @@ export default {
   },
   arrow: {
     marginLeft: 'auto',
-  },
-
-  icon: {
-    float: 'right',
-    color: 'black',
-    fontSize: '2em',
-    marginTop: '.8em',
-    marginLeft: '0',
+    height: '2.5em',
+    width: '2.5em',
   },
 };

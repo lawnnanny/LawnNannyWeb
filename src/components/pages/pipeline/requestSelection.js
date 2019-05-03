@@ -27,6 +27,7 @@ export const requestSelection = props => (
       <h1 style={Styles.header}>Choose Your Service</h1>
       <h3 style={Styles.subHeader}>Choose a Service for someone to perform</h3>
     </Grid>
+
     <Grid item style={Styles.buttonSegment}>
       <RequestOptionComponent
         style={Styles.buttonComponent}

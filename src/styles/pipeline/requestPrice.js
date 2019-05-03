@@ -3,7 +3,7 @@ const blue = '#1205ff';
 
 export default {
   grid: {
-    padding: '0.2em',
+    padding: '1em 0.5em',
     width: '100%',
     margin: '0',
   },

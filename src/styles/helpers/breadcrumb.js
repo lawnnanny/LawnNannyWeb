@@ -31,7 +31,7 @@ export default {
     padding: '0',
     marginTop: '.2em',
     fontSize: '1em',
-    color: '#dadada',
+    color: '#bdbbba',
   },
   finishedIcon: {
     boxShadow: '0 0 0 2px #20ad1d inset',
@@ -56,8 +56,8 @@ export default {
     margin: '0',
     width: '48px',
     height: '48px',
-    boxShadow: '0 0 0 2px #D7D7D7 inset',
-    color: '#D7D7D7',
+    boxShadow: '0 0 0 2px #bdbbba inset',
+    color: '#bdbbba',
 
     fontSize: '4em',
     backgroundColor: 'white',
@@ -69,7 +69,7 @@ export default {
     color: blue,
   },
   unfinishedSvg: {
-    color: '#D7D7D7',
+    color: '#bdbbba',
   },
   leftBarUnfinished: {
     position: 'absolute',
@@ -77,7 +77,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#D7D7D7',
+    borderTopColor: '#bdbbba',
     left: 0,
     right: '51%',
     marginRight: 20,
@@ -88,7 +88,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#D7D7D7',
+    borderTopColor: '#bdbbba',
     right: 0,
     left: '49.7%',
     marginLeft: 20,
