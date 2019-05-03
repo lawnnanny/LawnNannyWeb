@@ -43,7 +43,7 @@ export default {
   requestButton: {
     padding: '.65em 1.1em',
     fontSize: '1.7em',
-    borderRadius: '25px',
+    borderRadius: '100px',
     color: white,
     backgroundColor: green,
     boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
