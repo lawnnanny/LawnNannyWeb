@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Input from '@material-ui/core/Input';
 import styled from 'styled-components';
 import {
   Form,
@@ -139,7 +140,8 @@ class DynamicForm extends Component {
   };
 
   processChange = (key, type) => {
-    const handle = (e, { value }) => {
+    const handle = (event) => {
+      const value = event.target.value
       const state = this.state;
       if (type === 'boolean') {
         state.dataForSubmitting[key] = !state.dataForSubmitting[key];
@@ -228,7 +230,7 @@ class DynamicForm extends Component {
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
-      <TextArea
+      <Input
         autoHeight
         value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
