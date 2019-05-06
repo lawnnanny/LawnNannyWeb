@@ -28,7 +28,7 @@ export const navBar = props => (
         </IconButton>
       </Link>
     </div>
-    {props.isLoggedIn ? (
+    {props.cheese ? (
       <div style={Styles.rightMenuDiv}>
         <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
           Logout

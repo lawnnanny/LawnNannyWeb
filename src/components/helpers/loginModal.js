@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import FormControl from '@material-ui/core/FormControl';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Input from '@material-ui/core/Input';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import DialogActions from '@material-ui/core/DialogActions';
+import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
@@ -20,7 +25,7 @@ const styles = {
   },
 };
 
-export class loginModal extends Component {
+class loginModal extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,12 +46,12 @@ export class loginModal extends Component {
     const { classes } = this.props;
     return (
       <div style={Styles.loginDiv}>
-        <Button size="large" onClick={this.handleClickOpen} style={Styles.loginButton}>
+        <Button size="large" onClick={this.props.closeLoginModal} style={Styles.loginButton}>
           Login
         </Button>
         <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
+          open={this.props.isLoginModalOpen}
+          onClose={this.props.closeLoginModal}
           aria-labelledby="form-dialog-title"
           classes={{ paper: classes.paperOverride }}
         >
@@ -99,9 +104,18 @@ export class loginModal extends Component {
             </Button>
             <div style={Styles.signupDiv}>
               <h2 style={Styles.signupText}>Dont have an account?</h2>
-              <Button style={Styles.signupButton}>Sign Up</Button>
+              <Button onClick={this.props.swapModal} style={Styles.signupButton}>
+                Sign Up
+              </Button>
             </div>
           </DialogContent>
+          <DialogActions style={Styles.modalAction}>
+            <Button onClick={this.props.closeLoginModal} style={Styles.closeButton}>
+              <SvgIcon>
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              </SvgIcon>
+            </Button>
+          </DialogActions>
         </Dialog>
       </div>
     );

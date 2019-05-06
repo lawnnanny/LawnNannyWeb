@@ -8,8 +8,16 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import { withStyles } from '@material-ui/core/styles';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/helpers/DynamicForm';
+
+const styles = {
+  inputOverride: {
+    fontSize: '1.8em',
+    padding: '.5em',
+  },
+};
 
 class DynamicForm extends Component {
   constructor(props) {
@@ -170,93 +178,130 @@ class DynamicForm extends Component {
   };
 
   renderInput = (field, isInRow, errors) => {
-    let fieldStyle = Styles.field;
+    let fieldStyle = Styles.formControl;
     if (isInRow) {
-      fieldStyle = Styles.groupField;
+      fieldStyle = Styles.formControlGroup;
     }
+    const { classes } = this.props;
     return (
-      <FormControl required={field.validation}>
-        <label htmlFor={field.id}>{field.name}</label>
+      <FormControl style={fieldStyle} required={field.validation}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
         <Input
+          style={Styles.input}
           error={errors[field.id]}
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
           type={field.password}
+          classes={{ input: classes.inputOverride }}
         />
       </FormControl>
     );
   };
-  renderDropDown = (field, isInRow, errors) => (
-    <FormControl required={field.validation}>
-      <label htmlFor={field.id}>{field.name}</label>
-      <Select
-        inputProps={{
-          name: field.placeholder,
-          id: field.id,
-        }}
-        onClose={this.handleClose}
-        onOpen={this.handleOpen}
-        error={errors[field.id]}
-        value={this.returnValue(field.id, 'entry', '')}
-        onChange={this.processChange(field.id, '')}
-        id={field.id}
-      >
-        {statekeys.map(p => (
-          <MenuItem key={p.id} value={p.name}>
-            {p.abbreviation}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
-  );
+  renderDropDown = (field, isInRow, errors) => {
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <FormControl style={fieldStyle} required={field.validation}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
+        <Select
+          style={Styles.select}
+          inputProps={{
+            name: field.placeholder,
+            id: field.id,
+          }}
+          onClose={this.handleClose}
+          onOpen={this.handleOpen}
+          error={errors[field.id]}
+          value={this.returnValue(field.id, 'entry', '')}
+          onChange={this.processChange(field.id, '')}
+          id={field.id}
+        >
+          {statekeys.map(p => (
+            <MenuItem style={Styles.dropdownItem} key={p.id} value={p.name}>
+              {p.abbreviation}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    );
+  };
 
-  renderTextArea = (field, isInRow, errors) => (
-    <FormControl required={field.validation} style={this.errorPropertyTextArea(errors[field.id])}>
-      <label htmlFor={field.id}>{field.name}</label>
-      <Input
-        autoHeight
-        multiline
-        rows={4}
-        rowsMax={8}
-        value={this.returnValue(field.id, 'entry', '')}
-        error={errors[field.id]}
-        id={field.id}
-        placeholder={field.placeholder}
-        onChange={this.processChange(field.id, '')}
-      />
-    </FormControl>
-  );
+  renderTextArea = (field, isInRow, errors) => {
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <FormControl style={fieldStyle} required={field.validation}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
+        <Input
+          style={Styles.textArea}
+          autoHeight
+          multiline
+          rows={4}
+          rowsMax={8}
+          value={this.returnValue(field.id, 'entry', '')}
+          error={errors[field.id]}
+          id={field.id}
+          placeholder={field.placeholder}
+          onChange={this.processChange(field.id, '')}
+        />
+      </FormControl>
+    );
+  };
 
-  renderCheckbox = (field, isInRow, errors) => (
-    <FormControl style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
-        {field.name}
-      </label>
-      <Checkbox
-        error={errors[field.id]}
-        name={field.name}
-        onChange={this.processChange(field.id, 'boolean')}
-        checked={this.returnValue(field.id, 'entry', '')}
-      />
-    </FormControl>
-  );
+  renderCheckbox = (field, isInRow, errors) => {
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <FormControl style={fieldStyle} required={field.validation}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
+        <Checkbox
+          style={Styles.checkbox}
+          error={errors[field.id]}
+          name={field.name}
+          onChange={this.processChange(field.id, 'boolean')}
+          checked={this.returnValue(field.id, 'entry', '')}
+        />
+      </FormControl>
+    );
+  };
 
-  renderRadio = field => (
-    <FormControl style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
-        {field.name}
-      </label>
-      <RadioGroup row id={field.id}>
-        {this.renderRadioButtons(field.id, field.options)}
-      </RadioGroup>
-    </FormControl>
-  );
+  renderRadio = (field, isInRow) => {
+    let fieldStyle = Styles.field;
+    if (isInRow) {
+      fieldStyle = Styles.groupField;
+    }
+    return (
+      <FormControl style={fieldStyle} required={field.validation}>
+        <label style={Styles.label} htmlFor={field.id}>
+          {field.name}
+        </label>
+        <RadioGroup style={Styles.radioGroup} row id={field.id}>
+          {this.renderRadioButtons(field.id, field.options)}
+        </RadioGroup>
+      </FormControl>
+    );
+  };
 
   renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (
       <FormControlLabel
-        control={<Radio color="primary" />}
+        style={Styles.formControlLabel}
+        control={<Radio style={Styles.radio} />}
         labelPlacement="top"
         label={option}
         value={option}
@@ -268,7 +313,7 @@ class DynamicForm extends Component {
   };
 
   renderRowFromJson = (field, style, errors) => (
-    <div style={Styles.group}>{this.renderFormFromJson(field, true, errors)}</div>
+    <div>{this.renderFormFromJson(field, true, errors)}</div>
   );
 
   renderRegisterPassword = (field, isInRow, errors) => {
@@ -283,11 +328,11 @@ class DynamicForm extends Component {
             {field.name}
           </label>
           <Input
+            style={Styles.input}
             error={errors[field.id]}
             value={this.returnValue(field.id, 'entry', '')}
             onChange={this.processChange(field.id, '')}
             placeholder={field.placeholder}
-            style={Styles.input}
             type={field.password}
           />
         </FormControl>
@@ -296,11 +341,11 @@ class DynamicForm extends Component {
             {field.name2}
           </label>
           <Input
+            style={Styles.input}
             error={errors[field.id2]}
             value={this.returnValue(field.id2, 'entry', '')}
             onChange={this.processChange(field.id2, '')}
             placeholder={field.placeholder2}
-            style={Styles.input}
             type={field.password}
           />
         </FormControl>
@@ -334,7 +379,7 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <div textAlign="left" padded style={this.props.styling.dynamicSegment}>
+      <div style={this.props.styling.dynamicSegment}>
         <h1 style={this.props.styling.header}>
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
@@ -363,4 +408,4 @@ DynamicForm.defaultProps = {
   setRequest: PropTypes.func,
 };
 
-export default DynamicForm;
+export default withStyles(styles)(DynamicForm);

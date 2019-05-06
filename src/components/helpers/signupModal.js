@@ -9,7 +9,7 @@ import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { createUser } from '../../networkRequests/userRequests';
 
-export class signupModal extends Component {
+class signupModal extends Component {
   constructor() {
     super();
     this.state = {
@@ -29,12 +29,12 @@ export class signupModal extends Component {
   render() {
     return (
       <div style={Styles.signupDiv}>
-        <Button size="large" onClick={this.handleClickOpen} style={Styles.signupButton}>
+        <Button size="large" onClick={this.props.closeSignupModal} style={Styles.signupButton}>
           Sign Up
         </Button>
         <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
+          open={this.props.isSignupModalOpen}
+          onClose={this.props.closeSignupModal}
           aria-labelledby="form-dialog-title"
         >
           <DialogTitle id="form-dialog-title" style={Styles.modalHeader}>

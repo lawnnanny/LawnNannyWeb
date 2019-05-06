@@ -3,6 +3,21 @@ const blue = '#1205ff';
 const white = '#FFFFFF';
 
 export default {
+  closeButton: {
+    position: 'absolute',
+    top: '0em',
+    right: '0em',
+    width: '2em',
+    height: '4em',
+    padding: '0em',
+    margin: '0',
+  },
+  modalAction: {
+    margin: '0em',
+  },
+  header: {
+    minHeight: '0',
+  },
   loginDiv: {
     paddingRight: '1em',
   },
@@ -49,7 +64,7 @@ export default {
     paddingTop: '.6em',
   },
   headerText: {
-    fontSize: '1.5em',
+    fontSize: '1.8em',
   },
   modalButton: {
     backgroundColor: green,
@@ -70,8 +85,8 @@ export default {
     padding: '0',
   },
   divider: {
-    margin: '0',
-    marginBottom: '.5em',
+    marginTop: '.5em',
+    fontSize: '1.5em',
   },
   facebookButton: {
     boxShadow: '0px 12px 10px -10px rgba(0,0,0,0.4)',
@@ -134,12 +149,13 @@ export default {
     margin: '0',
   },
   signupButton: {
-    width: '8em',
-    height: '3.5em',
+    width: '6.5em',
+    height: '3em',
     backgroundColor: 'white',
     border: '2px solid black',
     borderRadius: '0',
     padding: '3px 4px',
     fontWeight: 'bold',
+    fontSize: '1.1em',
   },
 };
