@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import BreadcrumbComponent from '../../../../src/components/helpers/breadcrumb';
 import Step from '../../../../src/components/helpers/breadcrumbStep';

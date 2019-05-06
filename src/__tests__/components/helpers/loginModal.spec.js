@@ -1,6 +1,4 @@
 import React from 'react';
-import { Menu, Modal, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import LoginModal from '../../../../src/components/helpers/loginModal';
 import DynamicComponent from '../../../../src/components/helpers/DynamicForm';

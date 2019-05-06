@@ -1,10 +1,8 @@
 import React from 'react';
-import { Grid, Segment, Header, Button, Image, Input, Icon, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import RequestPriceComponent from '../../../../../src/components/pages/pipeline/requestPrice';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
-import Clicker from '../../../../../src/components/helpers/Clicker';
 
 describe('RequestInformation', () => {
   let wrapper;

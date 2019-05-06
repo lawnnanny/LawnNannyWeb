@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu, Modal, Button, Dropdown, Icon, Segment, Header, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import DynamicComponent from '../../../../src/components/helpers/DynamicDisplay';

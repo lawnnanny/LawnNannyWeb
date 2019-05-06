@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Segment, Button, Modal } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestReviewComponent from '../../../../../src/components/pages/pipeline/requestReview';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';

@@ -1,9 +1,4 @@
 import React from 'react';
-import { shallowWithStore } from 'enzyme-redux';
-import { createMockStore } from 'redux-test-utils';
-import configureStore from 'redux-mock-store';
-import Actions from '../../../../../src/reducers/Actions';
-import { Menu, Modal, Grid, Input, Button, Form, Segment, Header } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestSelectionComponent from '../../../../../src/components/pages/pipeline/requestSelection';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';

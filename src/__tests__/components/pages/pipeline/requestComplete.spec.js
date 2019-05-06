@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestCompleteComponent from '../../../../../src/components/pages/pipeline/requestComplete';
 

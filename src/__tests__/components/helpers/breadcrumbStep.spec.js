@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Segment, Button, Label } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import StepComponent from '../../../../src/components/helpers/breadcrumbStep';
 

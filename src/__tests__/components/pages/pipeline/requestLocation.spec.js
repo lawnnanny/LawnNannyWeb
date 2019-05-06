@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestLocationComponent from '../../../../../src/components/pages/pipeline/requestLocation';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
@@ -10,9 +9,7 @@ import formPipelineJson from '../../../../../src/components/pages/pipeline/jsonF
 describe('RequestInformation', () => {
   let wrapper;
 
-  const testReduxState = testDataFunctions.generateTestStateJson(
-    formPipelineJson,
-  );
+  const testReduxState = testDataFunctions.generateTestStateJson(formPipelineJson);
 
   const reduxTestState = {
     requests: testReduxState,
@@ -20,7 +17,12 @@ describe('RequestInformation', () => {
 
   const renderComponent = () =>
     shallow(
-      <RequestLocationComponent requests={reduxTestState} typeOfRequest="Lawn Mowing" pageInProgress={2} current={2} />,
+      <RequestLocationComponent
+        requests={reduxTestState}
+        typeOfRequest="Lawn Mowing"
+        pageInProgress={2}
+        current={2}
+      />,
     );
 
   beforeEach(() => {

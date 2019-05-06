@@ -4,30 +4,14 @@ import Input from '@material-ui/core/Input';
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
-import styled from 'styled-components';
-import {
-  Form,
-  Header,
-  Segment,
-  Checkbox,
-  TextArea,
-  Dropdown,
-  Popup,
-  Icon,
-  Button,
-} from 'semantic-ui-react';
+import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
+import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
 import { statekeys } from '../../helpers/Common';
 import Styles from '../../styles/helpers/DynamicForm';
-import InlineError from './InlineError';
 
-const FormButton = styled(Button)`
-  &&& {
-    :active {
-      background-color: #221891 !important;
-      transform: translateY(4px) !important;
-    }
-  }
-`;
 class DynamicForm extends Component {
   constructor(props) {
     super();
@@ -187,10 +171,8 @@ class DynamicForm extends Component {
   };
 
   renderInput = (field, isInRow, errors) => {
-    let InLineErrorStyle = Styles.InLineErrorInput;
     let fieldStyle = Styles.field;
     if (isInRow) {
-      InLineErrorStyle = Styles.InLineErrorInputRow;
       fieldStyle = Styles.groupField;
     }
     return (
@@ -206,11 +188,6 @@ class DynamicForm extends Component {
           style={Styles.input}
           type={field.password}
         />
-        <div style={InLineErrorStyle}>
-          {errors[field.id] && (
-            <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
-          )}
-        </div>
       </FormControl>
     );
   };
@@ -238,9 +215,6 @@ class DynamicForm extends Component {
           </MenuItem>
         ))}
       </Select>
-      <div style={Styles.InLineErrorDropdown}>
-        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-      </div>
     </FormControl>
   );
 
@@ -261,14 +235,11 @@ class DynamicForm extends Component {
         placeholder={field.placeholder}
         onChange={this.processChange(field.id, '')}
       />
-      <div style={Styles.InLineErrorTextArea}>
-        {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
-      </div>
     </FormControl>
   );
 
   renderCheckbox = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <FormControl style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
@@ -278,31 +249,25 @@ class DynamicForm extends Component {
         onChange={this.processChange(field.id, 'boolean')}
         checked={this.returnValue(field.id, 'entry', '')}
       />
-      {errors[field.id] && <InlineError text={errors[field.id]} pointing="left" />}
-    </Form.Field>
+    </FormControl>
   );
 
-  renderRadio = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+  renderRadio = field => (
+    <FormControl style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
-      <Form.Group id={field.id} inline>
+      <RadioGroup row id={field.id}>
         {this.renderRadioButtons(field.id, field.options)}
-        {errors[field.id] && <InlineError text={errors[field.id]} />}
-      </Form.Group>
-    </Form.Field>
-  );
-
-  renderRowFromJson = (field, style, errors) => (
-    <Form.Group width={field.fields.length} style={Styles.group} unstackable>
-      {this.renderFormFromJson(field, true, errors)}
-    </Form.Group>
+      </RadioGroup>
+    </FormControl>
   );
 
   renderRadioButtons = (id, field) => {
     const radioButtons = field.map(option => (
-      <Form.Radio
+      <FormControlLabel
+        control={<Radio color="primary" />}
+        labelPlacement="top"
         label={option}
         value={option}
         onChange={this.processChange(id, '')}
@@ -312,20 +277,22 @@ class DynamicForm extends Component {
     return radioButtons;
   };
 
+  renderRowFromJson = (field, style, errors) => (
+    <div style={Styles.group}>{this.renderFormFromJson(field, true, errors)}</div>
+  );
+
   renderRegisterPassword = (field, isInRow, errors) => {
-    let InLineErrorStyle = Styles.InLineErrorInput;
     let fieldStyle = Styles.field;
     if (isInRow) {
-      InLineErrorStyle = Styles.InLineErrorInputRow;
       fieldStyle = Styles.groupField;
     }
     return (
       <div>
-        <Form.Field style={fieldStyle} required={field.validation}>
+        <FormControl style={fieldStyle} required={field.validation}>
           <label style={Styles.label} htmlFor={field.id}>
             {field.name}
           </label>
-          <Form.Input
+          <Input
             error={errors[field.id]}
             value={this.returnValue(field.id, 'entry', '')}
             onChange={this.processChange(field.id, '')}
@@ -333,17 +300,12 @@ class DynamicForm extends Component {
             style={Styles.input}
             type={field.password}
           />
-          <div style={InLineErrorStyle}>
-            {errors[field.id] && (
-              <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
-            )}
-          </div>
-        </Form.Field>
-        <Form.Field style={fieldStyle} required={field.validation}>
+        </FormControl>
+        <FormControl style={fieldStyle} required={field.validation}>
           <label style={Styles.label} htmlFor={field.id2}>
             {field.name2}
           </label>
-          <Form.Input
+          <Input
             error={errors[field.id2]}
             value={this.returnValue(field.id2, 'entry', '')}
             onChange={this.processChange(field.id2, '')}
@@ -351,12 +313,7 @@ class DynamicForm extends Component {
             style={Styles.input}
             type={field.password}
           />
-          <div style={InLineErrorStyle}>
-            {errors[field.id2] && (
-              <InlineError text={errors[field.id2]} pointing style={Styles.InlineError} />
-            )}
-          </div>
-        </Form.Field>
+        </FormControl>
       </div>
     );
   };
@@ -387,24 +344,18 @@ class DynamicForm extends Component {
   render() {
     this.loadStoreWithReduxData(this.props);
     return (
-      <Segment textAlign="left" padded style={this.props.styling.dynamicSegment}>
-        <Header as="h1" style={this.props.styling.header}>
+      <div textAlign="left" padded style={this.props.styling.dynamicSegment}>
+        <h1 style={this.props.styling.header}>
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
-        </Header>
-        <Segment textAlign="left" style={this.props.styling.formSegment}>
-          <Form onSubmit={this.onSubmit}>
-            {this.renderFormFromJson(
-              this.state.Requests[this.props.form],
-              false,
-              this.state.errors,
-            )}
-            <FormButton size="big" fluid style={Styles.button}>
-              {this.state.Requests[this.props.form].button}
-            </FormButton>
-          </Form>
-        </Segment>
-      </Segment>
+        </h1>
+        <div textAlign="left" style={this.props.styling.formSegment}>
+          {this.renderFormFromJson(this.state.Requests[this.props.form], false, this.state.errors)}
+          <Button onClick={this.onSubmit} style={Styles.button}>
+            {this.state.Requests[this.props.form].button}
+          </Button>
+        </div>
+      </div>
     );
   }
 }

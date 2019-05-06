@@ -1,9 +1,7 @@
 import React from 'react';
-import { Form, Segment, Header, Checkbox, TextArea, Dropdown, Popup } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import { Chance } from 'chance';
 import DynamicFormComponent from '../../../../src/components/helpers/DynamicForm';
-import InlineErrorComponent from '../../../../src/components/helpers/InlineError';
 import testDataFunctions from '../../../testDataGenerators/generateTestData';
 
 const chance = new Chance();

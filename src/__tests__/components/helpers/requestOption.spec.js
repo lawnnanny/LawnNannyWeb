@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Header, Image, Icon } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import RequestOptionComponent from '../../../../src/components/helpers/RequestOption';
 

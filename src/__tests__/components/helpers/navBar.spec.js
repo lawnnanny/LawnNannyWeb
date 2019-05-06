@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu, Dropdown, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import NavBar from '../../../../src/components/helpers/navBar';

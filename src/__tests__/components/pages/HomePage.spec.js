@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Button, Segment, Header } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
 import HomePage from '../../../../src/components/pages/Homepage/HomePage';
 
