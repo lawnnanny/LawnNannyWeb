@@ -321,14 +321,16 @@ class DynamicForm extends Component {
     if (isInRow) {
       fieldStyle = Styles.groupField;
     }
+    const { classes } = this.props;
     return (
-      <div>
+      <div style={Styles.signupPassDiv}>
         <FormControl style={fieldStyle} required={field.validation}>
           <label style={Styles.label} htmlFor={field.id}>
             {field.name}
           </label>
           <Input
             style={Styles.input}
+            classes={{ input: classes.inputOverride }}
             error={errors[field.id]}
             value={this.returnValue(field.id, 'entry', '')}
             onChange={this.processChange(field.id, '')}
@@ -342,6 +344,7 @@ class DynamicForm extends Component {
           </label>
           <Input
             style={Styles.input}
+            classes={{ input: classes.inputOverride }}
             error={errors[field.id2]}
             value={this.returnValue(field.id2, 'entry', '')}
             onChange={this.processChange(field.id2, '')}

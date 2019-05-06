@@ -13,9 +13,9 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  closeLoginModal: () => {
+  swapModal: () => {
     const action = {
-      type: Actions.login.closeLoginModal,
+      type: Actions.login.swapModal,
     };
 
     dispatch(action);

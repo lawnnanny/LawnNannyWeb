@@ -46,4 +46,9 @@ export default {
     paddingTop: '.2em',
   },
   formControlLabel: {},
+  signupPassDiv: {
+    display: 'flex',
+    padding: '.5em 0em',
+    width: '100%',
+  },
 };

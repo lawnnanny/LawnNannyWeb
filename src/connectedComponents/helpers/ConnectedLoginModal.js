@@ -13,13 +13,6 @@ const mapDispatchToProps = dispatch => ({
 
     dispatch(action);
   },
-  closeSignupModal: () => {
-    const action = {
-      type: Actions.login.closeSignupModal,
-    };
-
-    dispatch(action);
-  },
   swapModal: () => {
     const action = {
       type: Actions.login.swapModal,
