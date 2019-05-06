@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from '@material-ui/core/Input';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
 import styled from 'styled-components';
 import {
   Form,
@@ -33,6 +36,7 @@ class DynamicForm extends Component {
       errors: {},
       dataForSubmitting: {},
       Requests: props.jsonForm(),
+      open: false,
     };
   }
 
@@ -78,6 +82,14 @@ class DynamicForm extends Component {
       this.props.setRequest(data);
       this.props.route(data);
     }
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  handleOpen = () => {
+    this.setState({ open: true });
   };
 
   validateAndSetStateErrorsForDisplay = (data) => {
@@ -141,7 +153,7 @@ class DynamicForm extends Component {
 
   processChange = (key, type) => {
     const handle = (event) => {
-      const value = event.target.value
+      const value = event.target.value;
       const state = this.state;
       if (type === 'boolean') {
         state.dataForSubmitting[key] = !state.dataForSubmitting[key];
@@ -182,11 +194,11 @@ class DynamicForm extends Component {
       fieldStyle = Styles.groupField;
     }
     return (
-      <Form.Field style={fieldStyle} required={field.validation}>
+      <FormControl style={fieldStyle} required={field.validation}>
         <label style={Styles.label} htmlFor={field.id}>
           {field.name}
         </label>
-        <Form.Input
+        <Input
           error={errors[field.id]}
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
@@ -199,39 +211,49 @@ class DynamicForm extends Component {
             <InlineError text={errors[field.id]} pointing style={Styles.InlineError} />
           )}
         </div>
-      </Form.Field>
+      </FormControl>
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <FormControl style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
-      <Dropdown
+      <Select
         style={Styles.dropdown}
-        search
+        inputProps={{
+          name: field.placeholder,
+          id: field.id,
+        }}
+        onClose={this.handleClose}
+        onOpen={this.handleOpen}
         error={errors[field.id]}
         value={this.returnValue(field.id, 'entry', '')}
         onChange={this.processChange(field.id, '')}
         id={field.id}
-        placeholder={field.placeholder}
-        options={statekeys}
-        fluid
-        selection
-      />
+      >
+        {statekeys.map(p => (
+          <MenuItem key={p.id} value={p.name}>
+            {p.abbreviation}
+          </MenuItem>
+        ))}
+      </Select>
       <div style={Styles.InLineErrorDropdown}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
-    </Form.Field>
+    </FormControl>
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <Form.Field style={Styles.field} required={field.validation}>
+    <FormControl style={Styles.field} required={field.validation}>
       <label style={Styles.label} htmlFor={field.id}>
         {field.name}
       </label>
       <Input
         autoHeight
+        multiline
+        rows={4}
+        rowsMax={8}
         value={this.returnValue(field.id, 'entry', '')}
         style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
@@ -242,7 +264,7 @@ class DynamicForm extends Component {
       <div style={Styles.InLineErrorTextArea}>
         {errors[field.id] && <InlineError text={errors[field.id]} pointing />}
       </div>
-    </Form.Field>
+    </FormControl>
   );
 
   renderCheckbox = (field, isInRow, errors) => (

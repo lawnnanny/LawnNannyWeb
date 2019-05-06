@@ -7,7 +7,7 @@ export const signupJsonForm = {
         type: 'input',
         placeholder: 'email@example.com',
         id: 'email',
-        validation: 'required',
+        validation: true,
       },
       {
         name: 'Password',
@@ -17,7 +17,7 @@ export const signupJsonForm = {
         placeholder2: 'retype password',
         id: 'password',
         id2: 'retype password',
-        validation: 'required',
+        validation: true,
         password: 'password',
       },
     ],

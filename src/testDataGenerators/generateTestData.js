@@ -106,14 +106,14 @@ const generateTestStateJson = (testJson) => {
         entry: chance.bool(),
         id: chance.word(),
         type: randomType(),
-        validation: 'required',
+        validation: true,
       };
     } else {
       jsonForm[field.id] = {
         entry: chance.word(),
         id: chance.word(),
         type: randomType(),
-        validation: 'required',
+        validation: true,
       };
     }
   });
