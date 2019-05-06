@@ -10,7 +10,6 @@ import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import Styles from '../../styles/helpers/loginModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { loginUser } from '../../networkRequests/userRequests';
-import InlineErrorComponent from './InlineError';
 
 const styles = {
   paperOverride: {
@@ -55,15 +54,6 @@ export class loginModal extends Component {
             <h2 style={Styles.headerText}> Welcome back! </h2>
           </DialogTitle>
           <DialogContent style={Styles.loginContent}>
-            <div>
-              {this.state.loginUserError && (
-                <InlineErrorComponent
-                  text={this.state.loginUserError}
-                  pointing
-                  style={Styles.InlineError}
-                />
-              )}
-            </div>
             <DynamicComponent
               jsonForm={() => loginJsonForm}
               setRequest={() => {}}

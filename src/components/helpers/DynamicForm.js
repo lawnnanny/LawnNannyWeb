@@ -6,7 +6,6 @@ import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import Checkbox from '@material-ui/core/Checkbox';
 import Radio from '@material-ui/core/Radio';
-import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { statekeys } from '../../helpers/Common';
@@ -176,28 +175,22 @@ class DynamicForm extends Component {
       fieldStyle = Styles.groupField;
     }
     return (
-      <FormControl style={fieldStyle} required={field.validation}>
-        <label style={Styles.label} htmlFor={field.id}>
-          {field.name}
-        </label>
+      <FormControl required={field.validation}>
+        <label htmlFor={field.id}>{field.name}</label>
         <Input
           error={errors[field.id]}
           value={this.returnValue(field.id, 'entry', '')}
           onChange={this.processChange(field.id, '')}
           placeholder={field.placeholder}
-          style={Styles.input}
           type={field.password}
         />
       </FormControl>
     );
   };
   renderDropDown = (field, isInRow, errors) => (
-    <FormControl style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
-        {field.name}
-      </label>
+    <FormControl required={field.validation}>
+      <label htmlFor={field.id}>{field.name}</label>
       <Select
-        style={Styles.dropdown}
         inputProps={{
           name: field.placeholder,
           id: field.id,
@@ -219,17 +212,14 @@ class DynamicForm extends Component {
   );
 
   renderTextArea = (field, isInRow, errors) => (
-    <FormControl style={Styles.field} required={field.validation}>
-      <label style={Styles.label} htmlFor={field.id}>
-        {field.name}
-      </label>
+    <FormControl required={field.validation} style={this.errorPropertyTextArea(errors[field.id])}>
+      <label htmlFor={field.id}>{field.name}</label>
       <Input
         autoHeight
         multiline
         rows={4}
         rowsMax={8}
         value={this.returnValue(field.id, 'entry', '')}
-        style={this.errorPropertyTextArea(errors[field.id])}
         error={errors[field.id]}
         id={field.id}
         placeholder={field.placeholder}
@@ -349,12 +339,10 @@ class DynamicForm extends Component {
           {this.state.Requests[this.props.form].description}
           {this.showPopup(this.state.Requests[this.props.form].popup)}
         </h1>
-        <div textAlign="left" style={this.props.styling.formSegment}>
+        <form onSubmit={this.onSubmit} textAlign="left" style={this.props.styling.formSegment}>
           {this.renderFormFromJson(this.state.Requests[this.props.form], false, this.state.errors)}
-          <Button onClick={this.onSubmit} style={Styles.button}>
-            {this.state.Requests[this.props.form].button}
-          </Button>
-        </div>
+          <button style={Styles.button}>{this.state.Requests[this.props.form].button}</button>
+        </form>
       </div>
     );
   }

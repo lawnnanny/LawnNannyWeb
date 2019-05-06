@@ -8,7 +8,6 @@ import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/signupModal';
 import DynamicComponent from '../helpers/DynamicForm';
 import { createUser } from '../../networkRequests/userRequests';
-import InlineErrorComponent from './InlineError';
 
 export class signupModal extends Component {
   constructor() {
@@ -42,15 +41,6 @@ export class signupModal extends Component {
             Sign Up!
           </DialogTitle>
           <DialogContent>
-            <div>
-              {this.state.registerUserError && (
-                <InlineErrorComponent
-                  text={this.state.registerUserError}
-                  pointing
-                  style={Styles.InlineError}
-                />
-              )}
-            </div>
             <DynamicComponent
               jsonForm={() => signupJsonForm}
               form={'SignUp'}

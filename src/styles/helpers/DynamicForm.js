@@ -9,18 +9,6 @@ export default {
     marginTop: '1em',
     height: '3em',
   },
-  InLineErrorInput: {
-    marginTop: '-1.4em',
-  },
-  InLineErrorInputRow: {
-    marginTop: '-.5em',
-  },
-  InLineErrorDropdown: {
-    marginTop: '-.5em',
-  },
-  InLineErrorTextArea: {
-    marginTop: '-.5em',
-  },
   field: {
     paddingBottom: '.2em',
   },
