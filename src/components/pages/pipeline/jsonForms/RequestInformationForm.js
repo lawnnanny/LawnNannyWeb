@@ -48,6 +48,32 @@ const definition = {
       },
     },
   ],
+  listeners: [
+    {
+      event: 'submit',
+      actions: [
+        {
+          component: 'Set',
+          name: 'fields.booleanField.value',
+          value: '{{fields.booleanField.value}}',
+        },
+        {
+          component: 'Set',
+          name: 'fields.selectField.value',
+          value: '{{fields.selectField.value}}',
+        },
+        {
+          component: 'Set',
+          name: 'fields.textField.value',
+          value: '{{fields.textField.value}}',
+        },
+        {
+          component: 'ConsoleLog',
+          name: '{{fields.booleanField.value}}',
+        },
+      ],
+    },
+  ],
 };
 
 const RequestInformationForm = props => (
