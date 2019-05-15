@@ -2,15 +2,13 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import { jsonForm } from './jsonForms/locationForm';
 import Styles from '../../../styles/pipeline/requestLocation';
-import DynamicFormComponent from '../../helpers/DynamicForm';
+import RequestLocationForm from './jsonForms/RequestLocationForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
   let destinationString = '/pipeline/requestPrice';
   if (props.pageInProgress > 2) {
-    jsonForm.Location.button = 'Save';
     destinationString = '/pipeline/requestReview';
   }
   if (props.pageInProgress < 2) {
@@ -33,17 +31,11 @@ export const requestLocation = (props) => {
         <BreadcrumbComponent selection={props.pageInProgress} current={2} />
       </Grid>
       <Grid item sm={12} style={Styles.locationRow}>
-        <DynamicFormComponent
-          popup
-          jsonForm={() => jsonForm}
-          reduxInfo={props.requests.requestLocation}
-          setRequest={props.setRequestLocation}
-          form={'Location'}
+        <RequestLocationForm
           route={() => {
             props.requestInProgress(3);
             props.history.push(destinationString);
           }}
-          styling={Styles}
         />
       </Grid>
     </Grid>

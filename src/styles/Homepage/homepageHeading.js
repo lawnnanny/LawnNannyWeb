@@ -3,10 +3,6 @@ import lawn from '../../images/homepage/lawn.jpg';
 const white = '#FFFFFF';
 const green = '#20ad1d';
 export default {
-  homepageContainer: {
-    margin: '0',
-    flexGrow: '1',
-  },
   homepageHeadingContainer: {
     backgroundImage: `url(${lawn})`,
     backgroundSize: 'cover',
@@ -16,6 +12,7 @@ export default {
     overflow: 'hidden',
     width: '100%',
     margin: '0',
+    flexGrow: '1',
   },
   headingShadowContainer: {
     backgroundColor: 'rgba(0,0,0,0.7)',

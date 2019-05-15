@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
 import NavBar from '../../../../src/components/helpers/navBar';
-import LoginModalComponent from '../../../../src/connectedComponents/helpers/ConnectedLoginModal';
-import SignupModalComponent from '../../../../src/connectedComponents/helpers/ConnectedSignupModal';
+import Sidebar from '../../../../src/components/helpers/sidebar';
+import LoginModalComponent from '../../../connectedComponents/helpers/ConnectedLoginModal';
+import SignupModalComponent from '../../../connectedComponents/helpers/ConnectedSignupModal';
 
 describe('navBar', () => {
   let wrapper;
@@ -14,110 +17,83 @@ describe('navBar', () => {
     wrapper = renderComponent();
   });
 
-  it('is a menu', () => {
-    expect(wrapper.type()).toEqual(Menu);
+  it('is an app bar', () => {
+    expect(wrapper.type()).toEqual(AppBar);
   });
 
-  describe('dropdown item', () => {
-    let dropdownItem;
+  describe('lefthand div', () => {
+    let leftDiv;
 
     beforeEach(() => {
-      dropdownItem = wrapper.childAt(0);
+      leftDiv = wrapper.childAt(0);
     });
 
-    it('is a menu item', () => {
-      expect(dropdownItem.type()).toEqual(Menu.Item);
+    it('is a div', () => {
+      expect(leftDiv.type()).toEqual('div');
     });
-
-    describe('dropdown', () => {
-      let dropdown;
+    describe('sidebar', () => {
+      let sidebar;
 
       beforeEach(() => {
-        dropdown = dropdownItem.childAt(0);
+        sidebar = leftDiv.childAt(0);
       });
 
-      it('is a dropdown', () => {
-        expect(dropdown.type()).toEqual(Dropdown);
-      });
-      describe('dropdown menu', () => {
-        let dropdownMenu;
-
-        beforeEach(() => {
-          dropdownMenu = dropdown.childAt(0);
-        });
-
-        it('is a dropdown menu', () => {
-          expect(dropdownMenu.type()).toEqual(Dropdown.Menu);
-        });
+      it('is a sidebar', () => {
+        expect(sidebar.type()).toEqual(Sidebar);
       });
     });
-  });
-  describe('home link', () => {
-    let homeLink;
-
-    beforeEach(() => {
-      homeLink = wrapper.childAt(1);
-    });
-
-    it('is a home link', () => {
-      expect(homeLink.type()).toEqual(Link);
-    });
-    describe('home menu', () => {
-      let homeMenu;
+    describe('link', () => {
+      let link;
 
       beforeEach(() => {
-        homeMenu = homeLink.childAt(0);
+        link = leftDiv.childAt(1);
       });
 
-      it('is a home menu', () => {
-        expect(homeMenu.type()).toEqual(Menu.Item);
+      it('is a link', () => {
+        expect(link.type()).toEqual(Link);
       });
-      describe('home icon', () => {
-        let homeIcon;
+      describe('home button', () => {
+        let homeButton;
 
         beforeEach(() => {
-          homeIcon = homeMenu.childAt(0);
+          homeButton = link.childAt(0);
         });
 
-        it('is a home icon', () => {
-          expect(homeIcon.type()).toEqual(Icon);
+        it('is a icon button', () => {
+          expect(homeButton.type()).toEqual(IconButton);
         });
       });
     });
   });
-  describe('Login/signup menu', () => {
-    let loginSignupContainer;
+  describe('righthand div', () => {
+    let rightDiv;
 
     beforeEach(() => {
-      loginSignupContainer = wrapper.childAt(2);
+      rightDiv = wrapper.childAt(1);
     });
 
-    it('is a menu subcomponent', () => {
-      expect(loginSignupContainer.type()).toEqual(Menu.Menu);
+    it('is a div', () => {
+      expect(rightDiv.type()).toEqual('div');
     });
-
-    it('is positioned correctly', () => {
-      expect(loginSignupContainer.props().position).toEqual('right');
-    });
-    describe('Login modal', () => {
+    describe('loginModal', () => {
       let loginModal;
 
       beforeEach(() => {
-        loginModal = loginSignupContainer.childAt(0);
+        loginModal = rightDiv.childAt(0);
       });
 
-      it('is a login component', () => {
+      it('is a login modal', () => {
         expect(loginModal.type()).toEqual(LoginModalComponent);
       });
     });
-    describe('Signup modal', () => {
+    describe('signupModal', () => {
       let signupModal;
 
       beforeEach(() => {
-        signupModal = loginSignupContainer.childAt(1);
+        signupModal = rightDiv.childAt(1);
       });
 
-      it('is a signup component', () => {
+      it('is a signup modal', () => {
         expect(signupModal.type()).toEqual(SignupModalComponent);
       });
     });

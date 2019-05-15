@@ -1,9 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Button from '@material-ui/core/Button';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import DialogActions from '@material-ui/core/DialogActions';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import SignupModal from '../../../../src/components/helpers/signupModal';
-import DynamicComponent from '../../../../src/components/helpers/DynamicForm';
+import SignupForm from '../../../../src/components/helpers/SignupForm';
 
-describe('signup modal', () => {
+describe('signupModal', () => {
   let wrapper;
 
   const renderComponent = () => shallow(<SignupModal />);
@@ -12,84 +18,162 @@ describe('signup modal', () => {
     wrapper = renderComponent();
   });
 
-  it('is a modal', () => {
-    expect(wrapper.type()).toEqual(Modal);
+  it('is a div', () => {
+    expect(wrapper.type()).toEqual('div');
   });
 
-  it('is a tiny modal', () => {
-    expect(wrapper.props().size).toEqual('tiny');
-  });
-
-  it('displays a close icon', () => {
-    expect(wrapper.props().closeIcon).toBeTruthy();
-  });
-
-  describe('Signup Modal trigger', () => {
+  describe('signup Modal trigger', () => {
     let signupModalTrigger;
 
     beforeEach(() => {
-      signupModalTrigger = shallow(wrapper.props().trigger);
+      signupModalTrigger = wrapper.childAt(0);
     });
 
-    it('is a menu item', () => {
-      const expectedType = shallow(<Menu.Item />).type();
-
-      expect(signupModalTrigger.type()).toEqual(expectedType);
-    });
-    describe('signup Modal Button', () => {
-      let signupModalButton;
-      beforeEach(() => {
-        signupModalButton = signupModalTrigger.childAt(0);
-      });
-
-      it('is a modal button', () => {
-        expect(signupModalButton.type()).toEqual(Button);
-      });
-      it('it displays the correct text', () => {
-        const buttonText = signupModalButton.childAt(0);
-        expect(buttonText.text()).toEqual('Sign Up');
-      });
+    it('is a Button', () => {
+      expect(signupModalTrigger.type()).toEqual(Button);
     });
   });
 
-  describe('Signup Modal Header', () => {
-    let signupModalHeader;
+  describe('dialog', () => {
+    let dialog;
 
     beforeEach(() => {
-      signupModalHeader = wrapper.childAt(0);
+      dialog = wrapper.childAt(1);
     });
 
-    it('is a modal header', () => {
-      expect(signupModalHeader.type()).toEqual(Modal.Header);
+    it('is a dialog', () => {
+      expect(dialog.type()).toEqual(Dialog);
     });
-
-    it('displays the correct message', () => {
-      const signupModalHeaderText = signupModalHeader.childAt(0);
-
-      expect(signupModalHeaderText.text()).toEqual('Sign Up!');
-    });
-  });
-
-  describe('Signup Modal Description', () => {
-    let signupModalDescription;
-
-    beforeEach(() => {
-      signupModalDescription = wrapper.childAt(1);
-    });
-
-    it('is a modal description', () => {
-      expect(signupModalDescription.type()).toEqual(Modal.Description);
-    });
-
-    describe('Signup Modal Form', () => {
-      let signupModalForm;
+    describe('dialog title', () => {
+      let dialogTitle;
 
       beforeEach(() => {
-        signupModalForm = signupModalDescription.childAt(1);
+        dialogTitle = dialog.childAt(0);
       });
 
-      it('is a dynamic form', () => {
-        expect(signupModalForm.type()).toEqual(DynamicComponent);
+      it('is a dialog title', () => {
+        expect(dialogTitle.type()).toEqual(DialogTitle);
+      });
+      describe('title text', () => {
+        let titleText;
+
+        beforeEach(() => {
+          titleText = dialogTitle.childAt(0);
+        });
+
+        it('is a header', () => {
+          expect(titleText.type()).toEqual('h2');
+        });
+      });
+    });
+    describe('dialog content', () => {
+      let dialogContent;
+
+      beforeEach(() => {
+        dialogContent = dialog.childAt(1);
+      });
+
+      it('is a dialog content', () => {
+        expect(dialogContent.type()).toEqual(DialogContent);
+      });
+      describe('signup form', () => {
+        let signupForm;
+
+        beforeEach(() => {
+          signupForm = dialogContent.childAt(0);
+        });
+
+        it('is a form', () => {
+          expect(signupForm.type()).toEqual(SignupForm);
+        });
+      });
+      describe('divider', () => {
+        let divider;
+
+        beforeEach(() => {
+          divider = dialogContent.childAt(1);
+        });
+
+        it('is a header', () => {
+          expect(divider.type()).toEqual('h3');
+        });
+      });
+      describe('facebook', () => {
+        let facebook;
+
+        beforeEach(() => {
+          facebook = dialogContent.childAt(2);
+        });
+
+        it('is a button', () => {
+          expect(facebook.type()).toEqual(Button);
+        });
+      });
+      describe('google', () => {
+        let google;
+
+        beforeEach(() => {
+          google = dialogContent.childAt(3);
+        });
+
+        it('is a button', () => {
+          expect(google.type()).toEqual(Button);
+        });
+      });
+      describe('signup container', () => {
+        let signupContainer;
+
+        beforeEach(() => {
+          signupContainer = dialogContent.childAt(4);
+        });
+
+        it('is a div', () => {
+          expect(signupContainer.type()).toEqual('div');
+        });
+      });
+    });
+    describe('dialog actions', () => {
+      let dialogActions;
+
+      beforeEach(() => {
+        dialogActions = dialog.childAt(2);
+      });
+
+      it('is a dialog action', () => {
+        expect(dialogActions.type()).toEqual(DialogActions);
+      });
+      describe('action button', () => {
+        let actionButton;
+
+        beforeEach(() => {
+          actionButton = dialogActions.childAt(0);
+        });
+
+        it('is a button', () => {
+          expect(actionButton.type()).toEqual(Button);
+        });
+        describe('icon', () => {
+          let icon;
+
+          beforeEach(() => {
+            icon = actionButton.childAt(0);
+          });
+
+          it('is a svg icon', () => {
+            expect(icon.type()).toEqual(SvgIcon);
+          });
+          describe('path', () => {
+            let path;
+
+            beforeEach(() => {
+              path = icon.childAt(0);
+            });
+
+            it('is a path', () => {
+              expect(path.type()).toEqual('path');
+            });
+          });
+        });
       });
     });
   });

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import LoginModal from '../../../../src/connectedComponents/helpers/ConnectedLoginModal';
 
-describe('Connected NavBar', () => {
+describe('Connected Login modal', () => {
   let store;
 
   beforeEach(() => {

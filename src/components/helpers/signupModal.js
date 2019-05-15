@@ -7,10 +7,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { withStyles } from '@material-ui/core/styles';
-import { signupJsonForm } from '../pages/pipeline/jsonForms/signupForm';
 import Styles from '../../styles/helpers/signupModal';
-import DynamicComponent from '../helpers/DynamicForm';
-import { createUser } from '../../networkRequests/userRequests';
+import SignupForm from './SignupForm';
 
 const styles = {
   paperOverride: {
@@ -47,35 +45,7 @@ class signupModal extends Component {
             <h2 style={Styles.headerText}> Sign Up! </h2>
           </DialogTitle>
           <DialogContent style={Styles.loginContent}>
-            <DynamicComponent
-              jsonForm={() => signupJsonForm}
-              form={'SignUp'}
-              setRequest={() => {}}
-              route={(signupDetailsJson) => {
-                if (this.props.requestInProgress) {
-                  this.props.requestInProgress(5);
-                }
-                const serverResponse = createUser({
-                  email: signupDetailsJson.email.entry,
-                  password: signupDetailsJson.password.entry,
-                });
-                serverResponse.then((data) => {
-                  if (this.state.registerUserError !== null && data.success) {
-                    this.props.history.push(this.props.destination);
-                  }
-                  if (!data.success) {
-                    const currentState = this.state;
-                    let message = '';
-                    if (data.message.name === 'DupplicateError') {
-                      message = 'Account with that username or email already exists!';
-                    }
-                    currentState.registerUserError = message;
-                    this.setState(currentState);
-                  }
-                });
-              }}
-              styling={Styles}
-            />
+            <SignupForm />
             <h3 style={Styles.divider}> or </h3>
             <Button style={Styles.facebookButton}>
               <SvgIcon style={Styles.facebookIcon}>

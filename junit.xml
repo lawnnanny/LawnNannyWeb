@@ -1,449 +1,1144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="195" failures="0" time="3.374">
-  <testsuite name="dynamic display" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.248" tests="7">
-    <testcase classname="dynamic display is a segment" name="dynamic display is a segment" time="0.018">
+<testsuites name="jest tests" tests="144" failures="46" time="19.531">
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:45" time="5.408" tests="6">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.017">
     </testcase>
-    <testcase classname="dynamic display heading group is a segment group" name="dynamic display heading group is a segment group" time="0.005">
+    <testcase classname="Home Page shadowRow is a shadow Row" name="Home Page shadowRow is a shadow Row" time="0.006">
     </testcase>
-    <testcase classname="dynamic display heading group header segment is a segment" name="dynamic display heading group header segment is a segment" time="0.005">
+    <testcase classname="Home Page shadowRow header container is a grid" name="Home Page shadowRow header container is a grid" time="0.002">
     </testcase>
-    <testcase classname="dynamic display heading group header segment group header is a header" name="dynamic display heading group header segment group header is a header" time="0.008">
+    <testcase classname="Home Page shadowRow header container header is a h1" name="Home Page shadowRow header container header is a h1" time="0.003">
     </testcase>
-    <testcase classname="dynamic display heading group group icon link is a segment" name="dynamic display heading group group icon link is a segment" time="0.006">
+    <testcase classname="Home Page shadowRow button Container is a grid" name="Home Page shadowRow button Container is a grid" time="0.001">
     </testcase>
-    <testcase classname="dynamic display heading group group icon link icon link is a link" name="dynamic display heading group group icon link icon link is a link" time="0.006">
-    </testcase>
-    <testcase classname="dynamic display heading group group icon link icon link icon is a icon" name="dynamic display heading group group icon link icon link icon is a icon" time="0.005">
+    <testcase classname="Home Page shadowRow button Container button is a grid" name="Home Page shadowRow button Container button is a grid" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.265" tests="7">
-    <testcase classname="RequestInformation is wrapped in a Grid" name="RequestInformation is wrapped in a Grid" time="0.012">
+  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:45" time="5.611" tests="5">
+    <testcase classname="step is a link" name="step is a link" time="0.017">
     </testcase>
-    <testcase classname="RequestInformation  Row is a row" name="RequestInformation  Row is a row" time="0.003">
+    <testcase classname="step information column is a grid" name="step information column is a grid" time="0.004">
     </testcase>
-    <testcase classname="RequestInformation  Row Step 1 is a Step" name="RequestInformation  Row Step 1 is a Step" time="0.003">
+    <testcase classname="step information column icon is a icon" name="step information column icon is a icon" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation  Row Step 2 is a Step" name="RequestInformation  Row Step 2 is a Step" time="0.001">
+    <testcase classname="step information column bars is a div" name="step information column bars is a div" time="0">
     </testcase>
-    <testcase classname="RequestInformation  Row Step 3 is a Step" name="RequestInformation  Row Step 3 is a Step" time="0.004">
-    </testcase>
-    <testcase classname="RequestInformation  Row Step 4 is a Step" name="RequestInformation  Row Step 4 is a Step" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation  Row Step 5 is a Step" name="RequestInformation  Row Step 5 is a Step" time="0.002">
+    <testcase classname="step information column label is a label" name="step information column label is a label" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="dynamic display" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.334" tests="13">
-    <testcase classname="dynamic display is a segment" name="dynamic display is a segment" time="0.022">
+  <testsuite name="RequestPayment" errors="0" failures="14" skipped="0" timestamp="2019-05-15T16:28:45" time="5.677" tests="14">
+    <testcase classname="RequestPayment is wrapped in a Grid Container" name="RequestPayment is wrapped in a Grid Container" time="0.031">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  [Function WithStyles]
+
+Difference:
+
+Compared values have no visual difference.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:32:28)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display header is a header" name="dynamic display header is a header" time="0.005">
+    <testcase classname="RequestPayment contains four rows" name="RequestPayment contains four rows" time="0.003">
+      <failure>Error: expect.assertions(4)
+
+Expected four assertions to be called but only received zero assertion calls.
+    at addAssertionErrors (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\setup-jest-globals.js:68:21)
+    at Spec.attr.resultCallback (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\setup-jest-globals.js:111:9)
+    at complete (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine\Spec.js:108:10)
+    at queueRunnerFactory.then (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine\Spec.js:104:14)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display info chunk is a dropdown" name="dynamic display info chunk is a dropdown" time="0.007">
+    <testcase classname="RequestPayment BreadcrumbRow is a Breadcrumb Row" name="RequestPayment BreadcrumbRow is a Breadcrumb Row" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:53:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display location chunk is a dropdown" name="dynamic display location chunk is a dropdown" time="0.005">
+    <testcase classname="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function anonymous]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:64:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment is a segment" name="dynamic display price segment is a segment" time="0.007">
+    <testcase classname="RequestPayment BreadcrumbRow BreadcrumbComponent has a selection" name="RequestPayment BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  3
+Received:
+  undefined
+
+Difference:
+
+  Comparing two different types of values. Expected number but received undefined.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:67:46)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group is a segment group" name="dynamic display price segment header group is a segment group" time="0.005">
+    <testcase classname="RequestPayment HeaderRow is a Row" name="RequestPayment HeaderRow is a Row" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:80:32)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group header section is a segment Section" name="dynamic display price segment header group header section is a segment Section" time="0.019">
+    <testcase classname="RequestPayment HeaderRow Tooltip  is a tooltip" name="RequestPayment HeaderRow Tooltip  is a tooltip" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:91:30)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group header section price header is a header" name="dynamic display price segment header group header section price header is a header" time="0.006">
+    <testcase classname="RequestPayment HeaderRow Tooltip  Badge  is a badge" name="RequestPayment HeaderRow Tooltip  Badge  is a badge" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:101:32)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group header section icon section is a icon Section" name="dynamic display price segment header group header section icon section is a icon Section" time="0.004">
+    <testcase classname="RequestPayment HeaderRow Tooltip  Badge  Header  is a header" name="RequestPayment HeaderRow Tooltip  Badge  Header  is a header" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h1&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:111:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group header section icon section icon Link is a icon Link" name="dynamic display price segment header group header section icon section icon Link is a icon Link" time="0.004">
+    <testcase classname="RequestPayment PriceRow is a Price Row" name="RequestPayment PriceRow is a Price Row" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:125:31)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment header group header section icon section icon Link icon is a icon" name="dynamic display price segment header group header section icon section icon Link icon is a icon" time="0.004">
+    <testcase classname="RequestPayment PriceRow Form control is a form Control" name="RequestPayment PriceRow Form control is a form Control" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:134:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment label is a label" name="dynamic display price segment label is a label" time="0.004">
+    <testcase classname="RequestPayment PriceRow Form control Input is an input" name="RequestPayment PriceRow Form control Input is an input" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:144:37)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
-    <testcase classname="dynamic display price segment label label icon is a label icon" name="dynamic display price segment label label icon is a label icon" time="0.006">
+    <testcase classname="RequestPayment buttonRow is a row" name="RequestPayment buttonRow is a row" time="0.007">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:156:32)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="RequestPayment buttonRow buttonLink is a Link" name="RequestPayment buttonRow buttonLink is a Link" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function Link]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\pages\pipeline\requestPayment.spec.js:165:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.323" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.016">
+  <testsuite name="signupModal" errors="0" failures="15" skipped="0" timestamp="2019-05-15T16:28:45" time="12.936" tests="15">
+    <testcase classname="signupModal is a div" name="signupModal is a div" time="0.024">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  [Function signupModal]
+
+Difference:
+
+  Comparing two different types of values. Expected string but received function.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:22:28)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal signup Modal trigger is a Button" name="signupModal signup Modal trigger is a Button" time="0.005">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:33:41)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog is a dialog" name="signupModal dialog is a dialog" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:45:29)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog title is a dialog title" name="signupModal dialog dialog title is a dialog title" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:55:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog title title text is a header" name="signupModal dialog dialog title title text is a header" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h2&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:65:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content is a dialog content" name="signupModal dialog dialog content is a dialog content" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:77:38)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content signup form is a form" name="signupModal dialog dialog content signup form is a form" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function SignupForm]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:87:37)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content divider is a header" name="signupModal dialog dialog content divider is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h3&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:98:34)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content facebook is a button" name="signupModal dialog dialog content facebook is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:109:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content google is a button" name="signupModal dialog dialog content google is a button" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:120:33)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content signup container is a div" name="signupModal dialog dialog content signup container is a div" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:131:42)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions is a dialog action" name="signupModal dialog dialog actions is a dialog action" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:143:38)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button is a button" name="signupModal dialog dialog actions action button is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:153:39)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button icon is a svg icon" name="signupModal dialog dialog actions action button icon is a svg icon" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:163:33)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button icon path is a path" name="signupModal dialog dialog actions action button icon path is a path" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;path&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\signupModal.spec.js:173:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.301" tests="1">
-    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.015">
+  <testsuite name="loginModal" errors="0" failures="15" skipped="0" timestamp="2019-05-15T16:28:45" time="12.958" tests="15">
+    <testcase classname="loginModal is a div" name="loginModal is a div" time="0.026">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  [Function loginModal]
+
+Difference:
+
+  Comparing two different types of values. Expected string but received function.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:22:28)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal Login Modal trigger is a Button" name="loginModal Login Modal trigger is a Button" time="0.004">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:33:40)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog is a dialog" name="loginModal dialog is a dialog" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:45:29)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog title is a dialog title" name="loginModal dialog dialog title is a dialog title" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:55:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog title title text is a header" name="loginModal dialog dialog title title text is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h2&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:65:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content is a dialog content" name="loginModal dialog dialog content is a dialog content" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:77:38)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content login form is a form" name="loginModal dialog dialog content login form is a form" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function LoginForm]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:87:36)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content divider is a header" name="loginModal dialog dialog content divider is a header" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h3&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:98:34)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content facebook is a button" name="loginModal dialog dialog content facebook is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:109:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content google is a button" name="loginModal dialog dialog content google is a button" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:120:33)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog content signup container is a div" name="loginModal dialog dialog content signup container is a div" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:131:42)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog actions is a dialog action" name="loginModal dialog dialog actions is a dialog action" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:143:38)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog actions action button is a button" name="loginModal dialog dialog actions action button is a button" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:153:39)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog actions action button icon is a svg icon" name="loginModal dialog dialog actions action button icon is a svg icon" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:163:33)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+    <testcase classname="loginModal dialog dialog actions action button icon path is a path" name="loginModal dialog dialog actions action button icon path is a path" time="0.005">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;path&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (C:\Users\Will\Desktop\TerraWeb\src\__tests__\components\helpers\loginModal.spec.js:173:35)
+    at Object.asyncFn (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\jasmine-async.js:68:30)
+    at resolve (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\Will\Desktop\TerraWeb\node_modules\jest-jasmine2\build\queueRunner.js:31:21)
+    at Promise.resolve.then.el (C:\Users\Will\Desktop\TerraWeb\node_modules\p-map\index.js:46:16)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.435" tests="14">
-    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.017">
-    </testcase>
-    <testcase classname="RequestReview is styled as a container Grid" name="RequestReview is styled as a container Grid" time="0.003">
-    </testcase>
-    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.006">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.004">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestReview BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.003">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.005">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.006">
-    </testcase>
-    <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.015">
-    </testcase>
-    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.006">
-    </testcase>
-    <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.007">
-    </testcase>
-    <testcase classname="RequestReview Submit Row Submit Row Segment It is a segmnet" name="RequestReview Submit Row Submit Row Segment It is a segmnet" time="0.005">
-    </testcase>
-    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal is a modal" name="RequestReview Submit Row Submit Row Segment Submit Row Modal is a modal" time="0.003">
-    </testcase>
-    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal modal header is a modal header" name="RequestReview Submit Row Submit Row Segment Submit Row Modal modal header is a modal header" time="0.002">
-    </testcase>
-    <testcase classname="RequestReview Submit Row Submit Row Segment Submit Row Modal Modal content is modal content" name="RequestReview Submit Row Submit Row Segment Submit Row Modal Modal content is modal content" time="0.004">
+  <testsuite name="Connected Login modal" errors="0" failures="1" skipped="0" timestamp="2019-05-15T16:28:45" time="14.022" tests="1">
+    <testcase classname="Connected Login modal has the correct props" name="Connected Login modal has the correct props" time="0.012">
+      <failure>TypeError: Cannot read property &apos;isLoginModalOpen&apos; of undefined
+    at Function.mapStateToProps [as mapToProps] (C:\Users\Will\Desktop\TerraWeb\src\connectedComponents\helpers\ConnectedLoginModal.js:6:35)
+    at mapToPropsProxy (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:54:92)
+    at Function.detectFactoryAndVerify (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:63:19)
+    at mapToPropsProxy (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:54:46)
+    at handleFirstCall (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\selectorFactory.js:37:18)
+    at pureFinalPropsSelector (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\selectorFactory.js:85:81)
+    at Object.runComponentSelector [as run] (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:43:25)
+    at Connect.initSelector (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:195:23)
+    at new Connect (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:136:15)
+    at ReactShallowRenderer.render (C:\Users\Will\Desktop\TerraWeb\node_modules\react-test-renderer\cjs\react-test-renderer-shallow.development.js:131:26)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.447" tests="1">
-    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.011">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:51" time="8.295" tests="8">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.005">
+    </testcase>
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.003">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow form is a Form" name="RequestInformation FormRow form is a Form" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation FormRow form has a route" name="RequestInformation FormRow form has a route" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.372" tests="1">
-    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.016">
+  <testsuite name="Connected Signup modal" errors="0" failures="1" skipped="0" timestamp="2019-05-15T16:28:45" time="14.235" tests="1">
+    <testcase classname="Connected Signup modal has the correct props" name="Connected Signup modal has the correct props" time="0.013">
+      <failure>TypeError: Cannot read property &apos;isSignupModalOpen&apos; of undefined
+    at Function.mapStateToProps [as mapToProps] (C:\Users\Will\Desktop\TerraWeb\src\connectedComponents\helpers\ConnectedSignupModal.js:6:36)
+    at mapToPropsProxy (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:54:92)
+    at Function.detectFactoryAndVerify (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:63:19)
+    at mapToPropsProxy (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\wrapMapToProps.js:54:46)
+    at handleFirstCall (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\selectorFactory.js:37:18)
+    at pureFinalPropsSelector (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\connect\selectorFactory.js:85:81)
+    at Object.runComponentSelector [as run] (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:43:25)
+    at Connect.initSelector (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:195:23)
+    at new Connect (C:\Users\Will\Desktop\TerraWeb\node_modules\react-redux\lib\components\connectAdvanced.js:136:15)
+    at ReactShallowRenderer.render (C:\Users\Will\Desktop\TerraWeb\node_modules\react-test-renderer\cjs\react-test-renderer-shallow.development.js:131:26)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.299" tests="5">
-    <testcase classname="RequestInformation is a div" name="RequestInformation is a div" time="0.02">
-    </testcase>
-    <testcase classname="RequestInformation triangleTopButton is a button" name="RequestInformation triangleTopButton is a button" time="0.008">
-    </testcase>
-    <testcase classname="RequestInformation triangleTopButton triangleTopImage is a image" name="RequestInformation triangleTopButton triangleTopImage is a image" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation triangleBottomButton is a button" name="RequestInformation triangleBottomButton is a button" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation triangleBottomButton triangleBottomImage is a image" name="RequestInformation triangleBottomButton triangleBottomImage is a image" time="0.01">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:59" time="0.445" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.014">
     </testcase>
   </testsuite>
-  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.449" tests="27">
-    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.015">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:58" time="1.609" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.011">
     </testcase>
-    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.003">
+  </testsuite>
+  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:00" time="0.598" tests="26">
+    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.008">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.005">
+    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.004">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestSelection BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.003">
+    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.004">
+    <testcase classname="RequestSelection BreadcrumbRow is styled as a Grid item" name="RequestSelection BreadcrumbRow is styled as a Grid item" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.008">
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.017">
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.006">
+    <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.009">
+    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.007">
+    <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.002">
     </testcase>
     <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.003">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.002">
     </testcase>
     <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.002">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.002">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection YardWorkSegment is a Yard Work Segment" name="RequestSelection YardWorkSegment is a Yard Work Segment" time="0.005">
+    <testcase classname="RequestSelection YardWorkSegment is a Yard Work Segment" name="RequestSelection YardWorkSegment is a Yard Work Segment" time="0.003">
     </testcase>
     <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" name="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" name="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" time="0.002">
+    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" name="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" time="0.001">
     </testcase>
-    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" name="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" time="0.005">
+    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" name="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection snowClearingSegment is a snowClearing Segment" name="RequestSelection snowClearingSegment is a snowClearing Segment" time="0.003">
+    <testcase classname="RequestSelection snowClearingSegment is a snowClearing Segment" name="RequestSelection snowClearingSegment is a snowClearing Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" name="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" time="0.003">
+    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" name="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has the correct title" name="RequestSelection snowClearingSegment snowClearingComponent has the correct title" time="0.004">
+    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has the correct title" name="RequestSelection snowClearingSegment snowClearingComponent has the correct title" time="0.003">
     </testcase>
     <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" name="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection CustomSegment is a Custom Segment" name="RequestSelection CustomSegment is a Custom Segment" time="0.008">
+    <testcase classname="RequestSelection CustomSegment is a Custom Segment" name="RequestSelection CustomSegment is a Custom Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection CustomSegment CustomComponent is a Custom" name="RequestSelection CustomSegment CustomComponent is a Custom" time="0.004">
+    <testcase classname="RequestSelection CustomSegment CustomComponent is a Custom" name="RequestSelection CustomSegment CustomComponent is a Custom" time="0.002">
     </testcase>
     <testcase classname="RequestSelection CustomSegment CustomComponent has the correct title" name="RequestSelection CustomSegment CustomComponent has the correct title" time="0.002">
     </testcase>
     <testcase classname="RequestSelection CustomSegment CustomComponent has an imageURL" name="RequestSelection CustomSegment CustomComponent has an imageURL" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.325" tests="10">
-    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.019">
-    </testcase>
-    <testcase classname="Request Complete is styled as a container Grid" name="Request Complete is styled as a container Grid" time="0.003">
-    </testcase>
-    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.004">
-    </testcase>
-    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete complete row header header icon is an icon" name="Request Complete complete row header header icon is an icon" time="0.004">
-    </testcase>
-    <testcase classname="Request Complete complete row header header content is a header content" name="Request Complete complete row header header content is a header content" time="0.006">
-    </testcase>
-    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.008">
-    </testcase>
-    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.003">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:00" time="0.762" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.474" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.011">
+  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:59" time="1.266" tests="1">
+    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.554" tests="11">
-    <testcase classname="navBar is a menu" name="navBar is a menu" time="0.021">
+  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:51" time="9.79" tests="8">
+    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.008">
     </testcase>
-    <testcase classname="navBar dropdown item is a menu item" name="navBar dropdown item is a menu item" time="0.011">
+    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.003">
     </testcase>
-    <testcase classname="navBar dropdown item dropdown is a dropdown" name="navBar dropdown item dropdown is a dropdown" time="0.012">
+    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.002">
     </testcase>
-    <testcase classname="navBar dropdown item dropdown dropdown menu is a dropdown menu" name="navBar dropdown item dropdown dropdown menu is a dropdown menu" time="0.005">
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
     </testcase>
-    <testcase classname="navBar home link is a home link" name="navBar home link is a home link" time="0.005">
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
     </testcase>
-    <testcase classname="navBar home link home menu is a home menu" name="navBar home link home menu is a home menu" time="0.006">
+    <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.001">
     </testcase>
-    <testcase classname="navBar home link home menu home icon is a home icon" name="navBar home link home menu home icon is a home icon" time="0.008">
+    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.002">
     </testcase>
-    <testcase classname="navBar Login/signup menu is a menu subcomponent" name="navBar Login/signup menu is a menu subcomponent" time="0.009">
-    </testcase>
-    <testcase classname="navBar Login/signup menu is positioned correctly" name="navBar Login/signup menu is positioned correctly" time="0.006">
-    </testcase>
-    <testcase classname="navBar Login/signup menu Login modal is a login component" name="navBar Login/signup menu Login modal is a login component" time="0.007">
-    </testcase>
-    <testcase classname="navBar Login/signup menu Signup modal is a signup component" name="navBar Login/signup menu Signup modal is a signup component" time="0.006">
+    <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="2.516" tests="16">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.024">
-    </testcase>
-    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.004">
-    </testcase>
-    <testcase classname="RequestInformation contains four rows" name="RequestInformation contains four rows" time="0.013">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.005">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.007">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.005">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.01">
-    </testcase>
-    <testcase classname="RequestInformation HeaderRow is a Row" name="RequestInformation HeaderRow is a Row" time="0.006">
-    </testcase>
-    <testcase classname="RequestInformation HeaderRow Header  is a header" name="RequestInformation HeaderRow Header  is a header" time="0.009">
-    </testcase>
-    <testcase classname="RequestInformation PriceRow is a Price Row" name="RequestInformation PriceRow is a Price Row" time="0.005">
-    </testcase>
-    <testcase classname="RequestInformation PriceRow Input is an input" name="RequestInformation PriceRow Input is an input" time="0.004">
-    </testcase>
-    <testcase classname="RequestInformation PriceRow Input Icon is an icon" name="RequestInformation PriceRow Input Icon is an icon" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation PriceRow Input label is an icon" name="RequestInformation PriceRow Input label is an icon" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation PriceRow Input label Clicker is an clicker" name="RequestInformation PriceRow Input label Clicker is an clicker" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation buttonRow is a row" name="RequestInformation buttonRow is a row" time="0.005">
-    </testcase>
-    <testcase classname="RequestInformation buttonRow buttonLink is a Link" name="RequestInformation buttonRow buttonLink is a Link" time="0.006">
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:58" time="2.428" tests="1">
+    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.006">
     </testcase>
   </testsuite>
-  <testsuite name="Connected NavBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.363" tests="1">
-    <testcase classname="Connected NavBar has the correct props" name="Connected NavBar has the correct props" time="0.01">
-    </testcase>
-  </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.243" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="Connected NavBar" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.274" tests="1">
-    <testcase classname="Connected NavBar has the correct props" name="Connected NavBar has the correct props" time="0.008">
-    </testcase>
-  </testsuite>
-  <testsuite name="DynamicForm" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.324" tests="10">
-    <testcase classname="DynamicForm is wrapped in a Segment" name="DynamicForm is wrapped in a Segment" time="0.011">
-    </testcase>
-    <testcase classname="DynamicForm is styled as a padded Segment" name="DynamicForm is styled as a padded Segment" time="0.004">
-    </testcase>
-    <testcase classname="DynamicForm header is a header" name="DynamicForm header is a header" time="0.007">
-    </testcase>
-    <testcase classname="DynamicForm header is has an as equal to h1" name="DynamicForm header is has an as equal to h1" time="0.005">
-    </testcase>
-    <testcase classname="DynamicForm header is the correct text in the header" name="DynamicForm header is the correct text in the header" time="0.004">
-    </testcase>
-    <testcase classname="DynamicForm header popup is a popup" name="DynamicForm header popup is a popup" time="0.004">
-    </testcase>
-    <testcase classname="DynamicForm form segment is a segment" name="DynamicForm form segment is a segment" time="0.005">
-    </testcase>
-    <testcase classname="DynamicForm form segment form is a form" name="DynamicForm form segment form is a form" time="0.002">
-    </testcase>
-    <testcase classname="DynamicForm form segment form form data field -1 is correct" name="DynamicForm form segment form form data field -1 is correct" time="0.017">
-    </testcase>
-    <testcase classname="DynamicForm form segment form form data field -1 is correct" name="DynamicForm form segment form form data field -1 is correct" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="loginModal" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.281" tests="10">
-    <testcase classname="loginModal is a modal" name="loginModal is a modal" time="0.009">
-    </testcase>
-    <testcase classname="loginModal is a mini modal" name="loginModal is a mini modal" time="0.003">
-    </testcase>
-    <testcase classname="loginModal displays a close modal button" name="loginModal displays a close modal button" time="0.001">
-    </testcase>
-    <testcase classname="loginModal Login Modal trigger is a menu item" name="loginModal Login Modal trigger is a menu item" time="0.005">
-    </testcase>
-    <testcase classname="loginModal Login Modal trigger Login Modal Button is a modal button" name="loginModal Login Modal trigger Login Modal Button is a modal button" time="0.004">
-    </testcase>
-    <testcase classname="loginModal Login Modal trigger Login Modal Button it displays the correct text" name="loginModal Login Modal trigger Login Modal Button it displays the correct text" time="0.005">
-    </testcase>
-    <testcase classname="loginModal Login Modal Header is a modal header" name="loginModal Login Modal Header is a modal header" time="0.005">
-    </testcase>
-    <testcase classname="loginModal Login Modal Header displays the correct text" name="loginModal Login Modal Header displays the correct text" time="0.002">
-    </testcase>
-    <testcase classname="loginModal Login Modal Description is a modal description" name="loginModal Login Modal Description is a modal description" time="0.003">
-    </testcase>
-    <testcase classname="loginModal Login Modal Description Dynamic Form Description is a dynamic component" name="loginModal Login Modal Description Dynamic Form Description is a dynamic component" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="signup modal" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.307" tests="10">
-    <testcase classname="signup modal is a modal" name="signup modal is a modal" time="0.006">
-    </testcase>
-    <testcase classname="signup modal is a tiny modal" name="signup modal is a tiny modal" time="0.003">
-    </testcase>
-    <testcase classname="signup modal displays a close icon" name="signup modal displays a close icon" time="0.004">
-    </testcase>
-    <testcase classname="signup modal Signup Modal trigger is a menu item" name="signup modal Signup Modal trigger is a menu item" time="0.005">
-    </testcase>
-    <testcase classname="signup modal Signup Modal trigger signup Modal Button is a modal button" name="signup modal Signup Modal trigger signup Modal Button is a modal button" time="0.003">
-    </testcase>
-    <testcase classname="signup modal Signup Modal trigger signup Modal Button it displays the correct text" name="signup modal Signup Modal trigger signup Modal Button it displays the correct text" time="0.009">
-    </testcase>
-    <testcase classname="signup modal Signup Modal Header is a modal header" name="signup modal Signup Modal Header is a modal header" time="0.004">
-    </testcase>
-    <testcase classname="signup modal Signup Modal Header displays the correct message" name="signup modal Signup Modal Header displays the correct message" time="0.002">
-    </testcase>
-    <testcase classname="signup modal Signup Modal Description is a modal description" name="signup modal Signup Modal Description is a modal description" time="0.003">
-    </testcase>
-    <testcase classname="signup modal Signup Modal Description Signup Modal Form is a dynamic form" name="signup modal Signup Modal Description Signup Modal Form is a dynamic form" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.273" tests="5">
-    <testcase classname="step is a link" name="step is a link" time="0.006">
-    </testcase>
-    <testcase classname="step information column is a column" name="step information column is a column" time="0.005">
-    </testcase>
-    <testcase classname="step information column information segment is a segment" name="step information column information segment is a segment" time="0.001">
-    </testcase>
-    <testcase classname="step information column label segment is a segment" name="step information column label segment is a segment" time="0.001">
-    </testcase>
-    <testcase classname="step information column label segment label is a label" name="step information column label segment label is a label" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="InlineError" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.253" tests="1">
-    <testcase classname="InlineError Inline Error text got set" name="InlineError Inline Error text got set" time="0.006">
-    </testcase>
-  </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.348" tests="12">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.005">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:59" time="1.335" tests="9">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.01">
     </testcase>
     <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.002">
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.003">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.003">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.001">
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.003">
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.002">
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.003">
+    <testcase classname="RequestInformation FormRow Form is a Form" name="RequestInformation FormRow Form is a Form" time="0">
     </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment is a Form Segment" name="RequestInformation FormRow FormSegment is a Form Segment" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment form is a Form" name="RequestInformation FormRow FormSegment form is a Form" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment form has a form" name="RequestInformation FormRow FormSegment form has a form" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment form has a route" name="RequestInformation FormRow FormSegment form has a route" time="0.002">
+    <testcase classname="RequestInformation FormRow Form has a route" name="RequestInformation FormRow Form has a route" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.286" tests="5">
-    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.007">
+  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:28:51" time="10.18" tests="8">
+    <testcase classname="navBar is an app bar" name="navBar is an app bar" time="0.003">
     </testcase>
-    <testcase classname="Home Page heading Row is a row" name="Home Page heading Row is a row" time="0.002">
+    <testcase classname="navBar lefthand div is a div" name="navBar lefthand div is a div" time="0.003">
     </testcase>
-    <testcase classname="Home Page heading Row segment is a segment" name="Home Page heading Row segment is a segment" time="0.003">
+    <testcase classname="navBar lefthand div sidebar is a sidebar" name="navBar lefthand div sidebar is a sidebar" time="0.001">
     </testcase>
-    <testcase classname="Home Page heading Row segment header is a button" name="Home Page heading Row segment header is a button" time="0.004">
+    <testcase classname="navBar lefthand div link is a link" name="navBar lefthand div link is a link" time="0.002">
     </testcase>
-    <testcase classname="Home Page heading Row segment button is a button" name="Home Page heading Row segment button is a button" time="0.003">
+    <testcase classname="navBar lefthand div link home button is a icon button" name="navBar lefthand div link home button is a icon button" time="0.001">
     </testcase>
-  </testsuite>
-  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:09" time="0.139" tests="1">
-    <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.003">
+    <testcase classname="navBar righthand div is a div" name="navBar righthand div is a div" time="0.001">
     </testcase>
-  </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.379" tests="13">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.006">
+    <testcase classname="navBar righthand div loginModal is a login modal" name="navBar righthand div loginModal is a login modal" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.004">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" name="RequestInformation BreadcrumbRow BreadcrumbSegment is a Breadcrumb Segment" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent is a breadcrumb" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbSegment BreadcrumbComponent has a selection" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment is a Form Segment" name="RequestInformation FormRow FormSegment is a Form Segment" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment Form is a Form" name="RequestInformation FormRow FormSegment Form is a Form" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment Form has a json" name="RequestInformation FormRow FormSegment Form has a json" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment Form has a form" name="RequestInformation FormRow FormSegment Form has a form" time="0.003">
-    </testcase>
-    <testcase classname="RequestInformation FormRow FormSegment Form has a route" name="RequestInformation FormRow FormSegment Form has a route" time="0.006">
+    <testcase classname="navBar righthand div signupModal is a signup modal" name="navBar righthand div signupModal is a signup modal" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:08" time="0.285" tests="1">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:00" time="0.404" tests="1">
     <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-03-08T01:37:06" time="3.045" tests="9">
-    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.154">
+  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:00" time="0.406" tests="6">
+    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.005">
     </testcase>
-    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.098">
+    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.002">
     </testcase>
-    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.083">
+    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.004">
     </testcase>
-    <testcase classname="requestOption button is styled as a fluid button" name="requestOption button is styled as a fluid button" time="0.094">
+    <testcase classname="requestOption button avatar is a avatar" name="requestOption button avatar is a avatar" time="0.001">
     </testcase>
-    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.051">
+    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.001">
     </testcase>
-    <testcase classname="requestOption button header image is a image" name="requestOption button header image is a image" time="0.049">
+    <testcase classname="requestOption button icon is icon" name="requestOption button icon is icon" time="0.001">
     </testcase>
-    <testcase classname="requestOption button header image is styled as a circular image" name="requestOption button header image is styled as a circular image" time="0.049">
+  </testsuite>
+  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:00" time="0.423" tests="1">
+    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.005">
     </testcase>
-    <testcase classname="requestOption button header image has a size" name="requestOption button header image has a size" time="0.048">
+  </testsuite>
+  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:01" time="0.382" tests="7">
+    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.006">
     </testcase>
-    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.05">
+    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.003">
+    </testcase>
+    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:01" time="0.315" tests="6">
+    <testcase classname="RequestInformation is wrapped in a Grid" name="RequestInformation is wrapped in a Grid" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation Step 1 is a Step" name="RequestInformation Step 1 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 2 is a Step" name="RequestInformation Step 2 is a Step" time="0">
+    </testcase>
+    <testcase classname="RequestInformation Step 3 is a Step" name="RequestInformation Step 3 is a Step" time="0">
+    </testcase>
+    <testcase classname="RequestInformation Step 4 is a Step" name="RequestInformation Step 4 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 5 is a Step" name="RequestInformation Step 5 is a Step" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:01" time="0.262" tests="1">
+    <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T16:29:01" time="0.434" tests="1">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>

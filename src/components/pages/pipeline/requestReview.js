@@ -5,7 +5,6 @@ import { Redirect, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import Styles from '../../../styles/pipeline/requestReview';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import DynamicDisplayComponent from '../../helpers/DynamicDisplay';
 import ReviewModal from '../../helpers/reviewModal';
 
 import handleRequest from '../../../networkRequests/requests';
@@ -72,7 +71,7 @@ class requestReview extends Component {
           </Grid>
         )}
         <Grid item sm={12} style={Styles.formRow}>
-          <DynamicDisplayComponent requests={this.props.requests} />
+          <div />
         </Grid>
         <Grid item sm={12} style={Styles.submitRow}>
           <ReviewModalWithRouter />

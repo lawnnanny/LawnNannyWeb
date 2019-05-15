@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Grid from '@material-ui/core/Grid';
 import RequestSelectionComponent from '../../../../../src/components/pages/pipeline/requestSelection';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
 import RequestOptionComponent from '../../../../../src/components/helpers/RequestOption';
@@ -25,7 +26,7 @@ describe('RequestSelection', () => {
   });
 
   it('is styled as a container Grid', () => {
-    expect(wrapper.props().container).toBeTruthy();
+    expect(wrapper.props().alignItems).toEqual('center');
   });
 
   describe('BreadcrumbRow', () => {
@@ -36,34 +37,26 @@ describe('RequestSelection', () => {
     });
 
     it('is a Breadcrumb Row', () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
+      expect(BreadcrumbRow.type()).toEqual(Grid);
     });
 
-    describe('BreadcrumbSegment', () => {
-      let BreadcrumbSegment;
+    it('is styled as a Grid item', () => {
+      expect(BreadcrumbRow.props().item).toBeTruthy();
+    });
+
+    describe('BreadcrumbComponent', () => {
+      let Breadcrumb;
 
       beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
+        Breadcrumb = BreadcrumbRow.childAt(0);
       });
 
-      it('is a Breadcrumb Segment', () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
+      it('is a breadcrumb', () => {
+        expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
       });
 
-      describe('BreadcrumbComponent', () => {
-        let Breadcrumb;
-
-        beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
-        });
-
-        it('is a breadcrumb', () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
-        });
-
-        it('has a selection', () => {
-          expect(Breadcrumb.props().selection).toEqual(0);
-        });
+      it('has a selection', () => {
+        expect(Breadcrumb.props().selection).toEqual(0);
       });
     });
   });
@@ -75,7 +68,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a Header Segment', () => {
-      expect(HeaderSegment.type()).toEqual(Segment);
+      expect(HeaderSegment.type()).toEqual(Grid);
     });
 
     describe('Header', () => {
@@ -86,22 +79,18 @@ describe('RequestSelection', () => {
       });
 
       it('is a Header', () => {
-        expect(header.type()).toEqual(Header);
-      });
-
-      it('is a Header', () => {
-        expect(header.props().as).toEqual('h2');
+        expect(header.type()).toEqual('h1');
       });
 
       describe('SubHeader', () => {
         let subHeader;
 
         beforeEach(() => {
-          subHeader = header.childAt(0);
+          subHeader = HeaderSegment.childAt(1);
         });
 
         it('is a SubHeader', () => {
-          expect(subHeader.type()).toEqual(Header.SubHeader);
+          expect(subHeader.type()).toEqual('h3');
         });
       });
     });
@@ -114,7 +103,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a LawnMowing Segment', () => {
-      expect(LawnMowingSegment.type()).toEqual(Segment);
+      expect(LawnMowingSegment.type()).toEqual(Grid);
     });
 
     describe('LawnMowingComponent', () => {
@@ -148,7 +137,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a Yard Work Segment', () => {
-      expect(YardWorkSegment.type()).toEqual(Segment);
+      expect(YardWorkSegment.type()).toEqual(Grid);
     });
 
     describe('Yard WorkComponent', () => {
@@ -177,7 +166,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a snowClearing Segment', () => {
-      expect(snowClearingSegment.type()).toEqual(Segment);
+      expect(snowClearingSegment.type()).toEqual(Grid);
     });
 
     describe('snowClearingComponent', () => {
@@ -206,7 +195,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a Custom Segment', () => {
-      expect(CustomSegment.type()).toEqual(Segment);
+      expect(CustomSegment.type()).toEqual(Grid);
     });
 
     describe('CustomComponent', () => {

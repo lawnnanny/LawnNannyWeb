@@ -1,14 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
+import { withStyles } from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import Badge from '@material-ui/core/Badge';
+import Tooltip from '@material-ui/core/Tooltip';
+import Grid from '@material-ui/core/Grid';
 import RequestPriceComponent from '../../../../../src/components/pages/pipeline/requestPrice';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
 
-describe('RequestInformation', () => {
+describe('RequestPayment', () => {
   let wrapper;
+  const styles = () => ({
+    lightTooltip: {
+      backgroundColor: 'white',
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontSize: 11,
+    },
+  });
+  const Template = withStyles(styles)(RequestPriceComponent);
 
   const renderComponent = () =>
-    shallow(<RequestPriceComponent typeOfRequest="Lawn Mowing" pageInProgress={3} current={3} />);
+    shallow(<Template typeOfRequest="Lawn Mowing" pageInProgress={3} current={3} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -18,17 +32,13 @@ describe('RequestInformation', () => {
     expect(wrapper.type()).toEqual(Grid);
   });
 
-  it('is styled as a container Grid', () => {
-    expect(wrapper.props().container).toBeTruthy();
-  });
-
   it('contains four rows', () => {
     expect.assertions(4);
 
     const GridRows = wrapper.children();
 
     GridRows.forEach((row) => {
-      expect(row.type()).toEqual(Grid.Row);
+      expect(row.type()).toEqual(Grid);
     });
   });
 
@@ -40,36 +50,25 @@ describe('RequestInformation', () => {
     });
 
     it('is a Breadcrumb Row', () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
+      expect(BreadcrumbRow.type()).toEqual(Grid);
     });
 
-    describe('BreadcrumbSegment', () => {
-      let BreadcrumbSegment;
+    describe('BreadcrumbComponent', () => {
+      let Breadcrumb;
 
       beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
+        Breadcrumb = BreadcrumbRow.childAt(0);
       });
 
-      it('is a Breadcrumb Segment', () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
+      it('is a breadcrumb', () => {
+        expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
       });
-
-      describe('BreadcrumbComponent', () => {
-        let Breadcrumb;
-
-        beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
-        });
-
-        it('is a breadcrumb', () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
-        });
-        it('has a selection', () => {
-          expect(Breadcrumb.props().selection).toEqual(3);
-        });
+      it('has a selection', () => {
+        expect(Breadcrumb.props().selection).toEqual(3);
       });
     });
   });
+
   describe('HeaderRow', () => {
     let HeaderRow;
 
@@ -78,18 +77,40 @@ describe('RequestInformation', () => {
     });
 
     it('is a Row', () => {
-      expect(HeaderRow.type()).toEqual(Grid.Row);
+      expect(HeaderRow.type()).toEqual(Grid);
     });
 
-    describe('Header ', () => {
-      let header;
+    describe('Tooltip ', () => {
+      let popup;
 
       beforeEach(() => {
-        header = HeaderRow.childAt(0);
+        popup = HeaderRow.childAt(0);
       });
 
-      it('is a header', () => {
-        expect(header.type()).toEqual(Header);
+      it('is a tooltip', () => {
+        expect(popup.type()).toEqual(Tooltip);
+      });
+      describe('Badge ', () => {
+        let badge;
+
+        beforeEach(() => {
+          badge = popup.childAt(0);
+        });
+
+        it('is a badge', () => {
+          expect(badge.type()).toEqual(Badge);
+        });
+        describe('Header ', () => {
+          let header;
+
+          beforeEach(() => {
+            header = badge.childAt(0);
+          });
+
+          it('is a header', () => {
+            expect(header.type()).toEqual('h1');
+          });
+        });
       });
     });
   });
@@ -101,47 +122,26 @@ describe('RequestInformation', () => {
     });
 
     it('is a Price Row', () => {
-      expect(PriceRow.type()).toEqual(Grid.Row);
+      expect(PriceRow.type()).toEqual(Grid);
     });
-    describe('Input', () => {
-      let priceInput;
+    describe('Form control', () => {
+      let formControl;
       beforeEach(() => {
-        priceInput = PriceRow.childAt(0);
+        formControl = PriceRow.childAt(0);
       });
 
-      it('is an input', () => {
-        expect(priceInput.type()).toEqual(Input);
+      it('is a form Control', () => {
+        expect(formControl.type()).toEqual(FormControl);
       });
-      describe('Icon', () => {
-        let priceIcon;
+
+      describe('Input', () => {
+        let priceInput;
         beforeEach(() => {
-          priceIcon = priceInput.childAt(0);
+          priceInput = formControl.childAt(0);
         });
 
-        it('is an icon', () => {
-          expect(priceIcon.type()).toEqual(Icon);
-        });
-      });
-      describe('label', () => {
-        let label;
-
-        beforeEach(() => {
-          label = priceInput.childAt(2);
-        });
-
-        it('is an icon', () => {
-          expect(label.type()).toEqual(Label);
-        });
-        describe('Clicker', () => {
-          let clicker;
-
-          beforeEach(() => {
-            clicker = label.childAt(0);
-          });
-
-          it('is an clicker', () => {
-            expect(clicker.type()).toEqual(Clicker);
-          });
+        it('is an input', () => {
+          expect(priceInput.type()).toEqual(Input);
         });
       });
     });
@@ -153,7 +153,7 @@ describe('RequestInformation', () => {
     });
 
     it('is a row', () => {
-      expect(buttonRow.type()).toEqual(Grid.Row);
+      expect(buttonRow.type()).toEqual(Grid);
     });
     describe('buttonLink', () => {
       let buttonLink;

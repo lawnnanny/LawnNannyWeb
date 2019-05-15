@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import PropTypes from 'prop-types';
@@ -28,18 +27,10 @@ export const navBar = props => (
         </IconButton>
       </Link>
     </div>
-    {props.cheese ? (
-      <div style={Styles.rightMenuDiv}>
-        <Button onClick={props.setLoggedIn} style={Styles.logoutButton}>
-          Logout
-        </Button>
-      </div>
-    ) : (
-      <div style={Styles.rightMenuDiv}>
-        <LoginModal history={props.history} />
-        <SignupModal history={props.history} />
-      </div>
-    )}
+    <div style={Styles.rightMenuDiv}>
+      <LoginModal history={props.history} />
+      <SignupModal history={props.history} />
+    </div>
   </AppBar>
 );
 

@@ -7,10 +7,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { loginJsonForm } from '../pages/pipeline/jsonForms/loginForm';
 import Styles from '../../styles/helpers/loginModal';
-import DynamicComponent from '../helpers/DynamicForm';
-import { loginUser } from '../../networkRequests/userRequests';
+import LoginForm from './LoginForm';
 
 const styles = {
   paperOverride: {
@@ -47,32 +45,7 @@ class loginModal extends Component {
             <h2 style={Styles.headerText}> Welcome back! </h2>
           </DialogTitle>
           <DialogContent style={Styles.loginContent}>
-            <DynamicComponent
-              jsonForm={() => loginJsonForm}
-              setRequest={() => {}}
-              form={'Login'}
-              net
-              route={(data) => {
-                const serverResponse = loginUser({
-                  username: data.email.entry,
-                  password: data.password.entry,
-                });
-                serverResponse.then((response) => {
-                  if (response.success) {
-                    if (this.props.requestInProgress) {
-                      this.props.requestInProgress(5);
-                    }
-                    this.props.login(data);
-                    this.props.history.push(this.props.destination);
-                  } else {
-                    const currentState = this.state;
-                    currentState.loginUserError = 'Username or Password does not match';
-                    this.setState(currentState);
-                  }
-                });
-              }}
-              styling={Styles}
-            />
+            <LoginForm />
             <h3 style={Styles.divider}> or </h3>
             <Button style={Styles.facebookButton}>
               <SvgIcon style={Styles.facebookIcon}>

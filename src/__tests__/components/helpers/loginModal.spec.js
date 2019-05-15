@@ -1,7 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Button from '@material-ui/core/Button';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import DialogActions from '@material-ui/core/DialogActions';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import LoginModal from '../../../../src/components/helpers/loginModal';
-import DynamicComponent from '../../../../src/components/helpers/DynamicForm';
+import LoginForm from '../../../../src/components/helpers/LoginForm';
 
 describe('loginModal', () => {
   let wrapper;
@@ -12,84 +18,162 @@ describe('loginModal', () => {
     wrapper = renderComponent();
   });
 
-  it('is a modal', () => {
-    expect(wrapper.type()).toEqual(Modal);
-  });
-
-  it('is a mini modal', () => {
-    expect(wrapper.props().size).toEqual('mini');
-  });
-
-  it('displays a close modal button', () => {
-    expect(wrapper.props().closeIcon).toBeTruthy();
+  it('is a div', () => {
+    expect(wrapper.type()).toEqual('div');
   });
 
   describe('Login Modal trigger', () => {
     let loginModalTrigger;
 
     beforeEach(() => {
-      loginModalTrigger = shallow(wrapper.props().trigger);
+      loginModalTrigger = wrapper.childAt(0);
     });
 
-    it('is a menu item', () => {
-      const expectedType = shallow(<Menu.Item />).type();
-
-      expect(loginModalTrigger.type()).toEqual(expectedType);
-    });
-    describe('Login Modal Button', () => {
-      let loginModalButton;
-      beforeEach(() => {
-        loginModalButton = loginModalTrigger.childAt(0);
-      });
-
-      it('is a modal button', () => {
-        expect(loginModalButton.type()).toEqual(Button);
-      });
-      it('it displays the correct text', () => {
-        const buttonText = loginModalButton.childAt(0);
-        expect(buttonText.text()).toEqual('Login');
-      });
+    it('is a Button', () => {
+      expect(loginModalTrigger.type()).toEqual(Button);
     });
   });
 
-  describe('Login Modal Header', () => {
-    let loginModalHeader;
+  describe('dialog', () => {
+    let dialog;
 
     beforeEach(() => {
-      loginModalHeader = wrapper.childAt(0);
+      dialog = wrapper.childAt(1);
     });
 
-    it('is a modal header', () => {
-      expect(loginModalHeader.type()).toEqual(Modal.Header);
+    it('is a dialog', () => {
+      expect(dialog.type()).toEqual(Dialog);
     });
-
-    it('displays the correct text', () => {
-      const loginModalHeaderText = loginModalHeader.childAt(0);
-
-      expect(loginModalHeaderText.text()).toEqual('Welcome Back!');
-    });
-  });
-
-  describe('Login Modal Description', () => {
-    let loginModalDescription;
-
-    beforeEach(() => {
-      loginModalDescription = wrapper.childAt(1);
-    });
-
-    it('is a modal description', () => {
-      expect(loginModalDescription.type()).toEqual(Modal.Description);
-    });
-
-    describe('Dynamic Form Description', () => {
-      let loginDescriptionForm;
+    describe('dialog title', () => {
+      let dialogTitle;
 
       beforeEach(() => {
-        loginDescriptionForm = loginModalDescription.childAt(1);
+        dialogTitle = dialog.childAt(0);
       });
 
-      it('is a dynamic component', () => {
-        expect(loginDescriptionForm.type()).toEqual(DynamicComponent);
+      it('is a dialog title', () => {
+        expect(dialogTitle.type()).toEqual(DialogTitle);
+      });
+      describe('title text', () => {
+        let titleText;
+
+        beforeEach(() => {
+          titleText = dialogTitle.childAt(0);
+        });
+
+        it('is a header', () => {
+          expect(titleText.type()).toEqual('h2');
+        });
+      });
+    });
+    describe('dialog content', () => {
+      let dialogContent;
+
+      beforeEach(() => {
+        dialogContent = dialog.childAt(1);
+      });
+
+      it('is a dialog content', () => {
+        expect(dialogContent.type()).toEqual(DialogContent);
+      });
+      describe('login form', () => {
+        let loginForm;
+
+        beforeEach(() => {
+          loginForm = dialogContent.childAt(0);
+        });
+
+        it('is a form', () => {
+          expect(loginForm.type()).toEqual(LoginForm);
+        });
+      });
+      describe('divider', () => {
+        let divider;
+
+        beforeEach(() => {
+          divider = dialogContent.childAt(1);
+        });
+
+        it('is a header', () => {
+          expect(divider.type()).toEqual('h3');
+        });
+      });
+      describe('facebook', () => {
+        let facebook;
+
+        beforeEach(() => {
+          facebook = dialogContent.childAt(2);
+        });
+
+        it('is a button', () => {
+          expect(facebook.type()).toEqual(Button);
+        });
+      });
+      describe('google', () => {
+        let google;
+
+        beforeEach(() => {
+          google = dialogContent.childAt(3);
+        });
+
+        it('is a button', () => {
+          expect(google.type()).toEqual(Button);
+        });
+      });
+      describe('signup container', () => {
+        let signupContainer;
+
+        beforeEach(() => {
+          signupContainer = dialogContent.childAt(4);
+        });
+
+        it('is a div', () => {
+          expect(signupContainer.type()).toEqual('div');
+        });
+      });
+    });
+    describe('dialog actions', () => {
+      let dialogActions;
+
+      beforeEach(() => {
+        dialogActions = dialog.childAt(2);
+      });
+
+      it('is a dialog action', () => {
+        expect(dialogActions.type()).toEqual(DialogActions);
+      });
+      describe('action button', () => {
+        let actionButton;
+
+        beforeEach(() => {
+          actionButton = dialogActions.childAt(0);
+        });
+
+        it('is a button', () => {
+          expect(actionButton.type()).toEqual(Button);
+        });
+        describe('icon', () => {
+          let icon;
+
+          beforeEach(() => {
+            icon = actionButton.childAt(0);
+          });
+
+          it('is a svg icon', () => {
+            expect(icon.type()).toEqual(SvgIcon);
+          });
+          describe('path', () => {
+            let path;
+
+            beforeEach(() => {
+              path = icon.childAt(0);
+            });
+
+            it('is a path', () => {
+              expect(path.type()).toEqual('path');
+            });
+          });
+        });
       });
     });
   });

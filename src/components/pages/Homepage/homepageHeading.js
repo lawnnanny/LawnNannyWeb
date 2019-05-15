@@ -12,19 +12,17 @@ const ButtonDiv = styled.div`
 `;
 
 const HomePageHeading = props => (
-  <Grid container spacing={24} style={Styles.homepageContainer}>
-    <Grid container sm={12} spacing={24} style={Styles.homepageHeadingContainer}>
-      <Grid container sm={12} spacing={24} style={Styles.headingShadowContainer}>
-        <Grid item sm={12} style={Styles.headingHeader}>
-          <h1 style={Styles.header}>Lawn Nanny</h1>
-        </Grid>
-        <Grid item sm={12} style={Styles.buttonContainer}>
-          <ButtonDiv style={Styles.buttonDiv}>
-            <Button style={Styles.requestButton} onClick={() => props.history.push('/pipeline')}>
-              Make a Request
-            </Button>
-          </ButtonDiv>
-        </Grid>
+  <Grid container sm={12} spacing={24} style={Styles.homepageHeadingContainer}>
+    <Grid container sm={12} spacing={24} style={Styles.headingShadowContainer}>
+      <Grid item sm={12} style={Styles.headingHeader}>
+        <h1 style={Styles.header}>Lawn Nanny</h1>
+      </Grid>
+      <Grid item sm={12} style={Styles.buttonContainer}>
+        <ButtonDiv style={Styles.buttonDiv}>
+          <Button style={Styles.requestButton} onClick={() => props.history.push('/pipeline')}>
+            Make a Request
+          </Button>
+        </ButtonDiv>
       </Grid>
     </Grid>
   </Grid>

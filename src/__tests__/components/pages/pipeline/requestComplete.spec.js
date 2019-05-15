@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import RequestCompleteComponent from '../../../../../src/components/pages/pipeline/requestComplete';
 
 describe('Request Complete', () => {
@@ -17,19 +19,16 @@ describe('Request Complete', () => {
     expect(wrapper.type()).toEqual(Grid);
   });
 
-  it('is styled as a container Grid', () => {
-    expect(wrapper.props().container).toBeTruthy();
-  });
-
   it('contains two rows', () => {
     expect.assertions(2);
 
     const GridRows = wrapper.children();
 
     GridRows.forEach((row) => {
-      expect(row.type()).toEqual(Grid.Row);
+      expect(row.type()).toEqual(Grid);
     });
   });
+
   describe('complete row', () => {
     let CompleteRow;
 
@@ -38,7 +37,7 @@ describe('Request Complete', () => {
     });
 
     it('is a Complete Row', () => {
-      expect(CompleteRow.type()).toEqual(Grid.Row);
+      expect(CompleteRow.type()).toEqual(Grid);
     });
     describe('header', () => {
       let header;
@@ -48,29 +47,7 @@ describe('Request Complete', () => {
       });
 
       it('is a header', () => {
-        expect(header.type()).toEqual(Header);
-      });
-      describe('header icon', () => {
-        let headerIcon;
-
-        beforeEach(() => {
-          headerIcon = header.childAt(0);
-        });
-
-        it('is an icon', () => {
-          expect(headerIcon.type()).toEqual(Icon);
-        });
-      });
-      describe('header content', () => {
-        let headerContent;
-
-        beforeEach(() => {
-          headerContent = header.childAt(1);
-        });
-
-        it('is a header content', () => {
-          expect(headerContent.type()).toEqual(Header.Content);
-        });
+        expect(header.type()).toEqual('h1');
       });
     });
   });
@@ -82,7 +59,7 @@ describe('Request Complete', () => {
     });
 
     it('is a button Row', () => {
-      expect(ButtonRow.type()).toEqual(Grid.Row);
+      expect(ButtonRow.type()).toEqual(Grid);
     });
     describe('button ', () => {
       let button;
