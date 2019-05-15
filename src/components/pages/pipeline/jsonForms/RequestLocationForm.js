@@ -1,9 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Component from 'mson-react/lib/component';
 
 const definition = {
   component: 'Form',
   fields: [
+    {
+      name: 'heading',
+      component: 'Text',
+      text: 'Lawn Location',
+    },
     {
       component: 'AddressField',
       name: 'addressField',
@@ -13,43 +19,44 @@ const definition = {
       elevate: false,
     },
     {
-      name: 'buttonField',
+      name: 'submit',
       component: 'ButtonField',
-      label: 'Continue',
-      icon: 'Save',
       type: 'submit',
-      block: true,
+      label: 'Submit',
+      icon: 'Save',
+    },
+  ],
+  validators: [
+    {
+      where: {
+        'fields.email.value': 'nope@example.com',
+      },
+      error: {
+        field: 'email',
+        error: 'must not be {{fields.email.value}}',
+      },
     },
   ],
 };
 
-const RequestInformationForm = () => (
+const RequestLocationForm = props => (
   <Component
     definition={definition}
     onMount={({ component }) => {
-      // Load any initial data, e.g. from an API
-      component.setValues({
-        id: 'abc123',
-        firstName: 'Bob',
-        lastName: 'Marley',
-        email: 'bob@example.com',
-      });
+      component.setValues({});
     }}
-    // Clear the form
     onReset={({ component }) => component.reset()}
-    onSubmit={({ component }) => {
-      // TODO: Contact some API with the data
-      console.log('submitting', component.getValues());
-
-      // Simulate response from API saying that email address is already in use and report this
-      // error to the user
-      if (component.get('fields.email.value') === 'taken@example.com') {
-        component.set({ 'fields.email.err': 'already in use' });
-      } else {
-        // Everything was successful so redirect, show confirmation, etc...
-      }
+    onSubmit={() => {
+      props.route();
     }}
   />
 );
 
-export default RequestInformationForm;
+RequestLocationForm.propTypes = {
+  route: PropTypes.func,
+};
+
+RequestLocationForm.defaultProps = {
+  route: PropTypes.func,
+};
+export default RequestLocationForm;
