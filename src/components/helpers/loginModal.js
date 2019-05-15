@@ -83,19 +83,16 @@ class loginModal extends Component {
   }
 }
 loginModal.propTypes = {
-  login: PropTypes.func,
-  requestInProgress: PropTypes.func,
-  destination: PropTypes.string,
-  history: PropTypes.func,
+  swapModal: PropTypes.func,
+  isLoginModalOpen: PropTypes.func,
+  classes: PropTypes.func,
+  closeLoginModal: PropTypes.func,
 };
 
 loginModal.defaultProps = {
-  size: PropTypes.string,
-  fluid: PropTypes.bool,
-  loginButton: PropTypes.func,
-  login: PropTypes.func,
-  requestInProgress: PropTypes.func,
-  destination: PropTypes.string,
-  history: PropTypes.func,
+  swapModal: PropTypes.func,
+  isLoginModalOpen: PropTypes.func,
+  classes: PropTypes.func,
+  closeLoginModal: PropTypes.func,
 };
 export default withStyles(styles)(loginModal);

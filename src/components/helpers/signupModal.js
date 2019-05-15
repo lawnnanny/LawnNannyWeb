@@ -83,17 +83,16 @@ class signupModal extends Component {
   }
 }
 signupModal.propTypes = {
-  destination: PropTypes.string,
-  requestInProgress: PropTypes.func,
-  history: PropTypes.func,
+  classes: PropTypes.func,
+  swapModal: PropTypes.func,
+  isSignupModalOpen: PropTypes.func,
+  closeSignupModal: PropTypes.func,
 };
 
 signupModal.defaultProps = {
-  size: PropTypes.string,
-  destination: PropTypes.string,
-  fluid: PropTypes.bool,
-  signupButton: PropTypes.func,
-  requestInProgress: PropTypes.func,
-  history: PropTypes.func,
+  classes: PropTypes.func,
+  swapModal: PropTypes.func,
+  isSignupModalOpen: PropTypes.func,
+  closeSignupModal: PropTypes.func,
 };
 export default withStyles(styles)(signupModal);

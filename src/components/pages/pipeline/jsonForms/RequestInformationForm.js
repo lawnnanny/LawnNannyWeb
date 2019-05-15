@@ -39,7 +39,6 @@ const RequestInformationForm = () => (
       // error to the user
       if (component.get('fields.email.value') === 'taken@example.com') {
         component.set({ 'fields.email.err': 'already in use' });
-      } else {
       }
     }}
   />

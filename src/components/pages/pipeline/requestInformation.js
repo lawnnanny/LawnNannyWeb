@@ -43,16 +43,12 @@ const requestInformation = (props) => {
 };
 requestInformation.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.obj,
-  setRequestInformation: PropTypes.func,
   requestInProgress: PropTypes.number,
   history: PropTypes.func,
 };
 
 requestInformation.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.obj,
-  setRequestInformation: PropTypes.func,
   requestInProgress: 0,
   history: PropTypes.func,
 };

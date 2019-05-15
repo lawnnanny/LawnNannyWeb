@@ -1,5 +1,4 @@
 const green = '#25ff03';
-const blue = '#1205ff';
 const white = '#FFFFFF';
 
 export default {

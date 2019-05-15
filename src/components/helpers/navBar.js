@@ -35,15 +35,11 @@ export const navBar = props => (
 );
 
 navBar.propTypes = {
-  setLoggedIn: PropTypes.func,
   history: PropTypes.func,
-  isLoggedIn: PropTypes.bool,
 };
 
 navBar.defaultProps = {
-  setLoggedIn: PropTypes.func,
   history: PropTypes.func,
-  isLoggedIn: PropTypes.bool,
 };
 
 export default navBar;

@@ -55,7 +55,6 @@ const SignupForm = () => (
     onReset={({ component }) => component.reset()}
     onSubmit={({ component }) => {
       // TODO: Contact some API with the data
-      console.log('submitting', component.getValues());
 
       // Simulate response from API saying that email address is already in use and report this
       // error to the user

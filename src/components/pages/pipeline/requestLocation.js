@@ -43,16 +43,12 @@ export const requestLocation = (props) => {
 };
 requestLocation.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.obj,
-  setRequestLocation: PropTypes.func,
   requestInProgress: PropTypes.number,
   history: PropTypes.func,
 };
 
 requestLocation.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.obj,
-  setRequestLocation: PropTypes.func,
   requestInProgress: 0,
   history: PropTypes.func,
 };
