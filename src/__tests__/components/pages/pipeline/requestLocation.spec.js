@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
 import RequestLocationComponent from '../../../../../src/components/pages/pipeline/requestLocation';
-import RequestLocationForm from '../../../../../src/components/pages/pipeline/jsonForms/RequestLocationForm';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
 
 describe('RequestInformation', () => {
@@ -67,20 +66,6 @@ describe('RequestInformation', () => {
 
     it('is a Form Row', () => {
       expect(FormRow.type()).toEqual(Grid);
-    });
-
-    describe('form', () => {
-      let form;
-      beforeEach(() => {
-        form = FormRow.childAt(0);
-      });
-
-      it('is a Form', () => {
-        expect(form.type()).toEqual(RequestLocationForm);
-      });
-      it('has a route', () => {
-        expect(form.props().route).toBeTruthy();
-      });
     });
   });
 });

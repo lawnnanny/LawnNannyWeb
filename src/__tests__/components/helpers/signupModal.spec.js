@@ -7,7 +7,6 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import SignupModal from '../../../../src/components/helpers/signupModal';
-import SignupForm from '../../../../src/components/helpers/SignupForm';
 
 describe('signupModal', () => {
   let wrapper;
@@ -76,22 +75,11 @@ describe('signupModal', () => {
       it('is a dialog content', () => {
         expect(dialogContent.type()).toEqual(DialogContent);
       });
-      describe('signup form', () => {
-        let signupForm;
-
-        beforeEach(() => {
-          signupForm = dialogContent.childAt(0);
-        });
-
-        it('is a form', () => {
-          expect(signupForm.type()).toEqual(SignupForm);
-        });
-      });
       describe('divider', () => {
         let divider;
 
         beforeEach(() => {
-          divider = dialogContent.childAt(1);
+          divider = dialogContent.childAt(0);
         });
 
         it('is a header', () => {
@@ -102,7 +90,7 @@ describe('signupModal', () => {
         let facebook;
 
         beforeEach(() => {
-          facebook = dialogContent.childAt(2);
+          facebook = dialogContent.childAt(1);
         });
 
         it('is a button', () => {
@@ -113,7 +101,7 @@ describe('signupModal', () => {
         let google;
 
         beforeEach(() => {
-          google = dialogContent.childAt(3);
+          google = dialogContent.childAt(2);
         });
 
         it('is a button', () => {
@@ -124,7 +112,7 @@ describe('signupModal', () => {
         let signupContainer;
 
         beforeEach(() => {
-          signupContainer = dialogContent.childAt(4);
+          signupContainer = dialogContent.childAt(3);
         });
 
         it('is a div', () => {

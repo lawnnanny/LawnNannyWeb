@@ -1,130 +1,568 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="135" failures="46" time="56.423">
-  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:28" time="21.336" tests="26">
-    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.023">
+<testsuites name="jest tests" tests="126" failures="42" time="28.874">
+  <testsuite name="loginModal" errors="0" failures="14" skipped="0" timestamp="2019-05-16T17:27:50" time="18.322" tests="14">
+    <testcase classname="loginModal is a div" name="loginModal is a div" time="0.016">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  undefined
+
+Difference:
+
+  Comparing two different types of values. Expected string but received undefined.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:23:28)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.002">
+    <testcase classname="loginModal Login Modal trigger is a Button" name="loginModal Login Modal trigger is a Button" time="0.003">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:34:40)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    <testcase classname="loginModal dialog is a dialog" name="loginModal dialog is a dialog" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:46:29)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow is styled as a Grid item" name="RequestSelection BreadcrumbRow is styled as a Grid item" time="0.002">
+    <testcase classname="loginModal dialog dialog title is a dialog title" name="loginModal dialog dialog title is a dialog title" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:56:36)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
+    <testcase classname="loginModal dialog dialog title title text is a header" name="loginModal dialog dialog title title text is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h2&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:66:36)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
+    <testcase classname="loginModal dialog dialog content is a dialog content" name="loginModal dialog dialog content is a dialog content" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:78:38)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.002">
+    <testcase classname="loginModal dialog dialog content divider is a header" name="loginModal dialog dialog content divider is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h3&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:88:34)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.002">
+    <testcase classname="loginModal dialog dialog content facebook is a button" name="loginModal dialog dialog content facebook is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:99:35)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.001">
+    <testcase classname="loginModal dialog dialog content google is a button" name="loginModal dialog dialog content google is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:110:33)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.001">
+    <testcase classname="loginModal dialog dialog content signup container is a div" name="loginModal dialog dialog content signup container is a div" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:121:42)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.001">
+    <testcase classname="loginModal dialog dialog actions is a dialog action" name="loginModal dialog dialog actions is a dialog action" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:133:38)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.002">
+    <testcase classname="loginModal dialog dialog actions action button is a button" name="loginModal dialog dialog actions action button is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:143:39)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.001">
+    <testcase classname="loginModal dialog dialog actions action button icon is a svg icon" name="loginModal dialog dialog actions action button icon is a svg icon" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:153:33)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.003">
-    </testcase>
-    <testcase classname="RequestSelection YardWorkSegment is a Yard Work Segment" name="RequestSelection YardWorkSegment is a Yard Work Segment" time="0.002">
-    </testcase>
-    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" name="RequestSelection YardWorkSegment Yard WorkComponent is a Yard Work Component" time="0.002">
-    </testcase>
-    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" name="RequestSelection YardWorkSegment Yard WorkComponent has the correct title" time="0.001">
-    </testcase>
-    <testcase classname="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" name="RequestSelection YardWorkSegment Yard WorkComponent has an imageURL" time="0.001">
-    </testcase>
-    <testcase classname="RequestSelection snowClearingSegment is a snowClearing Segment" name="RequestSelection snowClearingSegment is a snowClearing Segment" time="0.001">
-    </testcase>
-    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" name="RequestSelection snowClearingSegment snowClearingComponent is a snowClearing" time="0">
-    </testcase>
-    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has the correct title" name="RequestSelection snowClearingSegment snowClearingComponent has the correct title" time="0">
-    </testcase>
-    <testcase classname="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" name="RequestSelection snowClearingSegment snowClearingComponent has an imageURL" time="0.001">
-    </testcase>
-    <testcase classname="RequestSelection CustomSegment is a Custom Segment" name="RequestSelection CustomSegment is a Custom Segment" time="0">
-    </testcase>
-    <testcase classname="RequestSelection CustomSegment CustomComponent is a Custom" name="RequestSelection CustomSegment CustomComponent is a Custom" time="0.002">
-    </testcase>
-    <testcase classname="RequestSelection CustomSegment CustomComponent has the correct title" name="RequestSelection CustomSegment CustomComponent has the correct title" time="0.001">
-    </testcase>
-    <testcase classname="RequestSelection CustomSegment CustomComponent has an imageURL" name="RequestSelection CustomSegment CustomComponent has an imageURL" time="0">
+    <testcase classname="loginModal dialog dialog actions action button icon path is a path" name="loginModal dialog dialog actions action button icon path is a path" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;path&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:163:35)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:49" time="0.743" tests="7">
-    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.005">
+  <testsuite name="signupModal" errors="0" failures="14" skipped="0" timestamp="2019-05-16T17:27:50" time="18.348" tests="14">
+    <testcase classname="signupModal is a div" name="signupModal is a div" time="0.035">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  [Function signupModal]
+
+Difference:
+
+  Comparing two different types of values. Expected string but received function.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:21:28)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.002">
+    <testcase classname="signupModal signup Modal trigger is a Button" name="signupModal signup Modal trigger is a Button" time="0.003">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:32:41)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.001">
+    <testcase classname="signupModal dialog is a dialog" name="signupModal dialog is a dialog" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:44:29)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.001">
+    <testcase classname="signupModal dialog dialog title is a dialog title" name="signupModal dialog dialog title is a dialog title" time="0.002">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:54:36)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.002">
+    <testcase classname="signupModal dialog dialog title title text is a header" name="signupModal dialog dialog title title text is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h2&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:64:36)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.001">
+    <testcase classname="signupModal dialog dialog content is a dialog content" name="signupModal dialog dialog content is a dialog content" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:76:38)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.002">
+    <testcase classname="signupModal dialog dialog content divider is a header" name="signupModal dialog dialog content divider is a header" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;h3&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:86:34)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content facebook is a button" name="signupModal dialog dialog content facebook is a button" time="0">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:97:35)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content google is a button" name="signupModal dialog dialog content google is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:108:33)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog content signup container is a div" name="signupModal dialog dialog content signup container is a div" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;div&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:119:42)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions is a dialog action" name="signupModal dialog dialog actions is a dialog action" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:131:38)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button is a button" name="signupModal dialog dialog actions action button is a button" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:141:39)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button icon is a svg icon" name="signupModal dialog dialog actions action button icon is a svg icon" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  [Function WithStyles]
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected function but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:151:33)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+    <testcase classname="signupModal dialog dialog actions action button icon path is a path" name="signupModal dialog dialog actions action button icon path is a path" time="0.001">
+      <failure>Error: expect(received).toEqual(expected)
+
+Expected value to equal:
+  &quot;path&quot;
+Received:
+  null
+
+Difference:
+
+  Comparing two different types of values. Expected string but received null.
+    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:161:35)
+    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:50" time="0.909" tests="6">
-    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.004">
-    </testcase>
-    <testcase classname="Home Page shadowRow is a shadow Row" name="Home Page shadowRow is a shadow Row" time="0.002">
-    </testcase>
-    <testcase classname="Home Page shadowRow header container is a grid" name="Home Page shadowRow header container is a grid" time="0.001">
-    </testcase>
-    <testcase classname="Home Page shadowRow header container header is a h1" name="Home Page shadowRow header container header is a h1" time="0.01">
-    </testcase>
-    <testcase classname="Home Page shadowRow button Container is a grid" name="Home Page shadowRow button Container is a grid" time="0.001">
-    </testcase>
-    <testcase classname="Home Page shadowRow button Container button is a grid" name="Home Page shadowRow button Container button is a grid" time="0.002">
+  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:27:50" time="18.498" tests="1">
+    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.021">
     </testcase>
   </testsuite>
-  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:51" time="0.654" tests="6">
-    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.004">
+  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:27:50" time="20.979" tests="8">
+    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.017">
     </testcase>
-    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.001">
+    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.004">
     </testcase>
-    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.001">
+    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.001">
     </testcase>
-    <testcase classname="requestOption button avatar is a avatar" name="requestOption button avatar is a avatar" time="0.002">
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.001">
     </testcase>
-    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.001">
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
     </testcase>
-    <testcase classname="requestOption button icon is icon" name="requestOption button icon is icon" time="0.001">
+    <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.001">
     </testcase>
-  </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:51" time="0.48" tests="6">
-    <testcase classname="RequestInformation is wrapped in a Grid" name="RequestInformation is wrapped in a Grid" time="0.003">
+    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.001">
     </testcase>
-    <testcase classname="RequestInformation Step 1 is a Step" name="RequestInformation Step 1 is a Step" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation Step 2 is a Step" name="RequestInformation Step 2 is a Step" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation Step 3 is a Step" name="RequestInformation Step 3 is a Step" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation Step 4 is a Step" name="RequestInformation Step 4 is a Step" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation Step 5 is a Step" name="RequestInformation Step 5 is a Step" time="0.001">
+    <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:52" time="0.432" tests="5">
-    <testcase classname="step is a link" name="step is a link" time="0.004">
-    </testcase>
-    <testcase classname="step information column is a grid" name="step information column is a grid" time="0.002">
-    </testcase>
-    <testcase classname="step information column icon is a icon" name="step information column icon is a icon" time="0">
-    </testcase>
-    <testcase classname="step information column bars is a div" name="step information column bars is a div" time="0.001">
-    </testcase>
-    <testcase classname="step information column label is a label" name="step information column label is a label" time="0.001">
+  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:09" time="2.533" tests="1">
+    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.007">
     </testcase>
   </testsuite>
-  <testsuite name="RequestPayment" errors="0" failures="14" skipped="0" timestamp="2019-05-15T17:08:28" time="25.301" tests="14">
+  <testsuite name="RequestPayment" errors="0" failures="14" skipped="0" timestamp="2019-05-16T17:27:50" time="21.232" tests="14">
     <testcase classname="RequestPayment is wrapped in a Grid Container" name="RequestPayment is wrapped in a Grid Container" time="0.033">
       <failure>Error: expect(received).toEqual(expected)
 
@@ -144,7 +582,7 @@ Compared values have no visual difference.
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment contains four rows" name="RequestPayment contains four rows" time="0.002">
+    <testcase classname="RequestPayment contains four rows" name="RequestPayment contains four rows" time="0.003">
       <failure>Error: expect.assertions(4)
 
 Expected four assertions to be called but only received zero assertion calls.
@@ -154,7 +592,7 @@ Expected four assertions to be called but only received zero assertion calls.
     at queueRunnerFactory.then (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine/Spec.js:104:14)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment BreadcrumbRow is a Breadcrumb Row" name="RequestPayment BreadcrumbRow is a Breadcrumb Row" time="0.001">
+    <testcase classname="RequestPayment BreadcrumbRow is a Breadcrumb Row" name="RequestPayment BreadcrumbRow is a Breadcrumb Row" time="0.002">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -173,7 +611,7 @@ Difference:
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
+    <testcase classname="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestPayment BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -230,7 +668,7 @@ Difference:
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment HeaderRow Tooltip  is a tooltip" name="RequestPayment HeaderRow Tooltip  is a tooltip" time="0.001">
+    <testcase classname="RequestPayment HeaderRow Tooltip  is a tooltip" name="RequestPayment HeaderRow Tooltip  is a tooltip" time="0.002">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -249,7 +687,7 @@ Difference:
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment HeaderRow Tooltip  Badge  is a badge" name="RequestPayment HeaderRow Tooltip  Badge  is a badge" time="0.002">
+    <testcase classname="RequestPayment HeaderRow Tooltip  Badge  is a badge" name="RequestPayment HeaderRow Tooltip  Badge  is a badge" time="0.001">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -287,7 +725,7 @@ Difference:
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment PriceRow is a Price Row" name="RequestPayment PriceRow is a Price Row" time="0">
+    <testcase classname="RequestPayment PriceRow is a Price Row" name="RequestPayment PriceRow is a Price Row" time="0.001">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -363,7 +801,7 @@ Difference:
     at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
-    <testcase classname="RequestPayment buttonRow buttonLink is a Link" name="RequestPayment buttonRow buttonLink is a Link" time="0.001">
+    <testcase classname="RequestPayment buttonRow buttonLink is a Link" name="RequestPayment buttonRow buttonLink is a Link" time="0.002">
       <failure>Error: expect(received).toEqual(expected)
 
 Expected value to equal:
@@ -383,628 +821,40 @@ Difference:
     at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:52" time="4.835" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.007">
+  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:11" time="0.873" tests="14">
+    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.006">
+    </testcase>
+    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow is styled as a Grid item" name="RequestSelection BreadcrumbRow is styled as a Grid item" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.002">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.001">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.006">
+    </testcase>
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="signupModal" errors="0" failures="15" skipped="0" timestamp="2019-05-15T17:08:28" time="49.226" tests="15">
-    <testcase classname="signupModal is a div" name="signupModal is a div" time="0.029">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;div&quot;
-Received:
-  [Function signupModal]
-
-Difference:
-
-  Comparing two different types of values. Expected string but received function.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:22:28)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:27:50" time="21.86" tests="8">
+    <testcase classname="navBar is an app bar" name="navBar is an app bar" time="0.019">
     </testcase>
-    <testcase classname="signupModal signup Modal trigger is a Button" name="signupModal signup Modal trigger is a Button" time="0.003">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:33:41)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog is a dialog" name="signupModal dialog is a dialog" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:45:29)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog title is a dialog title" name="signupModal dialog dialog title is a dialog title" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:55:36)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog title title text is a header" name="signupModal dialog dialog title title text is a header" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;h2&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:65:36)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content is a dialog content" name="signupModal dialog dialog content is a dialog content" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:77:38)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content signup form is a form" name="signupModal dialog dialog content signup form is a form" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function SignupForm]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:87:37)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content divider is a header" name="signupModal dialog dialog content divider is a header" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;h3&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:98:34)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content facebook is a button" name="signupModal dialog dialog content facebook is a button" time="0.006">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:109:35)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content google is a button" name="signupModal dialog dialog content google is a button" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:120:33)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog content signup container is a div" name="signupModal dialog dialog content signup container is a div" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;div&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:131:42)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog actions is a dialog action" name="signupModal dialog dialog actions is a dialog action" time="0">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:143:38)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog actions action button is a button" name="signupModal dialog dialog actions action button is a button" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:153:39)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog actions action button icon is a svg icon" name="signupModal dialog dialog actions action button icon is a svg icon" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:163:33)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="signupModal dialog dialog actions action button icon path is a path" name="signupModal dialog dialog actions action button icon path is a path" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;path&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/signupModal.spec.js:173:35)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-  </testsuite>
-  <testsuite name="loginModal" errors="0" failures="15" skipped="0" timestamp="2019-05-15T17:08:28" time="49.151" tests="15">
-    <testcase classname="loginModal is a div" name="loginModal is a div" time="0.03">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;div&quot;
-Received:
-  [Function loginModal]
-
-Difference:
-
-  Comparing two different types of values. Expected string but received function.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:22:28)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal Login Modal trigger is a Button" name="loginModal Login Modal trigger is a Button" time="0.005">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:33:40)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog is a dialog" name="loginModal dialog is a dialog" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:45:29)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog title is a dialog title" name="loginModal dialog dialog title is a dialog title" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:55:36)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog title title text is a header" name="loginModal dialog dialog title title text is a header" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;h2&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:65:36)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content is a dialog content" name="loginModal dialog dialog content is a dialog content" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:77:38)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content login form is a form" name="loginModal dialog dialog content login form is a form" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function LoginForm]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:87:36)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content divider is a header" name="loginModal dialog dialog content divider is a header" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;h3&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:98:34)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content facebook is a button" name="loginModal dialog dialog content facebook is a button" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:109:35)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content google is a button" name="loginModal dialog dialog content google is a button" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:120:33)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog content signup container is a div" name="loginModal dialog dialog content signup container is a div" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;div&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:131:42)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog actions is a dialog action" name="loginModal dialog dialog actions is a dialog action" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:143:38)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog actions action button is a button" name="loginModal dialog dialog actions action button is a button" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:153:39)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog actions action button icon is a svg icon" name="loginModal dialog dialog actions action button icon is a svg icon" time="0.001">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  [Function WithStyles]
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected function but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:163:33)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-    <testcase classname="loginModal dialog dialog actions action button icon path is a path" name="loginModal dialog dialog actions action button icon path is a path" time="0.002">
-      <failure>Error: expect(received).toEqual(expected)
-
-Expected value to equal:
-  &quot;path&quot;
-Received:
-  null
-
-Difference:
-
-  Comparing two different types of values. Expected string but received null.
-    at Object.it (/mnt/c/users/will/desktop/TerraWeb/src/__tests__/components/helpers/loginModal.spec.js:173:35)
-    at Object.asyncFn (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
-    at resolve (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/mnt/c/users/will/desktop/TerraWeb/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
-    at Promise.resolve.then.el (/mnt/c/users/will/desktop/TerraWeb/node_modules/p-map/index.js:46:16)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
-    </testcase>
-  </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:53" time="24.048" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.014">
-    </testcase>
-  </testsuite>
-  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:28" time="49.817" tests="8">
-    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.02">
-    </testcase>
-    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.004">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.002">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
-    </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
-    </testcase>
-    <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.001">
-    </testcase>
-    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.002">
-    </testcase>
-    <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:31" time="46.742" tests="8">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.021">
-    </testcase>
-    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.004">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
-    </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow form is a Form" name="RequestInformation FormRow form is a Form" time="0.001">
-    </testcase>
-    <testcase classname="RequestInformation FormRow form has a route" name="RequestInformation FormRow form has a route" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:28" time="50.429" tests="8">
-    <testcase classname="navBar is an app bar" name="navBar is an app bar" time="0.013">
-    </testcase>
-    <testcase classname="navBar lefthand div is a div" name="navBar lefthand div is a div" time="0.002">
+    <testcase classname="navBar lefthand div is a div" name="navBar lefthand div is a div" time="0.004">
     </testcase>
     <testcase classname="navBar lefthand div sidebar is a sidebar" name="navBar lefthand div sidebar is a sidebar" time="0.002">
     </testcase>
@@ -1012,69 +862,147 @@ Difference:
     </testcase>
     <testcase classname="navBar lefthand div link home button is a icon button" name="navBar lefthand div link home button is a icon button" time="0.002">
     </testcase>
-    <testcase classname="navBar righthand div is a div" name="navBar righthand div is a div" time="0.002">
+    <testcase classname="navBar righthand div is a div" name="navBar righthand div is a div" time="0.001">
     </testcase>
     <testcase classname="navBar righthand div loginModal is a login modal" name="navBar righthand div loginModal is a login modal" time="0.001">
     </testcase>
-    <testcase classname="navBar righthand div signupModal is a signup modal" name="navBar righthand div signupModal is a signup modal" time="0.002">
+    <testcase classname="navBar righthand div signupModal is a signup modal" name="navBar righthand div signupModal is a signup modal" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:17" time="1.21" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.007">
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:12" time="0.95" tests="1">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="Connected Signup modal" errors="0" failures="1" skipped="0" timestamp="2019-05-15T17:09:18" time="1.004" tests="1">
-    <testcase classname="Connected Signup modal has the correct props" name="Connected Signup modal has the correct props" time="0.004">
-      <failure>TypeError: Cannot read property &apos;isSignupModalOpen&apos; of undefined
-    at Function.mapStateToProps [as mapToProps] (/mnt/c/users/will/desktop/TerraWeb/src/connectedComponents/helpers/ConnectedSignupModal.js:6:36)
-    at mapToPropsProxy (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:54:92)
-    at Function.detectFactoryAndVerify (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:63:19)
-    at mapToPropsProxy (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:54:46)
-    at handleFirstCall (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/selectorFactory.js:37:18)
-    at pureFinalPropsSelector (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/selectorFactory.js:85:81)
-    at Object.runComponentSelector [as run] (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:43:25)
-    at Connect.initSelector (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:195:23)
-    at new Connect (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:136:15)
-    at ReactShallowRenderer.render (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-test-renderer/cjs/react-test-renderer-shallow.development.js:131:26)</failure>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:12" time="1.107" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.006">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:17" time="1.778" tests="1">
-    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.01">
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:12" time="0.542" tests="6">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.005">
+    </testcase>
+    <testcase classname="Home Page shadowRow is a shadow Row" name="Home Page shadowRow is a shadow Row" time="0.002">
+    </testcase>
+    <testcase classname="Home Page shadowRow header container is a grid" name="Home Page shadowRow header container is a grid" time="0.001">
+    </testcase>
+    <testcase classname="Home Page shadowRow header container header is a h1" name="Home Page shadowRow header container header is a h1" time="0.001">
+    </testcase>
+    <testcase classname="Home Page shadowRow button Container is a grid" name="Home Page shadowRow button Container is a grid" time="0.001">
+    </testcase>
+    <testcase classname="Home Page shadowRow button Container button is a grid" name="Home Page shadowRow button Container button is a grid" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Connected Login modal" errors="0" failures="1" skipped="0" timestamp="2019-05-15T17:09:18" time="1.048" tests="1">
-    <testcase classname="Connected Login modal has the correct props" name="Connected Login modal has the correct props" time="0.004">
-      <failure>TypeError: Cannot read property &apos;isLoginModalOpen&apos; of undefined
-    at Function.mapStateToProps [as mapToProps] (/mnt/c/users/will/desktop/TerraWeb/src/connectedComponents/helpers/ConnectedLoginModal.js:6:35)
-    at mapToPropsProxy (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:54:92)
-    at Function.detectFactoryAndVerify (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:63:19)
-    at mapToPropsProxy (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/wrapMapToProps.js:54:46)
-    at handleFirstCall (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/selectorFactory.js:37:18)
-    at pureFinalPropsSelector (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/connect/selectorFactory.js:85:81)
-    at Object.runComponentSelector [as run] (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:43:25)
-    at Connect.initSelector (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:195:23)
-    at new Connect (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-redux/lib/components/connectAdvanced.js:136:15)
-    at ReactShallowRenderer.render (/mnt/c/users/will/desktop/TerraWeb/node_modules/react-test-renderer/cjs/react-test-renderer-shallow.development.js:131:26)</failure>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:09" time="4.304" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:08:57" time="21.735" tests="1">
-    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.005">
+  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:12" time="0.744" tests="6">
+    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.005">
+    </testcase>
+    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button avatar is a avatar" name="requestOption button avatar is a avatar" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button icon is icon" name="requestOption button icon is icon" time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:17" time="1.884" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:13" time="0.502" tests="7">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.009">
+    </testcase>
+    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:18" time="0.816" tests="1">
-    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.002">
+  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:13" time="0.514" tests="1">
+    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.005">
     </testcase>
   </testsuite>
-  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:19" time="0.512" tests="1">
+  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:13" time="0.557" tests="7">
+    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.005">
+    </testcase>
+    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.004">
+    </testcase>
+    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.001">
+    </testcase>
+    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:13" time="0.581" tests="6">
+    <testcase classname="RequestInformation is wrapped in a Grid" name="RequestInformation is wrapped in a Grid" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation Step 1 is a Step" name="RequestInformation Step 1 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 2 is a Step" name="RequestInformation Step 2 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 3 is a Step" name="RequestInformation Step 3 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 4 is a Step" name="RequestInformation Step 4 is a Step" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation Step 5 is a Step" name="RequestInformation Step 5 is a Step" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:12" time="1.58" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:14" time="0.55" tests="1">
     <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-05-15T17:09:18" time="2.371" tests="1">
-    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.003">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:14" time="0.479" tests="6">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.004">
+    </testcase>
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.002">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.001">
+    </testcase>
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:14" time="0.474" tests="1">
+    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:13" time="1.192" tests="5">
+    <testcase classname="step is a link" name="step is a link" time="0.007">
+    </testcase>
+    <testcase classname="step information column is a grid" name="step information column is a grid" time="0.001">
+    </testcase>
+    <testcase classname="step information column icon is a icon" name="step information column icon is a icon" time="0.001">
+    </testcase>
+    <testcase classname="step information column bars is a div" name="step information column bars is a div" time="0.001">
+    </testcase>
+    <testcase classname="step information column label is a label" name="step information column label is a label" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:28:09" time="6.213" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-05-16T17:27:50" time="25.82" tests="1">
+    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.012">
     </testcase>
   </testsuite>
 </testsuites>

@@ -6,13 +6,14 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { withStyles } from '@material-ui/core/styles';
 import LoginModal from '../../../../src/components/helpers/loginModal';
-import LoginForm from '../../../../src/components/helpers/LoginForm';
 
 describe('loginModal', () => {
   let wrapper;
+  const component = React.createElement(withStyles(<LoginModal />));
 
-  const renderComponent = () => shallow(<LoginModal />);
+  const renderComponent = () => shallow(component);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -76,22 +77,11 @@ describe('loginModal', () => {
       it('is a dialog content', () => {
         expect(dialogContent.type()).toEqual(DialogContent);
       });
-      describe('login form', () => {
-        let loginForm;
-
-        beforeEach(() => {
-          loginForm = dialogContent.childAt(0);
-        });
-
-        it('is a form', () => {
-          expect(loginForm.type()).toEqual(LoginForm);
-        });
-      });
       describe('divider', () => {
         let divider;
 
         beforeEach(() => {
-          divider = dialogContent.childAt(1);
+          divider = dialogContent.childAt(0);
         });
 
         it('is a header', () => {
@@ -102,7 +92,7 @@ describe('loginModal', () => {
         let facebook;
 
         beforeEach(() => {
-          facebook = dialogContent.childAt(2);
+          facebook = dialogContent.childAt(1);
         });
 
         it('is a button', () => {
@@ -113,7 +103,7 @@ describe('loginModal', () => {
         let google;
 
         beforeEach(() => {
-          google = dialogContent.childAt(3);
+          google = dialogContent.childAt(2);
         });
 
         it('is a button', () => {
@@ -124,7 +114,7 @@ describe('loginModal', () => {
         let signupContainer;
 
         beforeEach(() => {
-          signupContainer = dialogContent.childAt(4);
+          signupContainer = dialogContent.childAt(3);
         });
 
         it('is a div', () => {
