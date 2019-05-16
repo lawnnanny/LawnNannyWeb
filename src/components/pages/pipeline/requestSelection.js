@@ -5,9 +5,6 @@ import RequestOptionComponent from '../../helpers/RequestOption';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/pipeline/requestSelection';
 import mower from '../../../images/pipeline/mower.png';
-import rake from '../../../images/pipeline/rake.png';
-import snowBlower from '../../../images/pipeline/snowBlower.png';
-import custom from '../../../images/pipeline/custom.png';
 
 export const requestSelection = props => (
   <Grid
@@ -36,39 +33,6 @@ export const requestSelection = props => (
         onClick={() => {
           props.requestInProgress(1);
           props.setTypeOfRequest('Lawn Mowing');
-        }}
-      />
-    </Grid>
-    <Grid item style={Styles.buttonSegment}>
-      <RequestOptionComponent
-        style={Styles.buttonComponent}
-        imageURL={rake}
-        title="Yard Work"
-        onClick={() => {
-          props.requestInProgress(1);
-          props.setTypeOfRequest('Yard Work');
-        }}
-      />
-    </Grid>
-    <Grid item style={Styles.buttonSegment}>
-      <RequestOptionComponent
-        style={Styles.buttonComponent}
-        imageURL={snowBlower}
-        title="Snow Clearing"
-        onClick={() => {
-          props.requestInProgress(1);
-          props.setTypeOfRequest('Snow Clearing');
-        }}
-      />
-    </Grid>
-    <Grid item style={Styles.buttonSegment}>
-      <RequestOptionComponent
-        style={Styles.buttonComponent}
-        imageURL={custom}
-        title="Custom Request"
-        onClick={() => {
-          props.requestInProgress(1);
-          props.setTypeOfRequest('Custom Request');
         }}
       />
     </Grid>

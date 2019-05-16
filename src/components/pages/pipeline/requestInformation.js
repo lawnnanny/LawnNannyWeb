@@ -2,15 +2,10 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import RequestInformationForm from './jsonForms/RequestInformationForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/pipeline/requestInformation';
 
 const requestInformation = (props) => {
-  let destinationString = '/pipeline/requestLocation';
-  if (props.pageInProgress > 1) {
-    destinationString = '/pipeline/requestReview';
-  }
   if (props.pageInProgress < 1) {
     return <Redirect to="/pipeline" />;
   }
@@ -31,20 +26,13 @@ const requestInformation = (props) => {
         <BreadcrumbComponent selection={props.pageInProgress} current={1} />
       </Grid>
       <Grid item sm={12} style={Styles.formRow}>
-        <RequestInformationForm
-          route={() => {
-            props.requestInProgress(2);
-            props.history.push(destinationString);
-          }}
-        />
+        {'insert form here'}
       </Grid>
     </Grid>
   );
 };
 requestInformation.propTypes = {
   pageInProgress: PropTypes.number,
-  requestInProgress: PropTypes.number,
-  history: PropTypes.func,
 };
 
 requestInformation.defaultProps = {

@@ -8,7 +8,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { withStyles } from '@material-ui/core/styles';
 import Styles from '../../styles/helpers/signupModal';
-import SignupForm from './SignupForm';
 
 const styles = {
   paperOverride: {
@@ -45,7 +44,6 @@ class signupModal extends Component {
             <h2 style={Styles.headerText}> Sign Up! </h2>
           </DialogTitle>
           <DialogContent style={Styles.loginContent}>
-            <SignupForm />
             <h3 style={Styles.divider}> or </h3>
             <Button style={Styles.facebookButton}>
               <SvgIcon style={Styles.facebookIcon}>
