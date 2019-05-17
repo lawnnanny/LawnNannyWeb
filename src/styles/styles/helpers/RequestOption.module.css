@@ -1,0 +1,27 @@
+.link {
+  height: 100%;
+  padding: 0.2em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.icon {
+  height: 4em;
+  width: 4em;
+}
+.segment {
+  border: none;
+  box-shadow: none;
+}
+.button {
+  background-color: white;
+  width: 100%;
+}
+.header {
+  margin: 0;
+}
+.arrow {
+  margin-left: auto;
+  height: 2.5em;
+  width: 2.5em;
+}

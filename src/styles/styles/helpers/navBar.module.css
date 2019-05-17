@@ -1,0 +1,33 @@
+.Menu {
+  width: 100%;
+  min-height: 6em;
+  background-color: black;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.leftMenuDiv {
+  display: flex;
+  align-items: center;
+}
+.rightMenuDiv {
+  display: flex;
+}
+.homeIcon {
+  font-size: 2.5em;
+  color: #25ff03;
+}
+.userIcon {
+  font-size: 1.8em;
+  margin-top: 0.5em;
+  margin-right: 0.8em;
+}
+.logoutButton {
+  background-color: #1205ff;
+  color: white;
+  margin-right: 0.5em;
+  padding: 0.7em;
+}

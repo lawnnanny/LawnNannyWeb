@@ -1,0 +1,38 @@
+.menuButton {
+  border-radius: 0;
+  background-color: black;
+}
+.sidebar {
+}
+.menuIcon {
+  color: white;
+  font-size: 2em;
+}
+.aboutTerraItem {
+  height: 7em;
+}
+.featuresItem {
+  height: 7em;
+}
+.helpItem {
+  height: 7em;
+}
+.contactItem {
+  height: 7em;
+}
+.aboutTerraText {
+  color: white;
+  font-size: 2em;
+}
+.featuresText {
+  color: white;
+  font-size: 2em;
+}
+.helpText {
+  color: white;
+  font-size: 2em;
+}
+.contactText {
+  color: white;
+  font-size: 2em;
+}

@@ -1,0 +1,42 @@
+.homepageHeadingContainer {
+  background-image: url('../../images/homepage/lawn.jpg');
+  background-size: cover;
+  background-repeat: noRepeat;
+  background-position: center;
+  height: 40em;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  flex-grow: 1;
+}
+.headingShadowContainer {
+  background-color: rgba(0;0;0;0.7);
+  width: 100%;
+  margin: 2em 0;
+}
+.headingHeader {
+  text-align: center;
+  width: 100%;
+  margin-bottom: -10em;
+}
+.header {
+  font-size: 5em;
+  color: white;
+  padding-top: 0.5em;
+}
+.buttonContainer {
+  width: 100%;
+}
+.buttonDiv {
+  height: 3em;
+  margin-top: 0em;
+  text-align: center;
+}
+.requestButton {
+  padding: 0.65em 1.1em;
+  font-size: 1.7em;
+  border-radius: 100px;
+  color: white;
+  background-color: #20ad1d;
+  box-shadow: 0px 12px 10px -10px rgba(0;0;0;0.4);
+}

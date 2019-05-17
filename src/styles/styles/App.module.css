@@ -1,0 +1,9 @@
+.div {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.navBar {
+  border: none;
+}

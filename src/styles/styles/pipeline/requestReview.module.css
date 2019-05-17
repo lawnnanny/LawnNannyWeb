@@ -1,0 +1,60 @@
+.grid {
+  padding: 1em 0.5em;
+  width: 100%;
+  margin: 0;
+}
+
+.breadRow {
+  padding: 0;
+  width: 100%;
+}
+.formRow {
+  padding: 0;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.submitRow {
+  padding: 0;
+}
+.modalButton {
+  width: 100%;
+  margin: 2em 0em;
+  background-color: #20ad1d;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0px 12px 10px -10px rgba(0;0;0;0.4);
+}
+.modal {
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%; -50%);
+  padding: 1em;
+}
+.loginButton {
+  color: white;
+  background-color: #1205ff;
+}
+.header {
+  font-size: 1.5em;
+}
+.content {
+  padding: 0;
+}
+.divider {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+}
+.signupButton {
+  background-color: #20ad1d;
+  color: white;
+  border-radius: 3px;
+}
+.Input {
+  width: 100%;
+}
+.message {
+}
