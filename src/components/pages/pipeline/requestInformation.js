@@ -44,7 +44,7 @@ export const requestInformation = (props) => {
 };
 requestInformation.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   setRequestInformation: PropTypes.func,
   requestInProgress: PropTypes.number,
   history: PropTypes.func,
@@ -52,7 +52,7 @@ requestInformation.propTypes = {
 
 requestInformation.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   setRequestInformation: PropTypes.func,
   requestInProgress: 0,
   history: PropTypes.func,

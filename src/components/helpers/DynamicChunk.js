@@ -46,11 +46,11 @@ export const DynamicChunk = (props) => {
 DynamicChunk.propTypes = {
   name: PropTypes.string,
   link: PropTypes.string,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
 };
 DynamicChunk.defaultProps = {
   name: PropTypes.string,
   link: PropTypes.string,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
 };
 export default DynamicChunk;

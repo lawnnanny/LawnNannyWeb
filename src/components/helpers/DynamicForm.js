@@ -388,14 +388,14 @@ DynamicForm.propTypes = {
   jsonForm: PropTypes.func,
   form: PropTypes.string,
   route: PropTypes.func,
-  styling: PropTypes.obj,
+  styling: PropTypes.func,
   setRequest: PropTypes.func,
 };
 DynamicForm.defaultProps = {
   jsonForm: PropTypes.func,
   form: PropTypes.string,
   route: PropTypes.func,
-  styling: PropTypes.obj,
+  styling: PropTypes.func,
   setRequest: PropTypes.func,
 };
 

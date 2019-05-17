@@ -39,9 +39,9 @@ export const DynamicDisplay = props => (
   </Segment>
 );
 DynamicDisplay.propTypes = {
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
 };
 DynamicDisplay.defaultProps = {
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
 };
 export default DynamicDisplay;
