@@ -29,7 +29,7 @@ const HomePageHeading = props => (
 );
 
 HomePageHeading.contextTypes = {
-  history: PropTypes.object,
+  history: PropTypes.func,
 };
 HomePageHeading.propTypes = {
   history: PropTypes.func,
