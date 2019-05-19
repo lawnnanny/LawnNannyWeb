@@ -1,59 +1,42 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
+import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import { jsonForm } from './jsonForms/informationForm';
-import DynamicFormComponent from '../../helpers/DynamicForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import Styles from '../../../styles/pipeline/requestInformation';
 
-export const requestInformation = (props) => {
-  let destinationString = '/pipeline/requestLocation';
-  if (props.pageInProgress > 1) {
-    jsonForm[props.requests.selection].button = 'Save';
-    destinationString = '/pipeline/requestReview';
-  }
+const requestInformation = (props) => {
   if (props.pageInProgress < 1) {
     return <Redirect to="/pipeline" />;
   }
   return (
-    <Grid centered container style={Styles.grid}>
-      <Grid.Row style={Styles.breadrow}>
-        <Segment style={Styles.segment}>
-          <BreadcrumbComponent selection={props.pageInProgress} current={1} />
-        </Segment>
-      </Grid.Row>
-      <Grid.Row padding style={Styles.Grid}>
-        <Segment style={Styles.segment}>
-          <DynamicFormComponent
-            popup
-            jsonForm={() => jsonForm}
-            reduxInfo={props.requests.requestInformation}
-            setRequest={props.setRequestInformation}
-            form={props.requests.selection}
-            route={() => {
-              props.requestInProgress(2);
-              props.history.push(destinationString);
-            }}
-            styling={Styles}
-          />
-        </Segment>
-      </Grid.Row>
+    <Grid
+      md={9}
+      lg={8}
+      xl={7}
+      alignItems="center"
+      alignContent="center"
+      justify="center"
+      container
+      spacing={24}
+      style={Styles.grid}
+      verticalAlign="middle"
+    >
+      <Grid item sm={12} style={Styles.breadRow}>
+        <BreadcrumbComponent selection={props.pageInProgress} current={1} />
+      </Grid>
+      <Grid item sm={12} style={Styles.formRow}>
+        {'insert form here'}
+      </Grid>
     </Grid>
   );
 };
 requestInformation.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.func,
-  setRequestInformation: PropTypes.func,
-  requestInProgress: PropTypes.number,
-  history: PropTypes.func,
 };
 
 requestInformation.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.func,
-  setRequestInformation: PropTypes.func,
   requestInProgress: 0,
   history: PropTypes.func,
 };

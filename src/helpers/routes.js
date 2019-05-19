@@ -13,7 +13,7 @@ import ConnectedRequestLocationComponent from '../connectedComponents/pipeline/C
 import ConnectedRequestPriceComponent from '../connectedComponents/pipeline/ConnectedRequestPrice';
 import ConnectedRequestReviewComponent from '../connectedComponents/pipeline/ConnectedRequestReview';
 import ConnectedRequestCompleteComponent from '../connectedComponents/pipeline/ConnectedRequestComplete';
-import HomePageComponent from '../components/pages/HomePage';
+import HomePageComponent from '../components/pages/Homepage/HomePage';
 import { App } from '../components/App';
 import reducers from '../reducers/reducers';
 import Styles from '../styles/App';
@@ -81,5 +81,4 @@ export class Routes extends Component {
     );
   }
 }
-
 export default Routes;

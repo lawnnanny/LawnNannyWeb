@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Icon, Header, Button } from 'semantic-ui-react';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -24,18 +25,34 @@ class requestComplete extends Component {
       return <Redirect to="/pipeline/requestReview" />;
     }
     return (
-      <Grid centered container style={Styles.grid}>
-        <Grid.Row style={Styles.completedRow}>
-          <Header icon textAlign="center">
-            <Icon style={Styles.icon} name="checkmark" />
-            <Header.Content style={Styles.header}>Request Submitted</Header.Content>
-          </Header>
-        </Grid.Row>
-        <Grid.Row style={Styles.buttonRow}>
+      <Grid
+        md={9}
+        lg={8}
+        xl={7}
+        alignItems="center"
+        alignContent="center"
+        justify="center"
+        container
+        spacing={24}
+        style={Styles.grid}
+        verticalAlign="middle"
+      >
+        <Grid item sm={12} style={Styles.headerRow}>
+          <h1 style={Styles.header}>Request Submitted!</h1>
+        </Grid>
+        <Grid item sm={12} style={Styles.buttonRow}>
           <ButtonDiv>
-            <Button style={Styles.button} onClick={() => { this.props.history.push('/HomePage'); }} >Continue </Button>
+            <Button
+              size="large"
+              style={Styles.button}
+              onClick={() => {
+                this.props.history.push('/HomePage');
+              }}
+            >
+              Continue
+            </Button>
           </ButtonDiv>
-        </Grid.Row>
+        </Grid>
       </Grid>
     );
   }

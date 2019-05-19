@@ -2,23 +2,23 @@ import { connect } from 'react-redux';
 import signupModalComponent from '../../components/helpers/signupModal';
 import Actions from '../../reducers/Actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  signupDetailsJson: state.login,
-  signupButton: ownProps.signupButton,
+const mapStateToProps = state => ({
+  isSignupModalOpen: state.login.isSignupModalOpen,
 });
-
 const mapDispatchToProps = dispatch => ({
-  signup: (data) => {
+  closeSignupModal: () => {
     const action = {
-      type: Actions.login.signup,
-      data,
+      type: Actions.login.closeSignupModal,
     };
-    const action2 = {
-      type: Actions.login.isLoggedIn,
-      data,
-    };
+
     dispatch(action);
-    dispatch(action2);
+  },
+  swapModal: () => {
+    const action = {
+      type: Actions.login.swapModal,
+    };
+
+    dispatch(action);
   },
 });
 

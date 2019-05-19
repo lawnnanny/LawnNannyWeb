@@ -2,7 +2,9 @@ const green = '#20ad1d';
 const blue = '#1205ff';
 
 export default {
-  grid: {},
+  grid: {
+    display: 'flex',
+  },
   link: {
     width: '20%',
     padding: '0',
@@ -10,23 +12,9 @@ export default {
     boxShadow: 'none',
     margin: '0',
   },
-  segment: {
-    textAlign: 'center',
-    padding: '0',
-    border: 'none',
-    boxShadow: 'none',
-    margin: '0',
-  },
-  iconSegment: {
-    textAlign: 'center',
-    padding: '0',
-    border: 'none',
-    boxShadow: 'none',
-    margin: '0',
-    marginBottom: '.4em',
-  },
   column: {
-    padding: '0',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   row: {
     paddingTop: '1.5rem',
@@ -36,30 +24,52 @@ export default {
     fontSize: '1.2rem',
     color: 'black',
     padding: '0',
+    marginTop: '.2em',
   },
   label: {
     backgroundColor: 'white',
     padding: '0',
-  },
-  iconButton: {
-    padding: '0',
-    boxShadow: '0px 0px 40px -10px rgba(0,0,0,1)',
-    backgroundColor: 'white',
+    marginTop: '.2em',
+    fontSize: '1em',
+    color: '#bdbbba',
   },
   finishedIcon: {
-    boxShadow: '0 0 0 0.1em #20ad1d inset',
+    boxShadow: '0 0 0 2px #20ad1d inset',
     margin: '0',
     color: green,
+    width: '48px',
+    height: '48px',
+    fontSize: '4em',
+    backgroundColor: 'white',
   },
   currentIcon: {
-    boxShadow: '0 0 10px 0.1em #0e42ff inset',
+    boxShadow: '0 0 10px 2px #0e42ff inset',
     margin: '0',
+    width: '48px',
+    height: '48px',
     color: blue,
+
+    fontSize: '4em',
+    backgroundColor: 'white',
   },
   unfinishedIcon: {
     margin: '0',
-    boxShadow: '0 0 0 0.1em #D7D7D7 inset',
-    color: '#D7D7D7',
+    width: '48px',
+    height: '48px',
+    boxShadow: '0 0 0 2px #bdbbba inset',
+    color: '#bdbbba',
+
+    fontSize: '4em',
+    backgroundColor: 'white',
+  },
+  finishedSvg: {
+    color: green,
+  },
+  currentSvg: {
+    color: blue,
+  },
+  unfinishedSvg: {
+    color: '#bdbbba',
   },
   leftBarUnfinished: {
     position: 'absolute',
@@ -67,7 +77,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#D7D7D7',
+    borderTopColor: '#bdbbba',
     left: 0,
     right: '51%',
     marginRight: 20,
@@ -78,7 +88,7 @@ export default {
     height: 1,
     borderTopStyle: 'solid',
     borderTopWidth: 3,
-    borderTopColor: '#D7D7D7',
+    borderTopColor: '#bdbbba',
     right: 0,
     left: '49.7%',
     marginLeft: 20,

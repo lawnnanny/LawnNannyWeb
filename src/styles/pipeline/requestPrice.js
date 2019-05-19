@@ -1,10 +1,11 @@
-const green = '#20ad1d';
 const white = '#FFFFFF';
 const blue = '#1205ff';
 
 export default {
   grid: {
-    marginTop: '0',
+    padding: '1em 0.5em',
+    width: '100%',
+    margin: '0',
   },
   segment: {
     width: '100%',
@@ -12,53 +13,48 @@ export default {
     boxShadow: 'none',
     padding: '0',
   },
-  breadrow: {
-    paddingTop: '0',
+  breadRow: {
+    padding: '0',
+    width: '100%',
+  },
+  header: {
+    color: 'black',
+    fontSize: '2.5em',
   },
   headerRow: {
     marginTop: '2em',
-    marginBottom: '2em',
+    marginBottom: '1.5em',
+    padding: '0',
+    width: '100%',
   },
   headerLabel: {
     backgroundColor: white,
   },
+  tooltipIcon: {
+    color: blue,
+    fontSize: '2.2em',
+  },
+  tooltipDiv: {
+    backgroundColor: 'white',
+  },
+  tooltipText: {
+    color: 'white',
+  },
   priceRow: {
     textAlign: 'center',
     marginBottom: '2em',
-  },
-  label: {
     padding: '0',
-    backgroundColor: white,
-    border: '1px solid #e6e6e6',
-  },
-  triangleBottomButton: {
-    padding: '0',
-    width: '8em',
-    margin: '0',
-    backgroundColor: white,
-  },
-  triangleTopButton: {
-    padding: '0',
-    width: '8em',
-    margin: '0',
-    borderBottom: '1px solid #c5c5c5',
-    backgroundColor: white,
+    width: '100%',
   },
   input: {
-    width: '6em',
-    fontSize: '3em',
-    padding: '0',
-    marginLeft: '-2.7em',
+    fontSize: '7.5em',
   },
-  inputIcon: {
-    color: green,
-    opacity: '1',
-  },
-  image: {
-    width: '8em',
+  priceIcon: {
+    fontSize: '.8em',
+    color: 'rgba(0,0,0,.87)',
   },
   button: {
-    width: '18em',
+    width: '100%',
     margin: '0',
     backgroundColor: blue,
     color: white,
@@ -66,6 +62,9 @@ export default {
   },
   buttonRow: {
     marginTop: '2em',
+    padding: '0',
+    width: '100%',
+    textAlign: 'center',
   },
   popupIcon: {
     color: blue,

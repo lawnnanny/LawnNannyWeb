@@ -1,12 +1,16 @@
 export default {
   grid: {
-    marginTop: '0',
-  },
-  segment: {
+    padding: '1em 0.5em',
     width: '100%',
-    border: 'none',
-    boxShadow: 'none',
+    margin: '0',
+  },
+  breadRow: {
     padding: '0',
+    width: '100%',
+  },
+  locationRow: {
+    padding: '0',
+    marginTop: '2em',
   },
   formSegment: {
     backgroundColor: '#d0e2ed',
@@ -16,8 +20,5 @@ export default {
     border: 'none',
     boxShadow: 'none',
     padding: '0',
-  },
-  breadrow: {
-    paddingTop: '0',
   },
 };

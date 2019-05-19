@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Segment, Button, Label } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
+import Grid from '@material-ui/core/Grid';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import StepComponent from '../../../../src/components/helpers/breadcrumbStep';
 
 describe('step', () => {
@@ -24,40 +25,39 @@ describe('step', () => {
       informationColumn = wrapper.childAt(0);
     });
 
-    it('is a column', () => {
-      expect(informationColumn.type()).toEqual(Grid.Column);
+    it('is a grid', () => {
+      expect(informationColumn.type()).toEqual(Grid);
     });
-    describe('information segment', () => {
-      let informationSegment;
+    describe('icon', () => {
+      let icon;
 
       beforeEach(() => {
-        informationSegment = informationColumn.childAt(0);
+        icon = informationColumn.childAt(0).childAt(0);
       });
-
-      it('is a segment', () => {
-        expect(informationSegment.type()).toEqual(Segment);
+      it('is a icon', () => {
+        expect(icon.type()).toEqual(SvgIcon);
       });
     });
-    describe('label segment', () => {
-      let labelSegment;
+    describe('bars', () => {
+      let label;
 
       beforeEach(() => {
-        labelSegment = informationColumn.childAt(1);
+        label = informationColumn.childAt(1);
       });
 
-      it('is a segment', () => {
-        expect(labelSegment.type()).toEqual(Segment);
+      it('is a div', () => {
+        expect(label.type()).toEqual('div');
       });
-      describe('label', () => {
-        let label;
+    });
+    describe('label', () => {
+      let label;
 
-        beforeEach(() => {
-          label = labelSegment.childAt(0);
-        });
+      beforeEach(() => {
+        label = informationColumn.childAt(2);
+      });
 
-        it('is a label', () => {
-          expect(label.type()).toEqual(Label);
-        });
+      it('is a label', () => {
+        expect(label.type()).toEqual('h2');
       });
     });
   });

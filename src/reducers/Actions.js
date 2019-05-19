@@ -4,7 +4,11 @@ export default {
   login: {
     login: (i += 1),
     signup: (i += 1),
-    isLoggedIn: (i += 1),
+    closeLoginModal: (i += 1),
+    openLoginModal: (i += 1),
+    closeSignupModal: (i += 1),
+    openSignupModal: (i += 1),
+    swapModal: (i += 1),
   },
   requests: {
     setTypeOfRequest: (i += 1),

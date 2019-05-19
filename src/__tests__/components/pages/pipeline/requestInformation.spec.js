@@ -1,25 +1,14 @@
 import React from 'react';
-import { Grid, Segment } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
+import Grid from '@material-ui/core/Grid';
 import RequestInformationComponent from '../../../../../src/components/pages/pipeline/requestInformation';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
-import DynamicFormComponent from '../../../../../src/components/helpers/DynamicForm';
-import testDataFunctions from '../../../../testDataGenerators/generateTestData';
-import formPipelineJson from '../../../../../src/components/pages/pipeline/jsonForms/informationForm';
 
 describe('RequestInformation', () => {
   let wrapper;
 
-  const testReduxState = testDataFunctions.generateTestStateJson(
-    formPipelineJson,
-  );
-
-  const reduxTestState = {
-    requests: testReduxState,
-  };
-
   const renderComponent = () =>
-    shallow(<RequestInformationComponent requests={reduxTestState} typeOfRequest="Lawn Mowing" pageInProgress={1} />);
+    shallow(<RequestInformationComponent typeOfRequest="Lawn Mowing" pageInProgress={1} />);
 
   beforeEach(() => {
     wrapper = renderComponent();
@@ -30,7 +19,7 @@ describe('RequestInformation', () => {
   });
 
   it('is styled as a container Grid', () => {
-    expect(wrapper.props().container).toBeTruthy();
+    expect(wrapper.props().alignItems).toEqual('center');
   });
 
   it('contains two rows', () => {
@@ -39,7 +28,7 @@ describe('RequestInformation', () => {
     const GridRows = wrapper.children();
 
     GridRows.forEach((row) => {
-      expect(row.type()).toEqual(Grid.Row);
+      expect(row.type()).toEqual(Grid);
     });
   });
 
@@ -51,33 +40,21 @@ describe('RequestInformation', () => {
     });
 
     it('is a Breadcrumb Row', () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
+      expect(BreadcrumbRow.type()).toEqual(Grid);
     });
 
-    describe('BreadcrumbSegment', () => {
-      let BreadcrumbSegment;
+    describe('BreadcrumbComponent', () => {
+      let Breadcrumb;
 
       beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
+        Breadcrumb = BreadcrumbRow.childAt(0);
       });
 
-      it('is a Breadcrumb Segment', () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
+      it('is a breadcrumb', () => {
+        expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
       });
-
-      describe('BreadcrumbComponent', () => {
-        let Breadcrumb;
-
-        beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
-        });
-
-        it('is a breadcrumb', () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
-        });
-        it('has a selection', () => {
-          expect(Breadcrumb.props().selection).toEqual(1);
-        });
+      it('has a selection', () => {
+        expect(Breadcrumb.props().selection).toEqual(1);
       });
     });
   });
@@ -90,40 +67,7 @@ describe('RequestInformation', () => {
     });
 
     it('is a Form Row', () => {
-      expect(FormRow.type()).toEqual(Grid.Row);
-    });
-
-    describe('FormSegment', () => {
-      let FormSegment;
-
-      beforeEach(() => {
-        FormSegment = FormRow.childAt(0);
-      });
-
-      it('is a Form Segment', () => {
-        expect(FormSegment.type()).toEqual(Segment);
-      });
-
-      describe('Form', () => {
-        let form;
-
-        beforeEach(() => {
-          form = FormSegment.childAt(0);
-        });
-
-        it('is a Form', () => {
-          expect(form.type()).toEqual(DynamicFormComponent);
-        });
-        it('has a json', () => {
-          expect(form.props().jsonForm).toBeTruthy();
-        });
-        it('has a form', () => {
-          expect(form.props().form).toBeTruthy();
-        });
-        it('has a route', () => {
-          expect(form.props().route).toBeTruthy();
-        });
-      });
+      expect(FormRow.type()).toEqual(Grid);
     });
   });
 });
