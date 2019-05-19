@@ -85,14 +85,14 @@ const ReviewModalWithRouter = withRouter(ReviewModal);
 
 requestReview.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   requestInProgress: PropTypes.func,
   history: PropTypes.func,
 };
 
 requestReview.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.obj,
+  requests: PropTypes.func,
   requestInProgress: PropTypes.func,
   history: PropTypes.func,
   isLoggedIn: PropTypes.bool,
