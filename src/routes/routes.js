@@ -16,7 +16,7 @@ import ConnectedRequestCompleteComponent from '../containers/pages/pipeline/Conn
 import HomePageComponent from '../pages/homepage/HomePage';
 import { App } from '../components/App/App';
 import reducers from '../reducers/reducers';
-import styles from '../components/App/App.module.css';;
+import styles from '../components/App/App.module.css';
 
 export class Routes extends Component {
   constructor() {

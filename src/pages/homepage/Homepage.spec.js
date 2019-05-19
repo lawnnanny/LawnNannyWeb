@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
-import HomePage from './Homepage/HomePage';
+import HomePage from './HomePage';
 
 describe('Home Page', () => {
   let wrapper;

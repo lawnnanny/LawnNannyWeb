@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
-import RequestReviewComponent from '../../../../../src/components/pages/pipeline/requestReview';
-import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
+import RequestReviewComponent from '../../../pages/pipeline/requestReview/requestReview';
+import BreadcrumbComponent from '../../../components/breadcrumb/breadcrumb';
 
 describe('RequestReview', () => {
   let wrapper;
