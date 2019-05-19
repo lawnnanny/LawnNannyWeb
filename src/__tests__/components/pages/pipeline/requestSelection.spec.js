@@ -1,10 +1,6 @@
 import React from 'react';
-import { shallowWithStore } from 'enzyme-redux';
-import { createMockStore } from 'redux-test-utils';
-import configureStore from 'redux-mock-store';
-import Actions from '../../../../../src/reducers/Actions';
-import { Menu, Modal, Grid, Input, Button, Form, Segment, Header } from 'semantic-ui-react';
 import { shallow } from 'enzyme';
+import Grid from '@material-ui/core/Grid';
 import RequestSelectionComponent from '../../../../../src/components/pages/pipeline/requestSelection';
 import BreadcrumbComponent from '../../../../../src/components/helpers/breadcrumb';
 import RequestOptionComponent from '../../../../../src/components/helpers/RequestOption';
@@ -30,7 +26,7 @@ describe('RequestSelection', () => {
   });
 
   it('is styled as a container Grid', () => {
-    expect(wrapper.props().container).toBeTruthy();
+    expect(wrapper.props().alignItems).toEqual('center');
   });
 
   describe('BreadcrumbRow', () => {
@@ -41,34 +37,26 @@ describe('RequestSelection', () => {
     });
 
     it('is a Breadcrumb Row', () => {
-      expect(BreadcrumbRow.type()).toEqual(Grid.Row);
+      expect(BreadcrumbRow.type()).toEqual(Grid);
     });
 
-    describe('BreadcrumbSegment', () => {
-      let BreadcrumbSegment;
+    it('is styled as a Grid item', () => {
+      expect(BreadcrumbRow.props().item).toBeTruthy();
+    });
+
+    describe('BreadcrumbComponent', () => {
+      let Breadcrumb;
 
       beforeEach(() => {
-        BreadcrumbSegment = BreadcrumbRow.childAt(0);
+        Breadcrumb = BreadcrumbRow.childAt(0);
       });
 
-      it('is a Breadcrumb Segment', () => {
-        expect(BreadcrumbSegment.type()).toEqual(Segment);
+      it('is a breadcrumb', () => {
+        expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
       });
 
-      describe('BreadcrumbComponent', () => {
-        let Breadcrumb;
-
-        beforeEach(() => {
-          Breadcrumb = BreadcrumbSegment.childAt(0);
-        });
-
-        it('is a breadcrumb', () => {
-          expect(Breadcrumb.type()).toEqual(BreadcrumbComponent);
-        });
-
-        it('has a selection', () => {
-          expect(Breadcrumb.props().selection).toEqual(0);
-        });
+      it('has a selection', () => {
+        expect(Breadcrumb.props().selection).toEqual(0);
       });
     });
   });
@@ -80,7 +68,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a Header Segment', () => {
-      expect(HeaderSegment.type()).toEqual(Segment);
+      expect(HeaderSegment.type()).toEqual(Grid);
     });
 
     describe('Header', () => {
@@ -91,22 +79,18 @@ describe('RequestSelection', () => {
       });
 
       it('is a Header', () => {
-        expect(header.type()).toEqual(Header);
-      });
-
-      it('is a Header', () => {
-        expect(header.props().as).toEqual('h2');
+        expect(header.type()).toEqual('h1');
       });
 
       describe('SubHeader', () => {
         let subHeader;
 
         beforeEach(() => {
-          subHeader = header.childAt(0);
+          subHeader = HeaderSegment.childAt(1);
         });
 
         it('is a SubHeader', () => {
-          expect(subHeader.type()).toEqual(Header.SubHeader);
+          expect(subHeader.type()).toEqual('h3');
         });
       });
     });
@@ -119,7 +103,7 @@ describe('RequestSelection', () => {
     });
 
     it('is a LawnMowing Segment', () => {
-      expect(LawnMowingSegment.type()).toEqual(Segment);
+      expect(LawnMowingSegment.type()).toEqual(Grid);
     });
 
     describe('LawnMowingComponent', () => {
@@ -142,93 +126,6 @@ describe('RequestSelection', () => {
         LawnMowingComponent.props().onClick();
         expect(requestInProgress.mock.calls.length).toBe(1);
         expect(setTypeOfRequest.mock.calls.length).toBe(1);
-      });
-    });
-  });
-  describe('YardWorkSegment', () => {
-    let YardWorkSegment;
-
-    beforeEach(() => {
-      YardWorkSegment = wrapper.childAt(3);
-    });
-
-    it('is a Yard Work Segment', () => {
-      expect(YardWorkSegment.type()).toEqual(Segment);
-    });
-
-    describe('Yard WorkComponent', () => {
-      let YardWorkComponent;
-
-      beforeEach(() => {
-        YardWorkComponent = YardWorkSegment.childAt(0);
-      });
-
-      it('is a Yard Work Component', () => {
-        expect(YardWorkComponent.type()).toEqual(RequestOptionComponent);
-      });
-      it('has the correct title', () => {
-        expect(YardWorkComponent.props().title).toEqual('Yard Work');
-      });
-      it('has an imageURL', () => {
-        expect(YardWorkComponent.props().imageURL).toBeTruthy();
-      });
-    });
-  });
-  describe('snowClearingSegment', () => {
-    let snowClearingSegment;
-
-    beforeEach(() => {
-      snowClearingSegment = wrapper.childAt(4);
-    });
-
-    it('is a snowClearing Segment', () => {
-      expect(snowClearingSegment.type()).toEqual(Segment);
-    });
-
-    describe('snowClearingComponent', () => {
-      let snowClearingComponent;
-
-      beforeEach(() => {
-        snowClearingComponent = snowClearingSegment.childAt(0);
-      });
-
-      it('is a snowClearing', () => {
-        expect(snowClearingComponent.type()).toEqual(RequestOptionComponent);
-      });
-      it('has the correct title', () => {
-        expect(snowClearingComponent.props().title).toEqual('Snow Clearing');
-      });
-      it('has an imageURL', () => {
-        expect(snowClearingComponent.props().imageURL).toBeTruthy();
-      });
-    });
-  });
-  describe('CustomSegment', () => {
-    let CustomSegment;
-
-    beforeEach(() => {
-      CustomSegment = wrapper.childAt(5);
-    });
-
-    it('is a Custom Segment', () => {
-      expect(CustomSegment.type()).toEqual(Segment);
-    });
-
-    describe('CustomComponent', () => {
-      let CustomComponent;
-
-      beforeEach(() => {
-        CustomComponent = CustomSegment.childAt(0);
-      });
-
-      it('is a Custom', () => {
-        expect(CustomComponent.type()).toEqual(RequestOptionComponent);
-      });
-      it('has the correct title', () => {
-        expect(CustomComponent.props().title).toEqual('Custom Request');
-      });
-      it('has an imageURL', () => {
-        expect(CustomComponent.props().imageURL).toBeTruthy();
       });
     });
   });
