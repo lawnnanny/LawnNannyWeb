@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import requestPriceComponent from '../../../../pages/pipeline/requestPrice/requestPrice';
+import requestPriceComponent from '../../../../pages/pipeline/requestPrice';
 import Actions from '../../../../reducers/Actions';
 
 const mapStateToProps = state => ({

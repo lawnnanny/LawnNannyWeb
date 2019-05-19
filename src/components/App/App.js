@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
 import reducers from '../../reducers/reducers';
-
-import { Routes } from '../../routes/routes';
+import Routes from '../../routes';
 
 export class App extends Component {
   constructor() {
