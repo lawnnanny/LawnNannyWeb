@@ -23,7 +23,6 @@ npm-debug.log*
 npm-error.log*
 
 # compiled from web-pack
-*.css
 
 #editor settings
 .vscode

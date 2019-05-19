@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Styles from '../../../styles/pipeline/requestComplete';
+import styles from '../../../styles/pipeline/requestComplete.module.css';
 
 const ButtonDiv = styled.div`
   :active {
@@ -34,17 +34,17 @@ class requestComplete extends Component {
         justify="center"
         container
         spacing={24}
-        style={Styles.grid}
+        className={styles.grid}
         verticalAlign="middle"
       >
-        <Grid item sm={12} style={Styles.headerRow}>
-          <h1 style={Styles.header}>Request Submitted!</h1>
+        <Grid item sm={12} className={styles.headerRow}>
+          <h1 className={styles.header}>Request Submitted!</h1>
         </Grid>
-        <Grid item sm={12} style={Styles.buttonRow}>
+        <Grid item sm={12} className={styles.buttonRow}>
           <ButtonDiv>
             <Button
               size="large"
-              style={Styles.button}
+              className={styles.button}
               onClick={() => {
                 this.props.history.push('/HomePage');
               }}

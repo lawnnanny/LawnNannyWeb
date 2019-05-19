@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import RequestOptionComponent from '../../helpers/RequestOption';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
-import Styles from '../../../styles/pipeline/requestSelection';
+import styles from '../../../styles/pipeline/requestSelection.module.css';
 import mower from '../../../images/pipeline/mower.png';
 
 export const requestSelection = props => (
@@ -14,20 +14,20 @@ export const requestSelection = props => (
     alignItems="center"
     alignContent="center"
     justify="center"
-    style={Styles.grid}
+    className={styles.grid}
     verticalAlign="middle"
   >
-    <Grid item style={Styles.pipelineSegment}>
+    <Grid item className={styles.pipelineSegment}>
       <BreadcrumbComponent selection={props.pageInProgress} current={0} />
     </Grid>
-    <Grid item style={Styles.headerSegment}>
-      <h1 style={Styles.header}>Choose Your Service</h1>
-      <h3 style={Styles.subHeader}>Choose a Service for someone to perform</h3>
+    <Grid item className={styles.headerSegment}>
+      <h1 className={styles.header}>Choose Your Service</h1>
+      <h3 className={styles.subHeader}>Choose a Service for someone to perform</h3>
     </Grid>
 
-    <Grid item style={Styles.buttonSegment}>
+    <Grid item className={styles.buttonSegment}>
       <RequestOptionComponent
-        style={Styles.buttonComponent}
+        className={styles.buttonComponent}
         imageURL={mower}
         title="Lawn Mowing"
         onClick={() => {

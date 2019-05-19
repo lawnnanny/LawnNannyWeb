@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import { Redirect, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import Styles from '../../../styles/pipeline/requestReview';
+import styles from '../../../styles/pipeline/requestReview.module.css';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import ReviewModal from '../../helpers/reviewModal';
 
@@ -57,23 +57,23 @@ class requestReview extends Component {
         justify="center"
         container
         spacing={24}
-        style={Styles.grid}
+        className={styles.grid}
         verticalAlign="middle"
       >
-        <Grid item sm={12} style={Styles.breadRow}>
+        <Grid item sm={12} className={styles.breadRow}>
           <BreadcrumbComponent selection={this.props.pageInProgress} current={4} />
         </Grid>
         {this.state.dataBaseError && (
           <Grid item sm={12}>
-            <SnackbarContent style={Styles.message} message="Error while trying to submit request">
+            <SnackbarContent className={styles.message} message="Error while trying to submit request">
               <p>{this.state.dataBaseError}</p>
             </SnackbarContent>
           </Grid>
         )}
-        <Grid item sm={12} style={Styles.formRow}>
+        <Grid item sm={12} className={styles.formRow}>
           <div />
         </Grid>
-        <Grid item sm={12} style={Styles.submitRow}>
+        <Grid item sm={12} className={styles.submitRow}>
           <ReviewModalWithRouter />
         </Grid>
       </Grid>

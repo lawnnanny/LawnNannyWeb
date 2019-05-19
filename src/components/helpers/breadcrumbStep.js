@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
-import Styles from '../../styles/helpers/breadcrumb';
+import styles from '../../styles/helpers/breadcrumb.module.css';
 
 const MyButton = styled(Fab)`
   &&& {
@@ -33,63 +33,63 @@ const returnStatus = (selection, id) => {
 };
 const returnIcon = (current, selection, id) => {
   if (current === id) {
-    return Styles.currentIcon;
+    return styles.currentIcon;
   } else if (selection > id) {
-    return Styles.finishedIcon;
+    return styles.finishedIcon;
   }
-  return Styles.unfinishedIcon;
+  return styles.unfinishedIcon;
 };
 const returnSvg = (current, selection, id) => {
   if (current === id) {
-    return Styles.currentSvg;
+    return styles.currentSvg;
   } else if (selection > id) {
-    return Styles.finishedSvg;
+    return styles.finishedSvg;
   }
-  return Styles.unfinishedSvg;
+  return styles.unfinishedSvg;
 };
 const returnRightBar = (selection, id) => {
   if (selection > id) {
-    return Styles.rightBarFinished;
+    return styles.riiiiiiightBarFinished;
   }
-  return Styles.rightBarUnfinished;
+  return styles.riiiiiiightBarUnfinished;
 };
 const returnLeftBar = (selection, id) => {
   if (selection > id) {
-    return Styles.leftBarFinished;
+    return styles.leeeeeeftBarFinished;
   }
-  return Styles.leftBarUnfinished;
+  return styles.leeeeeeeftBarUnfinished;
 };
 const returnLabel = (current, id) => {
   if (current === id) {
-    return Styles.currentLabel;
+    return styles.currentLabel;
   }
-  return Styles.label;
+  return styles.label;
 };
 export const breadcrumb = props => (
-  <Link to={props.link} style={Styles.link}>
-    <Grid container style={Styles.column}>
-      <MyButton style={returnIcon(props.current, props.selection, props.value)}>
-        <SvgIcon style={returnSvg(props.current, props.selection, props.value)}>
+  <Link to={props.link} className={styles.link}>
+    <Grid container className={styles.column}>
+      <MyButton className={returnIcon(props.current, props.selection, props.value)}>
+        <SvgIcon className={returnSvg(props.current, props.selection, props.value)}>
           <path d={returnStatus(props.selection, props.value)} />
         </SvgIcon>
       </MyButton>
       {(() => {
         switch (props.value) {
           case 0:
-            return <div style={returnRightBar(props.selection, props.value)} />;
+            return <div className={returnRightBar(props.selection, props.value)} />;
           case 4:
-            return <div style={returnLeftBar(props.selection, props.value - 1)} />;
+            return <div className={returnLeftBar(props.selection, props.value - 1)} />;
           default:
             return (
               <div>
-                <div style={returnLeftBar(props.selection, props.value - 1)} />
-                <div style={returnRightBar(props.selection, props.value)} />
+                <div className={returnLeftBar(props.selection, props.value - 1)} />
+                <div className={returnRightBar(props.selection, props.value)} />
               </div>
             );
         }
       })()}
 
-      <h2 style={returnLabel(props.current, props.value)}>{props.name}</h2>
+      <h2 className={returnLabel(props.current, props.value)}>{props.name}</h2>
     </Grid>
   </Link>
 );

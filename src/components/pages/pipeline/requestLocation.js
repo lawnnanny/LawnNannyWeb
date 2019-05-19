@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import Styles from '../../../styles/pipeline/requestLocation';
+import styles from '../../../styles/pipeline/requestLocation.module.css';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
@@ -19,13 +19,13 @@ export const requestLocation = (props) => {
       justify="center"
       container
       spacing={24}
-      style={Styles.grid}
+      className={styles.grid}
       verticalAlign="middle"
     >
-      <Grid item sm={12} style={Styles.breadRow}>
+      <Grid item sm={12} className={styles.breadRow}>
         <BreadcrumbComponent selection={props.pageInProgress} current={2} />
       </Grid>
-      <Grid item sm={12} style={Styles.locationRow}>
+      <Grid item sm={12} className={styles.locationRow}>
         {'insert form here'}
       </Grid>
     </Grid>

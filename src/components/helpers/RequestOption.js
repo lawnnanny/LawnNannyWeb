@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
-import Styles from '../../styles/helpers/RequestOption';
+import styles from '../../styles/helpers/RequestOption.module.css';
 
 export const RequestOption = props => (
-  <Link to="/pipeline/requestInformation" style={Styles.link}>
-    <Button fluid style={Styles.button} onClick={() => props.onClick()}>
-      <Avatar alt="Image not Found" src={props.imageURL} style={Styles.icon} />
-      <h2 style={Styles.header}>{props.title}</h2>
-      <SvgIcon {...props} style={Styles.arrow}>
+  <Link to="/pipeline/requestInformation" className={styles.link}>
+    <Button fluid className={styles.button} onClick={() => props.onClick()}>
+      <Avatar alt="Image not Found" src={props.imageURL} className={styles.icon} />
+      <h2 className={styles.header}>{props.title}</h2>
+      <SvgIcon {...props} className={styles.arrow}>
         <path
           d="M1.729,9.212h14.656l-4.184-4.184c-0.307-0.306-0.307-0.801,0-1.107c0.305-0.306,0.801-0.306,1.106,0
 l5.481,5.482c0.018,0.014,0.037,0.019,0.053,0.034c0.181,0.181,0.242,0.425,0.209,0.66c-0.004,0.038-0.012,0.071-0.021,0.109
