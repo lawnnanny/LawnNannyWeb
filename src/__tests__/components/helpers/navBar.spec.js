@@ -21,21 +21,21 @@ describe('navBar', () => {
     expect(wrapper.type()).toEqual(AppBar);
   });
 
-  describe('lefthand div', () => {
-    let leftDiv;
+  describe('leftnav container', () => {
+    let leftnavContainer;
 
     beforeEach(() => {
-      leftDiv = wrapper.childAt(0);
+      leftnavContainer = wrapper.childAt(0);
     });
 
     it('is a div', () => {
-      expect(leftDiv.type()).toEqual('div');
+      expect(leftnavContainer.type()).toEqual('div');
     });
     describe('sidebar', () => {
       let sidebar;
 
       beforeEach(() => {
-        sidebar = leftDiv.childAt(0);
+        sidebar = leftnavContainer.childAt(0);
       });
 
       it('is a sidebar', () => {
@@ -46,7 +46,7 @@ describe('navBar', () => {
       let link;
 
       beforeEach(() => {
-        link = leftDiv.childAt(1);
+        link = leftnavContainer.childAt(1);
       });
 
       it('is a link', () => {
@@ -65,21 +65,21 @@ describe('navBar', () => {
       });
     });
   });
-  describe('righthand div', () => {
-    let rightDiv;
+  describe('right nav contianer', () => {
+    let rightnavContainer;
 
     beforeEach(() => {
-      rightDiv = wrapper.childAt(1);
+      rightnavContainer = wrapper.childAt(1);
     });
 
     it('is a div', () => {
-      expect(rightDiv.type()).toEqual('div');
+      expect(rightnavContainer.type()).toEqual('div');
     });
     describe('loginModal', () => {
       let loginModal;
 
       beforeEach(() => {
-        loginModal = rightDiv.childAt(0);
+        loginModal = rightnavContainer.childAt(0);
       });
 
       it('is a login modal', () => {
@@ -90,7 +90,7 @@ describe('navBar', () => {
       let signupModal;
 
       beforeEach(() => {
-        signupModal = rightDiv.childAt(1);
+        signupModal = rightnavContainer.childAt(1);
       });
 
       it('is a signup modal', () => {
