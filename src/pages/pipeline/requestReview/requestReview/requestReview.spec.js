@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
-import RequestReviewComponent from './requestReview';
+import RequestReviewComponent from './';
 import BreadcrumbComponent from '../../../../components/breadcrumb/breadcrumb';
 
 describe('RequestReview', () => {

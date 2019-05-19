@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import StepComponent from './breadcrumbStep';
+import StepComponent from './';
 
 describe('step', () => {
   let wrapper;

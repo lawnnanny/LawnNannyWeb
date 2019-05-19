@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../App';
+import App from './';
 import Routes from '../../routes';
 
 describe('App', () => {

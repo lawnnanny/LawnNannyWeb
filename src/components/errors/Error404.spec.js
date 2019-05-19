@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { shallow } from 'enzyme';
-import { Error404 } from './Error404';
+import Error404 from './';
 
 describe('404 Error', () => {
   let wrapper;

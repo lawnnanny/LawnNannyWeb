@@ -7,8 +7,6 @@ import styles from './requestReview.module.css';
 import BreadcrumbComponent from '../../../../components/breadcrumb/breadcrumb';
 import ReviewModal from '../reviewModal';
 
-import handleRequest from '../../../../networkRequests/requests';
-
 class requestReview extends Component {
   constructor() {
     super();
@@ -20,28 +18,9 @@ class requestReview extends Component {
   handleOpen = (loggedIn) => {
     if (!loggedIn) {
       this.setState({ open: true });
-    } else {
-      const networkResponsePromise = handleRequest({
-        address: this.props.requests.requestLocation.streetAddress.entry,
-        city: this.props.requests.requestLocation.city.entry,
-        zip: this.props.requests.requestLocation.zipcode.entry,
-        state: this.props.requests.requestLocation.state.entry,
-        country: 'USA',
-        price: this.props.requests.requestPrice,
-        serviceRequest: this.props.requests.requestInformation,
-      });
-      networkResponsePromise.then((serverResponse) => {
-        if (serverResponse.success) {
-          this.props.requestInProgress(5);
-          this.props.history.push('/pipeline/requestComplete');
-        } else {
-          const currentState = this.state;
-          currentState.dataBaseError = serverResponse.message;
-          this.setState(currentState);
-        }
-      });
     }
-  };
+  }
+
   handleClose = () => this.setState({ open: false });
   render() {
     if (this.props.pageInProgress < 4) {
@@ -85,16 +64,10 @@ const ReviewModalWithRouter = withRouter(ReviewModal);
 
 requestReview.propTypes = {
   pageInProgress: PropTypes.number,
-  requests: PropTypes.func,
-  requestInProgress: PropTypes.func,
-  history: PropTypes.func,
 };
 
 requestReview.defaultProps = {
   pageInProgress: 0,
-  requests: PropTypes.func,
-  requestInProgress: PropTypes.func,
-  history: PropTypes.func,
   isLoggedIn: PropTypes.bool,
 };
 export default requestReview;

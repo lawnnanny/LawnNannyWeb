@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import RequestSelection from './ConnectedRequestSelection';
+import RequestSelection from './';
 
 describe('Connected RequestSelection Page', () => {
   let store;

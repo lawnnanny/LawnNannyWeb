@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import RequestCompleteComponent from './requestComplete';
+import RequestCompleteComponent from './';
 
 describe('Request Complete', () => {
   let wrapper;
