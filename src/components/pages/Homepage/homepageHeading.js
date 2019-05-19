@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
-import Styles from '../../../styles/Homepage/homepageHeading';
+import styles from '../../../styles/Homepage/homepageHeading.module.css';
 
 const ButtonDiv = styled.div`
   :active {
@@ -12,14 +12,14 @@ const ButtonDiv = styled.div`
 `;
 
 const HomePageHeading = props => (
-  <Grid container sm={12} spacing={24} style={Styles.homepageHeadingContainer}>
-    <Grid container sm={12} spacing={24} style={Styles.headingShadowContainer}>
-      <Grid item sm={12} style={Styles.headingHeader}>
-        <h1 style={Styles.header}>Lawn Nanny</h1>
+  <Grid container sm={12} spacing={24} className={styles.homepageHeadingContainer}>
+    <Grid container sm={12} spacing={24} className={styles.headingShadowContainer}>
+      <Grid item sm={12} className={styles.headingHeader}>
+        <h1 className={styles.header}>Lawn Nanny</h1>
       </Grid>
-      <Grid item sm={12} style={Styles.buttonContainer}>
-        <ButtonDiv style={Styles.buttonDiv}>
-          <Button style={Styles.requestButton} onClick={() => props.history.push('/pipeline')}>
+      <Grid item sm={12} className={styles.buttonContainer}>
+        <ButtonDiv className={styles.buttonDiv}>
+          <Button className={styles.requestButton} onClick={() => props.history.push('/pipeline')}>
             Make a Request
           </Button>
         </ButtonDiv>

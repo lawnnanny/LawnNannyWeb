@@ -7,7 +7,7 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ListItem from '@material-ui/core/ListItem';
-import Styles from '../../styles/helpers/sidebar';
+import styles from '../../styles/helpers/sidebar.module.css';
 
 const MyItem = styled(ListItem)`
   &&& {
@@ -17,7 +17,7 @@ const MyItem = styled(ListItem)`
   }
 `;
 
-const styles = {
+const styling = {
   paperOverride: {
     opacity: '.95',
     width: '22em',
@@ -39,8 +39,8 @@ class Sidebar extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <IconButton onClick={this.toggleDrawer(true)} style={Styles.menuButton}>
-          <SvgIcon style={Styles.menuIcon}>
+        <IconButton onClick={this.toggleDrawer(true)} className={styles.menuButton}>
+          <SvgIcon className={styles.menuIcon}>
             <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
           </SvgIcon>
         </IconButton>
@@ -49,23 +49,23 @@ class Sidebar extends React.Component {
           onClose={this.toggleDrawer(false)}
           classes={{ paper: classes.paperOverride }}
         >
-          <div style={Styles.sidebar}>
-            <IconButton onClick={this.toggleDrawer(false)} style={Styles.menuButton}>
-              <SvgIcon style={Styles.menuIcon}>
+          <div className={styles.sidebar}>
+            <IconButton onClick={this.toggleDrawer(false)} className={styles.menuButton}>
+              <SvgIcon className={styles.menuIcon}>
                 <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
               </SvgIcon>
             </IconButton>
-            <MyItem button style={Styles.aboutTerraItem}>
-              <Typography style={Styles.aboutTerraText}>About Terra</Typography>
+            <MyItem button className={styles.aboutTerraItem}>
+              <Typography className={styles.aboutTerraText}>About Terra</Typography>
             </MyItem>
-            <MyItem button style={Styles.featuresItem}>
-              <Typography style={Styles.featuresText}>Features</Typography>
+            <MyItem button className={styles.featuresItem}>
+              <Typography className={styles.featuresText}>Features</Typography>
             </MyItem>
-            <MyItem button style={Styles.helpItem}>
-              <Typography style={Styles.helpText}>Help</Typography>
+            <MyItem button className={styles.helpItem}>
+              <Typography className={styles.helpText}>Help</Typography>
             </MyItem>
-            <MyItem button style={Styles.contactItem}>
-              <Typography style={Styles.contactText}>Contact Us</Typography>
+            <MyItem button className={styles.contactItem}>
+              <Typography className={styles.contactText}>Contact Us</Typography>
             </MyItem>
           </div>
         </Drawer>
@@ -82,4 +82,4 @@ Sidebar.defaultProps = {
   classes: PropTypes.func,
 };
 
-export default withStyles(styles)(Sidebar);
+export default withStyles(styling)(Sidebar);

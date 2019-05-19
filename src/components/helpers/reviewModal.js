@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
-import Styles from '../../styles/reviewModal';
+import styles from '../../styles/reviewModal.module.css';
 
 const MyButton = styled(Button)`
   &&& {
@@ -37,8 +37,8 @@ export class reviewModal extends Component {
 
   render() {
     return (
-      <div style={Styles.reviewModal}>
-        <MyButton style={Styles.modalButton} onClick={this.handleClickOpen}>
+      <div className={styles.reviewModal}>
+        <MyButton className={styles.modalButton} onClick={this.handleClickOpen}>
           Submit Request
         </MyButton>
         <Dialog
@@ -46,7 +46,7 @@ export class reviewModal extends Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title" style={Styles.modalHeader}>
+          <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
             To Make A Request Please...
           </DialogTitle>
           <DialogContent />
@@ -55,7 +55,7 @@ export class reviewModal extends Component {
               onClick={this.handleClose}
               size="big"
               fluid
-              signupButton={Styles.signupButton}
+              signupButton={styles.signupButton}
               history={this.props.history}
               destination="/pipeline/requestReview"
               requestInProgress={this.props.requestInProgress}
@@ -65,7 +65,7 @@ export class reviewModal extends Component {
               onClick={this.handleClose}
               size="big"
               fluid
-              loginButton={Styles.loginButton}
+              loginButton={styles.loginButton}
               history={this.props.history}
               destination="/pipeline/requestReview"
               requestInProgress={this.props.requestInProgress}

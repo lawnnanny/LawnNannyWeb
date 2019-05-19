@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Step from './breadcrumbStep';
-import Styles from '../../styles/helpers/breadcrumb';
+import styles from '../../styles/helpers/breadcrumb.module.css';
 
 export const breadcrumb = props => (
-  <Grid style={Styles.grid}>
+  <Grid className={styles.grid}>
     <Step
       value={0}
       name="Selection"

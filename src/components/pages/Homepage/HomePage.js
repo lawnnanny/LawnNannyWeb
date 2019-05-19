@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Grid from '@material-ui/core/Grid';
-import Styles from '../../../styles/Homepage/HomePage';
+import styles from '../../../styles/Homepage/HomePage.module.css';
 import HomePageHeading from './homepageHeading';
 
 const HomePage = () => (
-  <Grid container spacing={24} style={Styles.homepageContainer}>
+  <Grid container spacing={24} className={styles.homepageContainer}>
     <HomePageHeadingWithRouter />
   </Grid>
 );
