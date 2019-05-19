@@ -15,7 +15,7 @@
 .row {
   padding-top: 1.5rem !important;
 }
-.currentlabel {
+.currentLabel {
   background-color: white !important;
   font-size: 1.2rem !important;
   color: black !important;
@@ -29,7 +29,7 @@
   font-size: 1em !important;
   color: #bdbbba !important;
 }
-.finishedicon {
+.finishedIcon {
   box-shadow: 0 0 0 2px #20ad1d inset !important;
   margin: 0 !important;
   color: #20ad1d !important;
@@ -38,7 +38,7 @@
   font-size: 4em !important;
   background-color: white !important;
 }
-.currenticon {
+.currentIcon {
   box-shadow: 0 0 10px 2px #0e42ff inset !important;
   margin: 0 !important;
   width: 48px !important;
@@ -48,7 +48,7 @@
   font-size: 4em !important;
   background-color: white !important;
 }
-.unfinishedicon {
+.unfinishedIcon {
   margin: 0 !important;
   width: 48px !important;
   height: 48px !important;
@@ -58,16 +58,16 @@
   font-size: 4em !important;
   background-color: white !important;
 }
-.finishedsvg {
+.finishedSvg {
   color: #20ad1d !important;
 }
-.currentsvg {
+.currentSvg {
   color: #1205ff !important;
 }
-.unfinishedsvg {
+.unfinishedSvg {
   color: #bdbbba !important;
 }
-.leftbarunfinished {
+.leftBarUnfinished {
   position: absolute !important;
   top: 20 !important;
   height: 1 !important;
@@ -78,7 +78,7 @@
   right: 51% !important;
   margin-right: 20 !important;
 }
-.rightbarunfinished {
+.rightBarUnfinished {
   position: absolute !important;
   top: 20 !important;
   height: 1 !important;
@@ -89,7 +89,7 @@
   left: 49.7% !important;
   margin-left: 20 !important;
 }
-.leftbarfinished {
+.leftBarFinished {
   position: absolute !important;
   top: 20 !important;
   height: 1 !important;
@@ -100,7 +100,7 @@
   right: 51% !important;
   margin-right: 20 !important;
 }
-.rightbarfinished {
+.rightBarFinished {
   position: absolute !important;
   top: 20 !important;
   height: 1 !important;

@@ -49,15 +49,15 @@ const returnSvg = (current, selection, id) => {
 };
 const returnRightBar = (selection, id) => {
   if (selection > id) {
-    return styles.rightBarFinished;
+    return styles.riiiiiiightBarFinished;
   }
-  return styles.rightBarUnfinished;
+  return styles.riiiiiiightBarUnfinished;
 };
 const returnLeftBar = (selection, id) => {
   if (selection > id) {
-    return styles.leftBarFinished;
+    return styles.leeeeeeftBarFinished;
   }
-  return styles.leftBarUnfinished;
+  return styles.leeeeeeeftBarUnfinished;
 };
 const returnLabel = (current, id) => {
   if (current === id) {
