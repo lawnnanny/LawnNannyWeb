@@ -14,9 +14,9 @@ import ConnectedRequestPriceComponent from '../containers/pages/pipeline/Connect
 import ConnectedRequestReviewComponent from '../containers/pages/pipeline/ConnectedRequestReview/ConnectedRequestReview';
 import ConnectedRequestCompleteComponent from '../containers/pages/pipeline/ConnectedRequestComplete/ConnectedRequestComplete';
 import HomePageComponent from '../pages/homepage/HomePage';
-import { App } from '../components/app/App';
+import { App } from '../components/App/App';
 import reducers from '../reducers/reducers';
-import Styles from '../components/app/App.module.css';;
+import styles from '../components/App/App.module.css';;
 
 export class Routes extends Component {
   constructor() {
@@ -40,8 +40,8 @@ export class Routes extends Component {
         <BrowserRouter className="router">
           <Route
             render={props => (
-              <div style={Styles.div} {...props}>
-                <ConnectedNavBarComponent style={Styles.navBar} {...props} />
+              <div className={styles.div} {...props}>
+                <ConnectedNavBarComponent className={styles.navBar} {...props} />
                 <Switch>
                   <Route exact path="/test" component={App} />
                   <Route exact path="/pipeline" component={ConnectedRequestSelection} />

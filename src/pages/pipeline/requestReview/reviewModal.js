@@ -6,9 +6,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
-import LoginModal from '../../connectedComponents/helpers/ConnectedLoginModal';
-import SignupModal from '../../connectedComponents/helpers/ConnectedSignupModal';
-import styles from '../../styles/reviewModal.module.css';
+import LoginModal from '../../../containers/components/ConnectedLogin/ConnectedLoginModal';
+import SignupModal from '../../../containers/components/ConnectedSignup/ConnectedSignupModal';
+import styles from './reviewModal.module.css';
 
 const MyButton = styled(Button)`
   &&& {
