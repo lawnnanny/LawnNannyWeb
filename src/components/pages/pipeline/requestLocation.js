@@ -1,13 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Redirect } from 'react-router';
+import { Redirect, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import styles from '../../../styles/pipeline/requestLocation.module.css';
 import RequestLocationForm from './requestLocationForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
-  if (props.pageInProgress < 0) {
+  const destinationString = '/pipeline/requestPrice';
+  if (props.pageInProgress < 2) {
     return <Redirect to="/pipeline/requestInformation" />;
   }
   return (
@@ -27,11 +28,19 @@ export const requestLocation = (props) => {
         <BreadcrumbComponent selection={props.pageInProgress} current={2} />
       </Grid>
       <Grid item xs={12} sm={10} md={9} lg={8} xl={7} className={styles.formRow}>
-        <RequestLocationForm />
+        <RequestLocationFormWithRouter
+          route={() => {
+            props.requestInProgress(3);
+            props.history.push(destinationString);
+          }}
+        />
       </Grid>
     </Grid>
   );
 };
+
+const RequestLocationFormWithRouter = withRouter(RequestLocationForm);
+
 requestLocation.propTypes = {
   pageInProgress: PropTypes.number,
 };

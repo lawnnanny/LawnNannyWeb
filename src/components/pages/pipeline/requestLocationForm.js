@@ -26,7 +26,7 @@ const style = {
   width: '50%',
 };
 
-const RequestLocationForm = () => (
+const RequestLocationForm = props => (
   <div className={styles.formContainer}>
     <h1 className={styles.formHeader}>Request Location</h1>
     <Formik
@@ -43,9 +43,7 @@ const RequestLocationForm = () => (
       })}
       initialValues={initialValues}
       onSubmit={(values) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+        props.route();
       }}
     >
       {({ values, error, touched, isSubmitting }) => (

@@ -23,7 +23,7 @@ const styleError = {
   fontSize: '1.5em',
 };
 
-const RequestInformationForm = () => (
+const RequestInformationForm = props => (
   <div className={styles.formContainer}>
     <h1 className={styles.formHeader}>Lawn Details</h1>
     <Formik
@@ -35,10 +35,8 @@ const RequestInformationForm = () => (
         ),
       })}
       initialValues={initialValues}
-      onSubmit={(values) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 1));
-        }, 500);
+      onSubmit={() => {
+        props.route();
       }}
     >
       {({ values, errors, touched, isSubmitting }) => (
