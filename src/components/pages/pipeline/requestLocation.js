@@ -3,10 +3,11 @@ import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import styles from '../../../styles/pipeline/requestLocation.module.css';
+import RequestLocationForm from './requestLocationForm';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 
 export const requestLocation = (props) => {
-  if (props.pageInProgress < 2) {
+  if (props.pageInProgress < 0) {
     return <Redirect to="/pipeline/requestInformation" />;
   }
   return (
@@ -26,7 +27,7 @@ export const requestLocation = (props) => {
         <BreadcrumbComponent selection={props.pageInProgress} current={2} />
       </Grid>
       <Grid item sm={12} className={styles.locationRow}>
-        {'insert form here'}
+        <RequestLocationForm />
       </Grid>
     </Grid>
   );

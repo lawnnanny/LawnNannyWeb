@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
+import RequestInformationForm from './requestInformationForm';
 import styles from '../../../styles/pipeline/requestInformation.module.css';
 
 const requestInformation = (props) => {
@@ -26,7 +27,7 @@ const requestInformation = (props) => {
         <BreadcrumbComponent selection={props.pageInProgress} current={1} />
       </Grid>
       <Grid item sm={12} className={styles.formRow}>
-        {'insert form here'}
+        <RequestInformationForm />
       </Grid>
     </Grid>
   );
