@@ -1,0 +1,48 @@
+.formContainer {
+  margin: 1em;
+}
+.formHeader {
+}
+.formInput {
+  margin: 10em, 0em;
+}
+.addressContainer {
+  margin: 1em 0em !important;
+  width: 100% !important;
+}
+.fieldContainer {
+  width: 50% !important;
+  margin: 1em 0em !important;
+}
+.fieldLabel {
+  font-size: 1.8em !important;
+}
+.input {
+  font-size: 2em !important;
+  padding-top: 0.4em !important;
+}
+.inputError {
+  color: red;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+.selectField {
+  margin-top: 1.5em !important;
+  margin-bottom: 1em !important;
+  width: 50% !important;
+}
+.selectLabel {
+  font-size: 2em !important;
+}
+.USstateItem {
+  font-size: 1.5em !important;
+}
+.submitButton {
+  width: 100%;
+  background-color: #3bc401;
+  border: 0;
+  height: 2em;
+  font-size: 2em;
+  color: white;
+  margin-top: 1em;
+}

@@ -26,7 +26,7 @@ export const requestLocation = (props) => {
       <Grid item sm={12} className={styles.breadRow}>
         <BreadcrumbComponent selection={props.pageInProgress} current={2} />
       </Grid>
-      <Grid item sm={12} className={styles.locationRow}>
+      <Grid item xs={12} sm={10} md={9} lg={8} xl={7} className={styles.formRow}>
         <RequestLocationForm />
       </Grid>
     </Grid>

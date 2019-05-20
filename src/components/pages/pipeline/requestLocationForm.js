@@ -1,6 +1,12 @@
 import React from 'react';
 import { Formik, Field, Form, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 import styles from './requestLocationForm.module.css';
 
 const initialValues = {
@@ -14,18 +20,24 @@ const initialValues = {
     },
   ],
 };
+
+const style = {
+  margin: '1em 0em',
+  width: '50%',
+};
+
 const RequestLocationForm = () => (
-  <div>
-    <h1>Request Location </h1>
+  <div className={styles.formContainer}>
+    <h1 className={styles.formHeader}>Request Location</h1>
     <Formik
       validationSchema={Yup.object({
         RequestLocation: Yup.array().of(
           Yup.object({
-            addressLine1: Yup.string().required('Required'),
-            addressLine2: Yup.string().required('Required'),
-            city: Yup.string().required('Required'),
-            postal: Yup.string().required('Required'),
-            state: Yup.string().required('Required'),
+            addressLine1: Yup.string().required('Required*'),
+            addressLine2: Yup.string(),
+            city: Yup.string().required('Required*'),
+            postal: Yup.string().required('Required*'),
+            state: Yup.string().required('Required*'),
           }),
         ),
       })}
@@ -48,56 +60,82 @@ const RequestLocationForm = () => (
                       <div>
                         <Field name={`RequestLocation[${index}].addressLine1`} type="text">
                           {({ field, form }) => (
-                            <input {...field} placeholder="katy perry" type="text" />
+                            <FormControl className={styles.addressContainer}>
+                              <InputLabel className={styles.fieldLabel}>Street Address </InputLabel>
+                              <Input className={styles.input} {...field} />
+                            </FormControl>
                           )}
                         </Field>
                         <ErrorMessage name={`RequestLocation[${index}].addressLine1`}>
-                          {msg => <div className="field-error">{msg}</div>}
+                          {msg => <div className={styles.inputError}>{msg}</div>}
                         </ErrorMessage>
                       </div>
                       <div>
                         <Field name={`RequestLocation[${index}].addressLine2`} type="text">
                           {({ field, form }) => (
-                            <input {...field} placeholder="katy perry" type="text" />
+                            <FormControl className={styles.addressContainer}>
+                              <InputLabel className={styles.fieldLabel}>
+                                Street Address 2
+                              </InputLabel>
+                              <Input className={styles.input} {...field} />
+                            </FormControl>
                           )}
                         </Field>
-                        <ErrorMessage name={`RequestLocation[${index}].addressLine2`}>
-                          {msg => <div className="field-error">{msg}</div>}
-                        </ErrorMessage>
                       </div>
                       <div>
                         <Field name={`RequestLocation[${index}].city`} type="text">
                           {({ field, form }) => (
-                            <input {...field} placeholder="katy perry" type="text" />
+                            <FormControl className={styles.fieldContainer}>
+                              <InputLabel className={styles.fieldLabel}>City</InputLabel>
+                              <Input className={styles.input} {...field} />
+                            </FormControl>
                           )}
                         </Field>
                         <ErrorMessage name={`RequestLocation[${index}].city`}>
-                          {msg => <div className="field-error">{msg}</div>}
+                          {msg => <div className={styles.inputError}>{msg}</div>}
                         </ErrorMessage>
                       </div>
                       <div>
                         <Field name={`RequestLocation[${index}].postal`} type="text">
                           {({ field, form }) => (
-                            <input {...field} placeholder="katy perry" type="text" />
+                            <FormControl className={styles.fieldContainer}>
+                              <InputLabel className={styles.fieldLabel}>Postal Code</InputLabel>
+                              <Input className={styles.input} {...field} />
+                            </FormControl>
                           )}
                         </Field>
                         <ErrorMessage name={`RequestLocation[${index}].postal`}>
-                          {msg => <div className="field-error">{msg}</div>}
+                          {msg => <div className={styles.inputError}>{msg}</div>}
                         </ErrorMessage>
                       </div>
                       <div>
                         <Field name={`RequestLocation[${index}].state`} type="text">
                           {({ field, form }) => (
-                            <input {...field} placeholder="katy perry" type="text" />
+                            <FormControl className={styles.selectField}>
+                              <InputLabel className={styles.selectLabel}>State</InputLabel>
+                              <Select className={styles.input} {...field}>
+                                <MenuItem className={styles.USstateItem} value="Alabama">
+                                  Alabama
+                                </MenuItem>
+                                <MenuItem className={styles.USstateItem} value="Iowa">
+                                  Iowa
+                                </MenuItem>
+                                <MenuItem className={styles.USstateItem} value="Texas">
+                                  Texas
+                                </MenuItem>
+                              </Select>
+                            </FormControl>
                           )}
                         </Field>
                         <ErrorMessage name={`RequestLocation[${index}].state`}>
-                          {msg => <div className="field-error">{msg}</div>}
+                          {msg => <div className={styles.inputError}>{msg}</div>}
                         </ErrorMessage>
                       </div>
                     </React.Fragment>
                   ))}
-                <button type="submit">Submit</button>
+                <button className={styles.submitButton} type="submit">
+                  Continue
+                </button>
               </React.Fragment>
             )}
           </FieldArray>

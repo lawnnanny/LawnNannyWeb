@@ -1,8 +1,9 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
-import { Formik, Field, Form, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import Input from '@material-ui/core/Input';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import styles from './requestInformationForm.module.css';
+import Debug from './Debug';
 
 const initialValues = {
   RequestForm: [
@@ -11,14 +12,25 @@ const initialValues = {
     },
   ],
 };
+
+const style = {
+  margin: '1em 0em',
+  fontSize: '1.5em',
+  backgroundColor: 'white',
+};
+const styleError = {
+  margin: '1em 10em',
+  fontSize: '1.5em',
+};
+
 const RequestInformationForm = () => (
-  <div>
-    <h1>Lawn Details</h1>
+  <div className={styles.formContainer}>
+    <h1 className={styles.formHeader}>Lawn Details</h1>
     <Formik
       validationSchema={Yup.object({
         RequestForm: Yup.array().of(
           Yup.object({
-            LawnDetails: Yup.string().required('Lawn Details are Required'),
+            LawnDetails: Yup.string().required('Required*'),
           }),
         ),
       })}
@@ -29,24 +41,29 @@ const RequestInformationForm = () => (
         }, 500);
       }}
     >
-      {({ values, error, touched, isSubmitting }) => (
+      {({ values, errors, touched, isSubmitting }) => (
         <Form>
           <Field name="RequestForm[0].LawnDetails" type="text">
             {({ field, form }) => (
               <Input
+                style={style}
                 {...field}
+                fullWidth
+                required
                 multiline
-                rows={4}
-                rowsMax={15}
+                rows={8}
+                rowsMax={24}
                 type="text"
-                placeholder="some text"
+                placeholder="Lawn Details"
               />
             )}
           </Field>
           <ErrorMessage name="RequestForm[0].LawnDetails">
-            {msg => <div className="field-error">{msg}</div>}
+            {msg => <div className={styles.inputError}>{msg}</div>}
           </ErrorMessage>
-          <button name="submit">Submit</button>
+          <button className={styles.submitButton} name="submit">
+            Continue
+          </button>
         </Form>
       )}
     </Formik>
