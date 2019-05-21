@@ -1,0 +1,30 @@
+.formContainer {
+}
+.formHeader {
+}
+.addressContainer {
+  margin: 0.3em 0em !important;
+  width: 100% !important;
+}
+.fieldLabel {
+  font-size: 1.6em !important;
+}
+.input {
+  font-size: 1.8em !important;
+  padding-top: 0.2em !important;
+}
+.inputError {
+  color: red;
+  font-size: 1.1em;
+}
+.submitButton {
+  width: 100%;
+  background-color: #3bc401;
+  border: 0;
+  height: 2em;
+  font-size: 1.9em;
+  border-radius: 5px;
+  color: white;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
