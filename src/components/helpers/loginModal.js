@@ -13,8 +13,7 @@ import LoginForm from './loginForm';
 
 const styling = {
   paperOverride: {
-    width: '25em',
-    margin: '0em',
+    margin: '1em',
   },
 };
 
