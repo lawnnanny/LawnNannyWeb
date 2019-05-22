@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
 import RequestInformationComponent from './';
-import BreadcrumbComponent from '../../../components/breadcrumb/breadcrumb';
+import BreadcrumbComponent from '../../../components/breadcrumb';
 
 describe('RequestInformation', () => {
   let wrapper;

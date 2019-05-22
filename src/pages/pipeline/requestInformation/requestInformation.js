@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import BreadcrumbComponent from '../../../components/breadcrumb/breadcrumb';
+import BreadcrumbComponent from '../../../components/breadcrumb';
 import styles from './requestInformation.module.css';
 
 const requestInformation = (props) => {

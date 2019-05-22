@@ -13,7 +13,7 @@ import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './requestPrice.module.css';
-import BreadcrumbComponent from '../../../components/breadcrumb/breadcrumb';
+import BreadcrumbComponent from '../../../components/breadcrumb';
 
 const MyButton = styled(Button)`
   &&& {

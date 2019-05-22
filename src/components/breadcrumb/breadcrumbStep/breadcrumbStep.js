@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
-import styles from '../breadcrumb/breadcrumb.module.css';
+import styles from '../breadcrumb.module.css';
 
 const MyButton = styled(Fab)`
   &&& {

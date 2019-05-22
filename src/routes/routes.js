@@ -6,16 +6,16 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import Error404 from '../components/errors';
-import ConnectedNavBarComponent from '../containers/components/ConnectedNavBar';
-import ConnectedRequestSelection from '../containers/pages/pipeline/ConnectedRequestSelection';
-import ConnectedRequestInformationComponent from '../containers/pages/pipeline/ConnectedRequestInformation';
-import ConnectedRequestLocationComponent from '../containers/pages/pipeline/ConnectedRequestLocation';
-import ConnectedRequestPriceComponent from '../containers/pages/pipeline/ConnectedRequestPrice';
-import ConnectedRequestReviewComponent from '../containers/pages/pipeline/ConnectedRequestReview';
-import ConnectedRequestCompleteComponent from '../containers/pages/pipeline/ConnectedRequestComplete';
-import HomePageComponent from '../pages/homepage/homepage';
+import ConnectedNavBarComponent from '../containers/ConnectedNavBar';
+import ConnectedRequestSelection from '../containers/pipeline/ConnectedRequestSelection';
+import ConnectedRequestInformationComponent from '../containers/pipeline/ConnectedRequestInformation';
+import ConnectedRequestLocationComponent from '../containers/pipeline/ConnectedRequestLocation';
+import ConnectedRequestPriceComponent from '../containers/pipeline/ConnectedRequestPrice';
+import ConnectedRequestReviewComponent from '../containers/pipeline/ConnectedRequestReview';
+import ConnectedRequestCompleteComponent from '../containers/pipeline/ConnectedRequestComplete';
+import HomePageComponent from '../pages/homepage';
 import App from '../components/App';
-import reducers from '../reducers/reducers';
+import reducers from '../reducers';
 import styles from '../components/App/App.module.css';
 
 export class Routes extends Component {

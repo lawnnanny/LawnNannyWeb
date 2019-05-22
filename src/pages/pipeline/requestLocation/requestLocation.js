@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import styles from './requestLocation.module.css';
-import BreadcrumbComponent from '../../../components/breadcrumb/breadcrumb';
+import BreadcrumbComponent from '../../../components/breadcrumb';
 
 export const requestLocation = (props) => {
   if (props.pageInProgress < 2) {
