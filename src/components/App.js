@@ -1,26 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore } from 'redux';
 import reducers from '../reducers/reducers';
 
-import { Routes } from '../helpers/routes';
+import Routes from '../helpers/routes';
 
-export class App extends Component {
-  constructor() {
-    super();
+function App() {
+  const store = createStore(reducers);
 
-    const store = createStore(reducers);
-
-    this.state = {
-      store,
-    };
-
-    store.subscribe(() => {
-      console.log('store.getState()', store.getState());
-    });
-  }
-  render() {
-    return <Routes />;
-  }
+  store.subscribe(() => {
+    console.log('store.getState()', store.getState());
+  });
+  return <Routes />;
 }
 
 export default App;
