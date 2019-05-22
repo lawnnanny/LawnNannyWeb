@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import Step from './breadcrumbStep';
+import Step from './breadcrumb-step';
 import styles from './breadcrumb.module.css';
 
 export const breadcrumb = props => (

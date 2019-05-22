@@ -4,9 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import PropTypes from 'prop-types';
-import styles from './navBar.module.css';
-import LoginModal from '../../containers/ConnectedLogin';
-import SignupModal from '../../containers/ConnectedSignup';
+import styles from './navbar.module.css';
+import LoginModal from '../../containers/connected-login-modal';
+import SignupModal from '../../containers/connected-signup-modal';
 import Sidebar from './sidebar';
 
 function HomeIcon(props) {

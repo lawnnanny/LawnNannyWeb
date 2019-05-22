@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Grid from '@material-ui/core/Grid';
-import styles from './HomePage.module.css';
-import HomePageHeading from './homepageHeading';
+import styles from './homepage.module.css';
+import HomePageHeading from './homepage-heading';
 
 const HomePage = () => (
   <Grid container spacing={24} className={styles.homepageContainer}>

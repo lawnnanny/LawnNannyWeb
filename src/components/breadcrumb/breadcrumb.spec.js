@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
 import each from 'jest-each';
 import BreadcrumbComponent from './';
-import Step from './breadcrumbStep';
+import Step from './breadcrumb-step';
 
 const renderComponent = () => shallow(<BreadcrumbComponent />);
 const wrapper = renderComponent();
