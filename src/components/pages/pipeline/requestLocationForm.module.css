@@ -10,12 +10,24 @@
   margin: 1em 0em !important;
   width: 100% !important;
 }
+.addressContainerError {
+  margin: 0.4em 0em !important;
+  width: 100% !important;
+}
 .fieldContainer {
   width: 50% !important;
   margin: 1em 0em !important;
 }
+.fieldContainerError {
+  width: 50% !important;
+  margin: 0.4em 0em !important;
+}
 .fieldLabel {
   font-size: 1.8em !important;
+}
+.fieldLabelError {
+  font-size: 1.8em !important;
+  color: #f44336 !important;
 }
 .input {
   font-size: 2em !important;
@@ -31,8 +43,17 @@
   margin-bottom: 1em !important;
   width: 50% !important;
 }
+.selectFieldError {
+  margin-top: 1.5em !important;
+  margin-bottom: 0.4em !important;
+  width: 50% !important;
+}
 .selectLabel {
   font-size: 2em !important;
+}
+.selectLabelError {
+  font-size: 2em !important;
+  color: #f44336 !important;
 }
 .USstateItem {
   font-size: 1.5em !important;

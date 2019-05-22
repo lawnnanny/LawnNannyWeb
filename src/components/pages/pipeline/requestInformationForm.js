@@ -1,62 +1,58 @@
 import React from 'react';
 import * as Yup from 'yup';
 import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import styles from './requestInformationForm.module.css';
 import Debug from './Debug';
-
-const initialValues = {
-  RequestForm: [
-    {
-      LawnDetails: '',
-    },
-  ],
-};
-
-const style = {
-  margin: '1em 0em',
-  fontSize: '1.5em',
-  backgroundColor: 'white',
-};
-const styleError = {
-  margin: '1em 10em',
-  fontSize: '1.5em',
-};
 
 const RequestInformationForm = props => (
   <div className={styles.formContainer}>
     <h1 className={styles.formHeader}>Lawn Details</h1>
     <Formik
-      validationSchema={Yup.object({
-        RequestForm: Yup.array().of(
-          Yup.object({
-            LawnDetails: Yup.string().required('Required*'),
-          }),
-        ),
+      validationSchema={Yup.object().shape({
+        LawnDetails: Yup.string().required('Required*'),
       })}
-      initialValues={initialValues}
+      initialValues={{ LawnDetails: '' }}
       onSubmit={() => {
         props.route();
       }}
     >
       {({ values, errors, touched, isSubmitting }) => (
         <Form>
-          <Field name="RequestForm[0].LawnDetails" type="text">
+          <Field name="LawnDetails" type="text">
             {({ field, form }) => (
-              <Input
-                style={style}
-                {...field}
-                fullWidth
-                required
-                multiline
-                rows={8}
-                rowsMax={24}
-                type="text"
-                placeholder="Lawn Details"
-              />
+              <FormControl
+                className={
+                  form.touched[field.name] && form.errors[field.name]
+                    ? styles.fieldContainerError
+                    : styles.fieldContainer
+                }
+              >
+                <InputLabel
+                  className={
+                    form.touched[field.name] && form.errors[field.name]
+                      ? styles.fieldLabelError
+                      : styles.fieldLabel
+                  }
+                >
+                  Lawn Details
+                </InputLabel>
+                <Input
+                  className={styles.input}
+                  error={form.touched[field.name] && form.errors[field.name]}
+                  {...field}
+                  fullWidth
+                  multiline
+                  rows={8}
+                  rowsMax={24}
+                  type="text"
+                />
+              </FormControl>
             )}
           </Field>
-          <ErrorMessage name="RequestForm[0].LawnDetails">
+          <ErrorMessage name="LawnDetails">
             {msg => <div className={styles.inputError}>{msg}</div>}
           </ErrorMessage>
           <button className={styles.submitButton} name="submit">

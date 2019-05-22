@@ -3,13 +3,29 @@
 }
 .formHeader {
 }
-.formInput {
-  margin: 10em, 0em;
+.fieldContainer {
+  margin: 1em 0em !important;
+  width: 100% !important;
+}
+.fieldContainerError {
+  margin: 1em 0em !important;
+  width: 100% !important;
+}
+.input {
+  margin: 1em 0em 0em 0em !important;
+  font-size: 2em !important;
 }
 .inputError {
   color: red;
   font-size: 1.3em;
   margin-bottom: 1em;
+}
+.fieldLabel {
+  font-size: 1.8em !important;
+}
+.fieldLabelError {
+  font-size: 1.8em !important;
+  color: #f44336 !important;
 }
 .submitButton {
   width: 100%;
