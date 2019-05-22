@@ -6,7 +6,7 @@ import styles from '../../../styles/pipeline/requestReview.module.css';
 import BreadcrumbComponent from '../../helpers/breadcrumb';
 import ReviewModal from '../../helpers/reviewModal';
 
-function requestReview(props) {
+export const requestReview = (props) => {
   if (props.pageInProgress < 4) {
     return <Redirect to="/pipeline/requestPrice" />;
   }
@@ -34,7 +34,7 @@ function requestReview(props) {
       </Grid>
     </Grid>
   );
-}
+};
 
 const ReviewModalWithRouter = withRouter(ReviewModal);
 

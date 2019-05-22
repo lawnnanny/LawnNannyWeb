@@ -19,7 +19,7 @@ const MyButton = styled(Button)`
   }
 `;
 
-function reviewModal(props) {
+export const reviewModal = (props) => {
   const [open, handleOpen] = useState(false);
   return (
     <div className={styles.reviewModal}>
@@ -55,7 +55,7 @@ function reviewModal(props) {
       </Dialog>
     </div>
   );
-}
+};
 
 reviewModal.propTypes = {
   requestInProgress: PropTypes.func,

@@ -26,9 +26,8 @@ const styling = {
   },
 };
 
-function Sidebar(props) {
+export const Sidebar = (props) => {
   const [isOpen, handleOpen] = useState(false);
-  const { classes } = props;
   return (
     <div>
       <IconButton onClick={() => handleOpen(true)} className={styles.menuButton}>
@@ -39,7 +38,7 @@ function Sidebar(props) {
       <Drawer
         open={isOpen}
         onClose={() => handleOpen(false)}
-        classes={{ paper: classes.paperOverride }}
+        classes={{ paper: props.classes.paperOverride }}
       >
         <div className={styles.sidebar}>
           <IconButton onClick={() => handleOpen(false)} className={styles.menuButton}>
@@ -63,7 +62,7 @@ function Sidebar(props) {
       </Drawer>
     </div>
   );
-}
+};
 
 Sidebar.propTypes = {
   classes: PropTypes.func,

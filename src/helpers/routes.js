@@ -14,11 +14,11 @@ import ConnectedRequestPriceComponent from '../connectedComponents/pipeline/Conn
 import ConnectedRequestReviewComponent from '../connectedComponents/pipeline/ConnectedRequestReview';
 import ConnectedRequestCompleteComponent from '../connectedComponents/pipeline/ConnectedRequestComplete';
 import HomePageComponent from '../components/pages/Homepage/HomePage';
-import App from '../components/App';
+import { App } from '../components/App';
 import reducers from '../reducers/reducers';
 import Styles from '../styles/App';
 
-function Routes() {
+export const Routes = () => {
   const store = createStore(reducers, applyMiddleware(thunk));
   sessionService.initSessionService(store);
   store.subscribe(() => {
@@ -68,5 +68,5 @@ function Routes() {
       </BrowserRouter>
     </Provider>
   );
-}
+};
 export default Routes;

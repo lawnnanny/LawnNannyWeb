@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import NavBar from '../../../../src/components/helpers/navBar';
-import Sidebar from '../../../../src/components/helpers/sidebar';
+import { Sidebar } from '../../../../src/components/helpers/sidebar';
 import LoginModalComponent from '../../../connectedComponents/helpers/ConnectedLoginModal';
 import SignupModalComponent from '../../../connectedComponents/helpers/ConnectedSignupModal';
 
