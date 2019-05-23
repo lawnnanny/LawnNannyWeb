@@ -1,1 +1,1 @@
-export { default } from './error-404'; // eslint-disable-line
+import { Error404 } from '.'; // eslint-disable-line
