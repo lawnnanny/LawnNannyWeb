@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import Avatar from '@material-ui/core/Avatar';
+import RightArrowIcon from '../../../../components/icons/right-arrow';
 import RequestOptionComponent from './';
 
 describe('requestOption', () => {
@@ -56,15 +56,15 @@ describe('requestOption', () => {
         expect(header.type()).toEqual('h2');
       });
     });
-    describe('icon', () => {
-      let icon;
+    describe('right-arrow icon', () => {
+      let arrowIcon;
 
       beforeEach(() => {
-        icon = button.childAt(2);
+        arrowIcon = button.childAt(2);
       });
 
       it('is icon', () => {
-        expect(icon.type()).toEqual(SvgIcon);
+        expect(arrowIcon.type()).toEqual(RightArrowIcon);
       });
     });
   });

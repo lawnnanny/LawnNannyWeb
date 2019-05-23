@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import Error404 from '../components/errors';
+import { Error404 } from '../components/errors';
 import ConnectedNavBarComponent from '../containers/connected-navbar';
 import ConnectedRequestSelection from '../containers/connected-pipeline/connected-request-selection';
 import ConnectedRequestInformationComponent from '../containers/connected-pipeline/connected-request-information';
