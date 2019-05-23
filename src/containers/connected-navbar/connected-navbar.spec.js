@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import NavBar from './';
+import Navbar from './';
 
-describe('Connected RequestInformation Page', () => {
+describe('Connected Navbar Page', () => {
   let store;
 
   beforeEach(() => {
     const state = {
       login: {
-        isLoggedIn: false,
+        isLoggedIn: true,
       },
     };
 
@@ -18,7 +18,7 @@ describe('Connected RequestInformation Page', () => {
   });
 
   it('has the correct props', () => {
-    const wrapper = shallow(<NavBar store={store} />);
+    const wrapper = shallow(<Navbar store={store} />);
 
     const dispatchProps = ['setLoggedIn'];
 

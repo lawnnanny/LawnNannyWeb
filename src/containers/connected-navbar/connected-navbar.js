@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as NavbarActions from '../../actions/navbar-actions';
 import navBarComponent from '../../components/navbar';
-import Actions from '../../reducers/actions';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.login.isLoggedIn,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setLoggedIn: () => {
-    const action = {
-      type: Actions.login.isLoggedIn,
-    };
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      ...NavbarActions,
+    },
+    dispatch,
+  );
 
-    dispatch(action);
-  },
-});
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

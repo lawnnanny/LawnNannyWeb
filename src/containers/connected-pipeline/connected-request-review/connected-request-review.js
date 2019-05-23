@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as PipelineActions from '../../../actions/pipeline-actions';
 import requestReviewComponent from '../../../pages/pipeline/request-review';
-import Actions from '../../../reducers/actions';
 
 const mapStateToProps = state => ({
   requests: state.requests,
@@ -8,15 +9,13 @@ const mapStateToProps = state => ({
   isLoggedIn: state.login.isLoggedIn,
 });
 
-const mapDispatchToProps = dispatch => ({
-  requestInProgress: (data) => {
-    const action = {
-      type: Actions.requests.requestInProgress,
-      data,
-    };
-    dispatch(action);
-  },
-});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      ...PipelineActions,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

@@ -1,28 +1,20 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as PipelineActions from '../../../actions/pipeline-actions';
 import requestLocationComponent from '../../../pages/pipeline/request-location';
-import Actions from '../../../reducers/actions';
 
 const mapStateToProps = state => ({
   requests: state.requests,
   pageInProgress: state.requests.requestInProgress,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setRequestLocation: (data) => {
-    const action = {
-      type: Actions.requests.setRequestLocation,
-      data,
-    };
-    dispatch(action);
-  },
-  requestInProgress: (data) => {
-    const action = {
-      type: Actions.requests.requestInProgress,
-      data,
-    };
-    dispatch(action);
-  },
-});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      ...PipelineActions,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,
