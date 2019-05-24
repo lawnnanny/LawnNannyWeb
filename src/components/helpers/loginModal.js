@@ -14,6 +14,7 @@ import LoginForm from './loginForm';
 const styling = {
   paperOverride: {
     margin: '1em',
+    borderRadius: '1.5em',
   },
 };
 
@@ -40,12 +41,12 @@ class loginModal extends Component {
           classes={{ paper: classes.paperOverride }}
         >
           <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
-            <h2 className={styles.headerText}> Welcome back! </h2>
+            <h2 className={styles.headerText}> Lawn Nanny </h2>
           </DialogTitle>
           <DialogContent className={styles.loginContent}>
             <LoginForm />
             <Link to="/Homepage" className={styles.forgotDiv}>
-              Forgot Password?
+              <h3 className={styles.forgotText}>Forgot Password?</h3>
             </Link>
             <div className={styles.signupDiv}>
               <h2 className={styles.signupText}>Dont have an account?</h2>

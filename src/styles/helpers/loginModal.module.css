@@ -1,6 +1,11 @@
 .forgotDiv {
   color: blue;
   margin-bottom: 1.4em;
+  margin-top: 0.5em;
+}
+.forgotText {
+  font-size: 1.1em;
+  font-weight: 100;
 }
 .closeButton {
   position: absolute !important;
@@ -51,6 +56,7 @@
   flex-direction: column !important;
   align-items: center !important;
   padding-bottom: 0 !important;
+  padding: 2em 2.5em 0.5em !important;
 }
 .modalHeader {
   display: flex !important;
@@ -63,7 +69,7 @@
   padding-top: 0.6em !important;
 }
 .headerText {
-  font-size: 1.8em !important;
+  font-size: 2.4em !important;
 }
 .modalButton {
   background-color: #25ff03 !important;
@@ -138,11 +144,12 @@
 }
 .signupDiv {
   display: flex !important;
-  justify-content: space-around !important;
+  justify-content: space-evenly !important;
   flex-grow: 1 !important;
   align-items: center !important;
   width: 100% !important;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 .signupText {
   font-size: 1.2em !important;
