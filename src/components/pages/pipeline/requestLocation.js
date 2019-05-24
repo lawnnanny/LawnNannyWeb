@@ -29,7 +29,8 @@ export const requestLocation = (props) => {
       </Grid>
       <Grid item xs={12} sm={10} md={9} lg={8} xl={7} className={styles.formRow}>
         <RequestLocationFormWithRouter
-          route={() => {
+          route={(values) => {
+            props.setRequestLocation(values);
             props.requestInProgress(3);
             props.history.push(destinationString);
           }}

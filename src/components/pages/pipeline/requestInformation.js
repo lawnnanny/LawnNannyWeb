@@ -29,10 +29,12 @@ const requestInformation = (props) => {
       </Grid>
       <Grid item xs={12} sm={10} md={9} lg={8} xl={7} className={styles.formRow}>
         <RequestInformationFormWithRouter
-          route={() => {
+          route={(values) => {
+            props.setRequestInformation(values);
             props.requestInProgress(2);
             props.history.push(destinationString);
           }}
+          requestInformation={props.requestInformation}
         />
       </Grid>
     </Grid>

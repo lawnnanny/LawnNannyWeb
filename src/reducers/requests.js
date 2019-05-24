@@ -4,6 +4,7 @@ const getInitialState = () => ({
   requestPrice: 1,
   selection: '',
   requestInProgress: 0,
+  requestInformation: '',
 });
 
 const setState = (previousState, property, newValue) =>

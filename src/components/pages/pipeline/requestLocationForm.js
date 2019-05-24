@@ -10,55 +10,44 @@ import MenuItem from '@material-ui/core/MenuItem';
 import styles from './requestLocationForm.module.css';
 
 const initialValues = {
-  RequestLocation: [
-    {
-      addressLine1: '',
-      addressLine2: '',
-      city: '',
-      postal: '',
-      state: '',
-    },
-  ],
+  addressLine1: '',
+  addressLine2: '',
+  city: '',
+  postal: '',
+  state: '',
 };
 
-const RequestLocationForm = () => (
+const RequestLocationForm = props => (
   <div className={styles.formContainer}>
     <h1 className={styles.formHeader}>Request Location</h1>
     <Formik
       validationSchema={Yup.object({
-        RequestLocation: Yup.array().of(
-          Yup.object({
-            addressLine1: Yup.string().required('Required*'),
-            addressLine2: Yup.string(),
-            city: Yup.string().required('Required*'),
-            postal: Yup.string().required('Required*'),
-            state: Yup.string().required('Required*'),
-          }),
-        ),
+        addressLine1: Yup.string().required('Required*'),
+        addressLine2: Yup.string(),
+        city: Yup.string().required('Required*'),
+        postal: Yup.string().required('Required*'),
+        state: Yup.string().required('Required*'),
       })}
       initialValues={initialValues}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 500);
+      onSubmit={(values) => {
+        props.route(values);
       }}
     >
       {() => (
         <Form>
           <div>
-            <Field name="RequestLocation[0].addressLine1" type="text">
+            <Field name="addressLine1" type="text">
               {({ field, form }) => (
                 <FormControl
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.addressContainerError
                       : styles.addressContainer
                   }
                 >
                   <InputLabel
                     className={
-                      getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                      form.touched[field.name] && form.errors[field.name]
                         ? styles.fieldLabelError
                         : styles.fieldLabel
                     }
@@ -67,29 +56,29 @@ const RequestLocationForm = () => (
                   </InputLabel>
                   <Input
                     className={styles.input}
-                    error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                    error={form.touched[field.name] && form.errors[field.name]}
                     {...field}
                   />
                 </FormControl>
               )}
             </Field>
-            <ErrorMessage name="RequestLocation[0].addressLine1">
+            <ErrorMessage name="addressLine1">
               {msg => <div className={styles.inputError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <Field name="RequestLocation[0].addressLine2" type="text">
+            <Field name="addressLine2" type="text">
               {({ field, form }) => (
                 <FormControl
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.addressContainerError
                       : styles.addressContainer
                   }
                 >
                   <InputLabel
                     className={
-                      getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                      form.touched[field.name] && form.errors[field.name]
                         ? styles.fieldLabelError
                         : styles.fieldLabel
                     }
@@ -98,7 +87,7 @@ const RequestLocationForm = () => (
                   </InputLabel>
                   <Input
                     className={styles.input}
-                    error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                    error={form.touched[field.name] && form.errors[field.name]}
                     {...field}
                   />
                 </FormControl>
@@ -106,18 +95,18 @@ const RequestLocationForm = () => (
             </Field>
           </div>
           <div>
-            <Field name="RequestLocation[0].city" type="text">
+            <Field name="city" type="text">
               {({ field, form }) => (
                 <FormControl
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.fieldContainerError
                       : styles.fieldContainer
                   }
                 >
                   <InputLabel
                     className={
-                      getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                      form.touched[field.name] && form.errors[field.name]
                         ? styles.fieldLabelError
                         : styles.fieldLabel
                     }
@@ -126,29 +115,29 @@ const RequestLocationForm = () => (
                   </InputLabel>
                   <Input
                     className={styles.input}
-                    error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                    error={form.touched[field.name] && form.errors[field.name]}
                     {...field}
                   />
                 </FormControl>
               )}
             </Field>
-            <ErrorMessage name="RequestLocation[0].city">
+            <ErrorMessage name="city">
               {msg => <div className={styles.inputError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <Field name="RequestLocation[0].postal" type="text">
+            <Field name="postal" type="text">
               {({ field, form }) => (
                 <FormControl
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.fieldContainerError
                       : styles.fieldContainer
                   }
                 >
                   <InputLabel
                     className={
-                      getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                      form.touched[field.name] && form.errors[field.name]
                         ? styles.fieldLabelError
                         : styles.fieldLabel
                     }
@@ -157,29 +146,29 @@ const RequestLocationForm = () => (
                   </InputLabel>
                   <Input
                     className={styles.input}
-                    error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                    error={form.touched[field.name] && form.errors[field.name]}
                     {...field}
                   />
                 </FormControl>
               )}
             </Field>
-            <ErrorMessage name="RequestLocation[0].postal">
+            <ErrorMessage name="postal">
               {msg => <div className={styles.inputError}>{msg}</div>}
             </ErrorMessage>
           </div>
           <div>
-            <Field name="RequestLocation[0].state" type="text">
+            <Field name="state" type="text">
               {({ field, form }) => (
                 <FormControl
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.selectFieldError
                       : styles.selectField
                   }
                 >
                   <InputLabel
                     className={
-                      getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                      form.touched[field.name] && form.errors[field.name]
                         ? styles.selectLabelError
                         : styles.selectLabel
                     }
@@ -187,7 +176,7 @@ const RequestLocationForm = () => (
                     State
                   </InputLabel>
                   <Select
-                    error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                    error={form.touched[field.name] && form.errors[field.name]}
                     className={styles.input}
                     {...field}
                   >
@@ -204,7 +193,7 @@ const RequestLocationForm = () => (
                 </FormControl>
               )}
             </Field>
-            <ErrorMessage name="RequestLocation[0].state">
+            <ErrorMessage name="state">
               {msg => <div className={styles.inputError}>{msg}</div>}
             </ErrorMessage>
           </div>

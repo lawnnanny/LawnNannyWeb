@@ -8,11 +8,7 @@ import styles from './requestInformationForm.module.css';
 import Debug from './Debug';
 
 const initialValues = {
-  RequestForm: [
-    {
-      LawnDetails: '',
-    },
-  ],
+  LawnDetails: '',
 };
 
 const RequestInformationForm = props => (
@@ -20,31 +16,28 @@ const RequestInformationForm = props => (
     <h1 className={styles.formHeader}>Lawn Details</h1>
     <Formik
       validationSchema={Yup.object({
-        RequestForm: Yup.array().of(
-          Yup.object({
-            LawnDetails: Yup.string().required('Required*'),
-          }),
-        ),
+        LawnDetails: Yup.string().required('Required*'),
       })}
       initialValues={initialValues}
-      onSubmit={() => {
-        props.route();
+      onSubmit={(values) => {
+        props.route(values);
+        console.log(props.requestInformation.LawnDetails);
       }}
     >
       {({ values, errors, touched, isSubmitting }) => (
         <Form>
-          <Field name="RequestForm[0].LawnDetails" type="text">
+          <Field name="LawnDetails" type="text">
             {({ field, form }) => (
               <FormControl
                 className={
-                  getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                  form.touched[field.name] && form.errors[field.name]
                     ? styles.fieldContainerError
                     : styles.fieldContainer
                 }
               >
                 <InputLabel
                   className={
-                    getIn(form.touched, field.name) && getIn(form.errors, field.name)
+                    form.touched[field.name] && form.errors[field.name]
                       ? styles.fieldLabelError
                       : styles.fieldLabel
                   }
@@ -53,7 +46,7 @@ const RequestInformationForm = props => (
                 </InputLabel>
                 <Input
                   className={styles.input}
-                  error={getIn(form.touched, field.name) && getIn(form.errors, field.name)}
+                  error={form.touched[field.name] && form.errors[field.name]}
                   {...field}
                   fullWidth
                   multiline
@@ -64,7 +57,7 @@ const RequestInformationForm = props => (
               </FormControl>
             )}
           </Field>
-          <ErrorMessage name="RequestForm[0].LawnDetails">
+          <ErrorMessage name="LawnDetails">
             {msg => <div className={styles.inputError}>{msg}</div>}
           </ErrorMessage>
           <button className={styles.submitButton} name="submit">
