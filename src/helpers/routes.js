@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { sessionService } from 'redux-react-session';
 import { createStore, applyMiddleware } from 'redux';
@@ -19,12 +19,11 @@ import reducers from '../reducers/reducers';
 import Styles from '../styles/App';
 
 export const Routes = () => {
-  const Store = createStore(reducers, applyMiddleware(thunk));
-  sessionService.initSessionService(Store);
-  Store.subscribe(() => {
-    console.log('store.getState()', Store.getState());
+  const store = createStore(reducers, applyMiddleware(thunk));
+  sessionService.initSessionService(store);
+  store.subscribe(() => {
+    console.log('store.getState()', store.getState());
   });
-  const [store] = useState(Store);
   return (
     <Provider store={store}>
       <BrowserRouter className="router">
