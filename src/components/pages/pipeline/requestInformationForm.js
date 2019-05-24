@@ -27,11 +27,8 @@ const RequestInformationForm = props => (
         ),
       })}
       initialValues={initialValues}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 500);
+      onSubmit={() => {
+        props.route();
       }}
     >
       {({ values, errors, touched, isSubmitting }) => (
