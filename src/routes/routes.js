@@ -4,6 +4,8 @@ import { sessionService } from 'redux-react-session';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import Media from 'react-media';
+import Device from '../components/devices';
 
 import { Error404 } from '../components/errors';
 import ConnectedNavBarComponent from '../containers/connected-navbar';

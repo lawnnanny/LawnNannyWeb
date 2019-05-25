@@ -1,45 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import PropTypes from 'prop-types';
-import styles from './navbar.module.css';
-import LoginModal from '../../containers/connected-login-modal';
-import SignupModal from '../../containers/connected-signup-modal';
-import Sidebar from './sidebar';
+import { withRouter } from 'react-router';
+import Media from 'react-media';
+import NavbarDesktop from './navbar-desktop';
+import NavbarMobile from './navbar-mobile';
+import Device from '../devices';
 
-function HomeIcon(props) {
-  return (
-    <SvgIcon {...props} className={styles.homeIcon}>
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </SvgIcon>
-  );
-}
-
-export const navBar = props => (
-  <AppBar position="static" className={styles.Menu}>
-    <div className={styles.leftMenuDiv}>
-      <Sidebar />
-      <Link to="/HomePage">
-        <IconButton color="inherit" aria-label="Menu">
-          <HomeIcon />
-        </IconButton>
-      </Link>
-    </div>
-    <div className={styles.rightMenuDiv}>
-      <LoginModal history={props.history} />
-      <SignupModal history={props.history} />
-    </div>
-  </AppBar>
+export const Navbar = props => (
+  <Media query={Device.tablet}>
+    {matches =>
+      (matches ? (
+        <NavbarDesktopWithRouter isLoggedIn={props.isLoggedIn} />
+      ) : (
+        <NavbarMobileWithRouter isLoggedIn={props.isLoggedIn} />
+      ))
+    }
+  </Media>
 );
 
-navBar.propTypes = {
-  history: PropTypes.func,
-};
+const NavbarDesktopWithRouter = withRouter(NavbarDesktop);
+const NavbarMobileWithRouter = withRouter(NavbarMobile);
 
-navBar.defaultProps = {
-  history: PropTypes.func,
-};
-
-export default navBar;
+export default Navbar;

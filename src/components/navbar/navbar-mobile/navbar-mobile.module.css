@@ -1,0 +1,29 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  background-color: #3da601 !important;
+  width: 100%;
+  align-items: center;
+}
+.homeNav {
+  color: white !important;
+  margin-bottom: 0.5em;
+}
+.homeIcon {
+  font-size: 2.5em !important;
+  height: 40px !important;
+}
+.accountNav {
+  color: white !important;
+}
+.accountIcon {
+  font-size: 2.1em !important;
+  height: 40px !important;
+}
+.barNav {
+  color: white !important;
+}
+.menuIcon {
+  font-size: 2em !important;
+  height: 40px !important;
+}
