@@ -4,26 +4,27 @@
   background-color: #3da601 !important;
   width: 100%;
   align-items: center;
+  height: 84px !important;
 }
 .homeNav {
-  color: white !important;
+  color: white;
   margin-bottom: 0.5em;
 }
 .homeIcon {
-  font-size: 2.5em !important;
-  height: 40px !important;
+  font-size: 3.5em !important;
+  height: 50px !important;
 }
 .accountNav {
   color: white !important;
 }
 .accountIcon {
-  font-size: 2.1em !important;
-  height: 40px !important;
+  font-size: 3em !important;
+  height: 50px !important;
 }
 .barNav {
   color: white !important;
 }
 .menuIcon {
-  font-size: 2em !important;
-  height: 40px !important;
+  font-size: 3em !important;
+  height: 50px !important;
 }

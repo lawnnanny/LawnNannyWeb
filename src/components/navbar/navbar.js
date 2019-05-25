@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import Media from 'react-media';
 import NavbarDesktop from './navbar-desktop';
-import NavbarMobile from './navbar-mobile';
+import NavbarMobile from './navbar-mobile/navbar-mobile2';
 import Device from '../devices';
 
 export const Navbar = props => (
