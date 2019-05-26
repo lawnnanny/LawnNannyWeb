@@ -38,22 +38,11 @@ describe('step', () => {
         expect(locationIcon.type()).toEqual(LocationIcon);
       });
     });
-    describe('bars', () => {
-      let label;
-
-      beforeEach(() => {
-        label = informationColumn.childAt(1);
-      });
-
-      it('is a div', () => {
-        expect(label.type()).toEqual('div');
-      });
-    });
     describe('label', () => {
       let label;
 
       beforeEach(() => {
-        label = informationColumn.childAt(2);
+        label = informationColumn.childAt(1);
       });
 
       it('is a label', () => {

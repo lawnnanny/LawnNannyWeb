@@ -42,7 +42,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "pretest": "eslint --ignore-path .gitignore .",
     "test": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit",
     "lint": "eslint src"
   },

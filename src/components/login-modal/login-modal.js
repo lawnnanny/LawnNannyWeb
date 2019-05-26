@@ -7,7 +7,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import styles from './login-modal.module.css';
-import XMarkIcon from '../icons/x-mark';
+import { XMarkIcon } from '../icons/';
 
 const styling = {
   paperOverride: {

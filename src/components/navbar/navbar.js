@@ -7,7 +7,7 @@ import styles from './navbar.module.css';
 import LoginModal from '../../containers/connected-login-modal';
 import SignupModal from '../../containers/connected-signup-modal';
 import Sidebar from './sidebar';
-import HomeIcon from '../icons/home';
+import { HomeIcon } from '../icons';
 
 export const navBar = props => (
   <AppBar position="static" className={styles.Menu}>

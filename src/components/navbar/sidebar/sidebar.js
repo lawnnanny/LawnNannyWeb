@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ListItem from '@material-ui/core/ListItem';
 import styles from './sidebar.module.css';
-import MenuIcon from '../../icons/menu';
+import { MenuIcon } from '../../icons';
 
 const MyItem = styled(ListItem)`
   &&& {

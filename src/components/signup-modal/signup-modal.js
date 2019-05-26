@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './signup-modal.module.css';
-import XMarkIcon from '../icons/x-mark';
+import { XMarkIcon } from '../icons';
 
 const styling = {
   paperOverride: {

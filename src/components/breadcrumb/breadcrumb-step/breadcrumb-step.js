@@ -5,12 +5,14 @@ import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import styles from '../breadcrumb.module.css';
-import QuestionMarkIcon from '../../icons/question-mark';
-import CheckmarkIcon from '../../icons/checkmark';
-import DollarSignIcon from '../../icons/dollar-sign';
-import NotesIcon from '../../icons/notes';
-import Notes2Icon from '../../icons/notes-2';
-import LocationIcon from '../../icons/location';
+import {
+  QuestionMarkIcon,
+  CheckmarkIcon,
+  DollarSignIcon,
+  NoteIcon,
+  NotePencilIcon,
+  LocationIcon,
+} from '../../icons';
 
 const MyButton = styled(Fab)`
   &&& {
@@ -63,13 +65,13 @@ export const breadcrumb = (props) => {
         <QuestionMarkIcon className={returnSvg(props.current, props.selection, props.value)} />
       );
     } else if (id === 1) {
-      return <NotesIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      return <NoteIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 2) {
       return <LocationIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 3) {
       return <DollarSignIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 4) {
-      return <Notes2Icon className={returnSvg(props.current, props.selection, props.value)} />;
+      return <NotePencilIcon className={returnSvg(props.current, props.selection, props.value)} />;
     }
     return <QuestionMarkIcon className={returnSvg(props.current, props.selection, props.value)} />;
   };
@@ -79,22 +81,6 @@ export const breadcrumb = (props) => {
         <MyButton className={returnIcon(props.current, props.selection, props.value)}>
           {returnStatus(props.selection, props.value)}
         </MyButton>
-        {(() => {
-          switch (props.value) {
-            case 0:
-              return <div className={returnRightBar(props.selection, props.value)} />;
-            case 4:
-              return <div className={returnLeftBar(props.selection, props.value - 1)} />;
-            default:
-              return (
-                <div>
-                  <div className={returnLeftBar(props.selection, props.value - 1)} />
-                  <div className={returnRightBar(props.selection, props.value)} />
-                </div>
-              );
-          }
-        })()}
-
         <h2 className={returnLabel(props.current, props.value)}>{props.name}</h2>
       </Grid>
     </Link>
