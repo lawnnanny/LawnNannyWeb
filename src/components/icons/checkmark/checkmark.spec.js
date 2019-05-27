@@ -1,34 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import CheckmarkIcon from '.';
+import CheckmarkIcon from '@material-ui/icons/Check';
+import Checkmark from '.';
 
-describe('checkmark icon', () => {
+describe('Checkmark icon', () => {
   let wrapper;
 
-  const renderComponent = () =>
-    shallow(<CheckmarkIcon/>);
+  const renderComponent = () => shallow(<Checkmark />);
 
   beforeEach(() => {
     wrapper = renderComponent();
   });
 
-  it('is an SvgIcon', () => {
-    expect(wrapper.type()).toEqual(SvgIcon);
-  });
-  describe('path', () => {
-    let path;
-
-    beforeEach(() => {
-      path = wrapper.childAt(0);
-    });
-
-    it('is a path', () => {
-      expect(path.type()).toEqual('path');
-    });
-
-    it('has correct d value', () => {
-      expect(path.props().d).toEqual('M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z');
-    });
+  it('is a checkmark icon', () => {
+    expect(wrapper.type()).toEqual(CheckmarkIcon);
   });
 });

@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './request-price.module.css';
 import BreadcrumbComponent from '../../../components/breadcrumb';
-import { QuestionMarkIcon, DollarSignIcon } from '../../../components/icons';
+import { CreateIcon, DollarIcon } from '../../../components/icons';
 
 const MyButton = styled(Button)`
   &&& {
@@ -66,7 +66,7 @@ export const requestPrice = (props) => {
           placement="right-start"
         >
           <Badge
-            badgeContent={<QuestionMarkIcon styling={styles.tooltipIcon} />}
+            badgeContent={<CreateIcon styling={styles.tooltipIcon} />}
             className={styles.tooltip}
           >
             <h1 className={styles.header}>Set A Price</h1>
@@ -81,7 +81,7 @@ export const requestPrice = (props) => {
             onChange={props.setRequestPrice}
             startAdornment={
               <InputAdornment position="start">
-                <DollarSignIcon styling={styles.priceIcon} />
+                <DollarIcon styling={styles.priceIcon} />
               </InputAdornment>
             }
           />

@@ -6,11 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import styles from '../breadcrumb.module.css';
 import {
-  QuestionMarkIcon,
+  CreateIcon,
   CheckmarkIcon,
-  DollarSignIcon,
-  NoteIcon,
-  NotePencilIcon,
+  DollarIcon,
+  EventNoteIcon,
+  AssignmentIcon,
   LocationIcon,
 } from '../../icons';
 
@@ -38,18 +38,6 @@ const returnSvg = (current, selection, id) => {
   }
   return styles.unfinishedSvg;
 };
-const returnRightBar = (selection, id) => {
-  if (selection > id) {
-    return styles.riiiiiiightBarFinished;
-  }
-  return styles.riiiiiiightBarUnfinished;
-};
-const returnLeftBar = (selection, id) => {
-  if (selection > id) {
-    return styles.leeeeeeftBarFinished;
-  }
-  return styles.leeeeeeeftBarUnfinished;
-};
 const returnLabel = (current, id) => {
   if (current === id) {
     return styles.currentLabel;
@@ -61,19 +49,17 @@ export const breadcrumb = (props) => {
     if (selection > id) {
       return <CheckmarkIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 0) {
-      return (
-        <QuestionMarkIcon className={returnSvg(props.current, props.selection, props.value)} />
-      );
+      return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 1) {
-      return <NoteIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      return <EventNoteIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 2) {
       return <LocationIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 3) {
-      return <DollarSignIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      return <DollarIcon className={returnSvg(props.current, props.selection, props.value)} />;
     } else if (id === 4) {
-      return <NotePencilIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      return <AssignmentIcon className={returnSvg(props.current, props.selection, props.value)} />;
     }
-    return <QuestionMarkIcon className={returnSvg(props.current, props.selection, props.value)} />;
+    return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
   };
   return (
     <Link to={props.link} className={styles.link}>

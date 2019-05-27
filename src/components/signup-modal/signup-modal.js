@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './signup-modal.module.css';
-import { XMarkIcon } from '../icons';
+import { CloseIcon } from '../icons';
 
 const styling = {
   paperOverride: {
@@ -54,7 +54,7 @@ class signupModal extends Component {
           </DialogContent>
           <DialogActions className={styles.modalAction}>
             <Button onClick={this.props.closeSignupModal} className={styles.closeButton}>
-              <XMarkIcon />
+              <CloseIcon />
             </Button>
           </DialogActions>
         </Dialog>

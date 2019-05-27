@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
-import RightArrowIcon from '../../../../components/icons/right-arrow';
+import { ArrowForwardIcon } from '../../../../components/icons';
 import RequestOptionComponent from './';
 
 describe('requestOption', () => {
@@ -56,7 +56,7 @@ describe('requestOption', () => {
         expect(header.type()).toEqual('h2');
       });
     });
-    describe('right-arrow icon', () => {
+    describe('arrow right icon', () => {
       let arrowIcon;
 
       beforeEach(() => {
@@ -64,7 +64,7 @@ describe('requestOption', () => {
       });
 
       it('is icon', () => {
-        expect(arrowIcon.type()).toEqual(RightArrowIcon);
+        expect(arrowIcon.type()).toEqual(ArrowForwardIcon);
       });
     });
   });

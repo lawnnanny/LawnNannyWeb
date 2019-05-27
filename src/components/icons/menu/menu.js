@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import MenuIcon from '@material-ui/icons/Menu';
 
-export const Menu = props => (
-  <SvgIcon className={props.styling}>
-    <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-  </SvgIcon>
-);
+export const Menu = props => <MenuIcon className={props.styling} />;
 Menu.propTypes = {
   styling: PropTypes.func,
 };
