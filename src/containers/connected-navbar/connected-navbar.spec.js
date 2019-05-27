@@ -20,7 +20,7 @@ describe('Connected Navbar Page', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<Navbar store={store} />);
 
-    const dispatchProps = ['setLoggedIn'];
+    const dispatchProps = [];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));

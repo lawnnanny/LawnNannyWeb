@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as PipelineActions from '../../../actions/pipeline-actions';
+import * as PipelineActions from '../../../actions/pipeline';
 import requestSelectionComponent from '../../../pages/pipeline/request-selection';
 
 const mapStateToProps = state => ({
