@@ -65,7 +65,7 @@
 }
 .loginContent {
   flex-grow: 0 !important;
-  height: 75% !important;
+  height: 85% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -80,7 +80,7 @@
   border-bottom: none !important;
   padding: 0 !important;
   padding-top: 0.6em !important;
-  height: 25% !important;
+  height: 15% !important;
   align-items: center !important;
 }
 .headerText {
@@ -111,7 +111,7 @@
   justify-content: space-evenly !important;
   align-items: center !important;
   width: 100% !important;
-  height: 30% !important;
+  height: 10% !important;
   margin-bottom: 1em;
   margin-top: 1em;
 }

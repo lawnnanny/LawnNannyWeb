@@ -1,7 +1,14 @@
 .formContainer {
   width: 100% !important;
+  flex-grow: 1 !important;
 }
 .formHeader {
+}
+.form {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
 }
 .addressContainer {
   margin: 0.3em 0em !important;
@@ -9,6 +16,10 @@
 }
 .fieldLabel {
   font-size: 1.2em !important;
+}
+.fieldLabelError {
+  font-size: 1.2em !important;
+  color: red !important;
 }
 .input {
   font-size: 1.3em !important;
