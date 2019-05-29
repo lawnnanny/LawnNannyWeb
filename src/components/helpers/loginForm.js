@@ -35,7 +35,7 @@ const LoginFormComponent = props => (
       }}
     >
       {({ values, error, touched, isSubmitting }) => (
-        <Form>
+        <Form className={styles.form}>
           <FieldArray name="Login">
             {({ push, remove }) => (
               <React.Fragment>

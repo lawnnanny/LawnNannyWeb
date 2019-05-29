@@ -1,4 +1,5 @@
 .formContainer {
+  width: 100% !important;
 }
 .formHeader {
 }
@@ -7,10 +8,10 @@
   width: 100% !important;
 }
 .fieldLabel {
-  font-size: 1.6em !important;
+  font-size: 1.2em !important;
 }
 .input {
-  font-size: 1.8em !important;
+  font-size: 1.3em !important;
   padding-top: 0.2em !important;
 }
 .inputError {

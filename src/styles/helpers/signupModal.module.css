@@ -137,8 +137,9 @@
   margin-top: 0.5em !important;
 }
 .loginText {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
   margin: 0 !important;
+  padding-right: 1em !important;
 }
 .signupButton {
   width: 6.5em !important;
@@ -150,8 +151,8 @@
   font-size: 1.1em !important;
 }
 .loginButton {
-  width: 6.5em !important;
-  height: 3em !important;
+  width: 5.5em !important;
+  height: 2.8em !important;
   background-color: white !important;
   border: 2px solid black !important;
   border-radius: 0 !important;

@@ -1,4 +1,11 @@
 .formContainer {
+  flex-grow: 1 !important;
+}
+.form {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-around !important;
 }
 .formHeader {
 }

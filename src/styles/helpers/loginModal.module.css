@@ -16,8 +16,16 @@
   padding: 0em !important;
   margin: 0 !important;
 }
+.closeIcon {
+  color: white !important;
+  font-size: 3em !important;
+}
 .modalAction {
   margin: 0em !important;
+  flex-grow: 0 !important;
+}
+.Dialog {
+  align-items: space-between !important;
 }
 .header {
   min-height: 0 !important;
@@ -52,6 +60,8 @@
   padding: 1em !important;
 }
 .loginContent {
+  flex-grow: 0 !important;
+  height: 75% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -61,15 +71,17 @@
 .modalHeader {
   display: flex !important;
   justify-content: center !important;
-  color: #25ff03 !important;
   font-size: 2rem !important;
-  background-color: white !important;
+  background-color: #3bc401 !important;
   border-bottom: none !important;
   padding: 0 !important;
   padding-top: 0.6em !important;
+  height: 25% !important;
+  align-items: center !important;
 }
 .headerText {
-  font-size: 2.4em !important;
+  font-size: 3em !important;
+  color: white !important;
 }
 .modalButton {
   background-color: #25ff03 !important;
@@ -89,71 +101,20 @@
   box-shadow: none !important;
   padding: 0 !important;
 }
-.divider {
-  margin-top: 0.5em !important;
-  font-size: 1.5em !important;
-}
-.facebookButton {
-  box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4) !important;
-  background-color: #3b5998 !important;
-  width: 100% !important;
-  height: 4.6em !important;
-  justify-content: flex-start !important;
-}
-.facebookIcon {
-  color: white !important;
-  margin-left: 0.3em !important;
-  width: 1.2em !important;
-  height: 1.2em !important;
-}
-.facebookTextDiv {
-  display: flex !important;
-  justify-content: center !important;
-  flex-grow: 1 !important;
-}
-.facebookText {
-  color: white !important;
-  margin: 0em !important;
-  font-size: 1.2em !important;
-  font-weight: bold !important;
-}
-.googleButton {
-  box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4) !important;
-  background-color: #d44638 !important;
-  width: 100% !important;
-  height: 4.6em !important;
-  justify-content: flex-start !important;
-  margin-top: 0.7em !important;
-}
-.googleIcon {
-  color: white !important;
-  margin-left: 0.3em !important;
-  width: 1.5em !important;
-  height: 1.5em !important;
-}
-.googleTextDiv {
-  display: flex !important;
-  justify-content: center !important;
-  flex-grow: 1 !important;
-}
-.googleText {
-  color: white !important;
-  margin: 0em !important;
-  font-size: 1.2em !important;
-  font-weight: bold !important;
-}
 .signupDiv {
+  flex-grow: 0 !important;
   display: flex !important;
   justify-content: space-evenly !important;
-  flex-grow: 1 !important;
   align-items: center !important;
   width: 100% !important;
+  height: 30% !important;
   margin-bottom: 1em;
   margin-top: 1em;
 }
 .signupText {
   font-size: 1.2em !important;
-  margin: 0 !important;
+  margin: 0em !important;
+  padding-right: 0.5em !important;
 }
 .signupButton {
   width: 6.5em !important;
