@@ -35,7 +35,7 @@ class signupModal extends Component {
           Sign Up
         </Button>
         <Dialog
-          open={this.props.isSignupModalOpen}
+          open={false}
           onClose={this.props.closeSignupModal}
           aria-labelledby="form-dialog-title"
           classes={{ paper: classes.paperOverride }}
