@@ -117,7 +117,7 @@ const SignupFormComponent = props => (
                     </React.Fragment>
                   ))}
                 <button className={styles.submitButton} type="submit">
-                  Continue
+                  Sign Up
                 </button>
               </React.Fragment>
             )}
