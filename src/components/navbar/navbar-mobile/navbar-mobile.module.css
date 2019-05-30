@@ -7,22 +7,31 @@
   height: 4em !important;
 }
 .homeNav {
-  color: #3da601;
+  color: #5f6368;
   margin-bottom: 0.5em;
 }
 .homeIcon {
   font-size: 3em !important;
   height: 40px !important;
 }
+.homeIcon ::selection {
+  color: blue;
+}
+.requestBadge {
+  color: yellow;
+}
 .accountNav {
-  color: #3da601 !important;
+  color: #5f6368 !important;
 }
 .accountIcon {
   font-size: 3em !important;
   height: 40px !important;
 }
+.accountBadge {
+  color: green;
+}
 .barNav {
-  color: #3da601 !important;
+  color: #5f6368 !important;
 }
 .menuIcon {
   font-size: 2.5em !important;

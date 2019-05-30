@@ -8,11 +8,6 @@ import HomePageHeading from './homepage-heading';
 const HomePage = () => (
   <Grid container spacing={24} className={styles.homepageContainer}>
     <HomePageHeadingWithRouter />
-    <HomePageHeadingWithRouter />
-    <HomePageHeadingWithRouter />
-    <HomePageHeadingWithRouter />
-    <HomePageHeadingWithRouter />
-    <HomePageHeadingWithRouter />
   </Grid>
 );
 

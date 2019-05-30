@@ -1,6 +1,7 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { withStyles } from '@material-ui/core/styles';
+import Badge from '@material-ui/core/Badge';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -32,6 +33,15 @@ const styling = {
   // styles rules for the "&$selected" selector to work.
   selected: {},
 };
+
+const StyledBadge = withStyles(theme => ({
+  badge: {
+    top: '15%',
+    right: -3,
+    fontSize: '1.1em',
+    backgroundColor: '#ff0000',
+  },
+}))(Badge);
 
 class LabelBottomNavigation extends React.Component {
   state = {
@@ -71,7 +81,11 @@ class LabelBottomNavigation extends React.Component {
           }}
           label="Requests"
           value="request"
-          icon={<ListAlt className={styles.homeIcon} />}
+          icon={
+            <StyledBadge className={classes.margin} badgeContent={5} color="secondary">
+              <ListAlt className={styles.homeIcon} />
+            </StyledBadge>
+          }
         />
         {this.props.isLoggedIn ? (
           <BottomNavigationAction
@@ -82,7 +96,11 @@ class LabelBottomNavigation extends React.Component {
             }}
             label="Account"
             value="account"
-            icon={<AccountCircle className={styles.accountIcon} />}
+            icon={
+              <Badge className={classes.margin} badgeContent={0} color="secondary">
+                <AccountCircle className={styles.accountIcon} />
+              </Badge>
+            }
           />
         ) : (
           <React.Fragment>
