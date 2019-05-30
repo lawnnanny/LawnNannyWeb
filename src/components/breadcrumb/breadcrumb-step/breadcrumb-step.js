@@ -44,12 +44,13 @@ const returnLabel = (current, id) => {
   }
   return styles.label;
 };
+
 export const breadcrumb = (props) => {
-  const returnStatus = (selection, id) => {
-    if (selection > id) {
+  const Icon = () => {
+    if (props.selection > props.value) {
       return <CheckmarkIcon className={returnSvg(props.current, props.selection, props.value)} />;
     }
-    switch (id) {
+    switch (props.value) {
       case 0:
         return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
       case 1:
@@ -70,7 +71,7 @@ export const breadcrumb = (props) => {
     <Link to={props.link} className={styles.link}>
       <Grid container className={styles.column}>
         <MyButton className={returnIcon(props.current, props.selection, props.value)}>
-          {returnStatus(props.selection, props.value)}
+          <Icon />
         </MyButton>
         <h2 className={returnLabel(props.current, props.value)}>{props.name}</h2>
       </Grid>
