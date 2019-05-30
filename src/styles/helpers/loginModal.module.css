@@ -27,6 +27,10 @@
 .Dialog {
   align-items: space-between !important;
 }
+.image {
+  background-image: url('../../images/black.jpg');
+  height: 100% !important;
+}
 .header {
   min-height: 0 !important;
 }
@@ -72,7 +76,6 @@
   display: flex !important;
   justify-content: center !important;
   font-size: 2rem !important;
-  background-color: #3bc401 !important;
   border-bottom: none !important;
   padding: 0 !important;
   padding-top: 0.6em !important;
@@ -81,7 +84,7 @@
 }
 .headerText {
   font-size: 3em !important;
-  color: white !important;
+  color: #25ff03 !important;
 }
 .modalButton {
   background-color: #25ff03 !important;
@@ -115,13 +118,14 @@
   font-size: 1.2em !important;
   margin: 0em !important;
   padding-right: 0.5em !important;
+  color: #25ff03 !important;
 }
 .signupButton {
   width: 6.5em !important;
   height: 3em !important;
   background-color: white !important;
-  border: 2px solid black !important;
-  border-radius: 0 !important;
+  border: none !important;
+  border-radius: 5px !important;
   padding: 3px 4px !important;
   font-weight: bold !important;
   font-size: 1.1em !important;

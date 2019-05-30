@@ -3,7 +3,10 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Lock from '@material-ui/icons/Lock';
 import styles from './loginForm.module.css';
 
 const initialValues = {
@@ -44,6 +47,11 @@ const LoginFormComponent = props => (
                     Email{' '}
                   </InputLabel>
                   <Input
+                    startAdornment={
+                      <InputAdornment position="start">
+                        <AccountCircle />
+                      </InputAdornment>
+                    }
                     error={form.touched[field.name] && form.errors[field.name]}
                     className={styles.input}
                     {...field}
@@ -69,6 +77,11 @@ const LoginFormComponent = props => (
                     Password
                   </InputLabel>
                   <Input
+                    startAdornment={
+                      <InputAdornment position="start">
+                        <Lock />
+                      </InputAdornment>
+                    }
                     error={form.touched[field.name] && form.errors[field.name]}
                     type="password"
                     className={styles.input}
