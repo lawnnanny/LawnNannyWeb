@@ -4,10 +4,8 @@ export default {
   login: {
     login: (i += 1),
     signup: (i += 1),
-    closeLoginModal: (i += 1),
-    openLoginModal: (i += 1),
-    closeSignupModal: (i += 1),
-    openSignupModal: (i += 1),
+    toggleLoginModal: (i += 1),
+    toggleSignupModal: (i += 1),
     swapModal: (i += 1),
   },
   requests: {
@@ -15,8 +13,6 @@ export default {
     setRequestInformation: (i += 1),
     setRequestLocation: (i += 1),
     setRequestPrice: (i += 1),
-    incrementPrice: (i += 1),
-    decrementPrice: (i += 1),
     requestInProgress: (i += 1),
   },
 };

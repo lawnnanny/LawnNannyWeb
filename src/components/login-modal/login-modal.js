@@ -31,12 +31,12 @@ class loginModal extends Component {
     const { classes } = this.props;
     return (
       <div className={styles.loginDiv}>
-        <Button size="large" onClick={this.props.closeLoginModal} className={styles.loginButton}>
+        <Button size="large" onClick={this.props.toggleLoginModal} className={styles.loginButton}>
           Login
         </Button>
         <Dialog
           open={this.props.isLoginModalOpen}
-          onClose={this.props.closeLoginModal}
+          onClose={this.props.toggleLoginModal}
           aria-labelledby="form-dialog-title"
           classes={{ paper: classes.paperOverride }}
         >
@@ -69,7 +69,7 @@ class loginModal extends Component {
             </div>
           </DialogContent>
           <DialogActions className={styles.modalAction}>
-            <Button onClick={this.props.closeLoginModal} className={styles.closeButton}>
+            <Button onClick={this.props.toggleLoginModal} className={styles.closeButton}>
               <SvgIcon>
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
               </SvgIcon>
@@ -84,13 +84,13 @@ loginModal.propTypes = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
-  closeLoginModal: PropTypes.func,
+  toggleLoginModal: PropTypes.func,
 };
 
 loginModal.defaultProps = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
-  closeLoginModal: PropTypes.func,
+  toggleLoginModal: PropTypes.func,
 };
 export default withStyles(styling)(loginModal);

@@ -1,5 +1,5 @@
 import Actions from '../../reducers/actions';
 import createReduxAction from '../create-redux-action';
 
-export const closeSignupModal = createReduxAction(Actions.login.closeSignupModal);
+export const toggleSignupModal = createReduxAction(Actions.login.toggleSignupModal);
 export const swapModal = createReduxAction(Actions.login.swapModal);

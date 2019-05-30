@@ -1,10 +1,10 @@
 import Actions from '../../reducers/actions';
-import { closeSignupModal, swapModal } from '.';
+import { toggleSignupModal, swapModal } from '.';
 
-describe('close login modal action', () => {
-  const testActionType = Actions.login.closeSignupModal;
-  it('should return a lambda that returns an object with the closeSignupModal action', () => {
-    const actionValue = closeSignupModal();
+describe('toggle login modal action', () => {
+  const testActionType = Actions.login.toggleSignupModal;
+  it('should return a lambda that returns an object with the toggleSignupModal action', () => {
+    const actionValue = toggleSignupModal();
     expect(actionValue).toEqual({ type: testActionType });
   });
 });
