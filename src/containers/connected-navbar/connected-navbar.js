@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as NavbarActions from '../../actions/navbar';
+import * as navbarActions from '../../actions/navbar';
 import navBarComponent from '../../components/navbar';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      ...NavbarActions,
+      ...navbarActions,
     },
     dispatch,
   );

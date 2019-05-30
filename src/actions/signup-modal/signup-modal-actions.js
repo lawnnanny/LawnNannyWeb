@@ -1,5 +1,5 @@
 import Actions from '../../reducers/actions';
-import { reduxActionCreatorNoData } from '../redux-action-creator';
+import createReduxAction from '../create-redux-action';
 
-export const closeSignupModal = reduxActionCreatorNoData(Actions.login.closeSignupModal);
-export const swapModal = reduxActionCreatorNoData(Actions.login.swapModal);
+export const closeSignupModal = createReduxAction(Actions.login.closeSignupModal);
+export const swapModal = createReduxAction(Actions.login.swapModal);

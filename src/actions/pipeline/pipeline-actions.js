@@ -1,7 +1,7 @@
 import Actions from '../../reducers/actions';
-import { reduxActionCreator } from '../redux-action-creator';
+import createReduxAction from '../create-redux-action';
 
-export const setRequestInformation = reduxActionCreator(Actions.requests.setRequestInformation);
-export const setTypeOfRequest = reduxActionCreator(Actions.requests.setTypeOfRequest);
-export const setRequestPrice = reduxActionCreator(Actions.requests.setRequestPrice);
-export const requestInProgress = reduxActionCreator(Actions.requests.requestInProgress);
+export const setRequestInformation = createReduxAction(Actions.requests.setRequestInformation);
+export const setTypeOfRequest = createReduxAction(Actions.requests.setTypeOfRequest);
+export const setRequestPrice = createReduxAction(Actions.requests.setRequestPrice);
+export const requestInProgress = createReduxAction(Actions.requests.requestInProgress);
