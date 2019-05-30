@@ -48,18 +48,23 @@ export const breadcrumb = (props) => {
   const returnStatus = (selection, id) => {
     if (selection > id) {
       return <CheckmarkIcon className={returnSvg(props.current, props.selection, props.value)} />;
-    } else if (id === 0) {
-      return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
-    } else if (id === 1) {
-      return <EventNoteIcon className={returnSvg(props.current, props.selection, props.value)} />;
-    } else if (id === 2) {
-      return <LocationIcon className={returnSvg(props.current, props.selection, props.value)} />;
-    } else if (id === 3) {
-      return <DollarIcon className={returnSvg(props.current, props.selection, props.value)} />;
-    } else if (id === 4) {
-      return <AssignmentIcon className={returnSvg(props.current, props.selection, props.value)} />;
     }
-    return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
+    switch (id) {
+      case 0:
+        return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      case 1:
+        return <EventNoteIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      case 2:
+        return <LocationIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      case 3:
+        return <DollarIcon className={returnSvg(props.current, props.selection, props.value)} />;
+      case 4:
+        return (
+          <AssignmentIcon className={returnSvg(props.current, props.selection, props.value)} />
+        );
+      default:
+        return <CreateIcon className={returnSvg(props.current, props.selection, props.value)} />;
+    }
   };
   return (
     <Link to={props.link} className={styles.link}>
