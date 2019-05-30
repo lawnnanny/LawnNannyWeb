@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import navBarComponent from '../../components/navbar';
+import NavbarComponent from '../../components/navbar';
 import Actions from '../../reducers/actions';
 
 const mapStateToProps = state => ({
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(navBarComponent);
+)(NavbarComponent);

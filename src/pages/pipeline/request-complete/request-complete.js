@@ -12,7 +12,7 @@ const ButtonDiv = styled.div`
   }
 `;
 
-export const requestComplete = (props) => {
+export const RequestComplete = (props) => {
   if (props.pageInProgress < 5) {
     return <Redirect to="/pipeline/requestReview" />;
   }
@@ -49,13 +49,13 @@ export const requestComplete = (props) => {
   );
 };
 
-requestComplete.propTypes = {
+RequestComplete.propTypes = {
   pageInProgress: PropTypes.number,
   history: PropTypes.func,
 };
 
-requestComplete.defaultProps = {
+RequestComplete.defaultProps = {
   pageInProgress: 0,
   history: PropTypes.func,
 };
-export default requestComplete;
+export default RequestComplete;

@@ -6,7 +6,7 @@ import styles from './request-review.module.css';
 import BreadcrumbComponent from '../../../components/breadcrumb';
 import ReviewModal from './review-modal';
 
-export const requestReview = (props) => {
+export const RequestReview = (props) => {
   if (props.pageInProgress < 4) {
     return <Redirect to="/pipeline/requestPrice" />;
   }
@@ -38,12 +38,12 @@ export const requestReview = (props) => {
 
 const ReviewModalWithRouter = withRouter(ReviewModal);
 
-requestReview.propTypes = {
+RequestReview.propTypes = {
   pageInProgress: PropTypes.number,
 };
 
-requestReview.defaultProps = {
+RequestReview.defaultProps = {
   pageInProgress: 0,
   isLoggedIn: PropTypes.bool,
 };
-export default requestReview;
+export default RequestReview;

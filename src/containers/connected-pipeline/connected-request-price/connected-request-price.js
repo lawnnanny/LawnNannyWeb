@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import requestPriceComponent from '../../../pages/pipeline/request-price';
+import RequestPriceComponent from '../../../pages/pipeline/request-price';
 import Actions from '../../../reducers/actions';
 
 const mapStateToProps = state => ({
@@ -47,4 +47,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestPriceComponent);
+)(RequestPriceComponent);

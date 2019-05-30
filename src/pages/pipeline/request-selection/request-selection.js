@@ -6,7 +6,7 @@ import BreadcrumbComponent from '../../../components/breadcrumb';
 import styles from './request-selection.module.css';
 import mower from './mower.png';
 
-export const requestSelection = props => (
+export const RequestSelection = props => (
   <Grid
     md={9}
     lg={8}
@@ -39,16 +39,16 @@ export const requestSelection = props => (
   </Grid>
 );
 
-requestSelection.propTypes = {
+RequestSelection.propTypes = {
   pageInProgress: PropTypes.number,
   setTypeOfRequest: PropTypes.func,
   requestInProgress: PropTypes.number,
 };
 
-requestSelection.defaultProps = {
+RequestSelection.defaultProps = {
   pageInProgress: 0,
   setTypeOfRequest: PropTypes.func,
   requestInProgress: 0,
 };
 
-export default requestSelection;
+export default RequestSelection;

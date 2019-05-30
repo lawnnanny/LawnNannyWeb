@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './request-location.module.css';
 import BreadcrumbComponent from '../../../components/breadcrumb';
 
-export const requestLocation = (props) => {
+export const RequestLocation = (props) => {
   if (props.pageInProgress < 2) {
     return <Redirect to="/pipeline/requestInformation" />;
   }
@@ -31,13 +31,13 @@ export const requestLocation = (props) => {
     </Grid>
   );
 };
-requestLocation.propTypes = {
+RequestLocation.propTypes = {
   pageInProgress: PropTypes.number,
 };
 
-requestLocation.defaultProps = {
+RequestLocation.defaultProps = {
   pageInProgress: 0,
   requestInProgress: 0,
   history: PropTypes.func,
 };
-export default requestLocation;
+export default RequestLocation;

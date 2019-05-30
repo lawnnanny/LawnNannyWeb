@@ -65,7 +65,7 @@ const returnLabel = (current, id) => {
   }
   return styles.label;
 };
-export const breadcrumb = props => (
+export const Breadcrumb = props => (
   <Link to={props.link} className={styles.link}>
     <Grid container className={styles.column}>
       <MyButton className={returnIcon(props.current, props.selection, props.value)}>
@@ -93,7 +93,7 @@ export const breadcrumb = props => (
     </Grid>
   </Link>
 );
-breadcrumb.propTypes = {
+Breadcrumb.propTypes = {
   current: PropTypes.number,
   value: PropTypes.number,
   selection: PropTypes.number,
@@ -101,7 +101,7 @@ breadcrumb.propTypes = {
   name: PropTypes.string,
 };
 
-breadcrumb.defaultProps = {
+Breadcrumb.defaultProps = {
   current: 0,
   selection: 0,
   value: PropTypes.number,
@@ -109,4 +109,4 @@ breadcrumb.defaultProps = {
   name: PropTypes.string,
 };
 
-export default breadcrumb;
+export default Breadcrumb;
