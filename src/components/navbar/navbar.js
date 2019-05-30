@@ -9,13 +9,11 @@ import LoginModal from '../../containers/connected-login-modal';
 import SignupModal from '../../containers/connected-signup-modal';
 import Sidebar from './sidebar';
 
-function HomeIcon(props) {
-  return (
-    <SvgIcon {...props} className={styles.homeIcon}>
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-    </SvgIcon>
-  );
-}
+const HomeIcon = props => (
+  <SvgIcon {...props} className={styles.homeIcon}>
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+  </SvgIcon>
+);
 
 export const navBar = props => (
   <AppBar position="static" className={styles.Menu}>
