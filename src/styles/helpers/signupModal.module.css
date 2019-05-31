@@ -65,7 +65,7 @@
 }
 .loginContent {
   flex-grow: 0 !important;
-  height: 85% !important;
+  height: 80% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -80,7 +80,7 @@
   border-bottom: none !important;
   padding: 0 !important;
   padding-top: 0.6em !important;
-  height: 15% !important;
+  height: 20% !important;
   align-items: center !important;
 }
 .headerText {

@@ -15,19 +15,19 @@
   width: 100% !important;
 }
 .fieldLabel {
-  font-size: 1.2em !important;
+  font-size: 1.5em !important;
 }
 .fieldLabelError {
-  font-size: 1.2em !important;
+  font-size: 1.5em !important;
   color: red !important;
 }
 .input {
-  font-size: 1.3em !important;
+  font-size: 1.5em !important;
   padding-top: 0.2em !important;
 }
 .inputError {
   color: red;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 .submitButton {
   width: 100%;
