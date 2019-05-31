@@ -1,19 +1,11 @@
 import { connect } from 'react-redux';
-import navBarComponent from '../../components/navbar';
+import AccountComponent from '../../pages/account';
 import Actions from '../../reducers/actions';
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.login.isLoggedIn,
+  isLoginModalOpen: state.login.isLoginModalOpen,
 });
-
 const mapDispatchToProps = dispatch => ({
-  setLoggedIn: () => {
-    const action = {
-      type: Actions.login.isLoggedIn,
-    };
-
-    dispatch(action);
-  },
   closeLoginModal: () => {
     const action = {
       type: Actions.login.closeLoginModal,
@@ -29,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(action);
   },
 });
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(navBarComponent);
+)(AccountComponent);

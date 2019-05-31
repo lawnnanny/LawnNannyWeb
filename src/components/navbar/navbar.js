@@ -9,7 +9,11 @@ export const Navbar = props => (
   <Media query={Device.tablet}>
     {matches =>
       (matches ? (
-        <NavbarDesktopWithRouter isLoggedIn={props.isLoggedIn} />
+        <NavbarDesktopWithRouter
+          closeSignupModal={props.closeSignupModal}
+          closeLoginModal={props.closeLoginModal}
+          isLoggedIn={props.isLoggedIn}
+        />
       ) : (
         <NavbarMobileWithRouter isLoggedIn={props.isLoggedIn} />
       ))

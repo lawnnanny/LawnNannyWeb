@@ -1,7 +1,7 @@
 import Actions from '../actions';
 
 const getInitialState = () => ({
-  isLoggedIn: true,
+  isLoggedIn: false,
   isLoginModalOpen: false,
   isSignupModalOpen: false,
 });
@@ -33,6 +33,7 @@ export default (state = getInitialState(), action) => {
       return setState({
         isLoginModalOpen: closeModal(state.isLoginModalOpen),
         isSignupModalOpen: closeModal(state.isSignupModalOpen),
+        isLoggedIn: false,
       });
     default:
       return state;

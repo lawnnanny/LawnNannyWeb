@@ -4,8 +4,6 @@ import { sessionService } from 'redux-react-session';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import Media from 'react-media';
-import Device from '../components/devices';
 
 import { Error404 } from '../components/errors';
 import ConnectedNavBarComponent from '../containers/connected-navbar';
@@ -16,6 +14,9 @@ import ConnectedRequestPriceComponent from '../containers/connected-pipeline/con
 import ConnectedRequestReviewComponent from '../containers/connected-pipeline/connected-request-review';
 import ConnectedRequestCompleteComponent from '../containers/connected-pipeline/connected-request-complete';
 import HomePageComponent from '../pages/homepage';
+import AccountPageComponent from '../containers/connected-account';
+import LoginModal from '../containers/connected-login-modal';
+import SignupModal from '../containers/connected-signup-modal';
 import App from '../components/app';
 import reducers from '../reducers';
 import styles from '../components/app/app.module.css';
@@ -44,10 +45,13 @@ export class Routes extends Component {
             render={props => (
               <div className={styles.div} {...props}>
                 <ConnectedNavBarComponent className={styles.navBar} {...props} />
+                <LoginModal />
+                <SignupModal />
                 <Switch>
                   <Route exact path="/test" component={App} />
                   <Route exact path="/pipeline" component={ConnectedRequestSelection} />
                   <Route exact path="/HomePage" component={HomePageComponent} />
+                  <Route exact path="/Account" component={AccountPageComponent} />
                   <Route
                     exact
                     path="/pipeline/requestInformation"

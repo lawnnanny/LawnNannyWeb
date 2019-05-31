@@ -71,38 +71,14 @@ class LabelBottomNavigation extends React.Component {
           }}
           label="Home"
           value="home"
-          icon={<Home className={styles.homeIcon} />}
-        />
-        <BottomNavigationAction
-          classes={{
-            label: classes.actionItem,
-            root: classes.actionItem,
-            selected: classes.selected,
-          }}
-          label="Requests"
-          value="request"
           icon={
-            <StyledBadge className={classes.margin} badgeContent={5} color="secondary">
-              <ListAlt className={styles.homeIcon} />
-            </StyledBadge>
+            <Home
+              onClick={() => this.props.history.push('/HomePage')}
+              className={styles.homeIcon}
+            />
           }
         />
         {this.props.isLoggedIn ? (
-          <BottomNavigationAction
-            classes={{
-              label: classes.actionItem,
-              root: classes.actionItem,
-              selected: classes.selected,
-            }}
-            label="Account"
-            value="account"
-            icon={
-              <Badge className={classes.margin} badgeContent={0} color="secondary">
-                <AccountCircle className={styles.accountIcon} />
-              </Badge>
-            }
-          />
-        ) : (
           <React.Fragment>
             <BottomNavigationAction
               classes={{
@@ -110,9 +86,13 @@ class LabelBottomNavigation extends React.Component {
                 root: classes.actionItem,
                 selected: classes.selected,
               }}
-              label="Account"
-              value="account"
-              icon={<LoginModal history={this.props.history} />}
+              label="Requests"
+              value="request"
+              icon={
+                <StyledBadge className={classes.margin} badgeContent={5} color="secondary">
+                  <ListAlt className={styles.homeIcon} />
+                </StyledBadge>
+              }
             />
             <BottomNavigationAction
               classes={{
@@ -122,9 +102,29 @@ class LabelBottomNavigation extends React.Component {
               }}
               label="Account"
               value="account"
-              icon={<SignupModal history={this.props.history} />}
+              icon={
+                <Badge className={classes.margin} badgeContent={0} color="secondary">
+                  <AccountCircle className={styles.accountIcon} />
+                </Badge>
+              }
             />
           </React.Fragment>
+        ) : (
+          <BottomNavigationAction
+            classes={{
+              label: classes.actionItem,
+              root: classes.actionItem,
+              selected: classes.selected,
+            }}
+            label="Login"
+            value="login"
+            icon={
+              <AccountCircle
+                onClick={() => this.props.history.push('/Account')}
+                className={styles.accountIcon}
+              />
+            }
+          />
         )}
         <BottomNavigationAction
           classes={{

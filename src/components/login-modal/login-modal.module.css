@@ -26,11 +26,6 @@
   border: none !important;
   margin-bottom: 0rem !important;
 }
-.loginButton {
-  background-color: black !important;
-  color: white !important;
-  font-size: 1.4em !important;
-}
 .menuItem {
   padding: 0.5rem !important;
 }
@@ -84,7 +79,7 @@
   font-size: 1.5em !important;
 }
 .facebookButton {
-  box-shadow: 0px 12px 10px -10px rgba(0,0,0,0.4) !important;
+  box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4) !important;
   background-color: #3b5998 !important;
   width: 100% !important;
   height: 4.6em !important;
@@ -108,7 +103,7 @@
   font-weight: bold !important;
 }
 .googleButton {
-  box-shadow: 0px 12px 10px -10px rgba(0,0,0,0.4) !important;
+  box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4) !important;
   background-color: #d44638 !important;
   width: 100% !important;
   height: 4.6em !important;

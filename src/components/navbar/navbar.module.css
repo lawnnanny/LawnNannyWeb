@@ -9,6 +9,20 @@
   flex-direction: row !important;
   justify-content: space-between !important;
 }
+.loginButton {
+  background-color: black !important;
+  color: white !important;
+  font-size: 1.4em !important;
+}
+.signupButton {
+  width: 6.5em !important;
+  height: 3em !important;
+  background-color: #20ad1d !important;
+  border-radius: 0 !important;
+  padding: 3px 4px !important;
+  color: white !important;
+  font-size: 1.1em !important;
+}
 .leftMenuDiv {
   display: flex !important;
   align-items: center !important;
