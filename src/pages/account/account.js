@@ -1,12 +1,14 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Redirect } from 'react-router';
 
-const AccountPage = props => (
-  <div>
-    <Button onClick={props.closeLoginModal}>Login</Button>
-    <h1> OR </h1>
-    <Button onClick={props.closeSignupModal}>Signup</Button>
-  </div>
-);
-
+const AccountPage = (props) => {
+  if (!props.isLoggedIn) {
+    return <Redirect to="/HomePage" />;
+  }
+  return (
+    <div>
+      <h1> No Account Yet </h1>
+    </div>
+  );
+};
 export default AccountPage;

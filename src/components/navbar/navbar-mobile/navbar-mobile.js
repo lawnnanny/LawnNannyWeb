@@ -119,10 +119,7 @@ class LabelBottomNavigation extends React.Component {
             label="Login"
             value="login"
             icon={
-              <AccountCircle
-                onClick={() => this.props.history.push('/Account')}
-                className={styles.accountIcon}
-              />
+              <AccountCircle onClick={this.props.closeLoginModal} className={styles.accountIcon} />
             }
           />
         )}

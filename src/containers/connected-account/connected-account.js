@@ -3,7 +3,7 @@ import AccountComponent from '../../pages/account';
 import Actions from '../../reducers/actions';
 
 const mapStateToProps = state => ({
-  isLoginModalOpen: state.login.isLoginModalOpen,
+  isLoggedIn: state.login.isLoggedIn,
 });
 const mapDispatchToProps = dispatch => ({
   closeLoginModal: () => {

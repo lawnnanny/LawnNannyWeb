@@ -15,7 +15,10 @@ export const Navbar = props => (
           isLoggedIn={props.isLoggedIn}
         />
       ) : (
-        <NavbarMobileWithRouter isLoggedIn={props.isLoggedIn} />
+        <NavbarMobileWithRouter
+          isLoggedIn={props.isLoggedIn}
+          closeLoginModal={props.closeLoginModal}
+        />
       ))
     }
   </Media>
