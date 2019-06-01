@@ -117,7 +117,6 @@ class LabelBottomNavigation extends React.Component {
               selected: classes.selected,
             }}
             label="Login"
-            value="login"
             icon={
               <AccountCircle onClick={this.props.closeLoginModal} className={styles.accountIcon} />
             }

@@ -1,0 +1,42 @@
+.formContainer {
+  width: 100% !important;
+  flex-grow: 1 !important;
+}
+.formHeader {
+}
+.form {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+}
+.addressContainer {
+  margin: 0.3em 0em !important;
+  width: 100% !important;
+}
+.fieldLabel {
+  font-size: 1.5em !important;
+}
+.fieldLabelError {
+  font-size: 1.5em !important;
+  color: red !important;
+}
+.input {
+  font-size: 1.5em !important;
+  padding-top: 0.2em !important;
+}
+.inputError {
+  color: red;
+  font-size: 1.3em;
+}
+.submitButton {
+  width: 100%;
+  background-color: #3bc401;
+  border: 0;
+  height: 2em;
+  font-size: 1.9em;
+  border-radius: 5px;
+  color: white;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
