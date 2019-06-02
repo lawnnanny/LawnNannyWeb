@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ListItem from '@material-ui/core/ListItem';
 import styles from './sidebar.module.css';
+import { MenuIcon } from '../../icons';
 
 const MyItem = styled(ListItem)`
   &&& {
@@ -31,9 +31,7 @@ export const Sidebar = (props) => {
   return (
     <div>
       <IconButton onClick={() => handleOpen(true)} className={styles.menuButton}>
-        <SvgIcon className={styles.menuIcon}>
-          <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-        </SvgIcon>
+        <MenuIcon styling={styles.menuIcon} />
       </IconButton>
       <Drawer
         open={isOpen}
@@ -42,9 +40,7 @@ export const Sidebar = (props) => {
       >
         <div className={styles.sidebar}>
           <IconButton onClick={() => handleOpen(false)} className={styles.menuButton}>
-            <SvgIcon className={styles.menuIcon}>
-              <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-            </SvgIcon>
+            <MenuIcon styling={styles.menuIcon} />
           </IconButton>
           <MyItem button className={styles.aboutTerraItem}>
             <Typography className={styles.aboutTerraText}>About Terra</Typography>

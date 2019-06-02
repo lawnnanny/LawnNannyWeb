@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import Grid from '@material-ui/core/Grid';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import StepComponent from './';
 
 describe('step', () => {
@@ -28,32 +27,11 @@ describe('step', () => {
     it('is a grid', () => {
       expect(informationColumn.type()).toEqual(Grid);
     });
-    describe('icon', () => {
-      let icon;
-
-      beforeEach(() => {
-        icon = informationColumn.childAt(0).childAt(0);
-      });
-      it('is a icon', () => {
-        expect(icon.type()).toEqual(SvgIcon);
-      });
-    });
-    describe('bars', () => {
-      let label;
-
-      beforeEach(() => {
-        label = informationColumn.childAt(1);
-      });
-
-      it('is a div', () => {
-        expect(label.type()).toEqual('div');
-      });
-    });
     describe('label', () => {
       let label;
 
       beforeEach(() => {
-        label = informationColumn.childAt(2);
+        label = informationColumn.childAt(1);
       });
 
       it('is a label', () => {
