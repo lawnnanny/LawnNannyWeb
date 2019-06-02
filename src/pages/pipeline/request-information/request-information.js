@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import BreadcrumbComponent from '../../../components/breadcrumb';
 import styles from './request-information.module.css';
 
-const requestInformation = (props) => {
+const RequestInformation = (props) => {
   if (props.pageInProgress < 1) {
     return <Redirect to="/pipeline" />;
   }
@@ -31,13 +31,13 @@ const requestInformation = (props) => {
     </Grid>
   );
 };
-requestInformation.propTypes = {
+RequestInformation.propTypes = {
   pageInProgress: PropTypes.number,
 };
 
-requestInformation.defaultProps = {
+RequestInformation.defaultProps = {
   pageInProgress: 0,
   requestInProgress: 0,
   history: PropTypes.func,
 };
-export default requestInformation;
+export default RequestInformation;

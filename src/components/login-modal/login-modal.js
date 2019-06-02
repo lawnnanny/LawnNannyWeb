@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -18,61 +18,48 @@ const styling = {
   },
 };
 
-class loginModal extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loginUserError: null,
-      open: false,
-    };
-  }
-
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className={styles.loginDiv}>
-        <Button size="large" onClick={this.props.closeLoginModal} className={styles.loginButton}>
-          Login
+export const LoginModal = props => (
+  <div className={styles.loginDiv}>
+    <Button size="large" onClick={props.toggleLoginModal} className={styles.loginButton}>
+      Login
+    </Button>
+    <Dialog
+      open={props.isLoginModalOpen}
+      onClose={props.toggleLoginModal}
+      aria-labelledby="form-dialog-title"
+      classes={{ paper: props.classes.paperOverride }}
+    >
+      <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
+        <h2 className={styles.headerText}> Welcome back! </h2>
+      </DialogTitle>
+      <DialogContent className={styles.loginContent}>
+        <h3 className={styles.divider}> or </h3>
+        <div className={styles.signupDiv}>
+          <h2 className={styles.signupText}>Dont have an account?</h2>
+          <Button onClick={props.swapModal} className={styles.signupButton}>
+            Sign Up
+          </Button>
+        </div>
+      </DialogContent>
+      <DialogActions className={styles.modalAction}>
+        <Button onClick={props.toggleLoginModal} className={styles.closeButton}>
+          <CloseIcon />
         </Button>
-        <Dialog
-          open={this.props.isLoginModalOpen}
-          onClose={this.props.closeLoginModal}
-          aria-labelledby="form-dialog-title"
-          classes={{ paper: classes.paperOverride }}
-        >
-          <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
-            <h2 className={styles.headerText}> Welcome back! </h2>
-          </DialogTitle>
-          <DialogContent className={styles.loginContent}>
-            <h3 className={styles.divider}> or </h3>
-            <div className={styles.signupDiv}>
-              <h2 className={styles.signupText}>Dont have an account?</h2>
-              <Button onClick={this.props.swapModal} className={styles.signupButton}>
-                Sign Up
-              </Button>
-            </div>
-          </DialogContent>
-          <DialogActions className={styles.modalAction}>
-            <Button onClick={this.props.closeLoginModal} className={styles.closeButton}>
-              <CloseIcon />
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
-    );
-  }
-}
-loginModal.propTypes = {
+      </DialogActions>
+    </Dialog>
+  </div>
+);
+LoginModal.propTypes = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
-  closeLoginModal: PropTypes.func,
+  toggleLoginModal: PropTypes.func,
 };
 
-loginModal.defaultProps = {
+LoginModal.defaultProps = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
-  closeLoginModal: PropTypes.func,
+  toggleLoginModal: PropTypes.func,
 };
-export default withStyles(styling)(loginModal);
+export default withStyles(styling)(LoginModal);

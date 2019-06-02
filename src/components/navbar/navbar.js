@@ -9,7 +9,7 @@ import SignupModal from '../../containers/connected-signup-modal';
 import Sidebar from './sidebar';
 import { HomeIcon } from '../icons';
 
-export const navBar = props => (
+export const Navbar = props => (
   <AppBar position="static" className={styles.Menu}>
     <div className={styles.leftMenuDiv}>
       <Sidebar />
@@ -26,12 +26,12 @@ export const navBar = props => (
   </AppBar>
 );
 
-navBar.propTypes = {
+Navbar.propTypes = {
   history: PropTypes.func,
 };
 
-navBar.defaultProps = {
+Navbar.defaultProps = {
   history: PropTypes.func,
 };
 
-export default navBar;
+export default Navbar;

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Actions from '../../../reducers/actions';
-import requestSelectionComponent from '../../../pages/pipeline/request-selection';
+import RequestSelectionComponent from '../../../pages/pipeline/request-selection';
 
 const mapStateToProps = state => ({
   pageInProgress: state.requests.requestInProgress,
@@ -26,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   () => mapStateToProps,
   mapDispatchToProps,
-)(requestSelectionComponent);
+)(RequestSelectionComponent);

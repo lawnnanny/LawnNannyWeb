@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
@@ -19,71 +19,51 @@ const MyButton = styled(Button)`
   }
 `;
 
-export class reviewModal extends Component {
-  constructor() {
-    super();
-    this.state = {
-      open: false,
-    };
-  }
+export const ReviewModal = (props) => {
+  const [open, handleOpen] = useState(false);
+  return (
+    <div className={styles.reviewModal}>
+      <MyButton className={styles.modalButton} onClick={() => handleOpen(true)}>
+        Submit Request
+      </MyButton>
+      <Dialog open={open} onClose={() => handleOpen(false)} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
+          To Make A Request Please...
+        </DialogTitle>
+        <DialogContent />
+        <DialogActions>
+          <SignupModal
+            onClick={() => handleOpen(false)}
+            size="big"
+            fluid
+            signupButton={styles.signupButton}
+            history={props.history}
+            destination="/pipeline/requestReview"
+            requestInProgress={props.requestInProgress}
+          />
+          <h1> OR </h1>
+          <LoginModal
+            onClick={() => handleOpen(false)}
+            size="big"
+            fluid
+            loginButton={styles.loginButton}
+            history={props.history}
+            destination="/pipeline/requestReview"
+            requestInProgress={props.requestInProgress}
+          />
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
-  render() {
-    return (
-      <div className={styles.reviewModal}>
-        <MyButton className={styles.modalButton} onClick={this.handleClickOpen}>
-          Submit Request
-        </MyButton>
-        <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle id="form-dialog-title" className={styles.modalHeader}>
-            To Make A Request Please...
-          </DialogTitle>
-          <DialogContent />
-          <DialogActions>
-            <SignupModal
-              onClick={this.handleClose}
-              size="big"
-              fluid
-              signupButton={styles.signupButton}
-              history={this.props.history}
-              destination="/pipeline/requestReview"
-              requestInProgress={this.props.requestInProgress}
-            />
-            <h1> OR </h1>
-            <LoginModal
-              onClick={this.handleClose}
-              size="big"
-              fluid
-              loginButton={styles.loginButton}
-              history={this.props.history}
-              destination="/pipeline/requestReview"
-              requestInProgress={this.props.requestInProgress}
-            />
-          </DialogActions>
-        </Dialog>
-      </div>
-    );
-  }
-}
-
-reviewModal.propTypes = {
+ReviewModal.propTypes = {
   requestInProgress: PropTypes.func,
   history: PropTypes.func,
 };
 
-reviewModal.defaultProps = {
+ReviewModal.defaultProps = {
   requestInProgress: PropTypes.func,
   history: PropTypes.func,
 };
-export default reviewModal;
+export default ReviewModal;

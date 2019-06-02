@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import requestReviewComponent from '../../../pages/pipeline/request-review';
+import RequestReviewComponent from '../../../pages/pipeline/request-review';
 import Actions from '../../../reducers/actions';
 
 const mapStateToProps = state => ({
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestReviewComponent);
+)(RequestReviewComponent);

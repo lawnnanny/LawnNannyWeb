@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Step from './breadcrumb-step';
 import styles from './breadcrumb.module.css';
 
-export const breadcrumb = props => (
+export const Breadcrumb = props => (
   <Grid className={styles.grid}>
     <Step
       value={0}
@@ -44,14 +44,14 @@ export const breadcrumb = props => (
     />
   </Grid>
 );
-breadcrumb.propTypes = {
+Breadcrumb.propTypes = {
   current: PropTypes.number,
   selection: PropTypes.number,
 };
 
-breadcrumb.defaultProps = {
+Breadcrumb.defaultProps = {
   current: 0,
   selection: 0,
 };
 
-export default breadcrumb;
+export default Breadcrumb;

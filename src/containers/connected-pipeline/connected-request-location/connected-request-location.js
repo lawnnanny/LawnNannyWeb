@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import requestLocationComponent from '../../../pages/pipeline/request-location';
+import RequestLocationComponent from '../../../pages/pipeline/request-location';
 import Actions from '../../../reducers/actions';
 
 const mapStateToProps = state => ({
@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestLocationComponent);
+)(RequestLocationComponent);

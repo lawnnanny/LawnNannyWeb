@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -26,49 +26,39 @@ const styling = {
   },
 };
 
-class Sidebar extends React.Component {
-  state = {
-    isOpen: false,
-  };
-
-  toggleDrawer = open => () => {
-    this.setState({ isOpen: open });
-  };
-
-  render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <IconButton onClick={this.toggleDrawer(true)} className={styles.menuButton}>
-          <MenuIcon styling={styles.menuIcon} />
-        </IconButton>
-        <Drawer
-          open={this.state.isOpen}
-          onClose={this.toggleDrawer(false)}
-          classes={{ paper: classes.paperOverride }}
-        >
-          <div className={styles.sidebar}>
-            <IconButton onClick={this.toggleDrawer(false)} className={styles.menuButton}>
-              <MenuIcon styling={styles.menuIcon} />
-            </IconButton>
-            <MyItem button className={styles.aboutTerraItem}>
-              <Typography className={styles.aboutTerraText}>About Terra</Typography>
-            </MyItem>
-            <MyItem button className={styles.featuresItem}>
-              <Typography className={styles.featuresText}>Features</Typography>
-            </MyItem>
-            <MyItem button className={styles.helpItem}>
-              <Typography className={styles.helpText}>Help</Typography>
-            </MyItem>
-            <MyItem button className={styles.contactItem}>
-              <Typography className={styles.contactText}>Contact Us</Typography>
-            </MyItem>
-          </div>
-        </Drawer>
-      </div>
-    );
-  }
-}
+export const Sidebar = (props) => {
+  const [isOpen, handleOpen] = useState(false);
+  return (
+    <div>
+      <IconButton onClick={() => handleOpen(true)} className={styles.menuButton}>
+        <MenuIcon />
+      </IconButton>
+      <Drawer
+        open={isOpen}
+        onClose={() => handleOpen(false)}
+        classes={{ paper: props.classes.paperOverride }}
+      >
+        <div className={styles.sidebar}>
+          <IconButton onClick={() => handleOpen(false)} className={styles.menuButton}>
+            <MenuIcon />
+          </IconButton>
+          <MyItem button className={styles.aboutTerraItem}>
+            <Typography className={styles.aboutTerraText}>About Terra</Typography>
+          </MyItem>
+          <MyItem button className={styles.featuresItem}>
+            <Typography className={styles.featuresText}>Features</Typography>
+          </MyItem>
+          <MyItem button className={styles.helpItem}>
+            <Typography className={styles.helpText}>Help</Typography>
+          </MyItem>
+          <MyItem button className={styles.contactItem}>
+            <Typography className={styles.contactText}>Contact Us</Typography>
+          </MyItem>
+        </div>
+      </Drawer>
+    </div>
+  );
+};
 
 Sidebar.propTypes = {
   classes: PropTypes.func,
