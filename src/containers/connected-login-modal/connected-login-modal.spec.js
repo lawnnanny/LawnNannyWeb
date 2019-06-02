@@ -20,7 +20,7 @@ describe('Connected Login Modal', () => {
   it('has the correct props', () => {
     const wrapper = shallow(<LoginModal store={store} />);
 
-    const dispatchProps = ['closeLoginModal', 'swapModal'];
+    const dispatchProps = ['toggleLoginModal', 'swapModal'];
 
     dispatchProps.forEach((prop) => {
       expect(wrapper.props()[prop]).toEqual(expect.any(Function));
