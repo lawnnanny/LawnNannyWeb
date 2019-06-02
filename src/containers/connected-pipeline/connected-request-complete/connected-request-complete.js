@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import requestCompleteComponent from '../../../pages/pipeline/request-complete';
+import RequestCompleteComponent from '../../../pages/pipeline/request-complete';
 
 const mapStateToProps = state => ({
   pageInProgress: state.requests.requestInProgress,
@@ -8,4 +8,4 @@ const mapStateToProps = state => ({
 export default connect(
   () => mapStateToProps,
   {},
-)(requestCompleteComponent);
+)(RequestCompleteComponent);

@@ -18,10 +18,10 @@ const styling = {
   },
 };
 
-export const loginModal = props => (
+export const LoginModal = props => (
   <div className={styles.loginDiv}>
     <Button size="large" onClick={props.closeLoginModal} className={styles.loginButton}>
-        Login
+      Login
     </Button>
     <Dialog
       open={props.isLoginModalOpen}
@@ -53,7 +53,7 @@ export const loginModal = props => (
         <div className={styles.signupDiv}>
           <h2 className={styles.signupText}>Dont have an account?</h2>
           <Button onClick={props.swapModal} className={styles.signupButton}>
-              Sign Up
+            Sign Up
           </Button>
         </div>
       </DialogContent>
@@ -67,17 +67,17 @@ export const loginModal = props => (
     </Dialog>
   </div>
 );
-loginModal.propTypes = {
+LoginModal.propTypes = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
   closeLoginModal: PropTypes.func,
 };
 
-loginModal.defaultProps = {
+LoginModal.defaultProps = {
   swapModal: PropTypes.func,
   isLoginModalOpen: PropTypes.func,
   classes: PropTypes.func,
   closeLoginModal: PropTypes.func,
 };
-export default withStyles(styling)(loginModal);
+export default withStyles(styling)(LoginModal);

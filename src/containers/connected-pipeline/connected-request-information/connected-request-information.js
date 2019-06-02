@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Actions from '../../../reducers/actions';
-import requestInformationComponent from '../../../pages/pipeline/request-information';
+import RequestInformationComponent from '../../../pages/pipeline/request-information';
 
 const mapStateToProps = state => ({
   requests: state.requests,
@@ -26,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestInformationComponent);
+)(RequestInformationComponent);
