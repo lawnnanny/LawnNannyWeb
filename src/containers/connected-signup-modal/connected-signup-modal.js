@@ -1,26 +1,18 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import SignupModalComponent from '../../components/signup-modal';
-import Actions from '../../reducers/actions';
+import * as signupModalActions from '../../actions/signup-modal';
 
 const mapStateToProps = state => ({
   isSignupModalOpen: state.login.isSignupModalOpen,
 });
-const mapDispatchToProps = dispatch => ({
-  closeSignupModal: () => {
-    const action = {
-      type: Actions.login.closeSignupModal,
-    };
-
-    dispatch(action);
-  },
-  swapModal: () => {
-    const action = {
-      type: Actions.login.swapModal,
-    };
-
-    dispatch(action);
-  },
-});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      ...signupModalActions,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

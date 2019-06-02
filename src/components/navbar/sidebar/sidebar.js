@@ -31,7 +31,7 @@ export const Sidebar = (props) => {
   return (
     <div>
       <IconButton onClick={() => handleOpen(true)} className={styles.menuButton}>
-        <MenuIcon />
+        <MenuIcon styling={styles.menuIcon} />
       </IconButton>
       <Drawer
         open={isOpen}
@@ -40,7 +40,7 @@ export const Sidebar = (props) => {
       >
         <div className={styles.sidebar}>
           <IconButton onClick={() => handleOpen(false)} className={styles.menuButton}>
-            <MenuIcon />
+            <MenuIcon styling={styles.menuIcon} />
           </IconButton>
           <MyItem button className={styles.aboutTerraItem}>
             <Typography className={styles.aboutTerraText}>About Terra</Typography>
