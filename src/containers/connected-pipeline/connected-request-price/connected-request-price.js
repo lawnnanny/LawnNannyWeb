@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as pipelineActions from '../../../actions/pipeline';
-import requestPriceComponent from '../../../pages/pipeline/request-price';
+import RequestPriceComponent from '../../../pages/pipeline/request-price';
 
 const mapStateToProps = state => ({
   typeOfRequest: state.requests.selection,
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestPriceComponent);
+)(RequestPriceComponent);

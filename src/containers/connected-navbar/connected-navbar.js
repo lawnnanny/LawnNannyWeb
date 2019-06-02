@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as navbarActions from '../../actions/navbar';
-import navBarComponent from '../../components/navbar';
+import NavbarComponent from '../../components/navbar';
 
 const mapStateToProps = state => ({
   isLoggedIn: state.login.isLoggedIn,
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(navBarComponent);
+)(NavbarComponent);

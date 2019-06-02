@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as pipelineActions from '../../../actions/pipeline';
-import requestLocationComponent from '../../../pages/pipeline/request-location';
+import RequestLocationComponent from '../../../pages/pipeline/request-location';
 
 const mapStateToProps = state => ({
   requests: state.requests,
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestLocationComponent);
+)(RequestLocationComponent);

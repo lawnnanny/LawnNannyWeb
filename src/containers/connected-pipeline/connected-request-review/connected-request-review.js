@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as pipelineActions from '../../../actions/pipeline';
-import requestReviewComponent from '../../../pages/pipeline/request-review';
+import RequestReviewComponent from '../../../pages/pipeline/request-review';
 
 const mapStateToProps = state => ({
   requests: state.requests,
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(requestReviewComponent);
+)(RequestReviewComponent);

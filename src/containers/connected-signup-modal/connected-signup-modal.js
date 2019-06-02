@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import signupModalComponent from '../../components/signup-modal';
+import SignupModalComponent from '../../components/signup-modal';
 import * as signupModalActions from '../../actions/signup-modal';
 
 const mapStateToProps = state => ({
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(signupModalComponent);
+)(SignupModalComponent);

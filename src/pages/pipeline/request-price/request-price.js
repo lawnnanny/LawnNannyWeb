@@ -32,7 +32,7 @@ const styling = () => ({
   },
 });
 
-export const requestPrice = (props) => {
+export const RequestPrice = (props) => {
   let buttonString = 'Continue';
   if (props.pageInProgress > 3) {
     buttonString = 'Save';
@@ -109,17 +109,17 @@ export const requestPrice = (props) => {
     </Grid>
   );
 };
-requestPrice.propTypes = {
+RequestPrice.propTypes = {
   pageInProgress: PropTypes.number,
   requestPrice: PropTypes.number,
   setRequestPrice: PropTypes.func,
   requestInProgress: PropTypes.number,
 };
 
-requestPrice.defaultProps = {
+RequestPrice.defaultProps = {
   pageInProgress: 0,
   requestPrice: 0,
   setRequestPrice: PropTypes.func,
   requestInProgress: 0,
 };
-export default withStyles(styling)(requestPrice);
+export default withStyles(styling)(RequestPrice);
