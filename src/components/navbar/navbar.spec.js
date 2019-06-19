@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import NavBar from './';
 import Sidebar from './sidebar';
 import LoginModalComponent from '../../containers/connected-login-modal';
-import SignupModalComponent from '../../containers/connected-signup-modal';
+import SignupModalComponent from '../../containers/connected-register';
 
 describe('navBar', () => {
   let wrapper;

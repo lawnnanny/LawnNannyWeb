@@ -6,7 +6,7 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 import PropTypes from 'prop-types';
 import styles from './navbar.module.css';
 import LoginModal from '../../containers/connected-login-modal';
-import SignupModal from '../../containers/connected-signup-modal';
+import SignupModal from '../../containers/connected-register';
 import Sidebar from './sidebar';
 
 const HomeIcon = props => (
