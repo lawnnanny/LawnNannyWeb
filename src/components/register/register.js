@@ -10,7 +10,9 @@ export const SignupModal = props => (
   <div>
     <Button className={styles.registerButton}>Register</Button>
     <Dialog open={props.isSignupModalOpen} >
-      <DialogTitle />
+      <DialogTitle>
+        Get Started
+      </DialogTitle>
     </Dialog>
   </div>
 );

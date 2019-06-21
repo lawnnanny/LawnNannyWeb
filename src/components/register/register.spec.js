@@ -29,6 +29,10 @@ describe('signup component', () => {
       it('Should be the correct type', () => {
         expect(dialogTitle.type()).toEqual(DialogTitle);
       });
+      it('Should have a title', () => {
+        const textArea = dialogTitle.childAt(0);
+        expect(textArea.text()).toEqual('Get Started');
+      });
     });
   });
 });
