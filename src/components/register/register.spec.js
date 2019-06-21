@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { Formik } from 'formik';
 import Signup from './';
 
 const registar = shallow(<Signup />);
@@ -32,6 +33,12 @@ describe('signup component', () => {
       it('Should have a title', () => {
         const textArea = dialogTitle.childAt(0);
         expect(textArea.text()).toEqual('Get Started');
+      });
+    });
+    describe('Formik form', () => {
+      const formikForm = dialog.childAt(1);
+      it('Should be the correct type', () => {
+        expect(formikForm.type()).toEqual(Formik);
       });
     });
   });

@@ -1,6 +1,7 @@
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { Formik } from 'formik';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -13,6 +14,7 @@ export const SignupModal = props => (
       <DialogTitle>
         Get Started
       </DialogTitle>
+      <Formik />
     </Dialog>
   </div>
 );
