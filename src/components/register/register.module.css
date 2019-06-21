@@ -16,9 +16,10 @@
 }
 .Menu {
 }
-.loginButton {
+.registerButton {
+  background-color: black !important;
   color: white !important;
-  border: 1px solid white !important;
+  font-size: 1.4em !important;
 }
 .menuItem {
 }

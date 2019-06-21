@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Signup from './';
 
 const registar = shallow(<Signup />);
@@ -23,6 +24,11 @@ describe('signup component', () => {
   describe('Dialog', () => {
     const dialog = registar.childAt(1);
     it('Should be a dialog', () => expect(dialog.type()).toEqual(Dialog));
-    it('Should have an open prop', () => expect(dialog.props().open).toBeTruthy());
+    describe('Dialog title', () => {
+      const dialogTitle = dialog.childAt(0);
+      it('Should be the correct type', () => {
+        expect(dialogTitle.type()).toEqual(DialogTitle);
+      });
+    });
   });
 });
