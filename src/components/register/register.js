@@ -1,29 +1,49 @@
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { Formik } from 'formik';
+import DialogContent from '@material-ui/core/DialogContent';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import { Formik, Form } from 'formik';
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import styles from './register.module.css';
 
-export const SignupModal = props => (
-  <div>
-    <Button className={styles.registerButton}>Register</Button>
-    <Dialog open={props.isSignupModalOpen} >
-      <DialogTitle>
-        Get Started
-      </DialogTitle>
-      <Formik />
-    </Dialog>
-  </div>
-);
+export const SignupModal = () => {
+  const [modalOpen, setModalOpen] = useState(true);
 
-SignupModal.propTypes = {
-  isSignupModalOpen: PropTypes.func,
+  const toggleModal = () => {
+    modalOpen(!setModalOpen);
+  };
+
+  return (
+    <div>
+      <Button onClick={toggleModal} className={styles.registerButton}>Register</Button>
+      <Dialog open={modalOpen} >
+        <DialogTitle>
+          Get Started
+        </DialogTitle>
+        <DialogContent>
+          <Formik
+            render={() => (
+              <div>
+                <Form>
+                  <InputLabel />
+                  <Input />
+                  <InputLabel />
+                  <Input />
+                  <InputLabel />
+                  <Input />
+                  <InputLabel />
+                  <Input />
+                </Form>
+              </div>
+            )}
+          />
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
 };
 
-SignupModal.defaultProps = {
-  isSignupModalOpen: PropTypes.func,
-};
 export default SignupModal;
