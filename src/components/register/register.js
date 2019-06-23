@@ -3,6 +3,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 import React, { useState } from 'react';
 import styles from './register.module.css';
@@ -14,6 +15,13 @@ export const SignupModal = () => {
     modalOpen(!setModalOpen);
   };
 
+  const SignupSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(2, 'Too Short!')
+      .max(30, 'Too Long!')
+      .required('Required'),
+  });
+
   return (
     <div>
       <Button onClick={toggleModal} className={styles.registerButton}>Register</Button>
@@ -23,6 +31,7 @@ export const SignupModal = () => {
         </DialogTitle>
         <DialogContent>
           <Formik
+            validationSchema={SignupSchema}
             render={() => (
               <div>
                 <Form>

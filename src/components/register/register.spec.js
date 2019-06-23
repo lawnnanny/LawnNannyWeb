@@ -5,8 +5,11 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Chance from 'chance';
 
 import Signup from './';
+
+const chance = Chance.Chance();
 
 const registar = shallow(<Signup />);
 
@@ -54,6 +57,36 @@ describe('signup component', () => {
 
         it('Should be the correct type', () => {
           expect(formikForm.type()).toEqual(Formik);
+        });
+
+        describe('Validation Schema', () => {
+          const validationSchema = formikForm.props().validationSchema;
+          const validMinFirstName = chance.string({ length: 2 });
+          const validMaxFirstName = chance.string({ length: 30 });
+
+          const invalidSmallFirstName = chance.string({ length: 1 });
+          const invalidLargeFirstName = chance.string({ length: 31 });
+
+          it('Should exist', () => {
+            expect(validationSchema).toBeTruthy();
+          });
+
+          it('Should validate a first name', async () => {
+            const result1 = await validationSchema.isValid({ firstName: validMinFirstName });
+            const result2 = await validationSchema.isValid({ firstName: validMaxFirstName });
+            expect(result1 && result2).toEqual(true);
+          });
+
+          it('Should not validate a invalid first name', async () => {
+            const result1 = await validationSchema.isValid({ firstName: invalidSmallFirstName });
+            const result2 = await validationSchema.isValid({ firstName: invalidLargeFirstName });
+            expect(result1 || result2).toEqual(false);
+          });
+
+          it('Should not validate object without required first name', async () => {
+            const result = await validationSchema.isValid({ someOtherField: chance.string() });
+            expect(result).toEqual(false);
+          });
         });
 
         describe('form', () => {
