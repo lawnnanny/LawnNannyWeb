@@ -2,9 +2,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import React, { useState } from 'react';
 import styles from './register.module.css';
@@ -28,14 +26,14 @@ export const SignupModal = () => {
             render={() => (
               <div>
                 <Form>
-                  <InputLabel />
-                  <Input />
-                  <InputLabel />
-                  <Input />
-                  <InputLabel />
-                  <Input />
-                  <InputLabel />
-                  <Input />
+                  <Field type="firstName" name="email" />
+                  <ErrorMessage name="firstName" component="div" />
+                  <Field type="lastName" name="email" />
+                  <ErrorMessage name="lastName" component="div" />
+                  <Field type="email" name="email" />
+                  <ErrorMessage name="email" component="div" />
+                  <Field type="password" name="email" />
+                  <ErrorMessage name="password" component="div" />
                 </Form>
               </div>
             )}

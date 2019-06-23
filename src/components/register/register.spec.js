@@ -4,9 +4,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Signup from './';
 
@@ -74,57 +72,59 @@ describe('signup component', () => {
           describe('first name input label', () => {
             console.log(renderedForm.debug());
             const firstNameLabel = childAtForm(0);
+
             it('Should be the correct type', () => {
-              expect(firstNameLabel.type()).toEqual(InputLabel);
+              expect(firstNameLabel.type()).toEqual(Field);
             });
           });
 
           describe('first name input', () => {
             const firstNameInput = childAtForm(1);
+            console.log(firstNameInput.debug());
             it('Should be the correct type', () => {
-              expect(firstNameInput.type()).toEqual(Input);
+              expect(firstNameInput.type()).toEqual(ErrorMessage);
             });
           });
 
           describe('last name input label', () => {
             const lastNameLabel = childAtForm(2);
             it('Should be the correct type', () => {
-              expect(lastNameLabel.type()).toEqual(InputLabel);
+              expect(lastNameLabel.type()).toEqual(Field);
             });
           });
 
           describe('last name input', () => {
             const lastNameInput = childAtForm(3);
             it('Should be the correct type', () => {
-              expect(lastNameInput.type()).toEqual(Input);
+              expect(lastNameInput.type()).toEqual(ErrorMessage);
             });
           });
 
           describe('email input label', () => {
             const emailLabel = childAtForm(4);
             it('Should be the correct type', () => {
-              expect(emailLabel.type()).toEqual(InputLabel);
+              expect(emailLabel.type()).toEqual(Field);
             });
           });
 
           describe('email input', () => {
             const emailInput = childAtForm(5);
             it('Should be the correct type', () => {
-              expect(emailInput.type()).toEqual(Input);
+              expect(emailInput.type()).toEqual(ErrorMessage);
             });
           });
 
           describe('password input label', () => {
             const passwordLabel = childAtForm(6);
             it('Should be the correct type', () => {
-              expect(passwordLabel.type()).toEqual(InputLabel);
+              expect(passwordLabel.type()).toEqual(Field);
             });
           });
 
           describe('password input', () => {
             const passwordInput = childAtForm(7);
             it('Should be the correct type', () => {
-              expect(passwordInput.type()).toEqual(Input);
+              expect(passwordInput.type()).toEqual(ErrorMessage);
             });
           });
         });
