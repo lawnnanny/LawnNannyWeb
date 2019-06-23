@@ -6,6 +6,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Chance from 'chance';
+import * as _ from 'lodash';
 
 import Signup from './';
 
@@ -63,28 +64,100 @@ describe('signup component', () => {
           const validationSchema = formikForm.props().validationSchema;
           const validMinFirstName = chance.string({ length: 2 });
           const validMaxFirstName = chance.string({ length: 30 });
-
+          const validMinLastName = chance.string({ length: 2 });
+          const validMaxLastName = chance.string({ length: 30 });
           const invalidSmallFirstName = chance.string({ length: 1 });
           const invalidLargeFirstName = chance.string({ length: 31 });
+          const invalidSmallLastName = chance.string({ length: 1 });
+          const invalidLargeLastName = chance.string({ length: 31 });
+          const passwordTooShort = chance.string({ length: 7 });
+          const passwordLongEnough = chance.string({ length: 8 });
+
+          const validResponse = {
+            firstName: chance.bool() ? validMaxFirstName : validMinFirstName,
+            lastName: chance.bool() ? validMaxLastName : validMinLastName,
+            email: chance.email(),
+            password: passwordLongEnough,
+          };
+
+          const invalidLongResponse = {
+            firstName: invalidLargeFirstName,
+            lastName: invalidLargeLastName,
+            email: chance.string(),
+            password: passwordTooShort,
+          };
+
+          const invalidShortResponse = {
+            firstName: invalidSmallFirstName,
+            lastName: invalidSmallLastName,
+            email: chance.string(),
+            password: passwordTooShort,
+          };
+
+          console.log(invalidShortResponse);
 
           it('Should exist', () => {
             expect(validationSchema).toBeTruthy();
           });
 
-          it('Should validate a first name', async () => {
-            const result1 = await validationSchema.isValid({ firstName: validMinFirstName });
-            const result2 = await validationSchema.isValid({ firstName: validMaxFirstName });
-            expect(result1 && result2).toEqual(true);
+          it('Should validate a valid request', async () => {
+            const result = await validationSchema.isValid(validResponse);
+            expect(result).toEqual(true);
           });
 
-          it('Should not validate a invalid first name', async () => {
-            const result1 = await validationSchema.isValid({ firstName: invalidSmallFirstName });
-            const result2 = await validationSchema.isValid({ firstName: invalidLargeFirstName });
-            expect(result1 || result2).toEqual(false);
+          it('Should not validate if the first name is too long', async (done) => {
+            validationSchema.validateAt('firstName', invalidLongResponse)
+              .catch((error) => {
+                expect(error.message).toEqual('First name is too long!');
+                done();
+              });
+          });
+
+          it('Should not validate if the last name is too long', async (done) => {
+            validationSchema.validateAt('lastName', invalidLongResponse)
+              .catch((error) => {
+                expect(error.message).toEqual('Last name is too long!');
+                done();
+              });
+          });
+
+          it('Should not validate if the first name is too short', async (done) => {
+            validationSchema.validateAt('firstName', invalidShortResponse)
+              .catch((error) => {
+                expect(error.message).toEqual('First name is too short!');
+                done();
+              });
+          });
+
+          it('Should not validate if the last name is too short', async (done) => {
+            validationSchema.validateAt('lastName', invalidShortResponse)
+              .catch((error) => {
+                expect(error.message).toEqual('Last name is too short!');
+                done();
+              });
           });
 
           it('Should not validate object without required first name', async () => {
-            const result = await validationSchema.isValid({ someOtherField: chance.string() });
+            const filteredObject = _.omit(validResponse, ['firstName']);
+            const result = await validationSchema.isValid(filteredObject);
+            expect(result).toEqual(false);
+          });
+
+          it('Should not validate object without required last name', async () => {
+            const filteredObject = _.omit(validResponse, ['lastName']);
+            const result = await validationSchema.isValid(filteredObject);
+            expect(result).toEqual(false);
+          });
+
+          it('Should not validate object without required email', async () => {
+            const filteredObject = _.omit(validResponse, ['email']);
+            const result = await validationSchema.isValid(filteredObject);
+            expect(result).toEqual(false);
+          });
+
+          it('Should not validate object without required password', async () => {
+            const filteredObject = _.omit(validResponse, ['password']);
+            const result = await validationSchema.isValid(filteredObject);
             expect(result).toEqual(false);
           });
         });
@@ -93,17 +166,13 @@ describe('signup component', () => {
           const form = formikForm.props().render();
           const renderedForm = shallow(form).childAt(0);
 
-          console.log(renderedForm.debug());
-
           it('Should be the correct type', () => {
             expect(renderedForm.type()).toEqual(Form);
           });
 
           const childAtForm = childAt(renderedForm);
-          console.log(renderedForm.debug());
 
           describe('first name input label', () => {
-            console.log(renderedForm.debug());
             const firstNameLabel = childAtForm(0);
 
             it('Should be the correct type', () => {
@@ -113,7 +182,6 @@ describe('signup component', () => {
 
           describe('first name input', () => {
             const firstNameInput = childAtForm(1);
-            console.log(firstNameInput.debug());
             it('Should be the correct type', () => {
               expect(firstNameInput.type()).toEqual(ErrorMessage);
             });

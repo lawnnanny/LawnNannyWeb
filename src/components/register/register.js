@@ -15,11 +15,27 @@ export const SignupModal = () => {
     modalOpen(!setModalOpen);
   };
 
+  const firstNameIsTooShortMessage = 'First name is too short!';
+  const firstNameISTooLongMessage = 'First name is too long!';
+  const lastNameIsTooShortMessage = 'Last name is too short!';
+  const lastNameISTooLongMessage = 'Last name is too long!';
+  const passwordIsTooShortMessage = 'Password is too short!';
+
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(30, 'Too Long!')
+      .min(2, firstNameIsTooShortMessage)
+      .max(30, firstNameISTooLongMessage)
       .required('Required'),
+    lastName: Yup.string()
+      .min(2, lastNameIsTooShortMessage)
+      .max(30, lastNameISTooLongMessage)
+      .required('Required'),
+    email: Yup.string()
+      .email()
+      .required('Required'),
+    password: Yup.string()
+      .min(8, passwordIsTooShortMessage)
+      .required(),
   });
 
   return (
