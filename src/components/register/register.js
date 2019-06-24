@@ -48,7 +48,8 @@ export const SignupModal = () => {
         <DialogContent>
           <Formik
             validationSchema={SignupSchema}
-            render={() => (
+          >
+            {() => (
               <div>
                 <Form>
                   <Field type="firstName" name="email" />
@@ -62,7 +63,7 @@ export const SignupModal = () => {
                 </Form>
               </div>
             )}
-          />
+          </Formik>
         </DialogContent>
       </Dialog>
     </div>

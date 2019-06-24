@@ -94,8 +94,6 @@ describe('signup component', () => {
             password: passwordTooShort,
           };
 
-          console.log(invalidShortResponse);
-
           it('Should exist', () => {
             expect(validationSchema).toBeTruthy();
           });
@@ -163,8 +161,7 @@ describe('signup component', () => {
         });
 
         describe('form', () => {
-          const form = formikForm.props().render();
-          const renderedForm = shallow(form).childAt(0);
+          const renderedForm = formikForm.dive().childAt(0).childAt(0);
 
           it('Should be the correct type', () => {
             expect(renderedForm.type()).toEqual(Form);
