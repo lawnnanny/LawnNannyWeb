@@ -47,18 +47,24 @@ export const SignupModal = () => {
         </DialogTitle>
         <DialogContent>
           <Formik
+            initialValues={{
+              firstName: '',
+              lastName: '',
+              email: '',
+              password: '',
+            }}
             validationSchema={SignupSchema}
           >
             {() => (
               <div>
                 <Form>
-                  <Field type="firstName" name="email" />
+                  <Field type="text" name="firstName" />
                   <ErrorMessage name="firstName" component="div" />
-                  <Field type="lastName" name="email" />
+                  <Field type="text" name="lastName" />
                   <ErrorMessage name="lastName" component="div" />
                   <Field type="email" name="email" />
                   <ErrorMessage name="email" component="div" />
-                  <Field type="password" name="email" />
+                  <Field type="password" name="password" />
                   <ErrorMessage name="password" component="div" />
                 </Form>
               </div>

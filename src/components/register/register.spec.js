@@ -60,6 +60,19 @@ describe('signup component', () => {
           expect(formikForm.type()).toEqual(Formik);
         });
 
+        describe('Initial values', () => {
+          it('Should have the correct intial values', () => {
+            const initialValues = formikForm.props().initialValues;
+            expect(initialValues).toEqual(
+              {
+                firstName: '',
+                lastName: '',
+                email: '',
+                password: '',
+              });
+          });
+        });
+
         describe('Validation Schema', () => {
           const validationSchema = formikForm.props().validationSchema;
           const validMinFirstName = chance.string({ length: 2 });
