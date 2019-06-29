@@ -8,6 +8,8 @@ import * as Yup from 'yup';
 import React, { useState } from 'react';
 import styles from './register.module.css';
 
+import { LawnnannyapiBridge } from '../../lawnnanny-back-end-adapter-bridges/LawnnannyApiBridge';
+
 export const SignupModal = () => {
   const [modalOpen, setModalOpen] = useState(true);
 
@@ -54,6 +56,11 @@ export const SignupModal = () => {
               password: '',
             }}
             validationSchema={SignupSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              LawnnannyapiBridge.registerUser(values).then(() => {
+                setSubmitting(false);
+              });
+            }}
           >
             {() => (
               <div>

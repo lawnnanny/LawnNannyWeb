@@ -7,14 +7,17 @@ import DialogContent from '@material-ui/core/DialogContent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Chance from 'chance';
 import * as _ from 'lodash';
-
 import Signup from './';
+
+import { LawnnannyapiBridge } from '../../lawnnanny-back-end-adapter-bridges/LawnnannyApiBridge';
 
 const chance = Chance.Chance();
 
 const registar = shallow(<Signup />);
 
 const childAt = element => child => element.childAt(child);
+
+jest.mock('../../lawnnanny-back-end-adapter-bridges/LawnnannyApiBridge');
 
 describe('signup component', () => {
   it('Should be a div', () => {
@@ -61,8 +64,8 @@ describe('signup component', () => {
         });
 
         describe('Initial values', () => {
+          const initialValues = formikForm.props().initialValues;
           it('Should have the correct intial values', () => {
-            const initialValues = formikForm.props().initialValues;
             expect(initialValues).toEqual(
               {
                 firstName: '',
@@ -70,6 +73,17 @@ describe('signup component', () => {
                 email: '',
                 password: '',
               });
+          });
+        });
+
+        describe('onSubmit', () => {
+          LawnnannyapiBridge.registerUser.mockImplementationOnce(() => Promise.resolve());
+          const onSubmitfunction = formikForm.props().onSubmit;
+          const testValues = {};
+
+          it('Should be called with the correct params', () => {
+            onSubmitfunction(testValues, { setSubmitting: () => {} });
+            expect(LawnnannyapiBridge.registerUser).toBeCalledWith(testValues);
           });
         });
 

@@ -1,3 +1,5 @@
-export const registerUser = () => {};
+export const LawnnannyapiBridge = {
+  registerUser: () => Promise.resolve(),
+};
 
-export default registerUser;
+export default LawnnannyapiBridge;
