@@ -81,9 +81,11 @@ describe('signup component', () => {
           const onSubmitfunction = formikForm.props().onSubmit;
           const testValues = {};
 
-          it('Should be called with the correct params', () => {
-            onSubmitfunction(testValues, { setSubmitting: () => {} });
+          it('Should be called with the correct params', async () => {
+            const mockSetSubitting = jest.fn();
+            await onSubmitfunction(testValues, { setSubmitting: mockSetSubitting });
             expect(LawnnannyapiBridge.registerUser).toBeCalledWith(testValues);
+            expect(mockSetSubitting).toBeCalledWith(false);
           });
         });
 

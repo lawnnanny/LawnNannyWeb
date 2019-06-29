@@ -56,10 +56,9 @@ export const SignupModal = () => {
               password: '',
             }}
             validationSchema={SignupSchema}
-            onSubmit={(values, { setSubmitting }) => {
-              LawnnannyapiBridge.registerUser(values).then(() => {
-                setSubmitting(false);
-              });
+            onSubmit={async (values, { setSubmitting }) => {
+              await LawnnannyapiBridge.registerUser(values);
+              return setSubmitting(false);
             }}
           >
             {() => (
