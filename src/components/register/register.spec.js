@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -8,12 +8,15 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Chance from 'chance';
 import * as _ from 'lodash';
 import Signup from './';
+import { FormController } from '../FormControler/FormController';
 
 import { LawnnannyapiBridge } from '../../lawnnanny-back-end-adapter-bridges/LawnnannyApiBridge';
 
 const chance = Chance.Chance();
 
 const registar = shallow(<Signup />);
+
+const mountedRegistrar = mount(<Signup />);
 
 const childAt = element => child => element.childAt(child);
 
@@ -191,7 +194,6 @@ describe('signup component', () => {
 
         describe('form', () => {
           const renderedForm = formikForm.dive().childAt(0).childAt(0);
-
           it('Should be the correct type', () => {
             expect(renderedForm.type()).toEqual(Form);
           });
@@ -199,10 +201,22 @@ describe('signup component', () => {
           const childAtForm = childAt(renderedForm);
 
           describe('first name Field', () => {
-            const firstNameLabel = childAtForm(0);
-
+            const firstNameField = childAtForm(0);
+            const firstNameFieldProps = firstNameField.props();
             it('Should be the correct type', () => {
-              expect(firstNameLabel.type()).toEqual(Field);
+              expect(firstNameField.type()).toEqual(Field);
+            });
+            it('Should have the correct type prop', () => {
+              expect(firstNameFieldProps.type).toEqual('text');
+            });
+
+            it('Should have the correct name prop', () => {
+              expect(firstNameFieldProps.name).toEqual('firstName');
+            });
+
+            describe('FormController', () => {
+              const mountedFirstNameFormController = mountedRegistrar.find('#firstNameFormController');
+              expect(mountedFirstNameFormController.type()).toEqual(FormController);
             });
           });
 

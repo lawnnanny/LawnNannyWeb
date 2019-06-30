@@ -1,13 +1,12 @@
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
+import * as Yup from 'yup';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-
-import React, { useState } from 'react';
+import { FormController } from '../FormControler/FormController';
 import styles from './register.module.css';
-
 import { LawnnannyapiBridge } from '../../lawnnanny-back-end-adapter-bridges/LawnnannyApiBridge';
 
 export const SignupModal = () => {
@@ -64,7 +63,13 @@ export const SignupModal = () => {
             {() => (
               <div>
                 <Form>
-                  <Field type="text" name="firstName" />
+                  <Field
+                    type="text"
+                    name="firstName"
+                    render={({ field, form }) => (
+                      <div><FormController id="firstNameFormController" form={form} field={field} /></div>
+                    )}
+                  />
                   <ErrorMessage name="firstName" component="div" />
                   <Field type="text" name="lastName" />
                   <ErrorMessage name="lastName" component="div" />
