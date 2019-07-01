@@ -8,6 +8,7 @@ import { FormController } from './FormController';
 
 const chance = Chance.Chance();
 
+const testLabelName = 'testLabelName';
 const testFieldName = 'testFieldName';
 const testError = 'testError';
 const testTouched = 'testTouched';
@@ -21,31 +22,35 @@ const generateRandomFormProp = () => {
   return {};
 };
 
-const generateRandomFieldmProp = () => testFieldName;
+const generateRandomLabelmProp = () => testLabelName;
 
-const fieldName = generateRandomFieldmProp();
+const labelName = generateRandomLabelmProp();
 
-const formControllerWithOrWithoutError = shallow(<FormController
-  form={generateRandomFormProp()}
-  field={{
-    name: testFieldName,
-  }}
-/>);
+const formControllerWithOrWithoutError = shallow(
+  <FormController
+    label="testLabelName"
+    form={generateRandomFormProp()}
+    field={{
+      name: testFieldName,
+    }}
+  />,
+);
 
-const formControllerWithError = shallow(<FormController
-  form={{
-    touched,
-    errors,
-  }}
-  field={{
-    name: testFieldName,
-  }}
-/>);
+const formControllerWithError = shallow(
+  <FormController
+    type="password"
+    label="testLabelName"
+    form={{
+      touched,
+      errors,
+    }}
+    field={{
+      name: testFieldName,
+    }}
+  />,
+);
 
-const formControllerWithNoErrors = shallow(<FormController
-  form={{}}
-  field={{}}
-/>);
+const formControllerWithNoErrors = shallow(<FormController form={{}} field={{}} />);
 
 describe('FormController', () => {
   it('Should be the right type', () => {
@@ -67,8 +72,8 @@ describe('FormController', () => {
         expect(inputLabel.type()).toEqual(InputLabel);
       });
 
-      it('Should have the fieldName', () => {
-        expect(labelWithOrWithoutError.childAt(0).debug()).toEqual(fieldName);
+      it('Should have the label', () => {
+        expect(labelWithOrWithoutError.childAt(0).debug()).toEqual(labelName);
       });
     });
 
@@ -78,6 +83,10 @@ describe('FormController', () => {
       const inputWithoutError = formControlWithNoError.childAt(1);
       it('Should be the correct type', () => {
         expect(inputWithOrWithoutError.type()).toEqual(Input);
+      });
+
+      it('The type prop should be a password', () => {
+        expect(inputWithError.props().type).toEqual('password');
       });
 
       it('The error prop should be true', () => {

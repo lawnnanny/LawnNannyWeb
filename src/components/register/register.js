@@ -41,11 +41,11 @@ export const SignupModal = () => {
 
   return (
     <div>
-      <Button onClick={toggleModal} className={styles.registerButton}>Register</Button>
-      <Dialog open={modalOpen} >
-        <DialogTitle>
-          Get Started
-        </DialogTitle>
+      <Button onClick={toggleModal} className={styles.registerButton}>
+        Register
+      </Button>
+      <Dialog open={modalOpen}>
+        <DialogTitle>Get Started</DialogTitle>
         <DialogContent>
           <Formik
             initialValues={{
@@ -64,18 +64,64 @@ export const SignupModal = () => {
               <div>
                 <Form>
                   <Field
-                    type="text"
                     name="firstName"
                     render={({ field, form }) => (
-                      <div><FormController id="firstNameFormController" form={form} field={field} /></div>
+                      <div>
+                        <FormController
+                          type="text"
+                          label="first name"
+                          id="firstNameFormController"
+                          form={form}
+                          field={field}
+                        />
+                      </div>
                     )}
                   />
                   <ErrorMessage name="firstName" component="div" />
-                  <Field type="text" name="lastName" />
+                  <Field
+                    name="lastName"
+                    render={({ field, form }) => (
+                      <div>
+                        <FormController
+                          type="text"
+                          label="last name"
+                          id="lastNameFormController"
+                          form={form}
+                          field={field}
+                        />
+                      </div>
+                    )}
+                  />
                   <ErrorMessage name="lastName" component="div" />
-                  <Field type="email" name="email" />
+                  <Field
+                    name="email"
+                    render={({ field, form }) => (
+                      <div>
+                        <FormController
+                          type="email"
+                          label="email"
+                          id="emailFormController"
+                          form={form}
+                          field={field}
+                        />
+                      </div>
+                    )}
+                  />
                   <ErrorMessage name="email" component="div" />
-                  <Field type="password" name="password" />
+                  <Field
+                    name="password"
+                    render={({ field, form }) => (
+                      <div>
+                        <FormController
+                          type="password"
+                          label="password"
+                          id="passwordFormController"
+                          form={form}
+                          field={field}
+                        />
+                      </div>
+                    )}
+                  />
                   <ErrorMessage name="password" component="div" />
                 </Form>
               </div>

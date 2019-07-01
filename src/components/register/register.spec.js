@@ -69,13 +69,12 @@ describe('signup component', () => {
         describe('Initial values', () => {
           const initialValues = formikForm.props().initialValues;
           it('Should have the correct intial values', () => {
-            expect(initialValues).toEqual(
-              {
-                firstName: '',
-                lastName: '',
-                email: '',
-                password: '',
-              });
+            expect(initialValues).toEqual({
+              firstName: '',
+              lastName: '',
+              email: '',
+              password: '',
+            });
           });
         });
 
@@ -136,35 +135,31 @@ describe('signup component', () => {
           });
 
           it('Should not validate if the first name is too long', async (done) => {
-            validationSchema.validateAt('firstName', invalidLongResponse)
-              .catch((error) => {
-                expect(error.message).toEqual('First name is too long!');
-                done();
-              });
+            validationSchema.validateAt('firstName', invalidLongResponse).catch((error) => {
+              expect(error.message).toEqual('First name is too long!');
+              done();
+            });
           });
 
           it('Should not validate if the last name is too long', async (done) => {
-            validationSchema.validateAt('lastName', invalidLongResponse)
-              .catch((error) => {
-                expect(error.message).toEqual('Last name is too long!');
-                done();
-              });
+            validationSchema.validateAt('lastName', invalidLongResponse).catch((error) => {
+              expect(error.message).toEqual('Last name is too long!');
+              done();
+            });
           });
 
           it('Should not validate if the first name is too short', async (done) => {
-            validationSchema.validateAt('firstName', invalidShortResponse)
-              .catch((error) => {
-                expect(error.message).toEqual('First name is too short!');
-                done();
-              });
+            validationSchema.validateAt('firstName', invalidShortResponse).catch((error) => {
+              expect(error.message).toEqual('First name is too short!');
+              done();
+            });
           });
 
           it('Should not validate if the last name is too short', async (done) => {
-            validationSchema.validateAt('lastName', invalidShortResponse)
-              .catch((error) => {
-                expect(error.message).toEqual('Last name is too short!');
-                done();
-              });
+            validationSchema.validateAt('lastName', invalidShortResponse).catch((error) => {
+              expect(error.message).toEqual('Last name is too short!');
+              done();
+            });
           });
 
           it('Should not validate object without required first name', async () => {
@@ -193,7 +188,10 @@ describe('signup component', () => {
         });
 
         describe('form', () => {
-          const renderedForm = formikForm.dive().childAt(0).childAt(0);
+          const renderedForm = formikForm
+            .dive()
+            .childAt(0)
+            .childAt(0);
           it('Should be the correct type', () => {
             expect(renderedForm.type()).toEqual(Form);
           });
@@ -206,17 +204,29 @@ describe('signup component', () => {
             it('Should be the correct type', () => {
               expect(firstNameField.type()).toEqual(Field);
             });
-            it('Should have the correct type prop', () => {
-              expect(firstNameFieldProps.type).toEqual('text');
-            });
 
             it('Should have the correct name prop', () => {
               expect(firstNameFieldProps.name).toEqual('firstName');
             });
 
             describe('FormController', () => {
-              const mountedFirstNameFormController = mountedRegistrar.find('#firstNameFormController');
-              expect(mountedFirstNameFormController.type()).toEqual(FormController);
+              const mountedfirstNameFormController = mountedRegistrar.find(
+                '#firstNameFormController',
+              );
+              const formControllerProps = mountedfirstNameFormController.props();
+              expect(mountedfirstNameFormController.type()).toEqual(FormController);
+
+              it('Should have the correct label prop', () => {
+                expect(formControllerProps.label).toEqual('first name');
+              });
+
+              it('Should have the correct id prop', () => {
+                expect(formControllerProps.id).toEqual('firstNameFormController');
+              });
+
+              it('Should have the correct type prop', () => {
+                expect(formControllerProps.type).toEqual('text');
+              });
             });
           });
 
@@ -228,9 +238,34 @@ describe('signup component', () => {
           });
 
           describe('last name Field', () => {
-            const lastNameLabel = childAtForm(2);
+            const lastNameField = childAtForm(2);
+            const lastNameFieldProps = lastNameField.props();
             it('Should be the correct type', () => {
-              expect(lastNameLabel.type()).toEqual(Field);
+              expect(lastNameField.type()).toEqual(Field);
+            });
+
+            it('Should have the correct name prop', () => {
+              expect(lastNameFieldProps.name).toEqual('lastName');
+            });
+
+            describe('FormController', () => {
+              const mountedlastNameFormController = mountedRegistrar.find(
+                '#lastNameFormController',
+              );
+              const formControllerProps = mountedlastNameFormController.props();
+              expect(mountedlastNameFormController.type()).toEqual(FormController);
+
+              it('Should have the correct label prop', () => {
+                expect(formControllerProps.label).toEqual('last name');
+              });
+
+              it('Should have the correct id prop', () => {
+                expect(formControllerProps.id).toEqual('lastNameFormController');
+              });
+
+              it('Should have the correct type prop', () => {
+                expect(formControllerProps.type).toEqual('text');
+              });
             });
           });
 
@@ -242,9 +277,32 @@ describe('signup component', () => {
           });
 
           describe('email Field', () => {
-            const emailLabel = childAtForm(4);
+            const emailField = childAtForm(4);
+            const emailFieldProps = emailField.props();
             it('Should be the correct type', () => {
-              expect(emailLabel.type()).toEqual(Field);
+              expect(emailField.type()).toEqual(Field);
+            });
+
+            it('Should have the correct name prop', () => {
+              expect(emailFieldProps.name).toEqual('email');
+            });
+
+            describe('FormController', () => {
+              const mountedemailFormController = mountedRegistrar.find('#emailFormController');
+              const formControllerProps = mountedemailFormController.props();
+              expect(mountedemailFormController.type()).toEqual(FormController);
+
+              it('Should have the correct label prop', () => {
+                expect(formControllerProps.label).toEqual('email');
+              });
+
+              it('Should have the correct id prop', () => {
+                expect(formControllerProps.id).toEqual('emailFormController');
+              });
+
+              it('Should have the correct type prop', () => {
+                expect(formControllerProps.type).toEqual('email');
+              });
             });
           });
 
@@ -256,9 +314,34 @@ describe('signup component', () => {
           });
 
           describe('password Field', () => {
-            const passwordLabel = childAtForm(6);
+            const passwordField = childAtForm(6);
+            const passwordFieldProps = passwordField.props();
             it('Should be the correct type', () => {
-              expect(passwordLabel.type()).toEqual(Field);
+              expect(passwordField.type()).toEqual(Field);
+            });
+
+            it('Should have the correct name prop', () => {
+              expect(passwordFieldProps.name).toEqual('password');
+            });
+
+            describe('FormController', () => {
+              const mountedpasswordFormController = mountedRegistrar.find(
+                '#passwordFormController',
+              );
+              const formControllerProps = mountedpasswordFormController.props();
+              expect(mountedpasswordFormController.type()).toEqual(FormController);
+
+              it('Should have the correct label prop', () => {
+                expect(formControllerProps.label).toEqual('password');
+              });
+
+              it('Should have the correct id prop', () => {
+                expect(formControllerProps.id).toEqual('passwordFormController');
+              });
+
+              it('Should have the correct type prop', () => {
+                expect(formControllerProps.type).toEqual('password');
+              });
             });
           });
 

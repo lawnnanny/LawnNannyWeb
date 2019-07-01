@@ -7,12 +7,16 @@ import Input from '@material-ui/core/Input';
 export const FormController = props => (
   <div>
     <FormControl>
-      <InputLabel>
-        {props.field.name}
-      </InputLabel>
+      <InputLabel>{props.label}</InputLabel>
       <Input
-        error={(props.form.touched && props.form.touched[props.field.name]
-        && props.form.errors[props.field.name] && true) !== undefined}
+        type={props.type}
+        {...props.field}
+        error={
+          (props.form.touched &&
+            props.form.touched[props.field.name] &&
+            props.form.errors[props.field.name] &&
+            true) !== undefined
+        }
       />
     </FormControl>
   </div>
@@ -37,6 +41,5 @@ FormController.defaultProps = {
     name: '',
   }),
 };
-
 
 export default FormController;
