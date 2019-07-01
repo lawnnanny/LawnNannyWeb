@@ -1,46 +1,15 @@
-.forgotDiv {
-}
-.forgotText {
-}
-.closeButton {
-}
-.closeIcon {
-}
-.modalAction {
-}
-.Dialog {
-}
-.header {
-}
-.loginDiv {
-}
-.Menu {
-}
 .registerButton {
   background-color: black !important;
   color: white !important;
   font-size: 1.4em !important;
 }
-.menuItem {
+.form {
+  display: flex !important;
+  flex-direction: column !important;
 }
-.modal {
+.fieldRow {
+  display: flex !important;
 }
-.loginContent {
-}
-.modalHeader {
-}
-.headerText {
-}
-.modalButton {
-}
-
-.dynamicSegment {
-}
-.formSegment {
-}
-.signupDiv {
-}
-.signupText {
-}
-.signupButton {
+.fieldColumn {
+  width: 100% !important;
 }
