@@ -46,10 +46,15 @@ describe('signup component', () => {
       it('Should be the correct type', () => {
         expect(dialogTitle.type()).toEqual(DialogTitle);
       });
-
-      it('Should have a title', () => {
-        const textArea = dialogTitle.childAt(0);
-        expect(textArea.text()).toEqual('Get Started');
+      describe('Dialog title text', () => {
+        const dialogTitleText = dialogTitle.childAt(0);
+        it('Should be the correct type', () => {
+          expect(dialogTitleText.type()).toEqual('h1');
+        });
+        it('Should have a title', () => {
+          const textArea = dialogTitleText.childAt(0);
+          expect(textArea.text()).toEqual('Get Started');
+        });
       });
     });
     describe('Dialog Content', () => {
@@ -383,6 +388,16 @@ describe('signup component', () => {
               it('Should be the correct type', () => {
                 expect(passwordInput.type()).toEqual(ErrorMessage);
               });
+            });
+          });
+          describe('button', () => {
+            const button = childAtForm(3);
+            it('Should be the correct type', () => {
+              expect(button.type()).toEqual('button');
+            });
+            it('Should have the correct text', () => {
+              const textArea = button.childAt(0);
+              expect(textArea.text()).toEqual('Sign Up');
             });
           });
         });

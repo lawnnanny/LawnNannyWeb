@@ -3,13 +3,40 @@
   color: white !important;
   font-size: 1.4em !important;
 }
+.title {
+  align-self: center !important;
+}
+.titleText {
+  font-size: 1.5em !important;
+}
+.content {
+  padding: 0 32px 32px !important;
+}
 .form {
   display: flex !important;
   flex-direction: column !important;
 }
-.fieldRow {
+.fieldDivRow {
   display: flex !important;
 }
-.fieldColumn {
+.fieldDiv {
   width: 100% !important;
+  margin-right: 1em !important;
+  margin-top: 1.5em !important;
+}
+.fieldFirstName {
+  margin-right: 1em !important;
+}
+.controller {
+  width: inherit !important;
+}
+.button {
+  width: 100% !important;
+  background-color: #29c902 !important;
+  margin-top: 1.5em !important;
+  border: 0 !important;
+  height: 2em !important;
+  font-size: 1.5em !important;
+  border-radius: 5px !important;
+  color: white !important;
 }

@@ -1,3 +1,6 @@
+.controller {
+  width: inherit !important;
+}
 .input {
 }
 .label {

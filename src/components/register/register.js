@@ -33,15 +33,20 @@ export const SignupModal = (props) => {
       .min(8, passwordIsTooShortMessage)
       .required(),
   });
-
   return (
     <div>
       <Button onClick={props.toggleSignupModal} className={styles.registerButton}>
         Register
       </Button>
-      <Dialog open={props.isSignupModalOpen} onClose={props.toggleSignupModal}>
-        <DialogTitle>Get Started</DialogTitle>
-        <DialogContent>
+      <Dialog
+        className={styles.dialog}
+        open={props.isSignupModalOpen}
+        onClose={props.toggleSignupModal}
+      >
+        <DialogTitle className={styles.title}>
+          <h1 className={styles.titleText}>Get Started</h1>
+        </DialogTitle>
+        <DialogContent className={styles.content}>
           <Formik
             initialValues={{
               firstName: '',
@@ -58,78 +63,73 @@ export const SignupModal = (props) => {
             {() => (
               <div>
                 <Form className={styles.form}>
-                  <div id="nameFields" className={styles.fieldRow}>
-                    <div id="firstnameField">
+                  <div id="nameFields" className={styles.fieldDivRow}>
+                    <div id="firstnameField" className={styles.fieldFirstName}>
                       <Field
                         name="firstName"
                         render={({ field, form }) => (
-                          <div>
-                            <FormController
-                              type="text"
-                              label="first name"
-                              id="firstNameFormController"
-                              form={form}
-                              field={field}
-                            />
-                          </div>
+                          <FormController
+                            type="text"
+                            label="first name"
+                            id="firstNameFormController"
+                            form={form}
+                            field={field}
+                          />
                         )}
                       />
                       <ErrorMessage name="firstName" component="div" />
                     </div>
-                    <div id="lastnameField">
+                    <div id="lastnameField" className={styles.fieldLastName}>
                       <Field
                         name="lastName"
                         render={({ field, form }) => (
-                          <div>
-                            <FormController
-                              type="text"
-                              label="last name"
-                              id="lastNameFormController"
-                              form={form}
-                              field={field}
-                            />
-                          </div>
+                          <FormController
+                            type="text"
+                            label="last name"
+                            id="lastNameFormController"
+                            form={form}
+                            field={field}
+                          />
                         )}
                       />
                       <ErrorMessage name="lastName" component="div" />
                     </div>
                   </div>
-                  <div id="emailField" className={styles.fieldColumn}>
+                  <div id="emailField" className={styles.fieldDiv}>
                     <Field
                       className={styles.fieldColumn}
                       name="email"
                       render={({ field, form }) => (
-                        <div>
-                          <FormController
-                            type="email"
-                            label="email"
-                            id="emailFormController"
-                            form={form}
-                            field={field}
-                          />
-                        </div>
+                        <FormController
+                          type="email"
+                          label="email"
+                          id="emailFormController"
+                          form={form}
+                          field={field}
+                        />
                       )}
                     />
                     <ErrorMessage name="email" component="div" />
                   </div>
-                  <div id="passwordField" className={styles.fieldColumn}>
+                  <div id="passwordField" className={styles.fieldDiv}>
                     <Field
                       className={styles.fieldColumn}
                       name="password"
                       render={({ field, form }) => (
-                        <div>
-                          <FormController
-                            type="password"
-                            label="password"
-                            id="passwordFormController"
-                            form={form}
-                            field={field}
-                          />
-                        </div>
+                        <FormController
+                          type="password"
+                          label="password"
+                          id="passwordFormController"
+                          form={form}
+                          field={field}
+                        />
                       )}
                     />
                     <ErrorMessage name="password" component="div" />
                   </div>
+                  <button className={styles.button} type="submit">
+                    Sign Up
+                  </button>
                 </Form>
               </div>
             )}

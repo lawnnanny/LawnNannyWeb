@@ -52,50 +52,44 @@ const formControllerWithError = shallow(
 
 const formControllerWithNoErrors = shallow(<FormController form={{}} field={{}} />);
 
-describe('FormController', () => {
+describe('FormControl', () => {
+  const formControl = formControllerWithOrWithoutError;
+  const formControlWithError = formControllerWithError;
+  const formControlWithNoError = formControllerWithNoErrors;
   it('Should be the right type', () => {
-    expect(formControllerWithOrWithoutError.type()).toEqual('div');
+    expect(formControl.type()).toEqual(FormControl);
   });
 
-  describe('FormControl', () => {
-    const formControl = formControllerWithOrWithoutError.childAt(0);
-    const formControlWithError = formControllerWithError.childAt(0);
-    const formControlWithNoError = formControllerWithNoErrors.childAt(0);
-    it('Should be the right type', () => {
-      expect(formControl.type()).toEqual(FormControl);
+  describe('InputLabel', () => {
+    const inputLabel = formControl.childAt(0);
+    const labelWithOrWithoutError = formControl.childAt(0);
+    it('Should be the correct type', () => {
+      expect(inputLabel.type()).toEqual(InputLabel);
     });
 
-    describe('InputLabel', () => {
-      const inputLabel = formControl.childAt(0);
-      const labelWithOrWithoutError = formControl.childAt(0);
-      it('Should be the correct type', () => {
-        expect(inputLabel.type()).toEqual(InputLabel);
-      });
+    it('Should have the label', () => {
+      expect(labelWithOrWithoutError.childAt(0).debug()).toEqual(labelName);
+    });
+  });
 
-      it('Should have the label', () => {
-        expect(labelWithOrWithoutError.childAt(0).debug()).toEqual(labelName);
-      });
+  describe('Input', () => {
+    const inputWithError = formControlWithError.childAt(1);
+    const inputWithOrWithoutError = formControl.childAt(1);
+    const inputWithoutError = formControlWithNoError.childAt(1);
+    it('Should be the correct type', () => {
+      expect(inputWithOrWithoutError.type()).toEqual(Input);
     });
 
-    describe('Input', () => {
-      const inputWithError = formControlWithError.childAt(1);
-      const inputWithOrWithoutError = formControl.childAt(1);
-      const inputWithoutError = formControlWithNoError.childAt(1);
-      it('Should be the correct type', () => {
-        expect(inputWithOrWithoutError.type()).toEqual(Input);
-      });
+    it('The type prop should be a password', () => {
+      expect(inputWithError.props().type).toEqual('password');
+    });
 
-      it('The type prop should be a password', () => {
-        expect(inputWithError.props().type).toEqual('password');
-      });
+    it('The error prop should be true', () => {
+      expect(inputWithError.props().error).toEqual(true);
+    });
 
-      it('The error prop should be true', () => {
-        expect(inputWithError.props().error).toEqual(true);
-      });
-
-      it('The error prop should be false', () => {
-        expect(inputWithoutError.props().error).toEqual(false);
-      });
+    it('The error prop should be false', () => {
+      expect(inputWithoutError.props().error).toEqual(false);
     });
   });
 });

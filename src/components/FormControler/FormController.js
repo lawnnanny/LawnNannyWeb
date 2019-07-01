@@ -6,30 +6,28 @@ import Input from '@material-ui/core/Input';
 import styles from './FormController.module.css';
 
 export const FormController = props => (
-  <div>
-    <FormControl>
-      <InputLabel
-        className={
-          props.form.touched[props.field.name] && props.form.errors[props.field.name]
-            ? styles.labelError
-            : styles.label
-        }
-      >
-        {props.label}
-      </InputLabel>
-      <Input
-        className={styles.input}
-        type={props.type}
-        {...props.field}
-        error={
-          (props.form.touched &&
-            props.form.touched[props.field.name] &&
-            props.form.errors[props.field.name] &&
-            true) !== undefined
-        }
-      />
-    </FormControl>
-  </div>
+  <FormControl className={styles.controller}>
+    <InputLabel
+      className={
+        props.form.touched[props.field.name] && props.form.errors[props.field.name]
+          ? styles.labelError
+          : styles.label
+      }
+    >
+      {props.label}
+    </InputLabel>
+    <Input
+      className={styles.input}
+      type={props.type}
+      {...props.field}
+      error={
+        (props.form.touched &&
+          props.form.touched[props.field.name] &&
+          props.form.errors[props.field.name] &&
+          true) !== undefined
+      }
+    />
+  </FormControl>
 );
 
 FormController.propTypes = {
