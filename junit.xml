@@ -1,145 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="153" failures="0" time="19.164">
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="6.385" tests="7">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.054">
+<testsuites name="jest tests" tests="153" failures="0" time="20.806">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="5.985" tests="7">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.029">
     </testcase>
-    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.005">
+    <testcase classname="RequestInformation is styled as a container Grid" name="RequestInformation is styled as a container Grid" time="0.002">
     </testcase>
-    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.006">
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.004">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.003">
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.011">
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.004">
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.003">
     </testcase>
-    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.003">
+    <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="6.568" tests="14">
-    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.038">
+  <testsuite name="RequestSelection" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="6.156" tests="14">
+    <testcase classname="RequestSelection is wrapped in a Grid Container" name="RequestSelection is wrapped in a Grid Container" time="0.023">
     </testcase>
-    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.006">
+    <testcase classname="RequestSelection is styled as a container Grid" name="RequestSelection is styled as a container Grid" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.022">
+    <testcase classname="RequestSelection BreadcrumbRow is a Breadcrumb Row" name="RequestSelection BreadcrumbRow is a Breadcrumb Row" time="0.005">
     </testcase>
     <testcase classname="RequestSelection BreadcrumbRow is styled as a Grid item" name="RequestSelection BreadcrumbRow is styled as a Grid item" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.004">
+    <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestSelection BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.003">
     </testcase>
     <testcase classname="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" name="RequestSelection BreadcrumbRow BreadcrumbComponent has a selection" time="0.003">
     </testcase>
     <testcase classname="RequestSelection HeaderSegment is a Header Segment" name="RequestSelection HeaderSegment is a Header Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.005">
+    <testcase classname="RequestSelection HeaderSegment Header is a Header" name="RequestSelection HeaderSegment Header is a Header" time="0.002">
     </testcase>
     <testcase classname="RequestSelection HeaderSegment Header SubHeader is a SubHeader" name="RequestSelection HeaderSegment Header SubHeader is a SubHeader" time="0.004">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.003">
+    <testcase classname="RequestSelection LawnMowingSegment is a LawnMowing Segment" name="RequestSelection LawnMowingSegment is a LawnMowing Segment" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.004">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" name="RequestSelection LawnMowingSegment LawnMowingComponent is a LawnMowing" time="0.003">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.007">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" name="RequestSelection LawnMowingSegment LawnMowingComponent has the correct title" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.003">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" name="RequestSelection LawnMowingSegment LawnMowingComponent has an imageURL" time="0.002">
     </testcase>
-    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.018">
+    <testcase classname="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" name="RequestSelection LawnMowingSegment LawnMowingComponent has a onClick that uses function from redux" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="8.234" tests="8">
-    <testcase classname="navBar is an app bar" name="navBar is an app bar" time="0.023">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:45" time="1.756" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.012">
     </testcase>
-    <testcase classname="navBar leftnav container is a div" name="navBar leftnav container is a div" time="0.007">
+  </testsuite>
+  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:47" time="1.024" tests="1">
+    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.006">
     </testcase>
-    <testcase classname="navBar leftnav container sidebar is a sidebar" name="navBar leftnav container sidebar is a sidebar" time="0.002">
+  </testsuite>
+  <testsuite name="Connected Navbar Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="10.348" tests="1">
+    <testcase classname="Connected Navbar Page has the correct props" name="Connected Navbar Page has the correct props" time="0.022">
     </testcase>
-    <testcase classname="navBar leftnav container link is a link" name="navBar leftnav container link is a link" time="0.001">
+  </testsuite>
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:48" time="1.164" tests="1">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.007">
     </testcase>
-    <testcase classname="navBar leftnav container link home button is a icon button" name="navBar leftnav container link home button is a icon button" time="0.002">
+  </testsuite>
+  <testsuite name="navBar" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="10.395" tests="8">
+    <testcase classname="navBar is an app bar" name="navBar is an app bar" time="0.026">
     </testcase>
-    <testcase classname="navBar right nav contianer is a div" name="navBar right nav contianer is a div" time="0.003">
+    <testcase classname="navBar leftnav container is a div" name="navBar leftnav container is a div" time="0.006">
     </testcase>
-    <testcase classname="navBar right nav contianer loginModal is a login modal" name="navBar right nav contianer loginModal is a login modal" time="0.003">
+    <testcase classname="navBar leftnav container sidebar is a sidebar" name="navBar leftnav container sidebar is a sidebar" time="0.003">
+    </testcase>
+    <testcase classname="navBar leftnav container link is a link" name="navBar leftnav container link is a link" time="0.003">
+    </testcase>
+    <testcase classname="navBar leftnav container link home button is a icon button" name="navBar leftnav container link home button is a icon button" time="0.003">
+    </testcase>
+    <testcase classname="navBar right nav contianer is a div" name="navBar right nav contianer is a div" time="0.002">
+    </testcase>
+    <testcase classname="navBar right nav contianer loginModal is a login modal" name="navBar right nav contianer loginModal is a login modal" time="0.002">
     </testcase>
     <testcase classname="navBar right nav contianer signupModal is a signup modal" name="navBar right nav contianer signupModal is a signup modal" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="8.124" tests="8">
-    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.031">
+  <testsuite name="RequestReview" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="10.49" tests="8">
+    <testcase classname="RequestReview is wrapped in a Grid Container" name="RequestReview is wrapped in a Grid Container" time="0.038">
     </testcase>
-    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.009">
+    <testcase classname="RequestReview contains three rows" name="RequestReview contains three rows" time="0.01">
     </testcase>
-    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.002">
+    <testcase classname="RequestReview BreadcrumbRow is a Breadcrumb Row" name="RequestReview BreadcrumbRow is a Breadcrumb Row" time="0.003">
     </testcase>
-    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.003">
+    <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestReview BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
     </testcase>
     <testcase classname="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" name="RequestReview BreadcrumbRow BreadcrumbComponent has a selection" time="0.003">
     </testcase>
     <testcase classname="RequestReview DynamicDisplay Row It is a row" name="RequestReview DynamicDisplay Row It is a row" time="0.002">
     </testcase>
-    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.002">
+    <testcase classname="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" name="RequestReview DynamicDisplay Row It contains a DynamicDisplay Component is a dynamic display component" time="0.003">
     </testcase>
     <testcase classname="RequestReview Submit Row It is a row" name="RequestReview Submit Row It is a row" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="Connected Navbar Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="8.226" tests="1">
-    <testcase classname="Connected Navbar Page has the correct props" name="Connected Navbar Page has the correct props" time="0.029">
+  <testsuite name="signup component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="10.65" tests="53">
+    <testcase classname="signup component Should be a div" name="signup component Should be a div" time="0.005">
     </testcase>
-  </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:42" time="2.274" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.017">
+    <testcase classname="signup component signup button Should be a button" name="signup component signup button Should be a button" time="0.003">
     </testcase>
-  </testsuite>
-  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:42" time="2.789" tests="1">
-    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.01">
-    </testcase>
-  </testsuite>
-  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:43" time="1.088" tests="1">
-    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.013">
-    </testcase>
-  </testsuite>
-  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:43" time="1.127" tests="1">
-    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.014">
-    </testcase>
-  </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="9.631" tests="1">
-    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.021">
-    </testcase>
-  </testsuite>
-  <testsuite name="describe" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:44" time="1.268" tests="6">
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.007">
-    </testcase>
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.003">
-    </testcase>
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0">
-    </testcase>
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
-    </testcase>
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
-    </testcase>
-    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="signup component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:35" time="9.997" tests="53">
-    <testcase classname="signup component Should be a div" name="signup component Should be a div" time="0.007">
-    </testcase>
-    <testcase classname="signup component signup button Should be a button" name="signup component signup button Should be a button" time="0.001">
-    </testcase>
-    <testcase classname="signup component signup button Should say Registar" name="signup component signup button Should say Registar" time="0.002">
+    <testcase classname="signup component signup button Should say Registar" name="signup component signup button Should say Registar" time="0.001">
     </testcase>
     <testcase classname="signup component Dialog Should be a dialog" name="signup component Dialog Should be a dialog" time="0.001">
     </testcase>
     <testcase classname="signup component Dialog Dialog title Should be the correct type" name="signup component Dialog Dialog title Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog title Dialog title text Should be the correct type" name="signup component Dialog Dialog title Dialog title text Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog title Dialog title text Should be the correct type" name="signup component Dialog Dialog title Dialog title text Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog title Dialog title text Should have a title" name="signup component Dialog Dialog title Dialog title text Should have a title" time="0.001">
+    <testcase classname="signup component Dialog Dialog title Dialog title text Should have a title" name="signup component Dialog Dialog title Dialog title text Should have a title" time="0">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Should be the correct type" name="signup component Dialog Dialog Content Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form Should be the correct type" name="signup component Dialog Dialog Content Formik form Should be the correct type" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form Should be the correct type" name="signup component Dialog Dialog Content Formik form Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form Initial values Should have the correct intial values" name="signup component Dialog Dialog Content Formik form Initial values Should have the correct intial values" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form Initial values Should have the correct intial values" name="signup component Dialog Dialog Content Formik form Initial values Should have the correct intial values" time="0.002">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form onSubmit Should be called with the correct params" name="signup component Dialog Dialog Content Formik form onSubmit Should be called with the correct params" time="0.003">
     </testcase>
@@ -147,7 +125,7 @@
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should validate a valid request" name="signup component Dialog Dialog Content Formik form Validation Schema Should validate a valid request" time="0.041">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the first name is too long" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the first name is too long" time="0.003">
+    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the first name is too long" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the first name is too long" time="0.002">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the last name is too long" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the last name is too long" time="0.001">
     </testcase>
@@ -155,31 +133,31 @@
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the last name is too short" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate if the last name is too short" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required first name" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required first name" time="0.01">
+    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required first name" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required first name" time="0.003">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required last name" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required last name" time="0.002">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required email" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required email" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required password" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required password" time="0.002">
+    <testcase classname="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required password" name="signup component Dialog Dialog Content Formik form Validation Schema Should not validate object without required password" time="0.003">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form Should be the correct type" name="signup component Dialog Dialog Content Formik form form Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row Should be the correct type" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should be the correct type" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should have the correct name prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field Should have the correct name prop" time="0.002">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct label prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct label prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct id prop" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct id prop" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct type prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form name row first name Div first name Field FormController Should have the correct type prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div first name ErrorMessage Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row first name Div first name ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row first name Div first name ErrorMessage Should be the correct type" time="0.001">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row last name Div Should be the correct type" time="0">
     </testcase>
@@ -189,9 +167,9 @@
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct label prop" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct id prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct id prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct type prop" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form name row last name Div last name Field FormController Should have the correct type prop" time="0.001">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form name row last name Div last name ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form name row last name Div last name ErrorMessage Should be the correct type" time="0">
     </testcase>
@@ -199,171 +177,193 @@
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field Should be the correct type" name="signup component Dialog Dialog Content Formik form form email Div email Field Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form email Div email Field Should have the correct name prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form email Div email Field Should have the correct name prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct label prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct label prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct id prop" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct id prop" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct type prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form email Div email Field FormController Should have the correct type prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form email Div email ErrorMessage Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form email Div email ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form email Div email ErrorMessage Should be the correct type" time="0.001">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form password Div Should be the correct type" name="signup component Dialog Dialog Content Formik form form password Div Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field Should be the correct type" name="signup component Dialog Dialog Content Formik form form password Div password Field Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field Should be the correct type" name="signup component Dialog Dialog Content Formik form form password Div password Field Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form password Div password Field Should have the correct name prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field Should have the correct name prop" name="signup component Dialog Dialog Content Formik form form password Div password Field Should have the correct name prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct label prop" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct label prop" name="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct label prop" time="0">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct id prop" name="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct id prop" time="0">
     </testcase>
     <testcase classname="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct type prop" name="signup component Dialog Dialog Content Formik form form password Div password Field FormController Should have the correct type prop" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form password Div password ErrorMessage Should be the correct type" time="0.001">
+    <testcase classname="signup component Dialog Dialog Content Formik form form password Div password ErrorMessage Should be the correct type" name="signup component Dialog Dialog Content Formik form form password Div password ErrorMessage Should be the correct type" time="0">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form button Should be the correct type" name="signup component Dialog Dialog Content Formik form form button Should be the correct type" time="0">
+    <testcase classname="signup component Dialog Dialog Content Formik form form button Should be the correct type" name="signup component Dialog Dialog Content Formik form form button Should be the correct type" time="0.001">
     </testcase>
-    <testcase classname="signup component Dialog Dialog Content Formik form form button Should have the correct text" name="signup component Dialog Dialog Content Formik form form button Should have the correct text" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:44" time="0.858" tests="6">
-    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.007">
-    </testcase>
-    <testcase classname="Home Page shadowRow is a shadow Row" name="Home Page shadowRow is a shadow Row" time="0.003">
-    </testcase>
-    <testcase classname="Home Page shadowRow header container is a grid" name="Home Page shadowRow header container is a grid" time="0.002">
-    </testcase>
-    <testcase classname="Home Page shadowRow header container header is a h1" name="Home Page shadowRow header container header is a h1" time="0.003">
-    </testcase>
-    <testcase classname="Home Page shadowRow button Container is a grid" name="Home Page shadowRow button Container is a grid" time="0.003">
-    </testcase>
-    <testcase classname="Home Page shadowRow button Container button is a grid" name="Home Page shadowRow button Container button is a grid" time="0.003">
+    <testcase classname="signup component Dialog Dialog Content Formik form form button Should have the correct text" name="signup component Dialog Dialog Content Formik form form button Should have the correct text" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="0.964" tests="1">
-    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.003">
+  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:45" time="4.909" tests="1">
+    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.038">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestLocation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="1.004" tests="1">
-    <testcase classname="Connected RequestLocation Page has the correct props" name="Connected RequestLocation Page has the correct props" time="0.006">
+  <testsuite name="Connected RequestSelection Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:49" time="0.973" tests="1">
+    <testcase classname="Connected RequestSelection Page has the correct props" name="Connected RequestSelection Page has the correct props" time="0.009">
     </testcase>
   </testsuite>
-  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="1.085" tests="6">
-    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.011">
+  <testsuite name="RequestInformation" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:49" time="1.155" tests="6">
+    <testcase classname="RequestInformation is wrapped in a Grid Container" name="RequestInformation is wrapped in a Grid Container" time="0.016">
     </testcase>
-    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.004">
+    <testcase classname="RequestInformation contains two rows" name="RequestInformation contains two rows" time="0.005">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.008">
+    <testcase classname="RequestInformation BreadcrumbRow is a Breadcrumb Row" name="RequestInformation BreadcrumbRow is a Breadcrumb Row" time="0.002">
     </testcase>
-    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.009">
+    <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" name="RequestInformation BreadcrumbRow BreadcrumbComponent is a breadcrumb" time="0.002">
     </testcase>
     <testcase classname="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" name="RequestInformation BreadcrumbRow BreadcrumbComponent has a selection" time="0.002">
     </testcase>
     <testcase classname="RequestInformation FormRow is a Form Row" name="RequestInformation FormRow is a Form Row" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="1.001" tests="6">
-    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.022">
-    </testcase>
-    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.004">
-    </testcase>
-    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.005">
-    </testcase>
-    <testcase classname="requestOption button avatar is a avatar" name="requestOption button avatar is a avatar" time="0.002">
-    </testcase>
-    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.003">
-    </testcase>
-    <testcase classname="requestOption button icon is icon" name="requestOption button icon is icon" time="0.002">
+  <testsuite name="Connected Login Modal" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:49" time="0.982" tests="1">
+    <testcase classname="Connected Login Modal has the correct props" name="Connected Login Modal has the correct props" time="0.014">
     </testcase>
   </testsuite>
-  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="1.015" tests="1">
+  <testsuite name="describe" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:49" time="1.196" tests="6">
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.004">
+    </testcase>
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
+    </testcase>
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
+    </testcase>
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0">
+    </testcase>
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
+    </testcase>
+    <testcase classname="describe is wrapped in the correct wrapper" name="describe is wrapped in the correct wrapper" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:39" time="11.956" tests="1">
+    <testcase classname="App renders the routes component" name="App renders the routes component" time="0.019">
+    </testcase>
+  </testsuite>
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:49" time="1.349" tests="1">
     <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="0.972" tests="5">
-    <testcase classname="step is a link" name="step is a link" time="0.008">
+  <testsuite name="Connected RequestInformation Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:50" time="0.936" tests="1">
+    <testcase classname="Connected RequestInformation Page has the correct props" name="Connected RequestInformation Page has the correct props" time="0.019">
     </testcase>
-    <testcase classname="step information column is a grid" name="step information column is a grid" time="0.004">
+  </testsuite>
+  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:50" time="0.839" tests="7">
+    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.007">
     </testcase>
-    <testcase classname="step information column icon is a icon" name="step information column icon is a icon" time="0.004">
+    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.004">
     </testcase>
-    <testcase classname="step information column bars is a div" name="step information column bars is a div" time="0.003">
+    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.003">
+    </testcase>
+    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.002">
+    </testcase>
+    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="requestOption" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:50" time="0.929" tests="6">
+    <testcase classname="requestOption is wrapped in a Link" name="requestOption is wrapped in a Link" time="0.007">
+    </testcase>
+    <testcase classname="requestOption is the correct link" name="requestOption is the correct link" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button is a button" name="requestOption button is a button" time="0.002">
+    </testcase>
+    <testcase classname="requestOption button avatar is a avatar" name="requestOption button avatar is a avatar" time="0.009">
+    </testcase>
+    <testcase classname="requestOption button header is a header" name="requestOption button header is a header" time="0.001">
+    </testcase>
+    <testcase classname="requestOption button icon is icon" name="requestOption button icon is icon" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:50" time="0.897" tests="6">
+    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.006">
+    </testcase>
+    <testcase classname="Home Page shadowRow is a shadow Row" name="Home Page shadowRow is a shadow Row" time="0.004">
+    </testcase>
+    <testcase classname="Home Page shadowRow header container is a grid" name="Home Page shadowRow header container is a grid" time="0.002">
+    </testcase>
+    <testcase classname="Home Page shadowRow header container header is a h1" name="Home Page shadowRow header container header is a h1" time="0.002">
+    </testcase>
+    <testcase classname="Home Page shadowRow button Container is a grid" name="Home Page shadowRow button Container is a grid" time="0.002">
+    </testcase>
+    <testcase classname="Home Page shadowRow button Container button is a grid" name="Home Page shadowRow button Container button is a grid" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="step" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:50" time="0.863" tests="5">
+    <testcase classname="step is a link" name="step is a link" time="0.009">
+    </testcase>
+    <testcase classname="step information column is a grid" name="step information column is a grid" time="0.003">
+    </testcase>
+    <testcase classname="step information column icon is a icon" name="step information column icon is a icon" time="0.013">
+    </testcase>
+    <testcase classname="step information column bars is a div" name="step information column bars is a div" time="0.002">
     </testcase>
     <testcase classname="step information column label is a label" name="step information column label is a label" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Home Page" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:45" time="1.322" tests="1">
-    <testcase classname="Home Page is wrapped in a Grid" name="Home Page is wrapped in a Grid" time="0.006">
+  <testsuite name="registar form component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.78" tests="1">
+    <testcase classname="registar form component Should be a div" name="registar form component Should be a div" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="toggle login modal action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="0.779" tests="2">
+  <testsuite name="redux action with data" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.704" tests="1">
+    <testcase classname="redux action with data should return a lambda that returns an object with data and action type" name="redux action with data should return a lambda that returns an object with data and action type" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login Component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.905" tests="3">
+    <testcase classname="Login Component Should be a div" name="Login Component Should be a div" time="0.004">
+    </testcase>
+    <testcase classname="Login Component Should have a button" name="Login Component Should have a button" time="0.004">
+    </testcase>
+    <testcase classname="Login Component Register button Should say register" name="Login Component Register button Should say register" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="toggle login modal action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.728" tests="2">
+    <testcase classname="toggle login modal action should return a lambda that returns an object with the toggleSignupModal action" name="toggle login modal action should return a lambda that returns an object with the toggleSignupModal action" time="0.009">
+    </testcase>
+    <testcase classname="swap modal action should return a lambda that returns an object with the swapModal action" name="swap modal action should return a lambda that returns an object with the swapModal action" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="setRequestPrice action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.721" tests="4">
+    <testcase classname="setRequestPrice action should return a lambda that returns an object with data and setRequestPrice action" name="setRequestPrice action should return a lambda that returns an object with data and setRequestPrice action" time="0.004">
+    </testcase>
+    <testcase classname="setRequestInformation action should return a lambda that returns an object with data and setRequestInformation action" name="setRequestInformation action should return a lambda that returns an object with data and setRequestInformation action" time="0.001">
+    </testcase>
+    <testcase classname="setTypeOfRequest should return a lambda that returns an object with data and setTypeOfRequest action type" name="setTypeOfRequest should return a lambda that returns an object with data and setTypeOfRequest action type" time="0">
+    </testcase>
+    <testcase classname="requestInProgress action should return a lambda that returns an object with data and requestInProgress action type" name="requestInProgress action should return a lambda that returns an object with data and requestInProgress action type" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="toggle login modal action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.753" tests="2">
     <testcase classname="toggle login modal action should return a lambda that returns an object with the toggleLoginModal action" name="toggle login modal action should return a lambda that returns an object with the toggleLoginModal action" time="0.004">
     </testcase>
     <testcase classname="swap modal action should return a lambda that returns an object with the swapModal action" name="swap modal action should return a lambda that returns an object with the swapModal action" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Login Component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="0.861" tests="3">
-    <testcase classname="Login Component Should be a div" name="Login Component Should be a div" time="0.005">
-    </testcase>
-    <testcase classname="Login Component Should have a button" name="Login Component Should have a button" time="0.002">
-    </testcase>
-    <testcase classname="Login Component Register button Should say register" name="Login Component Register button Should say register" time="0.001">
+  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:51" time="0.794" tests="1">
+    <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="Request Complete" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="1.001" tests="7">
-    <testcase classname="Request Complete is wrapped in a Grid Container" name="Request Complete is wrapped in a Grid Container" time="0.008">
-    </testcase>
-    <testcase classname="Request Complete contains two rows" name="Request Complete contains two rows" time="0.021">
-    </testcase>
-    <testcase classname="Request Complete complete row is a Complete Row" name="Request Complete complete row is a Complete Row" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete complete row header is a header" name="Request Complete complete row header is a header" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete button row is a button Row" name="Request Complete button row is a button Row" time="0.002">
-    </testcase>
-    <testcase classname="Request Complete button row button  is a button Row" name="Request Complete button row button  is a button Row" time="0.003">
-    </testcase>
-    <testcase classname="Request Complete button row button  button onClick should be clicked" name="Request Complete button row button  button onClick should be clicked" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="setRequestPrice action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="0.792" tests="4">
-    <testcase classname="setRequestPrice action should return a lambda that returns an object with data and setRequestPrice action" name="setRequestPrice action should return a lambda that returns an object with data and setRequestPrice action" time="0.004">
-    </testcase>
-    <testcase classname="setRequestInformation action should return a lambda that returns an object with data and setRequestInformation action" name="setRequestInformation action should return a lambda that returns an object with data and setRequestInformation action" time="0.001">
-    </testcase>
-    <testcase classname="setTypeOfRequest should return a lambda that returns an object with data and setTypeOfRequest action type" name="setTypeOfRequest should return a lambda that returns an object with data and setTypeOfRequest action type" time="0.001">
-    </testcase>
-    <testcase classname="requestInProgress action should return a lambda that returns an object with data and requestInProgress action type" name="requestInProgress action should return a lambda that returns an object with data and requestInProgress action type" time="0">
-    </testcase>
-  </testsuite>
-  <testsuite name="404 Error" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="0.826" tests="1">
-    <testcase classname="404 Error is a reidrect" name="404 Error is a reidrect" time="0.006">
-    </testcase>
-  </testsuite>
-  <testsuite name="toggle login modal action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:46" time="0.75" tests="2">
-    <testcase classname="toggle login modal action should return a lambda that returns an object with the toggleSignupModal action" name="toggle login modal action should return a lambda that returns an object with the toggleSignupModal action" time="0.005">
-    </testcase>
-    <testcase classname="swap modal action should return a lambda that returns an object with the swapModal action" name="swap modal action should return a lambda that returns an object with the swapModal action" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="LawnnannyapiBridge" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:47" time="0.586" tests="2">
+  <testsuite name="LawnnannyapiBridge" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:52" time="0.579" tests="2">
     <testcase classname="LawnnannyapiBridge Should have login" name="LawnnannyapiBridge Should have login" time="0.003">
     </testcase>
     <testcase classname="LawnnannyapiBridge Should return a promise" name="LawnnannyapiBridge Should return a promise" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="registar form component" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:47" time="0.639" tests="1">
-    <testcase classname="registar form component Should be a div" name="registar form component Should be a div" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="redux action with data" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:47" time="0.609" tests="1">
-    <testcase classname="redux action with data should return a lambda that returns an object with data and action type" name="redux action with data should return a lambda that returns an object with data and action type" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="setLoggedIn action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T03:30:47" time="0.587" tests="1">
-    <testcase classname="setLoggedIn action should return a lambda that returns an object with the isLoggedIn action" name="setLoggedIn action should return a lambda that returns an object with the isLoggedIn action" time="0.002">
+  <testsuite name="setLoggedIn action" errors="0" failures="0" skipped="0" timestamp="2019-07-01T18:54:52" time="0.625" tests="1">
+    <testcase classname="setLoggedIn action should return a lambda that returns an object with the isLoggedIn action" name="setLoggedIn action should return a lambda that returns an object with the isLoggedIn action" time="0.004">
     </testcase>
   </testsuite>
 </testsuites>

@@ -236,7 +236,7 @@ describe('signup component', () => {
                   expect(mountedfirstNameFormController.type()).toEqual(FormController);
 
                   it('Should have the correct label prop', () => {
-                    expect(formControllerProps.label).toEqual('first name');
+                    expect(formControllerProps.label).toEqual('First Name');
                   });
 
                   it('Should have the correct id prop', () => {
@@ -282,7 +282,7 @@ describe('signup component', () => {
                   expect(mountedlastNameFormController.type()).toEqual(FormController);
 
                   it('Should have the correct label prop', () => {
-                    expect(formControllerProps.label).toEqual('last name');
+                    expect(formControllerProps.label).toEqual('Last Name');
                   });
 
                   it('Should have the correct id prop', () => {
@@ -326,7 +326,7 @@ describe('signup component', () => {
                 expect(mountedemailFormController.type()).toEqual(FormController);
 
                 it('Should have the correct label prop', () => {
-                  expect(formControllerProps.label).toEqual('email');
+                  expect(formControllerProps.label).toEqual('Email');
                 });
 
                 it('Should have the correct id prop', () => {
@@ -371,7 +371,7 @@ describe('signup component', () => {
                 expect(mountedpasswordFormController.type()).toEqual(FormController);
 
                 it('Should have the correct label prop', () => {
-                  expect(formControllerProps.label).toEqual('password');
+                  expect(formControllerProps.label).toEqual('Password');
                 });
 
                 it('Should have the correct id prop', () => {

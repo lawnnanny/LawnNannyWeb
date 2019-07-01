@@ -16,22 +16,23 @@ export const SignupModal = (props) => {
   const lastNameIsTooShortMessage = 'Last name is too short!';
   const lastNameISTooLongMessage = 'Last name is too long!';
   const passwordIsTooShortMessage = 'Password is too short!';
+  const invalidEmailMessage = 'Not a valid Email!';
 
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
       .min(2, firstNameIsTooShortMessage)
       .max(30, firstNameISTooLongMessage)
-      .required('Required'),
+      .required('Required*'),
     lastName: Yup.string()
       .min(2, lastNameIsTooShortMessage)
       .max(30, lastNameISTooLongMessage)
-      .required('Required'),
+      .required('Required*'),
     email: Yup.string()
-      .email()
-      .required('Required'),
+      .email(invalidEmailMessage)
+      .required('Required*'),
     password: Yup.string()
       .min(8, passwordIsTooShortMessage)
-      .required(),
+      .required('Required*'),
   });
   return (
     <div>
@@ -70,14 +71,18 @@ export const SignupModal = (props) => {
                         render={({ field, form }) => (
                           <FormController
                             type="text"
-                            label="first name"
+                            label="First Name"
                             id="firstNameFormController"
                             form={form}
                             field={field}
                           />
                         )}
                       />
-                      <ErrorMessage name="firstName" component="div" />
+                      <ErrorMessage
+                        className={styles.errorMessage}
+                        name="firstName"
+                        component="div"
+                      />
                     </div>
                     <div id="lastnameField" className={styles.fieldLastName}>
                       <Field
@@ -85,14 +90,18 @@ export const SignupModal = (props) => {
                         render={({ field, form }) => (
                           <FormController
                             type="text"
-                            label="last name"
+                            label="Last Name"
                             id="lastNameFormController"
                             form={form}
                             field={field}
                           />
                         )}
                       />
-                      <ErrorMessage name="lastName" component="div" />
+                      <ErrorMessage
+                        className={styles.errorMessage}
+                        name="lastName"
+                        component="div"
+                      />
                     </div>
                   </div>
                   <div id="emailField" className={styles.fieldDiv}>
@@ -102,14 +111,14 @@ export const SignupModal = (props) => {
                       render={({ field, form }) => (
                         <FormController
                           type="email"
-                          label="email"
+                          label="Email"
                           id="emailFormController"
                           form={form}
                           field={field}
                         />
                       )}
                     />
-                    <ErrorMessage name="email" component="div" />
+                    <ErrorMessage className={styles.errorMessage} name="email" component="div" />
                   </div>
                   <div id="passwordField" className={styles.fieldDiv}>
                     <Field
@@ -118,14 +127,14 @@ export const SignupModal = (props) => {
                       render={({ field, form }) => (
                         <FormController
                           type="password"
-                          label="password"
+                          label="Password"
                           id="passwordFormController"
                           form={form}
                           field={field}
                         />
                       )}
                     />
-                    <ErrorMessage name="password" component="div" />
+                    <ErrorMessage className={styles.errorMessage} name="password" component="div" />
                   </div>
                   <button className={styles.button} type="submit">
                     Sign Up

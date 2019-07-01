@@ -7,7 +7,7 @@
   align-self: center !important;
 }
 .titleText {
-  font-size: 1.5em !important;
+  font-size: 2em !important;
 }
 .content {
   padding: 0 32px 32px !important;
@@ -26,6 +26,11 @@
 }
 .fieldFirstName {
   margin-right: 1em !important;
+}
+.errorMessage {
+  font-size: 1.5em !important;
+  margin-top: 0.3em !important;
+  color: red !important;
 }
 .controller {
   width: inherit !important;
