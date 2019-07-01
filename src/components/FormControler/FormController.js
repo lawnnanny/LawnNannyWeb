@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
+import styles from './FormController.module.css';
 
 export const FormController = props => (
   <div>
     <FormControl>
-      <InputLabel>{props.label}</InputLabel>
+      <InputLabel
+        className={
+          props.form.touched[props.field.name] && props.form.errors[props.field.name]
+            ? styles.labelError
+            : styles.label
+        }
+      >
+        {props.label}
+      </InputLabel>
       <Input
+        className={styles.input}
         type={props.type}
         {...props.field}
         error={
