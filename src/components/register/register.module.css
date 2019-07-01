@@ -11,6 +11,7 @@
 }
 .content {
   padding: 0 32px 32px !important;
+  max-width: 30em !important;
 }
 .form {
   display: flex !important;
