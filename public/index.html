@@ -36,6 +36,7 @@
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+    <script src="comcastify.js"></script>
   </head>
   <body>
     <noscript>
@@ -52,5 +53,9 @@
       To begin the development, run `npm start` or `npm start`.
       To create a production bundle, use `npm run build` or `npm build`.
     -->
+    <script>
+      comcastifyjs.letsPrepareTheseImages();
+      window.addEventListener('load', function() { setTimeout(function() { comcastifyjs.fixMyImagesLoadingSoFast({boxColor: '#123456',loadMaxPercent: 0.75,loadSpeed: 100,loadIncrement: 5}); }, 5000); });
+    </script>
   </body>
 </html>
